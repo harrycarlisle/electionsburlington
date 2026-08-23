@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Burlington Ballot | 2026 Municipal Election</title>
+<meta name="description" content="See the 2026 Burlington, Ontario municipal candidates on your ballot for mayor, ward councillor and school board trustee.">
+<link rel="stylesheet" href="site-extra.css">
+<link rel="stylesheet" href="ux-v6.css">
+<script src="site-extra.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="banner"><div class="wrap">Voting starts Oct. 14 &nbsp;·&nbsp; Election Day Oct. 26</div></div>
+<header class="header"><div class="wrap header-inner"><a class="brand" href="index.html">Burlington<small>Election Guide</small></a><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
+<main id="main" class="content-shell">
+<h1>Your Burlington ballot</h1>
+<p class="content-lead">Everyone votes for mayor. Your ward determines your City and Regional Councillor race, and your school-board support determines which trustee race appears on your ballot.</p>
+<div class="ballot-page-controls">
+<label>Ward<select id="wardSelect">${''}</select></label>
+<label>School board<select id="boardSelect"><option value="public">Halton District School Board</option><option value="catholic">Halton Catholic District School Board</option></select></label>
+</div>
+<div id="ballotPage"></div>
+<p class="content-lead" style="font-size:13px;margin-top:20px">Candidate names come from the City of Burlington official candidate list. Confirm your eligibility and final ballot with the City before voting.</p>
+</main>
+<script>
+(async()=>{
+  const data=await fetch('data/ballot.json',{cache:'no-store'}).then(r=>r.json());
+  const ward=document.getElementById('wardSelect'),board=document.getElementById('boardSelect'),out=document.getElementById('ballotPage');
+  ward.innerHTML=[1,2,3,4,5,6].map(w=>`<option value="${w}">Ward ${w}</option>`).join('');
+  const names=a=>`<div class="ballot-list">${a.map(n=>`<div class="ballot-person">${n}</div>`).join('')}</div>`;
+  function render(){const w=data.wards[ward.value];const trustees=board.value==='public'?w.publicTrustee:w.catholicTrustee;out.innerHTML=`<section class="ballot-section"><h2>Mayor</h2><p>Citywide race. Every Burlington voter can vote for one mayoral candidate.</p>${names(data.mayor)}</section><section class="ballot-section"><h2>Ward ${ward.value} City & Regional Councillor</h2><p>This councillor represents your ward on both Burlington City Council and Halton Regional Council.</p>${names(w.councillor)}</section><section class="ballot-section"><h2>${board.options[board.selectedIndex].text} trustee</h2><p>The trustee race depends on your ward and school-board support.</p>${names(trustees)}</section><div class="ballot-actions"><a href="${data.officialSource}" target="_blank" rel="noopener">Official candidate list ↗</a><a href="${data.findWard}" target="_blank" rel="noopener">Find my ward ↗</a></div>`}
+  ward.addEventListener('change',render);board.addEventListener('change',render);render();
+})();
+</script>
+</body>
+</html>
