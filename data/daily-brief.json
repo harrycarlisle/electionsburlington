@@ -1,0 +1,32 @@
+{
+  "updated": "2026-08-23T18:50:00-04:00",
+  "items": [
+    {
+      "date": "2026-08-21",
+      "tag": "Election",
+      "headline": "The candidate field is now set",
+      "summary": "Nominations closed Aug. 21. Burlington's official list now shows the mayoral race plus council contests in all six wards.",
+      "why": "You can now compare the people who will actually appear on the municipal ballot.",
+      "source": "City of Burlington Election",
+      "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
+    },
+    {
+      "date": "2026-08-20",
+      "tag": "Your ward",
+      "headline": "Some ward boundaries changed for this election",
+      "summary": "The 2026 map changes parts of Wards 1, 2, 3 and 4. Wards 5 and 6 are unchanged.",
+      "why": "Your ward determines which councillor candidates you can vote for.",
+      "source": "City of Burlington Election",
+      "url": "https://myvote.burlington.ca/for-voters/new-voting-wards/"
+    },
+    {
+      "date": "2026-08-21",
+      "tag": "Candidates",
+      "headline": "Local candidate profiles are arriving quickly",
+      "summary": "BurlingtonToday is publishing short Q&As with mayoral and ward candidates covering priorities, background and reasons for running.",
+      "why": "These interviews can add detail when a campaign website is thin or has not published a full platform.",
+      "source": "BurlingtonToday",
+      "url": "https://www.burlingtontoday.com/2026-municipal-election-news"
+    }
+  ]
+}
