@@ -30,7 +30,7 @@ SOURCES = [
     {'name':'Halton Region','url':'https://www.halton.ca/news/media-releases','type':'official','scope':'region'},
     {'name':'Metrolinx','url':'https://www.metrolinx.com/en/news/archive','type':'official','scope':'transit'},
     {'name':'BurlingtonToday','url':'https://www.burlingtontoday.com/local-news','type':'reporting','scope':'city'},
-    {'name':'BurlingtonToday Election','url':'https://www.burlingtontoday.com/2026-municipal-election-news','type':'reporting','scope':'election'},
+    {'name':'BurlingtonToday Election','url':'https://www.burlingtontoday.com/municipal-election','type':'reporting','scope':'election'},
     {'name':'Focus Burlington','url':'https://www.focusburlington.ca/','type':'community','scope':'city'},
 ]
 
