@@ -10,24 +10,27 @@
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
+  function themeIcon(theme) {
+    if (theme === 'dark') {
+      return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only">Dark mode</span>';
+    }
+    return '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sr-only">Light mode</span>';
+  }
+
   function setTheme(theme, persist = true) {
     const next = theme === 'dark' ? 'dark' : 'light';
     root.dataset.theme = next;
     root.style.colorScheme = next;
     document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
-      const label = next === 'dark' ? 'Use light mode' : 'Use dark mode';
-      button.textContent = next === 'dark' ? 'Light mode' : 'Dark mode';
+      const label = next === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+      button.innerHTML = themeIcon(next);
       button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
       button.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
     });
     if (persist) {
       try { localStorage.setItem(storageKey, next); } catch (_) {}
     }
-  }
-
-  function translateUrl(language) {
-    const target = encodeURIComponent(window.location.href);
-    return `https://translate.google.com/translate?sl=en&tl=${encodeURIComponent(language)}&u=${target}`;
   }
 
   function isHomePage() {
@@ -40,13 +43,18 @@
   }
 
   function ensureExtraStyles() {
-    if (!document.querySelector('link[data-election-dates]')) {
+    const styles = [
+      ['dates-extra.css?v=20260823b', 'electionDates'],
+      ['header-controls.css?v=20260823a', 'headerControls']
+    ];
+    styles.forEach(([href, key]) => {
+      if (document.querySelector(`link[data-${key.replace(/[A-Z]/g, m => '-' + m.toLowerCase())}]`)) return;
       const link = document.createElement('link');
       link.rel = 'stylesheet';
-      link.href = 'dates-extra.css?v=20260823b';
-      link.dataset.electionDates = '';
+      link.href = href;
+      link.dataset[key] = '';
       document.head.appendChild(link);
-    }
+    });
   }
 
   function buildDrawer(nav) {
@@ -65,36 +73,35 @@
       <div class="menu-support" role="list">
         <a class="menu-support-link" role="listitem" href="help.html">Help</a>
         <a class="menu-support-link" role="listitem" href="https://github.com/harrycarlisle/electionsburlington/issues/new" target="_blank" rel="noopener">Give feedback <span class="sr-only">(opens in a new tab)</span></a>
-      </div>
-      <div class="menu-separator" aria-hidden="true"></div>
-      <div class="menu-preferences">
-        <div class="menu-pref-row">
-          <label for="siteLanguage">Translate</label>
-          <select id="siteLanguage" class="language-select" aria-label="Translate this page">
-            <option value="">English</option><option value="fr">Français</option><option value="zh-CN">中文</option><option value="pa">ਪੰਜਾਬੀ</option><option value="es">Español</option><option value="ar">العربية</option><option value="hi">हिन्दी</option>
-          </select>
-        </div>
-        <div class="menu-pref-row"><span>Appearance</span><button type="button" class="nav-action" data-theme-toggle>Dark mode</button></div>
       </div>`;
-
-    const language = nav.querySelector('#siteLanguage');
-    language?.addEventListener('change', () => {
-      if (!language.value) return;
-      window.location.assign(translateUrl(language.value));
-    });
-    nav.querySelector('[data-theme-toggle]')?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
   }
 
   function enhanceMenu() {
     const oldMenu = document.getElementById('menuBtn');
     const nav = document.getElementById('mainNav');
     if (!oldMenu || !nav) return;
+
     const menu = oldMenu.cloneNode(false);
     menu.className = 'menu menu-icon-button';
     menu.setAttribute('aria-label', 'Open site menu');
     menu.setAttribute('aria-expanded', 'false');
     menu.innerHTML = '<span class="menu-bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="sr-only">Menu</span>';
     oldMenu.replaceWith(menu);
+
+    const theme = document.createElement('button');
+    theme.type = 'button';
+    theme.className = 'theme-icon-button';
+    theme.dataset.themeToggle = '';
+    theme.addEventListener('click', (event) => {
+      event.stopPropagation();
+      setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+    });
+
+    const controls = document.createElement('div');
+    controls.className = 'header-controls';
+    menu.parentElement.insertBefore(controls, menu);
+    controls.append(theme, menu);
+
     buildDrawer(nav);
 
     const closeMenu = (returnFocus = false) => {
@@ -104,6 +111,7 @@
       document.body.classList.remove('menu-is-open');
       if (returnFocus) menu.focus();
     };
+
     menu.addEventListener('click', (event) => {
       event.stopPropagation();
       const open = !nav.classList.contains('open');
@@ -114,6 +122,7 @@
         document.body.classList.add('menu-is-open');
       } else closeMenu();
     });
+
     nav.addEventListener('click', (event) => event.stopPropagation());
     nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
     document.addEventListener('click', () => closeMenu());
