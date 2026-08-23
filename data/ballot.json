@@ -1,39 +1,76 @@
 {
   "lastChecked": "2026-08-23",
   "officialSource": "https://myvote.burlington.ca/for-voters/list-of-candidates/",
-  "findWard": "https://myvote.burlington.ca/for-voters/new-voting-wards/",
-  "mayor": ["Keith Demoe","Lisa Kearns","Marianne Meed Ward","Rory Nisan","Yugalkeesor Ramdhonee"],
+  "findWard": "https://burlington.maps.arcgis.com/apps/instant/lookup/index.html?appid=f09420caa06544d292b76a6d72a323d8",
+  "mayor": ["Keith Demoe", "Lisa Kearns", "Marianne Meed Ward", "Rory Nisan", "Yugalkeesor Ramdhonee"],
+  "candidateWebsites": {
+    "Lisa Kearns": "https://lisakearns.ca/",
+    "Marianne Meed Ward": "https://votemarianne.ca/",
+    "Rory Nisan": "https://rorynisan.ca/",
+    "Kelvin Galbraith": "https://www.kelvingalbraith-ward1.com/",
+    "Cheryl Hurst": "https://www.cherylcommunityburlingtonward1.ca/",
+    "Masha Brar": "https://mashaforburlington.ca/",
+    "Sean Campbell": "https://seancampbell.info/",
+    "Gary Carr": "https://garycarr.ca/",
+    "Jeremy Gaetan": "https://jeremygaetan.com/",
+    "Tony Brecknock": "https://brecknock.com/",
+    "Kyle Hutton": "https://www.kylehutton.ca/",
+    "Katy Moore": "https://thirstformoore.ca/",
+    "Chris Carter": "https://chriscarterofficial.com/",
+    "Olivia Duke": "https://www.oliviaduke.ca/",
+    "Kristy Dickinson": "https://votekd.ca/",
+    "Alex Don": "https://alexdon.ca/",
+    "Paul Sharman": "https://www.paulsharman.ca/",
+    "Osob Adus": "https://www.osobward6.ca/",
+    "Angelo Bentivegna": "https://angelobentivegnaward6.ca/",
+    "Frank Domenic": "https://frankdomenic.ca/",
+    "Rowen Fraser": "https://www.rowrowforcouncil.com/",
+    "Bika Diakoloukas": "https://bikafortrustee.com/",
+    "Xin Yi Zhang": "https://www.reelect-xyz.ca/",
+    "Dania Thurman": "https://dania4trustee.com/",
+    "Amy Collard": "https://reelectamycollard.wixsite.com/re-elect-amy-collard",
+    "Roman Soler": "https://voteroman.ca/",
+    "Tim O'Brien": "https://timobrien.ca/"
+  },
   "wards": {
     "1": {
-      "councillor": ["Kelvin Galbraith","Cheryl Hurst","James Kerr","Robert Radway"],
+      "councillor": ["Kelvin Galbraith", "Cheryl Hurst", "James Kerr", "Robert Radway"],
       "publicTrustee": ["Bika Diakoloukas"],
-      "catholicTrustee": ["Vincent Iantomasi","Allison McKenzie"]
+      "catholicTrustee": ["Vincent Iantomasi", "Allison McKenzie"]
     },
     "2": {
-      "councillor": ["Masha Brar","Sean Campbell","Gary Carr","Jeremy Gaetan"],
+      "councillor": ["Masha Brar", "Sean Campbell", "Gary Carr", "Jeremy Gaetan"],
       "publicTrustee": ["Bika Diakoloukas"],
-      "catholicTrustee": ["Vincent Iantomasi","Allison McKenzie"]
+      "catholicTrustee": ["Vincent Iantomasi", "Allison McKenzie"]
     },
     "3": {
-      "councillor": ["Tony Brecknock","Mark Carr","Kyle Hutton","Katy Moore"],
-      "publicTrustee": ["Sukhwinder Singh","Xin Yi Zhang"],
-      "catholicTrustee": ["Bernice Carvalho","Roman Soler"]
+      "councillor": ["Tony Brecknock", "Mark Carr", "Lisa Cooper", "Kyle Hutton", "Katy Moore"],
+      "publicTrustee": ["Sukhwinder Singh", "Xin Yi Zhang"],
+      "catholicTrustee": ["Bernice Carvalho", "Roman Soler"]
     },
     "4": {
-      "councillor": ["Chris Carter","Olivia Duke"],
-      "publicTrustee": ["Ryan Marlow","Dania Thurman","Ahmed Zaki"],
-      "catholicTrustee": ["Bashar Haddaden","Katrina Vinka Kvenich","Tim O'Brien"]
+      "councillor": ["Chris Carter", "Olivia Duke"],
+      "publicTrustee": ["Ryan Marlow", "Dania Thurman", "Ahmed Zaki"],
+      "catholicTrustee": ["Bashar Haddaden", "Katrina Vinka Kvenich", "Tim O'Brien"]
     },
     "5": {
-      "councillor": ["Kristy Dickinson","Alex Don","Brian Machan","Paul Sharman"],
+      "councillor": ["Kristy Dickinson", "Alex Don", "Brian Machan", "Paul Sharman"],
       "publicTrustee": ["Amy Collard"],
-      "catholicTrustee": ["Bashar Haddaden","Katrina Vinka Kvenich","Tim O'Brien"]
+      "catholicTrustee": ["Bashar Haddaden", "Katrina Vinka Kvenich", "Tim O'Brien"]
     },
     "6": {
-      "councillor": ["Osob Adus","Angelo Bentivegna","Bianca Bielski","Chris Bouchard","Frank Domenic","Rowen Fraser","Edmond Jodhi"],
-      "publicTrustee": ["Sukhwinder Singh","Xin Yi Zhang"],
-      "catholicTrustee": ["Bernice Carvalho","Roman Soler"]
+      "councillor": ["Osob Adus", "Angelo Bentivegna", "Bianca Bielski", "Chris Bouchard", "Frank Domenic", "Rowen Fraser", "Edmond Jodhi"],
+      "publicTrustee": ["Sukhwinder Singh", "Xin Yi Zhang"],
+      "catholicTrustee": ["Bernice Carvalho", "Roman Soler"]
     }
   },
-  "note": "Candidate names are based on the City of Burlington official candidate list. Trustee eligibility also depends on school-board support and elector eligibility. Confirm your final ballot with the City."
+  "frenchPublicTrustee": ["Sonia Macaluso"],
+  "frenchCatholicTrustee": ["Diane Courchesne"],
+  "schoolBoards": {
+    "public": "English public (Halton District School Board)",
+    "catholic": "English Catholic (Halton Catholic District School Board)",
+    "frenchPublic": "French public (Conseil scolaire Viamonde)",
+    "frenchCatholic": "French Catholic (Conseil scolaire catholique MonAvenir)"
+  },
+  "note": "Candidate names and candidate-supplied websites are based on the City of Burlington official candidate list. Trustee eligibility depends on school-board support and elector eligibility. Confirm your final ballot with the City."
 }
