@@ -1,0 +1,39 @@
+{
+  "lastChecked": "2026-08-23",
+  "officialSource": "https://myvote.burlington.ca/for-voters/list-of-candidates/",
+  "findWard": "https://myvote.burlington.ca/for-voters/new-voting-wards/",
+  "mayor": ["Keith Demoe","Lisa Kearns","Marianne Meed Ward","Rory Nisan","Yugalkeesor Ramdhonee"],
+  "wards": {
+    "1": {
+      "councillor": ["Kelvin Galbraith","Cheryl Hurst","James Kerr","Robert Radway"],
+      "publicTrustee": ["Bika Diakoloukas"],
+      "catholicTrustee": ["Vincent Iantomasi","Allison McKenzie"]
+    },
+    "2": {
+      "councillor": ["Masha Brar","Sean Campbell","Gary Carr","Jeremy Gaetan"],
+      "publicTrustee": ["Bika Diakoloukas"],
+      "catholicTrustee": ["Vincent Iantomasi","Allison McKenzie"]
+    },
+    "3": {
+      "councillor": ["Tony Brecknock","Mark Carr","Kyle Hutton","Katy Moore"],
+      "publicTrustee": ["Sukhwinder Singh","Xin Yi Zhang"],
+      "catholicTrustee": ["Bernice Carvalho","Roman Soler"]
+    },
+    "4": {
+      "councillor": ["Chris Carter","Olivia Duke"],
+      "publicTrustee": ["Ryan Marlow","Dania Thurman","Ahmed Zaki"],
+      "catholicTrustee": ["Bashar Haddaden","Katrina Vinka Kvenich","Tim O'Brien"]
+    },
+    "5": {
+      "councillor": ["Kristy Dickinson","Alex Don","Brian Machan","Paul Sharman"],
+      "publicTrustee": ["Amy Collard"],
+      "catholicTrustee": ["Bashar Haddaden","Katrina Vinka Kvenich","Tim O'Brien"]
+    },
+    "6": {
+      "councillor": ["Osob Adus","Angelo Bentivegna","Bianca Bielski","Chris Bouchard","Frank Domenic","Rowen Fraser","Edmond Jodhi"],
+      "publicTrustee": ["Sukhwinder Singh","Xin Yi Zhang"],
+      "catholicTrustee": ["Bernice Carvalho","Roman Soler"]
+    }
+  },
+  "note": "Candidate names are based on the City of Burlington official candidate list. Trustee eligibility also depends on school-board support and elector eligibility. Confirm your final ballot with the City."
+}
