@@ -1,0 +1,82 @@
+:root{color-scheme:light}
+html[data-theme="dark"]{color-scheme:dark;--navy:#cce8ff;--navy2:#8fc9f5;--ink:#e7f0f7;--muted:#a7bdce;--bg:#0b141c;--card:#111f2a;--line:#2a4051;--soft:#162a38;--accent:#6ebdff;--shadow:0 9px 25px rgba(0,0,0,.28);--green:#91dcb7;--greenbg:#153527;--gold:#ffd58a;--goldbg:#3b2b10}
+
+/* Shared utility controls */
+.nav-tools{display:flex;align-items:center;gap:9px;margin-left:auto}
+.nav-action,.language-select{border:1px solid var(--line);background:var(--card);color:var(--navy);border-radius:9px;padding:7px 9px;font:inherit;font-size:13px;font-weight:760;line-height:1.2}
+.nav-action{cursor:pointer}
+.nav-action:hover{border-color:var(--accent)}
+.language-select{max-width:132px;cursor:pointer}
+.section-intro{max-width:760px;margin:-15px 0 28px;color:var(--muted);font-size:16px}
+.site-independent-note{margin:18px 0 0;padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:var(--soft);color:var(--ink);font-size:13px}
+.site-independent-note strong{color:var(--navy)}
+.site-independent-note a{font-weight:800;color:var(--navy)}
+.site-legal-footer{max-width:1180px;margin:0 auto;padding:0 22px 34px;color:var(--muted);font-size:13px}
+.site-legal-footer-inner{padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.site-legal-footer p{margin:0}
+.site-legal-footer a{font-weight:760;color:var(--navy)}
+.site-legal-links{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Dark mode overrides for existing hard-coded light surfaces. */
+html[data-theme="dark"] body{background:var(--bg);color:var(--ink)}
+html[data-theme="dark"] .header{background:#0f1c26;border-color:var(--line)}
+html[data-theme="dark"] .banner{background:#102f4a;color:#fff}
+html[data-theme="dark"] .menu,
+html[data-theme="dark"] .candidate-card,
+html[data-theme="dark"] .profile-box,
+html[data-theme="dark"] .conversation div,
+html[data-theme="dark"] .issue-person,
+html[data-theme="dark"] .source-group,
+html[data-theme="dark"] .select-wrap select,
+html[data-theme="dark"] .nav-action,
+html[data-theme="dark"] .language-select{background:var(--card);color:var(--ink);border-color:var(--line)}
+html[data-theme="dark"] .photo-placeholder,
+html[data-theme="dark"] .mini-placeholder{background:#1b3040;color:#bdd2e2}
+html[data-theme="dark"] .issue-context{background:#13293a;border-color:#315069}
+html[data-theme="dark"] .candidate-body p,
+html[data-theme="dark"] .profile-box ul,
+html[data-theme="dark"] .conversation p,
+html[data-theme="dark"] .issue-position,
+html[data-theme="dark"] .meaning-detail p,
+html[data-theme="dark"] .date-card p,
+html[data-theme="dark"] .method-body>p{color:#bed0de}
+html[data-theme="dark"] .h2h-link{background:#24699e;color:#fff}
+html[data-theme="dark"] .skip{background:#fff;color:#102337}
+
+/* Simple legal/help pages */
+.simple-page main{padding-top:38px}
+.simple-page .page-shell{max-width:860px;margin:0 auto}
+.simple-page .page-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:var(--muted);margin-bottom:8px}
+.simple-page h1{margin-bottom:12px}
+.simple-page .page-lead{font-size:18px;color:var(--muted);margin:0 0 28px;max-width:760px}
+.simple-page .policy-card{background:var(--card);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);padding:22px;margin-bottom:16px}
+.simple-page .policy-card h2{font-size:24px;margin:0 0 10px}
+.simple-page .policy-card h3{font-size:17px;margin:20px 0 7px}
+.simple-page .policy-card p{margin:0 0 12px}
+.simple-page .policy-card p:last-child{margin-bottom:0}
+.simple-page .policy-card ul{margin:8px 0 12px;padding-left:22px}
+.simple-page .policy-card li+li{margin-top:7px}
+.simple-page .callout{padding:14px 15px;border-left:4px solid var(--accent);background:var(--soft);border-radius:0 11px 11px 0;margin:16px 0}
+.simple-page .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.simple-page .button-link{display:inline-flex;align-items:center;text-decoration:none;background:var(--navy);color:#fff;padding:10px 13px;border-radius:10px;font-weight:800}
+html[data-theme="dark"] .simple-page .button-link{background:#276fa6}
+.simple-page .button-secondary{background:var(--soft);color:var(--navy);border:1px solid var(--line)}
+.simple-page .updated{font-size:13px;color:var(--muted);margin-top:28px}
+
+@media(max-width:900px){.nav{gap:14px}.nav-tools{margin-left:0}.language-select{max-width:120px}}
+@media(max-width:720px){
+  .nav.open{background:var(--card);border-color:var(--line)}
+  .nav-tools{width:100%;display:grid;grid-template-columns:1fr 1fr;margin-top:4px}
+  .language-select{max-width:none;width:100%}
+  .nav-action{width:100%;text-align:center}
+  .section-intro{margin-top:-18px}
+  .site-legal-footer{padding:0 18px 28px}
+  .site-legal-footer-inner{display:block}
+  .site-legal-links{margin-top:10px}
+  .simple-page .policy-card{padding:18px}
+}
+
+@media(prefers-contrast:more){
+  :root{--line:#7790a4}
+  .nav-action,.language-select,.policy-card{border-width:2px}
+}
