@@ -1,0 +1,26 @@
+.feedback-page{min-height:100vh;background:var(--bg)}
+.feedback-main{padding:54px 22px 80px}
+.feedback-shell{max-width:760px;margin:0 auto}
+.feedback-back{display:inline-flex;margin-bottom:30px;color:var(--muted);text-decoration:none;font-size:14px;font-weight:650}
+.feedback-back:hover{text-decoration:underline}
+.feedback-kicker{font-size:13px;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.feedback-shell h1{font-size:clamp(38px,5vw,56px);line-height:1.02;margin:0 0 14px;letter-spacing:-.045em;color:var(--navy)}
+.feedback-lead{font-size:17px;line-height:1.55;color:var(--muted);max-width:650px;margin:0 0 34px}
+.feedback-form{display:grid;gap:20px}
+.field-group{display:grid;gap:8px}
+.field-group label{font-size:14px;font-weight:700;color:var(--navy)}
+.field-group label span{font-weight:500;color:var(--muted)}
+.field-group input,.field-group textarea,.field-group select{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:13px;background:var(--card);color:var(--ink);font:inherit;font-size:16px;padding:13px 14px;outline:none;transition:border-color .16s ease,box-shadow .16s ease}
+.field-group textarea{resize:vertical;min-height:180px;line-height:1.5}
+.field-group input:focus,.field-group textarea:focus,.field-group select:focus{border-color:#4f9fd4;box-shadow:0 0 0 3px rgba(79,159,212,.15)}
+.feedback-submit{border:0;border-radius:12px;background:#0f5b91;color:white;padding:14px 18px;font:inherit;font-size:15px;font-weight:750;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.feedback-submit:hover{background:#0b4d7d;transform:translateY(-1px)}
+.feedback-submit:focus-visible{outline:3px solid #176ac4;outline-offset:3px}
+.feedback-note{font-size:12.5px;color:var(--muted);margin:-8px 0 0}
+.feedback-status{min-height:24px;font-size:14px;color:var(--muted)}
+.feedback-status.is-success{color:#2e6c4f;font-weight:650}
+.feedback-status.is-error{color:#9f3030;font-weight:650}
+html[data-theme="dark"] .feedback-submit{background:#2374aa}
+html[data-theme="dark"] .feedback-status.is-success{color:#9bd6b6}
+@media(max-width:720px){.feedback-main{padding:34px 18px 60px}.feedback-shell h1{font-size:40px}.feedback-lead{font-size:16px}.feedback-submit{width:100%}}
+@media(prefers-reduced-motion:reduce){.field-group input,.field-group textarea,.field-group select,.feedback-submit{transition:none}.feedback-submit:hover{transform:none}}
