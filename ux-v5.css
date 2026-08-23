@@ -1,0 +1,59 @@
+/* UX v5: reduce hero copy, keep full candidate cards visible, simplify selection hierarchy */
+
+/* Hero is now just the core promise + actions. */
+.landing-home .election-hero{min-height:470px!important;padding-top:58px!important;padding-bottom:58px!important}
+.landing-home .hero-copy{align-self:center}
+.landing-home .hero-copy .hero-kicker,
+.landing-home .hero-copy>p{display:none!important}
+.landing-home .election-hero h1{max-width:650px!important;margin-bottom:24px!important}
+.landing-home .hero-actions{margin-top:0!important}
+.landing-home .hero-trust{margin-top:18px!important}
+
+/* Candidate cards should always read as complete cards, not cropped image tiles. */
+#candidateStrip{align-items:stretch!important}
+#candidateStrip .candidate-card{display:flex!important;flex-direction:column!important;height:auto!important;min-height:330px!important;overflow:visible!important}
+#candidateStrip .candidate-photo,
+#candidateStrip .photo-placeholder{flex:0 0 auto!important;height:178px!important}
+#candidateStrip .candidate-body{display:flex!important;flex-direction:column!important;flex:1 1 auto!important;min-height:142px!important;padding:15px 16px 18px!important}
+#candidateStrip .candidate-body h3{min-height:42px!important;margin-bottom:8px!important}
+#candidateStrip .candidate-body p{display:block!important;-webkit-line-clamp:unset!important;overflow:visible!important;margin-top:auto!important}
+
+/* Selected card gets a simple connection to the panel below. */
+#candidateStrip .candidate-card[aria-pressed="true"]{position:relative!important}
+#candidateStrip .candidate-card[aria-pressed="true"]::after{content:"";position:absolute;left:50%;bottom:-12px;transform:translateX(-50%);border-left:11px solid transparent;border-right:11px solid transparent;border-top:12px solid #62a8d7;z-index:4}
+
+/* Remove unnecessary generic heading repetition inside the selected profile. */
+#profilePanel .profile-head{display:none!important}
+#profilePanel .profile-grid{margin-top:0!important}
+#profilePanel .profile-box h3{font-size:16px!important;font-weight:750!important;color:#111827!important;letter-spacing:-.015em!important}
+html[data-theme="dark"] #profilePanel .profile-box h3{color:#f4f7fa!important}
+
+/* Keep map card crisp and proportional. */
+.hero-map-card{aspect-ratio:1.18/1!important;min-height:0!important}
+.hero-candidate-slide{max-width:220px!important}
+
+@media(min-width:1051px){
+  #candidateStrip{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:14px!important;overflow:visible!important}
+  #candidateStrip .candidate-card{min-width:0!important;max-width:none!important}
+}
+
+@media(min-width:721px) and (max-width:1050px){
+  #candidateStrip{display:flex!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;gap:14px!important;padding-bottom:15px!important}
+  #candidateStrip .candidate-card{min-width:245px!important;max-width:245px!important;scroll-snap-align:start!important}
+  #candidateStrip .candidate-photo,#candidateStrip .photo-placeholder{height:165px!important}
+  #candidateStrip .candidate-body p{font-size:13px!important}
+}
+
+@media(max-width:720px){
+  .landing-home .election-hero{min-height:0!important;padding-top:34px!important;padding-bottom:38px!important}
+  .landing-home .election-hero h1{font-size:42px!important;margin-bottom:22px!important}
+  .landing-home .hero-actions{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}
+  .landing-home .hero-button{width:100%!important;justify-content:center!important}
+  .landing-home .hero-trust{display:flex!important;gap:9px!important;flex-wrap:wrap!important}
+  #candidateStrip .candidate-card{min-width:78vw!important;max-width:78vw!important;min-height:390px!important}
+  #candidateStrip .candidate-photo,#candidateStrip .photo-placeholder{height:225px!important}
+  #candidateStrip .candidate-body{min-height:150px!important;padding:16px 18px 19px!important}
+  #candidateStrip .candidate-body h3{min-height:auto!important;font-size:22px!important}
+  #candidateStrip .candidate-body p{font-size:16px!important;line-height:1.45!important;margin-top:12px!important}
+  .hero-map-card{aspect-ratio:1.22/1!important}
+}
