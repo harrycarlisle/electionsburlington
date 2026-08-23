@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Burlington Election Updates | Daily Brief</title>
+<meta name="description" content="Daily source-linked updates on Burlington, Ontario municipal politics and the 2026 election, summarized in plain language.">
+<link rel="stylesheet" href="site-extra.css">
+<link rel="stylesheet" href="ux-v6.css">
+<script src="site-extra.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="banner"><div class="wrap">Voting starts Oct. 14 &nbsp;·&nbsp; Election Day Oct. 26</div></div>
+<header class="header"><div class="wrap header-inner"><a class="brand" href="index.html">Burlington<small>Election Guide</small></a><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
+<main id="main" class="content-shell">
+<div class="daily-brief-kicker">Updated daily</div>
+<h1>Burlington in 30 seconds</h1>
+<p class="content-lead">The important municipal and election changes, cut down to what happened and why it matters. Each item links to the original source.</p>
+<div class="update-list" id="updatesList"></div>
+<p class="content-lead" style="font-size:13px;margin-top:24px">This is not polling or an endorsement feed. Candidate claims, official records and reporting should remain labelled separately. If an update changes a candidate's stated position or verified record, the candidate guide can be updated with the source attached.</p>
+</main>
+<script>
+(async()=>{const data=await fetch('data/daily-brief.json',{cache:'no-store'}).then(r=>r.json());const out=document.getElementById('updatesList');out.innerHTML=(data.items||[]).map(i=>`<article class="update-item"><div class="update-item-top"><span class="brief-tag">${i.tag}</span><time>${new Date(i.date+'T12:00:00').toLocaleDateString('en-CA',{month:'short',day:'numeric',year:'numeric'})}</time></div><h2>${i.headline}</h2><p>${i.summary}</p><p class="why">Why it matters: ${i.why}</p><a href="${i.url}" target="_blank" rel="noopener">${i.source} ↗</a></article>`).join('')})();
+</script>
+</body>
+</html>
