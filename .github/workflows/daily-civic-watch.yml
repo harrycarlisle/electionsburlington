@@ -2,7 +2,7 @@ name: Daily Burlington civic watch
 
 on:
   schedule:
-    - cron: '15 11 * * *'
+    - cron: '15 12,17,22 * * *'
   workflow_dispatch:
 
 permissions:
@@ -24,5 +24,5 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data/source-monitor.json data/archive data/daily-brief.json
           git diff --cached --quiet && exit 0
-          git commit -m "Update daily Burlington civic watch"
+          git commit -m "Update Burlington civic watch"
           git push
