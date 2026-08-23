@@ -9,9 +9,28 @@ def replace_once(text: str, old: str, new: str, label: str) -> str:
     return text.replace(old, new, 1)
 
 
+def add_shared_assets(text: str) -> str:
+    if 'href="site-extra.css"' not in text:
+        text = text.replace('</head>', '<link rel="stylesheet" href="site-extra.css">\n<script src="site-extra.js" defer></script>\n</head>', 1)
+    return text
+
+
+def add_legal_footer(text: str) -> str:
+    if 'class="site-legal-footer"' in text:
+        return text
+    footer = '''\n<footer class="site-legal-footer"><div class="site-legal-footer-inner"><p>Independent civic project. Not affiliated with the City of Burlington, any candidate or campaign.</p><div class="site-legal-links"><a href="help.html">Help &amp; feedback</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></footer>\n'''
+    return text.replace('</body>', footer + '</body>', 1)
+
+
 def polish_index(path: Path) -> None:
     text = path.read_text(encoding="utf-8")
 
+    text = replace_once(
+        text,
+        '<title>Burlington Election Guide</title>',
+        '<title>Burlington Mayoral Election Guide | Burlington, Ontario</title><meta name="description" content="An independent, plain-language guide to the 2026 Burlington, Ontario mayoral election, candidates, issues, sources and voting dates.">',
+        'page title and description',
+    )
     text = replace_once(
         text,
         'section{margin-bottom:32px;scroll-margin-top:86px}',
@@ -56,6 +75,17 @@ def polish_index(path: Path) -> None:
     if '#candidates>h1{margin-bottom:30px}' not in text:
         text = text.replace('</style>', extra_css + '</style>', 1)
 
+    # Make the purpose and jurisdiction unambiguous without changing the overall layout.
+    text = text.replace('<section id="candidates"><h1>Meet the candidates</h1>', '<section id="candidates"><div class="eyebrow">2026 Burlington, Ontario mayoral election</div><h1>Meet the mayoral candidates</h1><p class="section-intro">An independent, plain-language guide to who is running for Mayor of Burlington, what they have said, and what public records show.</p>', 1)
+
+    # Add a persistent independence notice above the methodology section.
+    if 'This is an independent civic project created by a Burlington resident.' not in text:
+        text = text.replace(
+            '<section id="method">',
+            '<div class="site-independent-note"><strong>About this guide:</strong> This is an independent civic project created by a Burlington resident. It is not affiliated with the City of Burlington, Halton Region, any candidate or campaign. Information can change and errors are possible, so important voting details should be confirmed with official sources. <a href="help.html">Corrections and feedback</a> are welcome.</div>\n<section id="method">',
+            1,
+        )
+
     text = text.replace(
         '"New to elected politics in Canada."',
         '"Not currently a member of Burlington council."',
@@ -69,6 +99,8 @@ def polish_index(path: Path) -> None:
         '"why":"Your property-tax bill combines charges from Burlington, Halton Region and education. Burlington’s share pays for local services, staff, roads and facilities. Costs change with wages, construction prices, service levels and new spending. The mayor proposes a budget; council can change it and votes on the final version."',
     )
 
+    text = add_shared_assets(text)
+    text = add_legal_footer(text)
     path.write_text(text, encoding="utf-8")
 
 
@@ -85,6 +117,8 @@ def polish_h2h(path: Path) -> None:
             '@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}\n</style>',
             1,
         )
+    text = add_shared_assets(text)
+    text = add_legal_footer(text)
     path.write_text(text, encoding="utf-8")
 
 
