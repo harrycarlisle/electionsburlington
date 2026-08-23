@@ -44,11 +44,13 @@
 
   function ensureExtraStyles() {
     const styles = [
-      ['dates-extra.css?v=20260823b', 'electionDates'],
-      ['header-controls.css?v=20260823a', 'headerControls']
+      ['dates-extra.css?v=20260823c', 'electionDates'],
+      ['header-controls.css?v=20260823b', 'headerControls'],
+      ['polish-v2.css?v=20260823a', 'polishV2']
     ];
     styles.forEach(([href, key]) => {
-      if (document.querySelector(`link[data-${key.replace(/[A-Z]/g, m => '-' + m.toLowerCase())}]`)) return;
+      const dataName = key.replace(/[A-Z]/g, m => '-' + m.toLowerCase());
+      if (document.querySelector(`link[data-${dataName}]`)) return;
       const link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = href;
@@ -74,6 +76,24 @@
         <a class="menu-support-link" role="listitem" href="help.html">Help</a>
         <a class="menu-support-link" role="listitem" href="https://github.com/harrycarlisle/electionsburlington/issues/new" target="_blank" rel="noopener">Give feedback <span class="sr-only">(opens in a new tab)</span></a>
       </div>`;
+  }
+
+  function prepareHeaderForMenu() {
+    const headerInner = document.querySelector('.header-inner');
+    if (!headerInner || document.getElementById('menuBtn')) return;
+    headerInner.querySelector('.back')?.remove();
+    const nav = document.createElement('nav');
+    nav.className = 'nav';
+    nav.id = 'mainNav';
+    nav.setAttribute('aria-label', 'Primary');
+    const menu = document.createElement('button');
+    menu.type = 'button';
+    menu.className = 'menu';
+    menu.id = 'menuBtn';
+    menu.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-controls', 'mainNav');
+    menu.textContent = 'Menu';
+    headerInner.append(nav, menu);
   }
 
   function enhanceMenu() {
@@ -138,17 +158,12 @@
     document.body.classList.add('landing-home');
     candidates.querySelector(':scope > .eyebrow')?.remove();
     candidates.querySelector(':scope > .section-intro')?.remove();
+    candidates.querySelector(':scope > .section-deck')?.remove();
     const originalHeading = candidates.querySelector(':scope > h1');
     if (originalHeading) {
       const h2 = document.createElement('h2');
       h2.textContent = 'Meet the candidates';
       originalHeading.replaceWith(h2);
-    }
-    if (!candidates.querySelector(':scope > .section-deck')) {
-      const deck = document.createElement('p');
-      deck.className = 'section-deck';
-      deck.textContent = 'Choose a candidate to see their priorities, experience, questions worth asking, local discussion and original sources.';
-      candidates.querySelector(':scope > h2')?.insertAdjacentElement('afterend', deck);
     }
     const candidateCount = document.querySelectorAll('#candidateStrip .candidate-card').length || 5;
     const hero = document.createElement('section');
@@ -171,6 +186,40 @@
     const firstSpace = normalized.indexOf(' ');
     if (firstSpace === -1) return { month: '', day: normalized };
     return { month: normalized.slice(0, firstSpace).toUpperCase(), day: normalized.slice(firstSpace + 1) };
+  }
+
+  function localDay(year, monthIndex, day) {
+    return new Date(year, monthIndex, day, 12, 0, 0, 0);
+  }
+
+  function daysBetween(from, to) {
+    const a = localDay(from.getFullYear(), from.getMonth(), from.getDate());
+    return Math.round((to - a) / 86400000);
+  }
+
+  function countdownFor(title) {
+    const now = new Date();
+    const today = localDay(now.getFullYear(), now.getMonth(), now.getDate());
+    let target;
+    let end;
+
+    if (/debate/i.test(title)) target = localDay(2026, 8, 17);
+    else if (/online/i.test(title)) { target = localDay(2026, 9, 14); end = localDay(2026, 9, 23); }
+    else if (/advance/i.test(title)) {
+      const first = localDay(2026, 9, 17);
+      const second = localDay(2026, 9, 20);
+      if (today > first && today < second) target = second;
+      else if (today === first || today === second) return 'Today';
+      else if (today > second) return 'Finished';
+      else target = first;
+    } else target = localDay(2026, 9, 26);
+
+    if (end && today >= target && today <= end) return today.getTime() === end.getTime() ? 'Ends today' : `Ends in ${daysBetween(today, end)} days`;
+    const days = daysBetween(today, target);
+    if (days === 0) return 'Today';
+    if (days === 1) return 'Tomorrow';
+    if (days < 0) return 'Finished';
+    return `In ${days} days`;
   }
 
   function upgradeDates() {
@@ -199,10 +248,41 @@
       const title = card.querySelector('h3')?.textContent || '';
       const description = card.querySelector('p')?.textContent || '';
       const { month, day } = monthDay(date);
-      const kind = /debate/i.test(title) ? 'Public event' : /online/i.test(title) ? 'Online voting' : /advance/i.test(title) ? 'Advance voting' : 'Election day';
-      card.className = `card date-card date-stop${index === 0 ? ' is-next' : ''}`;
-      card.innerHTML = `<div class="date-stop-top"><div class="date-calendar" aria-hidden="true"><span class="date-calendar-month">${month}</span><span class="date-calendar-day">${day}</span></div><span class="date-status">${index === 0 ? 'Next' : 'Upcoming'}</span></div><div class="date-stop-body"><span class="date-kind">${kind}</span><h3>${title}</h3><p>${description}</p></div>`;
+      const status = countdownFor(title);
+      const active = !/Finished/i.test(status) && index === cards.findIndex((c) => !/Finished/i.test(countdownFor(c.querySelector('h3')?.textContent || '')));
+      card.className = `card date-card date-stop${active ? ' is-next' : ''}`;
+      card.innerHTML = `<div class="date-stop-top"><div class="date-calendar" aria-hidden="true"><span class="date-calendar-month">${month}</span><span class="date-calendar-day">${day}</span></div><span class="date-status">${status}</span></div><div class="date-stop-body"><h3>${title}</h3><p>${description}</p></div>`;
     });
+  }
+
+  function simplifyLabels() {
+    document.querySelectorAll('.meaning-detail summary,.plain summary').forEach((summary) => {
+      if (/what does that mean/i.test(summary.textContent)) summary.textContent = 'In plain English';
+    });
+  }
+
+  function simplifyMainPage() {
+    document.querySelector('.site-independent-note')?.remove();
+    const oldFooterNote = document.querySelector('.footer');
+    if (oldFooterNote) oldFooterNote.remove();
+  }
+
+  function polishHeadToHead() {
+    const matchGrid = document.querySelector('.match-grid');
+    if (!matchGrid) return;
+    document.body.classList.add('h2h-polished');
+    document.querySelector('.head p')?.remove();
+    document.querySelector('.back')?.remove();
+
+    const context = document.getElementById('context');
+    const issue = document.getElementById('issue');
+    const demoteContext = () => {
+      const heading = context?.querySelector('h2');
+      if (heading) heading.textContent = 'Context';
+      simplifyLabels();
+    };
+    demoteContext();
+    issue?.addEventListener('change', () => setTimeout(demoteContext, 0));
   }
 
   function improvePageStructure() {
@@ -227,8 +307,12 @@
     ensureExtraStyles();
     buildHero();
     upgradeDates();
+    simplifyMainPage();
+    polishHeadToHead();
     improvePageStructure();
+    prepareHeaderForMenu();
     enhanceMenu();
+    simplifyLabels();
     ensureFooter();
     setTheme(root.dataset.theme || preferredTheme(), false);
   });
