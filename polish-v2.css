@@ -1,10 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&display=swap');
+
 /* Final density/readability pass for the voter guide. */
 
-/* Cleaner typography: less heavy, less display-like in information-dense UI. */
-.candidate-body h3,.person-head b,.profile-head h2,.head h1,.person-select select,.title-name{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;letter-spacing:-.018em!important}
-.candidate-body h3{font-weight:760!important}
-.person-select select{font-weight:760!important}
-.section-title{font-weight:780!important}
+/* Cleaner typography: softer, thinner and more editorial than the original heavy UI type. */
+html,body,button,select,input,textarea{font-family:"DM Sans",Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+body{font-weight:400;letter-spacing:-.006em}
+.brand{font-weight:700!important;letter-spacing:-.025em!important}
+.brand small{font-weight:600!important;letter-spacing:.095em!important}
+h1,h2,h3,.candidate-body h3,.person-head b,.profile-head h2,.head h1,.person-select select,.title-name{font-family:"DM Sans",Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+h1,h2{font-weight:680!important;letter-spacing:-.032em!important}
+.election-hero h1{font-weight:660!important;letter-spacing:-.045em!important}
+.election-hero p{font-weight:400!important;letter-spacing:-.012em!important}
+.hero-kicker,.eyebrow{font-weight:650!important;letter-spacing:.095em!important}
+.hero-button{font-weight:650!important}
+.hero-trust{font-weight:550!important}
+.candidate-body h3{font-weight:650!important;letter-spacing:-.022em!important}
+.candidate-body p,.issue-position,.profile-box ul,.conversation p{font-weight:400!important}
+.person-select select{font-weight:600!important}
+.section-title{font-weight:660!important}
+.menu-link,.menu-support-link{font-weight:600!important}
+.menu-panel-head{font-weight:650!important}
+.date-stop-body h3,.profile-box h3,.issue-context h3{font-weight:650!important}
 
 /* Keep all five candidate cards in one row on normal desktop widths. The old 3+2 wrap made the selected pointer point into another card. */
 @media (min-width:721px){
@@ -30,7 +46,7 @@
 #candidates>.section-deck{display:none!important}
 
 /* Reduce visual noise in explanations. */
-.meaning-detail summary,.plain summary{font-size:12.5px!important;font-weight:760!important}
+.meaning-detail summary,.plain summary{font-size:12.5px!important;font-weight:600!important}
 .site-independent-note{display:none!important}
 .footer{display:none!important}
 
@@ -38,16 +54,22 @@
 .hero-map-card{transform:none!important;border-radius:24px!important;background:linear-gradient(150deg,#eef4e9 0 58%,#cfe3f0 59% 100%)!important}
 .hero-map-grid{background-size:42px 42px!important;opacity:.7}
 .hero-water{height:38%!important;bottom:-13%!important;transform:rotate(-3deg)!important}
-.hero-place-dot{left:47%!important;top:49%!important}
+.hero-place-dot{left:47%!important;top:49%!important;animation:place-pulse 3.4s ease-in-out infinite}
 .hero-place-label{left:52%!important;top:43%!important}
 .hero-candidate-count{left:18px!important;top:18px!important}
 .hero-date-card{right:18px!important;top:18px!important}
 .hero-voting-note{left:18px!important;bottom:18px!important}
 
+/* Small ballot-box loop: thematic motion without turning the hero into an illustration. */
+.hero-map-card::after{content:"";position:absolute;right:24px;bottom:24px;width:92px;height:54px;border-radius:10px 10px 13px 13px;background:linear-gradient(to bottom,#194f79 0 14px,#123f68 14px 100%);box-shadow:0 12px 24px rgba(18,63,104,.18);z-index:5}
+.hero-map-card::before{content:"";position:absolute;right:48px;bottom:67px;width:43px;height:28px;border:1px solid rgba(19,63,104,.18);border-radius:4px;background:linear-gradient(#fff,#f7fafc);box-shadow:0 5px 12px rgba(18,63,104,.12);transform:translateY(-14px) rotate(-7deg);transform-origin:center;z-index:6;animation:ballot-drop 4.8s cubic-bezier(.45,.05,.28,1) infinite}
+@keyframes ballot-drop{0%,18%{opacity:0;transform:translateY(-18px) rotate(-7deg)}28%{opacity:1}52%{opacity:1;transform:translateY(13px) rotate(-2deg)}58%,78%{opacity:0;transform:translateY(22px) rotate(0deg)}100%{opacity:0;transform:translateY(-18px) rotate(-7deg)}}
+@keyframes place-pulse{0%,100%{box-shadow:0 4px 10px rgba(0,0,0,.17),0 0 0 0 rgba(217,62,59,.12)}50%{box-shadow:0 4px 10px rgba(0,0,0,.17),0 0 0 9px rgba(217,62,59,0)}}
+
 /* Head-to-head: issue first, people on the sides, comparison first. */
 body.h2h-polished main{padding-top:28px!important}
 body.h2h-polished .head{display:block!important;text-align:center;margin:0 0 18px!important}
-body.h2h-polished .head h1{font-size:clamp(31px,4vw,44px)!important;font-weight:780!important;margin:0!important}
+body.h2h-polished .head h1{font-size:clamp(31px,4vw,44px)!important;font-weight:660!important;margin:0!important}
 body.h2h-polished .head p{display:none!important}
 body.h2h-polished .match-grid{grid-template-columns:minmax(185px,240px) minmax(360px,1fr) minmax(185px,240px)!important;gap:14px!important}
 body.h2h-polished .center{display:flex;flex-direction:column;padding:18px 20px!important}
@@ -79,5 +101,16 @@ body.h2h-polished .method-link{margin-top:14px!important}
   body.h2h-polished .person-card.left{order:2!important}
   body.h2h-polished .person-card.right{order:3!important}
 }
+@media(max-width:800px){
+  .hero-map-card::after{right:18px;bottom:18px;width:80px;height:49px}
+  .hero-map-card::before{right:39px;bottom:57px;width:39px;height:25px}
+}
+@media(max-width:520px){
+  .hero-map-card::after,.hero-map-card::before{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-map-card::before,.hero-place-dot{animation:none!important}
+}
 
 html[data-theme="dark"] .hero-map-card{background:linear-gradient(150deg,#203124 0 58%,#193649 59% 100%)!important}
+html[data-theme="dark"] .hero-map-card::before{background:#edf4f8;border-color:#7894a9}
