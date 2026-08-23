@@ -51,6 +51,7 @@
     ensureStyle('candidate-cleanup.css?v=20260823b', 'candidate-cleanup');
     ensureStyle('branding-v3.css?v=20260823b', 'branding');
     ensureStyle('ux-v4.css?v=20260823a', 'ux-v4');
+    ensureStyle('ux-v5.css?v=20260823a', 'ux-v5');
   }
 
   function addSeo() {
@@ -110,7 +111,7 @@
       <div class="menu-separator" aria-hidden="true"></div>
       <div class="menu-support" role="list">
         <a class="menu-support-link" role="listitem" href="help.html"><span class="menu-support-icon">${icons.help}</span><span>Help</span></a>
-        <a class="menu-support-link" role="listitem" href="https://github.com/harrycarlisle/electionsburlington/issues/new" target="_blank" rel="noopener"><span class="menu-support-icon">${icons.feedback}</span><span>Give feedback</span><span class="sr-only">(opens in a new tab)</span></a>
+        <a class="menu-support-link" role="listitem" href="/feedback/"><span class="menu-support-icon">${icons.feedback}</span><span>Give feedback</span></a>
       </div>`;
   }
 
@@ -157,7 +158,7 @@
     const old=candidates.querySelector(':scope > h1'); if(old){const h=document.createElement('h2');h.textContent='Meet the candidates';old.replaceWith(h)}
     const people=candidateDataFromCards();
     const hero=document.createElement('section'); hero.className='election-hero'; hero.setAttribute('aria-labelledby','heroTitle');
-    hero.innerHTML=`<div class="hero-copy"><div class="hero-kicker"><span class="hero-kicker-dot" aria-hidden="true"></span>2026 Burlington mayoral election</div><h1 id="heroTitle">Burlington's mayoral election, explained.</h1><p>See who is running, what they want to change, and what the public record shows.</p><div class="hero-actions"><a class="hero-button hero-button-primary" href="#candidates">Meet the candidates</a><a class="hero-button hero-button-secondary" href="head-to-head.html">Compare candidates <span aria-hidden="true">→</span></a></div><div class="hero-trust"><span>Independent</span><span>Plain language</span><span>Sources linked</span></div></div><div class="hero-visual" aria-hidden="true"><div class="hero-map-card"><div class="hero-place-dot"></div><div class="hero-candidate-slide" id="heroCandidateSlide"></div><div class="hero-date-card"><span>Election day</span><strong>OCT 26</strong><small>2026</small></div><div class="hero-voting-note"><span>Voting starts</span><strong>Oct. 14</strong></div><div class="map-credit">Map © OpenStreetMap contributors</div></div></div>`;
+    hero.innerHTML=`<div class="hero-copy"><h1 id="heroTitle">Burlington's mayoral election, explained.</h1><div class="hero-actions"><a class="hero-button hero-button-primary" href="head-to-head.html">Compare candidates <span aria-hidden="true">→</span></a><a class="hero-button hero-button-secondary" href="#candidates">Browse candidates</a></div><div class="hero-trust"><span>Independent</span><span>No endorsements</span><span>Sources linked</span></div></div><div class="hero-visual" aria-hidden="true"><div class="hero-map-card"><div class="hero-place-dot"></div><div class="hero-candidate-slide" id="heroCandidateSlide"></div><div class="hero-date-card"><span>Election day</span><strong>OCT 26</strong><small>2026</small></div><div class="hero-voting-note"><span>Voting starts</span><strong>Oct. 14</strong></div><div class="map-credit">Map © OpenStreetMap contributors</div></div></div>`;
     main.insertBefore(hero,candidates);
     const slide=hero.querySelector('#heroCandidateSlide'); let i=0;
     const paint=()=>{if(!people.length)return;const p=people[i%people.length];slide.classList.add('is-changing');setTimeout(()=>{slide.innerHTML=p.img?`<img src="${p.img}" alt=""><span>${p.name}</span>`:`<span class="hero-candidate-initials">${p.initials}</span><span>${p.name}</span>`;slide.classList.remove('is-changing')},140)};
@@ -167,8 +168,9 @@
   function setupCandidateScrollSelection() {
     const strip=document.getElementById('candidateStrip'); if(!strip) return;
     let timer=null, internal=false;
+    const canScroll=()=>strip.scrollWidth>strip.clientWidth+6;
     const selectNearest=()=>{
-      if(innerWidth>720||internal) return;
+      if(!canScroll()||internal) return;
       const cards=[...strip.querySelectorAll('.candidate-card')]; if(!cards.length)return;
       const center=strip.getBoundingClientRect().left+strip.clientWidth/2;
       let best=cards[0],dist=Infinity; cards.forEach(c=>{const r=c.getBoundingClientRect();const d=Math.abs((r.left+r.width/2)-center);if(d<dist){dist=d;best=c}});
@@ -176,7 +178,7 @@
     };
     strip.addEventListener('scroll',()=>{clearTimeout(timer);timer=setTimeout(selectNearest,90)},{passive:true});
     strip.addEventListener('scrollend',selectNearest,{passive:true});
-    strip.querySelectorAll('.candidate-card').forEach(card=>card.addEventListener('click',()=>{if(innerWidth>720)return;requestAnimationFrame(()=>card.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}))}));
+    strip.querySelectorAll('.candidate-card').forEach(card=>card.addEventListener('click',()=>{if(!canScroll())return;requestAnimationFrame(()=>card.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}))}));
   }
 
   function upgradeDates() {
