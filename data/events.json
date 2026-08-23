@@ -1,0 +1,64 @@
+{
+  "updated": "2026-08-23T19:35:00-04:00",
+  "events": [
+    {
+      "date": "2026-09-17T18:30:00-04:00",
+      "end": "2026-09-17T21:00:00-04:00",
+      "displayDate": "Sept. 17",
+      "title": "Men’s Shed mayoral debate",
+      "detail": "Candidate forum starts at 6:30 p.m.; mayoral debate runs 7:30–9 p.m. at St. Christopher’s Church.",
+      "source": "Burlington Men’s Shed",
+      "url": "https://burlingtonsheds.ca/",
+      "kind": "debate"
+    },
+    {
+      "date": "2026-10-01T18:30:00-04:00",
+      "end": "2026-10-01T21:00:00-04:00",
+      "displayDate": "Oct. 1",
+      "title": "Focus Burlington mayoral debate",
+      "detail": "Meet ward candidates at 6:30 p.m.; mayoral debate starts at 7:05 p.m. at East Plains United Church.",
+      "source": "Focus Burlington",
+      "url": "https://www.focusburlington.ca/2026mayoraldebate/",
+      "kind": "debate"
+    },
+    {
+      "date": "2026-10-08T18:00:00-04:00",
+      "end": "2026-10-08T21:00:00-04:00",
+      "displayDate": "Oct. 8",
+      "title": "All-candidates event and mayoral debate",
+      "detail": "BurlingtonGreen and Safe Streets Halton host an all-candidates event and mayoral debate at the Art Gallery of Burlington, 6–9 p.m.",
+      "source": "BurlingtonGreen",
+      "url": "https://www.burlingtongreen.org/events/all-candidates-event-mayoral-debate/",
+      "kind": "debate"
+    },
+    {
+      "date": "2026-10-14T08:00:00-04:00",
+      "end": "2026-10-23T18:00:00-04:00",
+      "displayDate": "Oct. 14–23",
+      "title": "Online voting",
+      "detail": "Online voting opens Oct. 14 at 8 a.m. and closes Oct. 23 at 6 p.m.",
+      "source": "City of Burlington",
+      "url": "https://myvote.burlington.ca/for-voters/how-to-vote/",
+      "kind": "voting"
+    },
+    {
+      "date": "2026-10-17T10:00:00-04:00",
+      "displayDate": "Oct. 17 & 20",
+      "title": "Advance voting",
+      "detail": "In-person advance voting is available Oct. 17 and Oct. 20 at three citywide locations.",
+      "source": "City of Burlington",
+      "url": "https://myvote.burlington.ca/for-voters/voting-locations/",
+      "kind": "voting"
+    },
+    {
+      "date": "2026-10-26T10:00:00-04:00",
+      "end": "2026-10-26T20:00:00-04:00",
+      "displayDate": "Oct. 26",
+      "title": "Election Day",
+      "detail": "In-person voting runs from 10 a.m. to 8 p.m. at locations in your ward.",
+      "source": "City of Burlington",
+      "url": "https://myvote.burlington.ca/for-voters/how-to-vote/",
+      "kind": "election"
+    }
+  ]
+}
