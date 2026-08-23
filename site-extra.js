@@ -44,6 +44,13 @@
     document.head.appendChild(link);
   }
 
+  function ensureScript(src, key) {
+    if (document.querySelector(`script[data-feature="${key}"]`)) return;
+    const script = document.createElement('script');
+    script.src = src; script.defer = true; script.dataset.feature = key;
+    document.head.appendChild(script);
+  }
+
   function ensureExtraStyles() {
     ensureStyle('dates-extra.css?v=20260823d', 'dates');
     ensureStyle('header-controls.css?v=20260823c', 'header');
@@ -52,6 +59,7 @@
     ensureStyle('branding-v3.css?v=20260823b', 'branding');
     ensureStyle('ux-v4.css?v=20260823a', 'ux-v4');
     ensureStyle('ux-v5.css?v=20260823a', 'ux-v5');
+    ensureStyle('ux-v6.css?v=20260823a', 'ux-v6');
   }
 
   function addSeo() {
@@ -64,8 +72,8 @@
       ['og:type','website'],
       ['og:site_name','Burlington Election Guide'],
       ['og:locale','en_CA'],
-      ['og:title', document.title || '2026 Burlington Ontario Mayoral Election Guide'],
-      ['og:description','Independent, plain-language guide to the 2026 Burlington, Ontario mayoral election, candidates, issues, records and voting dates.'],
+      ['og:title', document.title || '2026 Burlington Ontario Municipal Election Guide'],
+      ['og:description','Independent, plain-language guide to Burlington, Ontario municipal election candidates, ward races, issues, records and voting dates.'],
       ['og:url', canonical.href],
       ['twitter:card','summary_large_image']
     ];
@@ -84,9 +92,9 @@
         '@type':'WebSite',
         name:'Burlington Election Guide',
         url:'https://electionsburlington.ca/',
-        description:'Independent guide to the 2026 Burlington, Ontario, Canada mayoral election.',
+        description:'Independent guide to the 2026 Burlington, Ontario, Canada municipal election.',
         inLanguage:'en-CA',
-        about:{'@type':'Thing',name:'2026 Burlington Ontario mayoral election'}
+        about:{'@type':'Thing',name:'2026 Burlington Ontario municipal election'}
       });
       document.head.appendChild(ld);
     }
@@ -100,13 +108,14 @@
   function buildDrawer(nav) {
     nav.classList.add('menu-panel');
     nav.innerHTML = `
-      <div class="menu-panel-head"><span>Explore the guide</span></div>
+      <div class="menu-panel-head"><span>Explore</span></div>
       <div class="menu-primary" role="list">
         <a class="menu-link" role="listitem" href="${homeLink('#candidates')}"><span>Candidates</span><span aria-hidden="true">›</span></a>
+        <a class="menu-link" role="listitem" href="ballot.html"><span>Your ballot</span><span aria-hidden="true">›</span></a>
         <a class="menu-link" role="listitem" href="${homeLink('#matters')}"><span>Issues</span><span aria-hidden="true">›</span></a>
-        <a class="menu-link" role="listitem" href="head-to-head.html"><span>Head-to-head</span><span aria-hidden="true">›</span></a>
+        <a class="menu-link" role="listitem" href="head-to-head.html"><span>Compare</span><span aria-hidden="true">›</span></a>
+        <a class="menu-link" role="listitem" href="updates.html"><span>Daily brief</span><span aria-hidden="true">›</span></a>
         <a class="menu-link" role="listitem" href="${homeLink('#dates')}"><span>Important dates</span><span aria-hidden="true">›</span></a>
-        <a class="menu-link" role="listitem" href="${homeLink('#method')}"><span>Sources & methodology</span><span aria-hidden="true">›</span></a>
       </div>
       <div class="menu-separator" aria-hidden="true"></div>
       <div class="menu-support" role="list">
@@ -158,7 +167,7 @@
     const old=candidates.querySelector(':scope > h1'); if(old){const h=document.createElement('h2');h.textContent='Meet the candidates';old.replaceWith(h)}
     const people=candidateDataFromCards();
     const hero=document.createElement('section'); hero.className='election-hero'; hero.setAttribute('aria-labelledby','heroTitle');
-    hero.innerHTML=`<div class="hero-copy"><h1 id="heroTitle">Burlington's mayoral election, explained.</h1><div class="hero-actions"><a class="hero-button hero-button-primary" href="head-to-head.html">Compare candidates <span aria-hidden="true">→</span></a><a class="hero-button hero-button-secondary" href="#candidates">Browse candidates</a></div><div class="hero-trust"><span>Independent</span><span>No endorsements</span><span>Sources linked</span></div></div><div class="hero-visual" aria-hidden="true"><div class="hero-map-card"><div class="hero-place-dot"></div><div class="hero-candidate-slide" id="heroCandidateSlide"></div><div class="hero-date-card"><span>Election day</span><strong>OCT 26</strong><small>2026</small></div><div class="hero-voting-note"><span>Voting starts</span><strong>Oct. 14</strong></div><div class="map-credit">Map © OpenStreetMap contributors</div></div></div>`;
+    hero.innerHTML=`<div class="hero-copy"><h1 id="heroTitle">Burlington's municipal election, explained.</h1><div class="hero-actions"><a class="hero-button hero-button-primary" href="head-to-head.html">Compare mayoral candidates <span aria-hidden="true">→</span></a><a class="hero-button hero-button-secondary" href="ballot.html">See your ballot</a></div><div class="hero-trust"><span>Independent</span><span>No endorsements</span><span>Sources linked</span></div></div><div class="hero-visual" aria-hidden="true"><div class="hero-map-card"><div class="hero-place-dot"></div><div class="hero-candidate-slide" id="heroCandidateSlide"></div><div class="hero-date-card"><span>Election day</span><strong>OCT 26</strong><small>2026</small></div><div class="hero-voting-note"><span>Voting starts</span><strong>Oct. 14</strong></div><div class="map-credit">Map © OpenStreetMap contributors</div></div></div>`;
     main.insertBefore(hero,candidates);
     const slide=hero.querySelector('#heroCandidateSlide'); let i=0;
     const paint=()=>{if(!people.length)return;const p=people[i%people.length];slide.classList.add('is-changing');setTimeout(()=>{slide.innerHTML=p.img?`<img src="${p.img}" alt=""><span>${p.name}</span>`:`<span class="hero-candidate-initials">${p.initials}</span><span>${p.name}</span>`;slide.classList.remove('is-changing')},140)};
@@ -200,6 +209,6 @@
 
   setTheme(preferredTheme(),false);
   document.addEventListener('DOMContentLoaded',()=>{
-    ensureExtraStyles(); addSeo(); buildHero(); upgradeDates(); simplifyMainPage(); polishHeadToHead(); improvePageStructure(); prepareHeaderForMenu(); enhanceMenu(); setupCandidateScrollSelection(); ensureFooter(); setTheme(root.dataset.theme||preferredTheme(),false);
+    ensureExtraStyles(); ensureScript('features-v2.js?v=20260823a','features-v2'); addSeo(); buildHero(); upgradeDates(); simplifyMainPage(); polishHeadToHead(); improvePageStructure(); prepareHeaderForMenu(); enhanceMenu(); setupCandidateScrollSelection(); ensureFooter(); setTheme(root.dataset.theme||preferredTheme(),false);
   });
 })();
