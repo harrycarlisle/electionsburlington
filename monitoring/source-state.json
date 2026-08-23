@@ -1,0 +1,18 @@
+{
+  "Meed Ward campaign": {
+    "url": "https://votemarianne.ca/",
+    "sha256": "4852accb4630fe393cb8c1a2252aeb9370d8bff82ca2f0ebaac076d9cbd20b66"
+  },
+  "Lisa Kearns campaign": {
+    "url": "https://lisakearns.ca/",
+    "sha256": "6024edba4146a8e6a278dd20007a94150fe6ce25d580daa1ad421779b7f7047f"
+  },
+  "Rory Nisan campaign": {
+    "url": "https://rorynisan.ca/",
+    "sha256": "43900c8861f16f459e61ce5778714084950985ad1c5e71ce1f3fa8546b5b1b98"
+  },
+  "Official candidate list": {
+    "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/",
+    "sha256": "fe1d2e4ef6ef7a2ff88d4ee4a6fdcbe8e30e1ba10df6ac56de3937da5180c6a1"
+  }
+}
