@@ -3,25 +3,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Burlington Election Updates | Daily Brief</title>
-<meta name="description" content="Daily source-linked updates on Burlington, Ontario municipal politics and the 2026 election, summarized in plain language.">
+<title>Burlington Politics & City Hall Updates | Burlington in 30 Seconds</title>
+<meta name="description" content="A daily 30-second briefing on Burlington, Ontario politics, City Hall, council decisions, development, transit, housing, taxes and elections, with links to original sources.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://electionsburlington.ca/updates.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Burlington Election Guide">
+<meta property="og:locale" content="en_CA">
+<meta property="og:title" content="Burlington in 30 Seconds | Burlington Politics & City Hall Updates">
+<meta property="og:description" content="The biggest Burlington political and civic changes, summarized in about 30 seconds with original sources linked.">
+<meta property="og:url" content="https://electionsburlington.ca/updates.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Burlington in 30 Seconds">
+<meta name="twitter:description" content="Daily Burlington politics and City Hall updates, cut down and source-linked.">
 <link rel="stylesheet" href="site-extra.css">
 <link rel="stylesheet" href="ux-v6.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "name":"Burlington in 30 Seconds",
+  "headline":"Burlington Politics and City Hall Updates",
+  "description":"A daily source-linked briefing on Burlington, Ontario politics, City Hall, council decisions, development, transit, housing, taxes and elections.",
+  "url":"https://electionsburlington.ca/updates.html",
+  "inLanguage":"en-CA",
+  "about":[
+    {"@type":"Place","name":"Burlington, Ontario, Canada"},
+    {"@type":"Thing","name":"Burlington municipal politics"},
+    {"@type":"GovernmentOrganization","name":"City of Burlington"}
+  ],
+  "isPartOf":{"@type":"WebSite","name":"Burlington Election Guide","url":"https://electionsburlington.ca/"}
+}
+</script>
 <script src="site-extra.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="banner"><div class="wrap">Voting starts Oct. 14 &nbsp;·&nbsp; Election Day Oct. 26</div></div>
 <header class="header"><div class="wrap header-inner"><a class="brand" href="index.html">Burlington<small>Election Guide</small></a><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
-<main id="main" class="content-shell">
-<div class="daily-brief-kicker">Updated daily</div>
+<main id="main" class="content-shell updates-page">
+<div class="daily-brief-kicker">Updated throughout the day</div>
 <h1>Burlington in 30 seconds</h1>
-<p class="content-lead">The important municipal and election changes, cut down to what happened and why it matters. Each item links to the original source.</p>
-<div class="update-list" id="updatesList"></div>
-<p class="content-lead" style="font-size:13px;margin-top:24px">This is not polling or an endorsement feed. Candidate claims, official records and reporting should remain labelled separately. If an update changes a candidate's stated position or verified record, the candidate guide can be updated with the source attached.</p>
+<p class="content-lead">The biggest changes in Burlington politics and City Hall, cut down to what happened and what you need to know.</p>
+<div class="update-list" id="updatesList" aria-live="polite"></div>
 </main>
 <script>
-(async()=>{const data=await fetch('data/daily-brief.json',{cache:'no-store'}).then(r=>r.json());const out=document.getElementById('updatesList');out.innerHTML=(data.items||[]).map(i=>`<article class="update-item"><div class="update-item-top"><span class="brief-tag">${i.tag}</span><time>${new Date(i.date+'T12:00:00').toLocaleDateString('en-CA',{month:'short',day:'numeric',year:'numeric'})}</time></div><h2>${i.headline}</h2><p>${i.summary}</p><p class="why">Why it matters: ${i.why}</p><a href="${i.url}" target="_blank" rel="noopener">${i.source} ↗</a></article>`).join('')})();
+(async()=>{
+  const data=await fetch('data/daily-brief.json',{cache:'no-store'}).then(r=>r.json());
+  const out=document.getElementById('updatesList');
+  const action=i=>i.mediaType==='video'?`Watch${i.source?` on ${i.source}`:''} ↗`:i.sourceType==='official'?'Official source ↗':`Read${i.source?` on ${i.source}`:''} ↗`;
+  const why=i=>Number(i.importance||0)>=3&&i.why?`<p class="why"><strong>Why it matters:</strong> ${i.why}</p>`:'';
+  out.innerHTML=(data.items||[]).map(i=>`<article class="update-item">${i.image?`<img class="update-image" src="${i.image}" alt="" loading="lazy">`:''}<div class="update-item-top"><span class="brief-tag">${i.tag||'Burlington'}</span><time datetime="${i.date}">${new Date(i.date+'T12:00:00').toLocaleDateString('en-CA',{month:'short',day:'numeric',year:'numeric'})}</time></div><h2>${i.headline}</h2><p>${i.summary}</p>${why(i)}<a href="${i.url}" target="_blank" rel="noopener">${action(i)}</a></article>`).join('');
+  const itemList={"@context":"https://schema.org","@type":"ItemList","name":"Latest Burlington politics and City Hall updates","itemListElement":(data.items||[]).map((i,n)=>({"@type":"ListItem","position":n+1,"url":i.url,"name":i.headline}))};
+  const ld=document.createElement('script');ld.type='application/ld+json';ld.textContent=JSON.stringify(itemList);document.head.appendChild(ld);
+})();
 </script>
 </body>
 </html>
