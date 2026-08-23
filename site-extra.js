@@ -46,7 +46,9 @@
     const styles = [
       ['dates-extra.css?v=20260823c', 'electionDates'],
       ['header-controls.css?v=20260823b', 'headerControls'],
-      ['polish-v2.css?v=20260823a', 'polishV2']
+      ['polish-v2.css?v=20260823a', 'polishV2'],
+      ['candidate-cleanup.css?v=20260823a', 'candidateCleanup'],
+      ['branding-v3.css?v=20260823a', 'brandingV3']
     ];
     styles.forEach(([href, key]) => {
       const dataName = key.replace(/[A-Z]/g, m => '-' + m.toLowerCase());
@@ -177,7 +179,17 @@
         <div class="hero-actions"><a class="hero-button hero-button-primary" href="#candidates">Meet the candidates</a><a class="hero-button hero-button-secondary" href="head-to-head.html">Compare candidates <span aria-hidden="true">→</span></a></div>
         <div class="hero-trust" aria-label="About this guide"><span>Independent</span><span>Plain language</span><span>Sources linked</span></div>
       </div>
-      <div class="hero-visual" aria-hidden="true"><div class="hero-map-card"><div class="hero-map-grid"></div><div class="hero-water"></div><div class="hero-place-dot"></div><div class="hero-place-label"><strong>Burlington</strong><span>Ontario</span></div><div class="hero-lake-label">Lake Ontario</div><div class="hero-candidate-count"><strong>${candidateCount}</strong><span>mayoral candidates</span></div><div class="hero-date-card"><span>Election day</span><strong>OCT 26</strong><small>2026</small></div><div class="hero-voting-note"><span>Voting starts</span><strong>Oct. 14</strong></div></div></div>`;
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-map-card">
+          <div class="hero-map-grid"></div><div class="hero-water"></div><div class="hero-place-dot"></div>
+          <div class="hero-place-label"><strong>Burlington</strong><span>Ontario</span></div>
+          <div class="hero-lake-label">Lake Ontario</div>
+          <div class="hero-candidate-count"><strong>${candidateCount}</strong><span>mayoral candidates</span></div>
+          <div class="hero-date-card"><span>Election day</span><strong>OCT 26</strong><small>2026</small></div>
+          <div class="hero-voting-note"><span>Voting starts</span><strong>Oct. 14</strong></div>
+          <div class="hero-ballot-box"><span class="hero-ballot"></span></div>
+        </div>
+      </div>`;
     main.insertBefore(hero, candidates);
   }
 
