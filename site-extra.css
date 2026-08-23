@@ -80,3 +80,5 @@ html[data-theme="dark"] .simple-page .button-link{background:#276fa6}
   :root{--line:#7790a4}
   .nav-action,.language-select,.policy-card{border-width:2px}
 }
+
+/* Shared styles are intentionally dependency-free so the guide remains usable if third-party services fail. */
