@@ -1,0 +1,78 @@
+/* Civic branding refinement: lighter, calmer, more editorial. */
+:root{--cream:#fbfaf6;--warm-line:#e7e2d8;--soft-blue:#eef6fb;--soft-blue-2:#f7fbfe;--accent-warm:#d99b2b}
+body{font-weight:400;letter-spacing:-.005em}
+.brand{font-weight:700!important;letter-spacing:-.015em!important}.brand small{font-weight:650!important}
+h1,h2,h3{font-weight:670!important;letter-spacing:-.03em!important}
+.section-title{font-weight:660!important}
+
+/* Hero: premium and restrained rather than dashboard-like. */
+.election-hero{min-height:520px!important;padding-top:68px!important;padding-bottom:72px!important;gap:72px!important}
+.election-hero::before{background:linear-gradient(135deg,#fcfbf7 0%,#f7f9fb 62%,#eef5fa 100%)!important}
+.election-hero::after{opacity:.55}
+.election-hero h1{font-size:clamp(46px,5.7vw,70px)!important;font-weight:650!important;line-height:1.01!important;letter-spacing:-.046em!important;max-width:700px!important}
+.election-hero p{font-size:clamp(17px,1.7vw,20px)!important;line-height:1.52!important;max-width:560px!important;color:#607386!important}
+.hero-kicker{font-weight:700!important;letter-spacing:.09em!important;color:#50738e!important}
+.hero-kicker-dot{background:var(--accent-warm)!important;box-shadow:0 0 0 5px rgba(217,155,43,.09)!important}
+.hero-actions{margin-top:27px!important}.hero-button{font-weight:650!important;border-radius:999px!important;padding-inline:20px!important;box-shadow:none!important}.hero-button-primary{background:#0f4772!important}.hero-button-secondary{background:rgba(255,255,255,.72)!important}
+.hero-trust{margin-top:20px!important;font-weight:600!important;color:#778897!important}.hero-trust span::before{background:#edf5ef!important;color:#47735a!important}
+.hero-map-card{max-width:450px!important;border-radius:30px!important;box-shadow:0 26px 60px rgba(30,65,90,.12)!important;border-color:#d9e1e6!important;background:linear-gradient(150deg,#f4f1e5 0 58%,#d9eaf3 59% 100%)!important}
+.hero-map-grid{opacity:.42!important;background-size:46px 46px!important}.hero-place-label,.hero-candidate-count,.hero-date-card,.hero-voting-note{box-shadow:0 8px 24px rgba(27,65,91,.09)!important}
+.hero-place-label{background:rgba(255,255,255,.88)!important}.hero-candidate-count{background:rgba(255,255,255,.88)!important}.hero-date-card{background:#164f78!important}.hero-voting-note{background:#fffaf0!important}
+
+/* One small custom moment: a ballot periodically drops into a box. */
+.hero-ballot-box{position:absolute;right:38px;bottom:42px;width:74px;height:55px;border:2px solid rgba(15,71,114,.55);border-radius:12px;background:rgba(255,255,255,.82);box-shadow:0 8px 20px rgba(30,65,90,.08)}
+.hero-ballot-box::before{content:"";position:absolute;left:16px;right:16px;top:9px;height:3px;border-radius:99px;background:rgba(15,71,114,.45)}
+.hero-ballot{position:absolute;left:50%;top:-34px;width:31px;height:24px;border:1px solid #d8c995;border-radius:4px;background:#fffaf0;transform:translateX(-50%) rotate(-4deg);animation:ballotDrop 6.2s cubic-bezier(.65,.05,.36,1) infinite;box-shadow:0 4px 10px rgba(62,55,28,.08)}
+.hero-ballot::before{content:"✓";position:absolute;left:8px;top:1px;color:#2f7655;font-size:14px;font-weight:700}
+.hero-place-dot{animation:pinPulse 3.8s ease-out infinite}
+@keyframes ballotDrop{0%,60%{transform:translate(-50%,-18px) rotate(-4deg);opacity:0}66%{opacity:1}76%{transform:translate(-50%,38px) rotate(2deg);opacity:1}82%,100%{transform:translate(-50%,42px) rotate(2deg);opacity:0}}
+@keyframes pinPulse{0%,55%,100%{box-shadow:0 4px 10px rgba(0,0,0,.14),0 0 0 0 rgba(217,62,59,.18)}70%{box-shadow:0 4px 10px rgba(0,0,0,.14),0 0 0 11px rgba(217,62,59,0)}}
+
+/* Candidates: images + one sentence. Less UI chrome. */
+.landing-home #candidates{padding-top:66px!important}
+#candidates>.section-title{margin-bottom:24px!important;font-size:clamp(31px,3.7vw,42px)!important}
+#candidateStrip{gap:14px!important}
+#candidateStrip .candidate-card{border-radius:22px!important;border-width:1px!important;border-color:#e3e8ed!important;box-shadow:0 8px 24px rgba(20,54,79,.055)!important;background:rgba(255,255,255,.94)!important}
+#candidateStrip .candidate-card[aria-pressed="true"]{border-color:#62a8d7!important;box-shadow:0 10px 28px rgba(31,98,145,.10)!important}
+#candidateStrip .candidate-photo,#candidateStrip .photo-placeholder{border-radius:21px 21px 0 0!important;height:172px!important}
+#candidateStrip .candidate-body{padding:15px 16px 18px!important;min-height:132px!important}
+#candidateStrip .candidate-body h3{font-size:18px!important;font-weight:660!important;line-height:1.08!important;letter-spacing:-.025em!important;margin-bottom:8px!important}
+#candidateStrip .candidate-body .focus-label{display:none!important}
+#candidateStrip .candidate-body p{font-size:13.5px!important;line-height:1.43!important;color:#526a7e!important;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+#candidateStrip .candidate-card:hover{transform:translateY(-3px)!important;box-shadow:0 14px 30px rgba(20,54,79,.09)!important}
+
+/* Selected candidate: the card + arrow already provide identity, so show only the useful content. */
+#profilePanel{margin-top:22px!important;padding:18px!important;border-radius:20px!important;box-shadow:0 7px 24px rgba(20,54,79,.05)!important}
+#profilePanel .profile-head{display:none!important}
+#profilePanel .profile-grid{margin-top:0!important;gap:12px!important}
+#profilePanel .profile-box{border-radius:15px!important;background:var(--soft-blue-2)!important;padding:16px!important}
+#profilePanel .profile-box h3{font-size:13px!important;font-weight:700!important;letter-spacing:.01em!important;margin-bottom:9px!important}
+#profilePanel .profile-box ul{font-size:13.5px!important;line-height:1.45!important}
+#profilePanel .profile-more{margin-top:12px!important;padding-top:12px!important}
+#profilePanel .profile-more summary{font-size:13px!important;font-weight:650!important}
+#profilePanel .source-links{margin-top:10px!important}
+#profilePanel .source-links a{font-size:12.5px!important;font-weight:600!important}
+
+/* Issues should feel like the actual tool, not another content card. */
+#matters{margin-top:64px!important}.matters{padding:28px!important;border-radius:24px!important;background:linear-gradient(180deg,#fff 0%,#fbfdff 100%)!important;box-shadow:0 15px 42px rgba(21,58,86,.065)!important}
+.matters-head{align-items:center!important;margin-bottom:22px!important}.matters-head h2{font-size:clamp(31px,3.9vw,44px)!important;font-weight:650!important}.matters .field{min-width:285px!important}.matters .select-wrap select{border-radius:999px!important;background:#f7fbfe!important;border-color:#c8dce9!important;padding:11px 42px 11px 16px!important;font-size:13.5px!important;font-weight:600!important}
+.issue-context{margin:0 0 18px!important;padding:0 0 15px!important;border:0!important;border-bottom:1px solid var(--line)!important;background:transparent!important;border-radius:0!important}.issue-context h3{font-size:13px!important;font-weight:700!important;margin-bottom:3px!important}.issue-context p{font-size:13px!important;color:var(--muted)!important;line-height:1.45!important;max-width:860px}.issue-context a{font-size:12px!important;margin-top:5px!important;font-weight:600!important}
+.issue-list{gap:10px!important}.issue-person{position:relative;border-radius:17px!important;border-color:#dfe7ed!important;padding:15px!important;background:#fff!important;box-shadow:0 4px 14px rgba(20,54,79,.035)}
+.issue-person .person-head{margin-bottom:12px!important}.issue-person .mini-photo,.issue-person .mini-placeholder{width:38px!important;height:38px!important}.issue-person .person-head b{font-size:13px!important;font-weight:650!important}.issue-position{font-size:13px!important;line-height:1.45!important;color:#455e72!important}.meaning-detail summary{font-size:12px!important;font-weight:650!important;color:#55728a!important}.meaning-detail p{font-size:12.5px!important;line-height:1.45!important}.h2h-link{margin-top:18px!important;border-radius:999px!important;padding:10px 16px!important;font-size:13px!important;font-weight:650!important;background:#0f4772!important}
+
+/* Keep the rest of the page quieter than the comparison tool. */
+.dates-upgraded .section-title{font-weight:650!important}.date-stop{box-shadow:0 6px 20px rgba(20,54,79,.045)!important}.date-stop-body h3{font-weight:650!important}.method{box-shadow:none!important}.site-legal-footer{font-weight:400!important}
+
+html[data-theme="dark"] .election-hero::before{background:linear-gradient(135deg,#0d171f 0%,#101c25 62%,#122633 100%)!important}
+html[data-theme="dark"] .election-hero p{color:#b4c4d0!important}
+html[data-theme="dark"] .hero-map-card{background:linear-gradient(150deg,#232d25 0 58%,#1b3544 59% 100%)!important;border-color:#334958!important}
+html[data-theme="dark"] #candidateStrip .candidate-card{background:var(--card)!important;border-color:var(--line)!important}
+html[data-theme="dark"] #candidateStrip .candidate-body p{color:#b7c8d5!important}
+html[data-theme="dark"] #profilePanel .profile-box{background:#12232f!important}
+html[data-theme="dark"] .matters{background:linear-gradient(180deg,#111f2a 0%,#0f1c25 100%)!important}
+html[data-theme="dark"] .issue-person{background:#12232f!important;border-color:#29404f!important}
+
+@media(max-width:1020px) and (min-width:721px){#candidateStrip .candidate-photo,#candidateStrip .photo-placeholder{height:140px!important}#candidateStrip .candidate-body{padding:12px 12px 15px!important;min-height:122px!important}#candidateStrip .candidate-body h3{font-size:16px!important}#candidateStrip .candidate-body p{font-size:12px!important}.election-hero{gap:38px!important}.hero-map-card{max-width:390px!important}.hero-ballot-box{display:none}}
+@media(max-width:800px){.election-hero{padding-top:52px!important;padding-bottom:58px!important;gap:30px!important}.hero-visual{opacity:.92}.matters{padding:22px!important}.issue-list{gap:12px!important}}
+@media(max-width:720px){.election-hero h1{font-size:45px!important}.election-hero p{font-size:17px!important}.hero-trust{gap:10px!important}.hero-map-card{border-radius:22px!important}.hero-ballot-box{display:none}#candidateStrip .candidate-card{border-radius:18px!important;min-width:225px!important}#candidateStrip .candidate-photo,#candidateStrip .photo-placeholder{height:158px!important;border-radius:17px 17px 0 0!important}#candidateStrip .candidate-body{padding:13px 14px 16px!important}.matters-head{align-items:flex-start!important}.matters .field{min-width:0!important}}
+@media(prefers-reduced-motion:reduce){.hero-ballot,.hero-place-dot{animation:none!important}}
