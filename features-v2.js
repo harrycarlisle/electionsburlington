@@ -9,7 +9,7 @@
     if(document.querySelector('link[data-style="brief-v3"]')) return;
     const link=document.createElement('link');
     link.rel='stylesheet';
-    link.href='features-v3.css?v=20260823c';
+    link.href='features-v3.css?v=20260823d';
     link.dataset.style='brief-v3';
     document.head.appendChild(link);
   }
@@ -115,6 +115,14 @@
     document.querySelectorAll('.meaning-detail summary,.plain summary').forEach(s=>{
       if(/in plain english|what does that mean/i.test(s.textContent)) s.textContent='What this means';
     });
+    const menu=document.querySelector('.menu-icon-button');
+    if(menu&&!menu.dataset.mobileTopBound){
+      menu.dataset.mobileTopBound='1';
+      menu.addEventListener('click',()=>{
+        const header=document.querySelector('.header');
+        if(header) document.documentElement.style.setProperty('--mobile-menu-top',`${Math.ceil(header.getBoundingClientRect().bottom)}px`);
+      });
+    }
   }
 
   function neutralizeProfileCopy(){
@@ -126,7 +134,9 @@
         const redundant=[...firstBox.querySelectorAll('li')].find(li=>/official candidate list confirms (he|she|they) (is|are) running for mayor/i.test(li.textContent));
         redundant?.remove();
         const h=firstBox.querySelector('h3');
-        if(h && /what they want to do/i.test(h.textContent) && /current priorities will be added|no detailed.*platform/i.test(firstBox.textContent)) h.textContent='What we know so far';
+        if(h && /what they want to do/i.test(h.textContent)){
+          h.textContent=/current priorities will be added|no detailed.*platform/i.test(firstBox.textContent)?'What we know so far':'Their argument';
+        }
       }
       const walker=document.createTreeWalker(panel,NodeFilter.SHOW_TEXT);
       const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
@@ -136,12 +146,44 @@
           .replace(/\bShe is\b/g,'They are').replace(/\bshe is\b/g,'they are')
           .replace(/\bHe previously\b/g,'They previously').replace(/\bhe previously\b/g,'they previously')
           .replace(/\bShe previously\b/g,'They previously').replace(/\bshe previously\b/g,'they previously')
+          .replace(/\bHis campaign\b/g,'The campaign').replace(/\bhis campaign\b/g,'the campaign')
+          .replace(/\bHer campaign\b/g,'The campaign').replace(/\bher campaign\b/g,'the campaign')
           .replace(/\bhis\b/g,'their').replace(/\bHis\b/g,'Their')
           .replace(/\bher\b/g,'their').replace(/\bHer\b/g,'Their');
       });
     };
     clean();
     new MutationObserver(()=>clean()).observe(panel,{childList:true,subtree:true});
+  }
+
+  function eventStatus(start,end){
+    const now=new Date(), s=new Date(start), e=end?new Date(end):null;
+    const today=new Date(now.getFullYear(),now.getMonth(),now.getDate(),12);
+    const startDay=new Date(s.getFullYear(),s.getMonth(),s.getDate(),12);
+    const days=Math.round((startDay-today)/86400000);
+    if(e&&now>=s&&now<=e) return 'Happening now';
+    if(now>(e||s)) return 'Finished';
+    if(days===0) return 'Today';
+    if(days===1) return 'Tomorrow';
+    return `In ${days} days`;
+  }
+
+  async function syncImportantDates(){
+    const section=document.getElementById('dates');
+    if(!section) return;
+    try{
+      const data=await getJson('data/events.json');
+      const grid=section.querySelector('.date-grid');
+      if(!grid) return;
+      const events=(data.events||[]);
+      grid.classList.add('date-timeline');
+      grid.innerHTML=events.map(event=>{
+        const [month,...dayParts]=event.displayDate.split(' ');
+        const status=eventStatus(event.date,event.end);
+        return `<article class="card date-card date-stop ${/Finished/i.test(status)?'is-past':''}"><div class="date-stop-top"><div class="date-calendar" aria-hidden="true"><span class="date-calendar-month">${month.toUpperCase().replace('.','')}</span><span class="date-calendar-day">${dayParts.join(' ')}</span></div><span class="date-status">${status}</span></div><div class="date-stop-body"><h3>${event.title}</h3><p>${event.detail}</p><a class="date-source" href="${event.url}" target="_blank" rel="noopener">${event.source} ↗</a></div></article>`;
+      }).join('');
+      simplifyDateCountdowns();
+    }catch(e){console.warn('Election events unavailable',e)}
   }
 
   function simplifyDateCountdowns(){
@@ -176,7 +218,7 @@
     injectDailyBrief();
     injectBallotQuick();
     injectElectionResults();
-    setTimeout(simplifyDateCountdowns,250);
+    setTimeout(syncImportantDates,250);
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true}); else init();
 })();
