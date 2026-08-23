@@ -1,0 +1,55 @@
+/* Burlington in 30 seconds: compact briefing first, details on demand. */
+.daily-brief{max-width:1180px;margin:26px auto 52px;padding:0 22px}
+.brief-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 22px;border:1px solid #dfd8ca;border-radius:20px;background:#fffaf1;color:#1b2d3d;text-align:left;cursor:pointer;box-shadow:0 10px 28px rgba(37,50,61,.055)}
+.brief-toggle:hover{border-color:#cfc4b1}
+.brief-toggle-main{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.brief-toggle-title{font-size:21px;font-weight:720;letter-spacing:-.025em;color:#172331}
+.brief-live-dot{width:9px;height:9px;border-radius:50%;background:#4a973f;box-shadow:0 0 0 4px rgba(74,151,63,.08)}
+.brief-toggle-updated{font-size:12px;font-weight:760;letter-spacing:.08em;text-transform:uppercase;color:#4d8b43}
+.brief-toggle-sub{display:block;margin-top:4px;font-size:15px;color:#5e6e7a;font-weight:430}
+.brief-open-label{display:inline-flex;align-items:center;gap:5px;color:#3c7e36;font-size:15px;font-weight:720;white-space:nowrap}
+.brief-open-label::after{content:'+';font-size:19px;line-height:1}
+.daily-brief[open] .brief-open-label::after{content:'−'}
+.daily-brief[open] .brief-open-label{color:#315f2d}
+.brief-panel{padding-top:18px}
+.brief-feature{display:grid;grid-template-columns:1.08fr .92fr;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--card);box-shadow:0 14px 36px rgba(21,58,86,.07)}
+.brief-feature-visual{min-height:350px;background:#eaf1f5;display:grid;grid-template-columns:repeat(5,1fr);overflow:hidden}
+.brief-feature-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.brief-feature-placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#dce7ee,#edf3f7);font-size:13px;font-weight:700;color:#6a7d8d}
+.brief-feature-copy{padding:34px 34px 30px;display:flex;flex-direction:column;justify-content:center}
+.brief-tag{font-size:12px;font-weight:780;letter-spacing:.1em;text-transform:uppercase;color:#43813b;margin-bottom:10px}
+.brief-feature h3{font-size:clamp(28px,3vw,40px);line-height:1.04;letter-spacing:-.04em;margin:0 0 14px;color:#152536}
+.brief-summary{font-size:16px;line-height:1.5;color:#4f6374;margin:0 0 14px}
+.brief-why{font-size:14px;line-height:1.45;color:#334a5d;margin:0 0 18px}
+.brief-why strong{color:#172d42}
+.brief-source{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:#0d4f7e;text-decoration:none}
+.brief-source:hover{text-decoration:underline}
+.brief-more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.brief-mini{display:block;padding:18px;border:1px solid var(--line);border-radius:17px;background:var(--card);text-decoration:none;box-shadow:0 5px 18px rgba(21,58,86,.035)}
+.brief-mini:hover{border-color:#c0d1dd;transform:translateY(-1px)}
+.brief-mini .brief-tag{margin-bottom:7px}
+.brief-mini h3{margin:0 0 8px;font-size:18px;line-height:1.18;letter-spacing:-.025em;color:#173451}
+.brief-mini p{margin:0;color:#5a6f81;font-size:13.5px;line-height:1.45}
+.brief-footer{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:13px;padding:0 3px;color:#6a7c8b;font-size:12.5px}
+.brief-footer a{color:#184f78;font-weight:700;text-decoration:none}.brief-footer a:hover{text-decoration:underline}
+html[data-theme="dark"] .brief-toggle{background:#151912;border-color:#2d3829;color:#eaf2e8}
+html[data-theme="dark"] .brief-toggle-title{color:#eef5ed}
+html[data-theme="dark"] .brief-toggle-sub{color:#b8c7b8}
+html[data-theme="dark"] .brief-feature h3{color:#eef4f7}
+html[data-theme="dark"] .brief-summary,html[data-theme="dark"] .brief-mini p{color:#b9c9d5}
+html[data-theme="dark"] .brief-why strong{color:#edf3f7}
+html[data-theme="dark"] .brief-mini h3{color:#e8f1f7}
+@media(max-width:780px){
+ .daily-brief{margin:18px auto 38px;padding:0 18px}
+ .brief-toggle{padding:17px 18px;border-radius:17px;align-items:flex-start}
+ .brief-toggle-main{gap:8px}.brief-toggle-title{font-size:18px}.brief-toggle-sub{font-size:14px;line-height:1.35}
+ .brief-open-label{font-size:14px;padding-top:2px}
+ .brief-feature{grid-template-columns:1fr;border-radius:19px}
+ .brief-feature-visual{min-height:250px;max-height:290px}
+ .brief-feature-copy{padding:24px 22px 23px}
+ .brief-feature h3{font-size:30px}
+ .brief-more{grid-template-columns:1fr}
+ .brief-footer{display:block}.brief-footer a{display:inline-block;margin-top:6px}
+}
+@media(max-width:480px){.brief-feature-visual{min-height:215px}.brief-toggle-updated{font-size:10px}.brief-open-label{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.brief-mini{transition:none!important}.brief-mini:hover{transform:none}}
