@@ -25,7 +25,7 @@
       return;
     }
 
-    const subject = `Burlington Election Guide: ${type}`;
+    const subject = `Burlington News: ${type}`;
     const body = [
       `Feedback type: ${type}`,
       email ? `Reply email: ${email}` : 'Reply email: not provided',
