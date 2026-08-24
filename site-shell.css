@@ -52,7 +52,8 @@ html[data-theme="dark"] .publication-shell .site-footer-columns nav strong,html[
 .publication-shell .header{position:sticky!important;top:var(--news-banner-h,0)!important;z-index:110!important;background:rgba(255,255,255,.98)!important;border-bottom:1px solid var(--line)!important;box-shadow:none!important;backdrop-filter:blur(12px)}
 .publication-shell .header .header-inner{min-height:86px!important;padding-block:0!important;gap:28px!important}
 .publication-shell .news-brand{gap:9px!important;color:var(--navy)!important}
-.publication-shell .news-brand-logo{width:36px!important;height:42px!important;max-width:36px!important;flex:0 0 36px!important}
+.publication-shell .news-brand-logo{width:44px!important;height:48px!important;max-width:44px!important;flex:0 0 44px!important;object-fit:contain!important}
+.publication-shell .brand-mark-only{min-width:44px!important}
 .publication-shell .news-brand-copy strong{font:700 23px/.92 var(--publication-serif)!important;letter-spacing:-.04em!important;color:var(--navy)!important}
 .publication-shell .news-brand-copy em{color:var(--accent)!important}
 .publication-shell .desktop-primary-nav{align-self:stretch!important;gap:34px!important;margin-left:auto!important}
@@ -83,7 +84,7 @@ html[data-theme="dark"] .publication-shell .site-footer-columns nav strong,html[
 .publication-shell #candidateStrip .candidate-card{overflow:hidden!important;border:1px solid var(--line)!important;background:#fff!important}
 .publication-shell .site-legal-footer{margin-top:64px!important;background:var(--soft)!important;color:var(--ink)!important;border-top:1px solid var(--line)!important}
 .publication-shell .site-legal-footer-inner{padding:38px 0 42px!important}
-.publication-shell .footer-news-brand .news-brand-mark{background-image:url('/logo-mark.svg?v=20260824z3')!important}
+.publication-shell .footer-news-brand .news-brand-mark{background-image:url('/logo-mark.png?v=20260824z4')!important}
 .publication-shell .footer-news-brand>div>strong{color:var(--navy)!important;font-size:22px!important;letter-spacing:-.04em!important}
 .publication-shell .footer-news-brand p,.publication-shell .site-legal-footer a{color:var(--muted)!important}
 .publication-shell .site-footer-columns nav strong{color:var(--navy)!important}
@@ -92,9 +93,29 @@ html[data-theme="dark"] .publication-shell .site-footer-columns nav strong,html[
 @media(max-width:720px){
   :root{--news-banner-h:32px!important}
   .publication-shell .wrap,.publication-shell .header-inner,.publication-shell .site-legal-footer-inner,.publication-shell :is(.content-shell,.method-shell,.record-shell,.updates-page,.puzzles-main,.sports-shell,.traffic-shell,.ward-shell,.explore-main,.feedback-main,.beginner){width:calc(100% - 32px)!important}
-  .publication-shell .header .header-inner{position:relative!important;min-height:116px!important;padding:0 0 54px!important;gap:8px!important}.publication-shell .news-brand-logo{width:31px!important;height:36px!important;max-width:31px!important;flex-basis:31px!important}.publication-shell .news-brand-copy strong{font-size:19px!important}
+  .publication-shell .header .header-inner{position:relative!important;min-height:116px!important;padding:0 0 54px!important;gap:8px!important}.publication-shell .news-brand-logo{width:35px!important;height:38px!important;max-width:35px!important;flex-basis:35px!important}.publication-shell .brand-mark-only{min-width:35px!important}
   .publication-shell .site-search-link{position:absolute!important;left:0!important;right:0!important;bottom:8px!important;width:auto!important;height:42px!important;padding:0 13px 0 16px!important;justify-content:space-between!important;border:1px solid var(--line)!important;background:transparent!important}.publication-shell .site-search-link span{position:static;width:auto;height:auto;overflow:hidden;clip:auto}.publication-shell .menu-icon-button{width:42px!important;height:42px!important}
   .publication-shell .menu-panel{top:var(--mobile-menu-top,98px)!important;right:0!important;width:100%!important;max-width:none!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;background:#fff!important;box-shadow:0 18px 42px rgba(8,30,47,.14)!important}
   .publication-shell.landing-home .election-hero{margin-top:18px!important;padding:28px 0 34px!important;border-top:1px solid var(--navy)!important}.publication-shell.landing-home .election-hero h1{font-size:clamp(40px,12vw,50px)!important}.publication-shell.landing-home #candidates{padding-top:28px!important}.publication-shell.landing-home #candidates>h2{font-size:30px!important}
   .publication-shell :is(.content-shell,.method-shell,.record-shell,.updates-page,.puzzles-main,.sports-shell,.traffic-shell,.ward-shell,.explore-main,.feedback-main,.beginner)>h1{font-size:clamp(38px,11vw,48px)!important}.publication-shell .site-legal-footer-inner{padding-block:32px!important}
 }
+
+/* Shared date, temperature and conditional alert */
+.publication-shell .publication-utility{border-bottom:1px dotted var(--line);background:var(--paper)}
+.publication-shell .publication-utility-inner{display:flex;align-items:center;justify-content:space-between;width:min(calc(100% - 40px),var(--publication-shell));min-height:34px;margin-inline:auto;color:var(--muted);font-size:10px}
+.publication-shell .publication-weather-tools,.publication-shell .publication-weather{display:inline-flex;align-items:center;gap:7px}
+.publication-shell .publication-weather svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7}
+.publication-shell [data-weather-alert-host]{display:inline-flex;align-items:center}
+.publication-shell .weather-alert{position:relative;display:inline-flex}
+.publication-shell .weather-alert-button{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 7px;border:1px solid #d84b45;border-radius:999px;background:#fff4f3;color:#a3221e;font:800 8px/1 var(--publication-sans);text-transform:capitalize;cursor:pointer}
+.publication-shell .weather-alert-button svg{width:13px;height:13px;fill:#d6413b;stroke:#fff;stroke-width:1.7}
+.publication-shell .weather-alert-popover{position:absolute;z-index:180;top:calc(100% + 7px);right:0;display:none;width:min(330px,calc(100vw - 24px));padding:12px 13px;border:1px solid #e2aaa7;border-radius:9px;background:#fff;color:var(--ink);box-shadow:0 18px 42px rgba(40,14,14,.2);font-size:10px;line-height:1.45}
+.publication-shell .weather-alert-popover strong,.publication-shell .weather-alert-popover time,.publication-shell .weather-alert-popover span,.publication-shell .weather-alert-popover a{display:block}
+.publication-shell .weather-alert-popover strong{color:#8e1d19;font-size:12px}.publication-shell .weather-alert-popover time{margin-top:2px;color:var(--muted);font-size:8px}.publication-shell .weather-alert-popover span{display:-webkit-box;overflow:hidden;margin-top:7px;-webkit-box-orient:vertical;-webkit-line-clamp:4}.publication-shell .weather-alert-popover a{margin-top:8px;color:var(--accent);font-weight:750}
+.publication-shell .weather-alert.is-open .weather-alert-popover{display:block}
+@media(hover:hover){.publication-shell .weather-alert:hover .weather-alert-popover,.publication-shell .weather-alert:focus-within .weather-alert-popover{display:block}}
+html[data-theme="dark"] .publication-shell .news-brand-logo,html[data-theme="dark"] .publication-shell .news-brand-mark{filter:brightness(0) invert(1)}
+html[data-theme="dark"] .publication-shell .publication-utility{background:var(--paper)}
+html[data-theme="dark"] .publication-shell .weather-alert-button{background:#341918}
+html[data-theme="dark"] .publication-shell .weather-alert-popover{background:#151b1e;color:var(--ink)}
+@media(max-width:720px){.publication-shell .publication-utility-inner{width:calc(100% - 32px);min-height:30px}.publication-shell .weather-alert-button{width:25px;padding:0;justify-content:center}.publication-shell .weather-alert-button>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.publication-shell .weather-alert-popover{position:fixed;top:40px;right:12px}.publication-shell .weather-alert-popover span{display:-webkit-box}}

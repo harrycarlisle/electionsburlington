@@ -128,6 +128,24 @@
       "url": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828"
     },
     {
+      "id": "cassiopeia-north-burlington",
+      "title": "Find Cassiopeia above north Burlington",
+      "copy": "Look northeast after dark for the five bright stars that form its tilted W shape.",
+      "image": "assets/explore/night-sky-mount-nemo.webp",
+      "imageAlt": "Burlington News illustration of a starry sky above the escarpment",
+      "illustration": true,
+      "url": "https://stellarium-web.org/"
+    },
+    {
+      "id": "moon-over-lake-ontario",
+      "title": "Watch moonlight cross Lake Ontario",
+      "copy": "Choose a public waterfront lookout and give your eyes ten minutes to adjust after sunset.",
+      "image": "assets/explore/moonlit-lake-ontario.webp",
+      "imageAlt": "Burlington News illustration of moonlight over Lake Ontario",
+      "illustration": true,
+      "url": "https://www.timeanddate.com/moon/canada/burlington"
+    },
+    {
       "id": "public-art-three",
       "title": "Find three pieces of public art downtown",
       "copy": "Choose three works you normally walk past and look long enough to notice one new detail in each.",

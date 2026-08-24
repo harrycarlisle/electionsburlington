@@ -6,12 +6,12 @@
   <title>Explore Burlington | Burlington News</title>
   <meta name="description" content="A verified Burlington events calendar, one idea for when you are bored, and a twelve-stop Burlington Passport saved on this device.">
   <link rel="canonical" href="https://burlingtonnews.ca/explore.html">
-  <link rel="icon" href="/favicon.svg?v=20260824z3">
-  <link rel="stylesheet" href="/site-extra.css?v=20260824z3">
-  <link rel="stylesheet" href="/site-bundle.css?v=20260824z3" data-style="site-bundle">
-  <link rel="stylesheet" href="/site-shell.css?v=20260824z3" data-style="site-shell">
-  <link rel="stylesheet" href="/explore.css?v=20260824z3">
-  <script src="/site-extra.js?v=20260824z3" defer></script>
+  <link rel="icon" href="/logo-mark.png?v=20260824z4">
+  <link rel="stylesheet" href="/site-extra.css?v=20260824z4">
+  <link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle">
+  <link rel="stylesheet" href="/site-shell.css?v=20260824z4" data-style="site-shell">
+  <link rel="stylesheet" href="/explore.css?v=20260824z4">
+  <script src="/site-extra.js?v=20260824z4" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -30,7 +30,7 @@
       <div class="explore-top-grid">
         <section class="calendar-card" aria-labelledby="calendarTitle">
           <div class="section-row">
-            <div><span class="eyebrow">Verified local calendar</span><h2 id="calendarTitle">This week</h2></div>
+            <div class="calendar-title"><span class="calendar-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v3M18 3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"/></svg></span><h2 id="calendarTitle">This week</h2></div>
             <label class="calendar-view" for="calendarView"><span class="sr-only">Calendar view</span><select id="calendarView"><option value="today">Today</option><option value="week" selected>This week</option><option value="month">This month</option></select><span aria-hidden="true">⌄</span></label>
           </div>
           <div class="week-strip" id="weekStrip" aria-label="Week of August 24, 2026"></div>
@@ -41,7 +41,6 @@
         </section>
 
         <aside class="bored-card" aria-labelledby="boredTitle">
-          <span class="eyebrow">One specific idea</span>
           <h2 id="boredTitle">If you’re bored</h2>
           <div id="boredIdea" aria-live="polite"></div>
           <button class="primary-button" id="pickAnother" type="button">Pick another</button>
@@ -58,13 +57,11 @@
 
     <section class="passport-panel" aria-labelledby="passportTitle">
       <div class="passport-head">
-        <div><span class="eyebrow">My Burlington</span><h2 id="passportTitle">Burlington Passport</h2></div>
-        <div class="passport-progress-copy"><strong id="passportCount">0 of 12 done</strong><span>Saved on this device</span></div>
-        <div class="passport-track" aria-hidden="true"><i id="passportProgress"></i></div>
-        <button class="info-button" id="passportInfo" type="button" aria-haspopup="dialog">About the passport <span aria-hidden="true">ⓘ</span></button>
+        <div><span class="eyebrow">My Burlington</span><div class="passport-title-row"><h2 id="passportTitle">Burlington Passport</h2><button class="info-button" id="passportInfo" type="button" aria-haspopup="dialog" aria-label="About Burlington Passport"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10v6M12 7.25h.01"/></svg></button></div></div>
+        <div class="passport-progress-block"><div class="passport-progress-copy"><strong id="passportCount">0 of 12 explored</strong><span>Progress stays on this device</span></div><div class="passport-track" aria-hidden="true"><i id="passportProgress"></i></div></div>
       </div>
       <div class="passport-layout">
-        <div class="passport-map" id="passportMap" aria-label="Simplified orientation map of Burlington passport stops"><span class="map-title">Burlington</span><span class="lake-label">Lake Ontario</span></div>
+        <div class="passport-map-wrap"><div class="passport-map" id="passportMap" aria-label="Orientation map of Burlington passport stops"></div><span class="map-help">Tap a number to jump to a stop</span></div>
         <div class="passport-rail-wrap">
           <div class="passport-rail" id="passportRail"></div>
           <button class="rail-next" id="passportNext" type="button" aria-label="Show more passport stops">›</button>
@@ -80,11 +77,10 @@
 
   <dialog class="explore-dialog passport-dialog" id="passportDialog">
     <button class="dialog-close" id="passportDialogClose" type="button" aria-label="Close">×</button>
-    <span class="eyebrow">Burlington Passport</span>
-    <h2>Twelve reasons to leave the house</h2>
-    <p>Save a stop for later or mark it done. Finish all twelve to reveal a bonus stop and a Burlington Explorer badge. Progress stays only in this browser.</p>
+    <h2>Your Burlington list</h2>
+    <p>Save places you want to visit and mark them explored when you go. Complete all twelve to reveal one extra stop. Everything stays in this browser.</p>
   </dialog>
 
-  <script src="/explore.js?v=20260824z3" defer></script>
+  <script src="/explore.js?v=20260824z4" defer></script>
 </body>
 </html>

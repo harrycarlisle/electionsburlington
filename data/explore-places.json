@@ -14,5 +14,5 @@
     {"id":"fishway","number":11,"title":"Cootes Paradise Fishway","copy":"Follow the story of fish, water quality and one narrow passage.","x":9,"y":47,"image":"assets/home/fishway.webp","imageAlt":"Cootes Paradise Fishway","credit":"Jeff Hitchcock via Wikimedia Commons · CC BY 2.0","url":"articles/fishway-26000-fish.html"},
     {"id":"lions-market","number":12,"title":"Lions Farmers Market","copy":"Build one meal from what Burlington-area growers brought that day.","x":49,"y":56,"visualText":"MARKET","url":"https://www.burlingtonlionsclub.ca/burlington-farmers-market"}
   ],
-  "bonus": {"id":"bonus-stop","number":13,"title":"The hidden shoreline stop","copy":"Finish all twelve to reveal one more Burlington detail.","image":"assets/editorial/explore-collage.webp","imageAlt":"Blurred Burlington landscape illustration","credit":"Burlington News illustration","url":"/feedback/?type=explore-bonus"}
+  "bonus": {"id":"bonus-stop","number":13,"title":"Burloak Waterfront Park","copy":"Follow the shoreline path and watch the light change over Lake Ontario.","image":"assets/explore/moonlit-lake-ontario.webp","imageAlt":"Burlington News illustration of moonlight over Lake Ontario","illustration":true,"url":"https://www.burlington.ca/en/parks-facilities-and-rentals/burloak-waterfront-park.aspx"}
 }

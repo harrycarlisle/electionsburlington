@@ -2,7 +2,6 @@
   const menu = document.getElementById('menuButton');
   const nav = document.getElementById('primaryNav');
   const today = document.getElementById('today');
-  const weather = document.getElementById('weather');
   const searchForm = document.getElementById('headerSearch');
   const searchInput = document.getElementById('siteSearch');
   const searchResults = document.getElementById('searchResults');
@@ -109,21 +108,6 @@
       renderSearch('');
       history.replaceState(null,'',location.pathname);
     });
-  }
-
-  const weatherIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 17a4.2 4.2 0 0 1 .8-8.3A5.7 5.7 0 0 1 18 10.2 3.5 3.5 0 0 1 17.2 17h-11Z"/></svg>';
-  if (weather) {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(),2600);
-    fetch('https://api.open-meteo.com/v1/forecast?latitude=43.3255&longitude=-79.7990&current=temperature_2m&temperature_unit=celsius',{signal:controller.signal})
-      .then(response => response.ok ? response.json() : Promise.reject())
-      .then(data => {
-        const temperature = Math.round(Number(data.current?.temperature_2m));
-        if (!Number.isFinite(temperature)) return;
-        weather.innerHTML = `${weatherIcon}<strong>${temperature}°</strong>`;
-        weather.setAttribute('aria-label',`${temperature} degrees Celsius`);
-        weather.hidden = false;
-      }).catch(() => {}).finally(() => clearTimeout(timer));
   }
 
   fetch('data/home-surface.json',{cache:'no-store'})

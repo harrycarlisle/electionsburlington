@@ -17,17 +17,25 @@
     document.querySelectorAll('[data-theme-toggle]').forEach(button=>{const target=next==='dark'?'Light mode':'Dark mode';button.innerHTML=`<span class="menu-support-icon">${themeIcon(next)}</span><span>${target}</span>`;button.setAttribute('aria-label',`Switch to ${target.toLowerCase()}`)});
     if(persist)try{localStorage.setItem(storageKey,next)}catch(_){}
   }
-  function ensureStyle(href,key){if(document.querySelector(`link[data-style="${key}"]`))return;const l=document.createElement('link');l.rel='stylesheet';l.href=href;l.dataset.style=key;document.head.appendChild(l)}
+  function ensureStyle(href,key){const existing=document.querySelector(`link[data-style="${key}"]`);if(existing){existing.href=href;return}const l=document.createElement('link');l.rel='stylesheet';l.href=href;l.dataset.style=key;document.head.appendChild(l)}
   function ensureScript(src,key){if(document.querySelector(`script[data-feature="${key}"]`))return;const s=document.createElement('script');s.src=src;s.async=false;s.dataset.feature=key;document.head.appendChild(s)}
-  function ensureStyles(){ensureStyle('/site-bundle.css?v=20260824z3','site-bundle');ensureStyle('/site-shell.css?v=20260824z3','site-shell')}
+  function ensureStyles(){ensureStyle('/site-bundle.css?v=20260824z4','site-bundle');ensureStyle('/site-shell.css?v=20260824z4','site-shell')}
+  function ensureUtilityBar(){
+    if(document.querySelector('.publication-utility'))return;
+    const header=document.querySelector('.header');if(!header)return;
+    const bar=document.createElement('div');bar.className='publication-utility';
+    const today=new Intl.DateTimeFormat('en-CA',{weekday:'long',month:'short',day:'numeric',year:'numeric'}).format(new Date());
+    bar.innerHTML=`<div class="publication-utility-inner"><span>${today}</span><span class="publication-weather-tools"><span class="publication-weather" data-weather-temperature hidden></span><span data-weather-alert-host></span></span></div>`;
+    header.before(bar);
+  }
   function ensureBanner(){
     let banner=document.querySelector('.banner');const header=document.querySelector('.header');
     if(!isElectionPage()){banner?.remove();return}
     if(!banner&&header){banner=document.createElement('div');banner.className='banner';header.before(banner)}
     if(banner)banner.innerHTML='<div class="wrap"><strong>2026 election</strong><span class="banner-sep" aria-hidden="true"> · </span><span>Voting starts Oct. 14</span><span class="banner-sep" aria-hidden="true"> · </span><span>Election Day Oct. 26</span></div>';
   }
-  function brandMarkup(){return '<img class="news-brand-logo" src="/logo-mark.svg?v=20260824z3" alt=""><span class="news-brand-copy"><strong>Burlington <em>News</em></strong></span>'}
-  function applyBrand(){document.querySelectorAll('.brand').forEach(b=>{b.className='brand news-brand';b.href='/';b.innerHTML=brandMarkup();b.setAttribute('aria-label','Burlington News home')});let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='/favicon.svg?v=20260824z3'}
+  function brandMarkup(){return '<img class="news-brand-logo" src="/logo-mark.png?v=20260824z4" alt="">'}
+  function applyBrand(){document.querySelectorAll('.header .brand').forEach(b=>{b.className='brand news-brand brand-mark-only';b.href='/';b.innerHTML=brandMarkup();b.setAttribute('aria-label','Burlington News home')});let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='/logo-mark.png?v=20260824z4'}
 
   function addSeo(){
     if(isHome())document.title='Burlington News | Local news, events and election coverage';
@@ -63,6 +71,6 @@
   function ensureFooter(){let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news for Burlington, Ontario.</p></div></div><div class="site-footer-columns"><nav aria-label="Explore"><strong>Explore</strong><a href="/updates.html">News</a><a href="/election-guide.html">Elections</a><a href="/explore.html">Explore</a><a href="/sports.html">Sports</a><a href="/puzzles.html">Games</a></nav><nav aria-label="About"><strong>About</strong><a href="/independent.html">Independent</a><a href="/methodology.html">Sources & methodology</a><a href="/help.html#accessibility">Accessibility</a><a href="/feedback/">Give feedback</a></nav><nav aria-label="Legal"><strong>Legal</strong><a href="/terms.html">Terms of use</a><a href="/privacy.html">Privacy</a></nav></div></div>'}
 
   setTheme(preferredTheme(),false);
-  document.addEventListener('DOMContentLoaded',()=>{document.body.classList.add('publication-shell');ensureStyles();ensureBanner();addSeo();prepareHeader();installDesktopNav();rotateSearchPrompt();buildHero();setupCandidateScroll();ensureFooter();applyBrand();ensureScript('/site-bundle.js?v=20260824z3','site-bundle');setTheme(root.dataset.theme||preferredTheme(),false)});
+  document.addEventListener('DOMContentLoaded',()=>{document.body.classList.add('publication-shell');ensureStyles();ensureUtilityBar();ensureBanner();addSeo();prepareHeader();installDesktopNav();rotateSearchPrompt();buildHero();setupCandidateScroll();ensureFooter();applyBrand();ensureScript('/site-bundle.js?v=20260824z4','site-bundle');ensureScript('/weather-alert.js?v=20260824z4','weather-alert');setTheme(root.dataset.theme||preferredTheme(),false)});
   matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',()=>{let saved='';try{saved=localStorage.getItem(storageKey)||localStorage.getItem('burlington-election-theme')||''}catch(_){}if(!saved&&matchMedia('(max-width: 720px)').matches)setTheme(preferredTheme(),false)});
 })();

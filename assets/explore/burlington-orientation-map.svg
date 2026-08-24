@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" role="img" aria-labelledby="title desc">
+  <title id="title">Orientation map of Burlington</title>
+  <desc id="desc">A simplified map showing Lake Ontario, Burlington Bay, the Niagara Escarpment, major roads and central Burlington.</desc>
+  <defs>
+    <linearGradient id="land" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#edf3ed"/><stop offset="1" stop-color="#f7f8f4"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a8d5e8"/><stop offset="1" stop-color="#76b8d7"/></linearGradient>
+    <pattern id="blocks" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M0 24 24 0M-6 6 6-6M18 30 30 18" stroke="#b9c8ca" stroke-width="1" opacity=".2"/></pattern>
+  </defs>
+  <path fill="url(#land)" d="M0 0h640v366c-61 9-108 28-151 55-63 39-132 51-202 42-74-10-125-32-184-30-38 1-72 10-103 25Z"/>
+  <path fill="#dcebd8" d="M0 0h640v105c-96 11-172 14-249 3C264 91 142 76 0 102Z"/>
+  <path fill="url(#blocks)" d="M0 98h640v270c-59 9-108 28-151 54-63 39-132 51-202 42-74-10-125-32-184-30-38 1-72 10-103 25Z"/>
+  <path fill="url(#water)" d="M0 458c31-15 65-24 103-25 59-2 110 20 184 30 70 9 139-3 202-42 43-27 90-46 151-55v134H0Z"/>
+  <path fill="#8cc6df" d="M0 312c30 5 52 18 67 40 10 15 10 42 36 81-38 1-72 10-103 25Z"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M-20 286C102 275 176 292 266 310c117 23 231 22 394-26" stroke="#fff" stroke-width="14"/>
+    <path d="M-20 286C102 275 176 292 266 310c117 23 231 22 394-26" stroke="#7e99a4" stroke-width="3"/>
+    <path d="M-10 259C104 250 186 266 276 282c130 23 246 17 377-19" stroke="#fff" stroke-width="7"/>
+    <path d="M-10 259C104 250 186 266 276 282c130 23 246 17 377-19" stroke="#aab8bd" stroke-width="2"/>
+    <path d="M46 172C160 160 273 168 378 184c84 13 165 13 277-5" stroke="#d9c798" stroke-width="5"/>
+    <path d="M46 172C160 160 273 168 378 184c84 13 165 13 277-5" stroke="#aa9258" stroke-width="1.5" stroke-dasharray="6 6"/>
+    <path d="M176 91 208 432M307 86 326 452M446 96 430 416M558 107 532 384" stroke="#fff" stroke-width="6"/>
+    <path d="M176 91 208 432M307 86 326 452M446 96 430 416M558 107 532 384" stroke="#aab8bd" stroke-width="1.5"/>
+    <path d="M20 394c117-16 210 6 280 22 71 17 139 10 205-30 43-27 83-40 141-51" stroke="#fff" stroke-width="6"/>
+    <path d="M20 394c117-16 210 6 280 22 71 17 139 10 205-30 43-27 83-40 141-51" stroke="#8da8b2" stroke-width="1.6"/>
+  </g>
+  <g font-family="Inter,Arial,sans-serif" fill="#61757d">
+    <text x="26" y="58" font-size="14" font-weight="700" letter-spacing="2">NIAGARA ESCARPMENT</text>
+    <text x="85" y="242" font-size="11">Aldershot</text>
+    <text x="280" y="359" font-size="12" font-weight="700">Downtown</text>
+    <text x="470" y="236" font-size="11">East Burlington</text>
+    <text x="352" y="477" font-size="16" font-weight="700" letter-spacing="2" fill="#356e8a">LAKE ONTARIO</text>
+    <text x="9" y="341" font-size="10" font-weight="700" fill="#356e8a">BURLINGTON BAY</text>
+    <text x="262" y="302" font-size="10" font-weight="800" fill="#5a737e">QEW</text>
+    <text x="72" y="167" font-size="9" font-weight="700" fill="#8a7544">HWY 407</text>
+    <text x="191" y="140" font-size="8" transform="rotate(85 191 140)">Waterdown Rd.</text>
+    <text x="309" y="126" font-size="8" transform="rotate(87 309 126)">Brant St.</text>
+    <text x="445" y="136" font-size="8" transform="rotate(94 445 136)">Guelph Line</text>
+    <text x="558" y="145" font-size="8" transform="rotate(96 558 145)">Appleby Line</text>
+  </g>
+  <circle cx="310" cy="364" r="5" fill="#0864c7" stroke="#fff" stroke-width="2"/>
+</svg>

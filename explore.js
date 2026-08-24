@@ -18,9 +18,18 @@
     const date = new Date(value);
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
   };
+  const categoryIcon = value => {
+    const type = String(value || '').toLowerCase();
+    if (type.includes('market')) return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16l-1.5-5h-13L4 9Zm2 0v11h12V9M9 20v-6h6v6"/></svg>';
+    if (type.includes('sky') || type.includes('moon')) return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.8A8 8 0 0 1 9.2 4.5 8 8 0 1 0 19.5 14.8Z"/><path d="m17.5 4 .5 1.4 1.5.5-1.5.5-.5 1.4-.5-1.4-1.5-.5 1.5-.5.5-1.4Z"/></svg>';
+    if (type.includes('concert') || type.includes('music')) return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12M9 18c0 1.1-1.3 2-3 2s-3-.9-3-2 1.3-2 3-2 3 .9 3 2Zm10-2c0 1.1-1.3 2-3 2s-3-.9-3-2 1.3-2 3-2 3 .9 3 2Z"/></svg>';
+    if (type.includes('volunteer')) return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20v-9M12 14c-4 0-6-2-6-6 4 0 6 2 6 6Zm0 3c4 0 6-2 6-6-4 0-6 2-6 6Z"/></svg>';
+    return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>';
+  };
   const imageMarkup = (item, className) => item.image
     ? `<div class="${className}"><img src="${esc(item.image)}" alt="${esc(item.imageAlt || '')}" loading="lazy">${item.credit && !item.illustration && !/^Burlington News/i.test(item.credit) ? `<span class="image-credit">${esc(item.credit)}</span>` : ''}</div>`
-    : `<div class="${className}"><b>${esc(item.visualText || 'BURLINGTON')}</b></div>`;
+    : `<div class="${className} category-art category-${esc(String(item.category || item.visualText || 'local').toLowerCase().replace(/[^a-z]+/g,'-'))}"><span class="category-art-icon">${categoryIcon(item.category || item.visualText)}</span><span class="category-art-label">${esc(item.visualText || item.category || 'Local')}</span></div>`;
+  const addToVisual = (markup, content) => markup.replace(/^(<div class="[^"]+">)/, `$1${content}`);
 
   let events = [];
   let ideas = [];
@@ -124,7 +133,7 @@
   function eventCard(event) {
     const placeholder = event.image ? '' : ' is-placeholder';
     const nearby = event.scope !== 'Burlington' ? ' nearby' : '';
-    return `<article class="event-card${placeholder}"><button class="event-open" type="button" data-event="${esc(event.id)}" aria-label="Open ${esc(event.title)}">${imageMarkup(event,'event-visual').replace('<div class="event-visual">',`<div class="event-visual"><span class="event-type${nearby}">${esc(event.category)}</span>`) }<div class="event-copy"><span class="event-meta">${esc(event.dateLabel)}</span><h3>${esc(event.title)}</h3><p class="event-place">⌖ ${esc(event.location)}</p></div></button></article>`;
+    return `<article class="event-card${placeholder}"><button class="event-open" type="button" data-event="${esc(event.id)}" aria-label="Open ${esc(event.title)}">${addToVisual(imageMarkup(event,'event-visual'),`<span class="event-type${nearby}">${esc(event.category)}</span>`)}<div class="event-copy"><span class="event-meta">${esc(event.dateLabel)}</span><h3>${esc(event.title)}</h3><p class="event-place">⌖ ${esc(event.location)}</p></div></button></article>`;
   }
 
   function paintEvents() {
@@ -165,7 +174,7 @@
     wanted.forEach(id => { if (!places.some(place => place.id === id)) wanted.delete(id); });
     writeSet(storage.done, done);
     writeSet(storage.want, wanted);
-    qs('#passportCount').textContent = `${done.size} of ${places.length} done`;
+    qs('#passportCount').textContent = `${done.size} of ${places.length} explored`;
     qs('#passportProgress').style.width = `${places.length ? done.size / places.length * 100 : 0}%`;
     qs('#passportMap').querySelectorAll('.map-pin').forEach(pin => pin.remove());
     qs('#passportMap').insertAdjacentHTML('beforeend', places.map(place => `<button class="map-pin ${done.has(place.id) ? 'is-done' : ''}" type="button" style="left:${place.x}%;top:${place.y}%" data-place="${esc(place.id)}" aria-label="Show ${esc(place.title)}">${place.number}</button>`).join(''));
@@ -175,10 +184,12 @@
   }
 
   function passportCard(place, isBonus = false, unlocked = false) {
+    if (isBonus && !unlocked) return `<article class="passport-card bonus-card is-locked" data-card-place="${esc(place.id)}"><div class="bonus-teaser"><span class="bonus-lock-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><small>Stop 13</small><strong>One more Burlington stop</strong><p>Explore all twelve places to reveal it.</p></div></article>`;
     const isDone = done.has(place.id);
     const isWanted = wanted.has(place.id);
     const placeholder = place.image ? '' : ' is-placeholder';
-    return `<article class="passport-card${isBonus ? ` bonus-card${unlocked ? ' is-unlocked' : ''}` : ''}${placeholder}" data-card-place="${esc(place.id)}">${isBonus && !unlocked ? '<span class="bonus-lock">Bonus · locked</span>' : ''}${imageMarkup(place,'passport-visual').replace('<div class="passport-visual">',`<div class="passport-visual"><span class="passport-number">${isBonus ? '★' : place.number}</span>`) }<div class="passport-copy"><h3>${esc(place.title)}</h3><p>${esc(place.copy)}</p><div class="passport-actions"><button class="save-button ${isWanted ? 'is-saved' : ''}" type="button" data-want="${esc(place.id)}" ${isBonus && !unlocked ? 'disabled' : ''}>${isWanted ? 'Want to go ✓' : 'Want to go'}</button><button class="done-button ${isDone ? 'is-done' : ''}" type="button" data-done="${esc(place.id)}" ${isBonus ? 'disabled' : ''}>${isDone ? 'Done ✓' : 'Done'}</button></div></div></article>`;
+    const actions = isBonus ? `<div class="passport-actions passport-bonus-actions"><a class="done-button" href="${esc(place.url)}" target="_blank" rel="noopener">Open bonus stop</a></div>` : `<div class="passport-actions"><button class="save-button ${isWanted ? 'is-saved' : ''}" type="button" data-want="${esc(place.id)}">${isWanted ? 'Want to go ✓' : 'Want to go'}</button><button class="done-button ${isDone ? 'is-done' : ''}" type="button" data-done="${esc(place.id)}">${isDone ? 'Done ✓' : 'Done'}</button></div>`;
+    return `<article class="passport-card${isBonus ? ' bonus-card is-unlocked' : ''}${placeholder}" data-card-place="${esc(place.id)}">${addToVisual(imageMarkup(place,'passport-visual'),`<span class="passport-number">${isBonus ? '13' : place.number}</span>`)}<div class="passport-copy"><h3>${esc(place.title)}</h3><p>${esc(place.copy)}</p>${actions}</div></article>`;
   }
 
   function scrollToPlace(id) {
