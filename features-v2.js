@@ -9,7 +9,7 @@
     if(document.querySelector('link[data-style="brief-v3"]')) return;
     const link=document.createElement('link');
     link.rel='stylesheet';
-    link.href='features-v3.css?v=20260823e';
+    link.href='features-v3.css?v=20260823f';
     link.dataset.style='brief-v3';
     document.head.appendChild(link);
   }
@@ -21,30 +21,18 @@
   }
 
   function sourceAction(item){
-    if(item.mediaType==='video') return `Watch${item.source?` on ${item.source}`:''} ↗`;
-    if(item.sourceType==='official') return 'Official source ↗';
-    return `Read${item.source?` on ${item.source}`:''} ↗`;
+    if(item.mediaType==='video') return `Watch${item.source?` on ${item.source}`:''}`;
+    return item.source || 'Source';
   }
 
   function whyBlock(item){
-    return Number(item.importance||0)>=3 && item.why
+    return Number(item.importance||0)>=4 && item.why
       ? `<p class="brief-why"><strong>Why it matters:</strong> ${item.why}</p>`
       : '';
   }
 
-  function candidatePhotos(){
-    return [...document.querySelectorAll('#candidateStrip .candidate-card img')].map(img=>img.src).filter(Boolean);
-  }
-
-  function fallbackBriefVisual(item){
-    if(item.tag==='Your ward') return '<img class="brief-story-image" src="db00c009-e70d-404d-a8dd-45c6153cff6f.png" alt="Map of Burlington" loading="lazy">';
-    const photos=candidatePhotos().slice(0,5);
-    if(photos.length) return `<div class="brief-candidate-collage">${photos.map(src=>`<img src="${src}" alt="" loading="lazy">`).join('')}</div>`;
-    return '<div class="brief-feature-placeholder"><span>Burlington</span><strong>Election update</strong></div>';
-  }
-
-  function storyVisual(item){
-    return item.image ? `<img class="brief-story-image" src="${item.image}" alt="" loading="lazy">` : fallbackBriefVisual(item);
+  function storyVisual(item,cls='brief-story-image'){
+    return item.image ? `<img class="${cls}" src="${item.image}" alt="" loading="lazy">` : '';
   }
 
   async function injectDailyBrief(){
@@ -56,29 +44,30 @@
       const items=(data.items||[]).slice(0,3);
       if(!items.length) return;
       const lead=items[0], others=items.slice(1);
+      const leadVisual=storyVisual(lead);
       const section=document.createElement('details');
       section.className='daily-brief'; section.id='daily-brief';
       section.innerHTML=`
         <summary class="brief-toggle">
           <span>
             <span class="brief-toggle-main"><span class="brief-toggle-title">Burlington in 30 seconds</span><span class="brief-live-dot" aria-hidden="true"></span><span class="brief-toggle-updated">${updatedLabel(data.updated)}</span></span>
-            <span class="brief-toggle-sub">Burlington political updates. Read it in about 30 seconds.</span>
+            <span class="brief-toggle-sub">The biggest changes in Burlington politics.</span>
           </span>
           <span class="brief-open-label">Open</span>
         </summary>
         <div class="brief-panel">
-          <article class="brief-feature">
-            <div class="brief-feature-visual">${storyVisual(lead)}</div>
+          <article class="brief-feature ${leadVisual?'has-image':'no-image'}">
+            ${leadVisual?`<div class="brief-feature-visual">${leadVisual}</div>`:''}
             <div class="brief-feature-copy">
               <span class="brief-tag">${lead.tag||'Update'}</span>
-              <h3>${lead.headline}</h3>
+              <h3><a href="${lead.url}" target="_blank" rel="noopener">${lead.headline}</a></h3>
               <p class="brief-summary">${lead.summary}</p>
               ${whyBlock(lead)}
               <a class="brief-source" href="${lead.url}" target="_blank" rel="noopener">${sourceAction(lead)}</a>
             </div>
           </article>
           <div class="brief-more">
-            ${others.map(item=>`<article class="brief-mini">${item.image?`<img class="brief-mini-image" src="${item.image}" alt="" loading="lazy">`:''}<div class="brief-mini-copy"><span class="brief-tag">${item.tag||'Update'}</span><h3>${item.headline}</h3><p>${item.summary}</p>${whyBlock(item)}<a class="brief-source" href="${item.url}" target="_blank" rel="noopener">${sourceAction(item)}</a></div></article>`).join('')}
+            ${others.map(item=>{const image=storyVisual(item,'brief-mini-image');return `<article class="brief-mini ${image?'has-image':'no-image'}">${image}<div class="brief-mini-copy"><span class="brief-tag">${item.tag||'Update'}</span><h3><a href="${item.url}" target="_blank" rel="noopener">${item.headline}</a></h3><p>${item.summary}</p>${whyBlock(item)}<a class="brief-source" href="${item.url}" target="_blank" rel="noopener">${sourceAction(item)}</a></div></article>`}).join('')}
           </div>
           <div class="brief-footer"><a href="updates.html">See all updates →</a></div>
         </div>`;
@@ -98,11 +87,11 @@
       const select=section.querySelector('#wardQuick'), grid=section.querySelector('#ballotQuickGrid');
       const linkedName=n=>{
         const site=data.candidateWebsites?.[n];
-        return site?`<a class="ballot-name" href="${site}" target="_blank" rel="noopener">${n} ↗</a>`:`<span class="ballot-name">${n}</span>`;
+        return site?`<a class="ballot-name" href="${site}" target="_blank" rel="noopener">${n}</a>`:`<span class="ballot-name">${n}</span>`;
       };
       const render=()=>{
         const w=data.wards[select.value];
-        grid.innerHTML=`<div class="ballot-block"><small>Mayor</small><b>Citywide</b><div class="ballot-names"><a class="ballot-name" href="ballot.html">5 candidates →</a></div></div><div class="ballot-block"><small>Councillor</small><b>Ward ${select.value}</b><div class="ballot-names">${w.councillor.map(linkedName).join('')}</div></div><div class="ballot-block"><small>School-board trustee</small><b>Choose your school board</b><p class="ballot-help">You vote in one trustee race based on the school board you support and your eligibility.</p><div class="ballot-names"><a class="ballot-name" href="ballot.html">Choose board →</a></div></div>`;
+        grid.innerHTML=`<div class="ballot-block"><small>Mayor</small><b>Citywide</b><div class="ballot-names"><a class="ballot-name" href="ballot.html">5 candidates →</a></div></div><div class="ballot-block"><small>Councillor</small><b>Ward ${select.value}</b><div class="ballot-names">${w.councillor.map(linkedName).join('')}</div></div><div class="ballot-block ballot-school-mini"><small>School-board trustee</small><b>Optional ballot detail</b><div class="ballot-names"><a class="ballot-name" href="ballot.html#school-board">View trustee race →</a></div></div>`;
       };
       select.addEventListener('change',render); render();
     }catch(e){console.warn('Ballot quick view unavailable',e)}
@@ -112,26 +101,23 @@
     const card=document.querySelector('.hero-map-card');
     if(!card) return;
     card.querySelector('.hero-map-embed')?.remove();
-    card.querySelector('.hero-place-dot')?.remove();
     card.querySelector('.map-credit')?.remove();
     card.classList.add('hero-map-image');
-    card.style.backgroundImage="url('db00c009-e70d-404d-a8dd-45c6153cff6f.png')";
+    card.style.backgroundImage="url('/db00c009-e70d-404d-a8dd-45c6153cff6f.png')";
+    let pin=card.querySelector('.hero-place-dot');
+    if(!pin){ pin=document.createElement('span'); pin.className='hero-place-dot'; card.appendChild(pin); }
+    pin.setAttribute('aria-hidden','true');
   }
 
   function polishBrandAndMeta(){
-    const isHome=location.pathname==='/'||location.pathname.endsWith('/index.html');
-    if(isHome){
-      document.title='Burlington News | Election Guide';
-      const og=document.querySelector('meta[property="og:title"]'); if(og) og.content='Burlington News | Election Guide';
-    }
     document.querySelectorAll('.brand').forEach(brand=>{
       brand.classList.add('brand-mark-only');
-      brand.innerHTML='<span class="brand-letter" aria-hidden="true">B</span><span class="sr-only">Burlington Election Guide</span>';
-      brand.setAttribute('aria-label','Burlington Election Guide');
+      brand.innerHTML='<span class="brand-letter" aria-hidden="true">B</span><span class="sr-only">Burlington</span>';
+      brand.setAttribute('aria-label','Burlington');
     });
-    if(!document.querySelector('link[rel="icon"]')){
-      const icon=document.createElement('link'); icon.rel='icon'; icon.href='favicon.svg'; document.head.appendChild(icon);
-    }
+    let icon=document.querySelector('link[rel="icon"]');
+    if(!icon){ icon=document.createElement('link'); icon.rel='icon'; document.head.appendChild(icon); }
+    icon.href='favicon.svg?v=20260823f';
     const trust=document.querySelector('.hero-trust');
     if(trust) trust.innerHTML='<span>No endorsements</span><span>Independent</span>';
   }
@@ -175,6 +161,25 @@
     clean(); new MutationObserver(clean).observe(panel,{childList:true,subtree:true});
   }
 
+  function enhanceHeadToHead(){
+    const grid=document.querySelector('.match-grid');
+    const context=document.getElementById('context');
+    if(!grid||!context) return;
+    const clean=()=>{
+      document.querySelector('.method-link')?.remove();
+      document.querySelectorAll('.person-card .fact').forEach(f=>{if(/question to ask/i.test(f.querySelector('b')?.textContent||'')) f.remove()});
+      document.querySelectorAll('.plain summary').forEach(s=>{if(/what does that mean|in plain english/i.test(s.textContent))s.textContent='What this means'});
+      if(!context.querySelector('details')){
+        const heading=context.querySelector('h2')?.textContent||'Context';
+        const body=context.querySelector('p')?.innerHTML||'';
+        context.innerHTML=`<details class="h2h-context-details"><summary>${heading}</summary><div class="h2h-context-body"><p>${body}</p></div></details>`;
+      }
+    };
+    clean();
+    let queued=false;
+    new MutationObserver(()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;clean()})}).observe(grid,{childList:true,subtree:true});
+  }
+
   function eventStatus(start,end){
     const now=new Date(), s=new Date(start), e=end?new Date(end):null;
     const today=new Date(now.getFullYear(),now.getMonth(),now.getDate(),12), startDay=new Date(s.getFullYear(),s.getMonth(),s.getDate(),12);
@@ -196,7 +201,9 @@
       grid.classList.add('date-timeline');
       grid.innerHTML=(data.events||[]).map(event=>{
         const [month,...dayParts]=event.displayDate.split(' '), status=eventStatus(event.date,event.end);
-        return `<article class="card date-card date-stop ${/Finished/i.test(status)?'is-past':''}"><div class="date-stop-top"><div class="date-calendar" aria-hidden="true"><span class="date-calendar-month">${month.toUpperCase().replace('.','')}</span><span class="date-calendar-day">${dayParts.join(' ')}</span></div><span class="date-status">${status}</span></div><div class="date-stop-body"><h3>${event.title}</h3><p>${event.detail}</p><a class="date-source" href="${event.url}" target="_blank" rel="noopener">${event.source} ↗</a><a class="date-calendar-action" href="${icsHref(event)}" download="${event.title.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.ics">Add to calendar</a></div></article>`;
+        const critical=Number(event.importance||0)>=5?' is-critical':'';
+        const add=event.addToCalendar?`<a class="date-calendar-action" href="${icsHref(event)}" download="${event.title.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.ics">Add to calendar</a>`:'';
+        return `<article class="card date-card date-stop${critical} ${/Finished/i.test(status)?'is-past':''}"><div class="date-stop-top"><div class="date-calendar" aria-hidden="true"><span class="date-calendar-month">${month.toUpperCase().replace('.','')}</span><span class="date-calendar-day">${dayParts.join(' ')}</span></div><span class="date-status">${status}</span></div><div class="date-stop-body"><h3><a class="date-title-link" href="${event.url}" target="_blank" rel="noopener">${event.title}</a></h3><p>${event.detail}</p><a class="date-source" href="${event.url}" target="_blank" rel="noopener">${event.source}</a>${add}</div></article>`;
       }).join(''); simplifyDateCountdowns();
     }catch(e){console.warn('Election events unavailable',e)}
   }
@@ -213,9 +220,18 @@
       const data=await getJson('data/election-results.json'); if(!data||data.display!==true) return;
       const anchor=document.querySelector('.daily-brief')||document.querySelector('.election-hero'); if(!anchor||document.querySelector('.election-results')) return;
       const section=document.createElement('section'); section.className='election-results'; const rows=(data.mayor||[]).slice(0,5);
-      section.innerHTML=`<div class="results-head"><div><span class="results-live-dot"></span><strong>Election results</strong><small>${data.official?'Official':'Unofficial'} · updated ${updatedLabel(data.updatedAt).replace('Updated ','')}</small></div><a href="${data.sourceUrl}" target="_blank" rel="noopener">City results ↗</a></div>${rows.length?`<div class="results-list">${rows.map(r=>`<div class="result-row"><span>${r.name}</span><strong>${Number(r.votes||0).toLocaleString('en-CA')}</strong>${r.percent!=null?`<small>${r.percent}%</small>`:''}</div>`).join('')}</div>`:'<p class="results-waiting">Polls are closed. Waiting for the City of Burlington to publish result data.</p>'}`;
+      section.innerHTML=`<div class="results-head"><div><span class="results-live-dot"></span><strong>Election results</strong><small>${data.official?'Official':'Unofficial'} · updated ${updatedLabel(data.updatedAt).replace('Updated ','')}</small></div><a href="${data.sourceUrl}" target="_blank" rel="noopener">City results</a></div>${rows.length?`<div class="results-list">${rows.map(r=>`<div class="result-row"><span>${r.name}</span><strong>${Number(r.votes||0).toLocaleString('en-CA')}</strong>${r.percent!=null?`<small>${r.percent}%</small>`:''}</div>`).join('')}</div>`:'<p class="results-waiting">Polls are closed. Waiting for the City of Burlington to publish result data.</p>'}`;
       anchor.insertAdjacentElement('afterend',section);
     }catch(_){ }
+  }
+
+  function injectHomeExtras(){
+    const dates=document.getElementById('dates');
+    if(!dates||document.querySelector('.home-extras')) return;
+    const extras=document.createElement('section');
+    extras.className='home-extras';
+    extras.innerHTML=`<div class="home-extra-grid"><a class="home-extra-card puzzles-card" href="puzzles.html"><span class="home-extra-icon" aria-hidden="true">✦</span><div><small>Take a break</small><h2>Burlington puzzles</h2><p>Quick local trivia and visual challenges.</p></div><span aria-hidden="true">→</span></a><a class="home-extra-card partner-card" href="/feedback/?type=partnership"><span class="home-extra-icon" aria-hidden="true">↗</span><div><small>Local organizations & creators</small><h2>Want to partner with Burlington News?</h2><p>Have a civic project, dataset or local collaboration in mind?</p></div><span aria-hidden="true">→</span></a></div>`;
+    dates.insertAdjacentElement('afterend',extras);
   }
 
   function init(){
@@ -224,10 +240,11 @@
     fixHeroMap();
     fixMenuAndIssueLabels();
     neutralizeProfileCopy();
+    enhanceHeadToHead();
     injectDailyBrief();
     injectBallotQuick();
     injectElectionResults();
-    setTimeout(()=>{syncImportantDates();simplifyFooter();polishBrandAndMeta();},250);
+    setTimeout(()=>{syncImportantDates();simplifyFooter();polishBrandAndMeta();injectHomeExtras();enhanceHeadToHead();},250);
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init,{once:true}); else init();
 })();
