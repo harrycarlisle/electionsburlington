@@ -1,0 +1,12 @@
+/* Final navigation and cross-page overrides. */
+@media(min-width:761px){.menu-panel .menu-core-duplicate{display:none!important}}
+@media(max-width:760px){.menu-panel .menu-core-duplicate{display:flex!important}.desktop-primary-nav{display:none!important}}
+
+/* The menu is always anchored to the right edge of the header on desktop. */
+@media(min-width:761px){.menu-panel{right:max(18px,calc((100vw - 1180px)/2 + 22px))!important;left:auto!important}.header-controls{position:relative!important}}
+
+/* Keep form controls legible in both themes. */
+select,input,textarea,button{font-family:inherit}html[data-theme="dark"] select,html[data-theme="dark"] input,html[data-theme="dark"] textarea{background:#132632!important;color:#eef6fb!important;border-color:#48677c!important}
+
+/* Polished page spacing. */
+.simple-page .site-legal-footer,.feedback-page .site-legal-footer{margin-top:36px}.puzzle-shell,.method-shell{width:min(100% - 40px,980px)!important;margin-inline:auto!important}.puzzle-card,.method-card{box-shadow:none!important}.method-card{line-height:1.55}.puzzle-card{transition:border-color .15s ease,transform .15s ease}.puzzle-card:hover{border-color:#b5cede}@media(prefers-reduced-motion:reduce){.puzzle-card{transition:none}.puzzle-card:hover{transform:none}}
