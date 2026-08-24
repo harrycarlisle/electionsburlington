@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23",
+  "updated": "2026-08-24",
   "publishingCadence": "One exceptional evergreen feature each Monday; publish nothing when reporting is not strong enough.",
   "pitches": [
     {
@@ -22,8 +22,30 @@
       "slug": "brant-inn-last-night",
       "workingTitle": "When Burlington was a destination after dark",
       "hook": "Before the waterfront became parks and condos, the Brant Inn made Burlington a stop for major big-band performers. What happened on its final nights, and why did the city let the landmark disappear?",
-      "status": "research",
-      "reportingNeeded": ["Burlington library and museum archive", "Performance advertisements", "Ownership timeline", "Demolition record", "Oral history from patrons or families"]
+      "status": "hold-for-archive-access",
+      "reportingNeeded": ["Burlington library and museum archive", "Performance advertisements", "Ownership timeline", "Demolition record", "Oral history from patrons or families", "Written permission for any museum or library image selected for publication"],
+      "researchNotes": "Museums of Burlington confirms the 1925 rebuild and appearances by Ella Fitzgerald, Fats Waller and Jayne Mansfield. The strongest programs, advertisements and images are held by Museums of Burlington and Burlington Public Library; the available use statements do not grant republication rights. Online secondary summaries are not enough to reconstruct the final nights or explain the demolition without padding.",
+      "publishGate": "Do not publish until the performance and demolition chronology is supported by contemporaneous records and the hero image has explicit publication permission or a documented open licence."
+    },
+    {
+      "slug": "john-moodie-cymric-whisky",
+      "workingTitle": "The Burlington whisky shipment a U-boat sent to the bottom of the Atlantic",
+      "hook": "In 1916, whisky belonging to a Burlington resident who owned Hamilton's first car was aboard the White Star liner Cymric when the same U-boat commander who sank Lusitania attacked it off Ireland. What was in the barrels, who paid for the loss, and what did one local claim reveal about doing business during wartime?",
+      "status": "priority-reporting",
+      "reportingNeeded": ["View and transcribe the John Moodie fonds correspondence in the Burlington History Room, especially the June 6, 1916 letter to the Insurance Company of North America", "Confirm the number, contents, consignee, declared value and ownership of the barrels from the original letters and shipping or insurance records", "Obtain the full John Moodie fonds finding aid and relevant Royal Distillery corporate records", "Verify the Cymric timeline against the British Admiralty loss file, U-20 war diary or another primary maritime record", "Check contemporary May 1916 newspaper coverage for cargo and casualty details", "Confirm Lakehurst Villa ownership and dates through heritage or land records", "Secure an original, public-domain, Creative Commons or expressly permitted hero image"],
+      "researchNotes": "Burlington Public Library announced the newly available correspondence on July 30, 2026 and identifies a June 6, 1916 insurance letter. BPL says the records are physical-only. Its summary establishes Moodie's Burlington residence at Lakehurst Villa and the loss of whisky barrels aboard Cymric, but it does not state the quantity, value, destination, claim outcome or contents of the correspondence. Uboat.net independently records Cymric as a 13,370-ton passenger steamer carrying general cargo from New York to Liverpool, torpedoed by U-20 on May 8, 1916 with five fatalities. The story is strong, original and locally specific, but its central documentary evidence has not yet been examined.",
+      "sourceLeads": ["https://www.bpl.on.ca/news/new-archives", "https://www.archeion.ca/john-moodie-fonds", "https://uboat.net/wwi/ships_hit/1521.html", "https://heritageburlington.ca/heritage_property/lakehurst-villa-knee-wall/"],
+      "publishGate": "Do not turn the library's teaser into a finished narrative. Publication requires the Moodie correspondence itself, a primary maritime record, an independent source for the ship loss, and image rights. Distinguish documented cargo facts from any inference about insurance, motive or financial impact."
+    },
+    {
+      "slug": "burlington-international-games",
+      "workingTitle": "The Olympics that connected three Burlingtons",
+      "hook": "A golf conversation between two mayors grew into four decades of youth competition across Burlington, Ontario, Burlington, Vermont and Burlington, Iowa.",
+      "status": "hold-duplicate",
+      "reportingNeeded": ["Identify a genuinely new angle before any further work", "Oral histories from athletes and billet families if revisited", "Municipal records explaining Iowa's entry and the 2010 closure"],
+      "researchNotes": "The Ontario Legislature's June 21, 1988 Hansard records the 1968 mayoral golf-game origin, 450 participants and nine events in 1969, and nearly 1,000 athletes in 15 events in 1988. Burlington Public Library documents the 1969-2010 run and archival fonds. BurlingtonToday published a broad historical treatment on July 15, 2026, making the general-history version too recent and too duplicative for Burlington News.",
+      "sourceLeads": ["https://www.ola.org/en/legislative-business/house-documents/parliament-34/session-1/1988-06-21/hansard", "https://www.bpl.on.ca/news/sports-archives", "https://www.burlingtontoday.com/then-and-now/then-and-now-burlington-international-games-brought-major-youth-sports-here-for-decades-12541227"],
+      "publishGate": "Do not publish a general recap. Revisit only with first-person reporting and a narrow reveal not covered by the July 2026 BurlingtonToday article."
     },
     {
       "slug": "burlington-1970s-map",
