@@ -92,6 +92,48 @@
       "sourceUrl": "https://frankdomenic.ca/",
       "verifiedAt": "2026-08-24",
       "match": "high"
+    },
+    "Gary Carr": {
+      "url": "https://garycarr.ca/wp-content/uploads/image-02-09-22-07-05.jpeg",
+      "source": "Candidate website",
+      "sourceUrl": "https://garycarr.ca/",
+      "verifiedAt": "2026-08-24",
+      "match": "high"
+    },
+    "Jeremy Gaetan": {
+      "url": "https://jeremygaetan.com/wp-content/uploads/2026/08/PXL_20260815_211850623-576x1024.jpg",
+      "source": "Candidate website",
+      "sourceUrl": "https://jeremygaetan.com/",
+      "verifiedAt": "2026-08-24",
+      "match": "high"
+    },
+    "Kyle Hutton": {
+      "url": "https://images.squarespace-cdn.com/content/v1/69e1294f06244c045dd76079/209b4395-9109-426c-ace3-3fd1313d3679/Kyle+Hutton+by+RZ+2025_02_Square.jpg",
+      "source": "Candidate website",
+      "sourceUrl": "https://www.kylehutton.ca/",
+      "verifiedAt": "2026-08-24",
+      "match": "high"
+    },
+    "Katy Moore": {
+      "url": "https://thirstformoore.ca/katy-headshot.jpg",
+      "source": "Candidate website",
+      "sourceUrl": "https://thirstformoore.ca/",
+      "verifiedAt": "2026-08-24",
+      "match": "high"
+    },
+    "Olivia Duke": {
+      "url": "https://images.squarespace-cdn.com/content/v1/696e7c6535748c7230b33cf6/8c3d8fec-7566-4915-967d-160e261fb792/Olivia+Duke%27s+Headshot",
+      "source": "Candidate website",
+      "sourceUrl": "https://www.oliviaduke.ca/",
+      "verifiedAt": "2026-08-24",
+      "match": "high"
+    },
+    "Tim O'Brien": {
+      "url": "https://timobrien.ca/unnamed.png",
+      "source": "Candidate website",
+      "sourceUrl": "https://timobrien.ca/",
+      "verifiedAt": "2026-08-24",
+      "match": "high"
     }
   },
   "candidateWebsites": {
@@ -236,5 +278,5 @@
     "frenchCatholic": "French Catholic (Conseil scolaire catholique MonAvenir)"
   },
   "note": "Candidate names and candidate-supplied websites are based on the City of Burlington official candidate list. Candidate images are only displayed when the identity match is verified. Trustee eligibility depends on school-board support and elector eligibility. Confirm your final ballot with the City.",
-  "candidateImagesLastChecked": "2026-08-24T00:54:34Z"
+  "candidateImagesLastChecked": "2026-08-24T00:56:58Z"
 }
