@@ -1,0 +1,73 @@
+{
+  "updated": "2026-08-23",
+  "publishingCadence": "One exceptional evergreen feature each Monday; publish nothing when reporting is not strong enough.",
+  "pitches": [
+    {
+      "slug": "corned-beef-hut-origin",
+      "workingTitle": "How one sandwich shop became a Burlington obsession",
+      "hook": "A restaurant named after one sandwich has survived in a city with hundreds of places to eat. What did it understand that larger menus miss?",
+      "status": "reporting",
+      "reportingNeeded": ["Founder interview", "Opening year and original location", "Family or ownership timeline", "How the meat is sourced and prepared", "Early menu or photographs", "Long-time customer interviews", "Business registry and newspaper archive check"],
+      "publishGate": "Do not publish an origin narrative until the founder or current owner confirms the timeline and archival evidence supports the key dates."
+    },
+    {
+      "slug": "hamilton-mob-burlington-line",
+      "workingTitle": "Where Hamilton’s Mafia story crosses the Burlington line",
+      "hook": "Organized-crime history is usually told as a Hamilton story. The more interesting question is which events, people or businesses actually reached Burlington—and which local legends do not survive the records.",
+      "status": "research",
+      "reportingNeeded": ["Court decisions", "Police and RCMP records", "Two independent archival news sources", "Property and corporate records where relevant", "Expert historian or crime reporter interview", "Clear Burlington nexus"],
+      "publishGate": "Every allegation must be attributed to a court record or reliable reporting. No living private person is named from rumour or social media."
+    },
+    {
+      "slug": "brant-inn-last-night",
+      "workingTitle": "When Burlington was a destination after dark",
+      "hook": "Before the waterfront became parks and condos, the Brant Inn made Burlington a stop for major big-band performers. What happened on its final nights, and why did the city let the landmark disappear?",
+      "status": "research",
+      "reportingNeeded": ["Burlington library and museum archive", "Performance advertisements", "Ownership timeline", "Demolition record", "Oral history from patrons or families"]
+    },
+    {
+      "slug": "burlington-1970s-map",
+      "workingTitle": "The decade Burlington became the city on today’s map",
+      "hook": "A municipal boundary can change overnight while residents’ identities take decades to catch up. Reconstruct the 1970s decisions that reshaped Burlington and Halton.",
+      "status": "research",
+      "reportingNeeded": ["Ontario legislation", "Council minutes", "Historic maps", "Population data", "Aldershot and rural resident perspectives"]
+    },
+    {
+      "slug": "burlington-family-then-and-now",
+      "workingTitle": "One Burlington day, 180 years apart",
+      "hook": "Follow two local families from waking to sleep—one in present-day Burlington and one in the 1800s—to make the city’s transformation tangible hour by hour.",
+      "status": "research",
+      "reportingNeeded": ["Ireland family journals, inventories or correspondence", "Museums of Burlington curator interview", "Census and agricultural schedules", "Documented school, food, heating, lighting and travel routines", "A willing present-day Burlington family", "Photography at the historic and present-day locations"],
+      "publishGate": "Use a documented historical household and distinguish records from careful inference. Do not invent dialogue, thoughts, exact schedules or domestic details that the archive cannot support."
+    },
+    {
+      "slug": "skyway-tunnel-plan",
+      "workingTitle": "Burlington almost buried the Skyway",
+      "hook": "By the 1970s, Ontario was buying property for a plan that included three tunnels beneath the bay.",
+      "status": "published",
+      "url": "articles/skyway-bridge-story.html"
+    },
+    {
+      "slug": "salmon-under-the-city",
+      "workingTitle": "The fish migration happening beside Burlington traffic",
+      "hook": "More than 100 salmon were observed spawning upstream in one season, but they were excluded from the headline Fishway count. Follow the route they took.",
+      "status": "research",
+      "reportingNeeded": ["RBG biologist interview", "Public viewing access", "Historic migration counts", "Water quality and barrier records"]
+    },
+    {
+      "slug": "king-road-salamander-night",
+      "workingTitle": "The nights Burlington gives a road back to salamanders",
+      "hook": "A city closes a road because an endangered animal moves in darkness, rain and a very narrow temperature window.",
+      "status": "research",
+      "reportingNeeded": ["City closure records by year", "Conservation Halton biologist", "Population trend", "Night field observation under permitted conditions"]
+    },
+    {
+      "slug": "forgotten-1970s-event",
+      "workingTitle": "The Burlington story everybody remembered—until they did not",
+      "hook": "Search 1970–1979 front pages, council minutes, photo archives and oral histories for one event that changed local behaviour, infrastructure or identity but has nearly disappeared from public memory.",
+      "status": "open-research",
+      "reportingNeeded": ["Decade newspaper index", "Library photo archive", "Council minutes", "At least two surviving witnesses or contemporaneous accounts"],
+      "publishGate": "The event is selected only after archive review; do not reverse-engineer a sensational claim from a single clipping."
+    }
+  ]
+}
