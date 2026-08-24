@@ -15,7 +15,8 @@ import datetime as dt, html, json, re, urllib.parse, urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 
-ROOT=Path(__file__).resolve().parents[1];BALLOT=ROOT/'data'/'ballot.json';UA='BurlingtonElectionGuide/1.6 (+https://electionsburlington.ca/)';BT_INDEX='https://www.burlingtontoday.com/2026-municipal-election-news'
+ROOT=Path(__file__).resolve().parents[1];BALLOT=ROOT/'data'/'ballot.json';UA='BurlingtonElectionGuide/1.7 (+https://electionsburlington.ca/)'
+BT_INDEXES=['https://www.burlingtontoday.com/2026-municipal-election-news','https://www.burlingtontoday.com/municipal-election']
 BAD_IMAGE_WORDS=('favicon','logo','icon','sprite','paypal','family','group','team-photo','volunteer')
 
 def fetch(url):
@@ -34,12 +35,17 @@ def valid_image_url(url,base):
     if not url:return ''
     url=urllib.parse.urljoin(base,html.unescape(url))
     if obvious_bad(url):return ''
-    try:
-        req=urllib.request.Request(url,headers={'User-Agent':UA,'Range':'bytes=0-2047'})
-        with urllib.request.urlopen(req,timeout=15) as r:
-            if not r.headers.get('Content-Type','').lower().startswith('image/'):return ''
-    except Exception:return ''
-    return url
+    headers_to_try=({'User-Agent':UA,'Range':'bytes=0-2047'},{'User-Agent':UA})
+    for headers in headers_to_try:
+        try:
+            req=urllib.request.Request(url,headers=headers)
+            with urllib.request.urlopen(req,timeout=15) as r:
+                if r.headers.get('Content-Type','').lower().startswith('image/'):
+                    r.read(64)
+                    return url
+        except Exception:
+            continue
+    return ''
 
 class PageParser(HTMLParser):
     def __init__(self,base):super().__init__();self.base=base;self.current=None;self.bits=[];self.links=[];self.images=[]
@@ -82,25 +88,29 @@ def from_candidate_site(name,url):
     if not image:return None
     return {'url':image,'source':'Candidate website','sourceUrl':url,'verifiedAt':dt.date.today().isoformat(),'match':'high'}
 def burlington_today_candidates(names):
-    try:body,_=fetch(BT_INDEX)
-    except Exception:return {}
-    p=PageParser(BT_INDEX);p.feed(body);results={}
+    links=[]
+    for index in BT_INDEXES:
+        try:body,_=fetch(index)
+        except Exception:continue
+        p=PageParser(index);p.feed(body);links.extend(p.links)
+    results={}
     for name in names:
         n=norm(name)
-        for label,url in p.links:
+        for label,url in links:
             ln=norm(label)
-            if n not in ln or not any(k in ln for k in ('candidate','seeks','running','vying','mayor','ward','trustee')):continue
+            if n not in ln or not any(k in ln for k in ('candidate','seeks','running','vying','mayor','ward','trustee','enters')):continue
             try:article,_=fetch(url)
             except Exception:continue
             title=meta(article,'og:title') or meta(article,'twitter:title') or label
             if n not in norm(title):continue
             image=valid_image_url(meta(article,'og:image'),url)
-            if image:results[name]={'url':image,'source':'BurlingtonToday','sourceUrl':url,'verifiedAt':dt.date.today().isoformat(),'match':'high'};break
+            if image:
+                results[name]={'url':image,'source':'BurlingtonToday','sourceUrl':url,'verifiedAt':dt.date.today().isoformat(),'match':'high'}
+                break
     return results
 
 def main():
     data=json.loads(BALLOT.read_text(encoding='utf-8'));images=data.setdefault('candidateImages',{});names=all_candidates(data)
-    # Remove previously auto-selected images that are clearly unsuitable for a single-person card.
     for name,record in list(images.items()):
         if obvious_bad(record.get('url','')):images.pop(name,None)
     for name in names:
