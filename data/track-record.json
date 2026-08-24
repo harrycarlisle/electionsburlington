@@ -1,0 +1,63 @@
+{
+  "updated": "2026-08-23",
+  "minimumReviewedCommitmentsForScore": 5,
+  "method": "A commitment is included only when its original wording is specific enough to test and a dated source can be preserved. Outcomes are checked against public records. Council-wide results are labelled as council-wide and are not credited to one councillor without evidence of a distinct individual action. No aggregate promise-kept score is published until at least five reviewed commitments exist for that person and comparable review has been completed for other incumbent candidates.",
+  "candidates": {
+    "Lisa Kearns": {
+      "publishAggregateScore": false,
+      "items": [
+        {
+          "topic": "Resident engagement",
+          "commitment": "Provide real engagement and be a councillor residents can connect with.",
+          "commitmentDate": "2018-09-18",
+          "commitmentSource": "https://www.lisakearnsward2.com/blog/2018/9/19/ward-2-update-sept-18",
+          "status": "Kept",
+          "attribution": "Individual office practice",
+          "check": "Ward 2 continued to publish recurring councillor updates and hold resident meetings. City material for 2025 and 2026 lists Ward 2 updates, budget workshops, walking tours and other engagement events.",
+          "evidence": [
+            "https://www.burlington.ca/en/news/council-news-and-events/ward-2-news-update-may-2025.aspx",
+            "https://www.burlington.ca/en/news/city-talk-spring-2026.aspx"
+          ]
+        },
+        {
+          "topic": "Integrated mobility",
+          "commitment": "Support connected walking and cycling routes through completion of Burlington's Integrated Mobility Plan.",
+          "commitmentDate": "2022-09-01",
+          "commitmentSource": "https://www.burlingtongreen.org/wp-content/uploads/2022/09/lisa_kearns-min.pdf",
+          "status": "Advanced",
+          "attribution": "Council-wide outcome",
+          "check": "Burlington City Council unanimously approved the first Integrated Mobility Plan on Nov. 14, 2023. The approval is evidence that the policy moved forward, but it is a council-wide result rather than an individual accomplishment.",
+          "evidence": [
+            "https://www.burlington.ca/en/news/burlington-s-first-integrated-mobility-plan-approved-by-city-council.aspx"
+          ]
+        },
+        {
+          "topic": "Public EV charging",
+          "commitment": "Support increasing and prioritizing public EV chargers on City property.",
+          "commitmentDate": "2022-09-01",
+          "commitmentSource": "https://www.burlingtongreen.org/wp-content/uploads/2022/09/lisa_kearns-min.pdf",
+          "status": "Advanced",
+          "attribution": "Council-wide outcome",
+          "check": "The City reports public charging stations at municipal lots and community facilities, and its climate reporting records additional City-property charging installations. This shows the policy direction advanced, but does not by itself establish individual credit.",
+          "evidence": [
+            "https://www.burlington.ca/en/home-property-and-environment/electric-vehicles.aspx",
+            "https://www.burlington.ca/en/news/city-burlington-taking-action-on-climate-change.aspx"
+          ]
+        },
+        {
+          "topic": "Housing Strategy",
+          "commitment": "Deliver on Burlington's Housing Strategy roadmap to increase housing options.",
+          "commitmentDate": "2022-10-01",
+          "commitmentSource": "https://www.lisakearnsward2.com/",
+          "status": "In progress",
+          "attribution": "Council-wide implementation",
+          "check": "The City funded a Housing Strategy implementation role in the 2024 budget and later adopted Official Plan changes tied to Housing Strategy implementation. The strategy remains an ongoing city program rather than a completed one-person promise.",
+          "evidence": [
+            "https://www.burlington.ca/en/council-and-city-administration/resources/Budget-and-Finances/Approved-Budget-Book/2024/2024-Approved-Budget-Book-00-Complete.pdf",
+            "https://www.burlington.ca/en/Official-Plan-2020-Documents/0-Table-of-Contents-2025-07-31.pdf"
+          ]
+        }
+      ]
+    }
+  }
+}
