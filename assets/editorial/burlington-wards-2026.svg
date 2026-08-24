@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Simplified diagram of Burlington's six 2026 voting wards</title>
+  <desc id="desc">Ward 1 is in the west, Ward 2 is near the western waterfront, Ward 3 is north central, Ward 4 is south central, Ward 5 is in the southeast and Ward 6 is in the northeast. This is an orientation diagram, not an address-level boundary map.</desc>
+  <rect width="960" height="560" rx="30" fill="#eaf2f4"/>
+  <path d="M0 430 C160 398 286 470 437 438 C617 400 753 452 960 405 V560 H0Z" fill="#a9d9ec"/>
+  <path d="M0 447 C164 415 287 485 442 454 C626 417 766 467 960 421" fill="none" stroke="#ffffff" stroke-opacity=".75" stroke-width="5"/>
+
+  <g stroke="#ffffff" stroke-width="7" stroke-linejoin="round">
+    <path d="M56 194 L69 86 L293 52 L365 170 L299 269 L151 258 Z" fill="#5a9ec5"/>
+    <path d="M293 52 L553 72 L612 191 L518 272 L365 170 Z" fill="#64b8a5"/>
+    <path d="M553 72 L850 115 L908 242 L707 287 L612 191 Z" fill="#dcbf58"/>
+    <path d="M56 194 L151 258 L299 269 L362 357 L248 415 L78 372 Z" fill="#7e77b8"/>
+    <path d="M299 269 L518 272 L612 351 L521 421 L362 357 Z" fill="#e58c68"/>
+    <path d="M518 272 L707 287 L908 242 L908 390 L721 440 L612 351 Z" fill="#cd6f86"/>
+  </g>
+
+  <path d="M38 281 C187 253 334 292 474 264 C635 232 745 262 925 222" fill="none" stroke="#173a51" stroke-opacity=".58" stroke-width="8" stroke-linecap="round"/>
+  <path d="M38 281 C187 253 334 292 474 264 C635 232 745 262 925 222" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="9 11" stroke-linecap="round"/>
+  <text x="782" y="205" fill="#173a51" font-family="Arial, sans-serif" font-size="17" font-weight="700" transform="rotate(-10 782 205)">QEW</text>
+
+  <g fill="#ffffff" font-family="Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(205 156)"><circle r="31" fill="#123e5a" fill-opacity=".88"/><text y="10" font-size="29" font-weight="800">1</text><text y="58" font-size="15" font-weight="700">Aldershot</text></g>
+    <g transform="translate(454 148)"><circle r="31" fill="#123e5a" fill-opacity=".88"/><text y="10" font-size="29" font-weight="800">3</text><text y="58" font-size="15" font-weight="700">North central</text></g>
+    <g transform="translate(738 170)"><circle r="31" fill="#123e5a" fill-opacity=".88"/><text y="10" font-size="29" font-weight="800">6</text><text y="58" font-size="15" font-weight="700">Northeast</text></g>
+    <g transform="translate(201 334)"><circle r="31" fill="#123e5a" fill-opacity=".88"/><text y="10" font-size="29" font-weight="800">2</text><text y="58" font-size="15" font-weight="700">Downtown</text></g>
+    <g transform="translate(456 343)"><circle r="31" fill="#123e5a" fill-opacity=".88"/><text y="10" font-size="29" font-weight="800">4</text><text y="58" font-size="15" font-weight="700">South central</text></g>
+    <g transform="translate(745 346)"><circle r="31" fill="#123e5a" fill-opacity=".88"/><text y="10" font-size="29" font-weight="800">5</text><text y="58" font-size="15" font-weight="700">Southeast</text></g>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <text x="36" y="43" fill="#173a51" font-size="16" font-weight="800" letter-spacing="2">BURLINGTON · 2026</text>
+    <text x="924" y="43" fill="#456777" font-size="14" font-weight="700" text-anchor="end">SIX VOTING WARDS</text>
+    <text x="480" y="505" fill="#24617d" font-size="17" font-weight="700" text-anchor="middle">LAKE ONTARIO</text>
+    <text x="480" y="536" fill="#456777" font-size="13" text-anchor="middle">Simplified orientation diagram · use the City address finder for an exact boundary</text>
+  </g>
+</svg>

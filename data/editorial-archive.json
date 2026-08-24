@@ -1,0 +1,39 @@
+{
+  "updated": "2026-08-24",
+  "features": [
+    {
+      "slug": "skyway-tunnel-plan",
+      "headline": "Ontario nearly replaced the Skyway with three tunnels.",
+      "url": "articles/skyway-bridge-story.html",
+      "published": "2026-08-24",
+      "readTimeMinutes": 9,
+      "desk": "Burlington News Staff",
+      "status": "published",
+      "visuals": [
+        {
+          "path": "assets/editorial/skyway-alternatives-v2.webp",
+          "type": "labelled editorial reconstruction",
+          "note": "The bridge scene and the unbuilt three-tunnel alternative are separate concepts. The lower section is not a claim that tunnels exist beneath the Skyway."
+        },
+        {
+          "path": "assets/editorial/skyway-then-now.webp",
+          "type": "source-anchored then-and-now reconstruction",
+          "note": "The 1982 proposal and present-day arrangement share an approximate viewpoint. The Toronto Star archive image was a geometry reference and is not reproduced. Markers are explanatory, not survey positions."
+        }
+      ],
+      "primaryResearch": [
+        "Library and Archives Canada web archive of the Cultural Landmarks of Hamilton-Wentworth chronology",
+        "Transport Canada information on the Burlington Canal Lift Bridge and canal operations"
+      ],
+      "audit": {
+        "citationToClaim": "passed",
+        "dates": "passed",
+        "burlingtonRelevance": "passed",
+        "imageRights": "passed",
+        "defamationAndPrivacy": "passed",
+        "internalLinks": "passed",
+        "duplicateStory": "passed"
+      }
+    }
+  ]
+}

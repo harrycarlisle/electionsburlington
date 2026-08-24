@@ -1,7 +1,7 @@
 /* Burlington News publication layout and final election UX fixes. */
 :root{--publication-green:#4d8b3d;--publication-blue:#0b4f7c;--publication-cream:#fffaf0;--publication-yellow:#f5d64f}
 .publication-nav{gap:19px!important}.publication-nav a{font-size:13px!important}.publication-nav a:hover{color:var(--publication-green)!important;text-decoration:none!important}
-.news-brand-copy small{font-size:0!important;letter-spacing:0!important}.news-brand-copy small::after{content:'LOCAL · CLEAR · USEFUL';font-size:8px;letter-spacing:.115em}
+.news-brand-copy small{display:none!important}
 .site-legal-footer .site-legal-links a[href*="partnership"],.partner-card{display:none!important}
 
 /* Home starts like a local publication. Election coverage remains a major section. */

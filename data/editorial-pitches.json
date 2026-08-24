@@ -1,6 +1,7 @@
 {
   "updated": "2026-08-24",
   "publishingCadence": "One exceptional evergreen feature each Monday; publish nothing when reporting is not strong enough.",
+  "standards": ["editorial/voice-and-style.md", "editorial/headline-rubric.md", "editorial/publication-checklist.md"],
   "pitches": [
     {
       "slug": "corned-beef-hut-origin",
@@ -64,9 +65,10 @@
     },
     {
       "slug": "skyway-tunnel-plan",
-      "workingTitle": "Burlington almost buried the Skyway",
-      "hook": "By the 1970s, Ontario was buying property for a plan that included three tunnels beneath the bay.",
+      "workingTitle": "Ontario nearly replaced the Skyway with three tunnels",
+      "hook": "By the 1970s, Ontario had bought 84 properties while weighing three road tunnels under the canal against a second bridge.",
       "status": "published",
+      "published": "2026-08-24",
       "url": "articles/skyway-bridge-story.html"
     },
     {

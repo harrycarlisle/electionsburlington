@@ -3,21 +3,21 @@
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const fetchJson=async url=>{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(url);return r.json()};
   const home=()=>location.pathname==='/'||location.pathname.endsWith('/index.html');
-  const brandMarkup='<img class="news-brand-logo" src="/logo-mark.svg?v=20260824b" alt=""><span class="news-brand-copy"><strong>Burlington <em>News</em></strong></span>';
+  const brandMarkup='<img class="news-brand-logo" src="/logo-mark.svg?v=20260824h" alt=""><span class="news-brand-copy"><strong>Burlington <em>News</em></strong></span>';
 
   function restoreBrand(){
     document.querySelectorAll('.brand').forEach(b=>{if(!b.classList.contains('news-brand')||!b.querySelector('.news-brand-copy')){b.className='brand news-brand';b.href='index.html';b.innerHTML=brandMarkup;b.setAttribute('aria-label','Burlington News home')}});
-    let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='favicon.svg?v=20260824a';
+    let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='favicon.svg?v=20260824h';
     const path=location.pathname.replace(/\/$/,'');
     const titles={
-      '':'Burlington News | 2026 Municipal Election Guide','/index.html':'Burlington News | 2026 Municipal Election Guide',
+      '':'Burlington News | Local news, events and election coverage','/index.html':'Burlington News | Local news, events and election coverage',
       '/head-to-head.html':'Compare Burlington Mayor Candidates | Burlington News','/ballot.html':'Your Burlington Ballot | Burlington News','/ward.html':'What Ward Am I In? | Burlington News',
-      '/updates.html':'Burlington in 30 Seconds | Burlington News','/explore.html':'Explore Burlington | Burlington News','/promises.html':'Promises & Records | Burlington News','/puzzles.html':'Burlington Puzzles | Burlington News','/elections-for-beginners.html':'Elections for Beginners | Burlington News',
+      '/updates.html':'Latest Burlington News | Burlington News','/explore.html':'Explore Burlington | Burlington News','/promises.html':'Promises & Records | Burlington News','/puzzles.html':'Burlington Puzzles | Burlington News','/elections-for-beginners.html':'Elections for Beginners | Burlington News',
       '/methodology.html':'Sources & Methodology | Burlington News','/help.html':'Help & Feedback | Burlington News','/privacy.html':'Privacy Policy | Burlington News','/terms.html':'Terms of Use | Burlington News','/independent.html':'Independent | Burlington News','/feedback':'Give feedback | Burlington News'
     };
     if(titles[path])document.title=titles[path];else if(/Burlington Election Guide/i.test(document.title))document.title=document.title.replace(/Burlington Election Guide/ig,'Burlington News');
   }
-  function restoreBanner(){let b=document.querySelector('.banner'),h=document.querySelector('.header');if(!b&&h){b=document.createElement('div');b.className='banner';h.before(b)}if(b)b.innerHTML='<div class="wrap"><strong>2026 election</strong><span class="banner-sep" aria-hidden="true"> · </span><span>Voting starts Oct. 14</span><span class="banner-sep" aria-hidden="true"> · </span><span>Election Day Oct. 26</span></div>'}
+  function restoreBanner(){const election=/(election-guide|head-to-head|ballot|ward|promises|elections-for-beginners)\.html$/.test(location.pathname);let b=document.querySelector('.banner'),h=document.querySelector('.header');if(!election){b?.remove();return}if(!b&&h){b=document.createElement('div');b.className='banner';h.before(b)}if(b)b.innerHTML='<div class="wrap"><strong>2026 election</strong><span class="banner-sep" aria-hidden="true"> · </span><span>Voting starts Oct. 14</span><span class="banner-sep" aria-hidden="true"> · </span><span>Election Day Oct. 26</span></div>'}
   function restoreFooter(){
     let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}
     if(f.dataset.newsFooter==='2')return;f.dataset.newsFooter='2';
@@ -108,7 +108,7 @@
       {tag:'Fish',headline:'More than 26,000 fish passed through one local fishway',summary:'RBG’s 2025 count shows what is migrating into Cootes Paradise and which native species are recovering.',url:'https://www.rbg.ca/2025-cootes-paradise-fishway-highlights-fish-and-fish-migration/',image:'https://rbg-1c124.kxcdn.com/app/uploads/DSC03362-scaled.jpg?x51525'}
     ];
     const section=document.createElement('section');section.className='publication-home';section.innerHTML=`
-      <div class="publication-dateline"><span>${esc(dateText())}</span><nav class="publication-regions" aria-label="Coverage areas"><a href="updates.html">Burlington</a><a href="updates.html#region">Oakville</a><a href="updates.html#region">Hamilton</a><a href="updates.html#region">GTA</a><a href="updates.html#region">Niagara</a><a href="updates.html#world">World</a></nav></div>
+      <div class="publication-dateline"><span>${esc(dateText())}</span><span>Burlington, Ontario</span></div>
       <div class="publication-heading"><h1>Burlington, in one place.</h1><p>Local news, things to do, civic decisions and an election guide that tells you exactly what each choice means.</p></div>
       <div class="publication-lead-grid"><a class="publication-lead" href="${esc(lead.url)}"><div class="publication-lead-media">${media(lead)}</div><span class="publication-tag">${esc(lead.tag||'Burlington')}</span><h2>${esc(lead.headline)}</h2><p>${esc(lead.summary||lead.description||'Open the full update.')}</p></a><div class="publication-side">${side.map(x=>`<a class="publication-side-story" href="${esc(x.url)}" target="_blank" rel="noopener"><div class="publication-side-media">${media(x)}</div><div class="publication-side-copy"><span class="publication-tag">${esc(x.tag||'Burlington')}</span><h3>${esc(x.headline)}</h3><p>${esc(x.summary||x.description||'Open the full update.')}</p></div></a>`).join('')}</div></div>
       <p class="publication-credit">Wildlife images: Jefferson salamander by Jake Scott, CC BY-SA 3.0; Cerulean warbler by Mdf/MPF, CC BY-SA 3.0; Fishway photo via Royal Botanical Gardens.</p>

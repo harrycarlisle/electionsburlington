@@ -1,13 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&display=swap');
-
 /* Final density/readability pass for the voter guide. */
 
 /* Cleaner typography: softer, thinner and more editorial than the original heavy UI type. */
-html,body,button,select,input,textarea{font-family:"DM Sans",Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+html,body,button,select,input,textarea{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
 body{font-weight:400;letter-spacing:-.006em}
 .brand{font-weight:700!important;letter-spacing:-.025em!important}
 .brand small{font-weight:600!important;letter-spacing:.095em!important}
-h1,h2,h3,.candidate-body h3,.person-head b,.profile-head h2,.head h1,.person-select select,.title-name{font-family:"DM Sans",Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+h1,h2,h3,.candidate-body h3,.person-head b,.profile-head h2,.head h1,.person-select select,.title-name{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
 h1,h2{font-weight:680!important;letter-spacing:-.032em!important}
 .election-hero h1{font-weight:660!important;letter-spacing:-.045em!important}
 .election-hero p{font-weight:400!important;letter-spacing:-.012em!important}

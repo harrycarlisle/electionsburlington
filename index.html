@@ -6,9 +6,9 @@
   <title>Burlington News | Local news, events and election coverage</title>
   <meta name="description" content="Independent Burlington, Ontario news, things to do, food, sports, local discoveries and clear 2026 municipal election coverage.">
   <link rel="canonical" href="https://burlingtonnews.ca/">
-  <link rel="icon" href="favicon.svg?v=20260824b">
+  <link rel="icon" href="favicon.svg?v=20260824h">
   <link rel="preload" href="assets/home/skyway.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="home.css?v=20260824b">
+  <link rel="stylesheet" href="home.css?v=20260824h">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Burlington News">
   <meta property="og:locale" content="en_CA">
@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://burlingtonnews.ca/assets/home/skyway.webp">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"Burlington News","url":"https://burlingtonnews.ca/","logo":{"@type":"ImageObject","url":"https://burlingtonnews.ca/logo-mark.svg"},"areaServed":{"@type":"City","name":"Burlington","containedInPlace":{"@type":"AdministrativeArea","name":"Ontario"}},"publishingPrinciples":"https://burlingtonnews.ca/methodology.html"}</script>
-  <script src="home.js?v=20260824b" defer></script>
+  <script src="home.js?v=20260824h" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,17 +26,26 @@
   <div class="utility-bar">
     <div class="shell utility-inner">
       <span id="today">Burlington, Ontario</span>
-      <div class="utility-actions"><span class="weather" id="weather" hidden></span><nav aria-label="Neighbouring coverage"><a href="updates.html#region">Halton</a><a href="updates.html#region">GTA</a></nav></div>
+      <div class="utility-actions"><span class="weather" id="weather" hidden></span></div>
     </div>
   </div>
 
   <header class="site-header">
     <div class="shell masthead">
       <a class="brand" href="/" aria-label="Burlington News home">
-        <img src="logo-mark.svg?v=20260824b" width="46" height="46" alt="">
+        <img src="logo-mark.svg?v=20260824h" width="36" height="36" alt="">
         <span>Burlington <strong>News</strong></span>
       </a>
-      <button class="search-button icon-button" id="searchButton" type="button" aria-haspopup="dialog" aria-label="Search Burlington News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.8"></circle><path d="m15 15 4.2 4.2"></path></svg><span class="sr-only">Search</span></button>
+      <form class="header-search" id="headerSearch" role="search" autocomplete="off">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.8"></circle><path d="m15 15 4.2 4.2"></path></svg>
+        <label class="sr-only" for="siteSearch">Search Burlington News</label>
+        <input id="siteSearch" type="search" spellcheck="false" aria-autocomplete="list" aria-controls="searchResults" aria-expanded="false" placeholder="Search top food">
+        <button class="search-clear" id="searchClear" type="button" aria-label="Clear search" hidden>×</button>
+        <div class="search-popover" id="searchPopover" hidden>
+          <div class="search-suggestions" id="searchSuggestions" aria-label="Suggested searches"></div>
+          <div class="search-results" id="searchResults" role="listbox" aria-live="polite"></div>
+        </div>
+      </form>
       <button class="menu-button icon-button" id="menuButton" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu"><span class="hamburger" aria-hidden="true"><i></i><i></i><i></i></span><span class="sr-only">Menu</span></button>
       <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
         <a href="updates.html">News</a>
@@ -56,7 +65,7 @@
         </details>
         <a href="explore.html">Things to do</a>
         <a href="#food">Food &amp; drink</a>
-        <a href="#sports">Sports</a>
+        <a href="sports.html">Sports</a>
         <a href="puzzles.html">Puzzles</a>
       </nav>
     </div>
@@ -64,17 +73,21 @@
 
   <main id="main">
     <section class="shell lead-layout" aria-labelledby="lead-title">
-      <a class="lead-story" href="articles/skyway-bridge-story.html">
-        <div class="lead-media">
-          <img src="assets/home/skyway.webp" width="1000" height="625" alt="The Burlington Bay James N. Allan Skyway" fetchpriority="high" decoding="async">
-          <span class="image-credit">Photo: Wikimedia Commons</span>
-        </div>
-        <div class="lead-copy">
-          <span class="story-label">The Monday Feature · 9 min</span>
-          <h1 id="lead-title">Ontario nearly replaced the Skyway with three tunnels.</h1>
-          <p>A ship strike, failed tolls, 84 purchased properties and an opening-day crash shaped the crossing Burlington knows.</p>
-        </div>
-      </a>
+      <div class="lead-feature-shell">
+        <a class="lead-story" id="leadStory" href="articles/skyway-bridge-story.html">
+          <div class="lead-media" id="leadMedia">
+            <img id="leadImage" src="assets/home/skyway.webp" width="1000" height="625" alt="The Burlington Bay James N. Allan Skyway" fetchpriority="high" decoding="async">
+            <span class="image-credit">Dave Lauretti · CC BY 2.0</span>
+          </div>
+          <div class="lead-copy">
+            <span class="story-label" id="leadLabel">The Monday Feature · 9 min</span>
+            <h1 id="lead-title">Ontario nearly replaced the Skyway with three tunnels.</h1>
+            <p id="leadDeck">A ship strike, failed tolls, 84 purchased properties—and a crash 14 minutes after the second span opened.</p>
+            <span class="lead-byline" id="leadByline">By Burlington News Staff</span>
+          </div>
+        </a>
+        <div class="hero-progress" id="heroProgress" aria-label="Choose a featured story"><button class="active" type="button" aria-label="Show feature 1"></button><button type="button" aria-label="Show feature 2"></button><button type="button" aria-label="Show feature 3"></button></div>
+      </div>
 
       <div class="side-stories" aria-label="Discover Burlington">
         <a class="side-story salamander" href="articles/salamander-road-closure.html">
@@ -94,7 +107,7 @@
 
     <nav class="shell quick-strip" aria-label="Popular sections">
       <a href="election-guide.html"><strong>Election Guide</strong></a>
-      <a href="ballot.html"><strong>Your Ballot</strong></a>
+      <a href="skyway-traffic.html"><strong>Skyway Traffic</strong></a>
       <a href="explore.html"><strong>Explore</strong></a>
       <a href="puzzles.html"><strong>Puzzles</strong></a>
     </nav>
@@ -103,17 +116,27 @@
       <div class="section-heading"><div><span>News</span><h2 id="latest-title">Latest in Burlington</h2></div><a href="updates.html">See all news →</a></div>
       <div class="latest-grid">
         <article class="latest-main">
+          <div class="latest-main-visual" aria-hidden="true"><b>5</b><span>mayoral candidates</span></div>
           <span class="story-label">2026 election</span>
-          <h3>Burlington has five mayoral candidates. Start with their biggest differences.</h3>
-          <p>Compare priorities, records and the questions each campaign still needs to answer.</p>
+          <h3>Five people want to be Burlington’s next mayor.</h3>
+          <p>Here’s where they differ—and what they still haven’t answered.</p>
           <a href="election-guide.html#candidates">Meet the candidates →</a>
         </article>
         <div class="latest-list" id="latestList" aria-live="polite">
-          <a href="head-to-head.html"><span>Politics</span><strong>Settle the candidate debate in seconds</strong><small>Choose two people and one issue.</small></a>
-          <a href="articles/fishway-26000-fish.html"><span>Environment</span><strong>What 26,503 fish revealed about a damaged marsh</strong><small>The hopeful number hides a much harder restoration story.</small></a>
-          <a href="promises.html"><span>Accountability</span><strong>Track promises against the public record</strong><small>What was promised, what happened and what remains unclear.</small></a>
+          <a href="https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/"><span class="latest-thumb latest-thumb-wards" aria-hidden="true"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i></span><span>Your ward</span><strong>Your ward may have changed. Check before you vote.</strong><small>New boundaries take effect for the 2026 election.</small></a>
+          <a href="https://www.burlington.ca/en/news/game-on-free-sports-equipment-lockers-coming-to-burlington-parks.aspx"><span class="latest-thumb latest-thumb-sport" aria-hidden="true">20</span><span>Recreation</span><strong>Twenty parks are getting free-to-borrow sports gear.</strong><small>Basketballs, soccer balls and more will be available through park lockers.</small></a>
+          <a href="articles/fishway-26000-fish.html"><img class="latest-thumb" src="assets/home/fishway.webp" width="160" height="110" alt="The Cootes Paradise Fishway across the water" loading="lazy" decoding="async"><span>Environment</span><strong>What 26,503 fish revealed about a damaged marsh.</strong><small>The hopeful count hides a harder restoration problem.</small></a>
         </div>
       </div>
+    </section>
+
+    <section class="shell community-signal" id="communitySignal" aria-labelledby="communitySignalTitle" hidden>
+      <div class="community-signal-copy">
+        <span class="story-label">Community signal · public posts</span>
+        <a id="communitySignalLink" href="#" target="_blank" rel="noopener"><h2 id="communitySignalTitle">What Burlington is talking about right now</h2><p id="communitySignalHeadline"></p></a>
+        <div class="community-signal-meta"><span id="communitySignalMeta"></span><a href="methodology.html#community-signal">How it’s ranked</a></div>
+      </div>
+      <div class="community-score-card" aria-label="Community signal score"><strong id="communitySignalScore">—</strong><span>signal score</span><i><b id="communitySignalBar"></b></i><small>Not a poll</small></div>
     </section>
 
     <section class="election-band" aria-labelledby="election-title">
@@ -134,41 +157,46 @@
     </section>
 
     <section class="shell editorial-section" aria-labelledby="discover-title">
-      <div class="section-heading"><div><span>Do something</span><h2 id="discover-title">A better way to explore Burlington</h2></div><a href="explore.html">Shuffle the full deck →</a></div>
+      <div class="section-heading"><div><span>Explore now</span><h2 id="discover-title">One good Burlington idea</h2></div><a href="explore.html">Shuffle the full deck →</a></div>
       <div class="discovery-grid">
         <a class="discovery-feature" href="explore.html">
-          <div class="card-stack" aria-hidden="true"><i></i><i></i><i><small>Try this</small><strong>Find a Burlington detail most people walk past.</strong></i></div>
-          <div><span class="story-label">Bored button</span><h3>Don’t search. Shuffle.</h3><p>Pick a mood and get one specific free stop, overlooked place or small local challenge.</p></div>
+          <img src="assets/editorial/explore-collage.webp" width="1440" height="960" alt="Editorial collage of Burlington’s shoreline, lift bridge, escarpment, wetland and local food" loading="lazy" decoding="async">
+          <div><span class="story-label">Try somewhere new</span><h3>Pick a mood. Get one place.</h3><p>No endless list—just one Burlington idea at a time.</p></div>
         </a>
         <div class="popular-list" id="food">
-          <div class="popular-heading"><span>Popular now</span><strong>What Burlington is saving</strong></div>
-          <a href="guides/best-of-burlington.html#restaurants"><b>1</b><span><strong>10 Burlington food stops to know</strong><small>Corned Beef Hut leads an editorial—not paid—local list.</small></span></a>
-          <a href="guides/best-of-burlington.html#free"><b>2</b><span><strong>10 genuinely free things to do</strong><small>No “free entry, then spend $40” suggestions.</small></span></a>
-          <a href="explore.html"><b>3</b><span><strong>Build your Burlington Passport</strong><small>Reveal a local challenge and track all twelve.</small></span></a>
+          <div class="popular-heading"><span>Save for later</span><strong>Useful local lists</strong></div>
+          <a href="guides/best-of-burlington.html#restaurants"><b>1</b><span><strong>10 Burlington food stops worth knowing</strong><small>Start with Corned Beef Hut.</small></span></a>
+          <a href="guides/best-of-burlington.html#free"><b>2</b><span><strong>10 ways to spend a day for free</strong><small>Actually free.</small></span></a>
+          <a href="explore.html"><b>3</b><span><strong>Shuffle somewhere new</strong><small>One place. One detail. No scrolling.</small></span></a>
         </div>
       </div>
     </section>
 
-    <section class="shell sports-puzzles" id="sports" aria-labelledby="play-title">
-      <div><span class="story-label">Local sports</span><h2 id="play-title">Burlington plays here.</h2><p>Community teams, athletes and the local stories bigger outlets miss. Coverage is coming next.</p></div>
-      <a href="puzzles.html"><span class="story-label">Play</span><h3>Puzzles about Burlington</h3><p>Visual questions about local places, history and how the city works.</p><strong>Start a puzzle →</strong></a>
+    <section class="shell editorial-section sports-section" id="sports" aria-labelledby="sports-title">
+      <div class="section-heading"><div><span>Local sports</span><h2 id="sports-title">The games Burlington is talking about</h2></div><a href="sports.html">See all sports →</a></div>
+      <div class="sports-grid">
+        <a class="sports-lead" href="https://www.burlingtontoday.com/local-sports/burlington-u16-boys-crowned-ontario-summer-games-champions-12636112">
+          <img src="assets/editorial/sports-collage.webp" width="1440" height="960" alt="Editorial illustration of soccer, running and ice sports in Burlington" loading="lazy" decoding="async">
+          <div><span class="story-label">Soccer · Aug. 6</span><h3>Bayhawks boys allowed one goal on their way to gold.</h3><small>Source: BurlingtonToday</small></div>
+        </a>
+        <div class="sports-list">
+          <a href="https://www.burlingtontoday.com/local-sports/burlington-bayhawks-u17-u20-women-both-win-premier-league-finals-12661938"><span>Soccer · Aug. 13</span><strong>Two Bayhawks women’s teams won their finals days apart.</strong><small>BurlingtonToday</small></a>
+          <a href="https://www.burlington.ca/en/news/game-on-free-sports-equipment-lockers-coming-to-burlington-parks.aspx"><span>Play · Aug. 4</span><strong>Free sports-equipment lockers are coming to 20 parks.</strong><small>City of Burlington</small></a>
+          <a href="https://www.burlingtontoday.com/local-news/burlington-blast-becomes-first-local-aa-ringette-team-to-represent-ontario-12054186"><span>Ringette</span><strong>The Burlington Blast became the city’s first AA team to represent Ontario.</strong><small>BurlingtonToday</small></a>
+        </div>
+      </div>
+      <a class="puzzle-strip" href="puzzles.html"><span class="puzzle-tiles" aria-hidden="true"><i>?</i><i>B</i><i>↔</i></span><span><small>Play</small><strong>How well do you know Burlington?</strong></span><b>Start a puzzle →</b></a>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="shell footer-main">
       <div class="footer-brand"><a class="brand" href="/"><img src="logo-mark.svg" width="42" height="42" alt=""><span>Burlington <strong>News</strong></span></a><p>Independent local news, discoveries and election coverage for Burlington, Ontario.</p></div>
-      <nav aria-label="Footer sections"><strong>Explore</strong><a href="updates.html">News</a><a href="election-guide.html">Elections</a><a href="explore.html">Things to do</a><a href="puzzles.html">Puzzles</a></nav>
+      <nav aria-label="Footer sections"><strong>Explore</strong><a href="updates.html">News</a><a href="election-guide.html">Elections</a><a href="explore.html">Things to do</a><a href="sports.html">Sports</a><a href="puzzles.html">Puzzles</a></nav>
       <nav aria-label="About Burlington News"><strong>About</strong><a href="independent.html">Independent</a><a href="methodology.html">Sources &amp; methodology</a><a href="help.html">Help &amp; accessibility</a><a href="/feedback/">Give feedback</a></nav>
       <nav aria-label="Legal"><strong>Legal</strong><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy</a></nav>
     </div>
     <div class="shell footer-bottom"><span>© 2026 Burlington News</span><span>Made in Burlington. Not affiliated with the City of Burlington.</span></div>
   </footer>
-  <dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
-    <form method="dialog" class="search-head"><h2 id="searchTitle">Search Burlington News</h2><button aria-label="Close search">×</button></form>
-    <label for="siteSearch">Search stories and guides</label>
-    <input id="siteSearch" type="search" autocomplete="off" placeholder="Try “Ribfest,” “ballot” or “salamander”">
-    <div class="search-results" id="searchResults" aria-live="polite"></div>
-  </dialog>
 </body>
 </html>
