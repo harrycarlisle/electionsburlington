@@ -9,7 +9,7 @@ The purpose of this archive is to build a long-term, source-backed record while 
 - **Lisa Kearns campaign:** No detected change — https://lisakearns.ca/
 - **Rory Nisan campaign:** CHANGED — review — https://rorynisan.ca/
 - **Official candidate list:** CHANGED — review — https://myvote.burlington.ca/for-voters/list-of-candidates/
-- **Official voting information:** CHANGED — review — https://myvote.burlington.ca/for-voters/how-to-vote/
+- **Official voting information:** No detected change — https://myvote.burlington.ca/for-voters/how-to-vote/
 - **City budget portal:** Fetch failed — review manually — https://www.burlington.ca/en/council-and-city-administration/budget.aspx
 - **Burlington council records:** CHANGED — review — https://burlingtonpublishing.escribemeetings.com/
 - **3110 South Service Road:** Fetch failed — review manually — https://www.burlington.ca/en/news/current-development-projects/3110_South_Service_Rd.aspx
@@ -34,5 +34,4 @@ The purpose of this archive is to build a long-term, source-backed record while 
 ## Changed sources requiring review
 - Rory Nisan campaign
 - Official candidate list
-- Official voting information
 - Burlington council records
