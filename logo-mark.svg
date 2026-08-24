@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Burlington">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#242628"/><stop offset="1" stop-color="#17191b"/></linearGradient></defs>
+  <rect x="2" y="2" width="252" height="252" rx="43" fill="url(#bg)"/>
+  <path fill="#fbfbfa" fill-rule="evenodd" stroke="#fbfbfa" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" d="M53 45 L69 59 L69 189 L53 199 L53 205 L175 204 L206 178 L206 144 L176 120 L197 100 L198 77 L167 44 Z M104 53 L106 51 L159 51 L164 57 L164 79 L186 80 L188 82 L188 95 L186 99 L169 114 L161 118 L105 118 Z M106 126 L156 126 L164 129 L170 135 L172 143 L172 178 L170 185 L164 192 L156 196 L104 195 L104 128 Z"/>
+</svg>
