@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-24T10:54:28Z",
+  "checkedAt": "2026-08-24T16:56:05Z",
   "method": "Verified, rule-based Burlington civic monitor. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "sources": [
     {
@@ -45,7 +45,7 @@
     {
       "source": "Focus Burlington",
       "ok": true,
-      "found": 0
+      "found": 16
     },
     {
       "source": "Tourism Burlington",
@@ -205,6 +205,21 @@
       "tag": "Burlington"
     },
     {
+      "title": "Water and Wastewater Services",
+      "url": "https://www.halton.ca/for-residents/water-and-wastewater-services",
+      "source": "Halton Region",
+      "sourceType": "official",
+      "scope": "region",
+      "allowImage": true,
+      "pageRank": 22,
+      "description": "Halton Region provides safe, high-quality drinking water and reliable wastewater services to Burlington, Halton Hills, Milton, and Oakville.",
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 3,
+      "why": "",
+      "tag": "Halton Region"
+    },
+    {
       "title": "Privacy Policy and Terms of Use",
       "url": "https://myvote.burlington.ca/privacy-policy-and-terms-of-use/",
       "source": "City of Burlington Election",
@@ -212,21 +227,6 @@
       "scope": "election",
       "allowImage": true,
       "pageRank": 0,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington"
-    },
-    {
-      "title": "Register for school",
-      "url": "https://www.hdsb.ca/students-families/register-for-school/",
-      "source": "Halton District School Board",
-      "sourceType": "official",
-      "scope": "schools",
-      "allowImage": true,
-      "pageRank": 0,
-      "description": "Register your child with HDSB. Find your local school, complete forms, and learn requirements for Kindergarten and grade-level registration.",
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -254,7 +254,7 @@
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
-      "pageRank": 3,
+      "pageRank": 2,
       "description": "The Halton District School Board serves public school students across Halton Region, including Burlington, Halton Hills, Milton, and Oakville.",
       "verified": true,
       "verificationTier": "primary",
@@ -269,7 +269,7 @@
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
-      "pageRank": 4,
+      "pageRank": 3,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -283,7 +283,7 @@
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
-      "pageRank": 5,
+      "pageRank": 4,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -297,7 +297,7 @@
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
-      "pageRank": 6,
+      "pageRank": 5,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -307,6 +307,20 @@
     {
       "title": "Before & After School Care",
       "url": "https://www.hdsb.ca/students-families/before-after-school-care/",
+      "source": "Halton District School Board",
+      "sourceType": "official",
+      "scope": "schools",
+      "allowImage": true,
+      "pageRank": 6,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington"
+    },
+    {
+      "title": "Bus Cancellations & School Closures",
+      "url": "https://www.hdsb.ca/students-families/bus-cancellations-school-closures/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -333,8 +347,8 @@
       "tag": "Your ward"
     },
     {
-      "title": "Bus Cancellations & School Closures",
-      "url": "https://www.hdsb.ca/students-families/bus-cancellations-school-closures/",
+      "title": "Get Involved",
+      "url": "https://www.hdsb.ca/students-families/get-involved/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -361,8 +375,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Get Involved",
-      "url": "https://www.hdsb.ca/students-families/get-involved/",
+      "title": "Health & Well-Being",
+      "url": "https://www.hdsb.ca/students-families/health-well-being/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -389,8 +403,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Health & Well-Being",
-      "url": "https://www.hdsb.ca/students-families/health-well-being/",
+      "title": "Indigenous Rights & Education",
+      "url": "https://www.hdsb.ca/students-families/indigenous-rights-education/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -403,8 +417,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Indigenous Rights & Education",
-      "url": "https://www.hdsb.ca/students-families/indigenous-rights-education/",
+      "title": "New to Canada & Halton Region",
+      "url": "https://www.hdsb.ca/students-families/new-to-canada-halton-region/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -417,8 +431,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "New to Canada & Halton Region",
-      "url": "https://www.hdsb.ca/students-families/new-to-canada-halton-region/",
+      "title": "Pay Online (School Cash Online)",
+      "url": "https://www.hdsb.ca/students-families/pay-online-school-cash-online/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -445,13 +459,14 @@
       "tag": "Burlington"
     },
     {
-      "title": "Pay Online (School Cash Online)",
-      "url": "https://www.hdsb.ca/students-families/pay-online-school-cash-online/",
+      "title": "Register for School",
+      "url": "https://www.hdsb.ca/students-families/register-for-school/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
       "pageRank": 13,
+      "description": "Register your child with HDSB. Find your local school, complete forms, and learn requirements for Kindergarten and grade-level registration.",
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -461,6 +476,20 @@
     {
       "title": "Report Cards",
       "url": "https://www.hdsb.ca/students-families/report-cards/",
+      "source": "Halton District School Board",
+      "sourceType": "official",
+      "scope": "schools",
+      "allowImage": true,
+      "pageRank": 14,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington"
+    },
+    {
+      "title": "Request a Transcript",
+      "url": "https://www.hdsb.ca/students-families/request-a-transcript/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -487,8 +516,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Request a Transcript",
-      "url": "https://www.hdsb.ca/students-families/request-a-transcript/",
+      "title": "Safe Schools",
+      "url": "https://www.hdsb.ca/students-families/safe-schools/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -501,8 +530,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Safe Schools",
-      "url": "https://www.hdsb.ca/students-families/safe-schools/",
+      "title": "Student Life & Engagement",
+      "url": "https://www.hdsb.ca/students-families/student-life-engagement/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -529,8 +558,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Student Life & Engagement",
-      "url": "https://www.hdsb.ca/students-families/student-life-engagement/",
+      "title": "Technology & You",
+      "url": "https://www.hdsb.ca/students-families/technology-you/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -557,8 +586,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Technology & You",
-      "url": "https://www.hdsb.ca/students-families/technology-you/",
+      "title": "Welcome Centre",
+      "url": "https://www.hdsb.ca/students-families/welcome-centre/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -589,8 +618,8 @@
       "tag": "Halton Region"
     },
     {
-      "title": "Welcome Centre",
-      "url": "https://www.hdsb.ca/students-families/welcome-centre/",
+      "title": "Why Choose HDSB?",
+      "url": "https://www.hdsb.ca/students-families/why-choose-hdsb/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -608,20 +637,6 @@
       "source": "City of Burlington Election",
       "sourceType": "official",
       "scope": "election",
-      "allowImage": true,
-      "pageRank": 21,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington"
-    },
-    {
-      "title": "Why Choose HDSB?",
-      "url": "https://www.hdsb.ca/students-families/why-choose-hdsb/",
-      "source": "Halton District School Board",
-      "sourceType": "official",
-      "scope": "schools",
       "allowImage": true,
       "pageRank": 21,
       "verified": true,
