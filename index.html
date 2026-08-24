@@ -6,9 +6,9 @@
   <title>Burlington News | Local news, events and election coverage</title>
   <meta name="description" content="Independent Burlington, Ontario news, things to do, food, sports, local discoveries and clear 2026 municipal election coverage.">
   <link rel="canonical" href="https://burlingtonnews.ca/">
-  <link rel="icon" href="favicon.svg">
+  <link rel="icon" href="favicon.svg?v=20260824b">
   <link rel="preload" href="assets/home/skyway.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="home.css?v=20260824a">
+  <link rel="stylesheet" href="home.css?v=20260824b">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Burlington News">
   <meta property="og:locale" content="en_CA">
@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://burlingtonnews.ca/assets/home/skyway.webp">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"Burlington News","url":"https://burlingtonnews.ca/","logo":{"@type":"ImageObject","url":"https://burlingtonnews.ca/logo-mark.svg"},"areaServed":{"@type":"City","name":"Burlington","containedInPlace":{"@type":"AdministrativeArea","name":"Ontario"}},"publishingPrinciples":"https://burlingtonnews.ca/methodology.html"}</script>
-  <script src="home.js?v=20260824a" defer></script>
+  <script src="home.js?v=20260824b" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,20 +26,18 @@
   <div class="utility-bar">
     <div class="shell utility-inner">
       <span id="today">Burlington, Ontario</span>
-      <nav aria-label="Neighbouring coverage">
-        <span>Burlington first</span><a href="updates.html#region">Halton</a><a href="updates.html#region">GTA</a>
-      </nav>
+      <div class="utility-actions"><span class="weather" id="weather" hidden></span><nav aria-label="Neighbouring coverage"><a href="updates.html#region">Halton</a><a href="updates.html#region">GTA</a></nav></div>
     </div>
   </div>
 
   <header class="site-header">
     <div class="shell masthead">
       <a class="brand" href="/" aria-label="Burlington News home">
-        <img src="logo-mark.svg" width="46" height="46" alt="">
+        <img src="logo-mark.svg?v=20260824b" width="46" height="46" alt="">
         <span>Burlington <strong>News</strong></span>
       </a>
-      <button class="search-button" id="searchButton" type="button" aria-haspopup="dialog"><span aria-hidden="true">⌕</span> Search</button>
-      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="primaryNav">Menu</button>
+      <button class="search-button icon-button" id="searchButton" type="button" aria-haspopup="dialog" aria-label="Search Burlington News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.8"></circle><path d="m15 15 4.2 4.2"></path></svg><span class="sr-only">Search</span></button>
+      <button class="menu-button icon-button" id="menuButton" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu"><span class="hamburger" aria-hidden="true"><i></i><i></i><i></i></span><span class="sr-only">Menu</span></button>
       <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
         <a href="updates.html">News</a>
         <details class="nav-dropdown">
@@ -73,8 +71,8 @@
         </div>
         <div class="lead-copy">
           <span class="story-label">The Monday Feature · 9 min</span>
-          <h1 id="lead-title">Burlington almost buried the Skyway. Then Ontario built another one.</h1>
-          <p>A ship strike, failed tolls, three proposed tunnels and the 14-minute opening-day crash.</p>
+          <h1 id="lead-title">Ontario nearly replaced the Skyway with three tunnels.</h1>
+          <p>A ship strike, failed tolls, 84 purchased properties and an opening-day crash shaped the crossing Burlington knows.</p>
         </div>
       </a>
 
@@ -89,16 +87,16 @@
         </a>
         <a class="side-story fishway" href="articles/ribfest-2026.html">
           <img src="assets/home/ribs.webp" width="1000" height="625" alt="Barbecue ribs smoking over a pit" loading="lazy" decoding="async">
-          <div><span class="story-label">Labour Day weekend</span><h2>Ribfest turns 30. What to know before going</h2></div>
+          <div><span class="story-label">Labour Day weekend</span><h2>Ribfest turns 30—with nearly $6 million behind the smoke</h2></div>
         </a>
       </div>
     </section>
 
     <nav class="shell quick-strip" aria-label="Popular sections">
-      <a href="election-guide.html"><span>01</span><strong>Election Guide</strong><small>Understand the 2026 vote</small></a>
-      <a href="ballot.html"><span>02</span><strong>Your Ballot</strong><small>See every race in your ward</small></a>
-      <a href="explore.html"><span>03</span><strong>Explore Burlington</strong><small>Shuffle somewhere unexpected</small></a>
-      <a href="puzzles.html"><span>04</span><strong>Local Puzzles</strong><small>Test how well you know the city</small></a>
+      <a href="election-guide.html"><strong>Election Guide</strong></a>
+      <a href="ballot.html"><strong>Your Ballot</strong></a>
+      <a href="explore.html"><strong>Explore</strong></a>
+      <a href="puzzles.html"><strong>Puzzles</strong></a>
     </nav>
 
     <section class="shell editorial-section" aria-labelledby="latest-title">
@@ -106,8 +104,8 @@
       <div class="latest-grid">
         <article class="latest-main">
           <span class="story-label">2026 election</span>
-          <h3>Five people are running for mayor. Here is what separates them.</h3>
-          <p>Compare priorities, records and what each candidate still needs to explain.</p>
+          <h3>Burlington has five mayoral candidates. Start with their biggest differences.</h3>
+          <p>Compare priorities, records and the questions each campaign still needs to answer.</p>
           <a href="election-guide.html#candidates">Meet the candidates →</a>
         </article>
         <div class="latest-list" id="latestList" aria-live="polite">

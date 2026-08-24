@@ -2,7 +2,7 @@
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const fetchJson=async url=>{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(url);return r.json()};
   const home=()=>location.pathname==='/'||location.pathname.endsWith('/index.html');
-  const brandMarkup='<span class="news-brand-mark" aria-hidden="true"></span><span class="news-brand-copy"><strong>Burlington News</strong><small>Burlington, Ontario</small></span>';
+  const brandMarkup='<img class="news-brand-logo" src="/logo-mark.svg?v=20260824b" alt=""><span class="news-brand-copy"><strong>Burlington <em>News</em></strong></span>';
 
   function restoreBrand(){
     document.querySelectorAll('.brand').forEach(b=>{if(!b.classList.contains('news-brand')||!b.querySelector('.news-brand-copy')){b.className='brand news-brand';b.href='index.html';b.innerHTML=brandMarkup;b.setAttribute('aria-label','Burlington News home')}});
@@ -16,11 +16,11 @@
     };
     if(titles[path])document.title=titles[path];else if(/Burlington Election Guide/i.test(document.title))document.title=document.title.replace(/Burlington Election Guide/ig,'Burlington News');
   }
-  function restoreBanner(){let b=document.querySelector('.banner'),h=document.querySelector('.header');if(!b&&h){b=document.createElement('div');b.className='banner';h.before(b)}if(b)b.innerHTML='<div class="wrap"><strong>2026 Election Guide</strong>&nbsp;&nbsp;·&nbsp;&nbsp;Voting starts Oct. 14&nbsp;&nbsp;·&nbsp;&nbsp;Election Day Oct. 26</div>'}
+  function restoreBanner(){let b=document.querySelector('.banner'),h=document.querySelector('.header');if(!b&&h){b=document.createElement('div');b.className='banner';h.before(b)}if(b)b.innerHTML='<div class="wrap"><strong>2026 election</strong><span>Voting starts Oct. 14</span><span>Election Day Oct. 26</span></div>'}
   function restoreFooter(){
     let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}
     if(f.dataset.newsFooter==='2')return;f.dataset.newsFooter='2';
-    f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent Burlington civic news and a plain-language 2026 municipal election guide.</p></div></div><nav class="site-legal-links" aria-label="Burlington News sections"><a href="updates.html">News</a><a href="election-guide.html#candidates">Candidates</a><a href="ballot.html">Your ballot</a><a href="elections-for-beginners.html">Election 101</a><a href="puzzles.html">Puzzles</a><a href="methodology.html">Sources & methodology</a><a href="help.html#accessibility">Accessibility</a><a href="independent.html">About / Independent</a><a href="/feedback/">Give feedback</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></div>';
+    f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news and election coverage for Burlington.</p></div></div><nav class="site-legal-links" aria-label="Burlington News sections"><a href="updates.html">News</a><a href="election-guide.html">Elections</a><a href="explore.html">Things to do</a><a href="puzzles.html">Puzzles</a><a href="methodology.html">Sources & methodology</a><a href="independent.html">About</a><a href="/feedback/">Feedback</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></div>';
   }
 
   const isLocalStory=i=>{
@@ -29,11 +29,16 @@
     return /\bburlington\b|appleby|aldershot|brant street|ward [1-6]|halton region|burloak/.test(hay);
   };
   const normalizedStory=i=>({date:(i.published||i.date||'').slice(0,10),tag:i.tag||'Burlington',headline:i.headline||i.title||'Burlington update',summary:i.summary||i.description||i.headline||i.title||'',why:i.why||'',importance:Number(i.importance||0),url:i.url||'#',image:i.image||''});
+  const isEditorialStory=i=>{
+    const headline=String(i.headline||'').replace(/\s+/g,' ').trim(),summary=String(i.summary||'').replace(/\s+/g,' ').trim(),words=headline.split(/\s+/).filter(Boolean);
+    const blocked=/^(list of candidates|for candidates|candidate financials|candidate news and updates|infrastructure and growth|water and wastewater services|water and wastewater for business|low water.*)$/i;
+    return i.url&&!blocked.test(headline)&&words.length>=6&&words.length<=20&&summary.length>=45&&summary.toLowerCase()!==headline.toLowerCase()&&!/(\b\w+\b)(?:\s+\1){2,}/i.test(headline);
+  };
   async function getLocalStories(limit=8){
     let items=[];
-    try{const monitor=await fetchJson('data/source-monitor.json');items=(monitor.items||[]).filter(isLocalStory).map(normalizedStory)}catch(_){}
+    try{const monitor=await fetchJson('data/source-monitor.json');items=(monitor.items||[]).filter(isLocalStory).map(normalizedStory).filter(isEditorialStory)}catch(_){}
     if(items.length<3){try{const brief=await fetchJson('data/daily-brief.json');items.push(...(brief.items||[]).filter(isLocalStory).map(normalizedStory))}catch(_){} }
-    const seen=new Set();return items.filter(i=>{const key=i.url||i.headline;if(!key||seen.has(key))return false;seen.add(key);return true}).slice(0,limit);
+    const seen=new Set();return items.filter(isEditorialStory).filter(i=>{const key=i.url||i.headline;if(!key||seen.has(key))return false;seen.add(key);return true}).slice(0,limit);
   }
   function integratedSummary(item){let text=item.summary||'';if(item.importance>=5&&item.why){const w=item.why.trim();if(w&&!text.toLowerCase().includes(w.toLowerCase()))text=`${text.replace(/[.]?$/,'')}. ${w}`}return text}
   function storyCard(item){return `<a class="news-story-card" href="${esc(item.url)}" target="_blank" rel="noopener"><div class="news-story-media">${item.image?`<img src="${esc(item.image)}" alt="" loading="lazy">`:`<div class="news-story-fallback" aria-hidden="true">B</div>`}</div><div class="news-story-body"><span class="news-story-tag">${esc(item.tag)}</span><h3>${esc(item.headline)}</h3><p>${esc(integratedSummary(item))}</p></div></a>`}

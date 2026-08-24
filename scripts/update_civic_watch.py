@@ -200,6 +200,18 @@ def date_key(item):
     return -float(item.get('pageRank',9999))
 
 
+def editorial_worthy(item):
+    """Keep navigation labels and unedited service-page copy out of news slots."""
+    title=re.sub(r'\s+',' ',item.get('title','')).strip()
+    description=re.sub(r'\s+',' ',item.get('description','')).strip()
+    blocked=re.compile(r'^(list of candidates|for candidates|candidate financials|candidate news and updates|infrastructure and growth|water and wastewater services|water and wastewater for business|low water.*)$',re.I)
+    words=title.split()
+    if blocked.fullmatch(title) or not 6 <= len(words) <= 20: return False
+    if len(description)<45 or description.lower()==title.lower(): return False
+    if re.search(r'\b(\w+)\b(?:\s+\1){2,}',title,re.I): return False
+    return True
+
+
 def recent_image_conflict(image,url,now,history):
     if not image: return False
     cutoff=now-dt.timedelta(hours=8)
@@ -238,6 +250,7 @@ def main():
     enriched.sort(key=lambda x:(x['importance'],date_key(x),-x.get('pageRank',9999)),reverse=True)
     top=[]; used_sources={}; current_images=set()
     for item in enriched:
+        if not editorial_worthy(item): continue
         if used_sources.get(item['source'],0)>=2: continue
         image=item.get('image')
         if image and (image in current_images or recent_image_conflict(image,item['url'],now,history)):

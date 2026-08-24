@@ -1,4 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Burlington News">
-  <rect x="12" y="12" width="232" height="232" rx="70" fill="#075a95"/>
-  <path fill="#fff" fill-rule="evenodd" d="M64 45h78c36 0 57 17 57 45 0 18-10 32-29 41 23 7 35 23 35 46 0 30-24 49-62 49H64V45Zm40 34v37h32c15 0 23-7 23-19 0-12-8-18-23-18h-32Zm0 68v45h35c17 0 26-8 26-23 0-14-9-22-27-22h-34Z"/>
+  <path fill="#69c2f4" fill-rule="evenodd" d="M53 45 69 59v130l-16 10v6l122-1 31-26v-34l-30-24 21-20 1-23-31-33H53Zm51 8 2-2h53l5 6v22l22 1 2 2v13l-2 4-17 15-8 4h-56V53Zm2 73h50l8 3 6 6 2 8v35l-2 7-6 7-8 4-52-1v-67l2-2Z"/>
 </svg>

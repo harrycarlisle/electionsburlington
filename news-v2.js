@@ -11,7 +11,7 @@
   };
 
   async function stories(){
-    try{const r=await fetch('data/source-monitor.json',{cache:'no-store'}),d=await r.json();return (d.items||[]).filter(x=>x.url&&x.headline&& !/^(List of Candidates|For Candidates|Candidate Financials|Candidate News and Updates)$/i.test(x.headline)).slice(0,3)}catch(_){return[]}
+    try{const r=await fetch('data/source-monitor.json',{cache:'no-store'}),d=await r.json();return (d.items||[]).map(x=>({...x,headline:x.headline||x.title||'',summary:x.summary||x.description||''})).filter(x=>{const words=x.headline.trim().split(/\s+/);return x.url&&words.length>=6&&words.length<=20&&x.summary.length>=45&&!/^(List of Candidates|For Candidates|Candidate Financials|Candidate News and Updates|Infrastructure and Growth|Low Water.*)$/i.test(x.headline)&&x.summary.toLowerCase()!==x.headline.toLowerCase()&&!/(\b\w+\b)(?:\s+\1){2,}/i.test(x.headline)}).slice(0,3)}catch(_){return[]}
   }
   const media=item=>item?.image?`<img src="${esc(item.image)}" alt="" loading="eager">`:'<span class="publication-media-mark" aria-hidden="true">B</span>';
   async function buildPublicationHome(){

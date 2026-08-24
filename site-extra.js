@@ -18,14 +18,14 @@
   }
   function ensureStyle(href,key){if(document.querySelector(`link[data-style="${key}"]`))return;const l=document.createElement('link');l.rel='stylesheet';l.href=href;l.dataset.style=key;document.head.appendChild(l)}
   function ensureScript(src,key){if(document.querySelector(`script[data-feature="${key}"]`))return;const s=document.createElement('script');s.src=src;s.async=false;s.dataset.feature=key;document.head.appendChild(s)}
-  function ensureStyles(){ensureStyle('/site-bundle.css?v=20260824a','site-bundle')}
+  function ensureStyles(){ensureStyle('/site-bundle.css?v=20260824b','site-bundle');ensureStyle('/site-shell.css?v=20260824a','site-shell')}
   function ensureBanner(){
     let banner=document.querySelector('.banner');const header=document.querySelector('.header');
     if(!isElectionPage()){banner?.remove();return}
     if(!banner&&header){banner=document.createElement('div');banner.className='banner';header.before(banner)}
-    if(banner)banner.innerHTML='<div class="wrap"><strong>2026 Election Guide</strong>&nbsp;&nbsp;·&nbsp;&nbsp;Voting starts Oct. 14&nbsp;&nbsp;·&nbsp;&nbsp;Election Day Oct. 26</div>';
+    if(banner)banner.innerHTML='<div class="wrap"><strong>2026 election</strong><span>Voting starts Oct. 14</span><span>Election Day Oct. 26</span></div>';
   }
-  function brandMarkup(){return '<span class="news-brand-mark" aria-hidden="true"></span><span class="news-brand-copy"><strong>Burlington News</strong><small>Burlington, Ontario</small></span>'}
+  function brandMarkup(){return '<img class="news-brand-logo" src="/logo-mark.svg?v=20260824b" alt=""><span class="news-brand-copy"><strong>Burlington <em>News</em></strong></span>'}
   function applyBrand(){document.querySelectorAll('.brand').forEach(b=>{b.className='brand news-brand';b.href='/';b.innerHTML=brandMarkup();b.setAttribute('aria-label','Burlington News home')});let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='/favicon.svg?v=20260824a'}
 
   function addSeo(){
