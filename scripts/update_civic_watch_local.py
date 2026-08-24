@@ -16,7 +16,7 @@ monitor.TRANSIT_TERMS = (
     'burloak',
     'lakeshore west',
 )
-monitor.USER_AGENT = 'BurlingtonNews/1.0 (+https://electionsburlington.ca/)'
+monitor.USER_AGENT = 'BurlingtonNews/1.0 (+https://burlingtonnews.ca/)'
 
 if __name__ == '__main__':
     monitor.main()

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://electionsburlington.ca/sitemap.xml
+Sitemap: https://burlingtonnews.ca/sitemap.xml

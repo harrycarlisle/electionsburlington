@@ -36,6 +36,6 @@
 
     status.textContent = 'Opening your email app with the feedback filled in…';
     status.className = 'feedback-status is-success';
-    window.location.href = `mailto:feedback@electionsburlington.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:feedback@burlingtonnews.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 })();

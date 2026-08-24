@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build an evergreen, source-linked Burlington civic and political watch.
+"""Build an evergreen, source-linked Burlington news watch.
 
 The monitor covers City Hall, Halton Region, planning/development, housing,
 transit, taxes, council decisions, mayoral decisions and election news.
@@ -39,6 +39,11 @@ SOURCES = [
     {'name':'BurlingtonToday','url':'https://www.burlingtontoday.com/local-news','type':'reporting','scope':'city','images':True},
     {'name':'BurlingtonToday Election','url':'https://www.burlingtontoday.com/municipal-election','type':'reporting','scope':'election','images':True},
     {'name':'Focus Burlington','url':'https://www.focusburlington.ca/','type':'community','scope':'city','images':False},
+    {'name':'Tourism Burlington','url':'https://tourismburlington.ca/events/','type':'official','scope':'local-life','images':False},
+    {'name':'Tourism Burlington Food','url':'https://tourismburlington.ca/dine-in-burlington/','type':'official','scope':'local-life','images':False},
+    {'name':'Royal Botanical Gardens','url':'https://www.rbg.ca/events/','type':'official','scope':'local-life','images':True},
+    {'name':'Conservation Halton','url':'https://www.conservationhalton.ca/events/','type':'official','scope':'local-life','images':True},
+    {'name':'Halton District School Board','url':'https://www.hdsb.ca/news/','type':'official','scope':'schools','images':True},
 ]
 
 TOPIC_KEYWORDS = (
@@ -47,11 +52,13 @@ TOPIC_KEYWORDS = (
     'debate','vote','voting','poll','results','decision','strong mayor','safety','infrastructure',
     'official plan','zoning','go station','go transit','lakeshore west','metrolinx','presto','road',
     'water','wastewater','regional chair','public meeting','by-law','bylaw','motion','city hall',
-    'community centre','park','development application','appeal','ontario land tribunal','train station'
+    'community centre','park','development application','appeal','ontario land tribunal','train station',
+    'festival','ribfest','event','food','restaurant','market','concert','fitness','pickleball','sport',
+    'school','student','wildlife','bird','fish','trail','museum','library','waterfront','beach','recreation'
 )
 REGIONAL_TERMS = ('burlington','regional council','regional chair','halton budget','halton housing','water','wastewater','regional road','growth','infrastructure','police board')
 TRANSIT_TERMS = ('burlington','burlington station','appleby','burloak','lakeshore west','hamilton','confederation go','go station','go transit','presto','rail bridge')
-USER_AGENT='BurlingtonElectionGuide/1.5 (+https://electionsburlington.ca/)'
+USER_AGENT='BurlingtonNews/2.0 (+https://burlingtonnews.ca/)'
 
 
 class LinkParser(HTMLParser):
@@ -79,6 +86,7 @@ def fetch(url):
 
 def relevant(source,title,url):
     hay=f'{title} {url}'.lower()
+    if re.fullmatch(r'(list of candidates|for candidates|candidate financials|candidate news and updates)',title.strip(),re.I): return False
     if not any(k in hay for k in TOPIC_KEYWORDS): return False
     if source.get('scope')=='transit': return any(k in hay for k in TRANSIT_TERMS)
     if source.get('scope')=='region': return any(k in hay for k in REGIONAL_TERMS)
@@ -247,7 +255,7 @@ def main():
         brief_items=[]
         for item in top:
             brief_items.append({'date':item.get('published','')[:10] or now.date().isoformat(),'tag':item['tag'],'headline':item['title'],'summary':item.get('description') or item['title'],'why':item['why'],'importance':item['importance'],'source':item['source'],'sourceType':item['sourceType'],'verificationTier':item.get('verificationTier'),'url':item['url'],**({'image':item['image'],'imageSource':item.get('imageSource'),'imageSourceUrl':item.get('imageSourceUrl')} if item.get('image') else {}),**({'mediaType':item['mediaType']} if item.get('mediaType') else {})})
-        brief={'updated':now.isoformat().replace('+00:00','Z'),'scope':'Burlington politics and civic affairs','items':brief_items,'sourcesCheckedAt':now.isoformat().replace('+00:00','Z')}
+        brief={'updated':now.isoformat().replace('+00:00','Z'),'scope':'Burlington news, local life and civic affairs','items':brief_items,'sourcesCheckedAt':now.isoformat().replace('+00:00','Z')}
         (DATA/'daily-brief.json').write_text(json.dumps(brief,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
         for item in brief_items:
             if item.get('image'): history.append({'image':item['image'],'url':item['url'],'usedAt':now.isoformat().replace('+00:00','Z')})

@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'data' / 'election-results.json'
 URL = 'https://myvote.burlington.ca/results/'
-UA = {'User-Agent': 'BurlingtonElectionGuide/1.0 (+https://electionsburlington.ca/)'}
+UA = {'User-Agent': 'BurlingtonNews/2.0 (+https://burlingtonnews.ca/)'}
 CANDIDATES = ['Keith Demoe','Lisa Kearns','Marianne Meed Ward','Rory Nisan','Yugalkeesor Ramdhonee']
 
 

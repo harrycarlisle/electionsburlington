@@ -2,7 +2,7 @@
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const fetchJson=async url=>{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(url);return r.json()};
   const home=()=>location.pathname==='/'||location.pathname.endsWith('/index.html');
-  const brandMarkup='<span class="news-brand-mark" aria-hidden="true"></span><span class="news-brand-copy"><strong>Burlington News</strong><small>Election Guide</small></span>';
+  const brandMarkup='<span class="news-brand-mark" aria-hidden="true"></span><span class="news-brand-copy"><strong>Burlington News</strong><small>Burlington, Ontario</small></span>';
 
   function restoreBrand(){
     document.querySelectorAll('.brand').forEach(b=>{if(!b.classList.contains('news-brand')||!b.querySelector('.news-brand-copy')){b.className='brand news-brand';b.href='index.html';b.innerHTML=brandMarkup;b.setAttribute('aria-label','Burlington News home')}});
@@ -20,7 +20,7 @@
   function restoreFooter(){
     let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}
     if(f.dataset.newsFooter==='2')return;f.dataset.newsFooter='2';
-    f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent Burlington civic news and a plain-language 2026 municipal election guide.</p></div></div><nav class="site-legal-links" aria-label="Burlington News sections"><a href="updates.html">News</a><a href="index.html#candidates">Candidates</a><a href="ballot.html">Your ballot</a><a href="elections-for-beginners.html">Election 101</a><a href="puzzles.html">Puzzles</a><a href="methodology.html">Sources & methodology</a><a href="help.html#accessibility">Accessibility</a><a href="independent.html">About / Independent</a><a href="/feedback/">Give feedback</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></div>';
+    f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent Burlington civic news and a plain-language 2026 municipal election guide.</p></div></div><nav class="site-legal-links" aria-label="Burlington News sections"><a href="updates.html">News</a><a href="election-guide.html#candidates">Candidates</a><a href="ballot.html">Your ballot</a><a href="elections-for-beginners.html">Election 101</a><a href="puzzles.html">Puzzles</a><a href="methodology.html">Sources & methodology</a><a href="help.html#accessibility">Accessibility</a><a href="independent.html">About / Independent</a><a href="/feedback/">Give feedback</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></div>';
   }
 
   const isLocalStory=i=>{
@@ -41,7 +41,7 @@
   async function rebuildHomeBrief(){
     if(!home())return;const old=document.querySelector('.daily-brief');if(!old)return;
     const items=(await getLocalStories(6)).slice(0,3);if(!items.length)return;
-    const section=document.createElement('section');section.className='daily-brief news-brief';section.id='daily-brief';section.innerHTML=`<div class="news-brief-head"><div><h2>Burlington in 30 seconds</h2><p>The biggest local civic and election updates.</p></div><a href="updates.html">All news →</a></div><div class="news-brief-grid">${items.map(storyCard).join('')}</div>`;old.replaceWith(section);
+    const section=document.createElement('section');section.className='daily-brief news-brief';section.id='daily-brief';section.innerHTML=`<div class="news-brief-head"><div><h2>Latest in Burlington</h2><p>New local stories and source-linked updates.</p></div><a href="updates.html">All news →</a></div><div class="news-brief-grid">${items.map(storyCard).join('')}</div>`;old.replaceWith(section);
   }
 
   async function rebuildUpdates(){

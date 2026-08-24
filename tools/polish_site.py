@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 
-VERSION = "20260823g"
+VERSION = "20260824a"
 
 
 def version_assets(path: Path) -> None:
@@ -11,5 +11,5 @@ def version_assets(path: Path) -> None:
     path.write_text(text, encoding="utf-8")
 
 
-for filename in ("index.html", "head-to-head.html"):
+for filename in ("election-guide.html", "head-to-head.html"):
     version_assets(Path(filename))

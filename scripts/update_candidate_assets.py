@@ -15,7 +15,7 @@ import datetime as dt, html, json, re, urllib.parse, urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 
-ROOT=Path(__file__).resolve().parents[1];BALLOT=ROOT/'data'/'ballot.json';UA='BurlingtonElectionGuide/1.7 (+https://electionsburlington.ca/)'
+ROOT=Path(__file__).resolve().parents[1];BALLOT=ROOT/'data'/'ballot.json';UA='BurlingtonNews/2.0 (+https://burlingtonnews.ca/)'
 BT_INDEXES=['https://www.burlingtontoday.com/2026-municipal-election-news','https://www.burlingtontoday.com/municipal-election']
 BAD_IMAGE_WORDS=('favicon','logo','icon','sprite','paypal','family','group','team-photo','volunteer')
 
