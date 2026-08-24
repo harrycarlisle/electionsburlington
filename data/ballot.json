@@ -5,54 +5,13 @@
   "wardMapPdf": "https://myvote.burlington.ca/media/1albhn5h/mainmap_election2026_disclaimer_24032026.pdf",
   "mayor": ["Keith Demoe", "Lisa Kearns", "Marianne Meed Ward", "Rory Nisan", "Yugalkeesor Ramdhonee"],
   "candidateImages": {
-    "Lisa Kearns": {
-      "url": "https://www.vmcdn.ca/f/files/burlingtontoday/images/politicians/26-03-24-kearnsmayor-ca1.jpg%3Bw%3D960",
-      "source": "BurlingtonToday",
-      "sourceUrl": "https://www.burlingtontoday.com/2026-municipal-election-news/ward-2-councillor-lisa-kearns-is-the-first-candidate-to-announce-burlington-mayoral-run-12049464",
-      "verifiedAt": "2026-08-23",
-      "match": "high"
-    },
-    "Marianne Meed Ward": {
-      "url": "https://www.vmcdn.ca/f/files/burlingtontoday/images/politicians/2026-06-03-mayor-meed-ward-mic-js.jpg%3Bw%3D960",
-      "source": "BurlingtonToday",
-      "verifiedAt": "2026-08-23",
-      "match": "high"
-    },
-    "Rory Nisan": {
-      "url": "https://www.vmcdn.ca/f/files/burlingtontoday/images/politicians/26-05-01-rory.jpg%3Bw%3D960",
-      "source": "BurlingtonToday",
-      "verifiedAt": "2026-08-23",
-      "match": "high"
-    }
+    "Lisa Kearns": {"url": "https://www.vmcdn.ca/f/files/burlingtontoday/images/politicians/26-03-24-kearnsmayor-ca1.jpg%3Bw%3D960","source": "BurlingtonToday","sourceUrl": "https://www.burlingtontoday.com/2026-municipal-election-news/ward-2-councillor-lisa-kearns-is-the-first-candidate-to-announce-burlington-mayoral-run-12049464","verifiedAt": "2026-08-23","match": "high"},
+    "Marianne Meed Ward": {"url": "https://www.vmcdn.ca/f/files/burlingtontoday/images/politicians/2026-06-03-mayor-meed-ward-mic-js.jpg%3Bw%3D960","source": "BurlingtonToday","verifiedAt": "2026-08-23","match": "high"},
+    "Rory Nisan": {"url": "https://www.vmcdn.ca/f/files/burlingtontoday/images/politicians/26-05-01-rory.jpg%3Bw%3D960","source": "BurlingtonToday","verifiedAt": "2026-08-23","match": "high"},
+    "Yugalkeesor Ramdhonee": {"url": "https://www.vmcdn.ca/f/files/burlingtontoday/images/politicians/yugalkeesor-ramdhonee-candidate-for-mayor-2026.jpeg%3Bw%3D960","source": "BurlingtonToday","sourceUrl": "https://www.burlingtontoday.com/2026-municipal-election-news/meet-your-candidate-yugalkeesor-ramdhonee-is-seeking-the-mayors-position-12678824","verifiedAt": "2026-08-23","match": "high"}
   },
   "candidateWebsites": {
-    "Lisa Kearns": "https://lisakearns.ca/",
-    "Marianne Meed Ward": "https://votemarianne.ca/",
-    "Rory Nisan": "https://rorynisan.ca/",
-    "Kelvin Galbraith": "https://www.kelvingalbraith-ward1.com/",
-    "Cheryl Hurst": "https://www.cherylcommunityburlingtonward1.ca/",
-    "Masha Brar": "https://mashaforburlington.ca/",
-    "Sean Campbell": "https://seancampbell.info/",
-    "Gary Carr": "https://garycarr.ca/",
-    "Jeremy Gaetan": "https://jeremygaetan.com/",
-    "Tony Brecknock": "https://brecknock.com/",
-    "Kyle Hutton": "https://www.kylehutton.ca/",
-    "Katy Moore": "https://thirstformoore.ca/",
-    "Chris Carter": "https://chriscarterofficial.com/",
-    "Olivia Duke": "https://www.oliviaduke.ca/",
-    "Kristy Dickinson": "https://votekd.ca/",
-    "Alex Don": "https://alexdon.ca/",
-    "Paul Sharman": "https://www.paulsharman.ca/",
-    "Osob Adus": "https://www.osobward6.ca/",
-    "Angelo Bentivegna": "https://angelobentivegnaward6.ca/",
-    "Frank Domenic": "https://frankdomenic.ca/",
-    "Rowen Fraser": "https://www.rowrowforcouncil.com/",
-    "Bika Diakoloukas": "https://bikafortrustee.com/",
-    "Xin Yi Zhang": "https://www.reelect-xyz.ca/",
-    "Dania Thurman": "https://dania4trustee.com/",
-    "Amy Collard": "https://reelectamycollard.wixsite.com/re-elect-amy-collard",
-    "Roman Soler": "https://voteroman.ca/",
-    "Tim O'Brien": "https://timobrien.ca/"
+    "Lisa Kearns": "https://lisakearns.ca/","Marianne Meed Ward": "https://votemarianne.ca/","Rory Nisan": "https://rorynisan.ca/","Kelvin Galbraith": "https://www.kelvingalbraith-ward1.com/","Cheryl Hurst": "https://www.cherylcommunityburlingtonward1.ca/","Masha Brar": "https://mashaforburlington.ca/","Sean Campbell": "https://seancampbell.info/","Gary Carr": "https://garycarr.ca/","Jeremy Gaetan": "https://jeremygaetan.com/","Tony Brecknock": "https://brecknock.com/","Kyle Hutton": "https://www.kylehutton.ca/","Katy Moore": "https://thirstformoore.ca/","Chris Carter": "https://chriscarterofficial.com/","Olivia Duke": "https://www.oliviaduke.ca/","Kristy Dickinson": "https://votekd.ca/","Alex Don": "https://alexdon.ca/","Paul Sharman": "https://www.paulsharman.ca/","Osob Adus": "https://www.osobward6.ca/","Angelo Bentivegna": "https://angelobentivegnaward6.ca/","Frank Domenic": "https://frankdomenic.ca/","Rowen Fraser": "https://www.rowrowforcouncil.com/","Bika Diakoloukas": "https://bikafortrustee.com/","Xin Yi Zhang": "https://www.reelect-xyz.ca/","Dania Thurman": "https://dania4trustee.com/","Amy Collard": "https://reelectamycollard.wixsite.com/re-elect-amy-collard","Roman Soler": "https://voteroman.ca/","Tim O'Brien": "https://timobrien.ca/"
   },
   "wards": {
     "1": {"councillor": ["Kelvin Galbraith", "Cheryl Hurst", "James Kerr", "Robert Radway"],"publicTrustee": ["Bika Diakoloukas"],"catholicTrustee": ["Vincent Iantomasi", "Allison McKenzie"]},
@@ -62,13 +21,7 @@
     "5": {"councillor": ["Kristy Dickinson", "Alex Don", "Brian Machan", "Paul Sharman"],"publicTrustee": ["Amy Collard"],"catholicTrustee": ["Bashar Haddaden", "Katrina Vinka Kvenich", "Tim O'Brien"]},
     "6": {"councillor": ["Osob Adus", "Angelo Bentivegna", "Bianca Bielski", "Chris Bouchard", "Frank Domenic", "Rowen Fraser", "Edmond Jodhi"],"publicTrustee": ["Sukhwinder Singh", "Xin Yi Zhang"],"catholicTrustee": ["Bernice Carvalho", "Roman Soler"]}
   },
-  "frenchPublicTrustee": ["Sonia Macaluso"],
-  "frenchCatholicTrustee": ["Diane Courchesne"],
-  "schoolBoards": {
-    "public": "English public (Halton District School Board)",
-    "catholic": "English Catholic (Halton Catholic District School Board)",
-    "frenchPublic": "French public (Conseil scolaire Viamonde)",
-    "frenchCatholic": "French Catholic (Conseil scolaire catholique MonAvenir)"
-  },
+  "frenchPublicTrustee": ["Sonia Macaluso"],"frenchCatholicTrustee": ["Diane Courchesne"],
+  "schoolBoards": {"public": "English public (Halton District School Board)","catholic": "English Catholic (Halton Catholic District School Board)","frenchPublic": "French public (Conseil scolaire Viamonde)","frenchCatholic": "French Catholic (Conseil scolaire catholique MonAvenir)"},
   "note": "Candidate names and candidate-supplied websites are based on the City of Burlington official candidate list. Candidate images are only displayed when the identity match is verified. Trustee eligibility depends on school-board support and elector eligibility. Confirm your final ballot with the City."
 }
