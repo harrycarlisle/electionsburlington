@@ -3,6 +3,14 @@
   const status = document.getElementById('feedbackStatus');
   if (!form) return;
 
+  const requestedType = new URLSearchParams(location.search).get('type');
+  const typeSelect = document.getElementById('feedbackType');
+  if (requestedType && typeSelect) {
+    const wanted = requestedType.toLowerCase();
+    const option = [...typeSelect.options].find(o => o.value.toLowerCase() === wanted || o.textContent.toLowerCase() === wanted);
+    if (option) typeSelect.value = option.value;
+  }
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const data = new FormData(form);
