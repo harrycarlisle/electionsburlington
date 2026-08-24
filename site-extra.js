@@ -12,8 +12,8 @@
 
   function themeIcon(theme) {
     return theme === 'dark'
-      ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only">Dark mode</span>'
-      : '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="sr-only">Light mode</span>';
+      ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      : '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
   }
 
   function setTheme(theme, persist = true) {
@@ -21,8 +21,13 @@
     root.dataset.theme = next;
     root.style.colorScheme = next;
     document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
-      const label = next === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-      button.innerHTML = themeIcon(next);
+      const target = next === 'dark' ? 'Light mode' : 'Dark mode';
+      const label = `Switch to ${target.toLowerCase()}`;
+      if (button.classList.contains('menu-theme-toggle')) {
+        button.innerHTML = `<span class="menu-support-icon">${themeIcon(next)}</span><span>${target}</span>`;
+      } else {
+        button.innerHTML = `${themeIcon(next)}<span class="sr-only">${label}</span>`;
+      }
       button.setAttribute('aria-label', label);
       button.setAttribute('title', label);
       button.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
@@ -110,15 +115,17 @@
     nav.innerHTML = `
       <div class="menu-panel-head"><span>Explore</span></div>
       <div class="menu-primary" role="list">
-        <a class="menu-link" role="listitem" href="${homeLink('#candidates')}"><span>Candidates</span><span aria-hidden="true">›</span></a>
-        <a class="menu-link" role="listitem" href="ballot.html"><span>Your ballot</span><span aria-hidden="true">›</span></a>
+        <a class="menu-link" role="listitem" href="${homeLink('#candidates')}"><span>Meet the candidates</span><span aria-hidden="true">›</span></a>
         <a class="menu-link" role="listitem" href="${homeLink('#matters')}"><span>Issues</span><span aria-hidden="true">›</span></a>
+        <a class="menu-link" role="listitem" href="ballot.html"><span>Your ballot</span><span aria-hidden="true">›</span></a>
         <a class="menu-link" role="listitem" href="head-to-head.html"><span>Compare</span><span aria-hidden="true">›</span></a>
-        <a class="menu-link" role="listitem" href="updates.html"><span>Daily brief</span><span aria-hidden="true">›</span></a>
+        <a class="menu-link" role="listitem" href="updates.html"><span>Burlington in 30 seconds</span><span aria-hidden="true">›</span></a>
         <a class="menu-link" role="listitem" href="${homeLink('#dates')}"><span>Important dates</span><span aria-hidden="true">›</span></a>
+        <a class="menu-link" role="listitem" href="methodology.html"><span>Sources & methodology</span><span aria-hidden="true">›</span></a>
       </div>
       <div class="menu-separator" aria-hidden="true"></div>
       <div class="menu-support" role="list">
+        <button class="menu-support-link menu-theme-toggle" type="button" data-theme-toggle><span>Appearance</span></button>
         <a class="menu-support-link" role="listitem" href="help.html"><span class="menu-support-icon">${icons.help}</span><span>Help</span></a>
         <a class="menu-support-link" role="listitem" href="/feedback/"><span class="menu-support-icon">${icons.feedback}</span><span>Give feedback</span></a>
       </div>`;
@@ -142,10 +149,11 @@
     menu.className='menu menu-icon-button'; menu.setAttribute('aria-label','Open site menu'); menu.setAttribute('aria-expanded','false');
     menu.innerHTML='<span class="menu-bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="sr-only">Menu</span>';
     oldMenu.replaceWith(menu);
-    const theme=document.createElement('button'); theme.type='button'; theme.className='theme-icon-button'; theme.dataset.themeToggle='';
-    theme.addEventListener('click',e=>{e.stopPropagation();setTheme(root.dataset.theme==='dark'?'light':'dark')});
-    const controls=document.createElement('div'); controls.className='header-controls'; menu.parentElement.insertBefore(controls,menu); controls.append(theme,menu);
+    const controls=document.createElement('div'); controls.className='header-controls'; menu.parentElement.insertBefore(controls,menu); controls.append(menu);
     buildDrawer(nav);
+    const drawerTheme=nav.querySelector('[data-theme-toggle]');
+    drawerTheme?.addEventListener('click',e=>{e.stopPropagation();setTheme(root.dataset.theme==='dark'?'light':'dark')});
+    setTheme(root.dataset.theme||preferredTheme(),false);
     const close=(focus=false)=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open site menu');document.body.classList.remove('menu-is-open');if(focus)menu.focus()};
     menu.addEventListener('click',e=>{e.stopPropagation();const open=!nav.classList.contains('open');if(open){nav.classList.add('open');menu.setAttribute('aria-expanded','true');menu.setAttribute('aria-label','Close site menu');document.body.classList.add('menu-is-open');requestAnimationFrame(()=>nav.querySelector('a')?.focus())}else close()});
     nav.addEventListener('click',e=>e.stopPropagation()); nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>close()));
@@ -167,7 +175,7 @@
     const old=candidates.querySelector(':scope > h1'); if(old){const h=document.createElement('h2');h.textContent='Meet the candidates';old.replaceWith(h)}
     const people=candidateDataFromCards();
     const hero=document.createElement('section'); hero.className='election-hero'; hero.setAttribute('aria-labelledby','heroTitle');
-    hero.innerHTML=`<div class="hero-copy"><h1 id="heroTitle">Burlington's municipal election, explained.</h1><div class="hero-actions"><a class="hero-button hero-button-primary" href="head-to-head.html">Compare mayoral candidates <span aria-hidden="true">→</span></a><a class="hero-button hero-button-secondary" href="ballot.html">See your ballot</a></div><div class="hero-trust"><span>Independent</span><span>No endorsements</span><span>Sources linked</span></div></div><div class="hero-visual" aria-hidden="true"><div class="hero-map-card"><div class="hero-place-dot"></div><div class="hero-candidate-slide" id="heroCandidateSlide"></div><div class="hero-date-card"><span>Election day</span><strong>OCT 26</strong><small>2026</small></div><div class="hero-voting-note"><span>Voting starts</span><strong>Oct. 14</strong></div><div class="map-credit">Map © OpenStreetMap contributors</div></div></div>`;
+    hero.innerHTML=`<div class="hero-copy"><h1 id="heroTitle">Burlington's municipal election, explained.</h1><div class="hero-actions"><a class="hero-button hero-button-primary" href="head-to-head.html">Compare mayoral candidates <span aria-hidden="true">→</span></a><a class="hero-button hero-button-secondary" href="ballot.html">See your ballot</a></div><div class="hero-trust"><span>Independent</span><span>No endorsements</span><span>Sources linked</span></div></div><div class="hero-visual" aria-hidden="true"><div class="hero-map-card"><div class="hero-place-dot"></div><div class="hero-candidate-slide" id="heroCandidateSlide"></div><div class="hero-date-card"><span>Election day</span><strong>OCT 26</strong><small>2026</small></div><div class="hero-voting-note"><span>Voting starts</span><strong>Oct. 14</strong></div><div class="map-credit">Map of Burlington</div></div></div>`;
     main.insertBefore(hero,candidates);
     const slide=hero.querySelector('#heroCandidateSlide'); let i=0;
     const paint=()=>{if(!people.length)return;const p=people[i%people.length];slide.classList.add('is-changing');setTimeout(()=>{slide.innerHTML=p.img?`<img src="${p.img}" alt=""><span>${p.name}</span>`:`<span class="hero-candidate-initials">${p.initials}</span><span>${p.name}</span>`;slide.classList.remove('is-changing')},140)};
@@ -199,16 +207,16 @@
     [...grid.querySelectorAll('.date-card')].forEach((card,index)=>{const raw=card.querySelector('.date')?.textContent||'',title=card.querySelector('h3')?.textContent||'',desc=card.querySelector('p')?.textContent||'';const [startS,endS]=entries[index];const start=new Date(startS+'T12:00:00'),end=endS?new Date(endS+'T12:00:00'):null;let status;const days=Math.round((start-today)/86400000);if(end&&today>=start&&today<=end){const remain=Math.round((end-today)/86400000);status=remain===0?'Ends today':`Ends in ${remain} days`}else if(days===0)status='Today';else if(days===1)status='Tomorrow';else if(days<0)status='Finished';else status=`In ${days} days`;const parts=raw.replace('Sept.','SEP').replace('Oct.','OCT').split(' ');card.className='card date-card date-stop'+(index===0?' is-next':'');card.innerHTML=`<div class="date-stop-top"><div class="date-calendar"><span class="date-calendar-month">${parts[0]}</span><span class="date-calendar-day">${parts.slice(1).join(' ')}</span></div><span class="date-status">${status}</span></div><div class="date-stop-body"><h3>${title}</h3><p>${desc}</p></div>`});
   }
 
-  function simplifyMainPage(){document.querySelector('.site-independent-note')?.remove();document.querySelector('.footer')?.remove();document.querySelectorAll('.meaning-detail summary,.plain summary').forEach(s=>{if(/what does that mean/i.test(s.textContent))s.textContent='In plain English'})}
+  function simplifyMainPage(){document.querySelector('.site-independent-note')?.remove();document.querySelector('.footer')?.remove();document.querySelectorAll('.meaning-detail summary,.plain summary').forEach(s=>{if(/what does that mean|in plain english/i.test(s.textContent))s.textContent='What this means'})}
 
-  function polishHeadToHead(){if(!document.querySelector('.match-grid'))return;document.body.classList.add('h2h-polished');document.querySelector('.head p')?.remove();document.querySelector('.back')?.remove();const context=document.getElementById('context');const issue=document.getElementById('issue');const apply=()=>{const h=context?.querySelector('h2');if(h)h.textContent='Context';};apply();issue?.addEventListener('change',()=>setTimeout(apply,0))}
+  function polishHeadToHead(){if(!document.querySelector('.match-grid'))return;document.body.classList.add('h2h-polished');document.querySelector('.head p')?.remove();document.querySelector('.back')?.remove();document.querySelector('.method-link')?.remove();const context=document.getElementById('context');const issue=document.getElementById('issue');const apply=()=>{const h=context?.querySelector('h2');if(h)h.textContent='Context';};apply();issue?.addEventListener('change',()=>setTimeout(apply,0))}
 
   function improvePageStructure(){const brand=document.querySelector('.brand');if(brand)brand.href='index.html';document.querySelectorAll('section').forEach(s=>{const h=s.querySelector('h2');if(h&&!s.classList.contains('election-hero'))h.classList.add('section-title')})}
 
-  function ensureFooter(){let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-brand-block"><strong>Burlington Election Guide</strong><p>Independent civic project. Not affiliated with the City of Burlington, any candidate or campaign.</p></div><nav class="site-legal-links" aria-label="Legal and accessibility"><a href="help.html#accessibility">Accessibility</a><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy policy</a></nav></div>'}
+  function ensureFooter(){let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}f.innerHTML='<div class="site-legal-footer-inner"><nav class="site-legal-links" aria-label="Site information"><a href="help.html#accessibility">Accessibility</a><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy policy</a><a href="independent.html">Independent</a></nav></div>'}
 
   setTheme(preferredTheme(),false);
   document.addEventListener('DOMContentLoaded',()=>{
-    ensureExtraStyles(); ensureScript('features-v2.js?v=20260823a','features-v2'); addSeo(); buildHero(); upgradeDates(); simplifyMainPage(); polishHeadToHead(); improvePageStructure(); prepareHeaderForMenu(); enhanceMenu(); setupCandidateScrollSelection(); ensureFooter(); setTheme(root.dataset.theme||preferredTheme(),false);
+    ensureExtraStyles(); ensureScript('features-v2.js?v=20260823f','features-v2'); addSeo(); buildHero(); upgradeDates(); simplifyMainPage(); polishHeadToHead(); improvePageStructure(); prepareHeaderForMenu(); enhanceMenu(); setupCandidateScrollSelection(); ensureFooter(); setTheme(root.dataset.theme||preferredTheme(),false);
   });
 })();
