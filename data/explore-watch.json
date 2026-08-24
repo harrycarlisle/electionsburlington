@@ -1,6 +1,391 @@
 {
-  "checkedAt": "2026-08-24T19:30:00+00:00",
+  "checkedAt": "2026-08-24T19:26:23+00:00",
   "publicationGate": "Candidates only. Verify dates, location, access and image rights before adding to explore-events.json.",
-  "sources": [],
-  "candidates": []
+  "sources": [
+    {
+      "name": "City of Burlington calendar",
+      "url": "https://calendar.burlington.ca/default/Month",
+      "ok": true
+    },
+    {
+      "name": "Royal Botanical Gardens",
+      "url": "https://www.rbg.ca/events-experiences/events/",
+      "ok": true
+    },
+    {
+      "name": "Burlington Lions Club Farmers Market",
+      "url": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
+      "ok": true
+    },
+    {
+      "name": "Canada's Largest Ribfest",
+      "url": "https://canadaslargestribfest.com/",
+      "ok": true
+    },
+    {
+      "name": "Love My Neighbourhood",
+      "url": "https://www.burlington.ca/en/community-supports/love-my-neighbourhood.aspx",
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "BurlingtonGreen",
+      "url": "https://www.burlingtongreen.org/events/",
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "Supercrawl",
+      "url": "https://supercrawl.ca/2026/",
+      "ok": true
+    },
+    {
+      "name": "Pokémon GO live events",
+      "url": "https://pokemongo.com/en/events",
+      "ok": true
+    },
+    {
+      "name": "NASA skywatching",
+      "url": "https://science.nasa.gov/solar-system/skywatching/",
+      "ok": false,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "NOAA Space Weather Prediction Center",
+      "url": "https://services.swpc.noaa.gov/text/3-day-forecast.txt",
+      "ok": true
+    },
+    {
+      "name": "Burlington Ultimate Club",
+      "url": "https://www.burlingtonultimate.com/",
+      "ok": false,
+      "error": "<urlopen error [Errno -2] Name or service not known>"
+    }
+  ],
+  "candidates": [
+    {
+      "title": "View our Accessibility page",
+      "url": "https://www.burlington.ca/en/community-supports/accessibility.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Recreation, Community and Culture Newsletter",
+      "url": "https://www.burlington.ca/Modules/News/en/RCC-Newsletter",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Festival and Event Applications",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/festival-and-event-applications.aspx?_mid_=10033",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Tree Permit Application",
+      "url": "https://www.burlington.ca/en/home-property-and-environment/tree-permit-application.aspx?_mid_=10918",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Arts, Culture and Events",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/arts-culture-and-events.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Arts and Culture in Burlington",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/arts-and-culture-in-burlington.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Arts and Culture Grant",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/arts-and-culture-grant.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Calendar of Events",
+      "url": "https://events.burlington.ca/",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Cultural Partners",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/cultural-partners.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Downtown Burlington",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/downtown-burlington.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Downtown Waterfront",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/downtown-waterfront.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Brant Street Pier",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/brant-street-pier.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "History and Heritage",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/history-and-heritage.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Indigenous Projects and Partnerships in Burlington",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/indigenous-projects-and-partnerships-in-burlington.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Local Farms, Community Gardens and Markets",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/local-farms-community-gardens-and-markets.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Public Art",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Story Maps",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/story-maps.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Theatres",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/theatres.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Twin Cities Apeldoorn and Itabashi",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/twin-cities-apeldoorn-and-itabashi.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Accessibility Design Standards",
+      "url": "https://www.burlington.ca/en/community-supports/accessibility-design-standards.aspx?_mid_=10843",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Home Flood Prevention",
+      "url": "https://www.burlington.ca/en/building-and-renovating/home-flood-prevention.aspx?_mid_=10083",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Community Supports",
+      "url": "https://www.burlington.ca/en/community-supports/community-supports.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Accessibility Design Standards",
+      "url": "https://www.burlington.ca/en/community-supports/accessibility-design-standards.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Accessibility Legislation in Ontario",
+      "url": "https://www.burlington.ca/en/community-supports/accessibility-legislation-in-ontario.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Accessible Parking Permits",
+      "url": "https://www.burlington.ca/en/community-supports/accessible-parking-permits.aspx",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Skip to content",
+      "url": "https://www.rbg.ca/events-experiences/events/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Rock Garden Tickets",
+      "url": "https://secure.rbg.ca/events?kid=5&view=list",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "events calendar",
+      "url": "https://www.rbg.ca/things-to-do/events/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Arboretum & Nature Trails",
+      "url": "https://www.rbg.ca/visit/gardens-and-trails/nature-trails/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Events & Experiences",
+      "url": "https://www.rbg.ca/events-experiences/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Featured Experiences",
+      "url": "https://www.rbg.ca/events-experiences/featured-experiences/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Concerts in the Garden",
+      "url": "https://www.rbg.ca/events-experiences/featured-experiences/concerts/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "RBG After Dark",
+      "url": "https://www.rbg.ca/events-experiences/featured-experiences/after-dark/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Year Round Experiences",
+      "url": "https://www.rbg.ca/events-experiences/year-round-experiences/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Sculpture Collection",
+      "url": "https://www.rbg.ca/events-experiences/year-round-experiences/sculpture-collection/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Host Your Event",
+      "url": "https://www.rbg.ca/venues-rentals/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Nature Programs for Individuals & Families",
+      "url": "https://www.rbg.ca/learning/individuals-and-families/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Register",
+      "url": "https://secure.rbg.ca/events?kid=46,20",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "ANCHORBALL: A Curious Art Journey",
+      "url": "https://www.rbg.ca/events/anchorball-a-curious-art-journey/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Special Events RBG hosts events year-round, from blooms festivals, to performing arts, to holiday celebrations, and more! Many special events require tickets (separate from General",
+      "url": "https://www.rbg.ca/things-to-do/by-season/special-events/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Event Tickets",
+      "url": "https://secure.rbg.ca/events?kid=22&view=list&endDate=2026-12-31",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Host Your Corporate Event",
+      "url": "https://www.rbg.ca/venues-rentals/corporate-events/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Host Your Private / Social Event",
+      "url": "https://www.rbg.ca/venues-rentals/private-events/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Web Design & Digital Marketing",
+      "url": "https://www.tbkcreative.com",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
+      "title": "Burlington Farmers Market",
+      "url": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
+      "source": "Burlington Lions Club Farmers Market",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Burlington Festival of Lights",
+      "url": "https://www.burlingtonfestivaloflights.com/",
+      "source": "Burlington Lions Club Farmers Market",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Burlington Farmers Market",
+      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-08-26-08-00",
+      "source": "Burlington Lions Club Farmers Market",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Festival Map",
+      "url": "https://canadaslargestribfest.com/festival-map/",
+      "source": "Canada's Largest Ribfest",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Get Tickets Here",
+      "url": "https://burlingtonpac.ca/?post_type=tribe_events&p=21298&preview=true",
+      "source": "Canada's Largest Ribfest",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Festival Map",
+      "url": "https://canadaslargestribfest.com/festival-map",
+      "source": "Canada's Largest Ribfest",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Partners",
+      "url": "https://supercrawl.ca/partners/",
+      "source": "Supercrawl",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Supercrawl Unveils 2026 Music Stage Schedules",
+      "url": "https://supercrawl.ca/2026/08/music-stage-schedules/",
+      "source": "Supercrawl",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Supercrawl Unveils 2026 Festival Programming",
+      "url": "https://supercrawl.ca/2026/06/2026-festival-reveal/",
+      "source": "Supercrawl",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Supercrawl Presents an All-Ages Day Party Sept 5 at Bridgeworks",
+      "url": "https://supercrawl.ca/2026/05/all-ages-day-party/",
+      "source": "Supercrawl",
+      "scope": "Nearby Hamilton"
+    }
+  ]
 }
