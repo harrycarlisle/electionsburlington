@@ -5,11 +5,11 @@ This weekly automated pass detects changes in public source pages and creates a 
 The purpose of this archive is to build a long-term, source-backed record while keeping verified facts, campaign claims, reporting and public opinion separate.
 
 ## Source changes
-- **Meed Ward campaign:** CHANGED — review — https://votemarianne.ca/
+- **Meed Ward campaign:** No detected change — https://votemarianne.ca/
 - **Lisa Kearns campaign:** No detected change — https://lisakearns.ca/
 - **Rory Nisan campaign:** CHANGED — review — https://rorynisan.ca/
 - **Official candidate list:** CHANGED — review — https://myvote.burlington.ca/for-voters/list-of-candidates/
-- **Official voting information:** No detected change — https://myvote.burlington.ca/for-voters/how-to-vote/
+- **Official voting information:** CHANGED — review — https://myvote.burlington.ca/for-voters/how-to-vote/
 - **City budget portal:** Fetch failed — review manually — https://www.burlington.ca/en/council-and-city-administration/budget.aspx
 - **Burlington council records:** CHANGED — review — https://burlingtonpublishing.escribemeetings.com/
 - **3110 South Service Road:** Fetch failed — review manually — https://www.burlington.ca/en/news/current-development-projects/3110_South_Service_Rd.aspx
@@ -32,7 +32,7 @@ The purpose of this archive is to build a long-term, source-backed record while 
 - Date / person or institution / topic / what happened / status (proposed, voted, funded, started, completed, reversed) / source type / source URL / supporting or critical context / reviewer note.
 
 ## Changed sources requiring review
-- Meed Ward campaign
 - Rory Nisan campaign
 - Official candidate list
+- Official voting information
 - Burlington council records

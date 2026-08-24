@@ -1,38 +1,38 @@
 {
   "Burlington council records": {
     "bytes": 248495,
-    "checked_at": "2026-08-24T03:13:55.766661+00:00",
-    "sha256": "28d7ee42846d5a82f9c6eff77110fc225c082db6980fd4d2b10aa0bf44d7cce0",
+    "checked_at": "2026-08-24T11:53:19.244311+00:00",
+    "sha256": "a67f558375a1e77f04b918243cefe1447c372680660f9feb613ea38b70780d3b",
     "url": "https://burlingtonpublishing.escribemeetings.com/"
   },
   "Lisa Kearns campaign": {
     "bytes": 258084,
-    "checked_at": "2026-08-24T03:13:55.766661+00:00",
+    "checked_at": "2026-08-24T11:53:19.244311+00:00",
     "sha256": "6024edba4146a8e6a278dd20007a94150fe6ce25d580daa1ad421779b7f7047f",
     "url": "https://lisakearns.ca/"
   },
   "Meed Ward campaign": {
     "bytes": 166203,
-    "checked_at": "2026-08-24T03:13:55.766661+00:00",
+    "checked_at": "2026-08-24T11:53:19.244311+00:00",
     "sha256": "cb3ac9ca2272cec14c3c944f10b15c5090371c207b1a2dea93421c470bcddc6e",
     "url": "https://votemarianne.ca/"
   },
   "Official candidate list": {
-    "bytes": 78449,
-    "checked_at": "2026-08-24T03:13:55.766661+00:00",
-    "sha256": "d1bc0bb0abcfb3cf1ca509cc5e3a328c08cdbf7dcf8180633e11171fec68679a",
+    "bytes": 78530,
+    "checked_at": "2026-08-24T11:53:19.244311+00:00",
+    "sha256": "25212767228090c98e1471894fa4584de307c6116d2d3fee3ead5e31b5da5995",
     "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
   },
   "Official voting information": {
-    "bytes": 63934,
-    "checked_at": "2026-08-24T03:13:55.766661+00:00",
-    "sha256": "4269d3e7c6774f6d9c0f22109f39edba62b6512b7da5ca229324caab5e309574",
+    "bytes": 64015,
+    "checked_at": "2026-08-24T11:53:19.244311+00:00",
+    "sha256": "43affcdb60e10e77ad8c5a63bfc194920d8f36e6120de76482d335584542b0ac",
     "url": "https://myvote.burlington.ca/for-voters/how-to-vote/"
   },
   "Rory Nisan campaign": {
     "bytes": 50580,
-    "checked_at": "2026-08-24T03:13:55.766661+00:00",
-    "sha256": "639d3630272d371692f2fc1a97ccb4a4e9f9f4f697435e07a45b3da4bab0d989",
+    "checked_at": "2026-08-24T11:53:19.244311+00:00",
+    "sha256": "ddafc5cdf38c065314f85bd3f373091b2f26c5da486b2eb9a0b147b5be38de52",
     "url": "https://rorynisan.ca/"
   }
 }
