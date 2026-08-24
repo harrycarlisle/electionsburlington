@@ -1,38 +1,49 @@
 {
-  "updated": "2026-08-23T19:35:00-04:00",
+  "updated": "2026-08-24T00:53:51Z",
+  "scope": "Burlington politics and civic affairs",
   "items": [
     {
-      "date": "2026-08-21",
-      "tag": "Election",
-      "headline": "The candidate field is now set",
-      "summary": "Nominations closed Aug. 21. Burlington's official list now shows the mayoral race plus council contests in all six wards.",
-      "why": "You can now compare the people who will actually appear on the municipal ballot.",
-      "importance": 4,
-      "source": "City of Burlington",
+      "date": "2026-08-24",
+      "tag": "Transit",
+      "headline": "Metrolinx starts expansion work at Oakville GO Station",
+      "summary": "Upgrades coming to the busiest station on the Lakeshore West line",
+      "why": "It can change how Burlington residents commute and connect to the regional transit network.",
+      "importance": 5,
+      "source": "Metrolinx",
       "sourceType": "official",
+      "verificationTier": "primary",
+      "url": "https://www.metrolinx.com/en/news/metrolinx-starts-expansion-work-at-oakville-go-station",
+      "image": "https://assets.metrolinx.com/image/upload/v1779304003/Images/Metrolinx/_BRIDGE_LOOKING_EAST.png",
+      "imageSource": "Metrolinx",
+      "imageSourceUrl": "https://www.metrolinx.com/en/news/metrolinx-starts-expansion-work-at-oakville-go-station"
+    },
+    {
+      "date": "2026-08-24",
+      "tag": "Transit",
+      "headline": "New Caledonia GO Station moves ahead",
+      "summary": "Metrolinx and the province bringing more transit to Toronto.",
+      "why": "It can change how Burlington residents commute and connect to the regional transit network.",
+      "importance": 5,
+      "source": "Metrolinx",
+      "sourceType": "official",
+      "verificationTier": "primary",
+      "url": "https://www.metrolinx.com/en/news/new-caledonia-go-station-moves-ahead",
+      "image": "https://assets.metrolinx.com/image/upload/v1760023558/Images/Metrolinx/Discover/C2_cropped_June2025.jpg",
+      "imageSource": "Metrolinx",
+      "imageSourceUrl": "https://www.metrolinx.com/en/news/new-caledonia-go-station-moves-ahead"
+    },
+    {
+      "date": "2026-08-24",
+      "tag": "Candidates",
+      "headline": "List of Candidates",
+      "summary": "List of Candidates",
+      "why": "It adds information voters can use to compare candidates.",
+      "importance": 4,
+      "source": "City of Burlington Election",
+      "sourceType": "official",
+      "verificationTier": "primary",
       "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
-    },
-    {
-      "date": "2026-08-20",
-      "tag": "Your ward",
-      "headline": "Some ward boundaries changed for this election",
-      "summary": "The 2026 map changes parts of Wards 1, 2, 3 and 4. Wards 5 and 6 are unchanged.",
-      "why": "Your ward determines which councillor candidates and Election Day locations apply to you.",
-      "importance": 4,
-      "source": "City of Burlington",
-      "sourceType": "official",
-      "url": "https://myvote.burlington.ca/for-voters/new-voting-wards/"
-    },
-    {
-      "date": "2026-08-23",
-      "tag": "Debates",
-      "headline": "Three mayoral debate dates are now on the calendar",
-      "summary": "Public mayoral debates are listed for Sept. 17, Oct. 1 and Oct. 8 at different Burlington venues.",
-      "why": "These events give voters a direct chance to compare the candidates before voting starts Oct. 14.",
-      "importance": 4,
-      "source": "Focus Burlington",
-      "sourceType": "community",
-      "url": "https://www.focusburlington.ca/vote/"
     }
-  ]
+  ],
+  "sourcesCheckedAt": "2026-08-24T00:53:51Z"
 }
