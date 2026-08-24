@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '15 12,17,22 * * *'
   workflow_dispatch:
+  push:
+    paths:
+      - 'data/councillor-profiles.json'
+      - 'data/community-discussion.json'
+      - 'scripts/update_candidate_assets.py'
+      - '.github/workflows/daily-civic-watch.yml'
 
 permissions:
   contents: write
