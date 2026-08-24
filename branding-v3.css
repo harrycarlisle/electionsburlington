@@ -15,7 +15,7 @@ h1,h2,h3{font-weight:670!important;letter-spacing:-.03em!important}
 .hero-kicker-dot{background:var(--accent-warm)!important;box-shadow:0 0 0 5px rgba(217,155,43,.09)!important}
 .hero-actions{margin-top:27px!important}.hero-button{font-weight:650!important;border-radius:999px!important;padding-inline:20px!important;box-shadow:none!important}.hero-button-primary{background:#0f4772!important}.hero-button-secondary{background:rgba(255,255,255,.72)!important}
 .hero-trust{margin-top:20px!important;font-weight:600!important;color:#778897!important}.hero-trust span::before{background:#edf5ef!important;color:#47735a!important}
-.hero-map-card{max-width:450px!important;border-radius:30px!important;box-shadow:0 26px 60px rgba(30,65,90,.12)!important;border-color:#d9e1e6!important;background:linear-gradient(150deg,#f4f1e5 0 58%,#d9eaf3 59% 100%)!important}
+.hero-map-card{max-width:450px!important;border-radius:30px!important;box-shadow:0 26px 60px rgba(30,65,90,.12)!important;border-color:#d9e1e6!important;background-color:#dbe9ef!important;background-image:url('/db00c009-e70d-404d-a8dd-45c6153cff6f.png')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
 .hero-map-grid{opacity:.42!important;background-size:46px 46px!important}.hero-place-label,.hero-candidate-count,.hero-date-card,.hero-voting-note{box-shadow:0 8px 24px rgba(27,65,91,.09)!important}
 .hero-place-label{background:rgba(255,255,255,.88)!important}.hero-candidate-count{background:rgba(255,255,255,.88)!important}.hero-date-card{background:#164f78!important}.hero-voting-note{background:#fffaf0!important}
 
@@ -65,7 +65,7 @@ h1,h2,h3{font-weight:670!important;letter-spacing:-.03em!important}
 
 html[data-theme="dark"] .election-hero::before{background:linear-gradient(135deg,#0d171f 0%,#101c25 62%,#122633 100%)!important}
 html[data-theme="dark"] .election-hero p{color:#b4c4d0!important}
-html[data-theme="dark"] .hero-map-card{background:linear-gradient(150deg,#232d25 0 58%,#1b3544 59% 100%)!important;border-color:#334958!important}
+html[data-theme="dark"] .hero-map-card{background-color:#1b3544!important;background-image:url('/db00c009-e70d-404d-a8dd-45c6153cff6f.png')!important;background-size:cover!important;background-position:center!important}
 html[data-theme="dark"] #candidateStrip .candidate-card{background:var(--card)!important;border-color:var(--line)!important}
 html[data-theme="dark"] #candidateStrip .candidate-body p{color:#b7c8d5!important}
 html[data-theme="dark"] #profilePanel .profile-box{background:#12232f!important}
