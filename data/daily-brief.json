@@ -1,37 +1,7 @@
 {
-  "updated": "2026-08-24T01:10:24Z",
+  "updated": "2026-08-24T01:33:45Z",
   "scope": "Burlington politics and civic affairs",
   "items": [
-    {
-      "date": "2026-08-24",
-      "tag": "Transit",
-      "headline": "Metrolinx starts expansion work at Oakville GO Station",
-      "summary": "Upgrades coming to the busiest station on the Lakeshore West line",
-      "why": "It can change how Burlington residents commute and connect to the regional transit network.",
-      "importance": 5,
-      "source": "Metrolinx",
-      "sourceType": "official",
-      "verificationTier": "primary",
-      "url": "https://www.metrolinx.com/en/news/metrolinx-starts-expansion-work-at-oakville-go-station",
-      "image": "https://assets.metrolinx.com/image/upload/v1779304003/Images/Metrolinx/_BRIDGE_LOOKING_EAST.png",
-      "imageSource": "Metrolinx",
-      "imageSourceUrl": "https://www.metrolinx.com/en/news/metrolinx-starts-expansion-work-at-oakville-go-station"
-    },
-    {
-      "date": "2026-08-24",
-      "tag": "Transit",
-      "headline": "New Caledonia GO Station moves ahead",
-      "summary": "Metrolinx and the province bringing more transit to Toronto.",
-      "why": "It can change how Burlington residents commute and connect to the regional transit network.",
-      "importance": 5,
-      "source": "Metrolinx",
-      "sourceType": "official",
-      "verificationTier": "primary",
-      "url": "https://www.metrolinx.com/en/news/new-caledonia-go-station-moves-ahead",
-      "image": "https://assets.metrolinx.com/image/upload/v1760023558/Images/Metrolinx/Discover/C2_cropped_June2025.jpg",
-      "imageSource": "Metrolinx",
-      "imageSourceUrl": "https://www.metrolinx.com/en/news/new-caledonia-go-station-moves-ahead"
-    },
     {
       "date": "2026-08-24",
       "tag": "Candidates",
@@ -43,7 +13,34 @@
       "sourceType": "official",
       "verificationTier": "primary",
       "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
+    },
+    {
+      "date": "2026-08-24",
+      "tag": "Candidates",
+      "headline": "For Candidates",
+      "summary": "For Candidates",
+      "why": "It adds information voters can use to compare candidates.",
+      "importance": 4,
+      "source": "City of Burlington Election",
+      "sourceType": "official",
+      "verificationTier": "primary",
+      "url": "https://myvote.burlington.ca/for-candidates/"
+    },
+    {
+      "date": "2026-08-24",
+      "tag": "Halton Region",
+      "headline": "Infrastructure and Growth",
+      "summary": "Learn about the Region's ongoing work to enhance and expand its roads, water and wastewater, and facilities for our growing community.",
+      "why": "",
+      "importance": 3,
+      "source": "Halton Region",
+      "sourceType": "official",
+      "verificationTier": "primary",
+      "url": "https://www.halton.ca/for-residents/infrastructure-and-growth",
+      "image": "https://www.halton.ca:443/getmedia/8cd17423-2856-484f-8bf7-1afc4d460f5a/pw-infrastructure-and-growth-page-thumbnail-may-2026.jpg?width=200&height=200&mediaprotectionhash=99ce5a7963461ab953cbedfc4cfb5d8b874e2db3fdaafe839425ad15e1093019&ext=.jpg",
+      "imageSource": "Halton Region",
+      "imageSourceUrl": "https://www.halton.ca/for-residents/infrastructure-and-growth"
     }
   ],
-  "sourcesCheckedAt": "2026-08-24T01:10:24Z"
+  "sourcesCheckedAt": "2026-08-24T01:33:45Z"
 }
