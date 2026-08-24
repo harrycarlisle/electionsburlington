@@ -1,0 +1,214 @@
+{
+  "updated": "2026-08-23",
+  "note": "Summaries are based on candidate websites, direct candidate questionnaires/interviews, official City records and reputable local reporting. Campaign statements are summarized as proposals, not facts. When a detailed 2026 platform has not been located, the guide says so instead of inferring one.",
+  "profiles": {
+    "Kelvin Galbraith": {
+      "ward": 1,
+      "overview": "Continue Ward 1 work on infrastructure, road safety, business, smart growth and Aldershot GO-area planning.",
+      "priorities": ["Continue infrastructure and road-safety work in Ward 1.", "Support business and reduce City permitting/red-tape friction.", "Shape growth around Aldershot GO while protecting neighbourhood interests."],
+      "experience": ["Ward 1 City & Regional Councillor since 2018.", "Business owner and former Aldershot BIA chair.", "Current Deputy Mayor portfolio includes business and red-tape reduction."],
+      "questions": ["Which second-term accomplishments were personally led versus council-wide projects?", "What spending would change if taxes rise faster than residents can afford?"],
+      "sources": [{"label":"Campaign website","url":"https://www.kelvingalbraith-ward1.com/"},{"label":"City Ward 1 page","url":"https://www.burlington.ca/en/council-and-city-administration/ward-1.aspx"}]
+    },
+    "Cheryl Hurst": {
+      "ward": 1,
+      "overview": "Focus on accessibility, aging in place, environmental stewardship and clearer resident communication.",
+      "priorities": ["Support aging-in-place and an age-friendly Burlington.", "Improve accessibility and representation for residents who feel unheard.", "Protect natural heritage while improving communication and transparency."],
+      "experience": ["More than 20 years of involvement on municipal advisory boards, according to the campaign.", "Past member of Burlington's Accessibility Advisory Committee.", "Community and non-profit involvement in Burlington."],
+      "questions": ["Which accessibility changes would be first-term priorities?", "How would environmental goals affect development decisions in Ward 1?"],
+      "sources": [{"label":"Campaign website","url":"https://www.cherylcommunityburlingtonward1.ca/"}]
+    },
+    "James Kerr": {
+      "ward": 1,
+      "overview": "No detailed 2026 platform found yet; past campaign themes included fiscal sustainability, smarter growth and City Hall accountability.",
+      "priorities": ["A detailed 2026 Ward 1 platform has not yet been located.", "In the 2022 mayoral race, Kerr emphasized fiscal sustainability, smarter growth, transit and better City Hall communication."],
+      "experience": ["Ran for Burlington mayor in 2022.", "Background reported in corporate restructuring and management accounting."],
+      "questions": ["Which 2022 positions still form the 2026 Ward 1 platform?", "What specific changes would be proposed for the 2027 budget and Ward 1 growth?"],
+      "sources": [{"label":"Official candidate list","url":"https://myvote.burlington.ca/for-voters/list-of-candidates/"},{"label":"2022 profile","url":"https://burlingtongazette.ca/2022/09/"}]
+    },
+    "Robert Radway": {
+      "ward": 1,
+      "overview": "Focus on tax restraint, infrastructure and congestion while emphasizing accessibility and constituent service.",
+      "priorities": ["Review City spending line by line while maintaining core services.", "Address congestion and infrastructure pressure from construction and growth.", "Prioritize accessibility, transparency and constituent service."],
+      "experience": ["Longtime Burlington educator; worked at Burlington Central High School for about 25 years.", "Ran for Ward 1 councillor in 2022 and received 36% of the vote, according to his 2026 candidate interview.", "Community volunteer including the Compassion Society of Halton."],
+      "questions": ["Which City spending lines would be reduced or delayed?", "What infrastructure projects should be accelerated in Ward 1?"],
+      "sources": [{"label":"BurlingtonToday candidate interview","url":"https://www.burlingtontoday.com/2026-municipal-election-news/meet-your-candidate-robert-radway-running-in-ward-1-12683236"}]
+    },
+    "Masha Brar": {
+      "ward": 2,
+      "overview": "Emphasize resident involvement, evidence-based decisions and growth that protects dignity and neighbourhood interests.",
+      "priorities": ["Use a resident-engagement model that moves from informing to empowering residents.", "Bring legal and evidence-based scrutiny to planning and City decisions.", "Push for growth that protects residents and neighbourhood dignity."],
+      "experience": ["Real-estate and estates lawyer.", "Campaign emphasizes legal experience navigating complex systems."],
+      "questions": ["How would the 'Growth with Dignity' pledge change specific development votes?", "What budget or service changes would follow from the evidence-based stewardship approach?"],
+      "sources": [{"label":"Campaign website","url":"https://www.mashaforburlington.ca/"}]
+    },
+    "Sean Campbell": {
+      "ward": 2,
+      "overview": "Focus on balanced growth, affordability, traffic, local business and finding savings before raising taxes.",
+      "priorities": ["Plan growth with infrastructure and community input.", "Address downtown congestion, parking and accessibility.", "Look for cost savings before asking taxpayers to cover budget gaps."],
+      "experience": ["Burlington resident since 1995, according to the campaign.", "Advertising-industry account executive managing large portfolios.", "Co-founder and president of Burlington Helping Burlington; Carpenter Hospice board and Finance and Audit committee involvement."],
+      "questions": ["Which costs or projects would be cut, delayed or redesigned first?", "What specific traffic changes would improve movement through downtown Ward 2?"],
+      "sources": [{"label":"Campaign website","url":"https://seancampbell.info/"}]
+    },
+    "Gary Carr": {
+      "ward": 2,
+      "overview": "Run on government experience, community safety, economic growth, natural heritage and maintaining Halton's financial position.",
+      "priorities": ["Support community safety and well-being.", "Grow the regional economy while protecting natural heritage.", "Preserve a strong financial position through collaborative government."],
+      "experience": ["Former Ontario MPP and Speaker of the Legislature.", "Former federal MP.", "Halton Regional Chair and former Police Services Board member."],
+      "questions": ["Which regional policies would Carr bring to Burlington council?", "What would change in Ward 2 development and spending compared with the current council?"],
+      "sources": [{"label":"Campaign website","url":"https://garycarr.ca/"}]
+    },
+    "Jeremy Gaetan": {
+      "ward": 2,
+      "overview": "Focus on lower spending growth, limiting tax increases and addressing downtown traffic.",
+      "priorities": ["Rein in spending and postpone major projects he considers unnecessary.", "Aim to keep tax increases below the cost of living.", "Address downtown traffic and transit delays."],
+      "experience": ["Self-employed in smoking-cessation therapy, industrial vibration analysis and foraging events.", "First election as a candidate, according to his BurlingtonToday interview.", "Past community volunteering includes youth soccer and Food4Kids Halton fundraising."],
+      "questions": ["Which infrastructure or beautification projects would be postponed?", "How would services be maintained if tax growth is held below cost growth?"],
+      "sources": [{"label":"BurlingtonToday candidate interview","url":"https://www.burlingtontoday.com/2026-municipal-election-news/meet-your-candidate-jeremy-gaetan-seeks-vacant-seat-in-ward-2-12682695"},{"label":"Campaign website","url":"https://jeremygaetan.com/"}]
+    },
+    "Tony Brecknock": {
+      "ward": 3,
+      "overview": "Focus on fiscal responsibility, green-space protection, road safety, infrastructure and affordable growth.",
+      "priorities": ["Review City spending and improve budget transparency.", "Protect green space, parks, waterways and rural character.", "Improve road safety, traffic calming and infrastructure while supporting affordable housing."],
+      "experience": ["Burlington community advocate and communications professional.", "Ran for Ward 4 councillor in 2022."],
+      "questions": ["Which spending reductions would materially reduce tax pressure?", "How would affordable growth be balanced with rural and green-space protection?"],
+      "sources": [{"label":"Campaign website","url":"https://brecknock.com/"}]
+    },
+    "Mark Carr": {
+      "ward": 3,
+      "overview": "Focus on taxes, value-for-money auditing and community safety, drawing on past council experience.",
+      "priorities": ["Reject an operating budget above inflation, based on his stated 2027 position.", "Commission an outside value-for-money audit of City spending.", "Address neighbourhood safety, speeding, e-bikes and e-scooters."],
+      "experience": ["Former Burlington City Councillor.", "Retired Burlington business owner and former executive director of non-profit agencies.", "Long-running involvement in local public-affairs programming and election debates."],
+      "questions": ["What services or projects would change if an audit finds savings are insufficient?", "Which safety measures fall within City authority versus Halton police or provincial jurisdiction?"],
+      "sources": [{"label":"BurlingtonToday candidate interview","url":"https://www.burlingtontoday.com/2026-municipal-election-news/meet-your-candidate-mark-carr-vying-for-ward-3-12678955"}]
+    },
+    "Lisa Cooper": {
+      "ward": 3,
+      "overview": "No detailed 2026 platform or campaign website found yet.",
+      "priorities": ["A detailed 2026 platform has not yet been located."],
+      "experience": ["Listed by the City as a Ward 3 candidate.", "Previously ran for Ward 3 councillor in 2018."],
+      "questions": ["What are the top three 2026 priorities?", "What would change from the candidate's previous Ward 3 campaign?"],
+      "sources": [{"label":"Official candidate list","url":"https://myvote.burlington.ca/for-voters/list-of-candidates/"}]
+    },
+    "Kyle Hutton": {
+      "ward": 3,
+      "overview": "Focus on housing supply, transparency, service protection, road safety and opposition to hyperscale data centres.",
+      "priorities": ["Support missing-middle housing and affordable-inclusion policies.", "Reduce consultant spending while protecting resident services.", "Improve road safety and oppose hyperscale data-centre proposals."],
+      "experience": ["Brant Hills resident and previous federal/provincial Green candidate.", "Campaign emphasizes affordability, environmental protection and small-business support."],
+      "questions": ["What consultant spending would be cut and what savings would result?", "Which housing changes are within City control and how quickly could they add homes?"],
+      "sources": [{"label":"Campaign website","url":"https://www.kylehutton.ca/"}]
+    },
+    "Katy Moore": {
+      "ward": 3,
+      "overview": "Focus on the commercial tax base, flooding and infrastructure, green space, road safety and responsive ward service.",
+      "priorities": ["Grow the commercial tax base to reduce pressure on homeowners.", "Prioritize stormwater infrastructure by risk and oppose the Nelson Quarry expansion.", "Use traffic calming and persistent constituent follow-up on local issues."],
+      "experience": ["Lowville-based business owner with more than 25 years in hospitality and wine trade.", "Longtime Burlington resident with community advocacy experience."],
+      "questions": ["Which business-attraction policies would materially shift the tax base?", "What infrastructure projects would be moved ahead first and how would they be funded?"],
+      "sources": [{"label":"Campaign website","url":"https://thirstformoore.ca/"}]
+    },
+    "Chris Carter": {
+      "ward": 4,
+      "overview": "Emphasize community leadership and local organizational experience; a detailed issue-by-issue platform is still limited on the campaign site.",
+      "priorities": ["Campaign frames its approach around community leadership and Burlington-first decision-making.", "Detailed positions on taxes, housing and services will be added when directly published."],
+      "experience": ["Co-founder of Burlington Dads.", "Campaign says more than 25 years leading teams, boards and community organizations and more than $1 million raised locally.", "Endorsed by outgoing Ward 4 councillor Shawna Stolte."],
+      "questions": ["What are the specific tax, housing and infrastructure positions?", "How would community leadership experience translate into council votes and budget choices?"],
+      "sources": [{"label":"Campaign website","url":"https://chriscarterofficial.com/"},{"label":"BurlingtonToday on Ward 4","url":"https://www.burlingtontoday.com/municipal-election/ward-4-councillor-shawna-stolte-will-not-seek-re-election-in-burlington-12408260"}]
+    },
+    "Olivia Duke": {
+      "ward": 4,
+      "overview": "Focus on reliable services, responsible spending, neighbourhood safety and growth that protects quality of life.",
+      "priorities": ["Improve roads, snow clearing and reliable everyday services.", "Require spending to deliver measurable value and maintain affordability.", "Support thoughtful growth, community safety and accessible transportation."],
+      "experience": ["Nearly 20 years in business development and strategic partnerships, according to the campaign.", "Master of Public Policy with a housing-policy focus.", "Community leadership including the Burlington Lions Club."],
+      "questions": ["What level of property-tax increase would be considered responsible?", "Which Ward 4 service or infrastructure problems would be tackled first?"],
+      "sources": [{"label":"Campaign website","url":"https://www.oliviaduke.ca/"}]
+    },
+    "Kristy Dickinson": {
+      "ward": 5,
+      "overview": "Focus on connected communities, responsible growth, affordability, safety and transparency.",
+      "priorities": ["Plan complete, connected communities with accessible services.", "Manage growth with affordability and neighbourhood impacts in mind.", "Improve community safety, transparency and accountability."],
+      "experience": ["Lifelong Burlington resident, healthcare consultant and entrepreneur.", "Community and school-council involvement highlighted by the campaign."],
+      "questions": ["Which specific growth policies would change from the current approach?", "What spending or service decisions would improve affordability?"],
+      "sources": [{"label":"Campaign website","url":"https://votekd.ca/"}]
+    },
+    "Alex Don": {
+      "ward": 5,
+      "overview": "Focus on fiscal responsibility, neighbourhood preservation, community safety and long-term planning.",
+      "priorities": ["Seek more predictable property taxes and more transparent budget decisions.", "Favor planned growth while resisting development seen as harmful to neighbourhood character.", "Expand proactive safety measures and traffic calming."],
+      "experience": ["Internationally trained lawyer with institutional-investment legal experience.", "Former Legislative Page at Queen's Park.", "Burlington-raised and now starting a family in the city, according to the campaign."],
+      "questions": ["What specific efficiencies would produce predictable property taxes?", "How would neighbourhood-preservation proposals fit provincial housing rules?"],
+      "sources": [{"label":"Campaign website","url":"https://alexdon.ca/"}]
+    },
+    "Brian Machan": {
+      "ward": 5,
+      "overview": "No detailed 2026 platform found yet.",
+      "priorities": ["A detailed 2026 platform has not yet been located."],
+      "experience": ["Listed by BurlingtonToday as a CFP with Machan Financial Services.", "Listed by the City as a Ward 5 candidate."],
+      "questions": ["What are the top three 2026 priorities?", "How would financial-planning experience translate into municipal budget decisions?"],
+      "sources": [{"label":"Official candidate list","url":"https://myvote.burlington.ca/for-voters/list-of-candidates/"},{"label":"BurlingtonToday candidate roundup","url":"https://www.burlingtontoday.com/municipal-election/nominations-are-closed-heres-whos-running-for-burlington-city-council-12681781"}]
+    },
+    "Paul Sharman": {
+      "ward": 5,
+      "overview": "Run on council and finance experience, with emphasis on budgets, infrastructure, services and managed growth.",
+      "priorities": ["Continue multi-year budgeting and infrastructure renewal.", "Protect core services while managing growth and housing pressures.", "Use finance and performance-management experience in City budgeting."],
+      "experience": ["Ward 5 City & Regional Councillor since 2010.", "Deputy Mayor for Strategy and Budgets.", "Finance executive; Fellow Chartered Management Accountant and President of Halton Community Housing Corporation."],
+      "questions": ["Which claimed accomplishments can be tied to Sharman's individual motions or votes?", "What would change in a fifth term rather than continue unchanged?"],
+      "sources": [{"label":"Campaign website","url":"https://www.paulsharman.ca/"},{"label":"City Ward 5 page","url":"https://www.burlington.ca/en/council-and-city-administration/ward-5.aspx"}]
+    },
+    "Osob Adus": {
+      "ward": 6,
+      "overview": "Focus on connected neighbourhoods, green space, balanced growth, accessibility, traffic and clearer City Hall communication.",
+      "priorities": ["Protect parks, trails and green spaces while planning growth around neighbourhood character.", "Improve accessible public spaces and resident-to-City Hall communication.", "Push transportation planning to keep pace with Ward 6 traffic and growth."],
+      "experience": ["Longtime Burlington resident, entrepreneur and community leader.", "Past Burlington Citizen of the Year, according to the campaign."],
+      "questions": ["What specific transportation changes would reduce Ward 6 travel delays?", "How would balanced growth be defined when neighbourhood and housing goals conflict?"],
+      "sources": [{"label":"Campaign website","url":"https://www.osobward6.ca/"}]
+    },
+    "Angelo Bentivegna": {
+      "ward": 6,
+      "overview": "Continue work on recreation, community services, rural priorities, infrastructure and neighbourhood safety.",
+      "priorities": ["Continue recreation and community-services work through the current Deputy Mayor portfolio.", "Advocate for rural economic development, infrastructure and transportation needs.", "Support neighbourhood safety and Community Watch initiatives."],
+      "experience": ["Ward 6 City & Regional Councillor since 2018.", "Deputy Mayor for Recreation and Community Services.", "Business and hospitality background with decades of Burlington community involvement."],
+      "questions": ["Which Ward 6 results were personally led and which were council-wide?", "What would Bentivegna change in a third term on taxes, traffic and growth?"],
+      "sources": [{"label":"City Ward 6 page","url":"https://www.burlington.ca/en/council-and-city-administration/ward-6.aspx"},{"label":"Campaign website","url":"https://angelobentivegnaward6.ca/"}]
+    },
+    "Bianca Bielski": {
+      "ward": 6,
+      "overview": "No detailed public 2026 platform found yet.",
+      "priorities": ["A detailed 2026 platform has not yet been located."],
+      "experience": ["BurlingtonToday identifies Bielski as a Manager of Development Services at the City of Burlington.", "Listed by the City as a Ward 6 candidate."],
+      "questions": ["What are the top three 2026 priorities?", "How would development-services experience shape planning decisions, and how would potential conflicts be handled?"],
+      "sources": [{"label":"Official candidate list","url":"https://myvote.burlington.ca/for-voters/list-of-candidates/"},{"label":"BurlingtonToday candidate roundup","url":"https://www.burlingtontoday.com/municipal-election/nominations-are-closed-heres-whos-running-for-burlington-city-council-12681781"}]
+    },
+    "Chris Bouchard": {
+      "ward": 6,
+      "overview": "No detailed public 2026 platform found yet.",
+      "priorities": ["A detailed 2026 platform has not yet been located."],
+      "experience": ["BurlingtonToday describes Bouchard as a longtime Headon Forest resident.", "Listed by the City as a Ward 6 candidate."],
+      "questions": ["What are the top three 2026 priorities?", "Which Ward 6 issue would be tackled first?"],
+      "sources": [{"label":"Official candidate list","url":"https://myvote.burlington.ca/for-voters/list-of-candidates/"},{"label":"BurlingtonToday candidate roundup","url":"https://www.burlingtontoday.com/municipal-election/nominations-are-closed-heres-whos-running-for-burlington-city-council-12681781"}]
+    },
+    "Frank Domenic": {
+      "ward": 6,
+      "overview": "Focus on parks and recreation, core services, City Hall accountability and growth with infrastructure.",
+      "priorities": ["Improve parks and recreation as Ward 6 grows.", "Focus on day-to-day core services and responsive City Hall operations.", "Tie housing and growth decisions to roads and infrastructure."],
+      "experience": ["HDSB teacher and local online commentator, according to BurlingtonToday.", "Campaign emphasizes local volunteering and neighbourhood advocacy."],
+      "questions": ["What are the costs and funding sources behind the campaign's four platform planks?", "Which core-service changes would residents notice first?"],
+      "sources": [{"label":"Campaign website","url":"https://frankdomenic.ca/"}]
+    },
+    "Rowen Fraser": {
+      "ward": 6,
+      "overview": "Focus on fiscal accountability, tax relief, infrastructure planning, traffic, transit and institutional reform.",
+      "priorities": ["Pursue property-tax relief and modern fiscal accountability.", "Streamline infrastructure planning and traffic management.", "Improve council effectiveness, representation and supplementary transit options."],
+      "experience": ["Longtime Burlington resident.", "Professional background described by the campaign in team management, manufacturing and technical direction."],
+      "questions": ["What exact tax-relief target is proposed and what spending changes fund it?", "What does 'institutional reform' mean in specific municipal policies?"],
+      "sources": [{"label":"Campaign website","url":"https://www.rowrowforcouncil.com/"}]
+    },
+    "Edmond Jodhi": {
+      "ward": 6,
+      "overview": "No detailed public 2026 platform found yet.",
+      "priorities": ["A detailed 2026 platform has not yet been located."],
+      "experience": ["Listed by the City as a Ward 6 candidate."],
+      "questions": ["What are the top three 2026 priorities?", "What experience would be brought to City and Regional Council?"],
+      "sources": [{"label":"Official candidate list","url":"https://myvote.burlington.ca/for-voters/list-of-candidates/"}]
+    }
+  }
+}
