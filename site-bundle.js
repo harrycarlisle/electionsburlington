@@ -3,11 +3,11 @@
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const fetchJson=async url=>{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(url);return r.json()};
   const home=()=>location.pathname==='/'||location.pathname.endsWith('/index.html');
-  const brandMarkup='<img class="news-brand-logo" src="/logo-mark.svg?v=20260824h" alt=""><span class="news-brand-copy"><strong>Burlington <em>News</em></strong></span>';
+  const brandMarkup='<img class="news-brand-logo" src="/logo-mark.svg?v=20260824m" alt=""><span class="news-brand-copy"><strong>Burlington <em>News</em></strong></span>';
 
   function restoreBrand(){
     document.querySelectorAll('.brand').forEach(b=>{if(!b.classList.contains('news-brand')||!b.querySelector('.news-brand-copy')){b.className='brand news-brand';b.href='index.html';b.innerHTML=brandMarkup;b.setAttribute('aria-label','Burlington News home')}});
-    let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='favicon.svg?v=20260824h';
+    let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='favicon.svg?v=20260824m';
     const path=location.pathname.replace(/\/$/,'');
     const titles={
       '':'Burlington News | Local news, events and election coverage','/index.html':'Burlington News | Local news, events and election coverage',
@@ -47,7 +47,7 @@
   async function rebuildHomeBrief(){
     if(!home())return;const old=document.querySelector('.daily-brief');if(!old)return;
     const items=(await getLocalStories(6)).slice(0,3);if(!items.length)return;
-    const section=document.createElement('section');section.className='daily-brief news-brief';section.id='daily-brief';section.innerHTML=`<div class="news-brief-head"><div><h2>Latest in Burlington</h2><p>New local stories and source-linked updates.</p></div><a href="updates.html">All news →</a></div><div class="news-brief-grid">${items.map(storyCard).join('')}</div>`;old.replaceWith(section);
+    const section=document.createElement('section');section.className='daily-brief news-brief';section.id='daily-brief';section.innerHTML=`<div class="news-brief-head"><div><h2>Latest in Burlington</h2></div><a href="updates.html">All news →</a></div><div class="news-brief-grid">${items.map(storyCard).join('')}</div>`;old.replaceWith(section);
   }
 
   async function rebuildUpdates(){

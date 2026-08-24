@@ -6,9 +6,9 @@
   <title>Burlington News | Local news, events and election coverage</title>
   <meta name="description" content="Independent Burlington, Ontario news, things to do, food, sports, local discoveries and clear 2026 municipal election coverage.">
   <link rel="canonical" href="https://burlingtonnews.ca/">
-  <link rel="icon" href="favicon.svg?v=20260824h">
+  <link rel="icon" href="favicon.svg?v=20260824m">
   <link rel="preload" href="assets/home/skyway.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="home.css?v=20260824k">
+  <link rel="stylesheet" href="home.css?v=20260824m">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Burlington News">
   <meta property="og:locale" content="en_CA">
@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://burlingtonnews.ca/assets/home/skyway.webp">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"Burlington News","url":"https://burlingtonnews.ca/","logo":{"@type":"ImageObject","url":"https://burlingtonnews.ca/logo-mark.svg"},"areaServed":{"@type":"City","name":"Burlington","containedInPlace":{"@type":"AdministrativeArea","name":"Ontario"}},"publishingPrinciples":"https://burlingtonnews.ca/methodology.html"}</script>
-  <script src="home.js?v=20260824k" defer></script>
+  <script src="home.js?v=20260824m" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -33,7 +33,7 @@
   <header class="site-header">
     <div class="shell masthead">
       <a class="brand" href="/" aria-label="Burlington News home">
-        <img src="logo-mark.svg?v=20260824h" width="36" height="36" alt="">
+        <img src="logo-mark.svg?v=20260824m" width="36" height="36" alt="">
         <span>Burlington <strong>News</strong></span>
       </a>
       <form class="header-search" id="headerSearch" role="search" autocomplete="off">
@@ -90,18 +90,18 @@
         <div class="hero-progress" id="heroProgress" aria-label="Choose a featured story"><button class="active" type="button" aria-label="Show feature 1"></button><button type="button" aria-label="Show feature 2"></button><button type="button" aria-label="Show feature 3"></button></div>
       </div>
 
-      <div class="side-stories" aria-label="Discover Burlington">
-        <a class="side-story salamander" href="articles/salamander-road-closure.html">
-          <img src="assets/home/salamander.webp" width="720" height="480" alt="A Jefferson salamander" decoding="async">
-          <div><span class="story-label">Wild Burlington</span><h2>Why Burlington closes a road for salamanders</h2></div>
+      <div class="side-stories" id="storyRail" aria-label="Current Burlington stories">
+        <a class="side-story ward-change" href="https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/" target="_blank" rel="noopener">
+          <img src="assets/editorial/burlington-wards-2026.svg" width="1600" height="900" alt="Simplified orientation diagram of Burlington's six 2026 voting wards" decoding="async">
+          <div><span class="story-label">2026 election</span><h2>Your ward may have changed. Check before you vote.</h2></div>
         </a>
-        <a class="side-story warbler" href="articles/back-to-school-2026.html">
-          <img src="assets/home/school-bus.webp" width="1280" height="800" alt="A yellow Ontario school bus" loading="lazy" decoding="async">
-          <div><span class="story-label">Back to school</span><h2>The dates Burlington families need before September</h2></div>
-        </a>
-        <a class="side-story fishway" href="articles/ribfest-2026.html">
+        <a class="side-story ribfest" href="articles/ribfest-2026.html">
           <img src="assets/home/ribs.webp" width="1000" height="625" alt="Barbecue ribs smoking over a pit" loading="lazy" decoding="async">
           <div><span class="story-label">Labour Day weekend</span><h2>Ribfest turns 30—with nearly $6 million behind the smoke</h2></div>
+        </a>
+        <a class="side-story school" href="articles/back-to-school-2026.html">
+          <img src="assets/home/school-bus.webp" width="1280" height="800" alt="A yellow Ontario school bus" loading="lazy" decoding="async">
+          <div><span class="story-label">Back to school</span><h2>The dates Burlington families need before school starts.</h2></div>
         </a>
       </div>
     </section>
@@ -118,19 +118,18 @@
         </article>
         <div class="latest-list" id="latestList" aria-live="polite">
           <a href="https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/"><span class="latest-thumb latest-thumb-wards" aria-hidden="true"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i></span><span>Your ward</span><strong>Your ward may have changed. Check before you vote.</strong><small>New boundaries take effect for the 2026 election.</small></a>
-          <a href="https://www.burlington.ca/en/news/game-on-free-sports-equipment-lockers-coming-to-burlington-parks.aspx"><span class="latest-thumb latest-thumb-sport" aria-hidden="true">20</span><span>Recreation</span><strong>Twenty parks are getting free-to-borrow sports gear.</strong><small>Basketballs, soccer balls and more will be available through park lockers.</small></a>
-          <a href="articles/fishway-26000-fish.html"><img class="latest-thumb" src="assets/home/fishway.webp" width="160" height="110" alt="The Cootes Paradise Fishway across the water" loading="lazy" decoding="async"><span>Environment</span><strong>What 26,503 fish revealed about a damaged marsh.</strong><small>The hopeful count hides a harder restoration problem.</small></a>
+          <a class="no-label" href="https://www.burlington.ca/en/news/game-on-free-sports-equipment-lockers-coming-to-burlington-parks.aspx"><span class="latest-thumb latest-thumb-sport" aria-hidden="true">20</span><strong>Twenty parks are getting free-to-borrow sports gear.</strong><small>Basketballs, soccer balls and more will be available through park lockers.</small></a>
+          <a class="no-label" href="articles/fishway-26000-fish.html"><img class="latest-thumb" src="assets/home/fishway.webp" width="160" height="110" alt="The Cootes Paradise Fishway across the water" loading="lazy" decoding="async"><strong>What 26,503 fish revealed about a damaged marsh.</strong><small>The hopeful count hides a harder restoration problem.</small></a>
         </div>
       </div>
     </section>
 
     <section class="shell community-signal" id="communitySignal" aria-labelledby="communitySignalTitle" hidden>
       <div class="community-signal-copy">
-        <span class="story-label">Community signal · public posts</span>
+        <span class="story-label">Public discussion</span>
         <a id="communitySignalLink" href="#" target="_blank" rel="noopener"><h2 id="communitySignalTitle">What Burlington is talking about right now</h2><p id="communitySignalHeadline"></p></a>
-        <div class="community-signal-meta"><span id="communitySignalMeta"></span><a href="methodology.html#community-signal">How it’s ranked</a></div>
+        <div class="community-signal-meta"><span id="communitySignalMeta"></span><a href="methodology.html#community-signal">Why this is here</a></div>
       </div>
-      <div class="community-score-card" aria-label="Community signal score"><strong id="communitySignalScore">—</strong><span>signal score</span><i><b id="communitySignalBar"></b></i><small>Not a poll</small></div>
     </section>
 
     <section class="election-band" aria-labelledby="election-title">
@@ -155,7 +154,7 @@
       <div class="discovery-grid">
         <a class="discovery-feature" href="explore.html">
           <img src="assets/editorial/explore-collage.webp" width="1440" height="960" alt="Editorial collage of Burlington’s shoreline, lift bridge, escarpment, wetland and local food" loading="lazy" decoding="async">
-          <div><span class="story-label">Try somewhere new</span><h3>Pick a mood. Get one place.</h3><p>No endless list—just one Burlington idea at a time.</p></div>
+          <div><span class="story-label">Try somewhere new</span><h3>Pick a mood. Get one place.</h3></div>
         </a>
         <div class="popular-list" id="food">
           <div class="popular-heading"><span>Save for later</span><strong>Useful local lists</strong></div>

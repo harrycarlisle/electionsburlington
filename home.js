@@ -12,6 +12,7 @@
   const latestList = document.getElementById('latestList');
   const weather = document.getElementById('weather');
   const communitySignal = document.getElementById('communitySignal');
+  const storyRail = document.getElementById('storyRail');
   const searchIndex = [
     {title:'Ribfest turns 30—with nearly $6 million behind the smoke',url:'articles/ribfest-2026.html',section:'Food · Events',keywords:'barbecue bbq ribs labour day weekend festival'},
     {title:'Why Burlington closes a road for salamanders',url:'articles/salamander-road-closure.html',section:'Wildlife · King Road',keywords:'amphibian migration road closure nature'},
@@ -111,6 +112,10 @@
   searchForm?.addEventListener('submit', event => {event.preventDefault();const first=searchResults?.querySelector('a');if(first) location.href=first.href;});
   document.addEventListener('click', event => {if (searchForm && !searchForm.contains(event.target)) closeSearch();});
   document.addEventListener('keydown', event => {if(event.key==='Escape'&&searchPopover&&!searchPopover.hidden){closeSearch();searchInput?.blur();}});
+  if (searchInput && new URLSearchParams(location.search).get('search') === '1') {
+    history.replaceState(null, '', location.pathname);
+    requestAnimationFrame(() => { searchInput.focus(); openSearch(); renderSearch(''); });
+  }
   if (searchInput && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     let prompt = 0;
     setInterval(() => {if (document.activeElement !== searchInput && !searchInput.value) {prompt=(prompt+1)%suggestedSearches.length;searchInput.placeholder=`Search “${suggestedSearches[prompt]}”`; }}, 3200);
@@ -149,11 +154,12 @@
   const leadDeck = document.getElementById('leadDeck');
   const leadByline = document.getElementById('leadByline');
   const heroProgress = document.getElementById('heroProgress');
-  const heroStories = [
-    {url:'articles/skyway-bridge-story.html',label:'The Monday Feature · 9 min',title:'Ontario nearly replaced the Skyway with three tunnels.',deck:'A ship strike, failed tolls, 84 purchased properties—and a crash 14 minutes after the second span opened.',byline:'By Burlington News Staff',media:'<img src="assets/home/skyway.webp" width="1000" height="625" alt="The Burlington Bay James N. Allan Skyway" fetchpriority="high" decoding="async"><span class="image-credit">Dave Lauretti · CC BY 2.0</span>'},
-    {url:'election-guide.html#candidates',label:'2026 municipal election',title:'Five people want to lead Burlington. Start with their biggest differences.',deck:'Compare their plans, records and unanswered questions without campaign spin.',byline:'By the Burlington News Election Desk',media:'<div class="lead-candidate-montage" aria-label="Four verified candidate photos and one candidate placeholder"><img src="assets/candidates/mw.webp" alt="Marianne Meed Ward"><img src="assets/candidates/lk.webp" alt="Lisa Kearns"><img src="assets/candidates/rn.webp" alt="Rory Nisan"><img src="assets/candidates/yr.webp" alt="Yazid Razak"><span aria-label="No verified public photo for Keith Demoe">KD</span></div>'},
-    {url:'articles/ribfest-2026.html',label:'Labour Day weekend · Food',title:'Ribfest turns 30—with nearly $6 million behind the smoke.',deck:'How a Burlington fundraiser grew into a four-day ritual—and where the money goes.',byline:'By Burlington News Staff',media:'<img src="assets/home/ribs.webp" width="1000" height="625" alt="Barbecue ribs smoking over a pit" loading="eager" decoding="async"><span class="image-credit">Thogru · CC BY-SA 3.0</span>'}
+  const heroLibrary = [
+    {id:'skyway-tunnels',url:'articles/skyway-bridge-story.html',label:'The Monday Feature · 9 min',title:'Ontario nearly replaced the Skyway with three tunnels.',deck:'A ship strike, failed tolls, 84 purchased properties—and a crash 14 minutes after the second span opened.',byline:'By Burlington News Staff',media:'<img src="assets/home/skyway.webp" width="1000" height="625" alt="The Burlington Bay James N. Allan Skyway" fetchpriority="high" decoding="async"><span class="image-credit">Dave Lauretti · CC BY 2.0</span>'},
+    {id:'election-field-2026',url:'election-guide.html#candidates',label:'2026 municipal election',title:'Five people want to lead Burlington. Start with their biggest differences.',deck:'Compare their plans, records and unanswered questions without campaign spin.',byline:'By the Burlington News Election Desk',media:'<div class="lead-candidate-montage" aria-label="Four verified candidate photos and one candidate placeholder"><img src="assets/candidates/mw.webp" alt="Marianne Meed Ward"><img src="assets/candidates/lk.webp" alt="Lisa Kearns"><img src="assets/candidates/rn.webp" alt="Rory Nisan"><img src="assets/candidates/yr.webp" alt="Yazid Razak"><span aria-label="No verified public photo for Keith Demoe">KD</span></div>'},
+    {id:'ribfest-2026',url:'articles/ribfest-2026.html',label:'Labour Day weekend',title:'Ribfest turns 30—with nearly $6 million behind the smoke.',deck:'How a Burlington fundraiser grew into a four-day ritual—and where the money goes.',byline:'By Burlington News Staff',media:'<img src="assets/home/ribs.webp" width="1000" height="625" alt="Barbecue ribs smoking over a pit" loading="eager" decoding="async"><span class="image-credit">Thogru · CC BY-SA 3.0</span>'}
   ];
+  let heroStories = [...heroLibrary];
   let heroIndex=0, heroTimer;
   const paintHero = index => {
     if (!leadStory || !leadMedia || !leadTitle || !leadLabel || !leadDeck || !leadByline) return;
@@ -162,14 +168,52 @@
     leadStory.classList.add('is-changing');
     window.setTimeout(()=>{leadStory.href=story.url;leadMedia.innerHTML=story.media;leadLabel.textContent=story.label;leadTitle.textContent=story.title;leadDeck.textContent=story.deck;leadByline.textContent=story.byline;heroProgress?.querySelectorAll('button').forEach((button,i)=>button.classList.toggle('active',i===heroIndex));heroProgress?.setAttribute('aria-label',`Featured story ${heroIndex+1} of ${heroStories.length}`);leadStory.classList.remove('is-changing');},120);
   };
-  const startHero = () => {if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;clearInterval(heroTimer);heroTimer=setInterval(()=>paintHero(heroIndex+1),12000);};
-  heroProgress?.querySelectorAll('button').forEach((button,index)=>button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();paintHero(index);startHero();}));
+  const bindProgress = () => {
+    if (!heroProgress) return;
+    heroProgress.innerHTML = heroStories.map((_, index) => `<button class="${index === 0 ? 'active' : ''}" type="button" aria-label="Show feature ${index + 1}"></button>`).join('');
+    heroProgress.querySelectorAll('button').forEach((button,index)=>button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();paintHero(index);startHero();}));
+  };
+  const startHero = () => {if(heroStories.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches)return;clearInterval(heroTimer);heroTimer=setInterval(()=>paintHero(heroIndex+1),12000);};
+  bindProgress();
   leadStory?.addEventListener('mouseenter',()=>clearInterval(heroTimer));leadStory?.addEventListener('mouseleave',startHero);leadStory?.addEventListener('focusin',()=>clearInterval(heroTimer));leadStory?.addEventListener('focusout',startHero);startHero();
 
   const safeText = value => String(value || '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+  let rankedLatestApplied = false;
+  fetch('data/home-surface.json', {cache: 'no-store'})
+    .then(response => response.ok ? response.json() : Promise.reject())
+    .then(data => {
+      const selected = (data.feature || []).map(item => heroLibrary.find(story => story.id === item.id)).filter(Boolean);
+      if (selected.length) {
+        heroStories = selected;
+        heroIndex = 0;
+        bindProgress();
+        paintHero(0);
+        startHero();
+      }
+      if (storyRail && Array.isArray(data.rail) && data.rail.length) {
+        storyRail.innerHTML = data.rail.slice(0, 3).map(item => {
+          const external = /^https?:\/\//.test(item.url || '');
+          const label = item.labelEssential && item.label ? `<span class="story-label">${safeText(item.label)}</span>` : '';
+          return `<a class="side-story" href="${safeText(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}><img src="${safeText(item.image)}" alt="${safeText(item.alt || '')}" loading="lazy" decoding="async"><div>${label}<h2>${safeText(item.headline)}</h2></div></a>`;
+        }).join('');
+      }
+      if (latestList && Array.isArray(data.latest) && data.latest.length) {
+        latestList.innerHTML = data.latest.slice(0, 3).map(item => {
+          const external = /^https?:\/\//.test(item.url || '');
+          const visual = item.image
+            ? `<img class="latest-thumb" src="${safeText(item.image)}" alt="${safeText(item.alt || '')}" loading="lazy" decoding="async">`
+            : '<span class="latest-thumb latest-thumb-sport" aria-hidden="true">BN</span>';
+          const label = item.labelEssential && item.label ? `<span>${safeText(item.label)}</span>` : '';
+          return `<a class="${label ? '' : 'no-label'}" href="${safeText(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}>${visual}${label}<strong>${safeText(item.headline)}</strong>${item.deck ? `<small>${safeText(item.deck)}</small>` : ''}</a>`;
+        }).join('');
+        rankedLatestApplied = true;
+      }
+    })
+    .catch(() => {});
   fetch('data/daily-brief.json', {cache: 'no-store'})
     .then(response => response.ok ? response.json() : Promise.reject())
     .then(data => {
+      if (rankedLatestApplied) return;
       const blocked = /^(list of candidates|for candidates|candidate financials|candidate news and updates|infrastructure and growth|water and wastewater services|low water.*)$/i;
       const editorial = item => {
         const headline = String(item.headline || '').replace(/\s+/g, ' ').trim();
@@ -188,7 +232,10 @@
         if (/sport|soccer|hockey|ringette|recreation/.test(text)) return '<span class="latest-thumb latest-thumb-sport" aria-hidden="true">GO</span>';
         return `<span class="latest-thumb latest-thumb-sport" aria-hidden="true">${safeText(String(item.tag || 'BN').slice(0, 2).toUpperCase())}</span>`;
       };
-      latestList.innerHTML = stories.map(item => `<a href="${safeText(item.url)}"${/^https?:\/\//.test(item.url) ? ' target="_blank" rel="noopener"' : ''}>${visual(item)}<span>${safeText(item.tag || 'Burlington')}</span><strong>${safeText(item.headline)}</strong><small>${safeText(item.summary || 'Open the source')}</small></a>`).join('');
+      latestList.innerHTML = stories.map(item => {
+        const showLabel = Number(item.importance || 0) >= 4 || /election|developing|live|school|labour day/i.test(String(item.tag || ''));
+        return `<a class="${showLabel ? '' : 'no-label'}" href="${safeText(item.url)}"${/^https?:\/\//.test(item.url) ? ' target="_blank" rel="noopener"' : ''}>${visual(item)}${showLabel ? `<span>${safeText(item.tag || 'Burlington')}</span>` : ''}<strong>${safeText(item.headline)}</strong><small>${safeText(item.summary || '')}</small></a>`;
+      }).join('');
     })
     .catch(() => {});
 
@@ -200,15 +247,11 @@
       const link = document.getElementById('communitySignalLink');
       const headline = document.getElementById('communitySignalHeadline');
       const meta = document.getElementById('communitySignalMeta');
-      const score = document.getElementById('communitySignalScore');
-      const bar = document.getElementById('communitySignalBar');
       const checked = data.checkedAt ? new Date(data.checkedAt) : null;
       const time = checked && !Number.isNaN(checked.valueOf()) ? new Intl.DateTimeFormat('en-CA', {hour:'numeric',minute:'2-digit'}).format(checked) : 'recently';
       link.href = item.url;
       headline.textContent = item.title;
-      meta.textContent = `${item.source} · ${item.votes || 0} votes · ${item.comments || 0} comments · checked ${time}`;
-      score.textContent = Math.round(Number(item.signalScore) || 0);
-      bar.style.width = `${Math.max(0, Math.min(100, Number(item.signalScore) || 0))}%`;
+      meta.textContent = `${item.source} · checked ${time}`;
       communitySignal.hidden = false;
     })
     .catch(() => {});

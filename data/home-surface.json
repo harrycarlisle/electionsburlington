@@ -1,0 +1,153 @@
+{
+  "generatedFor": "2026-08-24",
+  "method": "Evidence and rights gates first; eligible stories are sorted by relevance, breadth, novelty, familiarity and consequence. Scores choose placement and are not shown to readers.",
+  "feature": [
+    {
+      "id": "skyway-tunnels",
+      "kind": "feature",
+      "headline": "Ontario nearly replaced the Skyway with three tunnels.",
+      "deck": "A ship strike, failed tolls, 84 purchased properties—and a crash 14 minutes after the second span opened.",
+      "label": "The Monday Feature · 9 min",
+      "labelEssential": true,
+      "url": "articles/skyway-bridge-story.html",
+      "image": "assets/home/skyway.webp",
+      "alt": "The Burlington Bay James N. Allan Skyway",
+      "credit": "Dave Lauretti · CC BY 2.0"
+    },
+    {
+      "id": "election-field-2026",
+      "kind": "current",
+      "headline": "Five people want to lead Burlington. Start with their biggest differences.",
+      "deck": "Compare their plans, records and unanswered questions without campaign spin.",
+      "label": "2026 municipal election",
+      "labelEssential": true,
+      "url": "election-guide.html#candidates",
+      "mediaKey": "candidate-montage",
+      "byline": "By the Burlington News Election Desk"
+    },
+    {
+      "id": "ribfest-2026",
+      "kind": "seasonal",
+      "headline": "Ribfest turns 30—with nearly $6 million behind the smoke.",
+      "label": "Labour Day weekend",
+      "labelEssential": true,
+      "url": "articles/ribfest-2026.html",
+      "image": "assets/home/ribs.webp",
+      "alt": "Barbecue ribs smoking over a pit"
+    }
+  ],
+  "rail": [
+    {
+      "id": "ward-change-2026",
+      "kind": "service",
+      "headline": "Your ward may have changed. Check before you vote.",
+      "label": "2026 election",
+      "labelEssential": true,
+      "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
+      "image": "assets/editorial/burlington-wards-2026.svg",
+      "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards"
+    },
+    {
+      "id": "ribfest-2026",
+      "kind": "seasonal",
+      "headline": "Ribfest turns 30—with nearly $6 million behind the smoke.",
+      "label": "Labour Day weekend",
+      "labelEssential": true,
+      "url": "articles/ribfest-2026.html",
+      "image": "assets/home/ribs.webp",
+      "alt": "Barbecue ribs smoking over a pit"
+    },
+    {
+      "id": "back-to-school-2026",
+      "kind": "seasonal",
+      "headline": "The dates Burlington families need before school starts.",
+      "label": "Back to school",
+      "labelEssential": true,
+      "url": "articles/back-to-school-2026.html",
+      "image": "assets/home/school-bus.webp",
+      "alt": "A yellow Ontario school bus"
+    }
+  ],
+  "latest": [
+    {
+      "id": "ward-change-2026",
+      "kind": "service",
+      "headline": "Your ward may have changed. Check before you vote.",
+      "label": "2026 election",
+      "labelEssential": true,
+      "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
+      "image": "assets/editorial/burlington-wards-2026.svg",
+      "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards"
+    },
+    {
+      "id": "ribfest-2026",
+      "kind": "seasonal",
+      "headline": "Ribfest turns 30—with nearly $6 million behind the smoke.",
+      "label": "Labour Day weekend",
+      "labelEssential": true,
+      "url": "articles/ribfest-2026.html",
+      "image": "assets/home/ribs.webp",
+      "alt": "Barbecue ribs smoking over a pit"
+    },
+    {
+      "id": "back-to-school-2026",
+      "kind": "seasonal",
+      "headline": "The dates Burlington families need before school starts.",
+      "label": "Back to school",
+      "labelEssential": true,
+      "url": "articles/back-to-school-2026.html",
+      "image": "assets/home/school-bus.webp",
+      "alt": "A yellow Ontario school bus"
+    }
+  ],
+  "audit": [
+    {
+      "id": "skyway-tunnels",
+      "state": "eligible",
+      "placementScore": 85,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "ward-change-2026",
+      "state": "eligible",
+      "placementScore": 93,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "election-field-2026",
+      "state": "eligible",
+      "placementScore": 96,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "back-to-school-2026",
+      "state": "eligible",
+      "placementScore": 84,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "ribfest-2026",
+      "state": "eligible",
+      "placementScore": 90,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "sports-lockers",
+      "state": "eligible",
+      "placementScore": 80,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "fishway-2025",
+      "state": "eligible",
+      "placementScore": 65,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "salamander-migration",
+      "state": "archive",
+      "placementScore": 80,
+      "reason": "seasonal window ended 2026-04-30"
+    }
+  ]
+}

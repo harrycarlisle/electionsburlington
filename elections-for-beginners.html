@@ -7,25 +7,25 @@
   <meta name="description" content="A clear guide to Burlington's municipal election: who you vote for, what each level controls and how promises become decisions.">
   <link rel="canonical" href="https://burlingtonnews.ca/elections-for-beginners.html">
   <link rel="stylesheet" href="site-extra.css">
-  <link rel="stylesheet" href="/site-bundle.css?v=20260824k" data-style="site-bundle">
-  <link rel="stylesheet" href="/site-shell.css?v=20260824k" data-style="site-shell">
-  <script src="/site-extra.js?v=20260824k" defer></script>
+  <link rel="stylesheet" href="/site-bundle.css?v=20260824m" data-style="site-bundle">
+  <link rel="stylesheet" href="/site-shell.css?v=20260824m" data-style="site-shell">
+  <script src="/site-extra.js?v=20260824m" defer></script>
   <style>
     .beginner{width:min(calc(100% - 40px),980px);margin:36px auto 70px}
     .beginner-hero{display:grid;grid-template-columns:1.12fr .88fr;gap:36px;align-items:center;padding:28px 0 48px}
     .beginner-kicker{font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.09em;color:#43873b}
     .beginner h1{font-size:clamp(43px,6vw,64px);line-height:.98;letter-spacing:-.045em;margin:9px 0 15px}
     .beginner-lead{font-size:18px;line-height:1.5;color:var(--muted);max-width:620px}
-    .council-visual{border-top:4px solid #70b9e8;background:var(--card);padding:16px;min-height:255px;display:grid;align-content:center}
+    .council-visual{border-top:1px solid #70b9e8;background:var(--card);padding:16px;min-height:255px;display:grid;align-content:center}
     .council-label{text-align:center;font-size:12px;color:var(--muted);font-weight:750;margin:2px 0 11px}
     .council-map{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:14px;background:#eaf2f4}
     .council-note{text-align:center;margin:11px 8px 0;color:var(--muted);font-size:12px;line-height:1.4}
     .beginner-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:19px}.beginner-actions a{display:inline-flex;padding:11px 14px;border-radius:9px;text-decoration:none;font-size:13px;font-weight:800;border:1px solid var(--line);color:var(--navy);background:var(--card)}.beginner-actions .primary{background:var(--navy);color:#fff;border-color:var(--navy)}
     .plain-section{margin-top:52px}.section-rule{display:flex;justify-content:space-between;align-items:end;gap:16px;padding-bottom:10px;border-bottom:1px solid var(--line)}.section-rule h2{font-size:clamp(27px,4vw,36px)!important;margin:0!important;line-height:1.05}.section-rule small{color:var(--muted);font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
     .role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}.role{position:relative;padding:24px 22px 22px;border-right:1px solid var(--line)}.role:last-child{border-right:0}.role-num{display:block;color:#70b9e8;font:800 35px/1 Georgia,serif}.role h3{font-size:20px;margin:10px 0 7px}.role p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
-    .impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.impact-card{padding:20px;background:var(--card);border-top:4px solid #78a9c6}.impact-card:nth-child(2){border-color:#77a874}.impact-card:nth-child(3){border-color:#e5b451}.impact-card strong{display:block;color:var(--navy);font-size:16px;margin-bottom:9px}.impact-card ul{margin:0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.65}.regional-note{display:flex;gap:14px;align-items:start;margin-top:14px;padding:14px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px;line-height:1.5}.regional-note b{color:var(--ink)}.regional-mark{flex:0 0 34px;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e4f1e0;color:#2e7132;font-weight:900}
+    .impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.impact-card{padding:20px;background:var(--card);border-top:2px solid #78a9c6}.impact-card:nth-child(2){border-color:#77a874}.impact-card:nth-child(3){border-color:#e5b451}.impact-card strong{display:block;color:var(--navy);font-size:16px;margin-bottom:9px}.impact-card ul{margin:0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.65}.regional-note{display:flex;gap:14px;align-items:start;margin-top:14px;padding:14px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px;line-height:1.5}.regional-note b{color:var(--ink)}.regional-mark{flex:0 0 34px;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e4f1e0;color:#2e7132;font-weight:900}
     .decision-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:18px;background:var(--line);border:1px solid var(--line)}.flow-step{position:relative;padding:24px;background:var(--card);color:var(--muted);font-size:14px;line-height:1.48}.flow-step b{display:block;color:var(--navy);font-size:17px;margin:8px 0 5px}.flow-step em{color:#70b9e8;font:800 32px/1 Georgia,serif;font-style:normal}.flow-step:not(:last-child)::after{content:'→';position:absolute;right:-11px;top:50%;z-index:2;transform:translateY(-50%);width:22px;height:22px;display:grid;place-items:center;border-radius:50%;background:var(--bg);color:var(--navy);font-weight:900}
-    .reality-check{display:grid;grid-template-columns:auto 1fr;gap:18px;margin-top:18px;padding:21px;border-left:5px solid #e7df35;background:var(--card)}.reality-check span{font:800 44px/1 Georgia,serif;color:var(--navy)}.reality-check h3{font-size:20px;margin:0 0 7px}.reality-check p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+    .reality-check{display:grid;grid-template-columns:auto 1fr;gap:18px;margin-top:18px;padding:21px;border-left:3px solid #e7df35;background:var(--card)}.reality-check span{font:800 44px/1 Georgia,serif;color:var(--navy)}.reality-check h3{font-size:20px;margin:0 0 7px}.reality-check p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
     .source-note{margin-top:30px;padding-top:17px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.source-note a{font-weight:700}
     @media(max-width:800px){.beginner-hero{grid-template-columns:1fr}.role-grid,.impact-grid,.decision-flow{grid-template-columns:1fr}.role{border-right:0;border-bottom:1px solid var(--line)}.role:last-child{border-bottom:0}.flow-step:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-12px;transform:translateX(-50%)}}
     @media(max-width:620px){.beginner{width:calc(100% - 32px);margin-top:22px}.beginner h1{font-size:42px}.beginner-lead{font-size:16px}.council-visual{min-height:220px;padding:12px}.beginner-actions a{width:100%;justify-content:center}.section-rule{display:block}.section-rule small{display:block;margin-top:8px}.reality-check{grid-template-columns:1fr}.reality-check span{display:none}}
@@ -40,25 +40,25 @@
       <div class="council-visual"><div class="council-label">Burlington’s six voting wards</div><img class="council-map" src="assets/editorial/burlington-wards-2026.svg?v=20260824i" alt="Simplified orientation diagram of Burlington’s six 2026 voting wards"><p class="council-note">The whole city elects one mayor. Each ward elects one councillor.</p></div>
     </section>
 
-    <section class="plain-section"><div class="section-rule"><h2>Your ballot has three jobs.</h2><small>Who does what</small></div><div class="role-grid">
-      <article class="role"><span class="role-num">01</span><h3>Choose a mayor</h3><p>The mayor leads council and represents the whole city. They still need council support for most decisions.</p></article>
-      <article class="role"><span class="role-num">02</span><h3>Choose your councillor</h3><p>Your ward councillor handles local concerns and votes on citywide budgets, roads, transit, parks and development.</p></article>
-      <article class="role"><span class="role-num">03</span><h3>Choose a trustee</h3><p>Trustees make decisions for a school board, not City Council. Your ballot shows the race you’re eligible to vote in.</p></article>
+    <section class="plain-section"><div class="section-rule"><h2>Your ballot has three jobs.</h2></div><div class="role-grid">
+      <article class="role"><span class="role-num">01</span><h3>Choose a mayor</h3><p>The mayor represents the whole city but still needs council support for most decisions.</p></article>
+      <article class="role"><span class="role-num">02</span><h3>Choose your councillor</h3><p>Your councillor represents your ward and votes on citywide decisions.</p></article>
+      <article class="role"><span class="role-num">03</span><h3>Choose a trustee</h3><p>Trustees make school-board decisions. They don’t sit on City Council.</p></article>
     </div></section>
 
-    <section class="plain-section"><div class="section-rule"><h2>Who handles what?</h2><small>Quick examples</small></div><div class="impact-grid">
+    <section class="plain-section"><div class="section-rule"><h2>Who handles what?</h2></div><div class="impact-grid">
       <article class="impact-card"><strong>City of Burlington</strong><ul><li>Transit and local roads</li><li>Parks and fire services</li><li>Local planning</li><li>The City budget</li></ul></article>
       <article class="impact-card"><strong>Halton Region</strong><ul><li>Drinking water and waste</li><li>Paramedics and public health</li><li>Regional roads</li><li>Housing and social services</li></ul></article>
       <article class="impact-card"><strong>Ontario and school boards</strong><ul><li>Municipal powers</li><li>Major planning rules</li><li>Education policy</li><li>Some transit and highways</li></ul></article>
     </div><div class="regional-note"><span class="regional-mark">H</span><div><b>Burlington’s mayor and councillors also sit on Halton Regional Council.</b> That’s why the people you elect locally also vote on regional services.</div></div></section>
 
-    <section class="plain-section"><div class="section-rule"><h2>How a promise becomes real.</h2><small>Three steps</small></div><div class="decision-flow">
+    <section class="plain-section"><div class="section-rule"><h2>How a promise becomes real.</h2></div><div class="decision-flow">
       <div class="flow-step"><em>01</em><b>Someone proposes it</b>A candidate can put an idea forward. They can’t promise everyone else’s vote.</div>
-      <div class="flow-step"><em>02</em><b>Council decides</b>Staff study the details and elected members debate and vote.</div>
-      <div class="flow-step"><em>03</em><b>Money and delivery follow</b>“Approved” doesn’t mean “finished.” A project still needs funding and execution.</div>
+      <div class="flow-step"><em>02</em><b>Council votes</b>Staff study the details. Council debates and votes.</div>
+      <div class="flow-step"><em>03</em><b>The work still has to happen</b>Approval is only the start. A project may still need funding, permits and construction.</div>
     </div><div class="reality-check"><span>?</span><div><h3>Three useful questions</h3><p>Can the City control it? What will it cost? How will we know it happened?</p></div></div></section>
 
-    <section class="plain-section"><div class="section-rule"><h2>Ready to see the real choices?</h2><small>Next step</small></div><div class="beginner-actions"><a class="primary" href="election-guide.html#candidates">Meet the candidates</a><a href="ballot.html">See my ballot</a><a href="head-to-head.html">Compare two candidates</a></div></section>
+    <section class="plain-section"><div class="section-rule"><h2>See the real choices.</h2></div><div class="beginner-actions"><a class="primary" href="election-guide.html#candidates">Meet the candidates</a><a href="ballot.html">See my ballot</a><a href="head-to-head.html">Compare two candidates</a></div></section>
     <p class="source-note">Built from City of Burlington, Halton Region and Ontario election information. <a href="methodology.html">See how sources are handled.</a></p>
   </main>
 </body>

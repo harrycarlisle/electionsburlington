@@ -7,18 +7,16 @@
   <meta name="description" content="Shuffle a deck of overlooked Burlington places, free stops, local history and small city challenges.">
   <link rel="canonical" href="https://burlingtonnews.ca/explore.html">
   <link rel="stylesheet" href="site-extra.css">
-  <link rel="stylesheet" href="/site-bundle.css?v=20260824k" data-style="site-bundle">
-  <link rel="stylesheet" href="/site-shell.css?v=20260824k" data-style="site-shell">
-  <script src="/site-extra.js?v=20260824k" defer></script>
+  <link rel="stylesheet" href="/site-bundle.css?v=20260824m" data-style="site-bundle">
+  <link rel="stylesheet" href="/site-shell.css?v=20260824m" data-style="site-shell">
+  <script src="/site-extra.js?v=20260824m" defer></script>
   <style>
     .explore-main{width:min(calc(100% - 40px),1120px);margin:40px auto 70px}
-    .explore-kicker{color:#43873b;font-size:11px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
     .explore-main h1{font-size:clamp(48px,7vw,76px);line-height:.92;letter-spacing:-.055em;margin:7px 0 12px}
     .explore-lead{max-width:650px;margin:0;color:var(--muted);font-size:16px;line-height:1.5}
     .passport{margin-top:28px;padding:16px 18px;border:1px solid var(--line);background:var(--card)}
     .passport-top{display:flex;justify-content:space-between;gap:18px}.passport-top strong{font-size:14px}.passport-top span{font-size:12px;color:var(--muted)}
-    .passport-track{height:7px;margin:13px 0 12px;border-radius:999px;background:var(--soft);overflow:hidden}.passport-track i{display:block;height:100%;width:0;background:#e7df35;transition:width .3s}
-    .passport-map{display:grid;grid-template-columns:repeat(12,1fr);gap:6px}.passport-map i{height:9px;border-radius:99px;background:#87949d}.passport-map i.done{background:#e7df35}
+    .passport-track{position:relative;height:7px;margin:13px 0 9px;border-radius:999px;background:var(--soft)}.passport-track i{display:block;height:100%;width:0;border-radius:inherit;background:#e7df35;transition:width .3s}.passport-track b{position:absolute;right:-1px;top:50%;width:14px;height:14px;border:3px solid var(--card);border-radius:50%;background:#87949d;transform:translateY(-50%)}.passport-track b.unlocked{background:#43873b}.passport-note{display:block;color:var(--muted);font-size:10px}
     .deck-wrap{position:relative;display:grid;grid-template-columns:.72fr 1.28fr;gap:44px;align-items:center;min-height:570px;margin:38px 0 60px;padding:56px;background:#071014;color:#fff;overflow:hidden}
     .deck-wrap::before{content:'EXPLORE NOW';position:absolute;left:-12px;top:34px;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.14);font:800 clamp(86px,11vw,154px)/.8 Arial,sans-serif;letter-spacing:-.075em;pointer-events:none}
     .deck-controls,.deck-stage{position:relative;z-index:1}.deck-controls h2{font-size:31px!important;margin:0 0 8px!important;color:#fff}.deck-controls p{color:#b8c7cf;font-size:13px;margin:0;max-width:260px}
@@ -32,21 +30,22 @@
     .explore-list{margin-top:44px}.explore-list-head{padding-bottom:10px;border-bottom:1px solid var(--line)}.explore-list-head h2{margin:0!important;font-size:26px!important}
     .explore-row{display:grid;grid-template-columns:112px 1fr auto;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.explore-row-icon{position:relative;height:72px;overflow:hidden;background:var(--soft)}.explore-row-icon img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.82)}.explore-row-icon b{position:absolute;right:8px;bottom:5px;color:#fff;font:800 20px/1 Georgia,serif;text-shadow:0 1px 8px #000}
     .explore-row small{display:block;color:#43873b;font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.07em}.explore-row strong{display:block;margin-top:3px;font-size:16px;color:var(--navy);line-height:1.22}.explore-row a{font-size:12px;font-weight:800;color:var(--navy)}
-    .suggest-card{margin-top:38px;padding:22px;border-top:3px solid #e7df35;background:var(--card)}.suggest-card h2{margin:0 0 7px!important;font-size:23px!important}.suggest-card p{margin:0 0 12px;color:var(--muted);font-size:13px}.suggest-card a{font-weight:800;color:var(--navy);font-size:13px}
-    @media(max-width:760px){.explore-main{width:calc(100% - 32px);margin-top:28px}.passport-map{grid-template-columns:repeat(6,1fr)}.deck-wrap{grid-template-columns:1fr;min-height:0;padding:34px 20px 28px;gap:24px}.deck-wrap::before{top:26px;left:6px;font-size:68px}.deck-controls{padding-top:64px}.deck-stage{min-height:420px}.explore-row{grid-template-columns:84px 1fr}.explore-row>a{grid-column:2}.explore-row-icon{height:62px}}
+    .suggest-card{margin-top:38px;padding:22px;border-top:1px solid #e7df35;background:var(--card)}.suggest-card h2{margin:0 0 7px!important;font-size:23px!important}.suggest-card p{margin:0 0 12px;color:var(--muted);font-size:13px}.suggest-card a,.bonus-card a{font-weight:800;color:var(--navy);font-size:13px}.bonus-card a{display:inline-block;margin-top:12px}
+    .map-section{margin:58px 0 0}.map-head{display:flex;align-items:end;justify-content:space-between;gap:18px;padding-bottom:11px;border-bottom:1px solid var(--line)}.map-head h2{margin:0!important;font-size:28px!important}.map-head span{color:var(--muted);font-size:10px}.city-map{position:relative;min-height:430px;margin-top:16px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(172deg,#eaf0e8 0 68%,#a9d8ec 68% 100%)}.city-map::before{content:"";position:absolute;left:-5%;right:-5%;top:45%;height:11px;border-block:2px solid rgba(42,82,104,.45);transform:rotate(-4deg)}.city-map::after{content:"LAKE ONTARIO";position:absolute;right:28px;bottom:24px;color:#397895;font-size:10px;font-weight:850;letter-spacing:.1em}.map-label{position:absolute;left:22px;top:18px;color:#35566a;font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.08em}.map-pin{position:absolute;display:grid;place-items:center;width:32px;height:32px;padding:0;border:3px solid #fff;border-radius:50%;background:#174b68;color:#fff;font:850 11px/1 var(--sans);box-shadow:0 4px 11px rgba(12,39,54,.2);transform:translate(-50%,-50%);cursor:pointer}.map-pin.done{background:#43873b}.map-pin:hover,.map-pin:focus-visible{z-index:3;transform:translate(-50%,-50%) scale(1.12)}
+    .bonus-card{position:relative;margin-top:18px;padding:22px;border:1px dashed var(--line);background:var(--card);overflow:hidden}.bonus-content{filter:blur(8px);opacity:.38;pointer-events:none;user-select:none;transition:filter .25s,opacity .25s}.bonus-card.unlocked .bonus-content{filter:none;opacity:1;pointer-events:auto;user-select:auto}.bonus-card small{color:#43873b;font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.08em}.bonus-card h2{margin:6px 0!important;font-size:24px!important}.bonus-card p{margin:0;color:var(--muted);font-size:13px}.bonus-lock{position:absolute;z-index:2;inset:0;display:grid;place-items:center;background:color-mix(in srgb,var(--card) 58%,transparent);font-size:12px;font-weight:850}.bonus-card.unlocked .bonus-lock{display:none}.explorer-badge{display:inline-flex;align-items:center;gap:9px;margin-top:14px;padding:7px 10px;border:1px solid #43873b;border-radius:999px;color:var(--navy);font-size:11px;font-weight:850}.explorer-badge b{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#43873b;color:#fff;font-size:8px;letter-spacing:.04em}
+    @media(max-width:760px){.explore-main{width:calc(100% - 32px);margin-top:28px}.deck-wrap{grid-template-columns:1fr;min-height:0;padding:34px 20px 28px;gap:24px}.deck-wrap::before{top:26px;left:6px;font-size:68px}.deck-controls{padding-top:64px}.deck-stage{min-height:420px}.explore-row{grid-template-columns:84px 1fr}.explore-row>a{grid-column:2}.explore-row-icon{height:62px}.city-map{min-height:360px}.map-head{align-items:start}.map-head span{max-width:130px;text-align:right}.map-pin{width:29px;height:29px}}
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="header"><div class="wrap header-inner"><a class="brand" href="index.html">Burlington News<small>Election Guide</small></a><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
   <main id="main" class="explore-main">
-    <div class="explore-kicker">Explore Burlington</div>
     <h1>Explore Burlington.</h1>
     <p class="explore-lead">Pick a mood. Get one place, meal, walk or small challenge.</p>
     <section class="passport" aria-label="Burlington Passport progress">
       <div class="passport-top"><strong>Your Burlington Passport</strong><span id="passportCount">0 of 12 explored</span></div>
-      <div class="passport-track"><i id="passportProgress"></i></div>
-      <div class="passport-map" id="passportMap" aria-hidden="true"></div>
+      <div class="passport-track"><i id="passportProgress"></i><b id="bonusStop" aria-hidden="true"></b></div>
+      <small class="passport-note" id="passportNote">Finish all 12 to reveal the bonus.</small>
     </section>
     <section class="deck-wrap">
       <div class="deck-controls">
@@ -57,9 +56,11 @@
       </div>
       <div class="deck-stage" aria-live="polite"><div class="deck-shadow"></div><div class="deck-shadow"></div><article class="deck-card" id="deckCard"></article></div>
     </section>
+    <section class="map-section" aria-labelledby="mapTitle"><div class="map-head"><h2 id="mapTitle">Twelve places, one city.</h2><span>Orientation map · tap a number</span></div><div class="city-map" id="cityMap"><span class="map-label">Burlington · north is up</span></div></section>
     <section class="explore-list" id="free"><div class="explore-list-head"><h2>All 12 ideas</h2></div><div id="exploreList"></div></section>
+    <section class="bonus-card" id="bonusCard" aria-live="polite"><span class="bonus-lock" id="bonusLock">Bonus 13 · locked</span><div class="bonus-content" id="bonusContent" inert aria-hidden="true"><small>Burlington Explorer</small><h2>You found all twelve. Make the thirteenth yours.</h2><p>Choose one overlooked Burlington detail and send it to the deck.</p><span class="explorer-badge"><b>BN</b> Burlington Explorer</span><br><a href="/feedback/?type=explore-bonus">Create the bonus stop →</a></div></section>
     <section class="suggest-card"><h2>Know a place we missed?</h2><p>Tell us where it is and why it belongs in the deck.</p><a href="/feedback/?type=explore">Send a suggestion →</a></section>
   </main>
-  <script src="explore.js?v=20260824h" defer></script>
+  <script src="explore.js?v=20260824m" defer></script>
 </body>
 </html>

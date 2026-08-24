@@ -1,34 +1,48 @@
 (() => {
   const cards = [
-    {id:'corned-beef-hut',tag:'Food',filters:['food'],icon:'01',title:'Try the sandwich Corned Beef Hut is known for.',copy:'Start with the corned beef sandwich that gives the place its name.',image:'assets/editorial/explore-collage.webp',position:'22% 52%',url:'guides/best-of-burlington.html#corned-beef-hut'},
-    {id:'freeman-station',tag:'History · Free',filters:['free','history'],icon:'02',title:'Find Burlington’s rescued railway station.',copy:'Volunteers moved and restored this surviving Grand Trunk station.',image:'assets/editorial/explore-collage.webp',position:'76% 46%',url:'https://freemanstation.ca/'},
-    {id:'lift-bridge',tag:'Engineering · Free',filters:['free','history','outdoors'],icon:'03',title:'Time your walk for a ship.',copy:'Walk to the canal when the lift bridge has to clear the channel.',image:'assets/home/skyway.webp',position:'63% 50%',url:'https://tc.canada.ca/en/ontario-region/burlington-canal-lift-bridge'},
-    {id:'bird-migration',tag:'Wildlife · Free',filters:['free','outdoors'],icon:'04',title:'Stand under a migration route.',copy:'Western Lake Ontario funnels seasonal bird migration overhead.',image:'assets/editorial/explore-collage.webp',position:'52% 18%',url:'https://www.rbg.ca/app/uploads/Long-Watch-Birds-2015-2024-Summary-Report.pdf?x51525='},
-    {id:'joseph-brant',tag:'History',filters:['history'],icon:'05',title:'Look for the house inside the museum.',copy:'The museum is built around a reconstruction of Joseph Brant’s homestead.',image:'assets/editorial/explore-collage.webp',position:'77% 24%',url:'https://museumsofburlington.ca/joseph-brant-museum/'},
-    {id:'mount-nemo',tag:'Outside',filters:['outdoors'],icon:'06',title:'Stand at the edge of an ancient sea.',copy:'The view is the payoff. The escarpment rock is the story.',image:'assets/editorial/explore-collage.webp',position:'22% 22%',url:'https://www.conservationhalton.ca/parks/mount-nemo/'},
-    {id:'public-art',tag:'Art · Free',filters:['free','history'],icon:'07',title:'Turn public art into a scavenger hunt.',copy:'Pick three pieces you’ve walked past without noticing.',image:'assets/editorial/explore-collage.webp',position:'50% 73%',url:'https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx'},
-    {id:'kerncliff',tag:'Outside · Free',filters:['free','outdoors'],icon:'08',title:'Walk through a quarry turned wetland.',copy:'Boardwalks now cross the old quarry landscape at Kerncliff Park.',image:'assets/editorial/explore-collage.webp',position:'20% 78%',url:'https://www.burlington.ca/en/parks-facilities-and-rentals/kerncliff-park.aspx'},
-    {id:'beachway',tag:'Outside · Free',filters:['free','outdoors'],icon:'09',title:'Walk the strip between lake and highway.',copy:'Beach, dunes, canal and Skyway fit into one unusual shoreline.',image:'assets/home/skyway.webp',position:'50% 64%',url:'https://www.burlington.ca/en/parks-facilities-and-rentals/beachway-park.aspx'},
-    {id:'fishway',tag:'Wildlife · Free',filters:['free','outdoors'],icon:'10',title:'Follow the fish story upstream.',copy:'See why carp, low oxygen and one narrow passage matter.',image:'assets/home/fishway.webp',position:'50% 52%',url:'articles/fishway-26000-fish.html'},
-    {id:'waterfront',tag:'Outside · Free',filters:['free','outdoors'],icon:'11',title:'Keep walking after the pier.',copy:'Follow the shoreline past Burlington’s obvious photo stop.',image:'assets/editorial/explore-collage.webp',position:'78% 78%',url:'https://www.burlington.ca/en/parks-facilities-and-rentals/spencer-smith-park.aspx'},
-    {id:'ireland-house',tag:'History',filters:['history'],icon:'12',title:'Enter Burlington before the suburbs.',copy:'Ireland House preserves a family home and farm landscape.',image:'assets/editorial/explore-collage.webp',position:'50% 48%',url:'https://museumsofburlington.ca/ireland-house-museum/'}
+    {id:'corned-beef-hut',tag:'Food',filters:['food'],icon:'01',x:49,y:62,title:'Try the sandwich Corned Beef Hut is known for.',copy:'Start with the corned beef sandwich that gives the place its name.',image:'assets/editorial/explore-collage.webp',position:'22% 52%',url:'guides/best-of-burlington.html#corned-beef-hut'},
+    {id:'freeman-station',tag:'History · Free',filters:['free','history'],icon:'02',x:43,y:58,title:'Find Burlington’s rescued railway station.',copy:'Volunteers moved and restored this surviving Grand Trunk station.',image:'assets/editorial/explore-collage.webp',position:'76% 46%',url:'https://freemanstation.ca/'},
+    {id:'lift-bridge',tag:'Engineering · Free',filters:['free','history','outdoors'],icon:'03',x:10,y:70,title:'Time your walk for a ship.',copy:'Walk to the canal when the lift bridge has to clear the channel.',image:'assets/home/skyway.webp',position:'63% 50%',url:'https://tc.canada.ca/en/ontario-region/burlington-canal-lift-bridge'},
+    {id:'bird-migration',tag:'Wildlife · Free',filters:['free','outdoors'],icon:'04',x:18,y:49,title:'Stand under a migration route.',copy:'Western Lake Ontario funnels seasonal bird migration overhead.',image:'assets/editorial/explore-collage.webp',position:'52% 18%',url:'https://www.rbg.ca/app/uploads/Long-Watch-Birds-2015-2024-Summary-Report.pdf?x51525='},
+    {id:'joseph-brant',tag:'History',filters:['history'],icon:'05',x:32,y:76,title:'Look for the house inside the museum.',copy:'The museum is built around a reconstruction of Joseph Brant’s homestead.',image:'assets/editorial/explore-collage.webp',position:'77% 24%',url:'https://museumsofburlington.ca/joseph-brant-museum/'},
+    {id:'mount-nemo',tag:'Outside',filters:['outdoors'],icon:'06',x:37,y:17,title:'Stand at the edge of an ancient sea.',copy:'The view is the payoff. The escarpment rock is the story.',image:'assets/editorial/explore-collage.webp',position:'22% 22%',url:'https://www.conservationhalton.ca/parks/mount-nemo/'},
+    {id:'public-art',tag:'Art · Free',filters:['free','history'],icon:'07',x:38,y:69,title:'Turn public art into a scavenger hunt.',copy:'Pick three pieces you’ve walked past without noticing.',image:'assets/editorial/explore-collage.webp',position:'50% 73%',url:'https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx'},
+    {id:'kerncliff',tag:'Outside · Free',filters:['free','outdoors'],icon:'08',x:30,y:35,title:'Walk through a quarry turned wetland.',copy:'Boardwalks now cross the old quarry landscape at Kerncliff Park.',image:'assets/editorial/explore-collage.webp',position:'20% 78%',url:'https://www.burlington.ca/en/parks-facilities-and-rentals/kerncliff-park.aspx'},
+    {id:'beachway',tag:'Outside · Free',filters:['free','outdoors'],icon:'09',x:16,y:75,title:'Walk the strip between lake and highway.',copy:'Beach, dunes, canal and Skyway fit into one unusual shoreline.',image:'assets/home/skyway.webp',position:'50% 64%',url:'https://www.burlington.ca/en/parks-facilities-and-rentals/beachway-park.aspx'},
+    {id:'fishway',tag:'Wildlife · Free',filters:['free','outdoors'],icon:'10',x:7,y:49,title:'Follow the fish story upstream.',copy:'See why carp, low oxygen and one narrow passage matter.',image:'assets/home/fishway.webp',position:'50% 52%',url:'articles/fishway-26000-fish.html'},
+    {id:'waterfront',tag:'Outside · Free',filters:['free','outdoors'],icon:'11',x:37,y:79,title:'Keep walking after the pier.',copy:'Follow the shoreline past Burlington’s obvious photo stop.',image:'assets/editorial/explore-collage.webp',position:'78% 78%',url:'https://www.burlington.ca/en/parks-facilities-and-rentals/spencer-smith-park.aspx'},
+    {id:'ireland-house',tag:'History',filters:['history'],icon:'12',x:55,y:43,title:'Enter Burlington before the suburbs.',copy:'Ireland House preserves a family home and farm landscape.',image:'assets/editorial/explore-collage.webp',position:'50% 48%',url:'https://museumsofburlington.ca/ireland-house-museum/'}
   ];
   const esc = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
   const card = document.getElementById('deckCard');
   const list = document.getElementById('exploreList');
   const count = document.getElementById('passportCount');
   const progress = document.getElementById('passportProgress');
-  const map = document.getElementById('passportMap');
+  const cityMap = document.getElementById('cityMap');
+  const bonusStop = document.getElementById('bonusStop');
+  const passportNote = document.getElementById('passportNote');
+  const bonusCard = document.getElementById('bonusCard');
+  const bonusContent = document.getElementById('bonusContent');
   const storageKey = 'burlington-news-passport';
   let completed = new Set();
   let filter = 'all';
   let last = -1;
   try { completed = new Set(JSON.parse(localStorage.getItem(storageKey) || '[]')); } catch (_) {}
+  const validIds = new Set(cards.map(item => item.id));
+  completed = new Set([...completed].filter(id => validIds.has(id)));
   document.getElementById('deckFilters')?.insertAdjacentHTML('beforeend','<button class="deck-filter" aria-pressed="false" data-filter="food">Food</button>');
   function paintProgress() {
     count.textContent = `${completed.size} of ${cards.length} explored`;
     progress.style.width = `${completed.size / cards.length * 100}%`;
-    map.innerHTML = cards.map(item => `<i class="${completed.has(item.id) ? 'done' : ''}"></i>`).join('');
+    const unlocked = completed.size === cards.length;
+    bonusStop.classList.toggle('unlocked', unlocked);
+    passportNote.textContent = unlocked ? 'Bonus 13 unlocked. Your Explorer badge is saved on this device.' : 'Finish all 12 to reveal the bonus.';
+    bonusCard.classList.toggle('unlocked', unlocked);
+    if (bonusContent) {
+      bonusContent.toggleAttribute('inert', !unlocked);
+      bonusContent.setAttribute('aria-hidden', String(!unlocked));
+    }
+    cityMap?.querySelectorAll('.map-pin').forEach(pin => pin.classList.toggle('done', completed.has(pin.dataset.id)));
     try { localStorage.setItem(storageKey, JSON.stringify([...completed])); } catch (_) {}
   }
   function toggleDone(id) {
@@ -57,6 +71,15 @@
   }));
   document.getElementById('shuffleButton')?.addEventListener('click', shuffle);
   list.innerHTML = cards.map(item => `<article class="explore-row"><div class="explore-row-icon" aria-hidden="true"><img src="${esc(item.image)}" alt="" style="object-position:${esc(item.position)}"><b>${item.icon}</b></div><div><small>${esc(item.tag)}</small><strong>${esc(item.title)}</strong></div><a href="${esc(item.url)}">Details →</a></article>`).join('');
+  if (cityMap) {
+    cityMap.insertAdjacentHTML('beforeend', cards.map((item, index) => `<button class="map-pin" type="button" style="left:${item.x}%;top:${item.y}%" data-id="${esc(item.id)}" data-index="${index}" aria-label="Show ${esc(item.title)}">${item.icon}</button>`).join(''));
+    cityMap.addEventListener('click', event => {
+      const pin = event.target.closest('.map-pin');
+      if (!pin) return;
+      paint(Number(pin.dataset.index));
+      document.querySelector('.deck-wrap')?.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  }
   paintProgress();
   shuffle();
 })();

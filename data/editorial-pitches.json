@@ -92,6 +92,14 @@
       "status": "open-research",
       "reportingNeeded": ["Decade newspaper index", "Library photo archive", "Council minutes", "At least two surviving witnesses or contemporaneous accounts"],
       "publishGate": "The event is selected only after archive review; do not reverse-engineer a sensational claim from a single clipping."
+    },
+    {
+      "slug": "story-time-west-gta",
+      "workingTitle": "One strange night on a road everyone knows",
+      "hook": "Use a recognizable Burlington, Hamilton, Oakville or Toronto route to reconstruct one extraordinary, well-documented night from the perspective of the person who lived it.",
+      "status": "format-development",
+      "reportingNeeded": ["Original poster or subject interview and explicit consent", "Independent verification of the central event", "Location and timeline check", "Public records where police, fire, transit or a court is involved", "Privacy and harm review", "Original or properly licensed visual evidence"],
+      "publishGate": "A social post is a lead, not a script. Do not change material facts, invent scenes, hide a source's identity from the editor or publish allegations that cannot meet the normal evidence standard."
     }
   ]
 }
