@@ -72,7 +72,14 @@ def main() -> int:
         "method": "Evidence and rights gates first; eligible stories are sorted by relevance, breadth, novelty, familiarity and consequence. Scores choose placement and are not shown to readers.",
         "feature": [public_item(item) for item in feature_candidates[:3]],
         "rail": pick("rail", 3),
-        "latest": pick("latest", 3),
+        "latest": [
+            public_item(item)
+            for item in sorted(
+                (candidate for candidate in eligible if "latest" in candidate.get("surfaces", [])),
+                key=lambda candidate: (candidate.get("published", candidate.get("activeFrom", "")), candidate["placementScore"]),
+                reverse=True,
+            )[:3]
+        ],
         "audit": [
             {"id": item["id"], "state": item["state"], "placementScore": item["placementScore"], "reason": item["reason"]}
             for item in audited

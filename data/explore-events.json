@@ -114,9 +114,9 @@
       "id": "pier-sunset",
       "title": "Catch golden hour at the Brant Street Pier",
       "copy": "Walk to the end of the pier and watch the lake change colour before sunset.",
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Burlington%2C%20Canada%20%28Unsplash%20bJg-iNESUfM%29.jpg?width=1280",
-      "imageAlt": "Brant Street Pier on Burlington’s waterfront",
-      "credit": "Fernando Reyes via Wikimedia Commons · CC0",
+      "image": "assets/explore/brant-street-pier.webp",
+      "imageAlt": "Burlington News visual of Brant Street Pier at sunset",
+      "illustration": true,
       "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/brant-street-pier.aspx"
     },
     {
@@ -125,7 +125,6 @@
       "copy": "Use tonight to find a clear view. The partial phase begins Thursday at 10:33 p.m.",
       "image": "assets/explore/lunar-eclipse.webp",
       "imageAlt": "Illustration of a partial lunar eclipse",
-      "credit": "Burlington News illustration",
       "url": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828"
     },
     {
@@ -134,7 +133,6 @@
       "copy": "Choose three works you normally walk past and look long enough to notice one new detail in each.",
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated collage of Burlington landmarks and activities",
-      "credit": "Burlington News illustration",
       "url": "https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx"
     }
   ]

@@ -19,7 +19,7 @@
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
   };
   const imageMarkup = (item, className) => item.image
-    ? `<div class="${className}"><img src="${esc(item.image)}" alt="${esc(item.imageAlt || '')}" loading="lazy">${item.credit ? `<span class="image-credit">${esc(item.credit)}</span>` : ''}</div>`
+    ? `<div class="${className}"><img src="${esc(item.image)}" alt="${esc(item.imageAlt || '')}" loading="lazy">${item.credit && !item.illustration && !/^Burlington News/i.test(item.credit) ? `<span class="image-credit">${esc(item.credit)}</span>` : ''}</div>`
     : `<div class="${className}"><b>${esc(item.visualText || 'BURLINGTON')}</b></div>`;
 
   let events = [];
@@ -27,6 +27,7 @@
   let places = [];
   let bonus = null;
   let selectedDate = dayKey(new Date());
+  let calendarMode = 'week';
   let showAll = false;
   let ideaIndex = 0;
   const done = readSet(storage.done);
@@ -64,37 +65,60 @@
     qs('#weekStrip').innerHTML = days.map(date => {
       const key = dayKey(date);
       const hasEvent = events.some(event => dayKey(event.start) === key || (new Date(event.start) <= date && new Date(event.end) >= date));
-      return `<button class="day-button ${selectedDate === key ? 'is-selected' : ''} ${hasEvent ? 'has-event' : ''}" type="button" data-date="${key}"><span>${date.toLocaleDateString('en-CA',{weekday:'short'})}</span><strong>${date.toLocaleDateString('en-CA',{month:'short',day:'numeric'})}</strong></button>`;
+      return `<time class="day-button ${selectedDate === key ? 'is-selected' : ''} ${hasEvent ? 'has-event' : ''}" datetime="${key}"><span>${date.toLocaleDateString('en-CA',{weekday:'short'})}</span><strong>${date.toLocaleDateString('en-CA',{month:'short',day:'numeric'})}</strong></time>`;
     }).join('');
+    qs('#weekStrip').setAttribute('aria-label',`Week of ${days[0].toLocaleDateString('en-CA',{month:'long',day:'numeric',year:'numeric'})}`);
   }
 
   function paintMonth() {
     const first = new Date();
     first.setDate(1);
     first.setHours(12,0,0,0);
-    const monthMarkup = offset => {
-      const start = new Date(first.getFullYear(), first.getMonth() + offset, 1, 12);
-      const cells = [];
-      const gridStart = new Date(start);
-      gridStart.setDate(start.getDate() - ((start.getDay() + 6) % 7));
-      for (let index = 0; index < 42; index += 1) {
-        const date = new Date(gridStart);
-        date.setDate(gridStart.getDate() + index);
-        const key = dayKey(date);
-        const hasEvent = events.some(event => dayKey(event.start) === key);
-        cells.push(`<button class="month-day ${hasEvent ? 'has-event' : ''} ${date.getMonth() !== start.getMonth() ? 'is-outside' : ''}" type="button" data-date="${key}" aria-label="${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}${hasEvent ? ', has events' : ''}">${date.getDate()}</button>`);
-      }
-      return `<h3 class="month-label">${start.toLocaleDateString('en-CA',{month:'long',year:'numeric'})}</h3>${cells.join('')}`;
-    };
-    qs('#monthCalendar').innerHTML = `${monthMarkup(0)}${monthMarkup(1)}`;
+    const weekdayLabels = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(day => `<span class="month-weekday">${day}</span>`).join('');
+    const leading = (first.getDay() + 6) % 7;
+    const daysInMonth = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate();
+    const cells = Array.from({length:leading}, () => '<span class="month-blank" aria-hidden="true"></span>');
+    for (let number = 1; number <= daysInMonth; number += 1) {
+      const date = new Date(first.getFullYear(), first.getMonth(), number, 12);
+      const key = dayKey(date);
+      const hasEvent = events.some(event => dayKey(event.start) === key || (dayKey(event.start) < key && dayKey(event.end) >= key));
+      cells.push(`<button class="month-day ${hasEvent ? 'has-event' : ''} ${selectedDate === key ? 'is-selected' : ''}" type="button" data-date="${key}" aria-label="${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}${hasEvent ? ', has events' : ''}">${number}</button>`);
+    }
+    qs('#monthCalendar').innerHTML = `<h3 class="month-label">${first.toLocaleDateString('en-CA',{month:'long',year:'numeric'})}</h3><div class="month-grid">${weekdayLabels}${cells.join('')}</div>`;
   }
 
+  const atStartOfDay = value => { const date = new Date(value); date.setHours(0,0,0,0); return date; };
+  const atEndOfDay = value => { const date = new Date(value); date.setHours(23,59,59,999); return date; };
+  const overlaps = (event, start, end) => new Date(event.end) >= start && new Date(event.start) <= end;
+
   function visibleEvents() {
-    const now = new Date();
-    const future = events.filter(event => new Date(event.end) >= now).sort((a,b) => new Date(a.start) - new Date(b.start));
+    const today = atStartOfDay(new Date());
+    const future = events.filter(event => new Date(event.end) >= today).sort((a,b) => new Date(a.start) - new Date(b.start));
     if (showAll) return future;
-    const selected = future.filter(event => dayKey(event.start) === selectedDate || (dayKey(event.start) < selectedDate && dayKey(event.end) >= selectedDate));
-    return selected.length ? selected.slice(0,3) : future.slice(0,3);
+    let start = today;
+    let end = atEndOfDay(today);
+    if (calendarMode === 'week') {
+      const days = weekDates(today);
+      start = atStartOfDay(days[0]);
+      end = atEndOfDay(days[6]);
+    }
+    if (calendarMode === 'month') {
+      start = new Date(today.getFullYear(),today.getMonth(),1);
+      end = atEndOfDay(new Date(today.getFullYear(),today.getMonth() + 1,0));
+    }
+    const selected = future.filter(event => overlaps(event,start,end));
+    return selected.slice(0, calendarMode === 'month' ? 6 : 3);
+  }
+
+  function setCalendarMode(mode) {
+    calendarMode = mode;
+    showAll = false;
+    const isMonth = mode === 'month';
+    qs('#calendarTitle').textContent = mode === 'today' ? 'Today' : mode === 'month' ? 'This month' : 'This week';
+    qs('#weekStrip').hidden = isMonth;
+    qs('#monthCalendar').hidden = !isMonth;
+    qs('#calendarView').value = mode;
+    paintEvents();
   }
 
   function eventCard(event) {
@@ -166,24 +190,13 @@
   function installEvents() {
     qs('#upcomingTab').addEventListener('click', () => setTab('upcoming'));
     qs('#myTab').addEventListener('click', () => setTab('my'));
-    qs('#weekStrip').addEventListener('click', event => {
-      const button = event.target.closest('[data-date]');
-      if (!button) return;
-      selectedDate = button.dataset.date;
-      showAll = false;
-      paintWeek();
-      paintEvents();
-    });
-    qs('#monthToggle').addEventListener('click', () => {
-      const calendar = qs('#monthCalendar');
-      calendar.hidden = !calendar.hidden;
-      qs('#monthToggle').setAttribute('aria-expanded', String(!calendar.hidden));
-    });
+    qs('#calendarView').addEventListener('change', event => setCalendarMode(event.target.value));
     qs('#monthCalendar').addEventListener('click', event => {
       const button = event.target.closest('[data-date]');
       if (!button) return;
       selectedDate = button.dataset.date;
       showAll = false;
+      paintMonth();
       paintEvents();
     });
     qs('#eventGrid').addEventListener('click', event => {
@@ -218,7 +231,11 @@
       if (pin) scrollToPlace(pin.dataset.place);
     });
     qs('#passportNext').addEventListener('click', () => qs('#passportRail').scrollBy({left:260,behavior:'smooth'}));
-    qs('#passportInfo').addEventListener('click', () => qs('#passportDialog').showModal());
+    qs('#passportInfo').addEventListener('click', () => {
+      const dialog = qs('#passportDialog');
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.setAttribute('open','');
+    });
     qs('#passportDialogClose').addEventListener('click', () => qs('#passportDialog').close());
     qs('#dialogClose').addEventListener('click', () => detailDialog.close());
     [detailDialog,qs('#passportDialog')].forEach(dialog => dialog.addEventListener('click', event => {

@@ -6,7 +6,7 @@
       "id": "skyway-tunnels",
       "kind": "feature",
       "headline": "Ontario nearly replaced the Skyway with three tunnels.",
-      "deck": "A ship strike, failed tolls, 84 purchased properties—and a crash 14 minutes after the second span opened.",
+      "deck": "A ship strike, failed tolls, 84 purchased properties,and a crash 14 minutes after the second span opened.",
       "label": "The Monday Feature · 9 min",
       "labelEssential": true,
       "url": "articles/skyway-bridge-story.html",
@@ -28,7 +28,7 @@
     {
       "id": "ribfest-2026",
       "kind": "seasonal",
-      "headline": "Ribfest turns 30—with nearly $6 million behind the smoke.",
+      "headline": "Ribfest turns 30,with nearly $6 million behind the smoke.",
       "label": "Labour Day weekend",
       "labelEssential": true,
       "url": "articles/ribfest-2026.html",
@@ -38,6 +38,16 @@
   ],
   "rail": [
     {
+      "id": "ontario-student-rights-school",
+      "kind": "service",
+      "headline": "Can a teacher take your phone? Seven school rules students should know.",
+      "label": "Back to school",
+      "labelEssential": true,
+      "url": "articles/ontario-student-rights-school.html",
+      "image": "assets/home/school-bus.webp",
+      "alt": "A yellow Ontario school bus"
+    },
+    {
       "id": "ward-change-2026",
       "kind": "service",
       "headline": "Your ward may have changed. Check before you vote.",
@@ -50,54 +60,40 @@
     {
       "id": "ribfest-2026",
       "kind": "seasonal",
-      "headline": "Ribfest turns 30—with nearly $6 million behind the smoke.",
+      "headline": "Ribfest turns 30,with nearly $6 million behind the smoke.",
       "label": "Labour Day weekend",
       "labelEssential": true,
       "url": "articles/ribfest-2026.html",
       "image": "assets/home/ribs.webp",
       "alt": "Barbecue ribs smoking over a pit"
-    },
-    {
-      "id": "back-to-school-2026",
-      "kind": "seasonal",
-      "headline": "The dates Burlington families need before school starts.",
-      "label": "Back to school",
-      "labelEssential": true,
-      "url": "articles/back-to-school-2026.html",
-      "image": "assets/home/school-bus.webp",
-      "alt": "A yellow Ontario school bus"
     }
   ],
   "latest": [
     {
-      "id": "ward-change-2026",
+      "id": "ontario-student-rights-school",
       "kind": "service",
-      "headline": "Your ward may have changed. Check before you vote.",
-      "label": "2026 election",
-      "labelEssential": true,
-      "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
-      "image": "assets/editorial/burlington-wards-2026.svg",
-      "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards"
-    },
-    {
-      "id": "ribfest-2026",
-      "kind": "seasonal",
-      "headline": "Ribfest turns 30—with nearly $6 million behind the smoke.",
-      "label": "Labour Day weekend",
-      "labelEssential": true,
-      "url": "articles/ribfest-2026.html",
-      "image": "assets/home/ribs.webp",
-      "alt": "Barbecue ribs smoking over a pit"
-    },
-    {
-      "id": "back-to-school-2026",
-      "kind": "seasonal",
-      "headline": "The dates Burlington families need before school starts.",
+      "headline": "Can a teacher take your phone? Seven school rules students should know.",
       "label": "Back to school",
       "labelEssential": true,
-      "url": "articles/back-to-school-2026.html",
+      "url": "articles/ontario-student-rights-school.html",
       "image": "assets/home/school-bus.webp",
       "alt": "A yellow Ontario school bus"
+    },
+    {
+      "id": "730-brant-vacant-building",
+      "kind": "investigation",
+      "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
+      "label": "Unfinished Burlington",
+      "labelEssential": true,
+      "url": "articles/730-brant-vacant-building.html"
+    },
+    {
+      "id": "fishway-2025",
+      "kind": "evergreen",
+      "headline": "What 26,503 fish revealed about a damaged marsh.",
+      "url": "articles/fishway-26000-fish.html",
+      "image": "assets/home/fishway.webp",
+      "alt": "The Cootes Paradise Fishway across the water"
     }
   ],
   "audit": [
@@ -123,6 +119,18 @@
       "id": "back-to-school-2026",
       "state": "eligible",
       "placementScore": 84,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "ontario-student-rights-school",
+      "state": "eligible",
+      "placementScore": 100,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "730-brant-vacant-building",
+      "state": "eligible",
+      "placementScore": 93,
       "reason": "all gates passed"
     },
     {

@@ -17,13 +17,15 @@
     {title:'Ontario nearly replaced the Skyway with three tunnels',url:'articles/skyway-bridge-story.html',section:'History',keywords:'skyway bridge canal qew tunnels'},
     {title:'Ribfest turns 30',url:'articles/ribfest-2026.html',section:'Events',keywords:'ribfest ribs labour day food festival'},
     {title:'The school dates Burlington families need',url:'articles/back-to-school-2026.html',section:'Schools',keywords:'school calendar hdsb September'},
+    {title:'What Ontario students can actually be searched for',url:'articles/ontario-student-rights-school.html',section:'Schools',keywords:'teacher phone detention bag locker search student rights school'},
+    {title:'730 Brant sat empty for more than a decade, then caught fire',url:'articles/730-brant-vacant-building.html',section:'Investigation',keywords:'abandoned vacant building fire Brant Street owner redevelopment'},
     {title:'Explore Burlington',url:'explore.html',section:'Explore',keywords:'events bored passport calendar places free'},
     {title:'Burlington 2026 Election Guide',url:'election-guide.html',section:'Elections',keywords:'vote mayor candidates ward ballot'},
     {title:'Burlington sports',url:'sports.html',section:'Sports',keywords:'soccer hockey lacrosse ultimate ringette'},
     {title:'Games about Burlington',url:'puzzles.html',section:'Games',keywords:'quiz puzzle trivia swipe'},
     {title:'Live Skyway traffic cameras',url:'skyway-traffic.html',section:'Traffic',keywords:'qew skyway traffic camera commute'}
   ];
-  const suggested = ['this weekend','Skyway','top food'];
+  const suggested = ['this weekend','things to do','election'];
   const imageCredits = {
     'assets/editorial/burlington-wards-2026.svg': 'Burlington News diagram',
     'assets/home/ribs.webp': 'Thogru · CC BY-SA 3.0',
@@ -32,6 +34,19 @@
   };
 
   if (today) today.textContent = new Intl.DateTimeFormat('en-CA',{weekday:'long',month:'long',day:'numeric',year:'numeric'}).format(new Date());
+
+  const rotatingPrompts = ['Search this weekend','Search the election','Search things to do','Search “I’m bored”','Search property taxes'];
+  if (searchInput && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let promptIndex = 0;
+    const rotatePrompt = () => {
+      if (document.activeElement !== searchInput && !searchInput.value) {
+        searchInput.placeholder = rotatingPrompts[promptIndex % rotatingPrompts.length];
+        promptIndex += 1;
+      }
+    };
+    rotatePrompt();
+    window.setInterval(rotatePrompt,2600);
+  }
 
   menu?.addEventListener('click', () => {
     const open = nav.classList.toggle('is-open');
@@ -88,6 +103,14 @@
     searchPopover.hidden = true;
   });
 
+  if (searchInput && new URLSearchParams(location.search).get('search') === '1') {
+    requestAnimationFrame(() => {
+      searchInput.focus();
+      renderSearch('');
+      history.replaceState(null,'',location.pathname);
+    });
+  }
+
   const weatherIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 17a4.2 4.2 0 0 1 .8-8.3A5.7 5.7 0 0 1 18 10.2 3.5 3.5 0 0 1 17.2 17h-11Z"/></svg>';
   if (weather) {
     const controller = new AbortController();
@@ -109,8 +132,8 @@
       if (!latestList || !Array.isArray(data.latest) || !data.latest.length) return;
       latestList.innerHTML = data.latest.slice(0,3).map((item,index) => {
         const external = /^https?:\/\//.test(item.url || '');
-        const credit = imageCredits[item.image] || 'Burlington News';
-        const visual = item.image ? `<span class="newest-thumb"><img src="${esc(item.image)}" alt="${esc(item.alt || '')}" loading="lazy"><i>${esc(credit)}</i></span>` : '<span class="puzzle-icon blue">BN</span>';
+        const credit = imageCredits[item.image] || '';
+        const visual = item.image ? `<span class="newest-thumb"><img src="${esc(item.image)}" alt="${esc(item.alt || '')}" loading="lazy">${credit && !/^Burlington News/i.test(credit) ? `<i>${esc(credit)}</i>` : ''}</span>` : '<span class="puzzle-icon blue">BN</span>';
         return `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}>${visual}<span>${item.labelEssential && item.label ? `<small>${esc(item.label)}</small>` : ''}<strong>${esc(item.headline)}</strong><time>${index ? `${index * 2} hours ago` : 'Today'}</time></span></a>`;
       }).join('');
     }).catch(() => {});
