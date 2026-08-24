@@ -46,3 +46,15 @@ a{color:inherit}img{display:block;max-width:100%}
   .article-header{background:rgba(251,250,247,.96)}.article-deck{color:#53616a}.fact-box ul{color:#4e5d66}
   .article-footer{background:#102e44;color:#c1d1dc}.article-footer a{color:#fff}
 }
+
+/* V3 publication shell for every story page. */
+.article-header{background:rgba(255,255,255,.98);border-color:#dfe4ea;backdrop-filter:blur(12px)}
+.article-header-inner{width:min(1180px,calc(100% - 40px));height:86px;gap:28px}
+.article-brand{gap:9px;color:#071b35;font:700 23px/.92 var(--serif);letter-spacing:-.04em}
+.article-brand img{width:36px;height:42px}.article-brand strong{color:#0864c7}
+.article-nav{align-self:stretch;align-items:center;gap:34px;margin-left:auto}.article-nav a{position:relative;display:flex;align-items:center;height:100%;color:#152238;font-size:13px;font-weight:500;text-decoration:none}.article-nav a:hover{color:#0864c7;text-decoration:none}
+.article{width:min(1180px,calc(100% - 40px))}.article-head{margin-top:54px}.article-head h1{color:var(--ink);font-size:clamp(44px,6vw,70px)}
+.article-hero{overflow:hidden;border-radius:10px}.article-hero figcaption{position:absolute;left:8px;bottom:7px;max-width:calc(100% - 16px);overflow:hidden;margin:0;color:rgba(255,255,255,.72);font-size:6px;line-height:1.15;text-overflow:ellipsis;text-shadow:0 1px 3px rgba(0,0,0,.95);white-space:nowrap}.article-hero figcaption a{text-decoration:none}
+.article-footer{background:#f5f7fa;color:#657083;border-color:#dfe4ea}.article-footer>div{width:min(1180px,calc(100% - 40px))}.article-footer a{color:#071b35}
+@media(max-width:780px){.article-header-inner{width:calc(100% - 32px);height:64px}.article-brand{font-size:19px}.article-brand img{width:31px;height:36px}.article{width:calc(100% - 32px)}.article-head{margin-top:32px}.article-hero{border-radius:8px}.article-footer>div{width:calc(100% - 32px)}}
+@media(max-width:780px) and (prefers-color-scheme:dark){.article-header{background:rgba(16,18,20,.98);border-color:#35393c}.article-brand,.article-nav a{color:#f4f0e8}.article-footer{background:#101214;color:#aeb4b9;border-color:#35393c}.article-footer a{color:#f4f0e8}}
