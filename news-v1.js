@@ -7,10 +7,21 @@
   function restoreBrand(){
     document.querySelectorAll('.brand').forEach(b=>{if(!b.classList.contains('news-brand')||!b.querySelector('.news-brand-copy')){b.className='brand news-brand';b.href='index.html';b.innerHTML=brandMarkup;b.setAttribute('aria-label','Burlington News home')}});
     let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='favicon.svg?v=20260824a';
-    const title=document.title;if(/Burlington Election Guide/i.test(title))document.title=title.replace(/Burlington Election Guide/ig,'Burlington News');
+    const path=location.pathname.replace(/\/$/,'');
+    const titles={
+      '':'Burlington News | 2026 Municipal Election Guide','/index.html':'Burlington News | 2026 Municipal Election Guide',
+      '/head-to-head.html':'Compare Burlington Mayor Candidates | Burlington News','/ballot.html':'Your Burlington Ballot | Burlington News','/ward.html':'What Ward Am I In? | Burlington News',
+      '/updates.html':'Burlington in 30 Seconds | Burlington News','/puzzles.html':'Burlington Puzzles | Burlington News','/elections-for-beginners.html':'Elections for Beginners | Burlington News',
+      '/methodology.html':'Sources & Methodology | Burlington News','/help.html':'Help & Feedback | Burlington News','/privacy.html':'Privacy Policy | Burlington News','/terms.html':'Terms of Use | Burlington News','/independent.html':'Independent | Burlington News','/feedback':'Give feedback | Burlington News'
+    };
+    if(titles[path])document.title=titles[path];else if(/Burlington Election Guide/i.test(document.title))document.title=document.title.replace(/Burlington Election Guide/ig,'Burlington News');
   }
   function restoreBanner(){let b=document.querySelector('.banner'),h=document.querySelector('.header');if(!b&&h){b=document.createElement('div');b.className='banner';h.before(b)}if(b)b.innerHTML='<div class="wrap"><strong>2026 Election Guide</strong>&nbsp;&nbsp;·&nbsp;&nbsp;Voting starts Oct. 14&nbsp;&nbsp;·&nbsp;&nbsp;Election Day Oct. 26</div>'}
-  function restoreFooter(){let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}if(f.querySelector('.footer-news-brand'))return;f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent Burlington civic news and a plain-language 2026 municipal election guide.</p></div></div><nav class="site-legal-links" aria-label="Site information"><a href="elections-for-beginners.html">Elections for beginners</a><a href="puzzles.html">Puzzles</a><a href="methodology.html">Sources & methodology</a><a href="help.html#accessibility">Accessibility</a><a href="terms.html">Terms of use</a><a href="privacy.html">Privacy policy</a><a href="independent.html">Independent</a><a href="/feedback/">Give feedback</a></nav></div>'}
+  function restoreFooter(){
+    let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}
+    if(f.dataset.newsFooter==='2')return;f.dataset.newsFooter='2';
+    f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent Burlington civic news and a plain-language 2026 municipal election guide.</p></div></div><nav class="site-legal-links" aria-label="Burlington News sections"><a href="updates.html">News</a><a href="index.html#candidates">Candidates</a><a href="ballot.html">Your ballot</a><a href="elections-for-beginners.html">Election 101</a><a href="puzzles.html">Puzzles</a><a href="methodology.html">Sources & methodology</a><a href="help.html#accessibility">Accessibility</a><a href="independent.html">About / Independent</a><a href="/feedback/">Give feedback</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></div>';
+  }
 
   const isLocalStory=i=>{
     const hay=`${i.title||i.headline||''} ${i.description||i.summary||''} ${i.url||''} ${i.source||''}`.toLowerCase();
@@ -52,8 +63,9 @@
   }
   function replacePartner(){const card=document.querySelector('.home-extra-card.partner-card');if(!card)return;card.className='home-extra-card beginner-card';card.href='elections-for-beginners.html';card.innerHTML='<span class="home-extra-icon" aria-hidden="true">?</span><div><small>Start here</small><h2>Elections for beginners</h2><p>What a municipal election is, what each job controls and how a city decision actually gets made.</p></div><span aria-hidden="true">→</span>'}
   function cleanCandidateLabels(){document.querySelectorAll('#candidateStrip .focus-label').forEach(x=>x.textContent='Overview')}
+  function watchCandidateLabels(){const strip=document.getElementById('candidateStrip');if(!strip||strip.dataset.newsLabelWatch)return;strip.dataset.newsLabelWatch='1';new MutationObserver(()=>cleanCandidateLabels()).observe(strip,{childList:true,subtree:true,characterData:true})}
 
-  async function runDynamic(){restoreBrand();restoreBanner();restoreFooter();cleanCandidateLabels();replacePartner();rebuildDates();try{await rebuildHomeBrief()}catch(e){console.warn('Local brief unavailable',e)}try{await rebuildUpdates()}catch(e){console.warn('News feed unavailable',e)}restoreBrand();restoreFooter()}
+  async function runDynamic(){restoreBrand();restoreBanner();restoreFooter();cleanCandidateLabels();watchCandidateLabels();replacePartner();rebuildDates();try{await rebuildHomeBrief()}catch(e){console.warn('Local brief unavailable',e)}try{await rebuildUpdates()}catch(e){console.warn('News feed unavailable',e)}restoreBrand();restoreFooter()}
   const schedule=()=>{runDynamic();setTimeout(runDynamic,350);setTimeout(runDynamic,1100)};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule,{once:true});else schedule();
 })();
