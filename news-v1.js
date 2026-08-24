@@ -16,7 +16,7 @@
     };
     if(titles[path])document.title=titles[path];else if(/Burlington Election Guide/i.test(document.title))document.title=document.title.replace(/Burlington Election Guide/ig,'Burlington News');
   }
-  function restoreBanner(){let b=document.querySelector('.banner'),h=document.querySelector('.header');if(!b&&h){b=document.createElement('div');b.className='banner';h.before(b)}if(b)b.innerHTML='<div class="wrap"><strong>2026 election</strong><span>Voting starts Oct. 14</span><span>Election Day Oct. 26</span></div>'}
+  function restoreBanner(){let b=document.querySelector('.banner'),h=document.querySelector('.header');if(!b&&h){b=document.createElement('div');b.className='banner';h.before(b)}if(b)b.innerHTML='<div class="wrap"><strong>2026 election</strong><span class="banner-sep" aria-hidden="true"> · </span><span>Voting starts Oct. 14</span><span class="banner-sep" aria-hidden="true"> · </span><span>Election Day Oct. 26</span></div>'}
   function restoreFooter(){
     let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}
     if(f.dataset.newsFooter==='2')return;f.dataset.newsFooter='2';
