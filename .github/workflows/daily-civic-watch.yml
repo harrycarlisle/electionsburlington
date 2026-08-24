@@ -18,11 +18,13 @@ jobs:
           python-version: '3.12'
       - name: Check Burlington civic sources
         run: python scripts/update_civic_watch.py
-      - name: Commit source watch changes
+      - name: Verify candidate photos
+        run: python scripts/update_candidate_assets.py
+      - name: Commit verified updates
         run: |
           git config user.name "burlington-civic-watch"
           git config user.email "actions@users.noreply.github.com"
-          git add data/source-monitor.json data/archive data/daily-brief.json
+          git add data/source-monitor.json data/archive data/daily-brief.json data/ballot.json
           git diff --cached --quiet && exit 0
           git commit -m "Update Burlington civic watch"
           git push
