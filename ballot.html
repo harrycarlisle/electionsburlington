@@ -8,56 +8,46 @@
 <link rel="stylesheet" href="site-extra.css">
 <link rel="stylesheet" href="ux-v6.css">
 <style>
-.ballot-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ballot-person,.ballot-person-link{min-width:0}.ballot-person{display:flex;align-items:center;gap:12px;min-height:70px;padding:11px 13px!important}.ballot-person-link{color:inherit;text-decoration:none}.ballot-avatar{width:50px;height:50px;border-radius:50%;object-fit:cover;flex:0 0 auto;background:#e8eef4;border:1px solid var(--line)}.ballot-avatar-fallback{display:grid;place-items:center;color:#60778d;font-weight:750;font-size:12px}.ballot-person-name{font-size:15px;font-weight:650;color:var(--navy);line-height:1.15}.ballot-person-role{display:block;margin-top:3px;color:var(--muted);font-size:11px}.ballot-person-external{margin-left:auto;color:var(--muted);font-size:15px}.ballot-ward-link{display:inline-flex;margin:4px 0 24px;font-weight:650;color:var(--navy)}.ballot-board-help{margin:-4px 0 22px;color:var(--muted);font-size:13px;line-height:1.45;max-width:720px}.ballot-verify{font-size:12.5px!important;margin-top:20px!important;color:var(--muted)!important}@media(max-width:720px){.ballot-list{grid-template-columns:1fr}.ballot-person{min-height:66px}.ballot-avatar{width:46px;height:46px}}
+.ballot-shell{max-width:980px}.ballot-top{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin:22px 0 28px}.ballot-ward-control{min-width:210px}.ballot-ward-control label{display:block;font-size:12px;font-weight:750;color:var(--muted);margin-bottom:6px}.ballot-ward-control select{width:100%;padding:11px 38px 11px 13px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--navy);font-weight:700}.ballot-ward-link{display:inline-flex;margin:5px 0 0;font-size:13px;font-weight:650;color:var(--navy)}.ballot-section{margin-top:28px}.ballot-section h2{margin-bottom:5px}.ballot-section>p{margin-top:0;color:var(--muted);font-size:13px}.ballot-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ballot-person,.ballot-person-link{min-width:0}.ballot-person{display:flex;align-items:center;gap:12px;min-height:70px;padding:11px 13px!important;border:1px solid var(--line);border-radius:14px;background:var(--card)}.ballot-person-link{color:inherit;text-decoration:none}.ballot-avatar{width:50px;height:50px;border-radius:50%;object-fit:cover;flex:0 0 auto;background:#e8eef4;border:1px solid var(--line)}.ballot-avatar-fallback{display:grid;place-items:center;color:#60778d;font-weight:750;font-size:12px}.ballot-person-name{font-size:15px;font-weight:650;color:var(--navy);line-height:1.15}.ballot-person-external{margin-left:auto;color:var(--muted);font-size:15px}.ballot-verify{font-size:12.5px!important;margin-top:24px!important;color:var(--muted)!important}.school-board-details{margin-top:34px;border:1px solid var(--line);border-radius:17px;background:var(--card);overflow:hidden}.school-board-details>summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;cursor:pointer;list-style:none;font-size:18px;font-weight:700;color:var(--navy)}.school-board-details>summary::-webkit-details-marker{display:none}.school-board-details>summary::after{content:'+';font-size:22px;color:var(--muted);font-weight:500}.school-board-details[open]>summary::after{content:'−'}.school-board-inner{padding:0 20px 20px;border-top:1px solid var(--line)}.school-board-copy{color:var(--muted);font-size:13px;max-width:720px}.school-board-control{max-width:420px;margin:16px 0 18px}.school-board-control label{display:block;font-size:12px;font-weight:750;color:var(--muted);margin-bottom:6px}.school-board-control select{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--navy)}.ballot-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.ballot-actions a{font-size:13px;font-weight:700}.photo-note{display:block;margin-top:3px;font-size:10px;color:var(--muted)}
+@media(max-width:720px){.ballot-top{align-items:stretch;flex-direction:column}.ballot-ward-control{width:100%}.ballot-list{grid-template-columns:1fr}.ballot-person{min-height:66px}.ballot-avatar{width:46px;height:46px}.school-board-details>summary{padding:16px}.school-board-inner{padding:0 16px 17px}}
 </style>
-<script src="site-extra.js" defer></script>
+<script src="site-extra.js?v=20260823h" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="banner"><div class="wrap">Voting starts Oct. 14 &nbsp;·&nbsp; Election Day Oct. 26</div></div>
 <header class="header"><div class="wrap header-inner"><a class="brand" href="index.html">Burlington<small>Election Guide</small></a><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
-<main id="main" class="content-shell">
+<main id="main" class="content-shell ballot-shell">
 <h1>Your Burlington ballot</h1>
-<p class="content-lead">Choose your ward and school board to see the local races that apply to you.</p>
-<a class="ballot-ward-link" href="ward.html">Not sure which ward you're in? Find your ward →</a>
-<div class="ballot-page-controls">
-<label>Ward<select id="wardSelect"></select></label>
-<label>School board<select id="boardSelect"></select></label>
-</div>
-<p class="ballot-board-help">Your school-board choice determines which trustee race appears on your ballot. Eligibility rules differ for public, Catholic and French-language boards.</p>
+<p class="content-lead">Choose your ward to see the local council race that applies to you.</p>
+<div class="ballot-top"><div class="ballot-ward-control"><label for="wardSelect">Your ward</label><select id="wardSelect"></select><a class="ballot-ward-link" href="ward.html">Not sure? Find your ward →</a></div></div>
 <div id="ballotPage"></div>
-<p class="content-lead ballot-verify">Candidate names and candidate-supplied websites come from the City of Burlington candidate list. Confirm your final ballot and eligibility with the City before voting.</p>
+<details class="school-board-details" id="school-board">
+<summary>School-board trustee</summary>
+<div class="school-board-inner"><p class="school-board-copy">This is a separate part of the municipal ballot. Open it only if you want to see the trustee race that applies to your school-board support and eligibility.</p><div class="school-board-control"><label for="boardSelect">School board</label><select id="boardSelect"></select></div><div id="trusteePage"></div></div>
+</details>
+<div class="ballot-actions"><a href="https://myvote.burlington.ca/for-voters/list-of-candidates/" target="_blank" rel="noopener">City candidate list</a><a href="ward.html">Find my ward</a></div>
+<p class="content-lead ballot-verify">Names come from the City of Burlington candidate list. Images appear only when the candidate identity has been verified. Confirm your final ballot and eligibility with the City before voting.</p>
 </main>
 <script>
 (async()=>{
   const data=await fetch('data/ballot.json',{cache:'no-store'}).then(r=>r.json());
-  const ward=document.getElementById('wardSelect'),board=document.getElementById('boardSelect'),out=document.getElementById('ballotPage');
+  const ward=document.getElementById('wardSelect'),board=document.getElementById('boardSelect'),out=document.getElementById('ballotPage'),trusteeOut=document.getElementById('trusteePage');
   ward.innerHTML=[1,2,3,4,5,6].map(w=>`<option value="${w}">Ward ${w}</option>`).join('');
   board.innerHTML=Object.entries(data.schoolBoards).map(([value,label])=>`<option value="${value}">${label}</option>`).join('');
-  const photos={
-    'Marianne Meed Ward':'https://www.vmcdn.ca/f/files/burlingtontoday/images/politicians/2026-06-03-mayor-meed-ward-mic-js.jpg%3Bw%3D960',
-    'Lisa Kearns':'https://www.vmcdn.ca/f/files/burlingtontoday/images/politicians/26-03-24-kearnsmayor-ca1.jpg%3Bw%3D960',
-    'Rory Nisan':'https://www.vmcdn.ca/f/files/burlingtontoday/images/politicians/26-05-01-rory.jpg%3Bw%3D960'
-  };
+  const requested=new URLSearchParams(location.search).get('ward'); if(/^[1-6]$/.test(requested||'')) ward.value=requested;
   const initials=n=>n.split(/\s+/).map(x=>x[0]).join('').slice(0,2).toUpperCase();
   const person=n=>{
-    const site=data.candidateWebsites?.[n];
-    const avatar=photos[n]?`<img class="ballot-avatar" src="${photos[n]}" alt="" loading="lazy">`:`<span class="ballot-avatar ballot-avatar-fallback" aria-hidden="true">${initials(n)}</span>`;
-    const inner=`<div class="ballot-person">${avatar}<span class="ballot-person-name">${n}</span>${site?'<span class="ballot-person-external" aria-hidden="true">↗</span>':''}</div>`;
+    const site=data.candidateWebsites?.[n], image=data.candidateImages?.[n];
+    const avatar=image?.url?`<img class="ballot-avatar" src="${image.url}" alt="" loading="lazy" referrerpolicy="no-referrer">`:`<span class="ballot-avatar ballot-avatar-fallback" aria-hidden="true">${initials(n)}</span>`;
+    const inner=`<div class="ballot-person">${avatar}<span><span class="ballot-person-name">${n}</span>${image?.source?`<span class="photo-note">Photo: ${image.source}</span>`:''}</span>${site?'<span class="ballot-person-external" aria-hidden="true">↗</span>':''}</div>`;
     return site?`<a class="ballot-person-link" href="${site}" target="_blank" rel="noopener" aria-label="${n} campaign website, opens in a new tab">${inner}</a>`:inner;
   };
   const names=a=>`<div class="ballot-list">${a.map(person).join('')}</div>`;
-  function trusteeList(w){
-    if(board.value==='public') return w.publicTrustee;
-    if(board.value==='catholic') return w.catholicTrustee;
-    if(board.value==='frenchPublic') return data.frenchPublicTrustee;
-    return data.frenchCatholicTrustee;
-  }
-  function render(){
-    const w=data.wards[ward.value], trustees=trusteeList(w);
-    out.innerHTML=`<section class="ballot-section"><h2>Mayor</h2><p>Citywide race.</p>${names(data.mayor)}</section><section class="ballot-section"><h2>Ward ${ward.value} City & Regional Councillor</h2><p>This councillor represents your ward on Burlington City Council and Halton Regional Council.</p>${names(w.councillor)}</section><section class="ballot-section"><h2>School-board trustee</h2><p>${data.schoolBoards[board.value]}</p>${names(trustees)}</section><div class="ballot-actions"><a href="${data.officialSource}" target="_blank" rel="noopener">Official candidate list ↗</a><a href="ward.html">What ward am I in? →</a></div>`;
-  }
-  ward.addEventListener('change',render);board.addEventListener('change',render);render();
+  function trusteeList(w){if(board.value==='public')return w.publicTrustee;if(board.value==='catholic')return w.catholicTrustee;if(board.value==='frenchPublic')return data.frenchPublicTrustee;return data.frenchCatholicTrustee}
+  function renderMain(){const w=data.wards[ward.value];out.innerHTML=`<section class="ballot-section"><h2>Mayor</h2><p>Citywide race.</p>${names(data.mayor)}</section><section class="ballot-section"><h2>Ward ${ward.value} City & Regional Councillor</h2><p>This councillor represents your ward on Burlington City Council and Halton Regional Council.</p>${names(w.councillor)}</section>`;renderTrustee();history.replaceState(null,'',`${location.pathname}?ward=${ward.value}${location.hash}`)}
+  function renderTrustee(){const w=data.wards[ward.value],trustees=trusteeList(w);trusteeOut.innerHTML=`<section class="ballot-section"><h2>${data.schoolBoards[board.value]}</h2>${names(trustees)}</section>`}
+  ward.addEventListener('change',renderMain);board.addEventListener('change',renderTrustee);renderMain();
 })();
 </script>
 </body>
