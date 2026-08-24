@@ -1,30 +1,33 @@
 {
-  "updated": "2026-08-24T01:37:37Z",
-  "scope": "Burlington politics and civic affairs",
+  "updated": "2026-08-24T10:54:28Z",
+  "scope": "Burlington news, local life and civic affairs",
   "items": [
     {
       "date": "2026-08-24",
       "tag": "Candidates",
-      "headline": "List of Candidates",
-      "summary": "List of Candidates",
-      "why": "It adds information voters can use to compare candidates.",
-      "importance": 4,
-      "source": "City of Burlington Election",
-      "sourceType": "official",
-      "verificationTier": "primary",
-      "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
-    },
-    {
-      "date": "2026-08-24",
-      "tag": "Candidates",
-      "headline": "For Candidates",
-      "summary": "For Candidates",
+      "headline": "For Candidates I want to run in the 2026 municipal election.",
+      "summary": "For Candidates I want to run in the 2026 municipal election.",
       "why": "It adds information voters can use to compare candidates.",
       "importance": 4,
       "source": "City of Burlington Election",
       "sourceType": "official",
       "verificationTier": "primary",
       "url": "https://myvote.burlington.ca/for-candidates/"
+    },
+    {
+      "date": "2026-08-24",
+      "tag": "Burlington",
+      "headline": "Low Water Normal Normal Normal Normal",
+      "summary": "Current Low Water Status: Normal Conservation Halton Low Water Terminology Conservation Halton, in partnership with the Ministry of Northern Development, Mines, Natural Resources and Forestry, assists in the co-ordination and...",
+      "why": "It can affect where, how and how quickly Burlington grows.",
+      "importance": 3,
+      "source": "Conservation Halton",
+      "sourceType": "official",
+      "verificationTier": "primary",
+      "url": "https://www.conservationhalton.ca/low-water-status/",
+      "image": "https://www.conservationhalton.ca/wp-content/uploads/2022/05/Genericbanner2_1920x240.jpg",
+      "imageSource": "Conservation Halton",
+      "imageSourceUrl": "https://www.conservationhalton.ca/low-water-status/"
     },
     {
       "date": "2026-08-24",
@@ -42,5 +45,5 @@
       "imageSourceUrl": "https://www.halton.ca/for-residents/infrastructure-and-growth"
     }
   ],
-  "sourcesCheckedAt": "2026-08-24T01:37:37Z"
+  "sourcesCheckedAt": "2026-08-24T10:54:28Z"
 }
