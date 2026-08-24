@@ -1,0 +1,102 @@
+{
+  "updated": "2026-08-23T20:45:00-04:00",
+  "method": "Public comments are included only when they raise a substantive point about a candidate, record, policy or public role. The comment is not treated as evidence by itself. We separately check the factual core against primary records or reputable reporting. Evidence scores measure how well the factual part of the comment can be supported, not whether the commenter is right to like or dislike a candidate.",
+  "candidates": {
+    "Lisa Kearns": {
+      "items": [
+        {
+          "tone": "positive",
+          "quote": "Kearns is the only voice that pushes back and asks the tough questions.",
+          "source": "Reddit · r/BurlingtonON",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1s2lfa7/ward_2_councillor_lisa_kearns_is_first_candidate/",
+          "status": "Partly supported",
+          "evidenceScore": 2,
+          "check": "The 'only' part is opinion. Public records do show Kearns sponsoring or moving motions that challenged council process, including the 2024 strong-mayor-powers dispute, and she has publicly questioned spending and process in committee.",
+          "evidence": [
+            {"label": "Council minutes", "url": "https://events.burlington.ca/meetings/Detail/2024-04-16-0930-Regular-Meeting-of-Council/705dd290-e1ba-45af-8444-b15601490848"},
+            {"label": "Campaign priorities", "url": "https://lisakearns.ca/"}
+          ]
+        },
+        {
+          "tone": "critical",
+          "quote": "Left out that she is also on the board at the AGB. Oversight or trying to distance herself from what is going on there?",
+          "source": "Reddit · r/BurlingtonON",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1s2lfa7/ward_2_councillor_lisa_kearns_is_first_candidate/",
+          "status": "Core fact verified; motive unverified",
+          "evidenceScore": 2,
+          "check": "Kearns' AGB board role is real and public. The AGB lists her as the City of Burlington representative, and her current campaign biography lists the role from 2022 to present. City records also show her moving motions related to AGB facility-study funding and presentation. We found no evidence that she tried to hide the role; the omission being discussed was in one news article, not in her own current disclosures.",
+          "evidence": [
+            {"label": "AGB board", "url": "https://agb.life/board-of-directors/"},
+            {"label": "Kearns biography", "url": "https://lisakearns.ca/about-me/"},
+            {"label": "2024 AGB motion", "url": "https://burlingtonpublishing.escribemeetings.com/filestream.ashx?DocumentId=82059"},
+            {"label": "2025 AGB motion", "url": "https://burlingtonpublishing.escribemeetings.com/filestream.ashx?DocumentId=88353"}
+          ]
+        }
+      ]
+    },
+    "Marianne Meed Ward": {
+      "items": [
+        {
+          "tone": "positive",
+          "quote": "That's the primary thing she was elected to do because development ... was getting ridiculous with the previous council, so arguably she's done a pretty good job with her mandate.",
+          "source": "Reddit · r/BurlingtonON",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1tvz2i4/marianne_meed_ward_announces_shes_seeking/",
+          "status": "Partly supported",
+          "evidenceScore": 2,
+          "check": "The judgement that she did a 'pretty good job' is opinion. The underlying policy change is real: Burlington and Halton moved the Urban Growth Centre toward Burlington GO and removed the downtown bus terminal's Major Transit Station Area designation. Those were council and regional decisions, not the mayor acting alone.",
+          "evidence": [
+            {"label": "City Official Plan history", "url": "https://www.burlington.ca/en/planning-and-development/official-plan.aspx"}
+          ]
+        },
+        {
+          "tone": "critical",
+          "quote": "She also raised property taxes and has no plans to reign in on spending.",
+          "source": "Reddit · r/BurlingtonON",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1tvz2i4/marianne_meed_ward_announces_shes_seeking/",
+          "status": "Mixed claim",
+          "evidenceScore": 2,
+          "check": "Burlington property taxes have increased during Meed Ward's term, but the final bill also includes Halton Region and education and budgets are amended and voted on by council. The claim about having 'no plans' is not established; the City's 2026 budget process explicitly described affordability and finding savings as priorities.",
+          "evidence": [
+            {"label": "2026 budget process", "url": "https://www.burlington.ca/en/news/city-launches-2026-budget-process-with-a-focus-on-limiting-tax-impacts.aspx"}
+          ]
+        }
+      ]
+    },
+    "Rory Nisan": {
+      "items": [
+        {
+          "tone": "positive",
+          "quote": "He pushed for free student transit, better transit, is big on greenery...",
+          "source": "Reddit · r/BurlingtonON",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1t0ys5c/ward_3_councillor_rory_nisan_enters_burlington/",
+          "status": "Mostly supported",
+          "evidenceScore": 3,
+          "check": "Nisan's 2022 questionnaire explicitly supported more transit investment and free transit for high-school students. The City later introduced free youth travel evenings and weekends and a youth fare-cap pilot. His City portfolio also includes climate-plan implementation and transit advocacy. That is not the same as proving he personally caused every outcome.",
+          "evidence": [
+            {"label": "2022 BurlingtonGreen response", "url": "https://www.burlingtongreen.org/wp-content/uploads/2022/10/ward3_rory_nisan_min.pdf"},
+            {"label": "City Ward 3 record", "url": "https://www.burlington.ca/en/council-and-city-administration/ward-3.aspx"},
+            {"label": "Transit fares", "url": "https://www.burlington.ca/en/transit/fares.aspx"}
+          ]
+        },
+        {
+          "tone": "critical",
+          "quote": "He literally voted for budget tax increases every single year he held term until this year...",
+          "source": "Reddit · r/BurlingtonON",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1t0ys5c/ward_3_councillor_rory_nisan_enters_burlington/",
+          "status": "Needs verification",
+          "evidenceScore": 1,
+          "check": "This is a checkable claim, but we have not yet completed the required year-by-year roll-call audit of every budget vote. Until that audit is complete, the site should not present the claim as established fact.",
+          "evidence": []
+        }
+      ]
+    },
+    "Keith Demoe": {
+      "items": [],
+      "note": "Not enough substantive local discussion has been verified yet. Personal insults, jokes and unsupported allegations are excluded."
+    },
+    "Yugalkeesor Ramdhonee": {
+      "items": [],
+      "note": "Not enough substantive local discussion has been verified yet. The site will add discussion only when there is a meaningful point that can be checked or clearly labelled as opinion."
+    }
+  }
+}
