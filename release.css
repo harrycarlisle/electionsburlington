@@ -1,0 +1,35 @@
+/* Final cross-page release refinements. */
+.newest-list>a:last-child{border-bottom:0}
+.explore-mini-map{background:#edf3ed url('/assets/explore/burlington-orientation-map.svg?v=20260824z5') center/cover no-repeat!important}
+.explore-mini-map::before{display:none!important}
+.site-footer a,.footer-bottom,.mini-heading a,.newest-list small,.newest-list time,.latest-puzzles small,.pick-card p{font-size:max(10px,inherit)}
+@media(max-width:680px){
+  .masthead{grid-template-columns:auto minmax(122px,1fr) auto!important;grid-template-areas:"brand search menu"!important;gap:8px!important;padding:7px 0!important}
+  .header-search{height:34px!important}.header-search input{padding-left:11px!important;font-size:10px!important}.header-search>svg{width:16px!important;height:16px!important;margin-right:9px!important}
+}
+
+.explore-main .event-type{padding:3px 6px!important;font-size:8px!important}
+.explore-main .info-button{width:22px!important;height:22px!important}.explore-main .info-button svg{width:13px!important;height:13px!important}
+.explore-main .map-pin{width:22px!important;height:22px!important;border-width:2px!important;font-size:8px!important}
+.explore-main .passport-number{width:25px!important;height:25px!important;font-size:9px!important}
+.explore-main .passport-progress-copy span,.explore-main .map-help{font-size:10px!important}
+@media(max-width:680px){.explore-main .calendar-card{padding:14px!important}.explore-main .event-type{font-size:8px!important}.explore-main .month-day,.explore-main .day-button strong{font-size:10px!important}.explore-main .day-button span{font-size:9px!important}}
+.food-passport-callout{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:18px;padding:22px;border:1px solid var(--line);border-radius:14px}.food-passport-callout h2{margin:0;color:var(--navy);font:700 29px/1 var(--publication-serif)}.food-passport-callout p{max-width:620px;margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.5}.food-passport-callout a{text-decoration:none;white-space:nowrap}@media(max-width:680px){.food-passport-callout{align-items:flex-start;flex-direction:column;padding:17px}.food-passport-callout a{width:100%;text-align:center}}
+.landing-home #candidates>#matters{margin-top:22px!important;padding:0!important;border-top:0!important}.landing-home #candidates>#matters .matters{border-radius:10px!important;box-shadow:none!important}.landing-home #candidates>#matters .matters-head h2{font-size:30px!important}.landing-home #candidates>#matters .matters-head{align-items:center!important}.landing-home #candidates>#matters .select-wrap{min-width:230px!important}@media(max-width:680px){.landing-home #candidates>#matters .matters-head{align-items:stretch!important;flex-direction:column!important}.landing-home #candidates>#matters .select-wrap{min-width:0!important;width:100%!important}}
+
+/* Keep the horizontal passport rail only as tall as its content. */
+.passport-rail-wrap{align-self:start;overflow:hidden!important}
+.passport-rail{grid-auto-rows:max-content!important;align-items:start!important}
+.passport-card{height:auto!important;min-height:0!important;align-self:start!important}
+.bonus-card.is-locked{min-height:0!important}
+@media(max-width:680px){.passport-rail{grid-auto-columns:86%!important;grid-auto-rows:max-content!important}.passport-card{height:auto!important}}
+
+/* One compact utility surface, not another stack of story cards. */
+.local-now{margin:22px 0 28px;padding:12px 0 15px;border-block:1px solid var(--line)}
+.now-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:10px}.now-heading>span{color:var(--navy);font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.now-heading time{color:var(--muted);font-size:10px}
+.now-incident{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;padding:16px 18px;border-left:4px solid #9b5a22;background:var(--soft)}.now-incident.is-active{border-left-color:#b52929}.now-state{color:#9b2c2c;font-size:9px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}.now-incident h2{margin:5px 0 4px;color:var(--navy);font:700 25px/1.03 var(--publication-serif)}.now-incident p{margin:0;color:var(--muted);font-size:12px}.now-meta{display:grid;gap:3px;justify-items:end;color:var(--muted);font-size:10px}.now-meta small{font-size:9px}
+.now-empty{display:flex;align-items:baseline;gap:12px;margin-bottom:10px}.now-empty strong{color:var(--navy);font:700 17px/1.1 var(--publication-serif)}.now-empty span{color:var(--muted);font-size:11px}
+.now-services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}.now-service{display:grid;gap:3px;padding:10px 13px 2px;border-right:1px solid var(--line);color:var(--navy);text-decoration:none}.now-service:first-child{padding-left:0}.now-service:last-child{border-right:0}.now-service small{color:var(--muted);font-size:9px;font-weight:750}.now-service strong{display:flex;align-items:center;gap:5px;font-size:12px}.now-service [data-weather-temperature] svg{width:14px;height:14px}.now-service:hover strong{color:#0864c7}
+.recently-live{display:grid;grid-template-columns:auto repeat(2,minmax(0,1fr));gap:14px;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}.recently-live>span{font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.recently-live a{display:flex;justify-content:space-between;gap:10px;color:var(--navy);font-size:10px;text-decoration:none}.recently-live small{color:var(--muted)}
+@media(max-width:680px){.local-now{margin-top:10px}.now-heading{margin-bottom:8px}.now-empty{display:grid;gap:3px}.now-empty span{font-size:10px;line-height:1.35}.now-incident{grid-template-columns:1fr;gap:10px;padding:14px}.now-incident h2{font-size:21px}.now-meta{justify-items:start;grid-template-columns:auto auto;gap:6px 12px}.now-services{grid-template-columns:repeat(2,1fr)}.now-service{padding:9px 10px;border-bottom:1px solid var(--line)}.now-service:nth-child(2){border-right:0}.now-service:nth-child(3),.now-service:nth-child(4){border-bottom:0}.now-service:nth-child(3){padding-left:0}.recently-live{grid-template-columns:1fr}.recently-live a{padding-top:7px;border-top:1px solid var(--line)}}
+.community-pulse-home{display:grid;grid-template-columns:minmax(220px,.7fr) minmax(0,1.3fr);gap:36px;align-items:end;margin-top:34px;padding:22px 0;border-block:1px solid var(--line)}.community-pulse-home[hidden]{display:none}.community-pulse-home h2{margin:5px 0;color:var(--navy);font:700 27px/1 var(--publication-serif)}.community-pulse-home p{margin:0;color:var(--muted);font-size:11px}.community-pulse-home>a{display:grid;gap:5px;color:var(--navy);text-decoration:none}.community-pulse-home>a strong{font:700 20px/1.1 var(--publication-serif)}.community-pulse-home>a span{color:var(--muted);font-size:10px}@media(max-width:680px){.community-pulse-home{grid-template-columns:1fr;gap:13px;margin-top:24px}.community-pulse-home h2{font-size:23px}}

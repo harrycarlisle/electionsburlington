@@ -15,6 +15,15 @@ monitor.TRANSIT_TERMS = (
     'appleby',
     'burloak',
     'lakeshore west',
+    'qew',
+    'skyway',
+    'highway 403',
+    'highway 407',
+    'lift bridge',
+    'canal bridge',
+    'waterdown road',
+    'brant street',
+    'plains road',
 )
 monitor.USER_AGENT = 'BurlingtonNews/1.0 (+https://burlingtonnews.ca/)'
 

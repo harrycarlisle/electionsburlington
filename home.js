@@ -7,10 +7,18 @@
   const searchResults = document.getElementById('searchResults');
   const searchPopover = document.getElementById('searchPopover');
   const searchSuggestions = document.getElementById('searchSuggestions');
-  const searchClear = document.getElementById('searchClear');
   const latestList = document.getElementById('latestList');
   const cleanDash = value => String(value || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
   const esc = value => cleanDash(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+  const relativeDate = value => {
+    const date = new Date(value && /^\d{4}-\d{2}-\d{2}$/.test(value) ? `${value}T12:00:00-04:00` : value);
+    if (!Number.isFinite(date.getTime())) return 'Recently added';
+    const hours = Math.max(0, Math.floor((Date.now() - date.getTime()) / 3600000));
+    if (hours < 1) return 'Less than an hour ago';
+    if (hours < 24) return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
+    const days = Math.floor(hours / 24);
+    return days === 1 ? '1 day ago' : `${days} days ago`;
+  };
 
   const searchIndex = [
     {title:'Ontario nearly replaced the Skyway with three tunnels',url:'articles/skyway-bridge-story.html',section:'History',keywords:'skyway bridge canal qew tunnels'},
@@ -18,13 +26,14 @@
     {title:'The school dates Burlington families need',url:'articles/back-to-school-2026.html',section:'Schools',keywords:'school calendar hdsb September'},
     {title:'What Ontario students can actually be searched for',url:'articles/ontario-student-rights-school.html',section:'Schools',keywords:'teacher phone detention bag locker search student rights school'},
     {title:'730 Brant sat empty for more than a decade, then caught fire',url:'articles/730-brant-vacant-building.html',section:'Investigation',keywords:'abandoned vacant building fire Brant Street owner redevelopment'},
-    {title:'Explore Burlington',url:'explore.html',section:'Explore',keywords:'events bored passport calendar places free'},
+    {title:'Explore Burlington',url:'explore.html',section:'Explore',keywords:'this weekend bored passport calendar places free farmers market'},
+    {title:'Burlington food spots worth trying',url:'guides/burlington-food-spots.html',section:'Food',keywords:'best food tacos burger sandwich banh mi coffee restaurants'},
     {title:'Burlington 2026 Election Guide',url:'election-guide.html',section:'Elections',keywords:'vote mayor candidates ward ballot'},
     {title:'Burlington sports',url:'sports.html',section:'Sports',keywords:'soccer hockey lacrosse ultimate ringette'},
     {title:'Games about Burlington',url:'puzzles.html',section:'Games',keywords:'quiz puzzle trivia swipe'},
     {title:'Live Skyway traffic cameras',url:'skyway-traffic.html',section:'Traffic',keywords:'qew skyway traffic camera commute'}
   ];
-  const suggested = ['this weekend','things to do','election'];
+  const suggested = ['This Weekend','I’m bored','Best Food','Best Tacos'];
   const imageCredits = {
     'assets/editorial/burlington-wards-2026.svg': 'Burlington News diagram',
     'assets/home/ribs.webp': 'Thogru · CC BY-SA 3.0',
@@ -33,8 +42,12 @@
   };
 
   if (today) today.textContent = new Intl.DateTimeFormat('en-CA',{weekday:'long',month:'long',day:'numeric',year:'numeric'}).format(new Date());
+  document.querySelectorAll('.site-footer a').forEach(link => {
+    if (link.getAttribute('href') === 'independent.html') { link.href = 'about.html'; link.textContent = 'About Burlington News'; }
+    if (link.getAttribute('href') === 'methodology.html') link.textContent = 'Sources';
+  });
 
-  const rotatingPrompts = ['Search this weekend','Search the election','Search things to do','Search “I’m bored”','Search property taxes'];
+  const rotatingPrompts = ['Search This Weekend','Search “I’m bored”','Search Best Food','Search Best Tacos','Search the election'];
   if (searchInput && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     let promptIndex = 0;
     const rotatePrompt = () => {
@@ -73,7 +86,6 @@
     searchResults.innerHTML = matches.length ? matches.slice(0,7).map(item => `<a role="option" href="${esc(item.url)}"><span>${esc(item.section)}</span><strong>${esc(item.title)}</strong></a>`).join('') : '<p>No exact match. Try “Skyway,” “events” or “food.”</p>';
     searchPopover.hidden = false;
     searchInput.setAttribute('aria-expanded','true');
-    searchClear.hidden = !query;
   }
   if (searchSuggestions) searchSuggestions.innerHTML = suggested.map(term => `<button type="button" data-search="${esc(term)}">${esc(term)}</button>`).join('');
   searchSuggestions?.addEventListener('click', event => {
@@ -84,7 +96,6 @@
   });
   searchInput?.addEventListener('focus', () => renderSearch(searchInput.value));
   searchInput?.addEventListener('input', () => renderSearch(searchInput.value));
-  searchClear?.addEventListener('click', () => { searchInput.value=''; renderSearch(''); searchInput.focus(); });
   searchForm?.addEventListener('submit', event => {
     event.preventDefault();
     const first = searchResults?.querySelector('a');
@@ -118,8 +129,28 @@
         const external = /^https?:\/\//.test(item.url || '');
         const credit = imageCredits[item.image] || '';
         const visual = item.image ? `<span class="newest-thumb"><img src="${esc(item.image)}" alt="${esc(item.alt || '')}" loading="lazy">${credit && !/^Burlington News/i.test(credit) ? `<i>${esc(credit)}</i>` : ''}</span>` : '<span class="puzzle-icon blue">BN</span>';
-        return `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}>${visual}<span>${item.labelEssential && item.label ? `<small>${esc(item.label)}</small>` : ''}<strong>${esc(item.headline)}</strong><time>${index ? `${index * 2} hours ago` : 'Today'}</time></span></a>`;
+        return `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}>${visual}<span>${item.labelEssential && item.label ? `<small>${esc(item.label)}</small>` : ''}<strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
       }).join('');
+    }).catch(() => {});
+
+  const lead = document.querySelector('.top-story');
+  const leadImages = {
+    'Your ward': ['assets/editorial/burlington-wards-2026.svg', 'Diagram of Burlington municipal wards', 'Burlington News diagram'],
+    'Traffic': ['assets/home/skyway-reader.webp', 'The Burlington Bay Skyway across Burlington Bay', 'Photo provided to Burlington News']
+  };
+  fetch('data/daily-brief.json',{cache:'no-store'})
+    .then(response => response.ok ? response.json() : Promise.reject())
+    .then(data => {
+      if (!lead || !Array.isArray(data.items)) return;
+      const now = new Date();
+      const item = data.items.find(entry => {
+        const published = new Date(`${entry.date}T00:00:00-04:00`);
+        return entry.importance >= 4 && now - published < 48 * 60 * 60 * 1000 && ['primary','reported'].includes(entry.verificationTier);
+      });
+      if (!item) return;
+      const visual = leadImages[item.tag] || leadImages['Your ward'];
+      const external = /^https?:\/\//.test(item.url || '');
+      lead.innerHTML = `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${visual[0]}" width="1600" height="1000" alt="${esc(visual[1])}" fetchpriority="high"><span class="image-credit">${esc(visual[2])}</span></div><div class="top-copy"><span class="kicker">Recently verified</span><h1>${esc(item.headline)}</h1><p>${esc(item.summary)}</p></div></a>`;
     }).catch(() => {});
 
   document.querySelector('.weekly-newsletter form')?.addEventListener('submit', event => {

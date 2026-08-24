@@ -36,6 +36,9 @@ SOURCES = [
     {'name':'City of Burlington Election','url':'https://myvote.burlington.ca/','type':'official','scope':'election','images':True},
     {'name':'Halton Region','url':'https://www.halton.ca/news/media-releases','type':'official','scope':'region','images':True},
     {'name':'Metrolinx','url':'https://www.metrolinx.com/en/news/archive','type':'official','scope':'transit','images':True},
+    {'name':'Ontario 511','url':'https://511on.ca/','type':'official','scope':'transit','images':False},
+    {'name':'Hamilton Harbour Lift Bridge','url':'https://www.harbourwest.ca/public-notice/','type':'official','scope':'transit','images':False},
+    {'name':'CHCH Hamilton and Halton','url':'https://www.chch.com/chch-news/','type':'reporting','scope':'transit','images':True},
     {'name':'BurlingtonToday','url':'https://www.burlingtontoday.com/local-news','type':'reporting','scope':'city','images':True},
     {'name':'BurlingtonToday Election','url':'https://www.burlingtontoday.com/municipal-election','type':'reporting','scope':'election','images':True},
     {'name':'Focus Burlington','url':'https://www.focusburlington.ca/','type':'community','scope':'city','images':False},
@@ -54,10 +57,11 @@ TOPIC_KEYWORDS = (
     'water','wastewater','regional chair','public meeting','by-law','bylaw','motion','city hall',
     'community centre','park','development application','appeal','ontario land tribunal','train station',
     'festival','ribfest','event','food','restaurant','market','concert','fitness','pickleball','sport',
+    'collision','crash','closure','skyway','lift bridge','canal bridge','qew','highway 403','highway 407',
     'school','student','wildlife','bird','fish','trail','museum','library','waterfront','beach','recreation'
 )
 REGIONAL_TERMS = ('burlington','regional council','regional chair','halton budget','halton housing','water','wastewater','regional road','growth','infrastructure','police board')
-TRANSIT_TERMS = ('burlington','burlington station','appleby','burloak','lakeshore west','hamilton','confederation go','go station','go transit','presto','rail bridge')
+TRANSIT_TERMS = ('burlington','burlington station','appleby','burloak','lakeshore west','hamilton','confederation go','go station','go transit','presto','rail bridge','skyway','lift bridge','canal bridge','qew','highway 403','highway 407','oakville','milton','georgetown')
 USER_AGENT='BurlingtonNews/2.0 (+https://burlingtonnews.ca/)'
 
 
@@ -185,6 +189,7 @@ def tag_for(item):
     if 'ward' in s: return 'Your ward'
     if 'budget' in s or 'tax' in s: return 'Budget'
     if 'go ' in s or 'metrolinx' in s or 'transit' in s or 'station' in s: return 'Transit'
+    if 'traffic' in s or 'collision' in s or 'crash' in s or 'closure' in s or 'skyway' in s or 'lift bridge' in s: return 'Traffic'
     if 'housing' in s or 'development' in s or 'zoning' in s or 'official plan' in s or 'data centre' in s: return 'Growth'
     if 'candidate' in s or 'platform' in s: return 'Candidates'
     if 'regional' in s or item.get('scope')=='region': return 'Halton Region'

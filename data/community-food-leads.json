@@ -1,0 +1,19 @@
+{
+  "updated": "2026-08-24T21:35:00-04:00",
+  "source": "https://www.reddit.com/r/BurlingtonON/comments/1vxae2t/favourite_bites_in_burlington/",
+  "policy": "Community mentions are reporting leads, not rankings or verified reviews.",
+  "spots": [
+    {"name":"Corn Beef Hut","category":"Sandwiches","mentionedFor":"Banh mi and deli sandwiches","status":"official-source-checked","url":"https://banhmicornedbeef.com/menu/"},
+    {"name":"Son of a Peach","category":"Pizza","mentionedFor":"Hand-forged pizza","status":"official-source-checked","url":"https://www.heypeachy.com/"},
+    {"name":"D Hot Shoppe","category":"Caribbean","mentionedFor":"Roti and doubles","status":"official-source-checked","url":"https://www.dhotshoppe.ca/"},
+    {"name":"JC's Hot Bagels","category":"Breakfast","mentionedFor":"Hot bagels and breakfast sandwiches","status":"official-source-checked","url":"https://jcshotbagels.com/"},
+    {"name":"Bahn Thai","category":"Thai","mentionedFor":"Thai curries and noodles","status":"official-source-checked","url":"https://www.bahnthaigroup.com/"},
+    {"name":"Dunky's Beach Shack","category":"Burgers","mentionedFor":"Smash tacos","status":"needs-direct-check"},
+    {"name":"50 Pesos","category":"Tacos","mentionedFor":"Tacos and Mexican food","status":"needs-direct-check"},
+    {"name":"Goody's","category":"Sandwiches","mentionedFor":"Chicken-bacon sandwich","status":"needs-direct-check"},
+    {"name":"El Inka","category":"Peruvian","mentionedFor":"Peruvian food","status":"needs-direct-check"},
+    {"name":"Saving Thyme","category":"Bakery and brunch","mentionedFor":"Croissants and baked goods","status":"mixed-community-lead"},
+    {"name":"Tamp Coffee","category":"Coffee","mentionedFor":"Coffee","status":"needs-direct-check"},
+    {"name":"Bims Kusina","category":"Filipino and Mexican","mentionedFor":"Birria tacos","status":"needs-direct-check"}
+  ]
+}

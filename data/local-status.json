@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "mode": "production",
+  "generatedAt": "2026-08-24T20:40:30Z",
+  "state": "no_published_incident",
+  "headline": "No active Burlington News alert",
+  "summary": "A verified incident with a current Burlington impact will appear here when one is published.",
+  "incidents": [],
+  "recentlyLive": [],
+  "services": [
+    {
+      "id": "weather",
+      "label": "Weather",
+      "kind": "client_weather",
+      "sourceName": "Environment Canada and Open-Meteo"
+    },
+    {
+      "id": "skyway",
+      "label": "Skyway",
+      "value": "Live cameras",
+      "url": "skyway-traffic.html",
+      "sourceName": "Ontario 511"
+    },
+    {
+      "id": "go",
+      "label": "GO Transit",
+      "value": "Service updates",
+      "url": "https://www.gotransit.com/en/service-updates/service-updates",
+      "sourceName": "GO Transit"
+    },
+    {
+      "id": "events",
+      "label": "This week",
+      "value": "See events",
+      "url": "explore.html",
+      "sourceName": "Burlington News event watch"
+    }
+  ]
+}

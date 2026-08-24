@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "mode": "fixture",
+  "fixture": true,
+  "generatedAt": "2026-08-24T22:00:00Z",
+  "state": "active",
+  "incidents": [
+    {
+      "id": "demo-skyway-collision",
+      "status": "developing",
+      "headline": "Demo: collision near the Burlington Skyway",
+      "impact": "Demo delay estimate: 17 minutes above the fixture baseline",
+      "location": {"label": "QEW at Burlington Bay", "latitude": 43.3008, "longitude": -79.7972},
+      "affectedRoads": ["QEW", "North Shore Boulevard", "Plains Road"],
+      "detectedAt": "2026-08-24T21:42:00Z",
+      "lastUpdatedAt": "2026-08-24T21:54:00Z",
+      "verificationStatus": "fixture",
+      "confidence": null,
+      "sourceType": "fixture",
+      "sourceName": "Development fixture",
+      "sourceUrl": null
+    }
+  ],
+  "recentlyLive": []
+}

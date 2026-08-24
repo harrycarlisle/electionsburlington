@@ -47,7 +47,7 @@ def score(item: dict) -> int:
 
 
 def public_item(item: dict) -> dict:
-    keys = ("id", "kind", "headline", "deck", "label", "labelEssential", "url", "image", "alt", "credit", "mediaKey", "byline")
+    keys = ("id", "kind", "headline", "deck", "label", "labelEssential", "url", "image", "alt", "credit", "mediaKey", "byline", "published", "activeFrom")
     return {key: item[key] for key in keys if key in item}
 
 

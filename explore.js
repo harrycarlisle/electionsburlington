@@ -74,13 +74,14 @@
     qs('#weekStrip').innerHTML = days.map(date => {
       const key = dayKey(date);
       const hasEvent = events.some(event => dayKey(event.start) === key || (new Date(event.start) <= date && new Date(event.end) >= date));
-      return `<time class="day-button ${selectedDate === key ? 'is-selected' : ''} ${hasEvent ? 'has-event' : ''}" datetime="${key}"><span>${date.toLocaleDateString('en-CA',{weekday:'short'})}</span><strong>${date.toLocaleDateString('en-CA',{month:'short',day:'numeric'})}</strong></time>`;
+      return `<button class="day-button ${selectedDate === key ? 'is-selected' : ''} ${hasEvent ? 'has-event' : ''}" type="button" data-week-date="${key}" aria-label="Show events for ${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}"><span>${date.toLocaleDateString('en-CA',{weekday:'short'})}</span><strong>${date.toLocaleDateString('en-CA',{month:'short',day:'numeric'})}</strong></button>`;
     }).join('');
     qs('#weekStrip').setAttribute('aria-label',`Week of ${days[0].toLocaleDateString('en-CA',{month:'long',day:'numeric',year:'numeric'})}`);
   }
 
-  function paintMonth() {
+  function paintMonth(offset = calendarMode === 'next-month' ? 1 : 0) {
     const first = new Date();
+    first.setMonth(first.getMonth() + offset);
     first.setDate(1);
     first.setHours(12,0,0,0);
     const weekdayLabels = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(day => `<span class="month-weekday">${day}</span>`).join('');
@@ -104,16 +105,17 @@
     const today = atStartOfDay(new Date());
     const future = events.filter(event => new Date(event.end) >= today).sort((a,b) => new Date(a.start) - new Date(b.start));
     if (showAll) return future;
-    let start = today;
-    let end = atEndOfDay(today);
+    let start = calendarMode === 'today' ? atStartOfDay(new Date(`${selectedDate}T12:00:00`)) : today;
+    let end = atEndOfDay(start);
     if (calendarMode === 'week') {
       const days = weekDates(today);
       start = atStartOfDay(days[0]);
       end = atEndOfDay(days[6]);
     }
-    if (calendarMode === 'month') {
-      start = new Date(today.getFullYear(),today.getMonth(),1);
-      end = atEndOfDay(new Date(today.getFullYear(),today.getMonth() + 1,0));
+    if (calendarMode === 'month' || calendarMode === 'next-month') {
+      const offset = calendarMode === 'next-month' ? 1 : 0;
+      start = new Date(today.getFullYear(),today.getMonth() + offset,1);
+      end = atEndOfDay(new Date(today.getFullYear(),today.getMonth() + offset + 1,0));
     }
     const selected = future.filter(event => overlaps(event,start,end));
     return selected.slice(0, calendarMode === 'month' ? 6 : 3);
@@ -122,11 +124,12 @@
   function setCalendarMode(mode) {
     calendarMode = mode;
     showAll = false;
-    const isMonth = mode === 'month';
-    qs('#calendarTitle').textContent = mode === 'today' ? 'Today' : mode === 'month' ? 'This month' : 'This week';
+    const isMonth = mode === 'month' || mode === 'next-month';
+    qs('#calendarTitle').textContent = mode === 'today' ? 'Today' : mode === 'month' ? 'This month' : mode === 'next-month' ? 'Next month' : 'This week';
     qs('#weekStrip').hidden = isMonth;
     qs('#monthCalendar').hidden = !isMonth;
     qs('#calendarView').value = mode;
+    if (isMonth) paintMonth(mode === 'next-month' ? 1 : 0);
     paintEvents();
   }
 
@@ -202,6 +205,16 @@
     qs('#upcomingTab').addEventListener('click', () => setTab('upcoming'));
     qs('#myTab').addEventListener('click', () => setTab('my'));
     qs('#calendarView').addEventListener('change', event => setCalendarMode(event.target.value));
+    qs('#weekStrip').addEventListener('click', event => {
+      const button = event.target.closest('[data-week-date]');
+      if (!button) return;
+      selectedDate = button.dataset.weekDate;
+      calendarMode = 'today';
+      qs('#calendarView').value = 'today';
+      qs('#calendarTitle').textContent = new Date(`${selectedDate}T12:00:00`).toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'});
+      paintWeek();
+      paintEvents();
+    });
     qs('#monthCalendar').addEventListener('click', event => {
       const button = event.target.closest('[data-date]');
       if (!button) return;

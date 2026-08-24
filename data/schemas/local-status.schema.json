@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://burlingtonnews.ca/data/schemas/local-status.schema.json",
+  "title": "Burlington News local status",
+  "type": "object",
+  "required": ["version", "mode", "generatedAt", "state", "incidents", "recentlyLive"],
+  "properties": {
+    "version": {"type": "integer", "minimum": 1},
+    "mode": {"enum": ["production", "fixture"]},
+    "fixture": {"type": "boolean"},
+    "generatedAt": {"type": "string", "format": "date-time"},
+    "state": {"enum": ["active", "monitoring", "no_published_incident", "unavailable"]},
+    "headline": {"type": "string"},
+    "summary": {"type": "string"},
+    "incidents": {"type": "array", "items": {"$ref": "#/$defs/incident"}},
+    "recentlyLive": {"type": "array", "items": {"$ref": "#/$defs/incident"}},
+    "services": {"type": "array", "items": {"$ref": "#/$defs/service"}}
+  },
+  "$defs": {
+    "incident": {
+      "type": "object",
+      "required": ["id", "status", "headline", "detectedAt", "lastUpdatedAt", "verificationStatus", "sourceType", "sourceName"],
+      "properties": {
+        "id": {"type": "string"},
+        "status": {"enum": ["active", "developing", "monitoring", "cleared", "resolved"]},
+        "headline": {"type": "string"},
+        "impact": {"type": "string"},
+        "location": {
+          "type": "object",
+          "required": ["label"],
+          "properties": {
+            "label": {"type": "string"},
+            "latitude": {"type": "number"},
+            "longitude": {"type": "number"}
+          }
+        },
+        "primaryCity": {"type": "string"},
+        "distanceFromBurlingtonKm": {"type": "number", "minimum": 0},
+        "affectedCorridors": {"type": "array", "items": {"type": "string"}},
+        "affectedNeighbourhoods": {"type": "array", "items": {"type": "string"}},
+        "detectedAt": {"type": "string", "format": "date-time"},
+        "lastUpdatedAt": {"type": "string", "format": "date-time"},
+        "resolvedAt": {"type": "string", "format": "date-time"},
+        "verificationStatus": {"enum": ["verified", "reported", "unconfirmed", "disputed", "fixture"]},
+        "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "sourceType": {"enum": ["municipal", "police", "provincial", "transit", "weather", "community", "reporter", "external_reporting", "fixture"]},
+        "sourceName": {"type": "string"},
+        "sourceUrl": {"type": ["string", "null"], "format": "uri"}
+      }
+    },
+    "service": {
+      "type": "object",
+      "required": ["id", "label", "sourceName"],
+      "properties": {
+        "id": {"type": "string"},
+        "label": {"type": "string"},
+        "kind": {"type": "string"},
+        "value": {"type": "string"},
+        "url": {"type": "string"},
+        "sourceName": {"type": "string"}
+      }
+    }
+  }
+}

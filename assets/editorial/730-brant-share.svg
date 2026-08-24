@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">730 Brant Street</title>
+  <desc id="desc">Burlington News share graphic showing a ten-year gap between redevelopment approval and a fire.</desc>
+  <rect width="1200" height="630" fill="#eef3f7"/>
+  <rect x="0" y="0" width="22" height="630" fill="#0b335f"/>
+  <path d="M770 130h286v320H770z" fill="#dce6ed" stroke="#0b335f" stroke-width="8"/>
+  <path d="M810 190h82v72h-82zm124 0h82v72h-82zm-124 112h82v72h-82zm124 0h82v72h-82z" fill="#8fb3c9"/>
+  <path d="M746 450h338" stroke="#0b335f" stroke-width="12"/>
+  <text x="78" y="92" fill="#0874d1" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="4">UNFINISHED BURLINGTON</text>
+  <text x="78" y="260" fill="#0b335f" font-family="Georgia, serif" font-size="148" font-weight="700">730</text>
+  <text x="78" y="350" fill="#0b335f" font-family="Georgia, serif" font-size="76" font-weight="700">BRANT STREET</text>
+  <text x="82" y="430" fill="#425b70" font-family="Arial, sans-serif" font-size="31">2016 approval  •  2026 fire</text>
+  <text x="82" y="505" fill="#0b335f" font-family="Arial, sans-serif" font-size="38" font-weight="700">What happened in between?</text>
+  <text x="82" y="576" fill="#425b70" font-family="Arial, sans-serif" font-size="24">BURLINGTONNEWS.CA</text>
+</svg>

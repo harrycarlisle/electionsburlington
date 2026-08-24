@@ -91,6 +91,7 @@
   }
 
   function loadWeather() { loadTemperature(); loadAlerts(); }
+  window.BurlingtonWeather = { load: loadWeather };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadWeather);
   else loadWeather();
 })();

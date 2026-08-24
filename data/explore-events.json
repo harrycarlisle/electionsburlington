@@ -15,7 +15,10 @@
       "bring": ["A reusable bag", "A shopping list", "A way to keep cold items chilled"],
       "source": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
       "sourceName": "Burlington Lions Club",
-      "visualText": "MARKET",
+      "image": "assets/explore/farmers-market.webp",
+      "imageAlt": "Editorial illustration of Burlington Farmers Market in late summer",
+      "credit": "Burlington News illustration",
+      "illustration": true,
       "scope": "Burlington"
     },
     {
