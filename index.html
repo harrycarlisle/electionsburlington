@@ -7,6 +7,7 @@
   <meta name="description" content="What is happening around Burlington right now, why it matters and whether it affects you. Independent local news, events, traffic tools and explainers.">
   <link rel="canonical" href="https://burlingtonnews.ca/">
   <link rel="icon" href="logo-mark.png?v=20260824z4">
+  <script>try{const saved=localStorage.getItem('burlington-news-theme')||localStorage.getItem('burlington-election-theme');const mobile=matchMedia('(max-width:720px)').matches;document.documentElement.dataset.theme=saved==='light'||saved==='dark'?saved:(mobile&&matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(_){document.documentElement.dataset.theme='light'}</script>
   <link rel="preload" href="assets/editorial/burlington-wards-2026.svg" as="image" type="image/svg+xml" fetchpriority="high">
   <link rel="stylesheet" href="home.css?v=20260824z4">
   <link rel="stylesheet" href="release.css?v=20260824z6">
@@ -40,7 +41,7 @@
         <div class="search-popover" id="searchPopover" hidden><div class="search-suggestions" id="searchSuggestions"></div><div class="search-results" id="searchResults" role="listbox" aria-live="polite"></div></div>
       </form>
       <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu"><span></span><span></span><span></span></button>
-      <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation"><a class="active" href="updates.html">News</a><a href="election-guide.html">Elections</a><a href="explore.html">Explore</a><a href="sports.html">Sports</a><a href="puzzles.html">Games</a></nav>
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation"><a class="active" href="updates.html">News</a><a href="election-guide.html">Elections</a><a href="explore.html">Explore</a><a href="sports.html">Sports</a><a href="puzzles.html">Games</a><div class="home-theme-choice" role="group" aria-label="Colour theme"><button type="button" data-theme-choice="light" aria-pressed="false">Light mode</button><button type="button" data-theme-choice="dark" aria-pressed="false">Dark mode</button></div></nav>
     </div>
   </header>
 

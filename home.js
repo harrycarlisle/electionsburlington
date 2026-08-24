@@ -8,6 +8,8 @@
   const searchPopover = document.getElementById('searchPopover');
   const searchSuggestions = document.getElementById('searchSuggestions');
   const latestList = document.getElementById('latestList');
+  const root = document.documentElement;
+  const themeKey = 'burlington-news-theme';
   const cleanDash = value => String(value || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
   const esc = value => cleanDash(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
   const relativeDate = value => {
@@ -42,6 +44,14 @@
   };
 
   if (today) today.textContent = new Intl.DateTimeFormat('en-CA',{weekday:'long',month:'long',day:'numeric',year:'numeric'}).format(new Date());
+  const setTheme = (theme,persist=true) => {
+    const next = theme === 'dark' ? 'dark' : 'light';
+    root.dataset.theme = next;
+    root.style.colorScheme = next;
+    document.querySelectorAll('[data-theme-choice]').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.themeChoice === next)));
+    if (persist) try { localStorage.setItem(themeKey,next); } catch (_) {}
+  };
+  setTheme(root.dataset.theme || 'light',false);
   document.querySelectorAll('.site-footer a').forEach(link => {
     if (link.getAttribute('href') === 'independent.html') { link.href = 'about.html'; link.textContent = 'About Burlington News'; }
     if (link.getAttribute('href') === 'methodology.html') link.textContent = 'Sources';
@@ -64,6 +74,11 @@
     const open = nav.classList.toggle('is-open');
     menu.setAttribute('aria-expanded', String(open));
     menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  nav?.querySelector('.home-theme-choice')?.addEventListener('click', event => {
+    const button = event.target.closest('[data-theme-choice]');
+    if (!button) return;
+    setTheme(button.dataset.themeChoice);
   });
   nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
     nav.classList.remove('is-open');
