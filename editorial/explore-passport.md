@@ -1,11 +1,26 @@
-# Explore Burlington passport
+# Explore Burlington
 
-Explore is a local discovery tool, not a completion trap. It should give one specific idea at a time, show where the idea sits in Burlington, and remember progress without asking for an account.
+Explore combines three jobs without turning into a directory: a verified calendar, one specific idea for when a reader is bored, and a twelve-stop Burlington Passport. The page should answer "what can I do?" faster than a list of filters.
+
+## Calendar rules
+
+- Only publish an event after its date, time, place and primary source have been checked.
+- Expired events disappear from the upcoming list automatically.
+- Nearby Hamilton events are allowed when they are broadly useful, but must be labelled Nearby.
+- A monitoring result is a reporting lead, not a published listing.
+- Exact local places use real, rights-cleared photography. Generated visuals are allowed only for generic scenes and are labelled Burlington News illustration.
+- Event details open with practical information such as what to bring, access, weather rules and the official source.
+
+## My Burlington
+
+- Saved events, wanted stops and completed stops use localStorage.
+- No account, upload or database is required for this release.
+- The interface says clearly that data stays in the browser.
 
 ## Current experience
 
 - Twelve stops appear in the shuffle deck, the full list and an orientation map.
-- A single progress line fills as stops are marked explored.
+- A single progress line fills as stops are marked done.
 - The endpoint represents a visible but locked bonus stop.
 - Completing all twelve reveals the thirteenth-stop prompt and a Burlington Explorer badge.
 - Progress and the badge remain in the visitor's browser through `localStorage`.

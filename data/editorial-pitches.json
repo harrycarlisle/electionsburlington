@@ -100,6 +100,16 @@
       "status": "format-development",
       "reportingNeeded": ["Original poster or subject interview and explicit consent", "Independent verification of the central event", "Location and timeline check", "Public records where police, fire, transit or a court is involved", "Privacy and harm review", "Original or properly licensed visual evidence"],
       "publishGate": "A social post is a lead, not a script. Do not change material facts, invent scenes, hide a source's identity from the editor or publish allegations that cannot meet the normal evidence standard."
+    },
+    {
+      "slug": "nostalgia-games-cafe-occupancy",
+      "workingTitle": "A 40-person limit is threatening Nostalgia Games Cafe’s next move",
+      "hook": "The owners say a building that could hold far more people is capped at 40 because it has two washrooms. Their fundraiser for renovations stalled far short of its target.",
+      "status": "reporting",
+      "reportingNeeded": ["Interview owners George and Sophia Zeng", "Obtain the occupancy order or inspection record", "Ask the City which code requirements apply", "Confirm lease renewal dates and landlord responsibilities", "Confirm the fundraiser total and paused status at publication", "Seek comment from the landlord if the lease or renovations are discussed"],
+      "sourceLeads": ["https://www.gofundme.com/f/help-save-our-cafe-we-need-to-build-more-bathrooms"],
+      "researchNotes": "The fundraiser says the cafe opened in 2023, operates in more than 2,500 square feet and is limited to 40 occupants because it has two washrooms. It says five washrooms are needed to raise occupancy and quotes renovation costs of at least $50,000. On August 24, 2026, the page showed $2,395 raised from 36 donations and donations paused. These are organizer claims, not independent confirmation of the building code or lease consequences.",
+      "publishGate": "Do not say the cafe is closing unless the owners confirm a closure decision. Do not present the fundraiser’s description of code, occupancy or renovation costs as independently verified."
     }
   ]
 }

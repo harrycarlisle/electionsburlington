@@ -1,85 +1,252 @@
 (() => {
-  const cards = [
-    {id:'corned-beef-hut',tag:'Food',filters:['food'],icon:'01',x:49,y:62,title:'Try the sandwich Corned Beef Hut is known for.',copy:'Start with the corned beef sandwich that gives the place its name.',image:'assets/editorial/explore-collage.webp',position:'22% 52%',url:'guides/best-of-burlington.html#corned-beef-hut'},
-    {id:'freeman-station',tag:'History · Free',filters:['free','history'],icon:'02',x:43,y:58,title:'Find Burlington’s rescued railway station.',copy:'Volunteers moved and restored this surviving Grand Trunk station.',image:'assets/editorial/explore-collage.webp',position:'76% 46%',url:'https://freemanstation.ca/'},
-    {id:'lift-bridge',tag:'Engineering · Free',filters:['free','history','outdoors'],icon:'03',x:10,y:70,title:'Time your walk for a ship.',copy:'Walk to the canal when the lift bridge has to clear the channel.',image:'assets/home/skyway.webp',position:'63% 50%',url:'https://tc.canada.ca/en/ontario-region/burlington-canal-lift-bridge'},
-    {id:'bird-migration',tag:'Wildlife · Free',filters:['free','outdoors'],icon:'04',x:18,y:49,title:'Stand under a migration route.',copy:'Western Lake Ontario funnels seasonal bird migration overhead.',image:'assets/editorial/explore-collage.webp',position:'52% 18%',url:'https://www.rbg.ca/app/uploads/Long-Watch-Birds-2015-2024-Summary-Report.pdf?x51525='},
-    {id:'joseph-brant',tag:'History',filters:['history'],icon:'05',x:32,y:76,title:'Look for the house inside the museum.',copy:'The museum is built around a reconstruction of Joseph Brant’s homestead.',image:'assets/editorial/explore-collage.webp',position:'77% 24%',url:'https://museumsofburlington.ca/joseph-brant-museum/'},
-    {id:'mount-nemo',tag:'Outside',filters:['outdoors'],icon:'06',x:37,y:17,title:'Stand at the edge of an ancient sea.',copy:'The view is the payoff. The escarpment rock is the story.',image:'assets/editorial/explore-collage.webp',position:'22% 22%',url:'https://www.conservationhalton.ca/parks/mount-nemo/'},
-    {id:'public-art',tag:'Art · Free',filters:['free','history'],icon:'07',x:38,y:69,title:'Turn public art into a scavenger hunt.',copy:'Pick three pieces you’ve walked past without noticing.',image:'assets/editorial/explore-collage.webp',position:'50% 73%',url:'https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx'},
-    {id:'kerncliff',tag:'Outside · Free',filters:['free','outdoors'],icon:'08',x:30,y:35,title:'Walk through a quarry turned wetland.',copy:'Boardwalks now cross the old quarry landscape at Kerncliff Park.',image:'assets/editorial/explore-collage.webp',position:'20% 78%',url:'https://www.burlington.ca/en/parks-facilities-and-rentals/kerncliff-park.aspx'},
-    {id:'beachway',tag:'Outside · Free',filters:['free','outdoors'],icon:'09',x:16,y:75,title:'Walk the strip between lake and highway.',copy:'Beach, dunes, canal and Skyway fit into one unusual shoreline.',image:'assets/home/skyway.webp',position:'50% 64%',url:'https://www.burlington.ca/en/parks-facilities-and-rentals/beachway-park.aspx'},
-    {id:'fishway',tag:'Wildlife · Free',filters:['free','outdoors'],icon:'10',x:7,y:49,title:'Follow the fish story upstream.',copy:'See why carp, low oxygen and one narrow passage matter.',image:'assets/home/fishway.webp',position:'50% 52%',url:'articles/fishway-26000-fish.html'},
-    {id:'waterfront',tag:'Outside · Free',filters:['free','outdoors'],icon:'11',x:37,y:79,title:'Keep walking after the pier.',copy:'Follow the shoreline past Burlington’s obvious photo stop.',image:'assets/editorial/explore-collage.webp',position:'78% 78%',url:'https://www.burlington.ca/en/parks-facilities-and-rentals/spencer-smith-park.aspx'},
-    {id:'ireland-house',tag:'History',filters:['history'],icon:'12',x:55,y:43,title:'Enter Burlington before the suburbs.',copy:'Ireland House preserves a family home and farm landscape.',image:'assets/editorial/explore-collage.webp',position:'50% 48%',url:'https://museumsofburlington.ca/ireland-house-museum/'}
-  ];
+  const qs = selector => document.querySelector(selector);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
-  const card = document.getElementById('deckCard');
-  const list = document.getElementById('exploreList');
-  const count = document.getElementById('passportCount');
-  const progress = document.getElementById('passportProgress');
-  const cityMap = document.getElementById('cityMap');
-  const bonusStop = document.getElementById('bonusStop');
-  const passportNote = document.getElementById('passportNote');
-  const bonusCard = document.getElementById('bonusCard');
-  const bonusContent = document.getElementById('bonusContent');
-  const storageKey = 'burlington-news-passport';
-  let completed = new Set();
-  let filter = 'all';
-  let last = -1;
-  try { completed = new Set(JSON.parse(localStorage.getItem(storageKey) || '[]')); } catch (_) {}
-  const validIds = new Set(cards.map(item => item.id));
-  completed = new Set([...completed].filter(id => validIds.has(id)));
-  document.getElementById('deckFilters')?.insertAdjacentHTML('beforeend','<button class="deck-filter" aria-pressed="false" data-filter="food">Food</button>');
-  function paintProgress() {
-    count.textContent = `${completed.size} of ${cards.length} explored`;
-    progress.style.width = `${completed.size / cards.length * 100}%`;
-    const unlocked = completed.size === cards.length;
-    bonusStop.classList.toggle('unlocked', unlocked);
-    passportNote.textContent = unlocked ? 'Bonus 13 unlocked. Your Explorer badge is saved on this device.' : 'Finish all 12 to reveal the bonus.';
-    bonusCard.classList.toggle('unlocked', unlocked);
-    if (bonusContent) {
-      bonusContent.toggleAttribute('inert', !unlocked);
-      bonusContent.setAttribute('aria-hidden', String(!unlocked));
-    }
-    cityMap?.querySelectorAll('.map-pin').forEach(pin => pin.classList.toggle('done', completed.has(pin.dataset.id)));
-    try { localStorage.setItem(storageKey, JSON.stringify([...completed])); } catch (_) {}
+  const storage = {
+    done: 'burlington-news-passport',
+    want: 'burlington-news-passport-want',
+    events: 'burlington-news-explore-saved'
+  };
+  const readSet = key => {
+    try { return new Set(JSON.parse(localStorage.getItem(key) || '[]')); }
+    catch (_) { return new Set(); }
+  };
+  const writeSet = (key, set) => {
+    try { localStorage.setItem(key, JSON.stringify([...set])); }
+    catch (_) {}
+  };
+  const dayKey = value => {
+    const date = new Date(value);
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+  };
+  const imageMarkup = (item, className) => item.image
+    ? `<div class="${className}"><img src="${esc(item.image)}" alt="${esc(item.imageAlt || '')}" loading="lazy">${item.credit ? `<span class="image-credit">${esc(item.credit)}</span>` : ''}</div>`
+    : `<div class="${className}"><b>${esc(item.visualText || 'BURLINGTON')}</b></div>`;
+
+  let events = [];
+  let ideas = [];
+  let places = [];
+  let bonus = null;
+  let selectedDate = dayKey(new Date());
+  let showAll = false;
+  let ideaIndex = 0;
+  const done = readSet(storage.done);
+  const wanted = readSet(storage.want);
+  const savedEvents = readSet(storage.events);
+
+  const detailDialog = qs('#detailDialog');
+  const dialogContent = qs('#dialogContent');
+
+  function setTab(name) {
+    const upcoming = name === 'upcoming';
+    qs('#upcomingTab').classList.toggle('is-active', upcoming);
+    qs('#myTab').classList.toggle('is-active', !upcoming);
+    qs('#upcomingTab').setAttribute('aria-selected', String(upcoming));
+    qs('#myTab').setAttribute('aria-selected', String(!upcoming));
+    qs('#upcomingPanel').hidden = !upcoming;
+    qs('#myPanel').hidden = upcoming;
+    if (!upcoming) paintSavedEvents();
   }
-  function toggleDone(id) {
-    if (completed.has(id)) completed.delete(id); else completed.add(id);
-    paintProgress();
-    paint(last);
-  }
-  function paint(index) {
-    const item = cards[index];
-    const done = completed.has(item.id);
-    card.innerHTML = `<div class="deck-visual" aria-hidden="true"><img src="${esc(item.image)}" alt="" style="object-position:${esc(item.position)}"><span>${item.icon}</span></div><div class="deck-copy"><span class="deck-tag">${esc(item.tag)}</span><h2>${esc(item.title)}</h2><p>${esc(item.copy)}</p><div class="deck-actions"><a href="${esc(item.url)}">Reveal the place →</a><button class="done-button ${done ? 'done' : ''}" type="button">${done ? 'Explored ✓' : 'Mark explored'}</button></div></div>`;
-    card.querySelector('.done-button').addEventListener('click', () => toggleDone(item.id));
-    last = index;
-  }
-  function shuffle() {
-    const eligible = cards.map((item,index) => ({item,index})).filter(entry => filter === 'all' || entry.item.filters.includes(filter));
-    const unseen = eligible.filter(entry => entry.index !== last && !completed.has(entry.item.id));
-    const alternatives = unseen.length ? unseen : eligible.filter(entry => entry.index !== last);
-    const choices = alternatives.length ? alternatives : eligible;
-    paint(choices[Math.floor(Math.random() * choices.length)].index);
-  }
-  document.querySelectorAll('.deck-filter').forEach(button => button.addEventListener('click', () => {
-    filter = button.dataset.filter;
-    document.querySelectorAll('.deck-filter').forEach(item => item.setAttribute('aria-pressed', item === button ? 'true' : 'false'));
-    shuffle();
-  }));
-  document.getElementById('shuffleButton')?.addEventListener('click', shuffle);
-  list.innerHTML = cards.map(item => `<article class="explore-row"><div class="explore-row-icon" aria-hidden="true"><img src="${esc(item.image)}" alt="" style="object-position:${esc(item.position)}"><b>${item.icon}</b></div><div><small>${esc(item.tag)}</small><strong>${esc(item.title)}</strong></div><a href="${esc(item.url)}">Details →</a></article>`).join('');
-  if (cityMap) {
-    cityMap.insertAdjacentHTML('beforeend', cards.map((item, index) => `<button class="map-pin" type="button" style="left:${item.x}%;top:${item.y}%" data-id="${esc(item.id)}" data-index="${index}" aria-label="Show ${esc(item.title)}">${item.icon}</button>`).join(''));
-    cityMap.addEventListener('click', event => {
-      const pin = event.target.closest('.map-pin');
-      if (!pin) return;
-      paint(Number(pin.dataset.index));
-      document.querySelector('.deck-wrap')?.scrollIntoView({behavior:'smooth', block:'center'});
+
+  function weekDates(anchor = new Date()) {
+    const start = new Date(anchor);
+    start.setHours(12,0,0,0);
+    const mondayOffset = (start.getDay() + 6) % 7;
+    start.setDate(start.getDate() - mondayOffset);
+    return Array.from({length:7}, (_, index) => {
+      const date = new Date(start);
+      date.setDate(start.getDate() + index);
+      return date;
     });
   }
-  paintProgress();
-  shuffle();
+
+  function paintWeek() {
+    const days = weekDates();
+    qs('#weekStrip').innerHTML = days.map(date => {
+      const key = dayKey(date);
+      const hasEvent = events.some(event => dayKey(event.start) === key || (new Date(event.start) <= date && new Date(event.end) >= date));
+      return `<button class="day-button ${selectedDate === key ? 'is-selected' : ''} ${hasEvent ? 'has-event' : ''}" type="button" data-date="${key}"><span>${date.toLocaleDateString('en-CA',{weekday:'short'})}</span><strong>${date.toLocaleDateString('en-CA',{month:'short',day:'numeric'})}</strong></button>`;
+    }).join('');
+  }
+
+  function paintMonth() {
+    const first = new Date();
+    first.setDate(1);
+    first.setHours(12,0,0,0);
+    const monthMarkup = offset => {
+      const start = new Date(first.getFullYear(), first.getMonth() + offset, 1, 12);
+      const cells = [];
+      const gridStart = new Date(start);
+      gridStart.setDate(start.getDate() - ((start.getDay() + 6) % 7));
+      for (let index = 0; index < 42; index += 1) {
+        const date = new Date(gridStart);
+        date.setDate(gridStart.getDate() + index);
+        const key = dayKey(date);
+        const hasEvent = events.some(event => dayKey(event.start) === key);
+        cells.push(`<button class="month-day ${hasEvent ? 'has-event' : ''} ${date.getMonth() !== start.getMonth() ? 'is-outside' : ''}" type="button" data-date="${key}" aria-label="${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}${hasEvent ? ', has events' : ''}">${date.getDate()}</button>`);
+      }
+      return `<h3 class="month-label">${start.toLocaleDateString('en-CA',{month:'long',year:'numeric'})}</h3>${cells.join('')}`;
+    };
+    qs('#monthCalendar').innerHTML = `${monthMarkup(0)}${monthMarkup(1)}`;
+  }
+
+  function visibleEvents() {
+    const now = new Date();
+    const future = events.filter(event => new Date(event.end) >= now).sort((a,b) => new Date(a.start) - new Date(b.start));
+    if (showAll) return future;
+    const selected = future.filter(event => dayKey(event.start) === selectedDate || (dayKey(event.start) < selectedDate && dayKey(event.end) >= selectedDate));
+    return selected.length ? selected.slice(0,3) : future.slice(0,3);
+  }
+
+  function eventCard(event) {
+    const placeholder = event.image ? '' : ' is-placeholder';
+    const nearby = event.scope !== 'Burlington' ? ' nearby' : '';
+    return `<article class="event-card${placeholder}"><button class="event-open" type="button" data-event="${esc(event.id)}" aria-label="Open ${esc(event.title)}">${imageMarkup(event,'event-visual').replace('<div class="event-visual">',`<div class="event-visual"><span class="event-type${nearby}">${esc(event.category)}</span>`) }<div class="event-copy"><span class="event-meta">${esc(event.dateLabel)}</span><h3>${esc(event.title)}</h3><p class="event-place">⌖ ${esc(event.location)}</p></div></button></article>`;
+  }
+
+  function paintEvents() {
+    const list = visibleEvents();
+    qs('#eventGrid').innerHTML = list.map(eventCard).join('');
+    qs('#eventEmpty').hidden = list.length > 0;
+    qs('#showAllEvents').textContent = showAll ? 'Show the next three' : 'Show all upcoming events';
+  }
+
+  function openEvent(id) {
+    const event = events.find(item => item.id === id);
+    if (!event) return;
+    const saved = savedEvents.has(id);
+    dialogContent.innerHTML = `${imageMarkup(event,'dialog-visual')}<div class="dialog-body"><span class="eyebrow">${esc(event.category)}${event.scope !== 'Burlington' ? ` · ${esc(event.scope)}` : ''}</span><h2>${esc(event.title)}</h2><div class="dialog-meta">${esc(event.dateLabel)} · ${esc(event.location)}</div><p>${esc(event.details)}</p>${event.bring?.length ? `<div class="bring-list"><strong>What to bring</strong><ul>${event.bring.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="dialog-actions"><a href="${esc(event.source)}" target="_blank" rel="noopener">Check official details</a><button type="button" id="dialogSave" data-id="${esc(id)}">${saved ? 'Saved ✓' : 'Save event'}</button></div><p class="publication-credit">Source: ${esc(event.sourceName)}. Event details were checked August 24, 2026.</p></div>`;
+    if (typeof detailDialog.showModal === 'function') detailDialog.showModal();
+    else detailDialog.setAttribute('open','');
+    qs('#dialogSave')?.addEventListener('click', () => {
+      if (savedEvents.has(id)) savedEvents.delete(id); else savedEvents.add(id);
+      writeSet(storage.events, savedEvents);
+      qs('#dialogSave').textContent = savedEvents.has(id) ? 'Saved ✓' : 'Save event';
+    });
+  }
+
+  function paintIdea() {
+    if (!ideas.length) return;
+    const idea = ideas[ideaIndex % ideas.length];
+    qs('#boredIdea').innerHTML = `${imageMarkup(idea,'bored-visual')}<div class="bored-copy"><strong>${esc(idea.title)}</strong><p>${esc(idea.copy)}</p></div>`;
+    qs('#boredIdea').onclick = () => window.open(idea.url,'_blank','noopener');
+  }
+
+  function paintSavedEvents() {
+    const list = events.filter(event => savedEvents.has(event.id));
+    qs('#savedEvents').innerHTML = list.length ? list.map(event => `<div class="saved-event"><time>${esc(event.dateLabel.split('·')[0])}</time><strong>${esc(event.title)}</strong><button type="button" data-remove-event="${esc(event.id)}" aria-label="Remove ${esc(event.title)}">×</button></div>`).join('') : '<p class="empty-note">Save an event and it will appear here.</p>';
+  }
+
+  function paintPassport() {
+    done.forEach(id => { if (!places.some(place => place.id === id)) done.delete(id); });
+    wanted.forEach(id => { if (!places.some(place => place.id === id)) wanted.delete(id); });
+    writeSet(storage.done, done);
+    writeSet(storage.want, wanted);
+    qs('#passportCount').textContent = `${done.size} of ${places.length} done`;
+    qs('#passportProgress').style.width = `${places.length ? done.size / places.length * 100 : 0}%`;
+    qs('#passportMap').querySelectorAll('.map-pin').forEach(pin => pin.remove());
+    qs('#passportMap').insertAdjacentHTML('beforeend', places.map(place => `<button class="map-pin ${done.has(place.id) ? 'is-done' : ''}" type="button" style="left:${place.x}%;top:${place.y}%" data-place="${esc(place.id)}" aria-label="Show ${esc(place.title)}">${place.number}</button>`).join(''));
+    const cards = places.map(place => passportCard(place)).join('');
+    const unlocked = done.size === places.length;
+    qs('#passportRail').innerHTML = `${cards}${passportCard(bonus, true, unlocked)}`;
+  }
+
+  function passportCard(place, isBonus = false, unlocked = false) {
+    const isDone = done.has(place.id);
+    const isWanted = wanted.has(place.id);
+    const placeholder = place.image ? '' : ' is-placeholder';
+    return `<article class="passport-card${isBonus ? ` bonus-card${unlocked ? ' is-unlocked' : ''}` : ''}${placeholder}" data-card-place="${esc(place.id)}">${isBonus && !unlocked ? '<span class="bonus-lock">Bonus · locked</span>' : ''}${imageMarkup(place,'passport-visual').replace('<div class="passport-visual">',`<div class="passport-visual"><span class="passport-number">${isBonus ? '★' : place.number}</span>`) }<div class="passport-copy"><h3>${esc(place.title)}</h3><p>${esc(place.copy)}</p><div class="passport-actions"><button class="save-button ${isWanted ? 'is-saved' : ''}" type="button" data-want="${esc(place.id)}" ${isBonus && !unlocked ? 'disabled' : ''}>${isWanted ? 'Want to go ✓' : 'Want to go'}</button><button class="done-button ${isDone ? 'is-done' : ''}" type="button" data-done="${esc(place.id)}" ${isBonus ? 'disabled' : ''}>${isDone ? 'Done ✓' : 'Done'}</button></div></div></article>`;
+  }
+
+  function scrollToPlace(id) {
+    const card = qs(`[data-card-place="${CSS.escape(id)}"]`);
+    card?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});
+    qs('#passportMap').querySelectorAll('.map-pin').forEach(pin => pin.classList.toggle('is-active', pin.dataset.place === id));
+  }
+
+  function installEvents() {
+    qs('#upcomingTab').addEventListener('click', () => setTab('upcoming'));
+    qs('#myTab').addEventListener('click', () => setTab('my'));
+    qs('#weekStrip').addEventListener('click', event => {
+      const button = event.target.closest('[data-date]');
+      if (!button) return;
+      selectedDate = button.dataset.date;
+      showAll = false;
+      paintWeek();
+      paintEvents();
+    });
+    qs('#monthToggle').addEventListener('click', () => {
+      const calendar = qs('#monthCalendar');
+      calendar.hidden = !calendar.hidden;
+      qs('#monthToggle').setAttribute('aria-expanded', String(!calendar.hidden));
+    });
+    qs('#monthCalendar').addEventListener('click', event => {
+      const button = event.target.closest('[data-date]');
+      if (!button) return;
+      selectedDate = button.dataset.date;
+      showAll = false;
+      paintEvents();
+    });
+    qs('#eventGrid').addEventListener('click', event => {
+      const button = event.target.closest('[data-event]');
+      if (button) openEvent(button.dataset.event);
+    });
+    qs('#showAllEvents').addEventListener('click', () => { showAll = !showAll; paintEvents(); });
+    qs('#pickAnother').addEventListener('click', () => { ideaIndex = (ideaIndex + 1) % ideas.length; paintIdea(); });
+    qs('#savedEvents').addEventListener('click', event => {
+      const button = event.target.closest('[data-remove-event]');
+      if (!button) return;
+      savedEvents.delete(button.dataset.removeEvent);
+      writeSet(storage.events, savedEvents);
+      paintSavedEvents();
+    });
+    qs('#passportRail').addEventListener('click', event => {
+      const wantButton = event.target.closest('[data-want]');
+      const doneButton = event.target.closest('[data-done]');
+      if (wantButton) {
+        const id = wantButton.dataset.want;
+        if (wanted.has(id)) wanted.delete(id); else wanted.add(id);
+        paintPassport();
+      }
+      if (doneButton) {
+        const id = doneButton.dataset.done;
+        if (done.has(id)) done.delete(id); else done.add(id);
+        paintPassport();
+      }
+    });
+    qs('#passportMap').addEventListener('click', event => {
+      const pin = event.target.closest('[data-place]');
+      if (pin) scrollToPlace(pin.dataset.place);
+    });
+    qs('#passportNext').addEventListener('click', () => qs('#passportRail').scrollBy({left:260,behavior:'smooth'}));
+    qs('#passportInfo').addEventListener('click', () => qs('#passportDialog').showModal());
+    qs('#passportDialogClose').addEventListener('click', () => qs('#passportDialog').close());
+    qs('#dialogClose').addEventListener('click', () => detailDialog.close());
+    [detailDialog,qs('#passportDialog')].forEach(dialog => dialog.addEventListener('click', event => {
+      if (event.target === dialog) dialog.close();
+    }));
+  }
+
+  async function init() {
+    try {
+      const [eventResponse, placeResponse] = await Promise.all([fetch('/data/explore-events.json'),fetch('/data/explore-places.json')]);
+      if (!eventResponse.ok || !placeResponse.ok) throw new Error('Explore data unavailable');
+      const eventData = await eventResponse.json();
+      const placeData = await placeResponse.json();
+      events = eventData.events || [];
+      ideas = eventData.boredIdeas || [];
+      places = placeData.places || [];
+      bonus = placeData.bonus;
+      paintWeek();
+      paintMonth();
+      paintEvents();
+      paintIdea();
+      paintPassport();
+      installEvents();
+    } catch (error) {
+      qs('#eventGrid').innerHTML = '<p class="empty-note">The events calendar could not load. Try again shortly.</p>';
+      console.error(error);
+    }
+  }
+
+  init();
 })();
