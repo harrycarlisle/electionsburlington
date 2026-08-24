@@ -9,6 +9,8 @@ on:
       - 'data/councillor-profiles.json'
       - 'data/community-discussion.json'
       - 'scripts/update_candidate_assets.py'
+      - 'scripts/update_civic_watch.py'
+      - 'scripts/update_civic_watch_local.py'
       - '.github/workflows/daily-civic-watch.yml'
 
 permissions:
@@ -23,7 +25,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Check Burlington civic sources
-        run: python scripts/update_civic_watch.py
+        run: python scripts/update_civic_watch_local.py
       - name: Verify candidate photos
         run: python scripts/update_candidate_assets.py
       - name: Commit verified updates
