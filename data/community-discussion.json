@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T20:45:00-04:00",
+  "updated": "2026-08-23T21:32:00-04:00",
   "method": "Public comments are included only when they raise a substantive point about a candidate, record, policy or public role. The comment is not treated as evidence by itself. We separately check the factual core against primary records or reputable reporting. Evidence scores measure how well the factual part of the comment can be supported, not whether the commenter is right to like or dislike a candidate.",
   "candidates": {
     "Lisa Kearns": {
@@ -11,9 +11,9 @@
           "url": "https://www.reddit.com/r/BurlingtonON/comments/1s2lfa7/ward_2_councillor_lisa_kearns_is_first_candidate/",
           "status": "Partly supported",
           "evidenceScore": 2,
-          "check": "The 'only' part is opinion. Public records do show Kearns sponsoring or moving motions that challenged council process, including the 2024 strong-mayor-powers dispute, and she has publicly questioned spending and process in committee.",
+          "check": "The word 'only' is opinion. Public records do show Kearns sponsoring or moving motions that challenged council process, including the 2024 strong-mayor-powers dispute, and she has publicly questioned spending and process in committee. That supports the narrower claim that she has taken a visible dissenting or scrutiny role, not that no other councillor does so.",
           "evidence": [
-            {"label": "Council minutes", "url": "https://events.burlington.ca/meetings/Detail/2024-04-16-0930-Regular-Meeting-of-Council/705dd290-e1ba-45af-8444-b15601490848"},
+            {"label": "Council minutes", "url": "https://burlingtonpublishing.escribemeetings.com/Meeting.aspx?Agenda=PostMinutes&Id=7cf6ee5f-b2fc-459f-8760-1758a8067890&lang=English"},
             {"label": "Campaign priorities", "url": "https://lisakearns.ca/"}
           ]
         },
@@ -22,15 +22,25 @@
           "quote": "Left out that she is also on the board at the AGB. Oversight or trying to distance herself from what is going on there?",
           "source": "Reddit · r/BurlingtonON",
           "url": "https://www.reddit.com/r/BurlingtonON/comments/1s2lfa7/ward_2_councillor_lisa_kearns_is_first_candidate/",
-          "status": "Core fact verified; motive unverified",
+          "status": "Board and funding facts verified; motive unsupported",
           "evidenceScore": 2,
-          "check": "Kearns' AGB board role is real and public. The AGB lists her as the City of Burlington representative, and her current campaign biography lists the role from 2022 to present. City records also show her moving motions related to AGB facility-study funding and presentation. We found no evidence that she tried to hide the role; the omission being discussed was in one news article, not in her own current disclosures.",
+          "check": "Why critics care: the City is a major AGB funder and the AGB board includes a designated City Council representative; the AGB lists Kearns in that seat. City records also show her moving or revisiting motions connected to AGB facility-study funding and its later facility-plan presentation. In 2025 the AGB presented a redevelopment vision estimated above $116 million. That makes governance and spending oversight a fair question. But the evidence does not establish that Kearns hid the board role, acted improperly, or caused Council to approve a $116-million project. The board role is public, and the $116-million plan was a proposal presented to Council, not a $116-million City funding approval.",
           "evidence": [
             {"label": "AGB board", "url": "https://agb.life/board-of-directors/"},
             {"label": "Kearns biography", "url": "https://lisakearns.ca/about-me/"},
-            {"label": "2024 AGB motion", "url": "https://burlingtonpublishing.escribemeetings.com/filestream.ashx?DocumentId=82059"},
-            {"label": "2025 AGB motion", "url": "https://burlingtonpublishing.escribemeetings.com/filestream.ashx?DocumentId=88353"}
+            {"label": "2025 Council record", "url": "https://burlingtonpublishing.escribemeetings.com/Meeting.aspx?Agenda=PostMinutes&Id=2723f14c-9739-4596-881e-7297d928ecc9&lang=English"},
+            {"label": "$116M proposal coverage", "url": "https://www.burlingtontoday.com/local-news/agb-proposes-major-expansion-with-116m-three-storey-facility-10783180"}
           ]
+        },
+        {
+          "tone": "positive",
+          "quote": "I have enjoyed Kearns as my councillor for 8 years and think she has the drive, energy and passion to be a good Mayor.",
+          "source": "Reddit · r/BurlingtonON",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1u3y5qx/bullying_and_bickering_one_mayoral_candidate/",
+          "status": "Personal experience, not a factual rating",
+          "evidenceScore": 0,
+          "check": "This is a resident's personal assessment and cannot be independently proven. We include it only as an example of positive local experience, not as evidence that Kearns would be an effective mayor. The same comment also claims conflict with the mayor slowed Ward 2 progress; we have not found evidence that can establish that causal claim, so it is not repeated as fact here.",
+          "evidence": []
         }
       ]
     },
@@ -58,6 +68,20 @@
           "check": "Burlington property taxes have increased during Meed Ward's term, but the final bill also includes Halton Region and education and budgets are amended and voted on by council. The claim about having 'no plans' is not established; the City's 2026 budget process explicitly described affordability and finding savings as priorities.",
           "evidence": [
             {"label": "2026 budget process", "url": "https://www.burlington.ca/en/news/city-launches-2026-budget-process-with-a-focus-on-limiting-tax-impacts.aspx"}
+          ]
+        },
+        {
+          "tone": "critical",
+          "quote": "So it looks like Mayor Meed-Ward is going to hang on to her 'strong mayor' powers re: a new city manager.",
+          "source": "Reddit · r/BurlingtonON",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1bmx0ka/absolute_power_corrupts_absolutely/",
+          "status": "Core governance claim supported; motive speculation excluded",
+          "evidenceScore": 3,
+          "check": "Council unanimously asked for delegation of delegable strong-mayor powers in March 2024. Meed Ward later delegated organizational-structure and staffing powers to the City Manager and committee powers to Council, but did not delegate the power to appoint the City Manager. She said the recruitment itself had involved Council. The Reddit comment goes on to speculate about personal motives and a preferred appointee; we found no evidence for that speculation and do not treat it as fact.",
+          "evidence": [
+            {"label": "March 2024 Council record", "url": "https://burlingtonpublishing.escribemeetings.com/Meeting.aspx?Agenda=PostMinutes&Id=0caeb4cd-3459-4a06-97d2-cc5062a3bf44&lang=English"},
+            {"label": "Mayor delegation letter", "url": "https://mariannemeedward.ca/wp-content/uploads/2024/04/Mayor-Letter-to-Burlington-Council_Request-to-Delegate-Strong-Mayor-Powers_April-10-2024.pdf"},
+            {"label": "BurlingtonToday explanation", "url": "https://www.burlingtontoday.com/local-news/mayor-meed-ward-explains-decisions-on-delegating-strong-mayor-powers-8591940"}
           ]
         }
       ]
@@ -87,6 +111,24 @@
           "evidenceScore": 1,
           "check": "This is a checkable claim, but we have not yet completed the required year-by-year roll-call audit of every budget vote. Until that audit is complete, the site should not present the claim as established fact.",
           "evidence": []
+        }
+      ]
+    },
+    "Paul Sharman": {
+      "items": [
+        {
+          "tone": "critical",
+          "quote": "We had the New St. bike pilot ... which got quickly and thoroughly [cancelled] within his same tenure.",
+          "source": "Reddit · r/BurlingtonON",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/xpqf4u/2022_municipal_election/",
+          "status": "His opposition is verified; personal responsibility for cancellation is not",
+          "evidenceScore": 3,
+          "check": "This appears to be the transportation story people sometimes associate with Sharman. In 2016, Burlington Council approved the New Street road-diet/bike-lane pilot 6-1 and Sharman was the lone vote against it. City Council later approved a staff recommendation in December 2017 to return the pilot section to four vehicle lanes. The City's later Cycling Plan says the pilot had limited impact on car travel times but did not significantly increase cycling and lacked treatments at bus stops and intersections. It is fair to say Sharman opposed the pilot from the start. It would overstate the record to say he personally 'shut it down'; the later removal was a Council decision following the pilot and staff review.",
+          "evidence": [
+            {"label": "2016 pilot vote coverage", "url": "https://burlingtongazette.ca/mayors-point-of-view-on-the-new-street-road-diet/"},
+            {"label": "City Cycling Plan", "url": "https://www.burlington.ca/en/council-and-city-administration/resources/Integrated-Mobility-Plan/Burlington-Cycling-Plan-Final.pdf"},
+            {"label": "2017 reversion summary", "url": "https://burlingtongazette.ca/2018/04/page/6/"}
+          ]
         }
       ]
     },
