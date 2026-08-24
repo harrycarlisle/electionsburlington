@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23T21:32:00-04:00",
+  "updated": "2026-08-23T21:45:00-04:00",
   "method": "Public comments are included only when they raise a substantive point about a candidate, record, policy or public role. The comment is not treated as evidence by itself. We separately check the factual core against primary records or reputable reporting. Evidence scores measure how well the factual part of the comment can be supported, not whether the commenter is right to like or dislike a candidate.",
   "candidates": {
     "Lisa Kearns": {
@@ -24,10 +24,11 @@
           "url": "https://www.reddit.com/r/BurlingtonON/comments/1s2lfa7/ward_2_councillor_lisa_kearns_is_first_candidate/",
           "status": "Board and funding facts verified; motive unsupported",
           "evidenceScore": 2,
-          "check": "Why critics care: the City is a major AGB funder and the AGB board includes a designated City Council representative; the AGB lists Kearns in that seat. City records also show her moving or revisiting motions connected to AGB facility-study funding and its later facility-plan presentation. In 2025 the AGB presented a redevelopment vision estimated above $116 million. That makes governance and spending oversight a fair question. But the evidence does not establish that Kearns hid the board role, acted improperly, or caused Council to approve a $116-million project. The board role is public, and the $116-million plan was a proposal presented to Council, not a $116-million City funding approval.",
+          "check": "Why critics care: the AGB says the City is its primary funder and its board deliberately reserves one seat for a Burlington councillor; Kearns holds that public City-representative seat. In 2023 Kearns moved a motion directing staff to review funding options for the AGB's request for $100,000 toward a facility master-plan and feasibility study, with conditions including matching outside funding. In 2024, after the federal matching-grant application was declined, she brought the funding decision back for reconsideration. In 2025 she moved to allow discussion of the AGB's completed facility-plan presentation; the AGB then presented a redevelopment vision estimated at more than $116 million. The legitimate question is governance and spending oversight when a City representative on a funded organization's board is also participating in Council decisions involving that organization. The evidence does not establish wrongdoing, a hidden role, or a $116-million City approval. The council seat on the board is public and intentional, the $100,000 was study funding, and the $116-million figure was a future redevelopment proposal presented to Council.",
           "evidence": [
             {"label": "AGB board", "url": "https://agb.life/board-of-directors/"},
-            {"label": "Kearns biography", "url": "https://lisakearns.ca/about-me/"},
+            {"label": "2023 $100K study motion", "url": "https://burlingtonpublishing.escribemeetings.com/filestream.ashx?DocumentId=71946"},
+            {"label": "2024 reconsideration motion", "url": "https://burlingtonpublishing.escribemeetings.com/filestream.ashx?DocumentId=80777"},
             {"label": "2025 Council record", "url": "https://burlingtonpublishing.escribemeetings.com/Meeting.aspx?Agenda=PostMinutes&Id=2723f14c-9739-4596-881e-7297d928ecc9&lang=English"},
             {"label": "$116M proposal coverage", "url": "https://www.burlingtontoday.com/local-news/agb-proposes-major-expansion-with-116m-three-storey-facility-10783180"}
           ]
@@ -111,6 +112,24 @@
           "evidenceScore": 1,
           "check": "This is a checkable claim, but we have not yet completed the required year-by-year roll-call audit of every budget vote. Until that audit is complete, the site should not present the claim as established fact.",
           "evidence": []
+        }
+      ]
+    },
+    "Masha Brar": {
+      "items": [
+        {
+          "tone": "position",
+          "quote": "I want pedestrian and cyclist safety. I also want better transit system ... But by focusing solely on active transportation, we are missing out on majority of the people in Burlington — car users.",
+          "source": "Candidate comment · Reddit r/BurlingtonON",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1vvrr5j/hi_rburlingtonon_im_mashaward_2_resident_lawyer/",
+          "status": "Direct candidate statement",
+          "evidenceScore": 3,
+          "check": "Brar posted this herself while answering a question about Prospect Street and Burlington's Integrated Mobility Plan. She criticized aspects of the Prospect project and the balance between active transportation, transit and car travel, while explicitly saying she supports pedestrian and cyclist safety and better transit. She is a 2026 Ward 2 candidate, not a sitting councillor, so claims that she previously voted to cancel or 'shut down' a Burlington transportation project would not fit her current public-office record.",
+          "evidence": [
+            {"label": "Candidate thread", "url": "https://www.reddit.com/r/BurlingtonON/comments/1vvrr5j/hi_rburlingtonon_im_mashaward_2_resident_lawyer/"},
+            {"label": "Campaign website", "url": "https://www.mashaforburlington.ca/"},
+            {"label": "Official candidate list", "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"}
+          ]
         }
       ]
     },
