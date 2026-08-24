@@ -51,13 +51,6 @@
       "verifiedAt": "2026-08-24",
       "match": "high"
     },
-    "Roman Soler": {
-      "url": "https://voteroman.ca/assets/family-photo.jpg",
-      "source": "Candidate website",
-      "sourceUrl": "https://voteroman.ca/",
-      "verifiedAt": "2026-08-24",
-      "match": "high"
-    },
     "Chris Carter": {
       "url": "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/7c86b457-53f1-4502-9888-26f70cc25ba3",
       "source": "Candidate website",
@@ -132,6 +125,13 @@
       "url": "https://timobrien.ca/unnamed.png",
       "source": "Candidate website",
       "sourceUrl": "https://timobrien.ca/",
+      "verifiedAt": "2026-08-24",
+      "match": "high"
+    },
+    "Roman Soler": {
+      "url": "https://voteroman.ca/assets/instagram-campaign-3.jpg",
+      "source": "Candidate website",
+      "sourceUrl": "https://voteroman.ca/",
       "verifiedAt": "2026-08-24",
       "match": "high"
     }
@@ -278,5 +278,5 @@
     "frenchCatholic": "French Catholic (Conseil scolaire catholique MonAvenir)"
   },
   "note": "Candidate names and candidate-supplied websites are based on the City of Burlington official candidate list. Candidate images are only displayed when the identity match is verified. Trustee eligibility depends on school-board support and elector eligibility. Confirm your final ballot with the City.",
-  "candidateImagesLastChecked": "2026-08-24T00:56:58Z"
+  "candidateImagesLastChecked": "2026-08-24T01:03:03Z"
 }
