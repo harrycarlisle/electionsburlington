@@ -5,6 +5,9 @@
 /* The menu is always anchored to the right edge of the header on desktop. */
 @media(min-width:761px){.menu-panel{right:max(18px,calc((100vw - 1180px)/2 + 22px))!important;left:auto!important}.header-controls{position:relative!important}}
 
+/* The checked local-comment section replaces the old generic Reddit shortcut. */
+#profilePanel .source-links a[href*="reddit.com"]{display:none!important}
+
 /* Keep form controls legible in both themes. */
 select,input,textarea,button{font-family:inherit}html[data-theme="dark"] select,html[data-theme="dark"] input,html[data-theme="dark"] textarea{background:#132632!important;color:#eef6fb!important;border-color:#48677c!important}
 
