@@ -1,41 +1,45 @@
 #!/usr/bin/env python3
-"""Build Burlington GO utility data from the official Metrolinx GO API.
+"""Build Burlington GO utility data from official Metrolinx sources.
 
-Requires GO_API_KEY. Schedule/Journey supplies Burlington↔Union itineraries and
-Stop/NextService supplies current predictions/status. Output distinguishes scheduled
-and computed times so Burlington News never labels schedule-only data as live.
+With GO_API_KEY, use the documented GO API for schedule + predictions.
+Without a key, fall back to Metrolinx's public GO GTFS schedule feed and keep the
+UI explicitly labelled Scheduled. This keeps Burlington -> Union and Burlington ->
+West Harbour useful before API registration is complete.
 """
 from __future__ import annotations
 
+import csv
 import datetime as dt
+import io
 import json
 import os
 import pathlib
 import urllib.parse
 import urllib.request
+import zipfile
 from zoneinfo import ZoneInfo
 
 BASE = "https://api.openmetrolinx.com/OpenDataAPI/api/V1"
+GTFS_URL = "https://assets.metrolinx.com/raw/upload/Documents/Metrolinx/Open%20Data/GO-GTFS.zip"
 OUT = pathlib.Path("data/go-status.json")
 TZ = ZoneInfo("America/Toronto")
 BURLINGTON = "BU"
 UNION = "UN"
+WEST_HARBOUR = "WR"
 LINE = "LW"
+TARGETS = (("Union", UNION), ("West Harbour", WEST_HARBOUR))
+
+
+def request(url: str) -> bytes:
+    req = urllib.request.Request(url, headers={"User-Agent": "BurlingtonNews/1.1 (+https://burlingtonnews.ca)"})
+    with urllib.request.urlopen(req, timeout=35) as response:
+        return response.read()
 
 
 def get_json(path: str, key: str) -> dict:
     sep = "&" if "?" in path else "?"
     url = f"{BASE}/{path}{sep}{urllib.parse.urlencode({'key': key})}"
-    req = urllib.request.Request(url, headers={"User-Agent": "BurlingtonNews/1.0 (+https://burlingtonnews.ca)"})
-    with urllib.request.urlopen(req, timeout=25) as response:
-        return json.load(response)
-
-
-def choose_direction(now: dt.datetime) -> tuple[str, str, str, str]:
-    # Commute-oriented default. The data model supports either direction without UI changes.
-    if now.hour < 14:
-        return "Burlington", "Union", BURLINGTON, UNION
-    return "Union", "Burlington", UNION, BURLINGTON
+    return json.loads(request(url))
 
 
 def first_trip_number(service: dict) -> str:
@@ -60,7 +64,6 @@ def normalize_journeys(payload: dict) -> list[dict]:
             services = services.get("Service") or []
         if isinstance(services, dict):
             services = [services]
-        # Prefer the rail leg if a journey ever includes a transfer.
         service = next((s for s in services if str(s.get("Code") or "").upper() == LINE), services[0] if services else {})
         start = service.get("StartTime") or journey.get("Time")
         if not start:
@@ -84,25 +87,22 @@ def next_service_rows(payload: dict) -> list[dict]:
     return [row for row in rows if str(row.get("LineCode") or "").upper() == LINE]
 
 
-def attach_predictions(journeys: list[dict], next_service: dict) -> tuple[list[dict], bool]:
-    rows = next_service_rows(next_service)
+def attach_predictions(journeys: list[dict], rows: list[dict]) -> bool:
     by_trip = {str(row.get("TripNumber") or ""): row for row in rows if row.get("TripNumber")}
-    any_prediction = False
+    predicted = False
     for journey in journeys:
         row = by_trip.get(str(journey.get("tripNumber") or ""))
         if not row:
             continue
-        computed = row.get("ComputedDepartureTime")
-        scheduled = row.get("ScheduledDepartureTime")
-        if scheduled:
-            journey["departure"] = scheduled
-        if computed:
-            journey["computedDeparture"] = computed
-            any_prediction = True
+        if row.get("ScheduledDepartureTime"):
+            journey["departure"] = row["ScheduledDepartureTime"]
+        if row.get("ComputedDepartureTime"):
+            journey["computedDeparture"] = row["ComputedDepartureTime"]
+            predicted = True
         journey["departureStatus"] = row.get("DepartureStatus") or row.get("Status") or ""
         journey["platform"] = row.get("ActualPlatform") or row.get("ScheduledPlatform") or ""
         journey["predictionUpdatedAt"] = row.get("UpdateTime") or ""
-    return journeys, any_prediction
+    return predicted
 
 
 def relevant_alerts(payload: dict) -> list[dict]:
@@ -123,47 +123,177 @@ def relevant_alerts(payload: dict) -> list[dict]:
     return keep[:2]
 
 
-def main() -> int:
-    key = os.environ.get("GO_API_KEY", "").strip()
-    if not key:
-        print("GO_API_KEY is not configured; leaving existing GO status untouched.")
-        return 0
-
-    now = dt.datetime.now(TZ)
-    origin_label, destination_label, from_code, to_code = choose_direction(now)
+def build_api(key: str, now: dt.datetime) -> dict:
     date = now.strftime("%Y%m%d")
     start = now.strftime("%H%M")
-
-    schedule = get_json(f"Schedule/Journey/{date}/{from_code}/{to_code}/{start}/3", key)
-    journeys = normalize_journeys(schedule)
-    predicted = False
     try:
-        journeys, predicted = attach_predictions(journeys, get_json(f"Stop/NextService/{from_code}", key))
+        rows = next_service_rows(get_json(f"Stop/NextService/{BURLINGTON}", key))
     except Exception as exc:
-        print(f"GO predictions unavailable; using schedule only: {type(exc).__name__}: {exc}")
-
+        print(f"GO predictions unavailable: {type(exc).__name__}: {exc}")
+        rows = []
+    predicted = False
+    routes = []
+    for label, code in TARGETS:
+        journeys = normalize_journeys(get_json(f"Schedule/Journey/{date}/{BURLINGTON}/{code}/{start}/3", key))
+        predicted = attach_predictions(journeys, rows) or predicted
+        routes.append({
+            "origin": {"label": "Burlington", "stopCode": BURLINGTON},
+            "destination": {"label": label, "stopCode": code},
+            "journeys": journeys,
+        })
     try:
         alerts = relevant_alerts(get_json("ServiceUpdate/ServiceAlert/All", key))
     except Exception as exc:
         print(f"GO alerts unavailable: {type(exc).__name__}: {exc}")
         alerts = []
-
-    payload = {
+    return {
         "generatedAt": now.isoformat(),
         "source": "Metrolinx GO API",
         "sourceUrl": "https://api.openmetrolinx.com/OpenDataAPI/Help",
         "dataKind": "realtime" if predicted else "scheduled",
         "route": "Lakeshore West",
         "lineCode": LINE,
-        "origin": {"label": origin_label, "stopCode": from_code},
-        "destination": {"label": destination_label, "stopCode": to_code},
-        "journeys": journeys,
+        "routes": routes,
         "alerts": alerts,
         "liveStatusUrl": "https://www.gotransit.com/en/see-schedules",
     }
+
+
+def read_csv(zf: zipfile.ZipFile, name: str) -> list[dict]:
+    with zf.open(name) as handle:
+        return list(csv.DictReader(io.TextIOWrapper(handle, encoding="utf-8-sig")))
+
+
+def active_services(calendar: list[dict], exceptions: list[dict], today: dt.date) -> set[str]:
+    day = today.strftime("%A").lower()
+    ymd = today.strftime("%Y%m%d")
+    active = {
+        row["service_id"] for row in calendar
+        if row.get(day) == "1" and row.get("start_date", "99999999") <= ymd <= row.get("end_date", "00000000")
+    }
+    for row in exceptions:
+        if row.get("date") != ymd:
+            continue
+        if row.get("exception_type") == "1":
+            active.add(row["service_id"])
+        elif row.get("exception_type") == "2":
+            active.discard(row["service_id"])
+    return active
+
+
+def seconds(value: str) -> int:
+    try:
+        h, m, s = (int(part) for part in value.split(":"))
+        return h * 3600 + m * 60 + s
+    except Exception:
+        return -1
+
+
+def pretty_duration(start: str, end: str) -> str:
+    diff = seconds(end) - seconds(start)
+    if diff < 0:
+        return ""
+    minutes = diff // 60
+    return f"{minutes} min"
+
+
+def build_gtfs(now: dt.datetime) -> dict:
+    data = request(GTFS_URL)
+    with zipfile.ZipFile(io.BytesIO(data)) as zf:
+        stops = read_csv(zf, "stops.txt")
+        routes = read_csv(zf, "routes.txt")
+        trips = read_csv(zf, "trips.txt")
+        stop_times = read_csv(zf, "stop_times.txt")
+        calendar = read_csv(zf, "calendar.txt") if "calendar.txt" in zf.namelist() else []
+        exceptions = read_csv(zf, "calendar_dates.txt") if "calendar_dates.txt" in zf.namelist() else []
+
+    stop_ids: dict[str, str] = {}
+    for row in stops:
+        name = str(row.get("stop_name") or "").lower()
+        code = str(row.get("stop_code") or "").upper()
+        if code == BURLINGTON or "burlington go" in name:
+            stop_ids["Burlington"] = row["stop_id"]
+        if code == UNION or "union station" in name:
+            stop_ids["Union"] = row["stop_id"]
+        if code == WEST_HARBOUR or "west harbour go" in name:
+            stop_ids["West Harbour"] = row["stop_id"]
+    if not all(name in stop_ids for name in ("Burlington", "Union", "West Harbour")):
+        raise RuntimeError(f"Could not resolve required GTFS stops: {stop_ids}")
+
+    active = active_services(calendar, exceptions, now.date()) if calendar or exceptions else {row["service_id"] for row in trips}
+    lw_route_ids = {
+        row["route_id"] for row in routes
+        if str(row.get("route_short_name") or "").upper() == LINE or "lakeshore west" in str(row.get("route_long_name") or "").lower()
+    }
+    eligible_trips = {row["trip_id"]: row for row in trips if row.get("service_id") in active and row.get("route_id") in lw_route_ids}
+    grouped: dict[str, list[dict]] = {}
+    for row in stop_times:
+        trip_id = row.get("trip_id")
+        if trip_id in eligible_trips:
+            grouped.setdefault(trip_id, []).append(row)
+
+    now_sec = now.hour * 3600 + now.minute * 60 + now.second
+    route_payloads = []
+    for label, code in TARGETS:
+        destination_id = stop_ids[label]
+        candidates = []
+        for trip_id, rows in grouped.items():
+            rows.sort(key=lambda item: int(item.get("stop_sequence") or 0))
+            origin = next((r for r in rows if r.get("stop_id") == stop_ids["Burlington"]), None)
+            destination = next((r for r in rows if r.get("stop_id") == destination_id), None)
+            if not origin or not destination:
+                continue
+            if int(destination.get("stop_sequence") or 0) <= int(origin.get("stop_sequence") or 0):
+                continue
+            departure = origin.get("departure_time") or origin.get("arrival_time") or ""
+            arrival = destination.get("arrival_time") or destination.get("departure_time") or ""
+            if seconds(departure) < now_sec:
+                continue
+            trip = eligible_trips[trip_id]
+            candidates.append({
+                "departure": departure,
+                "arrival": arrival,
+                "duration": pretty_duration(departure, arrival),
+                "line": LINE,
+                "type": "Train",
+                "tripNumber": trip.get("trip_short_name") or trip_id,
+                "scheduled": True,
+            })
+        candidates.sort(key=lambda item: seconds(item["departure"]))
+        route_payloads.append({
+            "origin": {"label": "Burlington", "stopCode": BURLINGTON},
+            "destination": {"label": label, "stopCode": code},
+            "journeys": candidates[:3],
+        })
+
+    return {
+        "generatedAt": now.isoformat(),
+        "source": "Metrolinx GO Transit GTFS",
+        "sourceUrl": "https://www.gotransit.com/en/partner-with-us/software-developers",
+        "dataKind": "scheduled",
+        "route": "Lakeshore West",
+        "lineCode": LINE,
+        "routes": route_payloads,
+        "alerts": [],
+        "liveStatusUrl": "https://www.gotransit.com/en/see-schedules",
+        "attribution": "Data used in this product or service is provided with the permission of Metrolinx. Metrolinx makes no representations or warranties of any kind, express or implied, with respect to the Data and assumes no responsibility for the accuracy or currency of the data used in this product or service.",
+    }
+
+
+def main() -> int:
+    now = dt.datetime.now(TZ)
+    key = os.environ.get("GO_API_KEY", "").strip()
+    try:
+        payload = build_api(key, now) if key else build_gtfs(now)
+    except Exception as exc:
+        if key:
+            print(f"GO API failed; trying public GTFS schedule: {type(exc).__name__}: {exc}")
+            payload = build_gtfs(now)
+        else:
+            raise
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Updated GO status: {origin_label} -> {destination_label} ({from_code} -> {to_code}); {payload['dataKind']}")
+    print(f"Updated GO status from {payload['source']} ({payload['dataKind']})")
     return 0
 
 
