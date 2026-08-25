@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-08-25T22:38:49Z",
+  "generatedAt": "2026-08-25T23:33:38Z",
   "items": [
+    {
+      "id": "511:293256",
+      "detectedAt": "2026-08-25T23:33:38Z",
+      "score": 90,
+      "headline": "Collision on QEW Fort Erie bound HOV at TRAFALGAR ROAD, Oakville. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:293255",
+      "detectedAt": "2026-08-25T23:33:38Z",
+      "score": 75,
+      "headline": "Collision on QEW Fort Erie bound  at TRAFALGAR ROAD, Oakville. Left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:293205",
       "detectedAt": "2026-08-25T21:38:12Z",
