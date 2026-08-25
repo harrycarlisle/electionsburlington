@@ -1,0 +1,70 @@
+{
+  "updated": "2026-08-25",
+  "places": [
+    {
+      "id": "corn-beef-hut",
+      "displayTitle": "Corn Beef Hut",
+      "placeName": "Corn Beef Hut",
+      "category": "Sandwiches",
+      "copy": "Start with a freshly baked banh mi or the corned-beef sandwich.",
+      "address": "Corn Beef Hut, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3259,
+      "longitude": -79.7968,
+      "googleMapsQuery": "Corn Beef Hut Burlington Ontario",
+      "menuUrl": "https://banhmicornedbeef.com/menu/"
+    },
+    {
+      "id": "son-of-a-peach",
+      "displayTitle": "Son of a Peach",
+      "placeName": "Son of a Peach",
+      "category": "Pizza",
+      "copy": "Try one of the downtown pizzeria’s house-made pies.",
+      "address": "Son of a Peach, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3254,
+      "longitude": -79.7955,
+      "googleMapsQuery": "Son of a Peach Burlington Ontario",
+      "menuUrl": "https://www.heypeachy.com/"
+    },
+    {
+      "id": "d-hot-shoppe",
+      "displayTitle": "D Hot Shoppe",
+      "placeName": "D Hot Shoppe",
+      "category": "Caribbean",
+      "copy": "Start with roti or doubles and choose the heat level.",
+      "address": "D Hot Shoppe, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3538,
+      "longitude": -79.7874,
+      "googleMapsQuery": "D Hot Shoppe Burlington Ontario",
+      "menuUrl": "https://www.dhotshoppe.ca/"
+    },
+    {
+      "id": "jcs-hot-bagels",
+      "displayTitle": "JC's Hot Bagels",
+      "placeName": "JC's Hot Bagels",
+      "category": "Breakfast",
+      "copy": "A Burlington bagel shop baking locally since 1995.",
+      "address": "JC's Hot Bagels, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3522,
+      "longitude": -79.7921,
+      "googleMapsQuery": "JC's Hot Bagels Burlington Ontario",
+      "menuUrl": "https://jcshotbagels.com/"
+    },
+    {
+      "id": "bahn-thai",
+      "displayTitle": "Bahn Thai",
+      "placeName": "Bahn Thai",
+      "category": "Thai",
+      "copy": "A Fairview Street menu built around curries, noodles and rice.",
+      "address": "Bahn Thai, Fairview Street, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3530,
+      "longitude": -79.8025,
+      "googleMapsQuery": "Bahn Thai Fairview Street Burlington Ontario",
+      "menuUrl": "https://www.bahnthaigroup.com/"
+    }
+  ]
+}

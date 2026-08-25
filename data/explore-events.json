@@ -12,14 +12,24 @@
       "location": "Burlington Centre, 777 Guelph Line",
       "summary": "Shop local produce, prepared food and handmade goods at the Lions Club market.",
       "details": "The Burlington Lions Club lists the market on Wednesdays, Fridays and Saturdays through October. This card uses the event-specific hours published for August 26.",
-      "bring": ["A reusable bag", "A shopping list", "A way to keep cold items chilled"],
+      "bring": [
+        "A reusable bag",
+        "A shopping list",
+        "A way to keep cold items chilled"
+      ],
       "source": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
       "sourceName": "Burlington Lions Club",
       "image": "assets/explore/farmers-market.webp",
       "imageAlt": "Editorial illustration of Burlington Farmers Market in late summer",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "scope": "Burlington"
+      "scope": "Burlington",
+      "placeName": "Burlington Lions Farmers Market",
+      "address": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3516,
+      "longitude": -79.7938,
+      "googleMapsQuery": "Burlington Lions Farmers Market 777 Guelph Line"
     },
     {
       "id": "partial-lunar-eclipse-2026",
@@ -31,14 +41,24 @@
       "location": "Visible across Burlington with a clear view of the sky",
       "summary": "The partial eclipse begins at 10:33 p.m. and reaches maximum at 12:12 a.m.",
       "details": "The penumbral phase starts at 9:23 p.m. The partial phase starts at 10:33 p.m., reaches maximum at 12:12 a.m. and ends at 1:51 a.m. No eye protection is required for a lunar eclipse.",
-      "bring": ["A warm layer", "Binoculars if you have them", "A low-brightness flashlight"],
+      "bring": [
+        "A warm layer",
+        "Binoculars if you have them",
+        "A low-brightness flashlight"
+      ],
       "source": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828",
       "sourceName": "Timeanddate.com; checked against NASA",
       "image": "assets/explore/lunar-eclipse.webp",
       "imageAlt": "Illustration of a partial lunar eclipse above Lake Ontario",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "scope": "Burlington"
+      "scope": "Burlington",
+      "placeName": "Spencer Smith Park",
+      "address": "Spencer Smith Park, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3238,
+      "longitude": -79.7996,
+      "googleMapsQuery": "Spencer Smith Park Burlington Ontario"
     },
     {
       "id": "ribfest-2026",
@@ -50,13 +70,23 @@
       "location": "Spencer Smith Park",
       "summary": "Four days of rib teams, music and fundraising on Burlington’s waterfront.",
       "details": "The festival runs 11 a.m. to 11 p.m. Friday through Sunday and 11 a.m. to 7 p.m. Monday. Food and drinks cost extra after admission.",
-      "bring": ["A payment card or cash", "Water", "A plan for transit or parking"],
+      "bring": [
+        "A payment card or cash",
+        "Water",
+        "A plan for transit or parking"
+      ],
       "source": "https://canadaslargestribfest.com/",
       "sourceName": "Canada’s Largest Ribfest",
       "image": "assets/home/ribs.webp",
       "imageAlt": "Ribs cooking over a barbecue pit",
       "credit": "Thogru via Wikimedia Commons · CC BY-SA 3.0",
-      "scope": "Burlington"
+      "scope": "Burlington",
+      "placeName": "Spencer Smith Park",
+      "address": "Spencer Smith Park, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3238,
+      "longitude": -79.7996,
+      "googleMapsQuery": "Spencer Smith Park Burlington Ontario"
     },
     {
       "id": "supercrawl-2026",
@@ -68,11 +98,21 @@
       "location": "James Street North, Hamilton",
       "summary": "A free weekend of music, art and street programming about 20 minutes from Burlington.",
       "details": "This is a nearby Hamilton pick, not a Burlington event. Check the official schedule before leaving because set times and road closures can change.",
-      "bring": ["Comfortable shoes", "A transit or parking plan", "A charged phone"],
+      "bring": [
+        "Comfortable shoes",
+        "A transit or parking plan",
+        "A charged phone"
+      ],
       "source": "https://supercrawl.ca/2026/",
       "sourceName": "Supercrawl",
       "visualText": "NEARBY",
-      "scope": "Hamilton"
+      "scope": "Hamilton",
+      "placeName": "James Street North",
+      "address": "James Street North, Hamilton, Ontario",
+      "city": "Hamilton",
+      "latitude": 43.2621,
+      "longitude": -79.8665,
+      "googleMapsQuery": "James Street North Hamilton Ontario"
     },
     {
       "id": "patrick-watson-rbg-2026",
@@ -84,13 +124,23 @@
       "location": "Hendrie Park, Royal Botanical Gardens",
       "summary": "An outdoor fall concert in the garden. General admission doors open at 5:30 p.m.",
       "details": "General admission seating is on the turf and chairs are not supplied. The event is outdoors and may be postponed, rescheduled or cancelled for weather.",
-      "bring": ["A lawn chair", "A blanket or cushion", "A warm layer"],
+      "bring": [
+        "A lawn chair",
+        "A blanket or cushion",
+        "A warm layer"
+      ],
       "source": "https://secure.rbg.ca/10191",
       "sourceName": "Royal Botanical Gardens",
       "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rock%20Gardens.JPG?width=1280",
       "imageAlt": "Rock Garden at Royal Botanical Gardens",
       "credit": "Nhl4hamilton via Wikimedia Commons · public domain",
-      "scope": "Burlington"
+      "scope": "Burlington",
+      "placeName": "Hendrie Park, Royal Botanical Gardens",
+      "address": "Hendrie Park, Royal Botanical Gardens, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.2899,
+      "longitude": -79.8761,
+      "googleMapsQuery": "Hendrie Park Royal Botanical Gardens Burlington"
     },
     {
       "id": "green-up-tree-planting-2026",
@@ -102,14 +152,24 @@
       "location": "Longmoor Park",
       "summary": "BurlingtonGreen and City forestry staff are planning a community planting morning.",
       "details": "The organizers plan to plant more than 500 native trees. Space is limited and registration was not yet open when this listing was checked.",
-      "bring": ["Closed-toe shoes", "Work gloves", "Water and weather-ready clothing"],
+      "bring": [
+        "Closed-toe shoes",
+        "Work gloves",
+        "Water and weather-ready clothing"
+      ],
       "source": "https://www.burlingtongreen.org/events/green-up-community-tree-planting-event/",
       "sourceName": "BurlingtonGreen",
       "image": "assets/explore/community-cleanup.webp",
       "imageAlt": "Illustration of neighbours volunteering on a Burlington park path",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "scope": "Burlington"
+      "scope": "Burlington",
+      "placeName": "Longmoor Park",
+      "address": "Longmoor Park, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3539,
+      "longitude": -79.7702,
+      "googleMapsQuery": "Longmoor Park Burlington Ontario"
     }
   ],
   "boredIdeas": [
@@ -120,7 +180,14 @@
       "image": "assets/explore/brant-street-pier.webp",
       "imageAlt": "Burlington News visual of Brant Street Pier at sunset",
       "illustration": true,
-      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/brant-street-pier.aspx"
+      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/brant-street-pier.aspx",
+      "placeName": "Brant Street Pier",
+      "address": "Brant Street Pier, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3221,
+      "longitude": -79.7977,
+      "googleMapsQuery": "Brant Street Pier Burlington Ontario",
+      "category": "waterfront"
     },
     {
       "id": "eclipse-tonight",
@@ -128,7 +195,14 @@
       "copy": "Use tonight to find a clear view. The partial phase begins Thursday at 10:33 p.m.",
       "image": "assets/explore/lunar-eclipse.webp",
       "imageAlt": "Illustration of a partial lunar eclipse",
-      "url": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828"
+      "url": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828",
+      "placeName": "Spencer Smith Park",
+      "address": "Spencer Smith Park, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3238,
+      "longitude": -79.7996,
+      "googleMapsQuery": "Spencer Smith Park Burlington Ontario",
+      "category": "night-sky"
     },
     {
       "id": "cassiopeia-north-burlington",
@@ -137,7 +211,14 @@
       "image": "assets/explore/night-sky-mount-nemo.webp",
       "imageAlt": "Burlington News illustration of a starry sky above the escarpment",
       "illustration": true,
-      "url": "https://stellarium-web.org/"
+      "url": "https://stellarium-web.org/",
+      "placeName": "Mount Nemo Conservation Area",
+      "address": "Mount Nemo Conservation Area, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.4306,
+      "longitude": -79.8768,
+      "googleMapsQuery": "Mount Nemo Conservation Area Burlington Ontario",
+      "category": "night-sky"
     },
     {
       "id": "moon-over-lake-ontario",
@@ -146,7 +227,14 @@
       "image": "assets/explore/moonlit-lake-ontario.webp",
       "imageAlt": "Burlington News illustration of moonlight over Lake Ontario",
       "illustration": true,
-      "url": "https://www.timeanddate.com/moon/canada/burlington"
+      "url": "https://www.timeanddate.com/moon/canada/burlington",
+      "placeName": "Spencer Smith Park",
+      "address": "Spencer Smith Park, Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3238,
+      "longitude": -79.7996,
+      "googleMapsQuery": "Spencer Smith Park Burlington Ontario",
+      "category": "waterfront"
     },
     {
       "id": "public-art-three",
@@ -154,7 +242,14 @@
       "copy": "Choose three works you normally walk past and look long enough to notice one new detail in each.",
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated collage of Burlington landmarks and activities",
-      "url": "https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx"
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx",
+      "placeName": "Downtown Burlington",
+      "address": "Brant Street, Downtown Burlington, Ontario",
+      "city": "Burlington",
+      "latitude": 43.3255,
+      "longitude": -79.799,
+      "googleMapsQuery": "Downtown Burlington Brant Street Ontario",
+      "category": "arts"
     }
   ]
 }

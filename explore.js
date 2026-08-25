@@ -5,7 +5,8 @@
     done: 'burlington-news-passport',
     want: 'burlington-news-passport-want',
     events: 'burlington-news-explore-saved',
-    bored: 'burlington-news-bored-prefs'
+    bored: 'burlington-news-bored-prefs',
+    root: 'burlington-news-explore-v1'
   };
   const readObject = key => {
     try { return JSON.parse(localStorage.getItem(key) || '{}'); }
@@ -51,7 +52,21 @@
   const done = readSet(storage.done);
   const wanted = readSet(storage.want);
   const savedEvents = readSet(storage.events);
-  const boredPrefs = readObject(storage.bored);
+  const boredPrefs = Object.assign({}, readObject(storage.bored), readObject(storage.root).bored || {});
+  const rootState = readObject(storage.root);
+  rootState.passport = rootState.passport || {};
+  rootState.food = rootState.food || {};
+  rootState.bored = boredPrefs;
+  Object.entries(rootState.passport).forEach(([id, rec]) => {
+    if (rec?.status === 'visited') done.add(id);
+    if (rec?.status === 'planned') wanted.add(id);
+  });
+  done.forEach(id => {
+    rootState.passport[id] = rootState.passport[id] || {status:'visited', visitedAt:new Date().toISOString(), verified:false};
+  });
+  wanted.forEach(id => {
+    if (!done.has(id)) rootState.passport[id] = rootState.passport[id] || {status:'planned'};
+  });
 
   const detailDialog = qs('#detailDialog');
   const dialogContent = qs('#dialogContent');
@@ -160,7 +175,7 @@
     const event = events.find(item => item.id === id);
     if (!event) return;
     const saved = savedEvents.has(id);
-    dialogContent.innerHTML = `${imageMarkup(event,'dialog-visual')}<div class="dialog-body"><span class="eyebrow">${esc(event.category)}${event.scope !== 'Burlington' ? ` · ${esc(event.scope)}` : ''}</span><h2>${esc(event.title)}</h2><div class="dialog-meta">${esc(event.dateLabel)} · ${esc(event.location)}</div><p>${esc(event.details)}</p>${event.bring?.length ? `<div class="bring-list"><strong>What to bring</strong><ul>${event.bring.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="dialog-actions"><a href="${esc(event.source)}" target="_blank" rel="noopener">Check official details</a><button type="button" id="dialogSave" data-id="${esc(id)}">${saved ? 'Saved ✓' : 'Save event'}</button></div><p class="publication-credit">Source: ${esc(event.sourceName)}. Event details were checked August 24, 2026.</p></div>`;
+    dialogContent.innerHTML = `${imageMarkup(event,'dialog-visual')}<div class="dialog-body"><span class="eyebrow">${esc(event.category)}${event.scope !== 'Burlington' ? ` · ${esc(event.scope)}` : ''}</span><h2>${esc(event.title)}</h2><div class="dialog-meta">${esc(event.dateLabel)} · ${esc(event.location)}</div><p>${esc(event.details)}</p>${event.bring?.length ? `<div class="bring-list"><strong>What to bring</strong><ul>${event.bring.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="dialog-actions"><a href="${esc(event.source)}" target="_blank" rel="noopener">Check official details</a><a href="${esc(mapsUrl(event))}" target="_blank" rel="noopener">Directions</a><button type="button" id="dialogSave" data-id="${esc(id)}">${saved ? 'Saved ✓' : 'Save event'}</button></div><p class="publication-credit">Source: ${esc(event.sourceName)}. Event details were checked August 24, 2026.</p></div>`;
     if (typeof detailDialog.showModal === 'function') detailDialog.showModal();
     else detailDialog.setAttribute('open','');
     qs('#dialogSave')?.addEventListener('click', () => {
@@ -170,14 +185,64 @@
     });
   }
 
-  function mapsUrl(idea) {
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${idea.title} Burlington Ontario`)}`;
+  function writeExploreState() {
+    const latest = readObject(storage.root);
+    latest.passport = rootState.passport;
+    latest.bored = boredPrefs;
+    latest.food = latest.food || rootState.food || {};
+    writeObject(storage.root, latest);
+  }
+  function mapsUrl(item) {
+    const lat = Number(item.latitude);
+    const lng = Number(item.longitude);
+    if (Number.isFinite(lat) && Number.isFinite(lng)) {
+      return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+    }
+    const query = item.googleMapsQuery || item.placeName || item.address;
+    if (query) return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+    const fallback = item.location && item.location !== item.title ? item.location : 'Burlington, Ontario';
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fallback)}`;
+  }
+  function haversineMetres(aLat, aLon, bLat, bLon) {
+    const toRad = n => n * Math.PI / 180;
+    const dLat = toRad(bLat - aLat);
+    const dLon = toRad(bLon - aLon);
+    const h = Math.sin(dLat/2)**2 + Math.cos(toRad(aLat)) * Math.cos(toRad(bLat)) * Math.sin(dLon/2)**2;
+    return 6371000 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1-h));
+  }
+  function checkRadius(item) {
+    if (Number.isFinite(Number(item.checkRadiusM))) return Number(item.checkRadiusM);
+    const type = String(item.category || '').toLowerCase();
+    if (/(park|garden|escarpment|waterfront|nature|market)/.test(type)) return 400;
+    return 250;
+  }
+  function chooseIdea(fromIndex) {
+    const now = Date.now();
+    const scored = ideas.map((idea, index) => {
+      const pref = boredPrefs[idea.id] || {};
+      if (pref.skipUntil && pref.skipUntil > now) return {index, score: -1000};
+      let score = Math.random();
+      if (pref.like) score += 2;
+      const liked = ideas.some(item => item.category && item.category === idea.category && boredPrefs[item.id]?.like);
+      if (liked) score += 1;
+      const categorySkipped = ideas.some(item => item.category === idea.category && (boredPrefs[item.id]?.skipUntil || 0) > now);
+      if (categorySkipped) score -= 1;
+      if (index === fromIndex) score -= 0.4;
+      return {index, score};
+    }).sort((a, b) => b.score - a.score);
+    ideaIndex = (scored.find(item => item.score > -999) || scored[0] || {index:0}).index;
   }
   function paintIdea() {
     if (!ideas.length) return;
     const idea = ideas[ideaIndex % ideas.length];
     const pref = boredPrefs[idea.id] || {};
-    qs('#boredIdea').innerHTML = `${imageMarkup(idea,'bored-visual')}<div class="bored-copy"><strong>${esc(idea.title)}</strong><p>${esc(idea.copy)}</p><div class="bored-actions"><button type="button" data-bored="like" class="${pref.like?'is-on':''}">👍 Like this</button><button type="button" data-bored="skip" class="${pref.skip?'is-on':''}">👎 Not for me</button><button type="button" data-bored="do" class="${pref.planned?'is-on':''}">✓ Let’s do this</button></div>${pref.planned?`<p class="empty-note"><a href="${esc(mapsUrl(idea))}" target="_blank" rel="noopener">Open in Google Maps</a>${pref.done?' · Marked done':''}</p>`:''}</div>`;
+    const discover = !pref.planned && !pref.done;
+    const actions = discover
+      ? `<div class="bored-actions"><button type="button" data-bored="like" class="${pref.like?'is-on':''}">👍 Like this</button><button type="button" data-bored="skip">👎 Not for me</button><button type="button" data-bored="do">✓ Let’s do this</button></div>`
+      : pref.done
+        ? `<p class="place-done">Done</p><p class="bored-rate">How was it? ${[1,2,3,4,5].map(n => `<button type="button" data-bored-star="${n}" class="${(pref.rating||0)>=n?'is-on':''}">★</button>`).join('')}</p><a class="idea-map" href="${esc(mapsUrl(idea))}" target="_blank" rel="noopener">Open in Google Maps</a>`
+        : `<p class="place-kicker">Planned</p><div class="bored-actions"><a class="idea-map" href="${esc(mapsUrl(idea))}" target="_blank" rel="noopener">Open in Google Maps</a><button type="button" data-bored="done">I went</button></div>`;
+    qs('#boredIdea').innerHTML = `${imageMarkup(idea,'bored-visual')}<div class="bored-copy"><strong>${esc(idea.title)}</strong><p>${esc(idea.copy)}</p>${actions}</div>`;
   }
 
   function paintSavedEvents() {
@@ -190,6 +255,7 @@
     wanted.forEach(id => { if (!places.some(place => place.id === id)) wanted.delete(id); });
     writeSet(storage.done, done);
     writeSet(storage.want, wanted);
+    writeExploreState();
     qs('#passportCount').textContent = `${done.size} of ${places.length} explored`;
     qs('#passportProgress').style.width = `${places.length ? done.size / places.length * 100 : 0}%`;
     qs('#passportMap').querySelectorAll('.map-pin').forEach(pin => pin.remove());
@@ -204,8 +270,19 @@
     const isDone = done.has(place.id);
     const isWanted = wanted.has(place.id);
     const placeholder = place.image ? '' : ' is-placeholder';
-    const actions = isBonus ? `<div class="passport-actions passport-bonus-actions"><a class="done-button" href="${esc(place.url)}" target="_blank" rel="noopener">Open bonus stop</a></div>` : `<div class="passport-actions"><button class="save-button ${isWanted ? 'is-saved' : ''}" type="button" data-want="${esc(place.id)}">${isWanted ? 'Want to go ✓' : 'Want to go'}</button><button class="done-button ${isDone ? 'is-done' : ''}" type="button" data-done="${esc(place.id)}">${isDone ? 'Done ✓' : 'Done'}</button><label class="save-button">Add photo<input type="file" accept="image/*" capture="environment" data-photo="${esc(place.id)}" hidden></label></div>`;
-    return `<article class="passport-card${isBonus ? ' bonus-card is-unlocked' : ''}${placeholder}" data-card-place="${esc(place.id)}">${addToVisual(imageMarkup(place,'passport-visual'),`<span class="passport-number">${isBonus ? '13' : place.number}</span>`)}<div class="passport-copy"><h3>${esc(place.title)}</h3><p>${esc(place.copy)}</p>${actions}</div></article>`;
+    const meta = rootState.passport[place.id] || {};
+    let actions = '';
+    if (isBonus) {
+      actions = `<div class="passport-actions passport-bonus-actions"><a class="done-button" href="${esc(mapsUrl(place))}" target="_blank" rel="noopener">Directions</a></div>`;
+    } else if (isDone) {
+      const when = meta.visitedAt ? new Date(meta.visitedAt).toLocaleDateString('en-CA', {month:'short', day:'numeric'}) : '';
+      actions = `<div class="passport-actions is-complete"><small>✓ Visited${meta.verified ? ' · Location confirmed' : ''}</small>${when ? `<em>${esc(when)}</em>` : ''}</div>`;
+    } else if (isWanted) {
+      actions = `<div class="passport-actions"><a class="save-button" href="${esc(mapsUrl(place))}" target="_blank" rel="noopener">Directions</a><button class="done-button" type="button" data-here="${esc(place.id)}">I'm here</button></div><p class="place-note" data-place-note="${esc(place.id)}" hidden></p>`;
+    } else {
+      actions = `<div class="passport-actions"><button class="save-button" type="button" data-want="${esc(place.id)}">Want to go</button><a class="done-button" href="${esc(mapsUrl(place))}" target="_blank" rel="noopener">Directions</a></div>`;
+    }
+    return `<article class="passport-card${isBonus ? ' bonus-card is-unlocked' : ''}${placeholder}${isDone ? ' is-visited' : ''}" data-card-place="${esc(place.id)}">${addToVisual(imageMarkup(place,'passport-visual'),`<span class="passport-number">${isBonus ? '13' : place.number}</span>`)}<div class="passport-copy"><h3>${esc(place.title)}</h3><p>${esc(place.copy)}</p>${actions}</div></article>`;
   }
 
   function scrollToPlace(id) {
@@ -241,18 +318,35 @@
       if (button) openEvent(button.dataset.event);
     });
     qs('#showAllEvents').addEventListener('click', () => { showAll = !showAll; paintEvents(); });
-    qs('#pickAnother').addEventListener('click', () => { ideaIndex = (ideaIndex + 1) % ideas.length; paintIdea(); });
+    qs('#pickAnother').addEventListener('click', () => { chooseIdea(ideaIndex); paintIdea(); });
     qs('#boredIdea').addEventListener('click', event => {
-      const button = event.target.closest('[data-bored]');
-      if (!button) return;
       const idea = ideas[ideaIndex % ideas.length];
       if (!idea) return;
-      const pref = boredPrefs[idea.id] || {};
+      const pref = boredPrefs[idea.id] || {category: idea.category};
+      const star = event.target.closest('[data-bored-star]');
+      const button = event.target.closest('[data-bored]');
+      if (star) {
+        pref.done = true;
+        pref.planned = true;
+        pref.rating = Number(star.dataset.boredStar);
+        boredPrefs[idea.id] = pref;
+        writeObject(storage.bored, boredPrefs);
+        writeExploreState();
+        paintIdea();
+        return;
+      }
+      if (!button) return;
       if (button.dataset.bored === 'like') pref.like = !pref.like;
-      if (button.dataset.bored === 'skip') { pref.skip = !pref.skip; if (pref.skip) { ideaIndex = (ideaIndex + 1) % ideas.length; } }
-      if (button.dataset.bored === 'do') pref.planned = !pref.planned;
+      if (button.dataset.bored === 'skip') {
+        pref.skipUntil = Date.now() + 1000 * 60 * 60 * 24 * 30;
+        pref.category = idea.category;
+        chooseIdea(ideaIndex);
+      }
+      if (button.dataset.bored === 'do') pref.planned = true;
+      if (button.dataset.bored === 'done') { pref.planned = true; pref.done = true; }
       boredPrefs[idea.id] = pref;
       writeObject(storage.bored, boredPrefs);
+      writeExploreState();
       paintIdea();
     });
     qs('#savedEvents').addEventListener('click', event => {
@@ -262,33 +356,55 @@
       writeSet(storage.events, savedEvents);
       paintSavedEvents();
     });
+    function markPassportVisited(id, verified) {
+      done.add(id);
+      wanted.delete(id);
+      rootState.passport[id] = {status:'visited', visitedAt:new Date().toISOString(), verified:Boolean(verified)};
+      paintPassport();
+    }
+    function checkPassportHere(id) {
+      const place = places.find(item => item.id === id);
+      const note = qs(`[data-place-note="${CSS.escape(id)}"]`);
+      if (!place || !Number.isFinite(Number(place.latitude)) || !navigator.geolocation) {
+        markPassportVisited(id, false);
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          const metres = haversineMetres(pos.coords.latitude, pos.coords.longitude, Number(place.latitude), Number(place.longitude));
+          if (metres <= checkRadius(place)) markPassportVisited(id, true);
+          else if (note) {
+            note.hidden = false;
+            note.innerHTML = `You don’t appear to be near this location yet. <button type="button" class="place-link" data-anyway="${esc(id)}">Mark visited anyway</button>`;
+          } else markPassportVisited(id, false);
+        },
+        () => markPassportVisited(id, false),
+        {enableHighAccuracy:false, timeout:8000, maximumAge:0}
+      );
+    }
     qs('#passportRail').addEventListener('click', event => {
       const wantButton = event.target.closest('[data-want]');
-      const doneButton = event.target.closest('[data-done]');
+      const hereButton = event.target.closest('[data-here]');
+      const anywayButton = event.target.closest('[data-anyway]');
       if (wantButton) {
         const id = wantButton.dataset.want;
-        if (wanted.has(id)) wanted.delete(id); else wanted.add(id);
+        if (wanted.has(id)) {
+          wanted.delete(id);
+          delete rootState.passport[id];
+        } else {
+          wanted.add(id);
+          rootState.passport[id] = {status:'planned'};
+        }
         paintPassport();
       }
-      if (doneButton) {
-        const id = doneButton.dataset.done;
-        if (done.has(id)) done.delete(id); else done.add(id);
-        paintPassport();
-      }
-    });
-    qs('#passportRail').addEventListener('change', event => {
-      const photo = event.target.closest('[data-photo]');
-      if (photo && event.target.files?.[0]) {
-        done.add(photo.dataset.photo);
-        paintPassport();
-        event.target.value = '';
-      }
+      if (hereButton) checkPassportHere(hereButton.dataset.here);
+      if (anywayButton) markPassportVisited(anywayButton.dataset.anyway, false);
     });
     qs('#passportMap').addEventListener('click', event => {
       const pin = event.target.closest('[data-place]');
       if (pin) scrollToPlace(pin.dataset.place);
     });
-    qs('#passportNext').addEventListener('click', () => qs('#passportRail').scrollBy({left:260,behavior:'smooth'}));
+    qs('#passportNext').addEventListener('click', () => qs('#passportRail').scrollBy({left:320,behavior:'smooth'}));
     qs('#passportInfo').addEventListener('click', () => {
       const dialog = qs('#passportDialog');
       if (typeof dialog.showModal === 'function') dialog.showModal();
@@ -315,6 +431,7 @@
       paintWeek();
       paintMonth();
       paintEvents();
+      chooseIdea();
       paintIdea();
       paintPassport();
       installEvents();

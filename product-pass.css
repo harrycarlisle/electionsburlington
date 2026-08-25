@@ -1,4 +1,18 @@
 /* Product-pass polish that should stay readable and easy to maintain. */
+:root{
+  --font-display:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,"Times New Roman",serif;
+  --font-body:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-ui:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --sans:var(--font-ui);
+  --serif:var(--font-display);
+  --text-xs:12px;--text-sm:13px;--text-base:16px;--text-lg:19px;--text-xl:24px;--text-2xl:32px;--text-3xl:clamp(36px,5vw,48px);
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;
+  --radius-card:12px;--radius-control:8px;
+}
+body,.explore-main,.updates-page,.food-shell{font-family:var(--font-body)}
+h1,.news-section-title,.explore-heading h1,.food-shell h1{font-family:var(--font-display)}
+.explore-tab,.primary-button,.text-button,.save-button,.done-button,.news-tools input,.news-tools select,.food-card small,.latest-card small,.original-card small,.event-copy h3,.event-meta,.event-place,.passport-copy h3,.passport-copy p,.bored-copy strong,.bored-copy p,.saved-event strong,.food-card h3,.food-card p{font-family:var(--font-ui)}
+.event-copy h3,.passport-copy h3,.bored-copy strong,.saved-event strong,.food-card h3{font-family:var(--font-ui)!important;font-weight:750!important;letter-spacing:-.015em}
 .home-desktop-nav{display:flex;justify-content:center;align-self:stretch;gap:34px;grid-area:nav}
 .home-desktop-nav a{position:relative;display:flex;align-items:center;color:var(--ink);font-size:13px;text-decoration:none}
 .home-desktop-nav a.active{color:var(--blue)}
@@ -189,4 +203,61 @@ html[data-theme="dark"] .traffic-camera-copy strong,.traffic-page .route-status 
   .route-status h2{font-size:24px}
   .route-chips button{min-height:38px;font-size:12px}
   html,body{overflow-x:hidden}
+}
+
+/* News / Explore density and passport UI. */
+.device-note,.food-passport-callout{display:none!important}
+.explore-main{width:min(calc(100% - 48px),1280px)}
+.explore-heading h1{font-family:var(--font-display);font-size:clamp(40px,5vw,64px);letter-spacing:-.04em}
+.calendar-card h2,.bored-card h2,.saved-panel h2,.passport-panel h2,.food-passport-panel h2{font-family:var(--font-display)!important;font-size:clamp(26px,3vw,34px)!important;letter-spacing:-.03em}
+.explore-tab,.calendar-view select,.primary-button,.text-button,.save-button,.done-button,.info-button{font-family:var(--font-ui)!important}
+.event-copy h3,.event-meta,.event-place,.event-type{font-family:var(--font-ui)!important}
+.event-copy h3{font-size:18px!important;line-height:1.2!important}
+.event-meta,.event-place{font-size:13px!important}
+.event-copy{padding:16px!important}
+.bored-copy strong{font-family:var(--font-ui)!important;font-size:20px!important}
+.bored-copy p{font-size:15px!important;line-height:1.5!important}
+.bored-actions button,.bored-actions a,.idea-map{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 14px;border:1px solid var(--line);border-radius:var(--radius-control);background:#fff;color:var(--ink);font:750 13px/1 var(--font-ui);text-decoration:none;cursor:pointer}
+.bored-rate button{border:0;background:transparent;color:#c5ccd1;font-size:22px;cursor:pointer}
+.bored-rate button.is-on{color:#d4a017}
+.place-kicker,.place-done{margin:10px 0 0;font:750 12px/1.2 var(--font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+.place-note,.food-note{margin:10px 0 0;color:var(--muted);font:14px/1.45 var(--font-body)}
+.place-link{border:0;background:transparent;color:var(--blue);font:750 13px/1.4 var(--font-ui);cursor:pointer;padding:0}
+.passport-copy h3{font-family:var(--font-ui)!important;font-size:20px!important;line-height:1.15!important}
+.passport-copy p{min-height:0!important;font-size:14px!important;line-height:1.45!important}
+.passport-copy{padding:16px!important}
+.passport-rail{grid-auto-columns:minmax(300px,320px)!important;gap:14px!important}
+.save-button,.done-button{min-height:44px!important;padding:0 12px!important;font-size:13px!important;border-radius:var(--radius-control)!important}
+.passport-actions.is-complete{display:grid;gap:4px;grid-template-columns:1fr}
+.passport-actions.is-complete small{font:750 12px/1.2 var(--font-ui);letter-spacing:.05em;text-transform:uppercase;color:#2b7a4b}
+.passport-actions.is-complete em{font:13px/1.3 var(--font-ui);color:var(--muted)}
+.passport-progress-copy strong{font-size:14px!important}
+.passport-progress-copy span{font-size:12px!important}
+.info-button{width:36px!important;height:36px!important;min-width:36px}
+.food-passport-panel{margin-top:16px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--card,#fff)}
+.food-progress{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 16px;position:relative}
+.food-progress h2{margin:0}
+.food-why{position:absolute;right:0;top:48px;z-index:6;width:min(320px,calc(100vw - 32px));padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--paper,#fff);box-shadow:0 12px 30px rgba(0,0,0,.12);font:14px/1.45 var(--font-body)}
+.food-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.food-card{display:flex;min-height:210px;flex-direction:column;padding:18px;border:1px solid var(--line);border-radius:var(--radius-card);background:var(--card,#fff)}
+.food-card small{color:var(--blue);font:750 11px/1 var(--font-ui);letter-spacing:.08em;text-transform:uppercase}
+.food-card h3{margin:10px 0 6px;font:750 22px/1.15 var(--font-ui)}
+.food-card p{margin:0;color:var(--muted);font:15px/1.45 var(--font-body)}
+.food-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:18px}
+.food-card a,.food-card button:not(.star-rating button){display:inline-flex;align-items:center;min-height:42px;padding:0 12px;border:1px solid var(--line);border-radius:var(--radius-control);background:#fff;color:var(--navy);font:750 13px/1 var(--font-ui);text-decoration:none;cursor:pointer}
+.star-rating{display:flex;gap:4px;margin-top:10px}
+.star-rating button{border:0;background:transparent;color:#c5ccd1;font-size:22px;min-height:36px;min-width:28px;cursor:pointer}
+.star-rating button.is-on{color:#d4a017}
+.my-grid{grid-template-columns:1fr!important}
+@media(max-width:900px){
+  .food-grid{grid-template-columns:1fr 1fr}
+  .passport-layout{grid-template-columns:1fr!important}
+}
+@media(max-width:720px){
+  .explore-main,.updates-page{width:calc(100% - 32px)}
+  .food-grid{grid-template-columns:1fr}
+  .passport-rail{grid-auto-columns:78%!important}
+  .food-why{left:0;right:auto;width:min(320px,calc(100vw - 40px))}
+  .bored-actions{gap:8px}
+  .latest-card strong{font-size:22px}
 }

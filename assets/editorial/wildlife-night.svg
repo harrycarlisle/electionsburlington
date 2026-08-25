@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">Generic night landscape for a public-health story</title>
+  <rect width="1600" height="900" fill="#0d1a28"/>
+  <circle cx="1280" cy="180" r="70" fill="#e8e0c8"/>
+  <circle cx="240" cy="140" r="3" fill="#f4efe0"/>
+  <circle cx="410" cy="90" r="2" fill="#f4efe0"/>
+  <circle cx="620" cy="160" r="2.4" fill="#f4efe0"/>
+  <circle cx="860" cy="70" r="2" fill="#f4efe0"/>
+  <circle cx="1040" cy="130" r="2.2" fill="#f4efe0"/>
+  <path d="M0 640c180-90 340-70 520-20 190 52 310-40 500-20 170 18 280 70 580 20v280H0z" fill="#163044"/>
+  <path d="M0 760c220-40 390 10 610 8 240-2 360-50 990-8v140H0z" fill="#102433"/>
+</svg>

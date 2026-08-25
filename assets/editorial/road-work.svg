@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">Generic road construction illustration</title>
+  <rect width="1600" height="900" fill="#1c2a33"/>
+  <rect y="520" width="1600" height="380" fill="#2b3840"/>
+  <rect y="610" width="1600" height="28" fill="#f3ca2f"/>
+  <rect x="80" y="610" width="140" height="28" fill="#1c2a33"/>
+  <rect x="360" y="610" width="140" height="28" fill="#1c2a33"/>
+  <rect x="640" y="610" width="140" height="28" fill="#1c2a33"/>
+  <rect x="920" y="610" width="140" height="28" fill="#1c2a33"/>
+  <rect x="1200" y="610" width="140" height="28" fill="#1c2a33"/>
+  <rect x="1480" y="610" width="80" height="28" fill="#1c2a33"/>
+  <path d="M220 520 430 240h180l-170 280z" fill="#c45c1a"/>
+  <rect x="980" y="300" width="70" height="220" fill="#d8a31a"/>
+  <rect x="1048" y="360" width="180" height="18" fill="#d8a31a"/>
+</svg>

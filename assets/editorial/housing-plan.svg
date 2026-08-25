@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">Generic housing-plan illustration</title>
+  <rect width="1600" height="900" fill="#e8eef2"/>
+  <rect x="80" y="80" width="1440" height="740" fill="#f7fafc" stroke="#c5d0d8"/>
+  <path d="M80 520h1440" stroke="#9aafbb" stroke-width="18"/>
+  <rect x="180" y="220" width="220" height="160" fill="#d7e4ec"/>
+  <rect x="460" y="200" width="260" height="180" fill="#c9dbe6"/>
+  <rect x="800" y="230" width="200" height="150" fill="#d7e4ec"/>
+  <rect x="1080" y="210" width="280" height="170" fill="#c3d6e1"/>
+  <rect x="180" y="600" width="300" height="140" fill="#d3e1e9"/>
+  <rect x="560" y="590" width="240" height="150" fill="#c8d8e2"/>
+  <rect x="880" y="610" width="420" height="130" fill="#d7e4ec"/>
+</svg>

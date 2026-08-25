@@ -1,29 +1,70 @@
 (() => {
-  const list = document.querySelector('.latest-list');
-  const originals = document.querySelector('.original-grid');
+  const list = document.getElementById('latestList');
+  const originals = document.getElementById('originalGrid');
   const search = document.getElementById('newsFilter');
-  const chips = document.getElementById('newsChips');
+  const topicSelect = document.getElementById('newsTopic');
+  const moreNews = document.getElementById('showMoreNews');
+  const moreOriginals = document.getElementById('showMoreOriginals');
   if (!list) return;
   const cards = [...list.querySelectorAll('.latest-card')];
+  const originalCards = originals ? [...originals.querySelectorAll('.original-card')] : [];
+  const PAGE = 8;
+  const ORIGINAL_PAGE = 3;
+  let shown = PAGE;
+  let originalsShown = ORIGINAL_PAGE;
   let topic = 'all';
-  function hay(card) {
-    return `${card.dataset.topic || ''} ${card.textContent}`.toLowerCase();
+
+  function hay(node) {
+    return `${node.dataset.topic || ''} ${node.textContent}`.toLowerCase();
   }
+
   function paint() {
     const query = (search?.value || '').toLowerCase().trim();
+    let visibleCount = 0;
     cards.forEach(card => {
       const matchTopic = topic === 'all' || (card.dataset.topic || '').includes(topic);
       const matchQuery = !query || hay(card).includes(query);
-      card.hidden = !(matchTopic && matchQuery);
+      const match = matchTopic && matchQuery;
+      if (!match) {
+        card.hidden = true;
+        card.classList.remove('is-collapsed');
+        return;
+      }
+      visibleCount += 1;
+      const collapse = visibleCount > shown;
+      card.hidden = false;
+      card.classList.toggle('is-collapsed', collapse);
     });
-    if (originals) originals.hidden = topic !== 'all' && topic !== 'originals';
+    if (moreNews) moreNews.hidden = visibleCount <= shown;
+    if (originals) {
+      const showOriginals = topic === 'all' || topic === 'originals';
+      originals.hidden = !showOriginals;
+      if (moreOriginals) moreOriginals.parentElement.hidden = !showOriginals;
+      if (showOriginals) {
+        originalCards.forEach((card, index) => {
+          const matchQuery = !query || hay(card).includes(query);
+          card.hidden = !matchQuery;
+          card.classList.toggle('is-collapsed', matchQuery && index >= originalsShown);
+        });
+        const remaining = originalCards.filter((card, index) => !card.hidden && index >= originalsShown).length;
+        if (moreOriginals) moreOriginals.hidden = remaining === 0;
+      }
+    }
   }
+
   search?.addEventListener('input', paint);
-  chips?.addEventListener('click', event => {
-    const button = event.target.closest('[data-topic]');
-    if (!button) return;
-    topic = button.dataset.topic;
-    chips.querySelectorAll('[data-topic]').forEach(node => node.classList.toggle('is-on', node === button));
+  topicSelect?.addEventListener('change', () => {
+    topic = topicSelect.value;
+    shown = PAGE;
     paint();
   });
+  moreNews?.addEventListener('click', () => {
+    shown += PAGE;
+    paint();
+  });
+  moreOriginals?.addEventListener('click', () => {
+    originalsShown += ORIGINAL_PAGE;
+    paint();
+  });
+  paint();
 })();

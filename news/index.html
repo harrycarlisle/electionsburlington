@@ -6,33 +6,101 @@
 <meta name="description" content="Independent Burlington, Ontario reporting, original explainers and useful local updates.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="canonical" href="https://burlingtonnews.ca/news/"><link rel="icon" href="/logo-mark.png?v=20260825a"><link rel="apple-touch-icon" href="/logo-mark.png?v=20260825a">
-<link rel="stylesheet" href="/site-extra.css"><link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle"><link rel="stylesheet" href="/site-shell.css?v=20260824z4" data-style="site-shell"><link rel="stylesheet" href="/publication-polish.css?v=20260825e" data-style="publication-polish"><link rel="stylesheet" href="/product-pass.css?v=20260825e"><script src="/site-search.js?v=20260825e" defer></script><script src="/site-extra.js?v=20260825e" defer></script><script src="/news-archive.js?v=20260825e" defer></script>
+<link rel="stylesheet" href="/site-extra.css"><link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle"><link rel="stylesheet" href="/site-shell.css?v=20260824z4" data-style="site-shell"><link rel="stylesheet" href="/publication-polish.css?v=20260825i" data-style="publication-polish"><link rel="stylesheet" href="/product-pass.css?v=20260825i"><script src="/site-search.js?v=20260825i" defer></script><script src="/site-extra.js?v=20260825i" defer></script><script src="/news-archive.js?v=20260825i" defer></script>
 <style>
-.updates-page{width:min(calc(100% - 40px),1040px);margin:42px auto 84px}.news-mast{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:38px}.news-mast h1{font:700 clamp(50px,7vw,82px)/.92 Georgia,serif;letter-spacing:-.055em;margin:0}.news-mast p{max-width:380px;color:var(--muted);font-size:15px;line-height:1.45;margin:0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;padding-bottom:11px;border-bottom:1px solid var(--line);margin-bottom:20px}.section-head h2{font:700 clamp(28px,4vw,42px)/1 Georgia,serif;letter-spacing:-.035em;margin:0}.section-head span{font:800 10px/1 Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.originals{margin-bottom:56px}.original-grid{display:grid;grid-template-columns:1.3fr .85fr .85fr;gap:18px}.original-card{display:block;color:var(--ink);text-decoration:none}.original-card img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:13px;margin-bottom:13px;background:var(--soft)}.original-card small,.latest-card small{display:block;font:850 9px/1.2 Arial,sans-serif;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);margin-bottom:6px}.original-card strong{display:block;font:700 24px/1.03 Georgia,serif;letter-spacing:-.025em}.original-card:first-child strong{font-size:32px}.original-card p{color:var(--muted);font-size:12px;line-height:1.45;margin:8px 0 0}.latest-list{display:grid}.latest-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,30%);gap:24px;padding:23px 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;align-items:center}.latest-card:first-child{border-top:1px solid var(--line)}.latest-card strong{display:block;font:700 25px/1.04 Georgia,serif;letter-spacing:-.025em}.latest-card p{margin:7px 0 0;color:var(--muted);font-size:13px;line-height:1.45}.latest-card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:11px;background:var(--soft)}.latest-card.no-image{grid-template-columns:1fr}.latest-card:hover strong,.original-card:hover strong{color:var(--blue)}.news-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 28px}.news-tools input{flex:1;min-width:180px;height:42px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:var(--card,#fff)}.news-chips{display:flex;flex-wrap:wrap;gap:8px}.news-chips button{min-height:34px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:transparent;cursor:pointer;font:750 11px/1 Arial,sans-serif}.news-chips button.is-on{background:var(--ink);color:var(--paper,#fff);border-color:var(--ink)}@media(max-width:760px){.updates-page{width:calc(100% - 36px);margin:28px auto 64px}.news-mast{display:block;margin-bottom:34px}.news-mast h1{font-size:56px}.news-mast p{margin-top:12px;font-size:13px}.original-grid{grid-template-columns:1fr}.original-card strong,.original-card:first-child strong{font-size:27px}.original-card img{aspect-ratio:16/9}.latest-card{grid-template-columns:1fr;padding:20px 0}.latest-card img{order:-1;max-height:240px}.latest-card strong{font-size:23px}.section-head h2{font-size:34px}}
+.updates-page{width:min(calc(100% - 48px),1280px);margin:28px auto 84px}
+.news-section-title{margin:0 0 16px;color:var(--navy);font:700 clamp(28px,4vw,38px)/1 var(--font-display);letter-spacing:-.03em}
+.news-tools{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,240px);gap:12px;margin:0 0 22px}
+.news-tools input,.news-tools select{width:100%;min-height:46px;padding:0 14px;border:1px solid var(--line);border-radius:var(--radius-control);background:var(--card,#fff);color:var(--ink);font:500 15px/1 var(--font-ui)}
+.news-filter{display:grid;gap:4px}
+.news-filter span{font:750 11px/1 var(--font-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.latest-list{display:grid}
+.latest-card{display:grid;grid-template-columns:minmax(168px,220px) minmax(0,1fr);gap:22px;padding:22px 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;align-items:center}
+.latest-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius-card);background:var(--soft)}
+.latest-card small{display:block;margin-bottom:6px;font:750 12px/1.2 var(--font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.latest-card strong{display:block;font:750 26px/1.18 var(--font-display);letter-spacing:-.025em}
+.latest-card p{margin:8px 0 0;color:var(--muted);font:16px/1.45 var(--font-body);max-width:62ch}
+.latest-card:hover strong{color:var(--blue)}
+.latest-card.is-collapsed{display:none}
+.news-more{display:flex;justify-content:center;margin:22px 0 8px}
+.news-more button,.originals-more button{min-height:46px;padding:0 20px;border:1px solid var(--line);border-radius:var(--radius-control);background:transparent;color:var(--ink);font:750 14px/1 var(--font-ui);cursor:pointer}
+.originals{margin-top:56px}
+.original-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.original-card{display:block;color:var(--ink);text-decoration:none}
+.original-card img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius-card);margin-bottom:12px;background:var(--soft)}
+.original-card small{display:block;margin-bottom:6px;font:750 12px/1.2 var(--font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+.original-card strong{display:block;font:700 22px/1.15 var(--font-display);letter-spacing:-.02em}
+.original-card p{margin:8px 0 0;color:var(--muted);font:15px/1.45 var(--font-body)}
+.original-card.is-collapsed{display:none}
+.originals-more{display:flex;justify-content:center;margin:26px 0 0}
+.news-archive-links{margin-top:40px;color:var(--muted);font-size:13px}
+.news-archive-links a{color:inherit}
+@media(max-width:860px){
+  .updates-page{width:calc(100% - 32px);margin-top:18px}
+  .news-tools{grid-template-columns:1fr}
+  .original-grid{grid-template-columns:1fr}
+  .latest-card{grid-template-columns:104px minmax(0,1fr);gap:14px;padding:18px 0;align-items:start}
+  .latest-card img{aspect-ratio:1/1;border-radius:10px}
+  .latest-card strong{font-size:20px}
+  .latest-card p{font-size:14px}
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a><header class="header"><div class="wrap header-inner"><a class="brand" href="/">Burlington News</a><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
 <main id="main" class="updates-page">
-<header class="news-mast"><h1>Latest in Burlington</h1><p>What changed in Burlington, why it matters and what is worth understanding next.</p></header>
-<div class="news-tools"><label class="sr-only" for="newsFilter">Filter stories</label><input id="newsFilter" type="search" placeholder="Search this archive"><div class="news-chips" id="newsChips"><button type="button" class="is-on" data-topic="all">Latest</button><button type="button" data-topic="originals">Originals</button><button type="button" data-topic="city">City Hall</button><button type="button" data-topic="roads">Roads & Transit</button><button type="button" data-topic="schools">Schools</button><button type="button" data-topic="food">Food & Things to Do</button><button type="button" data-topic="history">History / Explainers</button></div></div>
-<section class="originals" aria-labelledby="originalsTitle"><div class="section-head"><h2 id="originalsTitle">Burlington News Originals</h2><span>Reported & explained here</span></div><div class="original-grid">
+<section aria-labelledby="latestTitle">
+<h2 class="news-section-title" id="latestTitle">Newest</h2>
+<div class="news-tools">
+  <label class="sr-only" for="newsFilter">Search stories</label>
+  <input id="newsFilter" type="search" placeholder="Search stories">
+  <label class="news-filter"><span>Filter</span>
+    <select id="newsTopic">
+      <option value="all">All stories</option>
+      <option value="originals">Originals</option>
+      <option value="city">City Hall</option>
+      <option value="roads">Roads &amp; Transit</option>
+      <option value="schools">Schools</option>
+      <option value="food">Food &amp; Things to Do</option>
+      <option value="history">History &amp; Explainers</option>
+      <option value="sports">Sports</option>
+      <option value="safety">Public Safety</option>
+    </select>
+  </label>
+</div>
+<div class="latest-list" id="latestList">
+<!-- AUTO_STORIES_START -->
+<!-- AUTO_STORIES_END -->
+<a class="latest-card" data-topic="safety city originals" href="/stories/how-bad-is-burlington-crime/"><img src="/assets/editorial/halton-crime-comparison.svg" alt="Crime Severity Index comparison chart"><span><small>Public safety · Today</small><strong>How bad is Burlington's crime, really?</strong><p>The best comparable data gives a clear answer, with one important catch.</p></span></a>
+<a class="latest-card" data-topic="history city originals" href="/stories/burlington-data-centre-not-ai/"><img src="/assets/editorial/data-centre-site-context.svg" alt="Simple site-context drawing of a proposed data-centre campus"><span><small>Development · Aug. 24</small><strong>Burlington's proposed data centre is not what many people think.</strong><p>City records describe a general-purpose facility, not an AI hyperscale campus.</p></span></a>
+<a class="latest-card" data-topic="roads" href="/stories/upper-middle-road-construction-2026/"><img src="/assets/editorial/road-work.svg" alt="Generic road-construction illustration"><span><small>Roads · Aug. 24</small><strong>Upper Middle Road construction: what changes next.</strong><p>Watermain work is planned from fall 2026 into spring 2027, followed by surface restoration.</p></span></a>
+<a class="latest-card" data-topic="safety" href="/stories/burlington-rabies-bat-2026/"><img src="/assets/editorial/wildlife-night.svg" alt="Generic night landscape for a public-health story"><span><small>Public health · Aug. 24</small><strong>A bat in Burlington tested positive for rabies.</strong><p>What the confirmed case means, how testing works and what counts as a possible exposure.</p></span></a>
+<a class="latest-card" data-topic="schools originals" href="/stories/ontario-student-rights-school/"><img src="/assets/home/school-rights.webp" alt="Students arriving at an Ontario school"><span><small>Schools · Aug. 24</small><strong>Can a teacher take your phone? Seven school rules students should know.</strong><p>What Ontario rules actually allow inside a school, and where the limits are.</p></span></a>
+<a class="latest-card" data-topic="city history originals" href="/stories/730-brant-vacant-building/"><img src="/assets/editorial/730-brant-share.webp" alt="Burlington News illustration of 730 Brant Street"><span><small>Development · Aug. 24</small><strong>730 Brant sat empty for more than a decade. Then it caught fire.</strong><p>The history and unresolved questions around one of Brant Street's most visible vacant properties.</p></span></a>
+<a class="latest-card" data-topic="city" href="/stories/nelson-quarry-tribunal-decision/"><img src="/assets/explore/night-sky-mount-nemo.webp" alt="Mount Nemo and the Burlington escarpment"><span><small>Development · Aug. 24</small><strong>What the Nelson Quarry decision means for Burlington.</strong><p>The City opposed the Mount Nemo expansion. Now the decision shifts the next question.</p></span></a>
+<a class="latest-card" data-topic="food" href="/stories/ribfest-2026/"><img src="/assets/home/ribs.webp" alt="Ribs cooking over a barbecue pit"><span><small>Events · Aug. 24</small><strong>Ribfest turns 30, with nearly $6 million behind the smoke.</strong><p>The Labour Day tradition and the fundraising story behind it.</p></span></a>
+<a class="latest-card" data-topic="food originals" href="/stories/nostalgia-games-cafe-closure/"><img src="/assets/editorial/nostalgia-cafe-closure.svg" alt="Board-game cafe closure illustration"><span><small>Local business · Aug. 24</small><strong>Burlington's board-game cafe closed. The problem wasn't a lack of games.</strong><p>What the closure says about a downtown business that people loved and still could not keep open.</p></span></a>
+<a class="latest-card" data-topic="history originals" href="/stories/skyway-bridge-story/"><img src="/assets/home/skyway-reader.webp" alt="The Burlington Bay Skyway"><span><small>History · Aug. 24</small><strong>Ontario nearly replaced the Skyway with three tunnels.</strong><p>The ship strike, failed tolls and 84 purchased properties behind the choice.</p></span></a>
+<a class="latest-card" data-topic="city" href="/stories/millcroft-phase-2-138-homes/"><img src="/assets/editorial/housing-plan.svg" alt="Generic housing-plan illustration"><span><small>Development · Background</small><strong>Millcroft Phase 2 proposes 138 homes. It has not been approved.</strong><p>Background on the application. A genuinely new update will move this story back up.</p></span></a>
+</div>
+<div class="news-more"><button type="button" id="showMoreNews">Show more</button></div>
+</section>
+
+<section class="originals" aria-labelledby="originalsTitle">
+<h2 class="news-section-title" id="originalsTitle">Burlington News Originals</h2>
+<div class="original-grid" id="originalGrid">
 <a class="original-card" href="/stories/how-bad-is-burlington-crime/"><img src="/assets/editorial/halton-crime-comparison.svg" alt="Crime Severity Index comparison chart"><small>Public safety</small><strong>How bad is Burlington's crime, really?</strong><p>The best comparable data gives a clear answer, with one important catch.</p></a>
 <a class="original-card" href="/stories/nostalgia-games-cafe-closure/"><img src="/assets/editorial/nostalgia-cafe-closure.svg" alt="Board-game cafe closure illustration"><small>Local business</small><strong>Burlington's board-game cafe closed. The problem wasn't a lack of games.</strong></a>
 <a class="original-card" href="/stories/skyway-bridge-story/"><img src="/assets/home/skyway-reader.webp" alt="Burlington Bay Skyway"><small>History</small><strong>Ontario nearly replaced the Skyway with three tunnels.</strong></a>
-</div></section>
-<section aria-labelledby="latestTitle"><div class="section-head"><h2 id="latestTitle">Newest local stories</h2><span>Newest first</span></div><div class="latest-list">
-<!-- AUTO_STORIES_START -->
-<!-- AUTO_STORIES_END -->
-<a class="latest-card" data-topic="history city" href="/stories/burlington-data-centre-not-ai/"><span><small>Development · Aug. 24</small><strong>Burlington's proposed data centre is not what many people think.</strong><p>City records describe a general-purpose facility, not an AI hyperscale campus.</p></span><img src="/assets/explore/burlington-orientation-map.svg" alt="Orientation map of Burlington"></a>
-<a class="latest-card" data-topic="roads" href="/stories/upper-middle-road-construction-2026/"><span><small>Roads · Aug. 24</small><strong>Upper Middle Road construction: what changes next.</strong><p>Watermain work is planned from fall 2026 into spring 2027, followed by surface restoration.</p></span><img src="/assets/explore/burlington-orientation-map.svg" alt="Orientation map of Burlington"></a>
-<a class="latest-card" data-topic="city" href="/stories/burlington-rabies-bat-2026/"><span><small>Public health · Aug. 24</small><strong>A bat in Burlington tested positive for rabies.</strong><p>What the confirmed case means, how testing works and what counts as a possible exposure.</p></span><img src="/assets/explore/night-sky-mount-nemo.webp" alt="Night sky over the Burlington escarpment"></a>
-<a class="latest-card" data-topic="schools" href="/stories/ontario-student-rights-school/"><span><small>Schools · Aug. 24</small><strong>Can a teacher take your phone? Seven school rules students should know.</strong><p>What Ontario rules actually allow inside a school, and where the limits are.</p></span><img src="/assets/home/school-rights.webp" alt="Students arriving at an Ontario school"></a>
-<a class="latest-card" data-topic="city history" href="/stories/730-brant-vacant-building/"><span><small>Development · Aug. 24</small><strong>730 Brant sat empty for more than a decade. Then it caught fire.</strong><p>The history and unresolved questions around one of Brant Street's most visible vacant properties.</p></span><img src="/assets/editorial/730-brant-share.webp" alt="Burlington News illustration of 730 Brant Street"></a>
-<a class="latest-card" data-topic="city" href="/stories/nelson-quarry-tribunal-decision/"><span><small>Development · Aug. 24</small><strong>What the Nelson Quarry decision means for Burlington.</strong><p>The City opposed the Mount Nemo expansion. Now the decision shifts the next question.</p></span><img src="/assets/explore/night-sky-mount-nemo.webp" alt="Mount Nemo and the Burlington escarpment"></a>
-<a class="latest-card" data-topic="food" href="/stories/ribfest-2026/"><span><small>Events · Aug. 24</small><strong>Ribfest turns 30, with nearly $6 million behind the smoke.</strong><p>The Labour Day tradition and the fundraising story behind it.</p></span><img src="/assets/home/ribs.webp" alt="Ribs cooking over a barbecue pit"></a>
-<a class="latest-card" data-topic="city" href="/stories/millcroft-phase-2-138-homes/"><span><small>Development · Background</small><strong>Millcroft Phase 2 proposes 138 homes. It has not been approved.</strong><p>Background on the application. A genuinely new update will move this story back up.</p></span><img src="/assets/explore/burlington-orientation-map.svg" alt="Orientation map of Burlington"></a>
-</div></section>
+<a class="original-card" href="/stories/ontario-student-rights-school/"><img src="/assets/home/school-rights.webp" alt="Students arriving at an Ontario school"><small>Schools</small><strong>Can a teacher take your phone? Seven school rules students should know.</strong><p>What Ontario rules actually allow inside a school, and where the limits are.</p></a>
+<a class="original-card" href="/stories/730-brant-vacant-building/"><img src="/assets/editorial/730-brant-share.webp" alt="Illustration of 730 Brant Street"><small>Development</small><strong>730 Brant sat empty for more than a decade. Then it caught fire.</strong></a>
+<a class="original-card" href="/stories/burlington-data-centre-not-ai/"><img src="/assets/editorial/data-centre-site-context.svg" alt="Simple site-context drawing of a proposed data-centre campus"><small>Development</small><strong>Burlington's proposed data centre is not what many people think.</strong></a>
+</div>
+<div class="originals-more"><button type="button" id="showMoreOriginals">See more originals</button></div>
+</section>
+<nav class="news-archive-links" aria-label="Full story archive">
+  <p>All stories: <a href="/stories/how-bad-is-burlington-crime/">Crime</a> · <a href="/stories/burlington-data-centre-not-ai/">Data centre</a> · <a href="/stories/upper-middle-road-construction-2026/">Upper Middle</a> · <a href="/stories/burlington-rabies-bat-2026/">Rabies</a> · <a href="/stories/ontario-student-rights-school/">School rules</a> · <a href="/stories/730-brant-vacant-building/">730 Brant</a> · <a href="/stories/nelson-quarry-tribunal-decision/">Nelson Quarry</a> · <a href="/stories/ribfest-2026/">Ribfest</a> · <a href="/stories/nostalgia-games-cafe-closure/">Nostalgia</a> · <a href="/stories/skyway-bridge-story/">Skyway</a> · <a href="/stories/millcroft-phase-2-138-homes/">Millcroft</a></p>
+</nav>
 </main>
 </body>
 </html>
