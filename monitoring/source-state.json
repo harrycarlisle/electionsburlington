@@ -1,38 +1,38 @@
 {
   "Burlington council records": {
     "bytes": 248495,
-    "checked_at": "2026-08-25T02:06:39.822372+00:00",
-    "sha256": "eccf93ea96b7dc54f7e9b3df0992ea459e614c64404f35bccab2ffc56f835a9b",
+    "checked_at": "2026-08-25T02:53:43.043534+00:00",
+    "sha256": "e28ce8c2eb9896c5b48b81ed3b4128345084bd0aa5fbcf8e129358621c170a29",
     "url": "https://burlingtonpublishing.escribemeetings.com/"
   },
   "Lisa Kearns campaign": {
     "bytes": 258084,
-    "checked_at": "2026-08-25T02:06:39.822372+00:00",
+    "checked_at": "2026-08-25T02:53:43.043534+00:00",
     "sha256": "a290d31504c28e2ff09750454ddab2baffa2f93fb6f89018e8961f275d7c4e26",
     "url": "https://lisakearns.ca/"
   },
   "Meed Ward campaign": {
     "bytes": 166203,
-    "checked_at": "2026-08-25T02:06:39.822372+00:00",
+    "checked_at": "2026-08-25T02:53:43.043534+00:00",
     "sha256": "53d2d9171ac460abc746aad94027712d1a6f211fd35a8171f63290cebbb4a5f6",
     "url": "https://votemarianne.ca/"
   },
   "Official candidate list": {
     "bytes": 77757,
-    "checked_at": "2026-08-25T02:06:39.822372+00:00",
-    "sha256": "06caaca1da9277ccf4dc586042a7015d6c5df3d3893654d4f828acb4b2565197",
+    "checked_at": "2026-08-25T02:53:43.043534+00:00",
+    "sha256": "009a20a07c3aec8b496f66e943b4151bd53cb81f3c56bb706db456202f7961d5",
     "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
   },
   "Official voting information": {
     "bytes": 64015,
-    "checked_at": "2026-08-25T02:06:39.822372+00:00",
+    "checked_at": "2026-08-25T02:53:43.043534+00:00",
     "sha256": "43affcdb60e10e77ad8c5a63bfc194920d8f36e6120de76482d335584542b0ac",
     "url": "https://myvote.burlington.ca/for-voters/how-to-vote/"
   },
   "Rory Nisan campaign": {
     "bytes": 50580,
-    "checked_at": "2026-08-25T02:06:39.822372+00:00",
-    "sha256": "0d6dc0b64e88896be387b315216b5c8df1fa347f0a2b98e599ecb12fb162cbd1",
+    "checked_at": "2026-08-25T02:53:43.043534+00:00",
+    "sha256": "e3898271878370aa8753645a100bc9cf3177c0f17bd813ed8213756697115d12",
     "url": "https://rorynisan.ca/"
   }
 }
