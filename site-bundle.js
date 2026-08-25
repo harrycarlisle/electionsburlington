@@ -21,7 +21,7 @@
   function restoreFooter(){
     let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}
     if(f.dataset.newsFooter==='3')return;f.dataset.newsFooter='3';
-    f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news for Burlington, Ontario.</p></div></div><div class="site-footer-columns"><nav aria-label="Explore"><strong>Explore</strong><a href="/news/">News</a><a href="/elections/">Elections</a><a href="/explore/">Explore</a><a href="/sports/">Sports</a><a href="/games/">Games</a></nav><nav aria-label="About"><strong>About</strong><a href="/about.html">About</a><a href="/methodology.html">Sources</a><a href="/help.html#accessibility">Accessibility</a><a href="/feedback/">Feedback</a></nav></div></div>';
+    f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news for Burlington, Ontario.</p></div></div><div class="site-footer-columns"><nav aria-label="Explore"><strong>Explore</strong><a href="/news/">News</a><a href="/elections/">Elections</a><a href="/explore/">Explore</a><a href="/sports/">Sports</a><a href="/games/">Puzzles</a></nav><nav aria-label="About"><strong>About</strong><a href="/about.html">About</a><a href="/methodology.html">Sources</a><a href="/help.html#accessibility">Accessibility</a><a href="/feedback/">Feedback</a></nav></div></div>';
   }
 
   const isLocalStory=i=>{

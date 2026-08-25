@@ -65,8 +65,11 @@
   .publication-shell .header-search{width:100%;max-width:none;height:42px}
   html,body.publication-shell{overflow-x:hidden}
   body.menu-is-open{overflow:hidden}
-  #candidateStrip{display:flex!important;overflow-x:auto!important;gap:12px!important;padding:0 18px 18px 0!important;scroll-snap-type:x proximity;scrollbar-width:thin}
-  #candidateStrip .candidate-card{flex:0 0 78%!important;min-width:78%!important;max-width:78%!important;scroll-snap-align:start}
+  #candidateStrip{display:flex!important;overflow-x:auto!important;gap:10px!important;padding:0 18px 12px 0!important;scroll-snap-type:x mandatory;scrollbar-width:none}
+  #candidateStrip .candidate-card{flex:0 0 86%!important;min-width:86%!important;max-width:86%!important;scroll-snap-align:center}
+  .publication-shell .header .header-inner{min-height:52px!important;flex-wrap:nowrap!important}
+  .publication-shell .menu-icon-button{width:44px!important;height:44px!important;font-size:0!important}
+  .publication-shell .banner .wrap{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   #matters.election-issues-legacy{display:none}
 }
 .camera-card{display:grid}

@@ -1,0 +1,376 @@
+{
+  "updated": "2026-08-25",
+  "election": {
+    "year": 2026,
+    "votingStarts": "2026-10-14",
+    "electionDay": "2026-10-26",
+    "primaryNavUntil": "2026-11-09",
+    "banner": "2026 election · Voting starts Oct. 14 · Election Day Oct. 26"
+  },
+  "issueOrder": [
+    "taxes",
+    "housing",
+    "traffic",
+    "development",
+    "governance",
+    "datacentre"
+  ],
+  "issues": {
+    "taxes": {
+      "id": "taxes",
+      "label": "Taxes & spending",
+      "contextTitle": "What goes into your property-tax bill",
+      "why": "Your property-tax bill combines charges from Burlington, Halton Region and education. Burlington’s share pays for local services, staff, roads and facilities. Costs change with wages, construction prices, service levels and new spending. The mayor proposes a budget; council can change it and votes on the final version.",
+      "source": "https://www.burlington.ca/en/property-taxes/understanding-your-property-tax-bill.aspx"
+    },
+    "housing": {
+      "id": "housing",
+      "label": "Housing",
+      "contextTitle": "How new housing gets built",
+      "why": "Burlington decides where housing can go, what can be built and whether many projects are approved. Developers still need financing and must actually start construction. Provincial rules and appeals can also change city decisions. Approved homes, housing starts and completed homes are different numbers.",
+      "source": "https://www.burlington.ca/en/council-and-city-administration/housing-strategy.aspx"
+    },
+    "traffic": {
+      "id": "traffic",
+      "label": "Traffic and transportation",
+      "contextTitle": "Who manages the roads you use",
+      "why": "Burlington manages local roads, traffic signals and Burlington Transit. Halton Region manages regional roads. Ontario manages the QEW and Highway 403. Traffic also changes with population, commuting, schools, jobs and construction.",
+      "source": "https://www.burlington.ca/en/roads-parking-and-traffic/integrated-mobility-plan.aspx"
+    },
+    "development": {
+      "id": "development",
+      "label": "Development and growth",
+      "contextTitle": "How development decisions are made",
+      "why": "Burlington sets local planning and zoning rules and approves many projects. Ontario sets broader planning rules, and the Ontario Land Tribunal can overturn some city decisions. Developers decide when approved projects are actually built.",
+      "source": "https://www.burlington.ca/en/council-and-city-administration/official-plan.aspx"
+    },
+    "governance": {
+      "id": "governance",
+      "label": "City Hall / mayoral power",
+      "contextTitle": "What the mayor can decide",
+      "why": "Ontario’s Strong Mayor rules give Burlington’s mayor extra budget and administrative powers. Burlington also has six councillors, and many decisions still require a council vote. The candidates differ on how much of the mayor’s extra power they would use.",
+      "source": "https://www.burlington.ca/en/council-and-city-administration/mayoral-decisions.aspx"
+    },
+    "datacentre": {
+      "id": "datacentre",
+      "label": "Data centre proposal",
+      "contextTitle": "The South Service Road proposal",
+      "why": "A roughly 55,000-square-foot general-purpose data centre is proposed at 3110 South Service Road. The main local questions are power use, noise, infrastructure, community benefits and who pays for added costs. The City currently describes it as a general-purpose data centre.",
+      "source": "https://www.burlington.ca/en/news/current-development-projects/3110_South_Service_Rd.aspx"
+    }
+  },
+  "candidates": [
+    {
+      "id": "mw",
+      "slug": "marianne-meed-ward",
+      "name": "Marianne Meed Ward",
+      "currentRole": "Mayor since 2018",
+      "image": "/assets/candidates/mw.webp",
+      "cardSummary": "Keep services and infrastructure funded, and continue Burlington’s post-2018 growth plan.",
+      "profileLine": "Keep core services running and continue infrastructure repairs.",
+      "experience": [
+        "Mayor since 2018; Ward 2 councillor from 2010 to 2018.",
+        "Former journalist before entering elected office.",
+        "Her campaign emphasizes continuity and experience."
+      ],
+      "issues": {
+        "taxes": {
+          "summary": "Keep funding services and infrastructure, even if that means a larger annual increase.",
+          "detail": "Her argument is that delaying repairs can cost more later and that existing services still have to be funded."
+        },
+        "housing": {
+          "summary": "Keep adding housing near GO stations and make approvals easier.",
+          "detail": "Her plan keeps more growth near transit and uses city tools to speed up approvals."
+        },
+        "traffic": {
+          "summary": "Keep investing in roads, transit, walking and cycling.",
+          "detail": "Her approach is to improve the whole transportation network over time. The result should be judged by travel times, reliability and transit use."
+        },
+        "development": {
+          "summary": "Keep the biggest new developments near GO stations and protect the downtown waterfront and Greenbelt.",
+          "detail": "This continues the planning direction adopted after 2018. Provincial rules and appeals can still change some final outcomes."
+        },
+        "governance": {
+          "summary": "Keep a collaborative approach while using the powers the mayor is legally given.",
+          "detail": "She says she has avoided the most controversial veto-style tools and works through council instead."
+        },
+        "datacentre": {
+          "summary": "Voted to ask for clearer rules and better coordination between governments on data centres.",
+          "detail": "That vote supports more oversight. Her position on this specific South Service Road proposal still needs a direct campaign statement."
+        }
+      },
+      "unansweredQuestions": [
+        "What did residents get for the recent tax increases?",
+        "Which traffic and housing results improved, not just plans or spending?",
+        "What would actually change in a third term?"
+      ],
+      "conversation": {
+        "positive": "Some local commenters value her experience and credit the post-2018 change in development policy.",
+        "critical": "Others focus on taxes, traffic, project costs and wanting a change after two terms.",
+        "note": "These are examples of online discussion, not polling or verified facts."
+      },
+      "sources": [
+        {
+          "label": "Campaign platform",
+          "url": "https://votemarianne.ca/"
+        },
+        {
+          "label": "Official candidate list",
+          "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
+        },
+        {
+          "label": "Local Reddit discussion",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1tvz2i4/marianne_meed_ward_announces_shes_seeking/"
+        }
+      ]
+    },
+    {
+      "id": "lk",
+      "slug": "lisa-kearns",
+      "name": "Lisa Kearns",
+      "currentRole": "Ward 2 councillor since 2018",
+      "image": "/assets/candidates/lk.webp",
+      "cardSummary": "Slow spending growth, expand housing choice and push harder on gridlock.",
+      "profileLine": "Slow city spending growth and demand clearer value for tax dollars.",
+      "experience": [
+        "Ward 2 city and regional councillor since 2018.",
+        "Previously worked in procurement and strategic sourcing, including at LifeLabs.",
+        "Her campaign says she voted against the last two city budgets."
+      ],
+      "issues": {
+        "taxes": {
+          "summary": "Slow spending growth and require clearer value before adding permanent costs.",
+          "detail": "She wants a smaller budget increase. The key detail still needed is what she would cut, delay or change."
+        },
+        "housing": {
+          "summary": "Allow more housing choices and reduce delays while considering existing neighbourhoods.",
+          "detail": "She wants more types of homes and faster decisions, with more attention to neighbourhood impacts."
+        },
+        "traffic": {
+          "summary": "Treat gridlock more urgently and make targeted transportation changes sooner.",
+          "detail": "She is promising faster action. The next detail is which intersections, routes or projects would change first."
+        },
+        "development": {
+          "summary": "Allow more housing while working earlier with residents and developers.",
+          "detail": "She wants fewer costly conflicts and earlier problem-solving. The open question is what would change in actual project outcomes."
+        },
+        "governance": {
+          "summary": "Lead without relying on Strong Mayor powers.",
+          "detail": "She wants more decisions to stay with the full council."
+        },
+        "datacentre": {
+          "summary": "Also voted for clearer rules and better coordination on data centres.",
+          "detail": "The vote shows support for more oversight. A direct position on this specific proposal would give voters more clarity."
+        }
+      },
+      "unansweredQuestions": [
+        "What would she cut, delay or redesign?",
+        "How much would those changes actually save?",
+        "What would she do differently as mayor than she has as a councillor?"
+      ],
+      "conversation": {
+        "positive": "Some local commenters describe her as direct, responsive and willing to challenge council decisions.",
+        "critical": "Others question her citywide vision and want more detail on what she would do instead.",
+        "note": "These are examples of online discussion, not polling or verified facts."
+      },
+      "sources": [
+        {
+          "label": "Campaign priorities",
+          "url": "https://lisakearns.ca/"
+        },
+        {
+          "label": "Background and career",
+          "url": "https://lisakearns.ca/about-me/"
+        },
+        {
+          "label": "Local Reddit discussion",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1s2lfa7/ward_2_councillor_lisa_kearns_is_first_candidate/"
+        }
+      ]
+    },
+    {
+      "id": "rn",
+      "slug": "rory-nisan",
+      "name": "Rory Nisan",
+      "currentRole": "Ward 3 councillor since 2018",
+      "image": "/assets/candidates/rn.webp",
+      "cardSummary": "Hold down spending, focus on affordability and make city services work better.",
+      "profileLine": "Put affordability at the centre of budget decisions.",
+      "experience": [
+        "Ward 3 city and regional councillor since 2018.",
+        "Former Canadian foreign service officer who worked on human-rights diplomacy and at Canada’s NATO delegation.",
+        "His campaign says he voted against three consecutive budgets."
+      ],
+      "issues": {
+        "taxes": {
+          "summary": "Slow city spending and put affordability ahead of lower-priority projects.",
+          "detail": "He wants the budget to grow more slowly. The key detail is which projects or services would be delayed and how much that would save."
+        },
+        "housing": {
+          "summary": "Make housing growth fit with affordability and city costs.",
+          "detail": "His campaign stresses affordability, but a more detailed housing-delivery plan is still needed for a full comparison."
+        },
+        "traffic": {
+          "summary": "Focus on practical transportation fixes residents can notice.",
+          "detail": "His campaign stresses quality of life, but a detailed citywide traffic plan is still limited."
+        },
+        "development": {
+          "summary": "Support growth while protecting affordability and Burlington’s quality of life.",
+          "detail": "That is the broad direction. More detail is still needed on height, location and infrastructure rules."
+        },
+        "governance": {
+          "summary": "Limit extra mayoral power and keep more decisions with council.",
+          "detail": "His campaign stresses accountability. More detail is still needed on exactly which powers he would delegate or avoid."
+        },
+        "datacentre": {
+          "summary": "Also voted for clearer rules and better coordination on data centres.",
+          "detail": "The vote shows support for more oversight. A direct position on this specific proposal would give voters more clarity."
+        }
+      },
+      "unansweredQuestions": [
+        "What would he cut or delay?",
+        "How would he keep infrastructure funded while slowing spending?",
+        "Which traffic or quality-of-life results would he promise to measure?"
+      ],
+      "conversation": {
+        "positive": "Some local commenters mention his accessibility and Ward 3 work.",
+        "critical": "Others question how detailed or consistent his fiscal plan is.",
+        "note": "These are examples of online discussion, not polling. Individual achievement claims still need separate verification."
+      },
+      "sources": [
+        {
+          "label": "Campaign priorities",
+          "url": "https://rorynisan.ca/"
+        },
+        {
+          "label": "Campaign biography",
+          "url": "https://rorynisan.ca/about"
+        },
+        {
+          "label": "Local Reddit discussion",
+          "url": "https://www.reddit.com/r/BurlingtonON/comments/1t06yw2/ward_3_councillor_rory_nisan_plans_to_run_for/"
+        }
+      ]
+    },
+    {
+      "id": "kd",
+      "slug": "keith-demoe",
+      "name": "Keith Demoe",
+      "currentRole": "Registered mayoral candidate",
+      "image": "",
+      "cardSummary": "No detailed 2026 platform found yet.",
+      "profileLine": "The official candidate list confirms he is running for mayor.",
+      "experience": [
+        "Received 653 votes, or 10.53%, in the 2022 Ward 2 council race.",
+        "Not currently a member of Burlington council.",
+        "No verified public campaign portrait has been found yet."
+      ],
+      "issues": {
+        "taxes": {
+          "summary": "No detailed tax plan found yet.",
+          "detail": ""
+        },
+        "housing": {
+          "summary": "No detailed housing plan found yet.",
+          "detail": ""
+        },
+        "traffic": {
+          "summary": "No detailed transportation plan found yet.",
+          "detail": ""
+        },
+        "development": {
+          "summary": "No detailed development plan found yet.",
+          "detail": ""
+        },
+        "governance": {
+          "summary": "No detailed governance plan found yet.",
+          "detail": ""
+        },
+        "datacentre": {
+          "summary": "No verified public position found yet.",
+          "detail": ""
+        }
+      },
+      "unansweredQuestions": [
+        "What are his top three priorities?",
+        "What would he change on taxes, housing and traffic?",
+        "Where can voters read a full platform?"
+      ],
+      "conversation": {
+        "positive": "There is not enough current local online discussion to summarize fairly.",
+        "critical": "There is not enough current local online discussion to summarize fairly.",
+        "note": "There is not enough discussion to build a useful sentiment summary."
+      },
+      "sources": [
+        {
+          "label": "Official candidate list",
+          "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
+        },
+        {
+          "label": "2022 certified election results",
+          "url": "https://www.burlington.ca/en/council-and-city-administration/resources/Elections/Form-EL08---Certificate-of-Election-Results---FINAL2022.pdf"
+        }
+      ]
+    },
+    {
+      "id": "yr",
+      "slug": "yugalkeesor-ramdhonee",
+      "name": "Yugalkeesor Ramdhonee",
+      "currentRole": "Registered mayoral candidate",
+      "image": "/assets/candidates/yr.webp",
+      "cardSummary": "Focus on affordability, seniors, road safety and clearer tax information.",
+      "profileLine": "Expand free or low-cost opportunities for seniors.",
+      "experience": [
+        "Has worked as a paramedic, business owner and chef, and has a business-administration diploma.",
+        "Moved to Canada from Mauritius in 2010 and has lived in Burlington since 2018.",
+        "Not currently a member of Burlington council."
+      ],
+      "issues": {
+        "taxes": {
+          "summary": "Show residents more clearly where tax dollars go before future increases.",
+          "detail": "His focus is transparency. He has not yet published enough budget detail to show what he would increase, reduce or keep."
+        },
+        "housing": {
+          "summary": "Create more housing options for people being priced out of Burlington.",
+          "detail": "He identifies affordability as the problem. More detail is still needed on the zoning, funding or partnerships he would use."
+        },
+        "traffic": {
+          "summary": "Improve road and sidewalk safety.",
+          "detail": "His public focus is safety and maintenance. A broader congestion plan has not yet been published."
+        },
+        "development": {
+          "summary": "Support growth that keeps services and quality of life manageable.",
+          "detail": "The broad principle is clear, but the tradeoffs and limits still need more detail."
+        },
+        "governance": {
+          "summary": "Make City Hall decisions and tax spending easier to understand.",
+          "detail": "His focus is transparency. More detail is needed on how he would change council process or mayoral powers."
+        },
+        "datacentre": {
+          "summary": "No verified public position found yet.",
+          "detail": ""
+        }
+      },
+      "unansweredQuestions": [
+        "What would his proposals cost?",
+        "Which level of government controls each promise?",
+        "How would he get support from the rest of council?"
+      ],
+      "conversation": {
+        "positive": "There is not enough current local online discussion to summarize fairly.",
+        "critical": "There is not enough current local online discussion to summarize fairly.",
+        "note": "There is not enough discussion to build a useful sentiment summary."
+      },
+      "sources": [
+        {
+          "label": "BurlingtonToday candidate questionnaire",
+          "url": "https://www.burlingtontoday.com/2026-municipal-election-news/meet-your-candidate-yugalkeesor-ramdhonee-is-seeking-the-mayors-position-12678824"
+        },
+        {
+          "label": "Official candidate list",
+          "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
+        }
+      ]
+    }
+  ]
+}
