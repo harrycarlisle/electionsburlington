@@ -8,6 +8,7 @@ retries the push when another bot wins the race.
 from __future__ import annotations
 
 import argparse
+import os
 import subprocess
 import sys
 import time
@@ -36,6 +37,11 @@ def main() -> int:
     parser.add_argument("--retries", type=int, default=4)
     parser.add_argument("paths", nargs="+")
     args = parser.parse_args()
+
+    ref = os.environ.get("GITHUB_REF", "")
+    if ref and ref != f"refs/heads/{args.branch}":
+        print(f"Skipping writer commit from {ref}; only {args.branch} is published.")
+        return 0
 
     run("git", "config", "user.name", args.name)
     run("git", "config", "user.email", args.email)

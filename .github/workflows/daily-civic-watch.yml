@@ -5,6 +5,7 @@ on:
     - cron: '20 10,16,22 * * *'
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - 'data/councillor-profiles.json'
       - 'data/community-discussion.json'
