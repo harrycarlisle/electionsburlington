@@ -16,9 +16,8 @@
     const match = String(value).match(/(\d{1,2}):(\d{2})/);
     if (!match) return String(value);
     const hour = Number(match[1]);
-    const minute = match[2];
     const suffix = hour >= 12 ? 'PM' : 'AM';
-    return `${hour % 12 || 12}:${minute} ${suffix}`;
+    return `${hour % 12 || 12}:${match[2]} ${suffix}`;
   };
   const isFresh = (value,maxMinutes=90) => {
     const date = new Date(value);
@@ -31,20 +30,27 @@
     const external = /^https?:\/\//.test(service.url || '');
     return `<a class="now-service" href="${esc(service.url)}"${external ? ' target="_blank" rel="noopener"' : ''}><small>${esc(service.label)}</small><strong>${esc(service.value)}</strong></a>`;
   };
-  const goMarkup = data => {
-    if (!data || !isFresh(data.generatedAt,90) || !Array.isArray(data.journeys) || !data.journeys.length) return '';
+  const routeMarkup = (data, route) => {
     const realtime = data.dataKind === 'realtime';
-    const times = data.journeys.slice(0,3).map(item => {
+    const journeys = Array.isArray(route.journeys) ? route.journeys.slice(0,3) : [];
+    if (!journeys.length) return '';
+    const times = journeys.map(item => {
       const predicted = realtime && item.computedDeparture;
-      const value = predicted || item.departure;
       const status = predicted && item.departureStatus ? ` <small>${esc(item.departureStatus)}</small>` : '';
-      return `<strong>${esc(formatTime(value))}${status}</strong>`;
+      return `<strong>${esc(formatTime(predicted || item.departure))}${status}</strong>`;
     }).join('<span aria-hidden="true">·</span>');
-    const first = data.journeys[0] || {};
-    const duration = first.duration ? `<span>${esc(first.duration)} to ${esc(data.destination?.label || '')}</span>` : '';
+    const first = journeys[0] || {};
+    const duration = first.duration ? `<span>${esc(first.duration)} to ${esc(route.destination?.label || '')}</span>` : '';
     const platform = first.platform ? `<span>Platform ${esc(first.platform)}</span>` : '';
+    return `<a class="now-go-route" href="${esc(data.liveStatusUrl || 'https://www.gotransit.com/en/see-schedules')}" target="_blank" rel="noopener"><b>${esc(route.origin?.label || 'Burlington')} → ${esc(route.destination?.label || '')}</b><div class="now-go-times">${times}</div><div class="now-go-meta"><span>${esc(data.route || 'Lakeshore West')}</span>${duration}${platform}</div></a>`;
+  };
+  const goMarkup = data => {
+    if (!data || !isFresh(data.generatedAt,90)) return '';
+    const routes = Array.isArray(data.routes) ? data.routes : (Array.isArray(data.journeys) && data.journeys.length ? [{origin:data.origin,destination:data.destination,journeys:data.journeys}] : []);
+    const routeHtml = routes.map(route => routeMarkup(data, route)).filter(Boolean).join('');
+    if (!routeHtml) return '';
     const alert = Array.isArray(data.alerts) && data.alerts.length ? `<div class="now-go-alert"><strong>${esc(data.alerts[0].headline || 'GO service update')}</strong>${data.alerts[0].detail ? `<span>${esc(data.alerts[0].detail)}</span>` : ''}</div>` : '';
-    return `<section class="now-go" aria-label="GO train times"><div class="now-go-head"><span>GO train</span><small>${realtime ? 'Realtime' : 'Scheduled'}</small></div><a href="${esc(data.liveStatusUrl || 'https://www.gotransit.com/en/see-schedules')}" target="_blank" rel="noopener"><b>${esc(data.origin?.label || 'Burlington')} → ${esc(data.destination?.label || 'Union')}</b><div class="now-go-times">${times}</div><div class="now-go-meta"><span>${esc(data.route || 'Lakeshore West')}</span>${duration}${platform}</div></a>${alert}</section>`;
+    return `<section class="now-go" aria-label="GO train times"><div class="now-go-head"><span>GO train</span><small>${data.dataKind === 'realtime' ? 'Realtime' : 'Scheduled'}</small></div><div class="now-go-routes">${routeHtml}</div>${alert}</section>`;
   };
 
   Promise.allSettled([
