@@ -1,0 +1,76 @@
+/* Product-pass polish that should stay readable and easy to maintain. */
+.home-desktop-nav{display:flex;justify-content:center;align-self:stretch;gap:34px;grid-area:nav}
+.home-desktop-nav a{position:relative;display:flex;align-items:center;color:var(--ink);font-size:13px;text-decoration:none}
+.home-desktop-nav a.active{color:var(--blue)}
+.home-desktop-nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--blue)}
+.menu-button{display:none}
+.primary-nav{display:none}
+@media(min-width:721px){
+  .masthead{grid-template-columns:auto 1fr minmax(260px,380px)!important;grid-template-areas:"brand nav search"!important}
+  .home-desktop-nav{display:flex!important}
+  .primary-nav,.menu-button{display:none!important}
+}
+@media(max-width:720px){
+  .home-desktop-nav{display:none!important}
+  .menu-button{display:grid!important}
+  .primary-nav.is-open .home-nav-support{display:grid!important;grid-template-columns:1fr 1fr;gap:0 12px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+  .primary-nav.is-open .home-nav-support a{font-size:12px!important;color:var(--muted)!important;min-height:34px!important}
+}
+.now-weather-value,.now-utility[data-weather-temperature],.now-weather strong{
+  display:inline-flex!important;align-items:center!important;gap:6px!important;font-style:normal
+}
+.now-weather-value svg,.now-weather strong svg{width:16px;height:16px;flex:0 0 auto}
+.now-weather-value em,.now-weather strong em{font-style:normal;color:var(--muted);font-weight:650;font-size:12px}
+.now-event span{display:grid;gap:2px}
+.now-event em{font-style:normal;color:var(--muted);font-size:11px}
+@media(prefers-reduced-motion:reduce){
+  .live-pulse{animation:none!important;box-shadow:0 0 0 3px rgba(47,168,102,.18)}
+}
+.publication-shell .header-search{
+  position:relative;display:flex;align-items:center;height:42px;width:min(100%,430px);
+  border:1px solid var(--line);border-radius:999px;background:var(--card,#fff)
+}
+.publication-shell .header-search input{
+  width:100%;height:100%;min-width:0;padding:0 10px 0 16px;border:0;outline:0;
+  border-radius:inherit;background:transparent;color:var(--ink);font:500 12px/1 Arial,sans-serif
+}
+.publication-shell .header-search>svg{width:18px;height:18px;margin-right:13px;fill:none;stroke:currentColor;stroke-width:1.9;flex:0 0 auto}
+.publication-shell .header-controls{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+.publication-shell .search-popover{position:absolute;z-index:80;top:calc(100% + 8px);left:0;right:0;max-height:65vh;overflow:auto;padding:12px;border:1px solid var(--line);border-radius:13px;background:var(--card,#fff);box-shadow:0 20px 55px rgba(13,36,61,.18)}
+.publication-shell .search-popover[hidden]{display:none}
+.publication-shell .search-suggestions{display:flex;gap:6px;overflow:auto;padding-bottom:9px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.publication-shell .search-suggestions button,.publication-shell .search-results a{display:block;width:100%;text-align:left;border:0;background:transparent;color:inherit;padding:8px 4px;text-decoration:none;cursor:pointer}
+.publication-shell .search-results span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.simple-page .page-kicker,.page-kicker,.daily-brief-kicker{color:var(--muted)!important}
+.about-page .page-kicker{color:var(--muted)!important}
+.bn-story-page .article-head,.article-head{text-align:left!important}
+.bn-story-page .article-head h1,.article-head h1{text-align:left!important}
+.article-body>p:first-child::first-letter{float:none!important;font-size:inherit!important;line-height:inherit!important;padding:0!important;color:inherit!important}
+.article-callout,.article-reminder{margin:2em 0;padding:18px 20px;border-radius:14px;background:color-mix(in srgb,currentColor 5%,transparent)}
+.article-callout small,.article-reminder small,.article-reveal small{display:block;font:800 .72rem/1 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;opacity:.7}
+.article-reveal{margin:2em 0;padding-top:8px}
+.article-reveal .answer{margin-top:14px;padding:14px 16px;border-radius:12px;background:color-mix(in srgb,currentColor 6%,transparent)}
+.bn-story-page .article-share-end{margin:2.4em 0 0}
+@media(max-width:720px){
+  .publication-shell .header-search{width:100%;max-width:none;height:42px}
+  html,body.publication-shell{overflow-x:hidden}
+  body.menu-is-open{overflow:hidden}
+  #candidateStrip{display:flex!important;overflow-x:auto!important;gap:12px!important;padding:0 18px 18px 0!important;scroll-snap-type:x proximity;scrollbar-width:thin}
+  #candidateStrip .candidate-card{flex:0 0 78%!important;min-width:78%!important;max-width:78%!important;scroll-snap-align:start}
+  #matters.election-issues-legacy{display:none}
+}
+.camera-card{display:grid}
+.camera-map{position:relative;height:92px;margin-top:0;overflow:hidden;background:#d7e1e8}
+.camera-map img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85)}
+.camera-pin{position:absolute;left:50%;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#c23b22;border:2px solid #fff;box-shadow:0 0 0 4px rgba(194,59,34,.18)}
+.camera-pin i{position:absolute;left:14px;top:1px;width:16px;height:2px;background:#c23b22}
+.camera-map-credit{margin:6px 0 0;font-size:9px;color:var(--muted)}
+.bored-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.bored-actions button{min-height:40px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;font:750 12px/1 Arial,sans-serif}
+.bored-actions .is-on{border-color:#2b7a4b;background:#e7f4eb}
+.receipt-shell{margin-top:14px;padding:12px;border:1px dashed var(--line);border-radius:10px;font-size:12px}
+.star-rating{display:flex;gap:4px}
+.star-rating button{border:0;background:transparent;font-size:18px;cursor:pointer;color:#c5ccd1}
+.star-rating button.is-on{color:#d4a017}
+html[data-theme="dark"] .publication-shell .header-search,
+html[data-theme="dark"] .bored-actions button{background:#11191d;color:#edf4f8;border-color:#3a474e}

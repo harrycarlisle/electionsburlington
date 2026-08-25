@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Burlington News story catalog",
+  "type": "object",
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "headline", "url", "gates"],
+        "properties": {
+          "id": {"type": "string"},
+          "slug": {"type": "string"},
+          "title": {"type": "string"},
+          "headline": {"type": "string"},
+          "deck": {"type": "string"},
+          "category": {"type": "string"},
+          "label": {"type": "string"},
+          "storyGoal": {"type": "string"},
+          "hook": {"type": "string"},
+          "published": {"type": "string"},
+          "publishedAt": {"type": "string"},
+          "updatedAt": {"type": "string"},
+          "author": {"type": "string"},
+          "byline": {"type": "string"},
+          "sources": {"type": "array"},
+          "heroImage": {"type": "string"},
+          "image": {"type": "string"},
+          "heroAlt": {"type": "string"},
+          "alt": {"type": "string"},
+          "heroCredit": {"type": "string"},
+          "credit": {"type": "string"},
+          "imageRights": {"type": "string"},
+          "topics": {"type": "array"},
+          "relatedStoryIds": {"type": "array"},
+          "signals": {"type": "object"},
+          "evergreen": {"type": "boolean"},
+          "activeFrom": {"type": "string"},
+          "activeUntil": {"type": "string"},
+          "lastHomepageLead": {"type": "string"}
+        }
+      }
+    }
+  }
+}

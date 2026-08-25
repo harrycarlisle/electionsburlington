@@ -16,7 +16,7 @@
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "placementScore": 95
+      "placementScore": 99
     },
     {
       "id": "data-centre-not-ai",
@@ -33,6 +33,22 @@
       "placementScore": 89
     },
     {
+      "id": "nostalgia-games-cafe-closure",
+      "kind": "original",
+      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
+      "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
+      "label": "Local business",
+      "labelEssential": true,
+      "url": "articles/nostalgia-games-cafe-closure.html",
+      "image": "assets/editorial/nostalgia-cafe-closure.svg",
+      "alt": "Board-game cafe closure illustration",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
+      "placementScore": 88
+    },
+    {
       "id": "skyway-tunnels",
       "kind": "feature",
       "headline": "Ontario nearly replaced the Skyway with three tunnels.",
@@ -45,18 +61,6 @@
       "credit": "Dave Lauretti · CC BY 2.0",
       "published": "2026-08-24",
       "placementScore": 82
-    },
-    {
-      "id": "ribfest-2026",
-      "kind": "seasonal",
-      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
-      "label": "Events",
-      "labelEssential": true,
-      "url": "articles/ribfest-2026.html",
-      "image": "assets/home/ribs.webp",
-      "alt": "Barbecue ribs smoking over a pit",
-      "activeFrom": "2026-08-18",
-      "placementScore": 78
     }
   ],
   "rail": [
@@ -74,7 +78,7 @@
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "placementScore": 95
+      "placementScore": 99
     },
     {
       "id": "ontario-student-rights-school",
@@ -119,7 +123,7 @@
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "placementScore": 95
+      "placementScore": 99
     },
     {
       "id": "ontario-student-rights-school",
@@ -149,6 +153,22 @@
       "placementScore": 89
     },
     {
+      "id": "nostalgia-games-cafe-closure",
+      "kind": "original",
+      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
+      "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
+      "label": "Local business",
+      "labelEssential": true,
+      "url": "articles/nostalgia-games-cafe-closure.html",
+      "image": "assets/editorial/nostalgia-cafe-closure.svg",
+      "alt": "Board-game cafe closure illustration",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
+      "placementScore": 88
+    },
+    {
       "id": "730-brant-vacant-building",
       "kind": "investigation",
       "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
@@ -171,25 +191,19 @@
       "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
       "activeFrom": "2026-08-21",
       "placementScore": 81
-    },
-    {
-      "id": "ribfest-2026",
-      "kind": "seasonal",
-      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
-      "label": "Events",
-      "labelEssential": true,
-      "url": "articles/ribfest-2026.html",
-      "image": "assets/home/ribs.webp",
-      "alt": "Barbecue ribs smoking over a pit",
-      "activeFrom": "2026-08-18",
-      "placementScore": 78
     }
   ],
   "audit": [
     {
       "id": "burlington-crime-analysis-2026",
       "state": "eligible",
-      "placementScore": 95,
+      "placementScore": 99,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "nostalgia-games-cafe-closure",
+      "state": "eligible",
+      "placementScore": 88,
       "reason": "all gates passed"
     },
     {

@@ -4,7 +4,16 @@
   const storage = {
     done: 'burlington-news-passport',
     want: 'burlington-news-passport-want',
-    events: 'burlington-news-explore-saved'
+    events: 'burlington-news-explore-saved',
+    bored: 'burlington-news-bored-prefs'
+  };
+  const readObject = key => {
+    try { return JSON.parse(localStorage.getItem(key) || '{}'); }
+    catch (_) { return {}; }
+  };
+  const writeObject = (key, value) => {
+    try { localStorage.setItem(key, JSON.stringify(value)); }
+    catch (_) {}
   };
   const readSet = key => {
     try { return new Set(JSON.parse(localStorage.getItem(key) || '[]')); }
@@ -42,6 +51,7 @@
   const done = readSet(storage.done);
   const wanted = readSet(storage.want);
   const savedEvents = readSet(storage.events);
+  const boredPrefs = readObject(storage.bored);
 
   const detailDialog = qs('#detailDialog');
   const dialogContent = qs('#dialogContent');
@@ -160,11 +170,14 @@
     });
   }
 
+  function mapsUrl(idea) {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${idea.title} Burlington Ontario`)}`;
+  }
   function paintIdea() {
     if (!ideas.length) return;
     const idea = ideas[ideaIndex % ideas.length];
-    qs('#boredIdea').innerHTML = `${imageMarkup(idea,'bored-visual')}<div class="bored-copy"><strong>${esc(idea.title)}</strong><p>${esc(idea.copy)}</p></div>`;
-    qs('#boredIdea').onclick = () => window.open(idea.url,'_blank','noopener');
+    const pref = boredPrefs[idea.id] || {};
+    qs('#boredIdea').innerHTML = `${imageMarkup(idea,'bored-visual')}<div class="bored-copy"><strong>${esc(idea.title)}</strong><p>${esc(idea.copy)}</p><div class="bored-actions"><button type="button" data-bored="like" class="${pref.like?'is-on':''}">👍 Like this</button><button type="button" data-bored="skip" class="${pref.skip?'is-on':''}">👎 Not for me</button><button type="button" data-bored="do" class="${pref.planned?'is-on':''}">✓ Let’s do this</button></div>${pref.planned?`<p class="empty-note"><a href="${esc(mapsUrl(idea))}" target="_blank" rel="noopener">Open in Google Maps</a>${pref.done?' · Marked done':''}</p>`:''}</div>`;
   }
 
   function paintSavedEvents() {
@@ -191,7 +204,7 @@
     const isDone = done.has(place.id);
     const isWanted = wanted.has(place.id);
     const placeholder = place.image ? '' : ' is-placeholder';
-    const actions = isBonus ? `<div class="passport-actions passport-bonus-actions"><a class="done-button" href="${esc(place.url)}" target="_blank" rel="noopener">Open bonus stop</a></div>` : `<div class="passport-actions"><button class="save-button ${isWanted ? 'is-saved' : ''}" type="button" data-want="${esc(place.id)}">${isWanted ? 'Want to go ✓' : 'Want to go'}</button><button class="done-button ${isDone ? 'is-done' : ''}" type="button" data-done="${esc(place.id)}">${isDone ? 'Done ✓' : 'Done'}</button></div>`;
+    const actions = isBonus ? `<div class="passport-actions passport-bonus-actions"><a class="done-button" href="${esc(place.url)}" target="_blank" rel="noopener">Open bonus stop</a></div>` : `<div class="passport-actions"><button class="save-button ${isWanted ? 'is-saved' : ''}" type="button" data-want="${esc(place.id)}">${isWanted ? 'Want to go ✓' : 'Want to go'}</button><button class="done-button ${isDone ? 'is-done' : ''}" type="button" data-done="${esc(place.id)}">${isDone ? 'Done ✓' : 'Done'}</button><label class="save-button">Add photo<input type="file" accept="image/*" capture="environment" data-photo="${esc(place.id)}" hidden></label></div>`;
     return `<article class="passport-card${isBonus ? ' bonus-card is-unlocked' : ''}${placeholder}" data-card-place="${esc(place.id)}">${addToVisual(imageMarkup(place,'passport-visual'),`<span class="passport-number">${isBonus ? '13' : place.number}</span>`)}<div class="passport-copy"><h3>${esc(place.title)}</h3><p>${esc(place.copy)}</p>${actions}</div></article>`;
   }
 
@@ -229,6 +242,19 @@
     });
     qs('#showAllEvents').addEventListener('click', () => { showAll = !showAll; paintEvents(); });
     qs('#pickAnother').addEventListener('click', () => { ideaIndex = (ideaIndex + 1) % ideas.length; paintIdea(); });
+    qs('#boredIdea').addEventListener('click', event => {
+      const button = event.target.closest('[data-bored]');
+      if (!button) return;
+      const idea = ideas[ideaIndex % ideas.length];
+      if (!idea) return;
+      const pref = boredPrefs[idea.id] || {};
+      if (button.dataset.bored === 'like') pref.like = !pref.like;
+      if (button.dataset.bored === 'skip') { pref.skip = !pref.skip; if (pref.skip) { ideaIndex = (ideaIndex + 1) % ideas.length; } }
+      if (button.dataset.bored === 'do') pref.planned = !pref.planned;
+      boredPrefs[idea.id] = pref;
+      writeObject(storage.bored, boredPrefs);
+      paintIdea();
+    });
     qs('#savedEvents').addEventListener('click', event => {
       const button = event.target.closest('[data-remove-event]');
       if (!button) return;
@@ -248,6 +274,14 @@
         const id = doneButton.dataset.done;
         if (done.has(id)) done.delete(id); else done.add(id);
         paintPassport();
+      }
+    });
+    qs('#passportRail').addEventListener('change', event => {
+      const photo = event.target.closest('[data-photo]');
+      if (photo && event.target.files?.[0]) {
+        done.add(photo.dataset.photo);
+        paintPassport();
+        event.target.value = '';
       }
     });
     qs('#passportMap').addEventListener('click', event => {
@@ -283,6 +317,8 @@
       paintIdea();
       paintPassport();
       installEvents();
+      const hash = location.hash.replace('#event-','');
+      if (hash && events.some(item => item.id === hash)) openEvent(hash);
     } catch (error) {
       qs('#eventGrid').innerHTML = '<p class="empty-note">The events calendar could not load. Try again shortly.</p>';
       console.error(error);

@@ -16,23 +16,16 @@ import re
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from editorial_policy import load_policy, signal_weights
+
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "data" / "story-catalog.json"
 RADAR = ROOT / "data" / "local-radar.json"
+SEEN = ROOT / "data" / "radar-seen.json"
+LEAD_HISTORY = ROOT / "data" / "lead-history.json"
 OUTPUT = ROOT / "data" / "home-surface.json"
 TZ = ZoneInfo("America/Toronto")
-
-WEIGHTS = {
-    "interest": 0.20,
-    "relevance": 0.19,
-    "novelty": 0.13,
-    "familiarity": 0.10,
-    "consequence": 0.12,
-    "sourceConfidence": 0.08,
-    "originality": 0.06,
-    "visualStrength": 0.07,
-    "breadth": 0.05,
-}
+WEIGHTS = signal_weights("homepage")
 
 
 def parse_date(value: str | None) -> dt.date | None:
@@ -167,8 +160,46 @@ def main() -> int:
         ],
     }
     OUTPUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    record_lead(payload, feature_candidates[0] if feature_candidates else None, today)
     print(f"Ranked {len(eligible)} eligible stories for {today.isoformat()}")
     return 0
+
+
+def record_lead(catalog: dict, lead: dict | None, today: dt.date) -> None:
+    """Remember the homepage hero so rotation pressure is real on the next run."""
+    if not lead or not lead.get("id"):
+        return
+    lead_id = lead["id"]
+    for item in catalog.get("items") or []:
+        if item.get("id") == lead_id:
+            item["lastHomepageLead"] = today.isoformat()
+    CATALOG.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    history = {"currentLead": lead_id, "updated": today.isoformat(), "history": []}
+    try:
+        history = json.loads(LEAD_HISTORY.read_text(encoding="utf-8"))
+    except Exception:
+        pass
+    rows = [row for row in history.get("history") or [] if row.get("id") != lead_id or row.get("date") != today.isoformat()]
+    if not rows or rows[0].get("id") != lead_id or rows[0].get("date") != today.isoformat():
+        rows.insert(0, {"id": lead_id, "headline": lead.get("headline"), "date": today.isoformat()})
+    history = {"currentLead": lead_id, "updated": today.isoformat(), "history": rows[:40]}
+    LEAD_HISTORY.write_text(json.dumps(history, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    try:
+        seen_payload = json.loads(SEEN.read_text(encoding="utf-8"))
+    except Exception:
+        seen_payload = {"items": {}}
+    seen = seen_payload.setdefault("items", {})
+    now = dt.datetime.now(TZ).isoformat()
+    title_words = set(re.sub(r"[^a-z0-9]+", " ", str(lead.get("headline") or "").lower()).split())
+    for key, rec in seen.items():
+        other = set(re.sub(r"[^a-z0-9]+", " ", str(rec.get("headline") or "").lower()).split())
+        if title_words and other and len(title_words & other) / max(1, min(len(title_words), len(other))) >= 0.55:
+            rec["homepageShows"] = int(rec.get("homepageShows") or 0) + 1
+            rec["lastHomepageAt"] = now
+    seen_payload["updatedAt"] = now
+    SEEN.write_text(json.dumps(seen_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

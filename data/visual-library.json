@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "rules": {
+    "doNotStealPublisherPhotos": true,
+    "creditStyle": "tiny, light, bottom-left",
+    "avoidAdjacentReuse": true,
+    "recentWindowHours": 72,
+    "originalsPreferBespoke": true
+  },
+  "slots": [
+    {"id": "downtown", "label": "Downtown Burlington", "status": "needed", "current": null},
+    {"id": "waterfront", "label": "Spencer Smith Park / waterfront walk", "status": "reusable", "current": "assets/explore/brant-street-pier.webp", "credit": "Burlington News visual"},
+    {"id": "city-hall", "label": "City Hall", "status": "needed", "current": null},
+    {"id": "suburb", "label": "Suburban neighbourhood", "status": "needed", "current": null},
+    {"id": "crime-abstract", "label": "Police / crime abstract", "status": "placeholder", "current": "assets/editorial/halton-crime-comparison.svg", "credit": "Burlington News chart"},
+    {"id": "skyway", "label": "QEW / Skyway", "status": "reusable", "current": "assets/home/skyway-reader.webp", "credit": "Dave Lauretti · CC BY 2.0"},
+    {"id": "go-commute", "label": "GO / train commute", "status": "needed", "current": null},
+    {"id": "schools", "label": "Schools", "status": "weak-reuse", "current": "assets/home/school-rights.webp"},
+    {"id": "construction", "label": "Development / construction", "status": "needed", "current": "assets/explore/burlington-orientation-map.svg"},
+    {"id": "civic", "label": "Council / civic decision", "status": "needed", "current": null},
+    {"id": "parks", "label": "Parks / trails", "status": "needed", "current": null},
+    {"id": "escarpment", "label": "Escarpment", "status": "reusable", "current": "assets/explore/night-sky-mount-nemo.webp"},
+    {"id": "food", "label": "Restaurants / food", "status": "weak-reuse", "current": "assets/home/ribs.webp"},
+    {"id": "sports", "label": "Sports", "status": "reusable", "current": "assets/editorial/sports-collage.webp"},
+    {"id": "history", "label": "Local history", "status": "needed", "current": null},
+    {"id": "winter", "label": "Winter", "status": "needed", "current": null},
+    {"id": "storms", "label": "Storms / weather", "status": "needed", "current": null},
+    {"id": "rbg", "label": "RBG / botanical gardens", "status": "needed", "current": null},
+    {"id": "hamilton", "label": "Hamilton generic", "status": "needed", "current": null},
+    {"id": "toronto", "label": "Toronto generic", "status": "needed", "current": null},
+    {"id": "baseball", "label": "Baseball / stadium / local sports scene", "status": "needed", "current": null},
+    {"id": "summer-outing", "label": "Ice cream / summer outing / family activity", "status": "needed", "current": null},
+    {"id": "events", "label": "Burlington events / market / live music", "status": "reusable", "current": "assets/explore/farmers-market.webp"}
+  ]
+}

@@ -75,14 +75,15 @@
     if (!hosts.length) return;
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 3200);
-    fetch('https://api.open-meteo.com/v1/forecast?latitude=43.3255&longitude=-79.7990&current=temperature_2m&temperature_unit=celsius', { signal: controller.signal })
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=43.3255&longitude=-79.7990&current=temperature_2m,weather_code&temperature_unit=celsius', { signal: controller.signal })
       .then(response => response.ok ? response.json() : Promise.reject())
       .then(data => {
         const temperature = Math.round(Number(data.current?.temperature_2m));
         if (!Number.isFinite(temperature)) return;
+        const condition = weatherLabel(Number(data.current?.weather_code));
         hosts.forEach(host => {
-          host.innerHTML = `${weatherIcon}<strong>${temperature}°C</strong>`;
-          host.setAttribute('aria-label', `${temperature} degrees Celsius in Burlington`);
+          host.innerHTML = `${weatherIcon}<strong>${temperature}°C</strong>${condition ? `<em>${condition}</em>` : ''}`;
+          host.setAttribute('aria-label', `${temperature} degrees Celsius in Burlington${condition ? `, ${condition}` : ''}`);
           host.hidden = false;
         });
       })
@@ -90,6 +91,19 @@
       .finally(() => clearTimeout(timer));
   }
 
+  function weatherLabel(code) {
+    if (!Number.isFinite(code)) return '';
+    if (code === 0) return 'Clear';
+    if (code <= 3) return 'Mostly cloudy';
+    if (code <= 48) return 'Fog';
+    if (code <= 57) return 'Drizzle';
+    if (code <= 67) return 'Rain';
+    if (code <= 77) return 'Snow';
+    if (code <= 82) return 'Showers';
+    if (code <= 86) return 'Snow showers';
+    if (code <= 99) return 'Thunderstorm';
+    return '';
+  }
   function loadWeather() { loadTemperature(); loadAlerts(); }
   window.BurlingtonWeather = { load: loadWeather };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadWeather);

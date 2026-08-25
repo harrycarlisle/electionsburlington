@@ -1,5 +1,5 @@
 (() => {
-  const isArticle = location.pathname.includes('/articles/');
+  const isArticle = /\/(articles|stories)\//.test(location.pathname);
   if (!isArticle) return;
 
   const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -83,18 +83,54 @@
     if(!picks.length)return;
     const section=document.createElement('section');
     section.className='article-related';
-    section.innerHTML=`<div class="article-related-head"><h2>You might also like…</h2><a href="/updates.html">All stories →</a></div><div class="article-related-grid">${picks.map(item=>`<a class="article-related-card" href="/${esc(item.url)}"><img src="/${esc(item.image||'assets/editorial/home-share.webp')}" alt="${esc(item.alt||item.headline||'Burlington News')}" loading="lazy"><span>${esc(item.label||'Burlington')}</span><strong>${esc(item.headline)}</strong></a>`).join('')}</div>`;
+    const storyUrl=item=>String(item.url||'').replace(/^articles\/(.+)\.html$/,'/stories/$1/').replace(/^(?!https?:|\/)/,'/');
+    section.innerHTML=`<div class="article-related-head"><h2>You might also like…</h2><a href="/news/">All stories →</a></div><div class="article-related-grid">${picks.map(item=>`<a class="article-related-card" href="${esc(storyUrl(item))}"><img src="/${esc(item.image||'assets/editorial/home-share.webp')}" alt="${esc(item.alt||item.headline||'Burlington News')}" loading="lazy"><span>${esc(item.label||'Burlington')}</span><strong>${esc(item.headline)}</strong></a>`).join('')}</div>`;
     const main=document.querySelector('main.article');
     main?.appendChild(section);
   }
 
+  function addEndCopy(){
+    const body=document.querySelector('.article-body');
+    if(!body||document.querySelector('.article-share-end'))return;
+    const wrap=document.createElement('div');
+    wrap.className='article-share-tools article-share-end';
+    wrap.innerHTML='<button type="button" data-copy-link>Copy link</button>';
+    body.appendChild(wrap);
+    const copy=wrap.querySelector('[data-copy-link]');
+    copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);copy.textContent='Copied';setTimeout(()=>copy.textContent='Copy link',1400)}catch(_){}});
+  }
+  function addReadTime(){
+    const byline=document.querySelector('.article-byline,.byline');
+    if(!byline||byline.querySelector('[data-read-time]'))return;
+    const words=(document.querySelector('.article-body')?.textContent||'').split(/\s+/).filter(Boolean).length;
+    const minutes=Math.max(1,Math.round(words/220));
+    const stamp=document.createElement('span');
+    stamp.dataset.readTime='1';
+    stamp.textContent=`${minutes} min read`;
+    byline.appendChild(stamp);
+  }
+  function addSchema(){
+    if(document.getElementById('articleStructuredData'))return;
+    const title=document.querySelector('.article-head h1')?.textContent?.trim()||document.title;
+    const description=document.querySelector('meta[name="description"]')?.content||'';
+    const image=document.querySelector('.article-hero img')?.src||'https://burlingtonnews.ca/assets/editorial/home-share.webp';
+    const ld=document.createElement('script');
+    ld.id='articleStructuredData';
+    ld.type='application/ld+json';
+    ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'NewsArticle',headline:title,description,image:[image],author:{'@type':'Organization',name:'Burlington News'},publisher:{'@type':'NewsMediaOrganization',name:'Burlington News',logo:{'@type':'ImageObject',url:'https://burlingtonnews.ca/logo-mark.png'}},mainEntityOfPage:location.href.split('#')[0]});
+    document.head.appendChild(ld);
+  }
   function normalizeArticleMeta(){
     const description=document.querySelector('meta[name="description"]')?.content||'';
     const title=document.querySelector('.article-head h1')?.textContent?.trim()||document.title.replace(/\s*\|\s*Burlington News.*/,'');
     const hero=document.querySelector('.article-hero img');
     const image=hero?.src||'https://burlingtonnews.ca/assets/editorial/home-share.webp';
+    const canonical=document.querySelector('link[rel="canonical"]');
+    const storyPath=location.pathname.replace(/\/articles\/(.+)\.html$/,'/stories/$1/');
+    if(canonical&&/\/articles\//.test(canonical.href))canonical.href=`https://burlingtonnews.ca${storyPath}`;
+    const url=(canonical?.href)||location.href.split('#')[0];
     const metas=[
-      ['property','og:site_name','Burlington News'],['property','og:type','article'],['property','og:title',title],['property','og:description',description],['property','og:url',location.href.split('#')[0]],['property','og:image',image],
+      ['property','og:site_name','Burlington News'],['property','og:type','article'],['property','og:title',title],['property','og:description',description],['property','og:url',url],['property','og:image',image],
       ['name','twitter:card','summary_large_image'],['name','twitter:title',title],['name','twitter:description',description],['name','twitter:image',image]
     ];
     metas.forEach(([attr,key,value])=>{let node=document.querySelector(`meta[${attr}="${key}"]`);if(!node){node=document.createElement('meta');node.setAttribute(attr,key);document.head.appendChild(node)}node.content=value});
@@ -104,7 +140,10 @@
     lockArticleSearch();
     ensureHero();
     addShareTools();
+    addEndCopy();
+    addReadTime();
     normalizeArticleMeta();
+    addSchema();
     document.querySelectorAll('.article-aside').forEach(node=>node.classList.add('article-aside-legacy'));
     addRelated();
   });

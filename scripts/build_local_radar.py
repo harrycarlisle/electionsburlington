@@ -15,11 +15,18 @@ import re
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from editorial_policy import load_policy, signal_weights
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 TZ = ZoneInfo("America/Toronto")
 OUT = DATA / "local-radar.json"
 SEEN = DATA / "radar-seen.json"
+NAV_JUNK = (
+    "privacy policy", "terms of use", "terms of service", "contact us", "sign in",
+    "log in", "subscribe", "skip to", "cookie", "accessibility statement",
+    "health & well-being", "health and well-being", "main menu", "search the site",
+)
 
 SOURCE_CONFIDENCE = {"official": 5.0, "primary": 5.0, "reporting": 4.0, "reported": 4.0, "community": 2.0, "social": 1.5}
 HIGH_INTEREST = ("crash", "collision", "fire", "crime", "police", "rabies", "school", "tax", "closure", "flood", "outage", "election", "restaurant", "food", "golf", "record", "winless", "0-24", "skyway", "go transit", "housing")
@@ -160,12 +167,8 @@ def normalize(item: dict, kind: str, now: dt.datetime, seen: dict) -> dict:
         "rotation": rotation_score(candidate["radarId"], seen, now),
     }
     candidate["signals"] = signals
-    weights = {
-        "interest": .17, "relevance": .17, "novelty": .10, "familiarity": .08,
-        "consequence": .13, "freshness": .14, "sourceConfidence": .08,
-        "originality": .06, "visualStrength": .04, "rotation": .03,
-    }
-    score = sum(signals[key] * weight for key, weight in weights.items()) / 5 * 100
+    weights = signal_weights("radar")
+    score = sum(signals[key] * float(weights.get(key) or 0) for key in signals) / 5 * 100
     source_lower = candidate["source"].lower()
     if "burlingtontoday" in source_lower:
         score *= .82
@@ -173,9 +176,34 @@ def normalize(item: dict, kind: str, now: dt.datetime, seen: dict) -> dict:
     if signals["relevance"] < 2.5 and signals["consequence"] < 4.4:
         score *= .55
     candidate["radarScore"] = round(score)
-    candidate["eligibleRightNow"] = signals["freshness"] >= 3.2 and signals["relevance"] >= 3.4 and signals["sourceConfidence"] >= 3.8 and signals["consequence"] >= 3.0
-    candidate["eligibleHomepage"] = signals["relevance"] >= 3.4 and signals["sourceConfidence"] >= 3.8 and candidate["radarScore"] >= 58
+    rules = (load_policy().get("eligibility") or {})
+    right_now = rules.get("rightNow") or {}
+    homepage = rules.get("homepage") or {}
+    candidate["eligibleRightNow"] = (
+        signals["freshness"] >= float(right_now.get("minFreshness") or 3.2)
+        and signals["relevance"] >= float(right_now.get("minRelevance") or 3.4)
+        and signals["sourceConfidence"] >= float(right_now.get("minSourceConfidence") or 3.8)
+        and signals["consequence"] >= float(right_now.get("minConsequence") or 3.0)
+    )
+    candidate["eligibleHomepage"] = (
+        signals["relevance"] >= float(homepage.get("minRelevance") or 3.4)
+        and signals["sourceConfidence"] >= float(homepage.get("minSourceConfidence") or 3.8)
+        and candidate["radarScore"] >= float(homepage.get("minRadarScore") or 58)
+    )
+    candidate["eligibleNewest"] = signals["freshness"] >= 2.4 and signals["relevance"] >= 3.0
+    candidate["eligibleEditorial"] = candidate["kind"] in {"original", "community"} or signals["novelty"] >= 3.2
     return candidate
+
+
+def is_junk(item: dict) -> bool:
+    headline = str(item.get("headline") or item.get("title") or "").strip().lower()
+    if not headline or len(headline) < 8:
+        return True
+    if headline in NAV_JUNK or any(headline.startswith(token) for token in NAV_JUNK):
+        return True
+    if headline.count(" ") < 2 and len(headline) < 22:
+        return True
+    return False
 
 
 def main() -> int:
@@ -186,7 +214,7 @@ def main() -> int:
 
     source_monitor = load("source-monitor.json", {"items": []})
     for item in source_monitor.get("items", []):
-        if item.get("verified"):
+        if item.get("verified") and not is_junk(item):
             candidates.append(normalize(item, "source", now, seen))
 
     local_leads = load("local-leads.json", {"items": []})
@@ -210,6 +238,24 @@ def main() -> int:
         published.setdefault("kind", "original")
         candidates.append(normalize(published, "original", now, seen))
 
+    pitches = load("editorial-pitches.json", {}).get("pitches") or []
+    excluded = {str(item).lower() for item in (load_policy().get("originalStory") or {}).get("excludeStatuses") or ("published", "hold-duplicate")}
+    for pitch in pitches:
+        if str(pitch.get("status") or "").lower() in excluded:
+            continue
+        idea = {
+            "id": f"pitch:{pitch.get('slug')}",
+            "headline": pitch.get("workingTitle"),
+            "description": pitch.get("hook"),
+            "source": "Burlington News",
+            "sourceType": "official",
+            "kind": "original",
+            "url": "docs/editorial-style.md",
+            "verificationTier": "reported",
+        }
+        if not is_junk(idea):
+            candidates.append(normalize(idea, "original", now, seen))
+
     # Deduplicate by normalized headline; prefer the higher scoring / more primary version.
     deduped: dict[str, dict] = {}
     for item in candidates:
@@ -221,7 +267,10 @@ def main() -> int:
     ranked = sorted(deduped.values(), key=lambda row: row["radarScore"], reverse=True)
     right_now = [row for row in ranked if row["eligibleRightNow"]][:5]
     homepage = [row for row in ranked if row["eligibleHomepage"]][:12]
-    originals = [row for row in ranked if row["signals"]["novelty"] >= 3.3 and row["signals"]["interest"] >= 3.3][:12]
+    originals = [
+        row for row in ranked
+        if row["kind"] == "original" or (row["signals"]["novelty"] >= 3.1 and row["signals"]["interest"] >= 3.0)
+    ][:12]
 
     for row in ranked:
         rec = seen.setdefault(row["radarId"], {})

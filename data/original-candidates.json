@@ -1,0 +1,135 @@
+{
+  "generatedAt": "2026-08-25T14:33:43.222276-04:00",
+  "method": "Rank unpublished original pitches for curiosity, local specificity, available reporting leads and archive potential. Do not invent finished features.",
+  "cadence": "At least one original-story candidate every daily news watch. Publish nothing when reporting is not strong enough.",
+  "today": [
+    {
+      "id": "john-moodie-cymric-whisky",
+      "kind": "original-candidate",
+      "headline": "The Burlington whisky shipment a U-boat sent to the bottom of the Atlantic",
+      "hook": "In 1916, whisky belonging to a Burlington resident who owned Hamilton's first car was aboard the White Star liner Cymric when the same U-boat commander who sank Lusitania attacked it off Ireland. What was in the barrels, who paid for the loss, and what did one local claim reveal about doing business during wartime?",
+      "status": "priority-reporting",
+      "reportingNeeded": [
+        "View and transcribe the John Moodie fonds correspondence in the Burlington History Room, especially the June 6, 1916 letter to the Insurance Company of North America",
+        "Confirm the number, contents, consignee, declared value and ownership of the barrels from the original letters and shipping or insurance records",
+        "Obtain the full John Moodie fonds finding aid and relevant Royal Distillery corporate records",
+        "Verify the Cymric timeline against the British Admiralty loss file, U-20 war diary or another primary maritime record",
+        "Check contemporary May 1916 newspaper coverage for cargo and casualty details",
+        "Confirm Lakehurst Villa ownership and dates through heritage or land records",
+        "Secure an original, public-domain, Creative Commons or expressly permitted hero image"
+      ],
+      "publishGate": "Do not turn the library's teaser into a finished narrative. Publication requires the Moodie correspondence itself, a primary maritime record, an independent source for the ship loss, and image rights. Distinguish documented cargo facts from any inference about insurance, motive or financial impact.",
+      "sourceLeads": [
+        "https://www.bpl.on.ca/news/new-archives",
+        "https://www.archeion.ca/john-moodie-fonds",
+        "https://uboat.net/wwi/ships_hit/1521.html",
+        "https://heritageburlington.ca/heritage_property/lakehurst-villa-knee-wall/"
+      ],
+      "researchNotes": "Burlington Public Library announced the newly available correspondence on July 30, 2026 and identifies a June 6, 1916 insurance letter. BPL says the records are physical-only. Its summary establishes Moodie's Burlington residence at Lakehurst Villa and the loss of whisky barrels aboard Cymric, but it does not state the quantity, value, destination, claim outcome or contents of the correspondence. Uboat.net independently records Cymric as a 13,370-ton passenger steamer carrying general cargo from New York to Liverpool, torpedoed by U-20 on May 8, 1916 with five fatalities. The story is strong, original and locally specific, but its central documentary evidence has not yet been examined.",
+      "origin": "editorial-pitch",
+      "autoPublishReady": false,
+      "eligibility": [
+        "editorial queue"
+      ],
+      "candidateScore": 96
+    }
+  ],
+  "candidates": [
+    {
+      "id": "john-moodie-cymric-whisky",
+      "kind": "original-candidate",
+      "headline": "The Burlington whisky shipment a U-boat sent to the bottom of the Atlantic",
+      "hook": "In 1916, whisky belonging to a Burlington resident who owned Hamilton's first car was aboard the White Star liner Cymric when the same U-boat commander who sank Lusitania attacked it off Ireland. What was in the barrels, who paid for the loss, and what did one local claim reveal about doing business during wartime?",
+      "status": "priority-reporting",
+      "reportingNeeded": [
+        "View and transcribe the John Moodie fonds correspondence in the Burlington History Room, especially the June 6, 1916 letter to the Insurance Company of North America",
+        "Confirm the number, contents, consignee, declared value and ownership of the barrels from the original letters and shipping or insurance records",
+        "Obtain the full John Moodie fonds finding aid and relevant Royal Distillery corporate records",
+        "Verify the Cymric timeline against the British Admiralty loss file, U-20 war diary or another primary maritime record",
+        "Check contemporary May 1916 newspaper coverage for cargo and casualty details",
+        "Confirm Lakehurst Villa ownership and dates through heritage or land records",
+        "Secure an original, public-domain, Creative Commons or expressly permitted hero image"
+      ],
+      "publishGate": "Do not turn the library's teaser into a finished narrative. Publication requires the Moodie correspondence itself, a primary maritime record, an independent source for the ship loss, and image rights. Distinguish documented cargo facts from any inference about insurance, motive or financial impact.",
+      "sourceLeads": [
+        "https://www.bpl.on.ca/news/new-archives",
+        "https://www.archeion.ca/john-moodie-fonds",
+        "https://uboat.net/wwi/ships_hit/1521.html",
+        "https://heritageburlington.ca/heritage_property/lakehurst-villa-knee-wall/"
+      ],
+      "researchNotes": "Burlington Public Library announced the newly available correspondence on July 30, 2026 and identifies a June 6, 1916 insurance letter. BPL says the records are physical-only. Its summary establishes Moodie's Burlington residence at Lakehurst Villa and the loss of whisky barrels aboard Cymric, but it does not state the quantity, value, destination, claim outcome or contents of the correspondence. Uboat.net independently records Cymric as a 13,370-ton passenger steamer carrying general cargo from New York to Liverpool, torpedoed by U-20 on May 8, 1916 with five fatalities. The story is strong, original and locally specific, but its central documentary evidence has not yet been examined.",
+      "origin": "editorial-pitch",
+      "autoPublishReady": false,
+      "eligibility": [
+        "editorial queue"
+      ],
+      "candidateScore": 96
+    },
+    {
+      "id": "nostalgia-games-cafe-occupancy",
+      "kind": "original-candidate",
+      "headline": "A 40-person limit is threatening Nostalgia Games Cafe’s next move",
+      "hook": "The owners say a building that could hold far more people is capped at 40 because it has two washrooms. Their fundraiser for renovations stalled far short of its target.",
+      "status": "reporting",
+      "reportingNeeded": [
+        "Interview owners George and Sophia Zeng",
+        "Obtain the occupancy order or inspection record",
+        "Ask the City which code requirements apply",
+        "Confirm lease renewal dates and landlord responsibilities",
+        "Confirm the fundraiser total and paused status at publication",
+        "Seek comment from the landlord if the lease or renovations are discussed"
+      ],
+      "publishGate": "Do not say the cafe is closing unless the owners confirm a closure decision. Do not present the fundraiser’s description of code, occupancy or renovation costs as independently verified.",
+      "sourceLeads": [
+        "https://www.gofundme.com/f/help-save-our-cafe-we-need-to-build-more-bathrooms"
+      ],
+      "researchNotes": "The fundraiser says the cafe opened in 2023, operates in more than 2,500 square feet and is limited to 40 occupants because it has two washrooms. It says five washrooms are needed to raise occupancy and quotes renovation costs of at least $50,000. On August 24, 2026, the page showed $2,395 raised from 36 donations and donations paused. These are organizer claims, not independent confirmation of the building code or lease consequences.",
+      "origin": "editorial-pitch",
+      "autoPublishReady": false,
+      "eligibility": [
+        "editorial queue"
+      ],
+      "candidateScore": 96
+    },
+    {
+      "id": "corned-beef-hut-origin",
+      "kind": "original-candidate",
+      "headline": "How one sandwich shop became a Burlington obsession",
+      "hook": "A restaurant named after one sandwich has survived in a city with hundreds of places to eat. What did it understand that larger menus miss?",
+      "status": "reporting",
+      "reportingNeeded": [
+        "Founder interview",
+        "Opening year and original location",
+        "Family or ownership timeline",
+        "How the meat is sourced and prepared",
+        "Early menu or photographs",
+        "Long-time customer interviews",
+        "Business registry and newspaper archive check"
+      ],
+      "publishGate": "Do not publish an origin narrative until the founder or current owner confirms the timeline and archival evidence supports the key dates.",
+      "sourceLeads": [],
+      "researchNotes": null,
+      "origin": "editorial-pitch",
+      "autoPublishReady": false,
+      "eligibility": [
+        "editorial queue"
+      ],
+      "candidateScore": 91
+    }
+  ],
+  "held": [
+    {
+      "id": "burlington-international-games",
+      "headline": "The Olympics that connected three Burlingtons",
+      "status": "hold-duplicate",
+      "reason": "Held by editorial status or already published."
+    },
+    {
+      "id": "skyway-tunnel-plan",
+      "headline": "Ontario nearly replaced the Skyway with three tunnels",
+      "status": "published",
+      "reason": "Held by editorial status or already published."
+    }
+  ],
+  "archiveHint": "Use public archives, civic records and league/club data; do not mirror another publisher."
+}

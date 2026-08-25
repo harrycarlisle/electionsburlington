@@ -1,17 +1,26 @@
 (() => {
   const menu = document.getElementById('menuButton');
   const nav = document.getElementById('primaryNav');
-  const searchForm = document.getElementById('headerSearch');
-  const searchInput = document.getElementById('siteSearch');
-  const searchResults = document.getElementById('searchResults');
-  const searchPopover = document.getElementById('searchPopover');
-  const searchSuggestions = document.getElementById('searchSuggestions');
   const latestList = document.getElementById('latestList');
+  const pickGrid = document.getElementById('pickGrid');
   const lead = document.querySelector('.top-story');
   const root = document.documentElement;
   const themeKey = 'burlington-news-theme';
   const cleanDash = value => String(value || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
   const esc = value => cleanDash(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+  const publicUrl = value => {
+    const raw = String(value || '');
+    if (/^https?:\/\//.test(raw)) return raw;
+    const story = raw.match(/^articles\/([^/]+)\.html$/);
+    if (story) return `/stories/${story[1]}/`;
+    if (raw === 'updates.html') return '/news/';
+    if (raw === 'explore.html') return '/explore/';
+    if (raw === 'election-guide.html' || raw.startsWith('election-guide.html')) return raw.replace('election-guide.html', '/elections/');
+    if (raw === 'skyway-traffic.html') return '/traffic/';
+    if (raw === 'sports.html') return '/sports/';
+    if (raw === 'puzzles.html') return '/games/';
+    return raw.startsWith('/') ? raw : `/${raw}`;
+  };
   const relativeDate = value => {
     const date = new Date(value && /^\d{4}-\d{2}-\d{2}$/.test(value) ? `${value}T12:00:00-04:00` : value);
     if (!Number.isFinite(date.getTime())) return 'Recently added';
@@ -25,119 +34,90 @@
     const haystack = `${item?.label || ''} ${item?.tag || ''} ${item?.kind || ''} ${item?.headline || ''}`.toLowerCase();
     if (/election|ward|vote|candidate|ballot/.test(haystack)) return 'Election';
     if (/school|student|teacher|back to school/.test(haystack)) return 'Schools';
+    if (/cafe|restaurant|food|ribfest/.test(haystack)) return 'Food';
     if (/development|brant|building|housing|millcroft|zoning|construction|data centre/.test(haystack)) return 'Development';
     if (/traffic|qew|skyway|road|closure/.test(haystack)) return 'Traffic';
     if (/sport|soccer|hockey|ringette|lacrosse|ultimate|golf/.test(haystack)) return 'Sports';
-    if (/food|restaurant|ribfest|taco|cafe/.test(haystack)) return 'Food';
     if (/event|festival|weekend|concert/.test(haystack)) return 'Events';
     if (/fish|wildlife|nature|salamander|marsh|park|quarry|rabies/.test(haystack)) return 'Nature';
+    if (/crime|police|safety/.test(haystack)) return 'Public safety';
     if (/canada|tariff|federal/.test(haystack)) return 'Canada';
     return 'Burlington';
   };
+  const themeIcon = theme => theme === 'dark'
+    ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    : '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
 
-  const searchIndex = [
-    {title:'Ontario nearly replaced the Skyway with three tunnels',url:'articles/skyway-bridge-story.html',section:'Feature',keywords:'skyway bridge canal qew tunnels'},
-    {title:'Millcroft Phase 2 proposes 138 homes',url:'articles/millcroft-phase-2-138-homes.html',section:'Development',keywords:'millcroft golf course homes development ward 6'},
-    {title:'What the Nelson Quarry decision means for Burlington',url:'articles/nelson-quarry-tribunal-decision.html',section:'Development',keywords:'nelson quarry mount nemo escarpment olt'},
-    {title:'Upper Middle Road construction: what changes next',url:'articles/upper-middle-road-construction-2026.html',section:'Roads',keywords:'upper middle road watermain construction guelph line'},
-    {title:'A bat in Burlington tested positive for rabies',url:'articles/burlington-rabies-bat-2026.html',section:'Public health',keywords:'rabies bat halton public health'},
-    {title:'Ribfest turns 30',url:'articles/ribfest-2026.html',section:'Events',keywords:'ribfest ribs labour day food festival'},
-    {title:'The school dates Burlington families need',url:'articles/back-to-school-2026.html',section:'Schools',keywords:'school calendar hdsb September'},
-    {title:'What Ontario students can actually be searched for',url:'articles/ontario-student-rights-school.html',section:'Schools',keywords:'teacher phone detention bag locker search student rights school'},
-    {title:'730 Brant sat empty for more than a decade, then caught fire',url:'articles/730-brant-vacant-building.html',section:'Development',keywords:'abandoned vacant building fire Brant Street owner redevelopment'},
-    {title:'Explore Burlington',url:'explore.html',section:'Explore',keywords:'this weekend bored passport calendar places free farmers market'},
-    {title:'Burlington food spots worth trying',url:'guides/burlington-food-spots.html',section:'Food',keywords:'best food tacos burger sandwich banh mi coffee restaurants'},
-    {title:'Burlington 2026 Election Guide',url:'election-guide.html',section:'Election',keywords:'vote mayor candidates ward ballot'},
-    {title:'Burlington sports',url:'sports.html',section:'Sports',keywords:'soccer hockey lacrosse ultimate ringette golf'},
-    {title:'Games about Burlington',url:'puzzles.html',section:'Games',keywords:'quiz puzzle trivia swipe'},
-    {title:'Live Burlington traffic cameras',url:'skyway-traffic.html',section:'Traffic',keywords:'qew skyway traffic camera commute'}
-  ];
-  const suggested = ['This Weekend','I’m bored','Best Food','Best Tacos'];
-
-  const setTheme = (theme,persist=true) => {
+  const setTheme = (theme, persist=true) => {
     const next = theme === 'dark' ? 'dark' : 'light';
     root.dataset.theme = next;
     root.style.colorScheme = next;
     const toggle = document.querySelector('[data-theme-toggle]');
     if (toggle) {
       const target = next === 'dark' ? 'Light mode' : 'Dark mode';
-      toggle.textContent = target;
-      toggle.setAttribute('aria-label',`Switch to ${target.toLowerCase()}`);
+      toggle.innerHTML = themeIcon(next);
+      toggle.setAttribute('aria-label', `Switch to ${target.toLowerCase()}`);
     }
-    if (persist) try { localStorage.setItem(themeKey,next); } catch (_) {}
+    if (persist) try { localStorage.setItem(themeKey, next); } catch (_) {}
   };
-  setTheme(root.dataset.theme || 'light',false);
+  setTheme(root.dataset.theme || 'light', false);
 
-  const rotatingPrompts = ['Search “This Weekend”','Search “I’m bored”','Search “Best Food”','Search “Best Tacos”','Search “Election”'];
-  if (searchInput && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    let promptIndex = 0;
-    const rotatePrompt = () => {
-      if (document.activeElement !== searchInput && !searchInput.value) {
-        searchInput.placeholder = rotatingPrompts[promptIndex % rotatingPrompts.length];
-        promptIndex += 1;
-      }
-    };
-    rotatePrompt();
-    window.setInterval(rotatePrompt,2600);
-  }
+  window.BurlingtonSearch?.install(document.getElementById('headerSearch'), {
+    rotate: true,
+    prompts: ['Search “I’m bored”', 'Search “Best food”', 'Search “This weekend”', 'Search “Election”']
+  });
 
   menu?.addEventListener('click', () => {
     const open = nav.classList.toggle('is-open');
     menu.setAttribute('aria-expanded', String(open));
     menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.classList.toggle('menu-is-open', open);
   });
   nav?.querySelector('[data-theme-toggle]')?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
   nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
     nav.classList.remove('is-open');
-    menu?.setAttribute('aria-expanded','false');
+    menu?.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-is-open');
   }));
-
-  const normalize = value => String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
-  function ranked(query) {
-    const terms = normalize(query).split(/\s+/).filter(Boolean);
-    if (!terms.length) return searchIndex.slice(0,7);
-    return searchIndex.map(item => {
-      const title = normalize(item.title);
-      const text = normalize(`${item.section} ${item.keywords}`);
-      const score = terms.reduce((sum,term) => sum + (title.includes(term) ? 30 : 0) + (text.includes(term) ? 10 : 0),0);
-      return {item,score};
-    }).filter(result => result.score).sort((a,b) => b.score - a.score).map(result => result.item);
-  }
-  function renderSearch(query) {
-    const matches = ranked(query);
-    searchResults.innerHTML = matches.length ? matches.slice(0,7).map(item => `<a role="option" href="${esc(item.url)}"><span>${esc(item.section)}</span><strong>${esc(item.title)}</strong></a>`).join('') : '<p>No exact match. Try “Skyway,” “events” or “food.”</p>';
-    searchPopover.hidden = false;
-    searchInput.setAttribute('aria-expanded','true');
-  }
-  if (searchSuggestions) searchSuggestions.innerHTML = suggested.map(term => `<button type="button" data-search="${esc(term)}">${esc(term)}</button>`).join('');
-  searchSuggestions?.addEventListener('click', event => { const button = event.target.closest('[data-search]'); if (!button) return; searchInput.value = button.dataset.search; renderSearch(searchInput.value); });
-  searchInput?.addEventListener('focus', () => renderSearch(searchInput.value));
-  searchInput?.addEventListener('input', () => renderSearch(searchInput.value));
-  searchForm?.addEventListener('submit', event => { event.preventDefault(); const first = searchResults?.querySelector('a'); if (first) location.href = first.href; });
-  document.addEventListener('click', event => { if (searchForm && !searchForm.contains(event.target)) { searchPopover.hidden = true; searchInput.setAttribute('aria-expanded','false'); } });
-  document.addEventListener('keydown', event => { if (event.key !== 'Escape') return; nav?.classList.remove('is-open'); searchPopover.hidden = true; });
-
-  if (searchInput && new URLSearchParams(location.search).get('search') === '1') requestAnimationFrame(() => { searchInput.focus(); renderSearch(''); history.replaceState(null,'',location.pathname); });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    nav?.classList.remove('is-open');
+    document.body.classList.remove('menu-is-open');
+  });
 
   function renderLead(item){
-    if(!lead||!item?.headline||!item?.url)return;
-    const external=/^https?:\/\//.test(item.url||'');
-    const image=item.image||'assets/editorial/home-share.webp';
-    const alt=item.alt||item.headline;
-    const credit=item.credit||'Burlington News';
-    const deck=item.deck||item.storyGoal||'';
-    lead.innerHTML=`<a href="${esc(item.url)}"${external?' target="_blank" rel="noopener"':''}><div class="top-image"><img src="${esc(image)}" alt="${esc(alt)}" fetchpriority="high"><span class="image-credit">${esc(credit)}</span></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(item.headline)}</h1>${deck?`<p>${esc(deck)}</p>`:''}</div></a>`;
+    if (!lead || !item?.headline || !item?.url) return;
+    const url = publicUrl(item.url);
+    const external = /^https?:\/\//.test(url);
+    const image = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : '/assets/editorial/home-share.webp';
+    const alt = item.alt || item.headline;
+    const credit = item.credit || 'Burlington News';
+    const deck = item.deck || item.storyGoal || '';
+    lead.innerHTML = `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${esc(image)}" alt="${esc(alt)}" fetchpriority="high"><span class="image-credit">${esc(credit)}</span></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(item.headline)}</h1>${deck ? `<p>${esc(deck)}</p>` : ''}</div></a>`;
   }
 
-  fetch('data/home-surface.json',{cache:'no-store'})
+  function renderPicks(items){
+    if (!pickGrid || !items.length) return;
+    pickGrid.innerHTML = items.slice(0, 2).map(item => {
+      const url = publicUrl(item.url);
+      const external = /^https?:\/\//.test(url);
+      const image = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : '/assets/editorial/home-share.webp';
+      return `<a class="pick-card" href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="pick-image"><img src="${esc(image)}" alt="${esc(item.alt || item.headline)}" loading="lazy"><span class="image-credit">${esc(item.credit || 'Burlington News')}</span></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(item.headline)}</h3>${item.deck ? `<p>${esc(item.deck)}</p>` : ''}</a>`;
+    }).join('');
+  }
+
+  fetch('/data/home-surface.json', { cache: 'no-store' })
     .then(response => response.ok ? response.json() : Promise.reject())
     .then(data => {
       if (latestList && Array.isArray(data.latest) && data.latest.length) {
-        latestList.innerHTML = data.latest.slice(0,3).map(item => {
-          const external = /^https?:\/\//.test(item.url || '');
-          return `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}><span><small>${esc(categoryLabel(item))}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
+        latestList.innerHTML = data.latest.slice(0, 3).map(item => {
+          const url = publicUrl(item.url);
+          const external = /^https?:\/\//.test(url);
+          return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><span><small>${esc(categoryLabel(item))}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
         }).join('');
       }
-      if(Array.isArray(data.feature)&&data.feature.length)renderLead(data.feature[0]);
+      if (Array.isArray(data.feature) && data.feature.length) renderLead(data.feature[0]);
+      const picks = [...(data.feature || []).slice(1), ...(data.rail || [])].filter((item, index, list) => list.findIndex(other => other.id === item.id) === index);
+      renderPicks(picks);
     }).catch(() => {});
 })();

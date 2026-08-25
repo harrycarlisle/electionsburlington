@@ -1,0 +1,21 @@
+{
+  "updated": "2026-08-25",
+  "source": "https://511on.ca/api/v2/get/cameras",
+  "licence": "Open Government Licence - Ontario",
+  "note": "Ids are Ontario 511 physical cameras. View ids are the live image endpoints. The previous page treated view ids 10-12 as if they were separate locations; those three views belong to one Skyway camera.",
+  "cameras": [
+    {"id": 4, "viewId": 10, "name": "Skyway", "detail": "Fort Erie-bound", "road": "QEW", "lat": 43.309158, "lon": -79.803097},
+    {"id": 4, "viewId": 11, "name": "Skyway", "detail": "Overhead", "road": "QEW", "lat": 43.309158, "lon": -79.803097},
+    {"id": 4, "viewId": 12, "name": "Skyway", "detail": "Toronto-bound", "road": "QEW", "lat": 43.309158, "lon": -79.803097},
+    {"id": 219, "viewId": 579, "name": "Skyway approach", "detail": "Hamilton side", "road": "QEW", "lat": 43.301446, "lon": -79.797735},
+    {"id": 220, "viewId": 580, "name": "Skyway approach", "detail": "Toronto side", "road": "QEW", "lat": 43.299637, "lon": -79.797852},
+    {"id": 217, "viewId": 577, "name": "Eastport", "detail": "West of Eastport Drive", "road": "QEW", "lat": 43.284453, "lon": -79.787521},
+    {"id": 226, "viewId": 586, "name": "Brant", "detail": "West of Brant Street", "road": "QEW", "lat": 43.339974, "lon": -79.824729},
+    {"id": 227, "viewId": 587, "name": "Brant", "detail": "East of Brant Street", "road": "QEW", "lat": 43.342596, "lon": -79.819322},
+    {"id": 228, "viewId": 588, "name": "Guelph", "detail": "At Guelph Line", "road": "QEW", "lat": 43.350991, "lon": -79.804387},
+    {"id": 230, "viewId": 590, "name": "Walkers", "detail": "At Walkers Line", "road": "QEW", "lat": 43.365999, "lon": -79.787822},
+    {"id": 232, "viewId": 592, "name": "Appleby", "detail": "At Appleby Line", "road": "QEW", "lat": 43.380567, "lon": -79.771857},
+    {"id": 234, "viewId": 594, "name": "Burloak", "detail": "At Burloak Drive", "road": "QEW", "lat": 43.39482, "lon": -79.756279},
+    {"id": 224, "viewId": 584, "name": "Fairview", "detail": "At Fairview Street", "road": "QEW", "lat": 43.327831, "lon": -79.824901}
+  ]
+}

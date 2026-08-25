@@ -2,18 +2,433 @@
   "version": 1,
   "scale": "Each placement signal is scored from 0 to 5. Evidence and image rights are gates, not engagement points.",
   "items": [
-    {"id":"burlington-crime-analysis-2026","kind":"original","surfaces":["feature","rail","latest"],"headline":"How bad is Burlington's crime, really?","deck":"Burlington has a reputation for being safe. The best comparable police data shows why that reputation exists, but one detail makes the answer less simple than a single city ranking.","label":"Public safety","labelEssential":true,"url":"articles/how-bad-is-burlington-crime.html","image":"assets/editorial/halton-crime-comparison.svg","alt":"Chart comparing Halton's Crime Severity Index with selected Ontario police services","credit":"Burlington News chart · Statistics Canada / Halton Regional Police Service","published":"2026-08-25","activeFrom":"2026-08-25","activeUntil":"2026-09-30","storyGoal":"Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.","verificationTier":"primary","signals":{"relevance":5,"breadth":5,"novelty":5,"familiarity":5,"consequence":5,"interest":5,"originality":5,"visualStrength":5},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"data-centre-not-ai","kind":"explainer","surfaces":["feature","rail","latest"],"headline":"Burlington's proposed data centre is not what many people think.","deck":"The South Service Road proposal would use about 20 MW of electricity, but City records say it is not an AI hyperscale facility.","label":"Development","labelEssential":true,"url":"articles/burlington-data-centre-not-ai.html","image":"assets/explore/burlington-orientation-map.svg","alt":"Orientation map of Burlington","published":"2026-08-24","activeFrom":"2026-08-24","activeUntil":"2026-09-30","signals":{"relevance":5,"breadth":5,"novelty":5,"familiarity":4,"consequence":5,"interest":5,"originality":5},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"skyway-tunnels","kind":"feature","surfaces":["feature"],"headline":"Ontario nearly replaced the Skyway with three tunnels.","deck":"A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.","label":"Feature","labelEssential":true,"url":"articles/skyway-bridge-story.html","image":"assets/home/skyway-reader.webp","alt":"The Burlington Bay James N. Allan Skyway","credit":"Dave Lauretti · CC BY 2.0","published":"2026-08-24","evergreen":true,"signals":{"relevance":3,"breadth":5,"novelty":5,"familiarity":5,"consequence":4},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"ward-change-2026","kind":"service","surfaces":["rail","latest"],"headline":"Your ward may have changed. Check before you vote.","label":"Election","labelEssential":true,"url":"https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/","image":"assets/editorial/burlington-wards-2026.svg","alt":"Simplified orientation diagram of Burlington's six 2026 voting wards","activeFrom":"2026-08-21","activeUntil":"2026-10-26","signals":{"relevance":5,"breadth":5,"novelty":4,"familiarity":4,"consequence":5},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"election-field-2026","kind":"current","surfaces":["feature"],"headline":"Five people want to lead Burlington. Start with their biggest differences.","deck":"Compare their plans, records and unanswered questions without campaign spin.","label":"Election","labelEssential":true,"url":"election-guide.html#candidates","mediaKey":"candidate-montage","byline":"By the Burlington News Election Desk","activeFrom":"2026-08-21","activeUntil":"2026-10-26","signals":{"relevance":5,"breadth":5,"novelty":4,"familiarity":5,"consequence":5},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"back-to-school-2026","kind":"seasonal","surfaces":["rail","latest"],"headline":"The dates Burlington families need before school starts.","label":"Schools","labelEssential":true,"url":"articles/back-to-school-2026.html","image":"assets/home/school-rights.webp","alt":"A yellow Ontario school bus","activeFrom":"2026-08-17","activeUntil":"2026-09-08","signals":{"relevance":5,"breadth":4,"novelty":2,"familiarity":5,"consequence":5},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"ontario-student-rights-school","kind":"service","surfaces":["rail","latest"],"headline":"Can a teacher take your phone? Seven school rules students should know.","label":"Schools","labelEssential":true,"url":"articles/ontario-student-rights-school.html","image":"assets/home/school-rights.webp","alt":"A yellow Ontario school bus","published":"2026-08-24","activeFrom":"2026-08-24","activeUntil":"2026-09-30","signals":{"relevance":5,"breadth":5,"novelty":5,"familiarity":5,"consequence":5},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"730-brant-vacant-building","kind":"investigation","surfaces":["latest"],"headline":"730 Brant sat empty for more than a decade. Then it caught fire.","label":"Development","labelEssential":true,"url":"articles/730-brant-vacant-building.html","image":"assets/editorial/730-brant-share.webp","alt":"730 Brant Street Burlington News illustration","published":"2026-08-24","evergreen":true,"signals":{"relevance":5,"breadth":4,"novelty":5,"familiarity":5,"consequence":4},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"millcroft-phase-2-138-homes","kind":"current","surfaces":["latest"],"headline":"Millcroft Phase 2 proposes 138 homes. It has not been approved.","label":"Development","labelEssential":true,"url":"articles/millcroft-phase-2-138-homes.html","image":"assets/explore/burlington-orientation-map.svg","alt":"Orientation map of Burlington","published":"2026-08-24","activeFrom":"2026-08-24","activeUntil":"2026-09-30","signals":{"relevance":5,"breadth":3,"novelty":2,"familiarity":4,"consequence":4},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"ribfest-2026","kind":"seasonal","surfaces":["feature","rail","latest"],"headline":"Ribfest turns 30, with nearly $6 million behind the smoke.","label":"Events","labelEssential":true,"url":"articles/ribfest-2026.html","image":"assets/home/ribs.webp","alt":"Barbecue ribs smoking over a pit","activeFrom":"2026-08-18","activeUntil":"2026-09-07","signals":{"relevance":5,"breadth":5,"novelty":4,"familiarity":5,"consequence":3},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"sports-lockers","kind":"service","surfaces":["latest"],"headline":"Twenty parks are getting sports gear you can borrow for free.","label":"Sports","labelEssential":true,"url":"https://www.burlington.ca/en/news/game-on-free-sports-equipment-lockers-coming-to-burlington-parks.aspx","activeFrom":"2026-08-04","activeUntil":"2026-09-15","signals":{"relevance":4,"breadth":4,"novelty":4,"familiarity":4,"consequence":4},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"fishway-2025","kind":"evergreen","surfaces":["latest"],"headline":"What 26,503 fish revealed about a damaged marsh.","label":"Nature","labelEssential":true,"url":"articles/fishway-26000-fish.html","image":"assets/home/fishway.webp","alt":"The Cootes Paradise Fishway across the water","published":"2026-08-23","evergreen":true,"signals":{"relevance":2,"breadth":3,"novelty":5,"familiarity":3,"consequence":4},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}},
-    {"id":"salamander-migration","kind":"seasonal","surfaces":["rail","latest"],"headline":"Why Burlington closes a road for salamanders.","label":"Nature","labelEssential":true,"url":"articles/salamander-road-closure.html","image":"assets/home/salamander.webp","alt":"A Jefferson salamander","activeFrom":"2026-03-01","activeUntil":"2026-04-30","signals":{"relevance":5,"breadth":3,"novelty":5,"familiarity":3,"consequence":3},"gates":{"evidence":"passed","burlington":"passed","imageRights":"passed","duplicate":"passed"}}
+    {
+      "id": "burlington-crime-analysis-2026",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "rail",
+        "latest"
+      ],
+      "headline": "How bad is Burlington's crime, really?",
+      "deck": "Burlington has a reputation for being safe. The best comparable police data shows why that reputation exists, but one detail makes the answer less simple than a single city ranking.",
+      "label": "Public safety",
+      "labelEssential": true,
+      "url": "articles/how-bad-is-burlington-crime.html",
+      "image": "assets/editorial/halton-crime-comparison.svg",
+      "alt": "Chart comparing Halton's Crime Severity Index with selected Ontario police services",
+      "credit": "Burlington News chart · Statistics Canada / Halton Regional Police Service",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "activeUntil": "2026-09-30",
+      "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
+      "verificationTier": "primary",
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 5,
+        "consequence": 5,
+        "interest": 5,
+        "originality": 5,
+        "visualStrength": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "lastHomepageLead": "2026-08-25"
+    },
+    {
+      "id": "nostalgia-games-cafe-closure",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "rail",
+        "latest"
+      ],
+      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
+      "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
+      "label": "Local business",
+      "labelEssential": true,
+      "url": "articles/nostalgia-games-cafe-closure.html",
+      "image": "assets/editorial/nostalgia-cafe-closure.svg",
+      "alt": "Board-game cafe closure illustration",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "activeUntil": "2026-09-30",
+      "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
+      "verificationTier": "reported",
+      "signals": {
+        "relevance": 5,
+        "breadth": 4,
+        "novelty": 5,
+        "familiarity": 5,
+        "consequence": 3,
+        "interest": 5,
+        "originality": 5,
+        "visualStrength": 4
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "data-centre-not-ai",
+      "kind": "explainer",
+      "surfaces": [
+        "feature",
+        "rail",
+        "latest"
+      ],
+      "headline": "Burlington's proposed data centre is not what many people think.",
+      "deck": "The South Service Road proposal would use about 20 MW of electricity, but City records say it is not an AI hyperscale facility.",
+      "label": "Development",
+      "labelEssential": true,
+      "url": "articles/burlington-data-centre-not-ai.html",
+      "image": "assets/explore/burlington-orientation-map.svg",
+      "alt": "Orientation map of Burlington",
+      "published": "2026-08-24",
+      "activeFrom": "2026-08-24",
+      "activeUntil": "2026-09-30",
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 4,
+        "consequence": 5,
+        "interest": 5,
+        "originality": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "skyway-tunnels",
+      "kind": "feature",
+      "surfaces": [
+        "feature"
+      ],
+      "headline": "Ontario nearly replaced the Skyway with three tunnels.",
+      "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
+      "label": "Feature",
+      "labelEssential": true,
+      "url": "articles/skyway-bridge-story.html",
+      "image": "assets/home/skyway-reader.webp",
+      "alt": "The Burlington Bay James N. Allan Skyway",
+      "credit": "Dave Lauretti · CC BY 2.0",
+      "published": "2026-08-24",
+      "evergreen": true,
+      "signals": {
+        "relevance": 3,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 5,
+        "consequence": 4
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "ward-change-2026",
+      "kind": "service",
+      "surfaces": [
+        "rail",
+        "latest"
+      ],
+      "headline": "Your ward may have changed. Check before you vote.",
+      "label": "Election",
+      "labelEssential": true,
+      "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
+      "image": "assets/editorial/burlington-wards-2026.svg",
+      "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
+      "activeFrom": "2026-08-21",
+      "activeUntil": "2026-10-26",
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 4,
+        "familiarity": 4,
+        "consequence": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "election-field-2026",
+      "kind": "current",
+      "surfaces": [
+        "feature"
+      ],
+      "headline": "Five people want to lead Burlington. Start with their biggest differences.",
+      "deck": "Compare their plans, records and unanswered questions without campaign spin.",
+      "label": "Election",
+      "labelEssential": true,
+      "url": "election-guide.html#candidates",
+      "mediaKey": "candidate-montage",
+      "byline": "By the Burlington News Election Desk",
+      "activeFrom": "2026-08-21",
+      "activeUntil": "2026-10-26",
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 4,
+        "familiarity": 5,
+        "consequence": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "back-to-school-2026",
+      "kind": "seasonal",
+      "surfaces": [
+        "rail",
+        "latest"
+      ],
+      "headline": "The dates Burlington families need before school starts.",
+      "label": "Schools",
+      "labelEssential": true,
+      "url": "articles/back-to-school-2026.html",
+      "image": "assets/home/school-rights.webp",
+      "alt": "A yellow Ontario school bus",
+      "activeFrom": "2026-08-17",
+      "activeUntil": "2026-09-08",
+      "signals": {
+        "relevance": 5,
+        "breadth": 4,
+        "novelty": 2,
+        "familiarity": 5,
+        "consequence": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "ontario-student-rights-school",
+      "kind": "service",
+      "surfaces": [
+        "rail",
+        "latest"
+      ],
+      "headline": "Can a teacher take your phone? Seven school rules students should know.",
+      "label": "Schools",
+      "labelEssential": true,
+      "url": "articles/ontario-student-rights-school.html",
+      "image": "assets/home/school-rights.webp",
+      "alt": "A yellow Ontario school bus",
+      "published": "2026-08-24",
+      "activeFrom": "2026-08-24",
+      "activeUntil": "2026-09-30",
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 5,
+        "consequence": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "730-brant-vacant-building",
+      "kind": "investigation",
+      "surfaces": [
+        "latest"
+      ],
+      "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
+      "label": "Development",
+      "labelEssential": true,
+      "url": "articles/730-brant-vacant-building.html",
+      "image": "assets/editorial/730-brant-share.webp",
+      "alt": "730 Brant Street Burlington News illustration",
+      "published": "2026-08-24",
+      "evergreen": true,
+      "signals": {
+        "relevance": 5,
+        "breadth": 4,
+        "novelty": 5,
+        "familiarity": 5,
+        "consequence": 4
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "millcroft-phase-2-138-homes",
+      "kind": "current",
+      "surfaces": [
+        "latest"
+      ],
+      "headline": "Millcroft Phase 2 proposes 138 homes. It has not been approved.",
+      "label": "Development",
+      "labelEssential": true,
+      "url": "articles/millcroft-phase-2-138-homes.html",
+      "image": "assets/explore/burlington-orientation-map.svg",
+      "alt": "Orientation map of Burlington",
+      "published": "2026-08-24",
+      "activeFrom": "2026-08-24",
+      "activeUntil": "2026-09-30",
+      "signals": {
+        "relevance": 5,
+        "breadth": 3,
+        "novelty": 2,
+        "familiarity": 4,
+        "consequence": 4
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "ribfest-2026",
+      "kind": "seasonal",
+      "surfaces": [
+        "feature",
+        "rail",
+        "latest"
+      ],
+      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
+      "label": "Events",
+      "labelEssential": true,
+      "url": "articles/ribfest-2026.html",
+      "image": "assets/home/ribs.webp",
+      "alt": "Barbecue ribs smoking over a pit",
+      "activeFrom": "2026-08-18",
+      "activeUntil": "2026-09-07",
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 4,
+        "familiarity": 5,
+        "consequence": 3
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "sports-lockers",
+      "kind": "service",
+      "surfaces": [
+        "latest"
+      ],
+      "headline": "Twenty parks are getting sports gear you can borrow for free.",
+      "label": "Sports",
+      "labelEssential": true,
+      "url": "https://www.burlington.ca/en/news/game-on-free-sports-equipment-lockers-coming-to-burlington-parks.aspx",
+      "activeFrom": "2026-08-04",
+      "activeUntil": "2026-09-15",
+      "signals": {
+        "relevance": 4,
+        "breadth": 4,
+        "novelty": 4,
+        "familiarity": 4,
+        "consequence": 4
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "fishway-2025",
+      "kind": "evergreen",
+      "surfaces": [
+        "latest"
+      ],
+      "headline": "What 26,503 fish revealed about a damaged marsh.",
+      "label": "Nature",
+      "labelEssential": true,
+      "url": "articles/fishway-26000-fish.html",
+      "image": "assets/home/fishway.webp",
+      "alt": "The Cootes Paradise Fishway across the water",
+      "published": "2026-08-23",
+      "evergreen": true,
+      "signals": {
+        "relevance": 2,
+        "breadth": 3,
+        "novelty": 5,
+        "familiarity": 3,
+        "consequence": 4
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "salamander-migration",
+      "kind": "seasonal",
+      "surfaces": [
+        "rail",
+        "latest"
+      ],
+      "headline": "Why Burlington closes a road for salamanders.",
+      "label": "Nature",
+      "labelEssential": true,
+      "url": "articles/salamander-road-closure.html",
+      "image": "assets/home/salamander.webp",
+      "alt": "A Jefferson salamander",
+      "activeFrom": "2026-03-01",
+      "activeUntil": "2026-04-30",
+      "signals": {
+        "relevance": 5,
+        "breadth": 3,
+        "novelty": 5,
+        "familiarity": 3,
+        "consequence": 3
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    }
   ]
 }
