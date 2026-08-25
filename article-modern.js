@@ -2,10 +2,99 @@
   const isArticle = /\/(articles|stories)\//.test(location.pathname);
   if (!isArticle) return;
 
-  const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[ch]));
   const pathParts = location.pathname.replace(/\/+$/,'').split('/').filter(Boolean);
   const currentSlug = (pathParts[pathParts.length-1]||'').replace(/\.html$/,'');
   document.body.classList.add('bn-story-page');
+
+  const detailMap = {
+    'burlington-data-centre-not-ai': [
+      ['Location','3110 South Service Rd'],
+      ['Type','General-purpose data centre'],
+      ['Electrical capacity','About 20 MW'],
+      ['Cooling','Expected to be air cooled'],
+      ['Application','Site Plan 535-004/26'],
+      ['Status','Under City review']
+    ],
+    'burlington-rabies-bat-2026': [
+      ['Confirmed','Aug. 14, 2026'],
+      ['Found','Aug. 11 in Burlington'],
+      ['Exact location','Not publicly disclosed'],
+      ['If exposed','Seek care and call 311']
+    ],
+    'ontario-student-rights-school': [
+      ['Board','Halton District School Board'],
+      ['Grades 7–12','Phones stored during class'],
+      ['K–6','Devices stored for the school day'],
+      ['Searches','Require a school-safety reason']
+    ],
+    'back-to-school-2026': [
+      ['First student day','Sept. 8, 2026'],
+      ['PA days','Sept. 2 and 3'],
+      ['Next PA day','Oct. 9'],
+      ['Calendar','HDSB 2026–27']
+    ],
+    'upper-middle-road-construction-2026': [
+      ['Corridor','Mountain Grove to Guelph Line'],
+      ['Watermain work','Fall 2026 to spring 2027'],
+      ['Surface work','Spring to summer 2027'],
+      ['Traffic','Lane restrictions expected']
+    ],
+    'millcroft-phase-2-138-homes': [
+      ['Proposal','138 homes'],
+      ['Detached','73 homes'],
+      ['Townhouses','65 homes'],
+      ['Status','Under City review']
+    ],
+    'nelson-quarry-tribunal-decision': [
+      ['Area','Mount Nemo'],
+      ['Decision','Aug. 18, 2026'],
+      ['City position','Opposed expansion'],
+      ['Next step','Legal and technical review']
+    ],
+    'ribfest-2026': [
+      ['Dates','Sept. 4–7, 2026'],
+      ['Location','Spencer Smith Park'],
+      ['Anniversary','30th year'],
+      ['Raised historically','Nearly $6 million']
+    ],
+    'fishway-26000-fish': [
+      ['2025 count','26,503 fish'],
+      ['Location','Cootes Paradise Fishway'],
+      ['Main job','Keep large carp out'],
+      ['Recovery issue','Water quality']
+    ],
+    'how-bad-is-burlington-crime': [
+      ['2024 CSI','31.2'],
+      ['Geography','Halton Region'],
+      ['2025 total crimes','15,673'],
+      ['Key caveat','No Burlington-only CSI']
+    ],
+    'nostalgia-games-cafe-closure': [
+      ['Games','300+'],
+      ['Meetup community','1,500+ members'],
+      ['Fundraiser target','$50,000'],
+      ['Status','Closed']
+    ],
+    '730-brant-vacant-building': [
+      ['Address','730 Brant Street'],
+      ['Redevelopment approval','2016'],
+      ['Fire','February 2026'],
+      ['Current ownership','Not yet verified']
+    ],
+    'salamander-road-closure': [
+      ['Road','King Road'],
+      ['Season','Spring migration'],
+      ['Species','Jefferson salamander'],
+      ['Status','Endangered in Ontario']
+    ],
+    'skyway-bridge-story': [
+      ['First Skyway','1958'],
+      ['Twin span','1985'],
+      ['Unbuilt option','Three tunnels'],
+      ['Properties bought','84']
+    ]
+  };
 
   function lockArticleSearch(){
     const paint=()=>{
@@ -49,6 +138,33 @@
     head.insertAdjacentElement('afterend',figure);
   }
 
+  function ensureLayout(){
+    const main=document.querySelector('main.article');
+    const body=document.querySelector('.article-body');
+    if(!main||!body) return null;
+    let layout=body.closest('.article-layout');
+    if(!layout){
+      layout=document.createElement('div');
+      layout.className='article-layout';
+      body.parentNode.insertBefore(layout,body);
+      layout.appendChild(body);
+    }
+    return layout;
+  }
+
+  function addDetailRail(){
+    const details=detailMap[currentSlug];
+    if(!details?.length) return;
+    const layout=ensureLayout();
+    if(!layout||layout.querySelector('.article-detail-rail')) return;
+    layout.querySelectorAll('.article-aside').forEach(node=>node.classList.add('article-aside-legacy'));
+    const aside=document.createElement('aside');
+    aside.className='article-detail-rail';
+    aside.setAttribute('aria-label','Key article details');
+    aside.innerHTML=`<section class="article-detail-card"><div class="article-detail-title">Key details</div><dl>${details.map(([label,value])=>`<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl></section>`;
+    layout.appendChild(aside);
+  }
+
   function articleText(){
     const source=document.querySelector('.article-body');
     if(!source) return '';
@@ -74,7 +190,6 @@
     const restart=wrap.querySelector('[data-listen-restart]');
     const rate=wrap.querySelector('[data-listen-rate]');
     const more=wrap.querySelector('.article-listen-more');
-    let utterance=null;
     let started=false;
     const makeUtterance=()=>{
       const u=new SpeechSynthesisUtterance(text);
@@ -87,10 +202,10 @@
       more.hidden=false;
       if(speechSynthesis.speaking&&!speechSynthesis.paused){speechSynthesis.pause();toggle.setAttribute('aria-pressed','false');toggle.querySelector('span').textContent='▶';toggle.querySelector('strong').textContent='Resume';return}
       if(speechSynthesis.paused){speechSynthesis.resume();toggle.setAttribute('aria-pressed','true');toggle.querySelector('span').textContent='Ⅱ';toggle.querySelector('strong').textContent='Pause';return}
-      speechSynthesis.cancel();utterance=makeUtterance();speechSynthesis.speak(utterance);started=true;toggle.setAttribute('aria-pressed','true');toggle.querySelector('span').textContent='Ⅱ';toggle.querySelector('strong').textContent='Pause';
+      speechSynthesis.cancel();speechSynthesis.speak(makeUtterance());started=true;toggle.setAttribute('aria-pressed','true');toggle.querySelector('span').textContent='Ⅱ';toggle.querySelector('strong').textContent='Pause';
     });
-    restart.addEventListener('click',()=>{speechSynthesis.cancel();utterance=makeUtterance();speechSynthesis.speak(utterance);started=true;toggle.setAttribute('aria-pressed','true');toggle.querySelector('span').textContent='Ⅱ';toggle.querySelector('strong').textContent='Pause'});
-    rate.addEventListener('change',()=>{if(started||speechSynthesis.speaking||speechSynthesis.paused){speechSynthesis.cancel();utterance=makeUtterance();speechSynthesis.speak(utterance);started=true;toggle.setAttribute('aria-pressed','true');toggle.querySelector('span').textContent='Ⅱ';toggle.querySelector('strong').textContent='Pause'}});
+    restart.addEventListener('click',()=>{speechSynthesis.cancel();speechSynthesis.speak(makeUtterance());started=true;toggle.setAttribute('aria-pressed','true');toggle.querySelector('span').textContent='Ⅱ';toggle.querySelector('strong').textContent='Pause'});
+    rate.addEventListener('change',()=>{if(started||speechSynthesis.speaking||speechSynthesis.paused){speechSynthesis.cancel();speechSynthesis.speak(makeUtterance());started=true;toggle.setAttribute('aria-pressed','true');toggle.querySelector('span').textContent='Ⅱ';toggle.querySelector('strong').textContent='Pause'}});
     addEventListener('beforeunload',()=>speechSynthesis.cancel(),{once:true});
   }
 
@@ -164,7 +279,7 @@
   }
 
   function boot(){
-    lockArticleSearch();ensureHero();addReadTime();addListen();addShareTools();addTipBox();addEndCopy();normalizeArticleMeta();addSchema();document.querySelectorAll('.article-aside').forEach(node=>node.classList.add('article-aside-legacy'));addRelated();
+    lockArticleSearch();ensureHero();ensureLayout();addDetailRail();addReadTime();addListen();addShareTools();addTipBox();addEndCopy();normalizeArticleMeta();addSchema();document.querySelectorAll('.article-aside').forEach(node=>node.classList.add('article-aside-legacy'));addRelated();
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();
