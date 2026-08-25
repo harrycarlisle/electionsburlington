@@ -5,7 +5,7 @@ This weekly automated pass detects changes in public source pages and creates a 
 The purpose of this archive is to build a long-term, source-backed record while keeping verified facts, campaign claims, reporting and public opinion separate.
 
 ## Source changes
-- **Meed Ward campaign:** Fetch failed — review manually — https://votemarianne.ca/
+- **Meed Ward campaign:** No detected change — https://votemarianne.ca/
 - **Lisa Kearns campaign:** No detected change — https://lisakearns.ca/
 - **Rory Nisan campaign:** CHANGED — review — https://rorynisan.ca/
 - **Official candidate list:** CHANGED — review — https://myvote.burlington.ca/for-voters/list-of-candidates/
