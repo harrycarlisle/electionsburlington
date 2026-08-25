@@ -41,7 +41,7 @@
     const events = (Array.isArray(data?.events) ? data.events : []).filter(item => Date.parse(item.end || item.start) > now).sort((a, b) => Date.parse(a.start) - Date.parse(b.start));
     const event = events[0];
     if (!event) return null;
-    return {title:event.title, dateLabel:shortDate(event.start), url:`/explore/#event-${encodeURIComponent(event.id || '')}`};
+    return {title:event.title, dateLabel:event.dateLabel || shortDate(event.start), url:`/explore/#event-${encodeURIComponent(event.id || '')}`};
   }
 
   function trafficItem(surface, intel) {
@@ -80,21 +80,23 @@
     const skyway = skywayItem(surface);
     const goInfo = goSummary(go);
     const event = nextEvent(explore);
+    const icon = (name, path) => `<span class="now-icon now-icon-${name}" aria-hidden="true"><svg viewBox="0 0 24 24">${path}</svg></span>`;
     const goMarkup = goInfo.alert
-      ? `<a class="now-item now-go is-alert" href="${esc(goInfo.url)}"><small>GO</small><strong>${esc(goInfo.headline)}</strong></a>`
-      : `<div class="now-item now-go"><small>GO</small><div class="now-go-lines"><a href="${esc(goTripUrl('UN'))}" target="_blank" rel="noopener"><b>Union</b> ${esc(goInfo.union.length ? goInfo.union.join(' · ') : 'Check times')}</a><a href="${esc(goTripUrl('WR'))}" target="_blank" rel="noopener"><b>West Harbour</b> ${esc(goInfo.west.length ? goInfo.west.join(' · ') : 'Check times')}</a></div></div>`;
+      ? `<a class="now-item now-go is-alert" href="${esc(goInfo.url)}">${icon('go','<path d="M4 12h16M7 8l-3 4 3 4M17 8l3 4-3 4"/>')}<small>GO</small><strong>${esc(goInfo.headline)}</strong></a>`
+      : `<div class="now-item now-go">${icon('go','<path d="M4 12h16M7 8l-3 4 3 4M17 8l3 4-3 4"/>')}<small>GO</small><div class="now-go-lines"><a href="${esc(goTripUrl('UN'))}" target="_blank" rel="noopener"><b>Union</b> ${esc(goInfo.union.length ? goInfo.union.join(' · ') : 'Check times')}</a><a href="${esc(goTripUrl('WR'))}" target="_blank" rel="noopener"><b>West Harbour</b> ${esc(goInfo.west.length ? goInfo.west.join(' · ') : 'Check times')}</a></div></div>`;
     const eventMarkup = event
-      ? `<a class="now-item now-event" href="${esc(event.url)}"><small>Next</small><strong>${esc(event.dateLabel)} · ${esc(event.title)}</strong></a>`
-      : '';
-    host.innerHTML = `<div class="now-strip" aria-label="Local status">
+      ? `<a class="now-item now-event" href="${esc(event.url)}">${icon('next','<rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 11h16"/>')}<small>Next</small><strong>${esc(event.dateLabel)}</strong><em>${esc(event.title)}</em></a>`
+      : `<div class="now-item now-event">${icon('next','<rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 11h16"/>')}<small>Next</small><strong>See events</strong></div>`;
+    host.innerHTML = `<p class="now-kicker"><i class="now-dot" aria-hidden="true"></i> Live local update</p><div class="now-strip" aria-label="Local status">
       <a class="now-item now-traffic${traffic.alert ? ' is-alert' : ''}" href="${esc(traffic.url || '/traffic/')}">
+        ${icon('traffic','<circle cx="12" cy="12" r="8"/><path d="M12 8v5M12 16h.01"/>')}
         <small>Traffic</small>
         <strong>${esc(traffic.title)}</strong>
         ${traffic.context ? `<em>${esc(traffic.context)}</em>` : ''}
         ${traffic.impact ? `<em>${esc(traffic.impact)}</em>` : ''}
       </a>
-      <span class="now-item now-weather"><small>Weather</small><strong class="now-weather-value" data-weather-temperature data-weather-compact data-weather-alert-host>--</strong></span>
-      <a class="now-item now-skyway${skyway.alert ? ' is-alert' : ''}" href="/traffic/" title="${esc(skyway.detail)}"><small>Skyway</small><strong>${esc(skyway.value)}</strong></a>
+      <span class="now-item now-weather">${icon('weather','<circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>')}<small>Weather</small><strong class="now-weather-value" data-weather-temperature data-weather-compact data-weather-alert-host>--</strong></span>
+      <a class="now-item now-skyway${skyway.alert ? ' is-alert' : ''}" href="/traffic/" title="${esc(skyway.detail)}">${icon('skyway','<path d="M4 16h16M7 16V9l5-3 5 3v7"/><circle cx="12" cy="12" r="2"/>')}<small>Skyway</small><strong>${esc(skyway.value)}</strong></a>
       ${goMarkup}
       ${eventMarkup}
     </div>`;

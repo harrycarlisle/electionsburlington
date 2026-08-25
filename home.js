@@ -64,7 +64,7 @@
 
   window.BurlingtonSearch?.install(document.getElementById('headerSearch'), {
     rotate: true,
-    prompts: ['Search “I’m bored”', 'Search “Best food”', 'Search “This weekend”', 'Search “Election”']
+    prompts: ['Search “This weekend”', 'Search “I’m bored”', 'Search “Best food”', 'Search “Election”']
   });
 
   menu?.addEventListener('click', () => {
@@ -89,16 +89,19 @@
     if (!lead || !item?.headline || !item?.url) return;
     const url = publicUrl(item.url);
     const external = /^https?:\/\//.test(url);
-    const image = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : '/assets/editorial/home-share.webp';
-    const alt = item.alt || item.headline;
-    const credit = item.credit || 'Burlington News';
+    const rawImage = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : '/assets/editorial/home-share.webp';
+    const image = /crime/i.test(`${item.id || ''} ${item.headline || ''}`) && /\.svg$|chart|comparison/i.test(rawImage)
+      ? '/assets/editorial/halton-police-dusk.webp'
+      : rawImage;
+    const alt = /halton-police-dusk/.test(image) ? 'A Halton Regional Police vehicle at dusk behind police tape' : (item.alt || item.headline);
+    const credit = /halton-police-dusk/.test(image) ? '' : (item.credit || 'Burlington News');
     const deck = item.deck || item.storyGoal || '';
-    lead.innerHTML = `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${esc(image)}" alt="${esc(alt)}" fetchpriority="high"><span class="image-credit">${esc(credit)}</span></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(item.headline)}</h1>${deck ? `<p>${esc(deck)}</p>` : ''}</div></a>`;
+    lead.innerHTML = `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${esc(image)}" alt="${esc(alt)}" fetchpriority="high">${credit ? `<span class="image-credit">${esc(credit)}</span>` : ''}</div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(item.headline)}</h1>${deck ? `<p>${esc(deck)}</p>` : ''}</div></a>`;
   }
 
   function renderPicks(items){
     if (!pickGrid || !items.length) return;
-    pickGrid.innerHTML = items.slice(0, 2).map(item => {
+    pickGrid.innerHTML = items.slice(0, 3).map(item => {
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
       const image = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : '/assets/editorial/home-share.webp';
@@ -110,14 +113,15 @@
     .then(response => response.ok ? response.json() : Promise.reject())
     .then(data => {
       if (latestList && Array.isArray(data.latest) && data.latest.length) {
-        latestList.innerHTML = data.latest.slice(0, 3).map(item => {
+        latestList.innerHTML = data.latest.slice(0, 4).map(item => {
           const url = publicUrl(item.url);
           const external = /^https?:\/\//.test(url);
           return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><span><small>${esc(categoryLabel(item))}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
         }).join('');
       }
       if (Array.isArray(data.feature) && data.feature.length) renderLead(data.feature[0]);
-      const picks = [...(data.feature || []).slice(1), ...(data.rail || [])].filter((item, index, list) => list.findIndex(other => other.id === item.id) === index);
+      const leadId = data.feature?.[0]?.id;
+      const picks = [...(data.feature || []).slice(1), ...(data.rail || [])].filter((item, index, list) => item.id !== leadId && list.findIndex(other => other.id === item.id) === index);
       renderPicks(picks);
     }).catch(() => {});
 })();
