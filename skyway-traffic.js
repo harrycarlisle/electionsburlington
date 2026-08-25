@@ -30,8 +30,11 @@
   }
 
   function mapZoom(cam) {
-    const name = `${cam.cameraName || ''} ${cam.nearestRoad || ''}`;
-    return /skyway|eastport/i.test(name) ? 11 : 12;
+    return 11;
+  }
+
+  function mapUrl(tile) {
+    return `https://basemaps.cartocdn.com/light_all/${tile.zoom}/${tile.tileX}/${tile.tileY}.png`;
   }
 
   function directionClass(direction) {
@@ -62,7 +65,7 @@
           <img crossorigin="anonymous" data-camera="${esc(cam.viewId)}" src="https://511on.ca/map/Cctv/${esc(cam.viewId)}" alt="Live Ontario 511 camera: ${esc(cam.cameraName)}">
         </figure>
         <div class="traffic-camera-map" aria-hidden="true">
-          <img src="https://tile.openstreetmap.org/${tile.zoom}/${tile.tileX}/${tile.tileY}.png" alt="">
+          <img src="${mapUrl(tile)}" alt="">
           <span class="traffic-pin ${dir}" style="left:${tile.left}%;top:${tile.top}%"><i></i></span>
         </div>
       </div>
@@ -126,6 +129,7 @@
       if (officialDown) unavailable.push(cam);
       else available.push(cam);
     });
+    live.clear();
     if (liveHost) liveHost.innerHTML = available.map(cameraCard).join('');
     if (otherHost) otherHost.innerHTML = unavailable.map(unavailableRow).join('');
     if (otherWrap) otherWrap.hidden = !unavailable.length;
@@ -133,10 +137,29 @@
     paintStatus();
   }
 
+  function looksUnavailable(image) {
+    try {
+      const canvas = document.createElement('canvas');
+      canvas.width = 48;
+      canvas.height = 48;
+      const ctx = canvas.getContext('2d', {willReadFrequently:true});
+      ctx.drawImage(image, 0, 0, 48, 48);
+      const data = ctx.getImageData(0, 0, 48, 48).data;
+      let yellow = 0;
+      for (let i = 0; i < data.length; i += 16) {
+        if (data[i] > 180 && data[i + 1] > 150 && data[i + 2] < 90) yellow++;
+      }
+      return yellow > 10;
+    } catch (_) {
+      return false;
+    }
+  }
+
   function paintStatus() {
     const el = byId('cameraStatus');
-    const images = [...document.querySelectorAll('[data-camera]')];
-    if (el) el.textContent = images.length ? `${live.size} of ${images.length} cameras live` : 'Loading cameras';
+    const images = [...document.querySelectorAll('#cameraLive [data-camera]')];
+    const count = images.filter(image => live.has(image.dataset.camera) && image.naturalWidth).length;
+    if (el) el.textContent = images.length ? `${count} of ${images.length} cameras live` : 'Loading cameras';
   }
 
   function bindImages() {
@@ -158,13 +181,13 @@
         paintStatus();
       };
       image.addEventListener('load', () => {
-        if (!image.naturalWidth) return moveUnavailable();
+        if (!image.naturalWidth || looksUnavailable(image)) return moveUnavailable();
         live.add(image.dataset.camera);
         paintStatus();
       });
       image.addEventListener('error', moveUnavailable);
       if (image.complete) {
-        if (image.naturalWidth) live.add(image.dataset.camera);
+        if (image.naturalWidth && !looksUnavailable(image)) live.add(image.dataset.camera);
         else moveUnavailable();
         paintStatus();
       }
