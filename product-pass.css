@@ -82,7 +82,8 @@
   }
   .publication-shell .menu-icon-button{
     flex:0 0 40px!important;width:40px!important;height:40px!important;min-width:40px!important;
-    font-size:0!important;overflow:hidden;color:var(--ink)!important
+    font-size:0!important;overflow:hidden;color:var(--ink)!important;
+    border:0!important;background:transparent!important;border-radius:8px!important;box-shadow:none!important
   }
   .publication-shell .menu-icon-button .menu-bars{display:grid;gap:5px;width:18px}
   .publication-shell .menu-icon-button .menu-bars i{display:block;height:2px;background:currentColor}
@@ -108,7 +109,16 @@
 html[data-theme="dark"] .publication-shell .header-search,
 html[data-theme="dark"] .bored-actions button{background:#11191d;color:#edf4f8;border-color:#3a474e}
 
-.menu-panel{position:relative}
+.publication-shell .header-search label,
+.header-search .sr-only{
+  position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;
+  overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important
+}
+.publication-shell .menu-panel{position:fixed!important}
+@media(min-width:901px){
+  .publication-shell #mainNav.menu-panel,
+  .publication-shell .menu-icon-button{display:none!important}
+}
 .menu-theme-toggle{
   position:absolute;top:10px;right:10px;z-index:2;
   width:40px;height:40px;padding:0;border-radius:50%;
@@ -357,6 +367,7 @@ html[data-theme="dark"] .now-icon svg{stroke:#fff}
   html[data-theme="dark"] .now-chip .now-icon-go{background:#3d8f5a}
 }
 
+#profilePanel .profile-head{display:flex!important;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap;margin-bottom:12px}
 .candidate-picker{display:flex;align-items:center;gap:10px;margin:0 0 14px}
 .candidate-picker label{font:800 12px/1 Inter,sans-serif;color:var(--muted,#4f6a82)}
 .candidate-picker select{min-height:44px;min-width:min(100%,280px);padding:0 34px 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card,#fff);color:var(--navy);font-weight:750}

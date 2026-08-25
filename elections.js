@@ -47,6 +47,34 @@
     return String(text || '').split(/(?<=[.!?])\s+/).map(part => part.trim()).filter(Boolean).slice(0, 4);
   }
 
+  function unlockIfSettled(id) {
+    if (scrollingToId !== id) return;
+    if (nearestCardId() === id) {
+      scrollingToId = '';
+      return;
+    }
+    requestAnimationFrame(() => unlockIfSettled(id));
+  }
+
+  function waitForStripSettle(done) {
+    let last = strip.scrollLeft;
+    let stable = 0;
+    const step = () => {
+      if (Math.abs(strip.scrollLeft - last) < 1) {
+        stable += 1;
+        if (stable >= 5) {
+          done();
+          return;
+        }
+      } else {
+        stable = 0;
+        last = strip.scrollLeft;
+      }
+      requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
   function setActive(id, { scroll = false, hash = true } = {}) {
     if (!byId(id)) return;
     const changed = id !== activeCandidateId;
@@ -73,21 +101,21 @@
       const next = hashFor(byId(id));
       if (location.hash !== next) history.replaceState(null, '', next);
     }
-    if (scroll) {
+    if (scroll && isRailMode()) {
       const card = strip.querySelector(`[data-id="${CSS.escape(id)}"]`);
       if (!card) return;
       scrollingToId = id;
-      const finish = () => { scrollingToId = ''; };
-      if (typeof strip.onscrollend !== 'undefined') {
-        strip.addEventListener('scrollend', finish, { once: true });
-      } else {
-        requestAnimationFrame(() => requestAnimationFrame(finish));
-      }
+      const finish = () => { if (scrollingToId === id) scrollingToId = ''; };
+      strip.addEventListener('scrollend', finish, { once: true });
       card.scrollIntoView({
         behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
         inline: 'center',
         block: 'nearest'
       });
+      waitForStripSettle(finish);
+      requestAnimationFrame(() => unlockIfSettled(id));
+    } else {
+      scrollingToId = '';
     }
   }
 
@@ -117,13 +145,12 @@
     if (!isRailMode()) return;
     const cards = [...strip.querySelectorAll('.candidate-card')];
     observer = new IntersectionObserver(entries => {
-      if (scrollingToId) return;
       const visible = entries
         .filter(entry => entry.isIntersecting)
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-      if (visible[0]?.intersectionRatio >= 0.55) {
-        setActive(visible[0].target.dataset.id, { hash: true });
-      }
+      const nextId = visible[0]?.intersectionRatio >= 0.55 ? visible[0].target.dataset.id : nearestCardId();
+      if (scrollingToId && nextId !== scrollingToId) return;
+      setActive(nextId, { hash: true });
     }, { root: strip, threshold: [0.45, 0.55, 0.7, 0.85] });
     cards.forEach(card => observer.observe(card));
   }
