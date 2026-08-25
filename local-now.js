@@ -1,6 +1,12 @@
 (() => {
   const host = document.getElementById('localNow');
   if (!host) return;
+  if (!document.getElementById('goRouteStyles')) {
+    const style = document.createElement('style');
+    style.id = 'goRouteStyles';
+    style.textContent = '.now-go-routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.now-go-route{display:grid;gap:5px;color:var(--navy);text-decoration:none}.now-go-route+b{margin-top:0}.now-go-route>b{font:700 17px/1.1 var(--publication-serif)}.now-go-route+.now-go-route{padding-left:18px;border-left:1px solid var(--line)}@media(max-width:680px){.now-go-routes{grid-template-columns:1fr;gap:12px}.now-go-route+.now-go-route{padding-left:0;padding-top:12px;border-left:0;border-top:1px solid var(--line)}}';
+    document.head.appendChild(style);
+  }
   const esc = value => String(value || '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
   const relative = value => {
     const date = new Date(value);
@@ -52,7 +58,6 @@
     const alert = Array.isArray(data.alerts) && data.alerts.length ? `<div class="now-go-alert"><strong>${esc(data.alerts[0].headline || 'GO service update')}</strong>${data.alerts[0].detail ? `<span>${esc(data.alerts[0].detail)}</span>` : ''}</div>` : '';
     return `<section class="now-go" aria-label="GO train times"><div class="now-go-head"><span>GO train</span><small>${data.dataKind === 'realtime' ? 'Realtime' : 'Scheduled'}</small></div><div class="now-go-routes">${routeHtml}</div>${alert}</section>`;
   };
-
   Promise.allSettled([
     fetch(source,{cache:'no-store'}).then(response => response.ok ? response.json() : Promise.reject()),
     fetch('data/go-status.json',{cache:'no-store'}).then(response => response.ok ? response.json() : null).catch(() => null)
