@@ -8,10 +8,60 @@
   const themeKey = 'burlington-news-theme';
   const cleanDash = value => String(value || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
   const esc = value => cleanDash(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+  const normalizeUrl = value => {
+    let raw = String(value || '').trim();
+    if (!raw) return '';
+    raw = raw.replace(/^https?:\/\/[^/]+/i, '');
+    raw = raw.split('?')[0].split('#')[0];
+    raw = raw.replace(/\/index\.html$/i, '/').replace(/\.html$/i, '');
+    raw = raw.replace(/\/+/g, '/').replace(/^\/|\/$/g, '');
+    raw = raw.replace(/^(?:articles|stories)(?:\/auto)?\//, 'stories/');
+    if (raw.startsWith('stories/')) return `stories/${raw.split('/').slice(1).join('/')}`.replace(/\/+$/, '');
+    return raw.toLowerCase();
+  };
+  const storyId = item => String(item?.id || '').trim().toLowerCase();
+  const storySlug = item => {
+    const explicit = String(item?.slug || '').trim().replace(/^\/|\/$/g, '');
+    if (explicit) return explicit.toLowerCase();
+    const url = normalizeUrl(item?.canonical || item?.url || '');
+    return url.startsWith('stories/') ? url.slice(8) : '';
+  };
+  const storyHeadline = item => String(item?.headline || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const storyKey = item => {
+    if (storyId(item)) return `id:${storyId(item)}`;
+    if (normalizeUrl(item?.canonical || item?.url)) return `url:${normalizeUrl(item?.canonical || item?.url)}`;
+    if (storySlug(item)) return `slug:${storySlug(item)}`;
+    if (storyHeadline(item)) return `headline:${storyHeadline(item)}`;
+    return '';
+  };
+  const sameStory = (left, right) => {
+    if (!left || !right) return false;
+    const leftId = storyId(left);
+    const rightId = storyId(right);
+    if (leftId && rightId && leftId === rightId) return true;
+    const leftUrl = normalizeUrl(left.canonical || left.url);
+    const rightUrl = normalizeUrl(right.canonical || right.url);
+    if (leftUrl && rightUrl && leftUrl === rightUrl) return true;
+    const leftSlug = storySlug(left);
+    const rightSlug = storySlug(right);
+    if (leftSlug && rightSlug && leftSlug === rightSlug) return true;
+    if (leftId && rightId && leftId !== rightId) return false;
+    const leftHeadline = storyHeadline(left);
+    const rightHeadline = storyHeadline(right);
+    return Boolean(leftHeadline && rightHeadline && leftHeadline === rightHeadline);
+  };
+  const uniqueStories = items => {
+    const unique = [];
+    for (const item of items || []) {
+      if (item && !unique.some(seen => sameStory(item, seen))) unique.push(item);
+    }
+    return unique;
+  };
+  const newestWithoutHero = (items, hero, count = 4) => uniqueStories(items).filter(item => !sameStory(item, hero)).slice(0, count);
   const publicUrl = value => {
     const raw = String(value || '');
     if (/^https?:\/\//.test(raw)) return raw;
-    const story = raw.match(/^articles\/([^/]+)\.html$/);
+    const story = raw.match(/^articles\/(?:auto\/)?([^/]+)\.html$/);
     if (story) return `/stories/${story[1]}/`;
     if (raw === 'updates.html') return '/news/';
     if (raw === 'explore.html') return '/explore/';
@@ -101,7 +151,7 @@
 
   function renderPicks(items){
     if (!pickGrid || !items.length) return;
-    pickGrid.innerHTML = items.slice(0, 3).map(item => {
+    pickGrid.innerHTML = uniqueStories(items).slice(0, 3).map(item => {
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
       const image = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : '/assets/editorial/home-share.webp';
@@ -112,16 +162,20 @@
   fetch('/data/home-surface.json', { cache: 'no-store' })
     .then(response => response.ok ? response.json() : Promise.reject())
     .then(data => {
+      const hero = Array.isArray(data.feature) && data.feature.length ? data.feature[0] : null;
+      if (hero) renderLead(hero);
       if (latestList && Array.isArray(data.latest) && data.latest.length) {
-        latestList.innerHTML = data.latest.slice(0, 4).map(item => {
+        latestList.innerHTML = newestWithoutHero(data.latest, hero, 4).map(item => {
           const url = publicUrl(item.url);
           const external = /^https?:\/\//.test(url);
           return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><span><small>${esc(categoryLabel(item))}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
         }).join('');
       }
-      if (Array.isArray(data.feature) && data.feature.length) renderLead(data.feature[0]);
-      const leadId = data.feature?.[0]?.id;
-      const picks = [...(data.feature || []).slice(1), ...(data.rail || [])].filter((item, index, list) => item.id !== leadId && list.findIndex(other => other.id === item.id) === index);
+      const picks = uniqueStories([...(data.feature || []).slice(1), ...(data.rail || [])]).filter(item => !sameStory(item, hero));
       renderPicks(picks);
+      window.BN = window.BN || {};
+      window.BN.sameStory = sameStory;
+      window.BN.storyKey = storyKey;
+      window.BN.newestWithoutHero = newestWithoutHero;
     }).catch(() => {});
 })();

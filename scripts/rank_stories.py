@@ -17,6 +17,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from editorial_policy import load_policy, signal_weights
+from story_identity import newest_without_hero, same_story, unique_stories
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "data" / "story-catalog.json"
@@ -144,16 +145,20 @@ def main() -> int:
 
     feature_candidates = [item for item in eligible if "feature" in item.get("surfaces", []) and item.get("image")]
     feature_candidates.sort(key=lambda item: (item["placementScore"], item.get("published", "")), reverse=True)
-    rail = [public_item(item) for item in eligible if "rail" in item.get("surfaces", [])][:3]
+    hero = feature_candidates[0] if feature_candidates else None
+    rail_candidates = unique_stories(item for item in eligible if "rail" in item.get("surfaces", []))
+    rail_candidates = [item for item in rail_candidates if not same_story(item, hero)]
+    rail = [public_item(item) for item in rail_candidates[:3]]
     latest_candidates = [item for item in eligible if "latest" in item.get("surfaces", [])]
     latest_candidates.sort(key=lambda item: (item["placementScore"], item.get("published", item.get("activeFrom", ""))), reverse=True)
+    latest = [public_item(item) for item in newest_without_hero(latest_candidates, hero, 6)]
 
     result = {
         "generatedFor": today.isoformat(),
         "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure.",
         "feature": [public_item(item) for item in feature_candidates[:4]],
         "rail": rail,
-        "latest": [public_item(item) for item in latest_candidates[:6]],
+        "latest": latest,
         "audit": [
             {"id": item["id"], "state": item["state"], "placementScore": item["placementScore"], "reason": item["reason"]}
             for item in audited
