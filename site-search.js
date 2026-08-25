@@ -29,7 +29,7 @@
     {title:'Burlington food spots worth trying',url:'/guides/burlington-food-spots.html',section:'Food',keywords:'best food tacos burger sandwich banh mi coffee restaurants'},
     {title:'Burlington 2026 Election Guide',url:'/elections/',section:'Election',keywords:'vote mayor candidates ward ballot'},
     {title:'Burlington sports',url:'/sports/',section:'Sports',keywords:'soccer hockey lacrosse ultimate ringette golf'},
-    {title:'Games about Burlington',url:'/games/',section:'Games',keywords:'quiz puzzle trivia swipe'},
+    {title:'Puzzles about Burlington',url:'/games/',section:'Puzzles',keywords:'quiz puzzle trivia swipe games'},
     {title:'Live Burlington traffic cameras',url:'/traffic/',section:'Traffic',keywords:'qew skyway traffic camera commute brant guelph walkers appleby burloak'}
   ];
   const homeSuggested = ['I’m bored','Best tacos','This weekend','Things to do'];

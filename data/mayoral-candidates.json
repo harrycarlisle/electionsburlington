@@ -32,14 +32,14 @@
     },
     "traffic": {
       "id": "traffic",
-      "label": "Traffic and transportation",
+      "label": "Traffic & transportation",
       "contextTitle": "Who manages the roads you use",
       "why": "Burlington manages local roads, traffic signals and Burlington Transit. Halton Region manages regional roads. Ontario manages the QEW and Highway 403. Traffic also changes with population, commuting, schools, jobs and construction.",
       "source": "https://www.burlington.ca/en/roads-parking-and-traffic/integrated-mobility-plan.aspx"
     },
     "development": {
       "id": "development",
-      "label": "Development and growth",
+      "label": "Development & growth",
       "contextTitle": "How development decisions are made",
       "why": "Burlington sets local planning and zoning rules and approves many projects. Ontario sets broader planning rules, and the Ontario Land Tribunal can overturn some city decisions. Developers decide when approved projects are actually built.",
       "source": "https://www.burlington.ca/en/council-and-city-administration/official-plan.aspx"
@@ -66,8 +66,8 @@
       "name": "Marianne Meed Ward",
       "currentRole": "Mayor since 2018",
       "image": "/assets/candidates/mw.webp",
-      "cardSummary": "Keep services and infrastructure funded, and continue Burlington’s post-2018 growth plan.",
-      "profileLine": "Keep core services running and continue infrastructure repairs.",
+      "cardSummary": "Keep services and infrastructure funded while continuing Burlington’s post-2018 growth plan.",
+      "profileLine": "She is running on continuity: keep the post-2018 plan, and keep paying for the services already in place.",
       "experience": [
         "Mayor since 2018; Ward 2 councillor from 2010 to 2018.",
         "Former journalist before entering elected office.",

@@ -62,14 +62,32 @@
 .article-reveal .answer{margin-top:14px;padding:14px 16px;border-radius:12px;background:color-mix(in srgb,currentColor 6%,transparent)}
 .bn-story-page .article-share-end{margin:2.4em 0 0}
 @media(max-width:720px){
-  .publication-shell .header-search{width:100%;max-width:none;height:42px}
+  :root{--news-banner-h:28px!important}
   html,body.publication-shell{overflow-x:hidden}
   body.menu-is-open{overflow:hidden}
-  #candidateStrip{display:flex!important;overflow-x:auto!important;gap:10px!important;padding:0 18px 12px 0!important;scroll-snap-type:x mandatory;scrollbar-width:none}
+  #candidateStrip{display:flex!important;overflow-x:auto!important;gap:10px!important;padding:0 18px 12px 0!important;scroll-snap-type:x mandatory;scroll-padding-inline:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   #candidateStrip .candidate-card{flex:0 0 86%!important;min-width:86%!important;max-width:86%!important;scroll-snap-align:center}
-  .publication-shell .header .header-inner{min-height:52px!important;flex-wrap:nowrap!important}
-  .publication-shell .menu-icon-button{width:44px!important;height:44px!important;font-size:0!important}
-  .publication-shell .banner .wrap{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .publication-shell .banner{min-height:28px!important}
+  .publication-shell .banner .wrap{min-height:28px!important;padding-block:4px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;font-size:11px!important;line-height:1.2!important}
+  .publication-shell .header{top:var(--news-banner-h,28px)!important}
+  .publication-shell .header .header-inner{
+    min-height:48px!important;height:48px!important;padding:4px 0!important;gap:8px!important;flex-wrap:nowrap!important
+  }
+  .publication-shell .header-controls{flex:1 1 auto!important;min-width:0!important;justify-content:flex-end!important}
+  .publication-shell .header-search,.header-search{
+    flex:1 1 auto!important;width:100%!important;max-width:none!important;height:36px!important;border-radius:10px!important
+  }
+  .publication-shell .header-search input,.header-search input{
+    font-size:13px!important;white-space:nowrap;text-overflow:ellipsis
+  }
+  .publication-shell .menu-icon-button{
+    flex:0 0 40px!important;width:40px!important;height:40px!important;min-width:40px!important;
+    font-size:0!important;overflow:hidden;color:var(--ink)!important
+  }
+  .publication-shell .menu-icon-button .menu-bars{display:grid;gap:5px;width:18px}
+  .publication-shell .menu-icon-button .menu-bars i{display:block;height:2px;background:currentColor}
+  .publication-shell .news-brand-logo{width:32px!important;height:35px!important;max-width:32px!important;flex-basis:32px!important}
+  .publication-shell .brand-mark-only{min-width:32px!important}
   #matters.election-issues-legacy{display:none}
 }
 .camera-card{display:grid}
@@ -338,6 +356,30 @@ html[data-theme="dark"] .now-icon svg{stroke:#fff}
   html[data-theme="dark"] .now-chip .now-icon-weather{background:#b8860b}
   html[data-theme="dark"] .now-chip .now-icon-go{background:#3d8f5a}
 }
+
+.candidate-picker{display:flex;align-items:center;gap:10px;margin:0 0 14px}
+.candidate-picker label{font:800 12px/1 Inter,sans-serif;color:var(--muted,#4f6a82)}
+.candidate-picker select{min-height:44px;min-width:min(100%,280px);padding:0 34px 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--card,#fff);color:var(--navy);font-weight:750}
+.issue-toggle,.questions-toggle{width:100%;background:transparent;border:0;cursor:pointer;text-align:left}
+html[data-theme="dark"] .candidate-picker select,
+html[data-theme="dark"] .issue-accordion,
+html[data-theme="dark"] .questions-accordion,
+html[data-theme="dark"] .profile-box,
+html[data-theme="dark"] .publication-shell .card.profile{
+  background:#15212a;
+  color:#edf4f8;
+  border-color:#30404b
+}
+html[data-theme="dark"] .issue-toggle strong,
+html[data-theme="dark"] .questions-toggle,
+html[data-theme="dark"] .profile-head h2,
+html[data-theme="dark"] .issues-stack>h3,
+html[data-theme="dark"] .experience-box h3{color:#edf4f8}
+html[data-theme="dark"] .issue-toggle em,
+html[data-theme="dark"] .profile-line{color:#aebcc6}
+html[data-theme="dark"] .publication-shell .banner{background:#0b4677;color:#fff}
+html[data-theme="dark"] .candidate-dots button{background:#3c4d58}
+html[data-theme="dark"] .candidate-dots button.is-active{background:#edf4f8}
 
 /* Traffic page: editorial camera rows, not a cramped 3-up grid. */
 .traffic-page{width:min(calc(100% - 40px),1120px);max-width:100%;margin:28px auto 80px;overflow-x:clip;box-sizing:border-box}
