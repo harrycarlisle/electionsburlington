@@ -8,11 +8,17 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: burlington-news-main-writers
+  cancel-in-progress: false
+
 jobs:
   results:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -28,10 +34,8 @@ jobs:
           subprocess.check_call([sys.executable, 'scripts/update_election_results.py'])
           PY
       - name: Commit changed results
-        run: |
-          git config user.name "burlington-results-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/election-results.json
-          git diff --cached --quiet && exit 0
-          git commit -m "Update Burlington election-night results"
-          git push
+        run: >-
+          python scripts/safe_bot_commit.py
+          --name "burlington-results-bot"
+          --message "Update Burlington election-night results"
+          data/election-results.json
