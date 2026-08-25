@@ -13,6 +13,16 @@
       "notes": "Public posts and videos can trigger a verification search. Link to the original public post when a stable post URL is available."
     },
     {
+      "id": "mayor-meed-ward-millcroft-reel-2026-08-24",
+      "name": "Mayor Marianne Meed Ward — Millcroft update",
+      "platform": "Facebook Reel",
+      "url": "https://www.facebook.com/reel/1534181614656974/",
+      "scope": ["development", "millcroft"],
+      "confidence": 2,
+      "discoveryOnly": true,
+      "notes": "Exact public reel supplied Aug. 24, 2026. Use as the mayor's own perspective and corroborate factual claims against City records."
+    },
+    {
       "id": "mayor-meed-ward-site",
       "name": "Mayor Marianne Meed Ward",
       "platform": "Website",
