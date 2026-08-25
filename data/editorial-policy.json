@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "signals": {
+    "interest": 0.22,
+    "relevance": 0.20,
+    "novelty": 0.15,
+    "familiarity": 0.11,
+    "consequence": 0.12,
+    "breadth": 0.07,
+    "sourceConfidence": 0.08,
+    "originality": 0.05
+  },
+  "gates": ["evidence", "burlington", "imageRights", "duplicate"],
+  "autoPublish": {
+    "allowedVerificationTiers": ["primary", "official", "reported", "corroborated"],
+    "blockedTopics": ["unverified allegation", "candidate endorsement", "election persuasion", "crime speculation", "medical diagnosis", "private-person accusation"],
+    "requireSourceUrl": true,
+    "requireStoryGoal": true,
+    "requireImageRights": true
+  },
+  "discovery": {
+    "avoidSinglePublisherDependence": true,
+    "aggregationPenalty": 0.78,
+    "preferredSourceMix": [
+      "primary official records",
+      "Halton/Burlington public agencies",
+      "Metrolinx and Ontario 511",
+      "community organizations and sports leagues",
+      "Reddit/Facebook public posts as leads",
+      "regional/local reporting as corroboration or background",
+      "older archives for historical context"
+    ]
+  },
+  "writing": {
+    "singleGoal": true,
+    "structure": ["title promise", "deck consequence", "curiosity intro", "action", "consequence", "next implication", "what happens next"],
+    "avoid": ["listicle framing", "filler intros", "generic everything-you-need-to-know language", "unsupported claims", "fake quotes"]
+  }
+}
