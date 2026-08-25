@@ -10,11 +10,17 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: burlington-news-main-writers
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -23,10 +29,8 @@ jobs:
           GO_API_KEY: ${{ secrets.GO_API_KEY }}
         run: python scripts/update_go_status.py
       - name: Commit changed status
-        run: |
-          if git diff --quiet -- data/go-status.json; then exit 0; fi
-          git config user.name "burlington-news-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/go-status.json
-          git commit -m "Update Burlington GO status"
-          git push
+        run: >-
+          python scripts/safe_bot_commit.py
+          --name "burlington-news-bot"
+          --message "Update Burlington GO status"
+          data/go-status.json
