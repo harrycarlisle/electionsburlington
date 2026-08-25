@@ -7,6 +7,7 @@
   const searchPopover = document.getElementById('searchPopover');
   const searchSuggestions = document.getElementById('searchSuggestions');
   const latestList = document.getElementById('latestList');
+  const lead = document.querySelector('.top-story');
   const root = document.documentElement;
   const themeKey = 'burlington-news-theme';
   const cleanDash = value => String(value || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
@@ -24,12 +25,13 @@
     const haystack = `${item?.label || ''} ${item?.tag || ''} ${item?.kind || ''} ${item?.headline || ''}`.toLowerCase();
     if (/election|ward|vote|candidate|ballot/.test(haystack)) return 'Election';
     if (/school|student|teacher|back to school/.test(haystack)) return 'Schools';
-    if (/development|brant|building|housing|millcroft|zoning|construction/.test(haystack)) return 'Development';
+    if (/development|brant|building|housing|millcroft|zoning|construction|data centre/.test(haystack)) return 'Development';
     if (/traffic|qew|skyway|road|closure/.test(haystack)) return 'Traffic';
-    if (/sport|soccer|hockey|ringette|lacrosse/.test(haystack)) return 'Sports';
-    if (/food|restaurant|ribfest|taco/.test(haystack)) return 'Food';
-    if (/event|festival|weekend/.test(haystack)) return 'Events';
-    if (/fish|wildlife|nature|salamander|marsh|park|quarry/.test(haystack)) return 'Nature';
+    if (/sport|soccer|hockey|ringette|lacrosse|ultimate|golf/.test(haystack)) return 'Sports';
+    if (/food|restaurant|ribfest|taco|cafe/.test(haystack)) return 'Food';
+    if (/event|festival|weekend|concert/.test(haystack)) return 'Events';
+    if (/fish|wildlife|nature|salamander|marsh|park|quarry|rabies/.test(haystack)) return 'Nature';
+    if (/canada|tariff|federal/.test(haystack)) return 'Canada';
     return 'Burlington';
   };
 
@@ -46,9 +48,9 @@
     {title:'Explore Burlington',url:'explore.html',section:'Explore',keywords:'this weekend bored passport calendar places free farmers market'},
     {title:'Burlington food spots worth trying',url:'guides/burlington-food-spots.html',section:'Food',keywords:'best food tacos burger sandwich banh mi coffee restaurants'},
     {title:'Burlington 2026 Election Guide',url:'election-guide.html',section:'Election',keywords:'vote mayor candidates ward ballot'},
-    {title:'Burlington sports',url:'sports.html',section:'Sports',keywords:'soccer hockey lacrosse ultimate ringette'},
+    {title:'Burlington sports',url:'sports.html',section:'Sports',keywords:'soccer hockey lacrosse ultimate ringette golf'},
     {title:'Games about Burlington',url:'puzzles.html',section:'Games',keywords:'quiz puzzle trivia swipe'},
-    {title:'Live Skyway traffic cameras',url:'skyway-traffic.html',section:'Traffic',keywords:'qew skyway traffic camera commute'}
+    {title:'Live Burlington traffic cameras',url:'skyway-traffic.html',section:'Traffic',keywords:'qew skyway traffic camera commute'}
   ];
   const suggested = ['This Weekend','I’m bored','Best Food','Best Tacos'];
 
@@ -66,7 +68,7 @@
   };
   setTheme(root.dataset.theme || 'light',false);
 
-  const rotatingPrompts = ['Search This Weekend','Search “I’m bored”','Search Best Food','Search Best Tacos','Search the election'];
+  const rotatingPrompts = ['Search “This Weekend”','Search “I’m bored”','Search “Best Food”','Search “Best Tacos”','Search “Election”'];
   if (searchInput && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     let promptIndex = 0;
     const rotatePrompt = () => {
@@ -117,38 +119,25 @@
 
   if (searchInput && new URLSearchParams(location.search).get('search') === '1') requestAnimationFrame(() => { searchInput.focus(); renderSearch(''); history.replaceState(null,'',location.pathname); });
 
+  function renderLead(item){
+    if(!lead||!item?.headline||!item?.url)return;
+    const external=/^https?:\/\//.test(item.url||'');
+    const image=item.image||'assets/editorial/home-share.webp';
+    const alt=item.alt||item.headline;
+    const credit=item.credit||'Burlington News';
+    const deck=item.deck||item.storyGoal||'';
+    lead.innerHTML=`<a href="${esc(item.url)}"${external?' target="_blank" rel="noopener"':''}><div class="top-image"><img src="${esc(image)}" alt="${esc(alt)}" fetchpriority="high"><span class="image-credit">${esc(credit)}</span></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(item.headline)}</h1>${deck?`<p>${esc(deck)}</p>`:''}</div></a>`;
+  }
+
   fetch('data/home-surface.json',{cache:'no-store'})
     .then(response => response.ok ? response.json() : Promise.reject())
     .then(data => {
-      if (!latestList || !Array.isArray(data.latest) || !data.latest.length) return;
-      latestList.innerHTML = data.latest.slice(0,3).map(item => {
-        const external = /^https?:\/\//.test(item.url || '');
-        return `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}><span><small>${esc(categoryLabel(item))}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
-      }).join('');
+      if (latestList && Array.isArray(data.latest) && data.latest.length) {
+        latestList.innerHTML = data.latest.slice(0,3).map(item => {
+          const external = /^https?:\/\//.test(item.url || '');
+          return `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}><span><small>${esc(categoryLabel(item))}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
+        }).join('');
+      }
+      if(Array.isArray(data.feature)&&data.feature.length)renderLead(data.feature[0]);
     }).catch(() => {});
-
-  const lead = document.querySelector('.top-story');
-  const leadImages = {
-    'Your ward': ['assets/editorial/burlington-wards-2026.svg', 'Diagram of Burlington municipal wards', 'Burlington News diagram'],
-    'Traffic': ['assets/home/skyway-reader.webp', 'The Burlington Bay Skyway across Burlington Bay', 'Photo provided to Burlington News']
-  };
-  fetch('data/daily-brief.json',{cache:'no-store'})
-    .then(response => response.ok ? response.json() : Promise.reject())
-    .then(data => {
-      if (!lead || !Array.isArray(data.items)) return;
-      const now = new Date();
-      const item = data.items.find(entry => {
-        const published = new Date(`${entry.date}T00:00:00-04:00`);
-        return entry.importance >= 4 && now - published < 48 * 60 * 60 * 1000 && ['primary','reported'].includes(entry.verificationTier);
-      });
-      if (!item) return;
-      const visual = leadImages[item.tag] || leadImages['Your ward'];
-      const external = /^https?:\/\//.test(item.url || '');
-      lead.innerHTML = `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${visual[0]}" width="1600" height="1000" alt="${esc(visual[1])}" fetchpriority="high"><span class="image-credit">${esc(visual[2])}</span></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(item.headline)}</h1><p>${esc(item.summary)}</p></div></a>`;
-    }).catch(() => {});
-
-  document.querySelector('.weekly-newsletter form')?.addEventListener('submit', event => {
-    event.preventDefault();
-    event.currentTarget.innerHTML = '<strong>Sign-up is not connected yet.</strong><p>The form is ready for the mailing service, but it has not stored your address.</p>';
-  });
 })();
