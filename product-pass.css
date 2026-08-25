@@ -131,7 +131,7 @@ html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8
 .now-utilities,.now-priority{display:none!important}
 
 /* Traffic page: editorial camera rows, not a cramped 3-up grid. */
-.traffic-page{width:min(calc(100% - 40px),1120px);margin:28px auto 80px}
+.traffic-page{width:min(calc(100% - 40px),1120px);max-width:100%;margin:28px auto 80px;overflow-x:clip;box-sizing:border-box}
 .traffic-page .traffic-hero{position:relative;padding:18px 0 22px}
 .traffic-page .traffic-kicker,.route-ask,.route-kicker{color:var(--muted);font:800 11px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 .traffic-page h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,6vw,68px);line-height:.96;letter-spacing:-.04em;margin:8px 0 10px;max-width:16ch}
@@ -175,10 +175,13 @@ html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8
 html[data-theme="dark"] .route-chips button[aria-pressed="true"]{background:#edf4f8;color:#101517;border-color:#edf4f8}
 html[data-theme="dark"] .traffic-camera-copy strong,.traffic-page .route-status h2{color:var(--navy)}
 @media(max-width:800px){
-  .traffic-page{width:calc(100% - 32px);margin-top:16px}
+  .traffic-page{width:calc(100% - 24px)!important;max-width:calc(100% - 24px)!important;margin-top:16px;overflow-x:clip}
   .traffic-page .live-chip{position:static;margin-top:14px}
+  .traffic-page .traffic-hero,.route-picker,.route-status,.camera-live,.traffic-camera,.traffic-camera-media,.traffic-camera-shot,.traffic-camera-map{min-width:0;max-width:100%}
   .traffic-camera-media{grid-template-columns:1fr;min-height:0}
+  .traffic-camera-shot img,.traffic-camera-map img{max-width:100%}
   .traffic-camera-copy strong{font-size:20px}
+  .route-chips{max-width:100%}
   .now-item{grid-template-columns:64px minmax(0,1fr)}
 }
 @media(max-width:560px){
