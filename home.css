@@ -25,11 +25,11 @@
   .home-desktop-nav a,.publication-nav a{font-size:15px}
   .header-search{height:46px;border-radius:12px}
   .header-search input{font-size:14px}
-  .home-main{padding-top:22px}
-  .lead-grid{grid-template-columns:minmax(0,2.2fr) minmax(300px,1fr);gap:32px;align-items:start}
+  .home-main{padding-top:16px}
+  .lead-grid{grid-template-columns:minmax(0,2.2fr) minmax(300px,1fr);gap:28px;align-items:start}
   .top-story{border-radius:16px}
-  .top-image{aspect-ratio:2/1;min-height:0;max-height:430px}
-  .top-copy{padding:22px 24px 26px}
+  .top-image{aspect-ratio:auto;width:100%;height:380px;max-height:none}
+  .top-copy{padding:18px 22px 20px}
   .kicker{margin-bottom:10px;font-size:12px}
   .top-copy h1{font-size:clamp(42px,3.4vw,54px);line-height:.98;letter-spacing:-.04em}
   .top-copy p{max-width:62ch;margin-top:14px;font-size:18px;line-height:1.5}

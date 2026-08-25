@@ -115,12 +115,12 @@ html[data-theme="dark"] .menu-theme-toggle,
 html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8ef;border-color:#3c4d58}
 
 /* Homepage live strip: full-width five columns, still compact vertically. */
-.local-now{margin:8px 0 28px!important;padding:0!important;border:0!important}
+.local-now{margin:4px 0 20px!important;padding:0!important;border:0!important}
 .local-now .now-heading{display:none!important}
 .now-kicker{display:flex;align-items:center;gap:8px;margin:0 0 10px;color:var(--navy);font:800 11px/1 var(--font-ui,Arial,sans-serif);letter-spacing:.08em;text-transform:uppercase}
 .now-dot{width:8px;height:8px;border-radius:50%;background:#2fa866;box-shadow:0 0 0 3px rgba(47,168,102,.16)}
 .now-strip{display:grid;grid-template-columns:1.55fr .72fr .72fr 1.15fr .95fr;gap:0;border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden}
-.now-item{display:grid;grid-template-columns:28px minmax(0,1fr);gap:6px 10px;align-content:start;padding:16px 18px;margin:0;border:0;border-right:1px solid var(--line);text-decoration:none;color:var(--ink);min-width:0}
+.now-item{display:grid;grid-template-columns:28px minmax(0,1fr);gap:6px 10px;align-content:start;padding:14px 16px;margin:0;border:0;border-right:1px solid var(--line);text-decoration:none;color:var(--ink);min-width:0}
 .now-item:last-child{border-right:0}
 .now-icon{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;grid-row:1/3}
 .now-icon svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
