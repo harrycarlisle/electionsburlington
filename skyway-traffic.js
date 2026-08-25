@@ -77,15 +77,16 @@
   }
   function runVisualEstimate(){
     const readable=images.filter(i=>liveCameras.has(i.dataset.camera)&&i.naturalWidth);
-    if(!readable.length){trafficEstimate.textContent='Live camera estimate unavailable';return;}
+    if(!readable.length){trafficEstimate.textContent='Traffic estimate unavailable';return;}
     try{
       const scores=readable.map(frameScore);
       const avg=scores.reduce((a,b)=>a+b,0)/scores.length;
-      const label=avg>.34?'busy':avg>.25?'moderate':'light';
-      trafficEstimate.textContent=`Camera view looks ${label}`;
-      trafficEstimate.title='Experimental visual estimate from the current camera frames; not an official traffic-speed measurement.';
+      const label=avg>.34?'heavy':avg>.25?'moderate':'light';
+      trafficEstimate.textContent=`Traffic looks ${label}`;
+      trafficEstimate.title='Experimental visual estimate from the current Skyway camera frames; not an official traffic-speed measurement.';
+      try{localStorage.setItem('burlington-skyway-traffic',JSON.stringify({label,updatedAt:new Date().toISOString()}))}catch(_){}
     }catch(_){
-      trafficEstimate.textContent='Live camera views available';
+      trafficEstimate.textContent='Skyway cameras are live';
       trafficEstimate.title='This browser does not allow Burlington News to inspect the cross-origin camera pixels, so no visual traffic estimate is shown.';
     }
   }
