@@ -1,4 +1,65 @@
 {
-  "generatedAt": null,
-  "items": []
+  "generatedAt": "2026-08-25T17:09:36Z",
+  "items": [
+    {
+      "id": "511:254943",
+      "detectedAt": "2026-08-25T17:09:36Z",
+      "score": 90,
+      "headline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:291512",
+      "detectedAt": "2026-08-25T17:09:36Z",
+      "score": 90,
+      "headline": "Daily Construction on HWY 403 HAMILTON Eastbound Off-ramp at Highway 24 / Rest Acres Road, Brantford. ALL LANES CLOSED.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:291513",
+      "detectedAt": "2026-08-25T17:09:36Z",
+      "score": 90,
+      "headline": "Daily Construction on HWY 403 HAMILTON Westbound On-ramp at Highway 24 / Rest Acres Road, Brantford. ALL LANES CLOSED.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:293090",
+      "detectedAt": "2026-08-25T17:09:36Z",
+      "score": 90,
+      "headline": "Continuous Construction on HWY 403 HAMILTON Eastbound On-ramp at Garden Ave, Brantford. ALL LANES CLOSED.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:293102",
+      "detectedAt": "2026-08-25T17:09:36Z",
+      "score": 75,
+      "headline": "Collision on HWY 403 HAMILTON Eastbound  at Johnson Road, Brantford. Right lane closed.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    }
+  ]
 }
