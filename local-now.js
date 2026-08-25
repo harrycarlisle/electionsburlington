@@ -164,7 +164,7 @@
     if (goInfo.alert) {
       return `<a class="now-item now-go is-alert" href="${esc(goInfo.url)}">${icons.go}<small>GO</small><strong>${esc(goInfo.headline)}</strong></a>`;
     }
-    const line = (label, journeys, url) => `<a href="${esc(url)}" target="_blank" rel="noopener"><b>${esc(label)}</b> ${esc(journeys.length ? journeys.map(item => departureLabel(item, false)).join(' · ') : 'Check times')}</a>`;
+    const line = (label, journeys, url) => `<a href="${esc(url)}" target="_blank" rel="noopener"><b>${esc(label)}</b> ${esc(journeys.length ? journeys.slice(0, 2).map(item => departureLabel(item, false)).join(' · ') : 'Check times')}</a>`;
     return `<div class="now-item now-go">${icons.go}<small>GO</small><div class="now-go-lines">${line('Union', goInfo.union, goTripUrl('UN'))}${line('West Harbour', goInfo.west, goTripUrl('WR'))}</div></div>`;
   }
 
@@ -172,11 +172,10 @@
     if (goInfo.alert) {
       return `<a class="now-chip now-chip-go is-alert" href="${esc(goInfo.url)}" aria-label="GO alert: ${esc(goInfo.headline)}">${icons.go}<span><small>GO</small><strong>${esc(goInfo.headline)}</strong></span></a>`;
     }
-    const primaryTimes = goInfo.primary.journeys.slice(0, 2).map(item => departureLabel(item, true)).filter(Boolean);
-    const secondaryTime = departureLabel(goInfo.secondary.journeys[0] || {}, true);
+    const primaryTimes = goInfo.primary.journeys.slice(0, 1).map(item => departureLabel(item, true)).filter(Boolean);
     const extra = [...goInfo.primary.journeys.slice(0, 3).map(item => `${goInfo.primary.name} ${departureLabel(item, true)}`), ...goInfo.secondary.journeys.slice(0, 2).map(item => `${goInfo.secondary.name} ${departureLabel(item, true)}`)].filter(item => !item.endsWith(' '));
     return `<button type="button" class="now-chip now-chip-go" data-go-toggle aria-expanded="false" aria-controls="nowGoPanel" aria-label="GO ${esc(goInfo.primary.name)} ${esc(primaryTimes.join(' and ') || 'times')}. Tap for more trains.">
-      ${icons.go}<span><small>GO</small><strong>${esc(goInfo.primary.name)} ${esc(primaryTimes.join(' · ') || 'times')}</strong>${secondaryTime ? `<em>${esc(goInfo.secondary.name)} ${esc(secondaryTime)}</em>` : ''}</span>
+      ${icons.go}<span><small>GO</small><strong>${esc(goInfo.primary.name)} ${esc(primaryTimes.join(' · ') || 'times')}</strong></span>
     </button>
     <div class="now-go-panel" id="nowGoPanel" hidden data-go-panel>
       ${extra.map(item => `<span>${esc(item)}</span>`).join('')}

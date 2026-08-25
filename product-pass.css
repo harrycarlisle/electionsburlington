@@ -186,8 +186,8 @@ html[data-theme="dark"] .now-icon svg{stroke:#fff}
   .now-desktop{display:none}
   .now-mobile{display:block}
   .masthead{
-    min-height:52px!important;
-    padding:6px 0!important;
+    min-height:48px!important;
+    padding:4px 0!important;
     gap:8px!important;
     grid-template-columns:auto minmax(0,1fr) 40px!important;
     grid-template-areas:"brand search menu"!important;
@@ -207,17 +207,18 @@ html[data-theme="dark"] .now-icon svg{stroke:#fff}
   .header-search>svg{width:16px!important;height:16px!important;margin-right:10px!important}
   .menu-button{width:40px!important;height:40px!important;min-width:40px!important;border-radius:8px!important}
   .home-main{padding-top:6px!important}
-  .local-now{margin:2px 0 14px!important;padding:0!important;border:0!important;background:transparent!important}
+  .local-now{margin:0 0 10px!important;padding:0!important;border:0!important;background:transparent!important}
+  .now-mobile,.now-mobile .now-chips{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}
   .now-mobile .now-kicker{
-    margin:0 0 8px;
+    margin:0 0 6px;
     font-size:10px;
     letter-spacing:.1em;
     color:var(--muted);
   }
   .now-incident{
     display:block;
-    margin:0 0 8px;
-    padding:0 0 8px;
+    margin:0 0 4px;
+    padding:0 0 6px;
     border:0;
     border-bottom:1px solid var(--line);
     text-decoration:none;
@@ -256,7 +257,7 @@ html[data-theme="dark"] .now-icon svg{stroke:#fff}
     min-height:44px;
     min-width:0;
     margin:0;
-    padding:4px 2px;
+    padding:2px;
     border:0;
     background:transparent;
     color:inherit;
