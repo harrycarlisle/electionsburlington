@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T17:19:59.570767-04:00",
+  "generatedAt": "2026-08-25T17:51:01.629687-04:00",
   "source": "Metrolinx GO Transit GTFS",
   "sourceUrl": "https://www.gotransit.com/en/partner-with-us/software-developers",
   "dataKind": "scheduled",
@@ -17,15 +17,6 @@
       },
       "journeys": [
         {
-          "departure": "17:42:00",
-          "arrival": "18:48:00",
-          "duration": "66 min",
-          "line": "LW",
-          "type": "Train",
-          "tripNumber": "20260825-LW-1628",
-          "scheduled": true
-        },
-        {
           "departure": "18:11:00",
           "arrival": "19:18:00",
           "duration": "67 min",
@@ -41,6 +32,15 @@
           "line": "LW",
           "type": "Train",
           "tripNumber": "20260825-LW-1630",
+          "scheduled": true
+        },
+        {
+          "departure": "19:12:00",
+          "arrival": "20:18:00",
+          "duration": "66 min",
+          "line": "LW",
+          "type": "Train",
+          "tripNumber": "20260825-LW-1032",
           "scheduled": true
         }
       ]
