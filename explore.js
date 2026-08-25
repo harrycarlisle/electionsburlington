@@ -36,8 +36,13 @@
     if (type.includes('volunteer')) return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20v-9M12 14c-4 0-6-2-6-6 4 0 6 2 6 6Zm0 3c4 0 6-2 6-6-4 0-6 2-6 6Z"/></svg>';
     return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>';
   };
+  const imageSrc = value => {
+    const src = String(value || '');
+    if (!src || /^https?:\/\//i.test(src) || src.startsWith('/')) return src;
+    return `/${src}`;
+  };
   const imageMarkup = (item, className) => item.image
-    ? `<div class="${className}"><img src="${esc(item.image)}" alt="${esc(item.imageAlt || '')}" loading="lazy">${item.credit && !item.illustration && !/^Burlington News/i.test(item.credit) ? `<span class="image-credit">${esc(item.credit)}</span>` : ''}</div>`
+    ? `<div class="${className}"><img src="${esc(imageSrc(item.image))}" alt="${esc(item.imageAlt || '')}" loading="lazy">${item.credit && !item.illustration && !/^Burlington News/i.test(item.credit) ? `<span class="image-credit">${esc(item.credit)}</span>` : ''}</div>`
     : `<div class="${className} category-art category-${esc(String(item.category || item.visualText || 'local').toLowerCase().replace(/[^a-z]+/g,'-'))}"><span class="category-art-icon">${categoryIcon(item.category || item.visualText)}</span><span class="category-art-label">${esc(item.visualText || item.category || 'Local')}</span></div>`;
   const addToVisual = (markup, content) => markup.replace(/^(<div class="[^"]+">)/, `$1${content}`);
 

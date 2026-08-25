@@ -35,7 +35,7 @@
       "category": "Garden",
       "x": 12,
       "y": 54,
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rock%20Gardens.JPG?width=1280",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Rock_Gardens.JPG/1280px-Rock_Gardens.JPG",
       "imageAlt": "Rock Garden at Royal Botanical Gardens",
       "credit": "Nhl4hamilton via Wikimedia Commons · public domain",
       "url": "https://www.rbg.ca/"
@@ -55,10 +55,7 @@
       "category": "Park",
       "x": 31,
       "y": 35,
-      "image": "assets/explore/community-cleanup.webp",
-      "imageAlt": "A Burlington park path",
-      "credit": "Burlington News illustration",
-      "illustration": true,
+      "visualText": "PARK",
       "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/kerncliff-park.aspx"
     },
     {

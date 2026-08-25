@@ -21,7 +21,7 @@
 .latest-card strong{display:block;font:750 26px/1.18 var(--font-display);letter-spacing:-.025em}
 .latest-card p{margin:8px 0 0;color:var(--muted);font:16px/1.45 var(--font-body);max-width:62ch}
 .latest-card:hover strong{color:var(--blue)}
-.latest-card.is-collapsed{display:none}
+.latest-card.is-collapsed,.latest-card[hidden]{display:none!important}
 .news-more{display:flex;justify-content:center;margin:22px 0 8px}
 .news-more button,.originals-more button{min-height:46px;padding:0 20px;border:1px solid var(--line);border-radius:var(--radius-control);background:transparent;color:var(--ink);font:750 14px/1 var(--font-ui);cursor:pointer}
 .originals{margin-top:56px}
@@ -31,7 +31,7 @@
 .original-card small{display:block;margin-bottom:6px;font:750 12px/1.2 var(--font-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
 .original-card strong{display:block;font:700 22px/1.15 var(--font-display);letter-spacing:-.02em}
 .original-card p{margin:8px 0 0;color:var(--muted);font:15px/1.45 var(--font-body)}
-.original-card.is-collapsed{display:none}
+.original-card.is-collapsed,.original-card[hidden]{display:none!important}
 .originals-more{display:flex;justify-content:center;margin:26px 0 0}
 .news-archive-links{margin-top:40px;color:var(--muted);font-size:13px}
 .news-archive-links a{color:inherit}
