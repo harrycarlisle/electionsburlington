@@ -3,7 +3,9 @@ name: GO status
 on:
   workflow_dispatch:
   schedule:
+    # Roughly 5 a.m.-midnight Toronto during daylight time; enough for early and late trains.
     - cron: '*/30 9-23 * * *'
+    - cron: '*/30 0-4 * * *'
 
 permissions:
   contents: write
