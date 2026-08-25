@@ -1,38 +1,38 @@
 {
   "Burlington council records": {
     "bytes": 248495,
-    "checked_at": "2026-08-25T02:53:43.043534+00:00",
-    "sha256": "e28ce8c2eb9896c5b48b81ed3b4128345084bd0aa5fbcf8e129358621c170a29",
+    "checked_at": "2026-08-25T02:56:16.673279+00:00",
+    "sha256": "c4f72fbc34a41a930646fa67729d09383786f3528f8773520263a1b5d70ec53e",
     "url": "https://burlingtonpublishing.escribemeetings.com/"
   },
   "Lisa Kearns campaign": {
     "bytes": 258084,
-    "checked_at": "2026-08-25T02:53:43.043534+00:00",
+    "checked_at": "2026-08-25T02:56:16.673279+00:00",
     "sha256": "a290d31504c28e2ff09750454ddab2baffa2f93fb6f89018e8961f275d7c4e26",
     "url": "https://lisakearns.ca/"
   },
   "Meed Ward campaign": {
     "bytes": 166203,
-    "checked_at": "2026-08-25T02:53:43.043534+00:00",
+    "checked_at": "2026-08-25T02:56:16.673279+00:00",
     "sha256": "53d2d9171ac460abc746aad94027712d1a6f211fd35a8171f63290cebbb4a5f6",
     "url": "https://votemarianne.ca/"
   },
   "Official candidate list": {
     "bytes": 77757,
-    "checked_at": "2026-08-25T02:53:43.043534+00:00",
-    "sha256": "009a20a07c3aec8b496f66e943b4151bd53cb81f3c56bb706db456202f7961d5",
+    "checked_at": "2026-08-25T02:56:16.673279+00:00",
+    "sha256": "c683cefb4d95f9513b1b3ce9d027d4e709c59246c2ce97560445fa95c0a23572",
     "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
   },
   "Official voting information": {
     "bytes": 64015,
-    "checked_at": "2026-08-25T02:53:43.043534+00:00",
+    "checked_at": "2026-08-25T02:56:16.673279+00:00",
     "sha256": "43affcdb60e10e77ad8c5a63bfc194920d8f36e6120de76482d335584542b0ac",
     "url": "https://myvote.burlington.ca/for-voters/how-to-vote/"
   },
   "Rory Nisan campaign": {
     "bytes": 50580,
-    "checked_at": "2026-08-25T02:53:43.043534+00:00",
-    "sha256": "e3898271878370aa8753645a100bc9cf3177c0f17bd813ed8213756697115d12",
+    "checked_at": "2026-08-25T02:56:16.673279+00:00",
+    "sha256": "87876c8f9a1d18c1120cb5b4272d0112656366158c30794d92cba5b78ffb9abc",
     "url": "https://rorynisan.ca/"
   }
 }
