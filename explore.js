@@ -302,6 +302,7 @@
   }
 
   async function init() {
+    if (!qs('#eventGrid') || !qs('#boredIdea') || !qs('#passportRail')) return;
     try {
       const [eventResponse, placeResponse] = await Promise.all([fetch('/data/explore-events.json'),fetch('/data/explore-places.json')]);
       if (!eventResponse.ok || !placeResponse.ok) throw new Error('Explore data unavailable');
@@ -320,7 +321,8 @@
       const hash = location.hash.replace('#event-','');
       if (hash && events.some(item => item.id === hash)) openEvent(hash);
     } catch (error) {
-      qs('#eventGrid').innerHTML = '<p class="empty-note">The events calendar could not load. Try again shortly.</p>';
+      const grid = qs('#eventGrid');
+      if (grid) grid.innerHTML = '<p class="empty-note">The events calendar could not load. Try again shortly.</p>';
       console.error(error);
     }
   }

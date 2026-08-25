@@ -74,3 +74,42 @@
 .star-rating button.is-on{color:#d4a017}
 html[data-theme="dark"] .publication-shell .header-search,
 html[data-theme="dark"] .bored-actions button{background:#11191d;color:#edf4f8;border-color:#3a474e}
+
+.menu-panel{position:relative}
+.menu-theme-toggle{
+  position:absolute;top:10px;right:10px;z-index:2;
+  width:40px;height:40px;padding:0;border-radius:50%;
+  display:grid;place-items:center;
+  border:1px solid var(--line);background:var(--card,#fff);
+  color:var(--ink);cursor:pointer
+}
+.menu-theme-toggle svg{width:18px;height:18px;display:block}
+.home-theme-choice{
+  position:absolute!important;top:10px;right:10px;display:grid!important;
+  grid-template-columns:1fr!important;gap:0!important;padding:0!important;border:0!important;width:auto!important
+}
+.home-theme-choice button{
+  width:40px;height:40px;min-height:40px;padding:0;border-radius:50%;
+  display:grid;place-items:center;border:1px solid var(--line);
+  background:var(--paper,#fff);color:var(--ink)
+}
+.home-theme-choice button svg{width:18px;height:18px;display:block}
+.primary-nav{position:relative}
+.simple-page .page-kicker,.page-kicker,.daily-brief-kicker,.about-page .page-kicker{
+  color:var(--muted,#5d7287)!important
+}
+.bn-story-page .article-hero{position:relative}
+.bn-story-page .article-hero figcaption{
+  position:absolute;left:8px;bottom:7px;margin:0;max-width:calc(100% - 16px);
+  color:rgba(255,255,255,.72);font:italic 10px/1.2 Arial,sans-serif;
+  text-shadow:0 1px 3px rgba(0,0,0,.9);white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.site-legal-footer .footer-news-brand strong,
+.site-footer .footer-brand span{color:inherit}
+@media(max-width:720px){
+  .site-legal-footer-inner,.site-footer .footer-main,.site-footer .footer-bottom{text-align:center}
+  .site-legal-footer-inner,.site-footer .footer-main{display:grid;justify-items:center;gap:18px}
+  .site-footer-columns,.site-legal-links{justify-content:center}
+}
+html[data-theme="dark"] .menu-theme-toggle,
+html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8ef;border-color:#3c4d58}

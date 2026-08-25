@@ -3,6 +3,8 @@
   if (!isArticle) return;
 
   const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const pathParts = location.pathname.replace(/\/+$/,'').split('/').filter(Boolean);
+  const currentSlug = (pathParts[pathParts.length-1]||'').replace(/\.html$/,'');
   const currentPath = location.pathname.replace(/^\//,'');
   const body = document.body;
   body.classList.add('bn-story-page');
@@ -16,22 +18,23 @@
   }
 
   function heroForPath(){
-    const slug = currentPath.split('/').pop() || '';
     const map = {
-      '730-brant-vacant-building.html':['/assets/editorial/730-brant-share.webp','730 Brant Street, Burlington News illustration','Burlington News illustration'],
-      'back-to-school-2026.html':['/assets/home/school-bus.webp','A yellow Ontario school bus','Photo credit in source story'],
-      'burlington-rabies-bat-2026.html':['/assets/explore/night-sky-mount-nemo.webp','Night sky over Burlington-area escarpment','Burlington News visual'],
-      'fishway-26000-fish.html':['/assets/home/fishway.webp','Cootes Paradise Fishway','Photo credit in source story'],
-      'millcroft-phase-2-138-homes.html':['/assets/explore/burlington-orientation-map.svg','Orientation map of Burlington','Burlington News map'],
-      'nelson-quarry-tribunal-decision.html':['/assets/explore/night-sky-mount-nemo.webp','Mount Nemo and the Burlington escarpment area','Burlington News visual'],
-      'ontario-student-rights-school.html':['/assets/home/school-rights.webp','Students arriving at an Ontario school','Burlington News illustration'],
-      'ribfest-2026.html':['/assets/home/ribs.webp','Barbecue ribs at a festival','Photo credit in source story'],
-      'salamander-road-closure.html':['/assets/home/salamander.webp','Jefferson salamander','Photo credit in source story'],
-      'skyway-bridge-story.html':['/assets/home/skyway-reader.webp','Burlington Bay James N. Allan Skyway','Photo credit in source story'],
-      'upper-middle-road-construction-2026.html':['/assets/explore/burlington-orientation-map.svg','Orientation map of Burlington','Burlington News map'],
-      'burlington-data-centre-not-ai.html':['/assets/explore/burlington-orientation-map.svg','Orientation map of Burlington','Burlington News map']
+      '730-brant-vacant-building':['/assets/editorial/730-brant-share.webp','730 Brant Street, Burlington News illustration','Burlington News illustration'],
+      'back-to-school-2026':['/assets/home/school-bus.webp','A yellow Ontario school bus','Photo credit in source story'],
+      'burlington-rabies-bat-2026':['/assets/explore/night-sky-mount-nemo.webp','Night sky over Burlington-area escarpment','Burlington News visual'],
+      'fishway-26000-fish':['/assets/home/fishway.webp','Cootes Paradise Fishway','Photo credit in source story'],
+      'millcroft-phase-2-138-homes':['/assets/explore/burlington-orientation-map.svg','Orientation map of Burlington','Burlington News map'],
+      'nelson-quarry-tribunal-decision':['/assets/explore/night-sky-mount-nemo.webp','Mount Nemo and the Burlington escarpment area','Burlington News visual'],
+      'ontario-student-rights-school':['/assets/home/school-rights.webp','Students arriving at an Ontario school','Burlington News illustration'],
+      'ribfest-2026':['/assets/home/ribs.webp','Barbecue ribs at a festival','Photo credit in source story'],
+      'salamander-road-closure':['/assets/home/salamander.webp','Jefferson salamander','Photo credit in source story'],
+      'skyway-bridge-story':['/assets/home/skyway-reader.webp','Burlington Bay James N. Allan Skyway','Photo credit in source story'],
+      'upper-middle-road-construction-2026':['/assets/explore/burlington-orientation-map.svg','Orientation map of Burlington','Burlington News map'],
+      'burlington-data-centre-not-ai':['/assets/explore/burlington-orientation-map.svg','Orientation map of Burlington','Burlington News map'],
+      'how-bad-is-burlington-crime':['/assets/editorial/halton-crime-comparison.svg','Chart comparing Halton crime severity with nearby regions','Burlington News chart'],
+      'nostalgia-games-cafe-closure':['/assets/editorial/nostalgia-cafe-closure.svg','Editorial illustration of a closed board-game cafe','Burlington News illustration']
     };
-    return map[slug] || ['/assets/editorial/home-share.webp','Burlington News','Burlington News'];
+    return map[currentSlug] || ['/assets/editorial/home-share.webp','Burlington News','Burlington News'];
   }
 
   function ensureHero(){
@@ -72,7 +75,12 @@
     const currentTitle=(document.querySelector('.article-head h1')?.textContent||'').toLowerCase();
     const currentKicker=(document.querySelector('.article-kicker,.eyebrow,.article-head .kicker')?.textContent||'').toLowerCase();
     const currentWords=new Set(`${currentKicker} ${currentTitle}`.split(/[^a-z0-9]+/).filter(word=>word.length>3));
-    const items=(payload.items||[]).filter(item=>item.url&&!item.url.startsWith('http')&&!String(item.url).endsWith(currentPath.split('/').pop()));
+    const items=(payload.items||[]).filter(item=>{
+      const url=String(item.url||'');
+      if(!url||url.startsWith('http'))return false;
+      const slug=url.replace(/^articles\/(?:auto\/)?/,'').replace(/\.html$/,'').replace(/^.*\//,'');
+      return slug && slug!==currentSlug;
+    });
     items.forEach(item=>{
       const overlap=storyTokens(item).filter(word=>currentWords.has(word)).length;
       const published=Date.parse(item.published||item.activeFrom||'')||0;
@@ -97,7 +105,11 @@
     wrap.innerHTML='<button type="button" data-copy-link>Copy link</button>';
     body.appendChild(wrap);
     const copy=wrap.querySelector('[data-copy-link]');
-    copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);copy.textContent='Copied';setTimeout(()=>copy.textContent='Copy link',1400)}catch(_){}});
+    copy.addEventListener('click',async()=>{
+      const url=location.href.split('#')[0];
+      try{await navigator.clipboard.writeText(url);copy.textContent='Copied';setTimeout(()=>copy.textContent='Copy link',1400)}
+      catch(_){const t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();copy.textContent='Copied';setTimeout(()=>copy.textContent='Copy link',1400)}
+    });
   }
   function addReadTime(){
     const byline=document.querySelector('.article-byline,.byline');
@@ -126,8 +138,8 @@
     const hero=document.querySelector('.article-hero img');
     const image=hero?.src||'https://burlingtonnews.ca/assets/editorial/home-share.webp';
     const canonical=document.querySelector('link[rel="canonical"]');
-    const storyPath=location.pathname.replace(/\/articles\/(.+)\.html$/,'/stories/$1/');
-    if(canonical&&/\/articles\//.test(canonical.href))canonical.href=`https://burlingtonnews.ca${storyPath}`;
+    const storyPath=currentSlug?`/stories/${currentSlug}/`:location.pathname;
+    if(canonical)canonical.href=`https://burlingtonnews.ca${storyPath}`;
     const url=(canonical?.href)||location.href.split('#')[0];
     const metas=[
       ['property','og:site_name','Burlington News'],['property','og:type','article'],['property','og:title',title],['property','og:description',description],['property','og:url',url],['property','og:image',image],

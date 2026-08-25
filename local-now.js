@@ -70,4 +70,9 @@
   }
   load();
   setInterval(load,120000);
+  setInterval(()=>{
+    const stamp=host.querySelector('.now-heading time[datetime]');
+    if(!stamp)return;
+    stamp.textContent=`Updated ${relative(stamp.getAttribute('datetime'))}`;
+  },30000);
 })();
