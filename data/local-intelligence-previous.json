@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T18:00:55Z",
+  "generatedAt": "2026-08-25T18:53:05Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 32,
-    "trafficIncidents": 32,
+    "activeSignals": 33,
+    "trafficIncidents": 33,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -418,6 +418,22 @@
       "signature": "9580997eb0e89faa"
     },
     {
+      "id": "511:293137",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Toronto bound  between CENTENNIAL PKWY, Hamilton and BURLINGTON SKYWAY, Burlington. 2 Left Lane(s).",
+      "location": "QEW",
+      "direction": "Toronto Bound",
+      "score": 53,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.24609,
+      "longitude": -79.75694,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "e55d21489d9d731f"
+    },
+    {
       "id": "511:290120",
       "kind": "traffic",
       "headline": "Continuous Engineering Investigation on QEW Toronto bound  between THIRD LINE and THIRD LINE, Oakville. 1 Right Lane(s).",
@@ -480,22 +496,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "61abbaca9b4a3dc0"
-    },
-    {
-      "id": "511:290748",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 401 Westbound  between REGIONAL ROAD 25 and GUELPH LINE, Milton. 2 Alternating Lane(s).",
-      "location": "HWY 401",
-      "direction": "Westbound",
-      "score": 43,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.52803,
-      "longitude": -79.90527,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "81e9ba9b988064d2"
     }
   ],
   "topSignal": {
