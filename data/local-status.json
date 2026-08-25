@@ -1,12 +1,22 @@
 {
   "version": 1,
   "mode": "production",
-  "generatedAt": "2026-08-24T20:40:30Z",
+  "generatedAt": "2026-08-25T01:40:00Z",
   "state": "no_published_incident",
   "headline": "No active Burlington News alert",
-  "summary": "A verified incident with a current Burlington impact will appear here when one is published.",
+  "summary": "Verified incidents with a current Burlington impact appear here when they are published.",
   "incidents": [],
-  "recentlyLive": [],
+  "recentlyLive": [
+    {
+      "headline": "Emergency crews responded to a single-vehicle collision on Brant Street.",
+      "status": "Reported earlier today",
+      "location": {"label": "Brant Street, south of Dundas"},
+      "url": "https://www.burlingtontoday.com/local-news/emergency-crews-called-to-single-vehicle-collision-on-brant-street-12700627",
+      "sourceName": "BurlingtonToday",
+      "lastUpdatedAt": "2026-08-24T20:30:00-04:00",
+      "resolvedAt": "2026-08-24T20:30:00-04:00"
+    }
+  ],
   "services": [
     {
       "id": "weather",
@@ -16,22 +26,22 @@
     },
     {
       "id": "skyway",
-      "label": "Skyway",
-      "value": "Live cameras",
+      "label": "Skyway traffic",
+      "value": "Live",
       "url": "skyway-traffic.html",
       "sourceName": "Ontario 511"
     },
     {
       "id": "go",
-      "label": "GO Transit",
-      "value": "Service updates",
+      "label": "GO",
+      "value": "Status",
       "url": "https://www.gotransit.com/en/service-updates/service-updates",
       "sourceName": "GO Transit"
     },
     {
       "id": "events",
       "label": "This week",
-      "value": "See events",
+      "value": "Events",
       "url": "explore.html",
       "sourceName": "Burlington News event watch"
     }
