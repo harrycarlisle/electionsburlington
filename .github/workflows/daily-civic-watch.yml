@@ -14,6 +14,7 @@ on:
       - 'scripts/update_civic_watch.py'
       - 'scripts/update_civic_watch_local.py'
       - 'scripts/build_editorial_queue.py'
+      - 'scripts/auto_publish_briefs.py'
       - 'scripts/rank_stories.py'
       - '.github/workflows/daily-civic-watch.yml'
 
@@ -34,13 +35,15 @@ jobs:
         run: python scripts/update_candidate_assets.py
       - name: Build editorial queue
         run: python scripts/build_editorial_queue.py
+      - name: Publish verified low-risk stories
+        run: python scripts/auto_publish_briefs.py
       - name: Rotate homepage stories
         run: python scripts/rank_stories.py
-      - name: Commit verified updates
+      - name: Commit verified updates and stories
         run: |
           git config user.name "burlington-news-watch"
           git config user.email "actions@users.noreply.github.com"
-          git add data/source-monitor.json data/archive data/daily-brief.json data/image-history.json data/ballot.json data/editorial-queue.json data/home-surface.json
+          git add data/source-monitor.json data/archive data/daily-brief.json data/image-history.json data/ballot.json data/editorial-queue.json data/home-surface.json data/auto-published.json articles/auto
           git diff --cached --quiet && exit 0
           git commit -m "Update Burlington news watch"
           git push
