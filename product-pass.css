@@ -139,6 +139,29 @@ html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8
 .now-go-lines a:hover{text-decoration:underline}
 .now-weather-value{display:inline!important}
 .now-utilities,.now-priority{display:none!important}
+html[data-theme="dark"] .now-kicker{color:#e7edf0}
+html[data-theme="dark"] .now-strip{
+  background:#17232c;
+  border-color:#30404b;
+}
+html[data-theme="dark"] .now-item{
+  color:#edf4f8;
+  border-color:#30404b;
+}
+html[data-theme="dark"] .now-item small,
+html[data-theme="dark"] .now-item em,
+html[data-theme="dark"] .now-item .now-weather-value em{
+  color:#aebcc6;
+}
+html[data-theme="dark"] .now-item strong,
+html[data-theme="dark"] .now-item .now-weather-value{
+  color:#edf4f8;
+}
+html[data-theme="dark"] .now-go-lines a{color:#edf4f8}
+html[data-theme="dark"] .now-icon svg{stroke:#fff}
+@media(max-width:900px){
+  html[data-theme="dark"] .now-item{border-bottom-color:#30404b}
+}
 
 /* Traffic page: editorial camera rows, not a cramped 3-up grid. */
 .traffic-page{width:min(calc(100% - 40px),1120px);max-width:100%;margin:28px auto 80px;overflow-x:clip;box-sizing:border-box}
