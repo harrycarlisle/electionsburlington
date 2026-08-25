@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T22:38:49Z",
+  "generatedAt": "2026-08-25T23:33:38Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 34,
-    "trafficIncidents": 34,
+    "activeSignals": 36,
+    "trafficIncidents": 36,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -82,6 +82,22 @@
       "signature": "18f32b7541863775"
     },
     {
+      "id": "511:293256",
+      "kind": "traffic",
+      "headline": "Collision on QEW Fort Erie bound HOV at TRAFALGAR ROAD, Oakville. All lanes closed.",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 90,
+      "neighbourhood": "Orchard",
+      "latitude": 43.460979442,
+      "longitude": -79.684342146,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "accidentsAndIncidents",
+      "signature": "42cec236a30865d9"
+    },
+    {
       "id": "511:293205",
       "kind": "traffic",
       "headline": "Disabled Vehicle on QEW Toronto bound ON-RAMP at BURLOAK DRIVE, Burlington. Left shoulder and left lane closed.",
@@ -96,6 +112,22 @@
       "url": "skyway-traffic.html",
       "rawType": "accidentsAndIncidents",
       "signature": "74e89d0895458aa0"
+    },
+    {
+      "id": "511:293255",
+      "kind": "traffic",
+      "headline": "Collision on QEW Fort Erie bound  at TRAFALGAR ROAD, Oakville. Left lane closed.",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 75,
+      "neighbourhood": "Orchard",
+      "latitude": 43.4613874,
+      "longitude": -79.68390353,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "accidentsAndIncidents",
+      "signature": "dcdc7f4cd1bbfab0"
     },
     {
       "id": "511:289628",
@@ -464,38 +496,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "b24da3cece4ef540"
-    },
-    {
-      "id": "511:289491",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 6 Northbound  between PARKSIDE DRIVE and EAST FLAMBOROUGH TWP CON. 5 EAST, Hamilton. 1 Alternating Lane(s).",
-      "location": "HWY 6",
-      "direction": "Northbound",
-      "score": 43,
-      "neighbourhood": "Aldershot",
-      "latitude": 43.319767,
-      "longitude": -79.92808,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "b7252b680a22cf68"
-    },
-    {
-      "id": "511:289494",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 6 Southbound  between EAST FLAMBOROUGH TWP CON. 5 EAST and PARKSIDE DRIVE, Hamilton. 1 Alternating Lane(s).",
-      "location": "HWY 6",
-      "direction": "Southbound",
-      "score": 43,
-      "neighbourhood": "Aldershot",
-      "latitude": 43.331116,
-      "longitude": -79.943794,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "0e48fe503f157d65"
     }
   ],
   "topSignal": {
