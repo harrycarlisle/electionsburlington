@@ -215,7 +215,7 @@
     const wrap = document.createElement('div');
     wrap.className = 'article-glance';
     wrap.setAttribute('aria-label', 'At a glance');
-    wrap.innerHTML = `<span class="article-glance-label">At a glance</span><ul>${details.map(([label, value]) => `<li><b>${esc(label)}</b> ${esc(value)}</li>`).join('')}</ul>`;
+    wrap.innerHTML = `<span class="article-glance-label">At a glance</span><ul>${details.map(([label, value]) => `<li><span>${esc(label)}</span><b>${esc(value)}</b></li>`).join('')}</ul>`;
     const listen = head.querySelector('.article-listen');
     const byline = head.querySelector('.article-byline, .byline');
     (listen || byline || head.lastElementChild)?.insertAdjacentElement('afterend', wrap);
@@ -236,7 +236,7 @@
     const text = articleText();
     if (!text) return;
     const words = text.split(/\s+/).length;
-    const minutes = Math.max(1, Math.round(words / 180));
+    const minutes = Math.max(1, Math.round(words / 220));
     const wrap = document.createElement('div');
     wrap.className = 'article-listen';
     wrap.innerHTML = `<button type="button" class="article-listen-main" data-listen-toggle aria-pressed="false"><span aria-hidden="true">▶</span><strong>Listen to this story</strong><small>${minutes} min</small></button><div class="article-listen-more" hidden><button type="button" data-listen-restart>Restart</button><label>Speed <select data-listen-rate><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label></div>`;
