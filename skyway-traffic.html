@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="site-extra.css">
   <link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle">
   <link rel="stylesheet" href="/site-shell.css?v=20260824z4" data-style="site-shell">
-  <link rel="stylesheet" href="/publication-polish.css?v=20260824z2" data-style="publication-polish">
-  <script src="/site-extra.js?v=20260824z8" defer></script>
-  <script src="skyway-traffic.js?v=20260824z4" defer></script>
+  <link rel="stylesheet" href="/publication-polish.css?v=20260825b" data-style="publication-polish">
+  <script src="/site-extra.js?v=20260825b" defer></script>
+  <script src="skyway-traffic.js?v=20260825b" defer></script>
   <style>
     .traffic-shell{width:min(calc(100% - 40px),1080px);margin:34px auto 74px}.traffic-hero{position:relative;padding:28px 0 30px}.traffic-kicker{color:#43873b;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.09em}.traffic-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,7vw,72px);line-height:.94;letter-spacing:-.05em;margin:9px 0 10px;max-width:760px}.traffic-hero p{margin:0;color:var(--muted);font-size:17px;max-width:660px}.live-chip{position:absolute;right:0;top:34px;display:flex;align-items:center;gap:8px;padding:9px 11px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:10px;font-weight:800}.live-chip i{width:8px;height:8px;border-radius:50%;background:#31a35a;box-shadow:0 0 0 4px rgba(49,163,90,.12)}
     .traffic-summary{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;margin:0 0 24px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.traffic-summary strong{display:block;color:var(--navy);font-size:16px}.traffic-summary span{display:block;margin-top:3px;color:var(--muted);font-size:11px;line-height:1.4}.traffic-summary a{color:var(--blue);font-size:11px;font-weight:800;text-decoration:none;white-space:nowrap}.traffic-summary a:hover{text-decoration:underline}
@@ -27,7 +27,7 @@
   <main id="main" class="traffic-shell">
     <section class="traffic-hero"><div><span class="traffic-kicker">Live local tool</span><h1>How does the Skyway look?</h1><p>Live Ontario 511 camera views, refreshed every minute.</p></div><div class="live-chip"><i aria-hidden="true"></i><span id="cameraStatus">Loading cameras</span></div></section>
 
-    <section class="traffic-summary" aria-live="polite"><div><strong id="trafficEstimate">Checking the Skyway…</strong><span id="incidentSummary">Loading Ontario 511 incident data.</span></div><a href="https://511on.ca/" target="_blank" rel="noopener">Open Ontario 511 →</a></section>
+    <section class="traffic-summary" aria-live="polite"><div><strong id="trafficEstimate">Checking Skyway traffic…</strong><span id="incidentSummary">Loading Ontario 511 incident data.</span></div><a href="https://511on.ca/" target="_blank" rel="noopener">Open Ontario 511 →</a></section>
 
     <section class="camera-grid" aria-label="Live Burlington Skyway traffic cameras">
       <figure class="camera-card"><img crossorigin="anonymous" data-camera="10" src="https://511on.ca/map/Cctv/10" alt="Live Ontario 511 camera view looking Fort Erie-bound at the Burlington Skyway"><figcaption class="camera-caption"><strong>Fort Erie-bound</strong><span>Ontario 511 · live</span></figcaption><div class="camera-error">This camera is temporarily unavailable.</div></figure>
