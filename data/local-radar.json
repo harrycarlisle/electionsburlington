@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T15:50:47.364662-04:00",
+  "generatedAt": "2026-08-25T16:12:58.761563-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -139,7 +139,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.6053332279166668
+        "rotation": 0.636152600625
       },
       "gates": {
         "evidence": "passed",
@@ -534,7 +534,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.6053332279166668
+        "rotation": 0.636152600625
       },
       "gates": {
         "evidence": "passed",
@@ -1008,7 +1008,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.6053332279166668
+        "rotation": 0.636152600625
       },
       "gates": {
         "evidence": "passed",
@@ -1607,37 +1607,6 @@
       "eligibleEditorial": false
     },
     {
-      "id": "511:293102",
-      "detectedAt": "2026-08-25T17:09:36Z",
-      "score": 75,
-      "headline": "Collision on HWY 403 HAMILTON Eastbound  at Johnson Road, Brantford. Right lane closed.",
-      "kind": "traffic",
-      "location": "HWY 403 HAMILTON",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "55390d7ab52750d5",
-      "signals": {
-        "interest": 3.0999999999999996,
-        "relevance": 3.4,
-        "novelty": 3.0,
-        "familiarity": 2.5,
-        "consequence": 2.8,
-        "freshness": 4.6,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 70,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
-    },
-    {
       "id": "skyway-tunnels",
       "kind": "original",
       "surfaces": [
@@ -1739,6 +1708,37 @@
         "sourceConfidence": 5.0,
         "originality": 4.6,
         "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "radarScore": 68,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "511:293102",
+      "detectedAt": "2026-08-25T17:09:36Z",
+      "score": 75,
+      "headline": "Collision on HWY 403 HAMILTON Eastbound  at Johnson Road, Brantford. Right lane closed.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "55390d7ab52750d5",
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 3.4,
+        "novelty": 3.0,
+        "familiarity": 2.5,
+        "consequence": 2.8,
+        "freshness": 4.0,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
         "rotation": 5.0
       },
       "radarScore": 68,
@@ -2352,13 +2352,13 @@
         "novelty": 3.0,
         "familiarity": 2.5,
         "consequence": 2.0,
-        "freshness": 4.6,
+        "freshness": 4.0,
         "sourceConfidence": 5.0,
         "originality": 2.6,
         "visualStrength": 4.0,
         "rotation": 5.0
       },
-      "radarScore": 65,
+      "radarScore": 63,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
@@ -2383,13 +2383,13 @@
         "novelty": 3.0,
         "familiarity": 2.5,
         "consequence": 2.0,
-        "freshness": 4.6,
+        "freshness": 4.0,
         "sourceConfidence": 5.0,
         "originality": 2.6,
         "visualStrength": 4.0,
         "rotation": 5.0
       },
-      "radarScore": 65,
+      "radarScore": 63,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
@@ -2414,13 +2414,13 @@
         "novelty": 3.0,
         "familiarity": 2.5,
         "consequence": 2.0,
-        "freshness": 4.6,
+        "freshness": 4.0,
         "sourceConfidence": 5.0,
         "originality": 2.6,
         "visualStrength": 4.0,
         "rotation": 5.0
       },
-      "radarScore": 65,
+      "radarScore": 63,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
@@ -2445,13 +2445,13 @@
         "novelty": 2.5,
         "familiarity": 2.5,
         "consequence": 2.0,
-        "freshness": 4.6,
+        "freshness": 4.0,
         "sourceConfidence": 5.0,
         "originality": 2.6,
         "visualStrength": 4.0,
         "rotation": 5.0
       },
-      "radarScore": 64,
+      "radarScore": 62,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
