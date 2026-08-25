@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T17:14:13.052951-04:00",
+  "generatedAt": "2026-08-25T17:49:02.988705-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -109,6 +109,37 @@
       "eligibleEditorial": true
     },
     {
+      "id": "511:293205",
+      "detectedAt": "2026-08-25T21:38:12Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Toronto bound ON-RAMP at BURLOAK DRIVE, Burlington. Left shoulder and left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "5a309cfed0b16315",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 2.5,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 5.0,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 72,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
       "id": "burlington-crime-analysis-2026",
       "kind": "original",
       "surfaces": [
@@ -139,7 +170,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.7212056420138888
+        "rotation": 0.7695837844675926
       },
       "gates": {
         "evidence": "passed",
@@ -395,40 +426,6 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": false
-    },
-    {
-      "title": "Pay Online (School Cash Online)",
-      "url": "https://www.hdsb.ca/students-families/pay-online-school-cash-online/",
-      "source": "Halton District School Board",
-      "sourceType": "official",
-      "scope": "schools",
-      "allowImage": true,
-      "pageRank": 12,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington",
-      "kind": "source",
-      "headline": "Pay Online (School Cash Online)",
-      "radarId": "3fadfdc586a70225",
-      "signals": {
-        "interest": 3.0999999999999996,
-        "relevance": 5.0,
-        "novelty": 2.5,
-        "familiarity": 3.5,
-        "consequence": 2.8,
-        "freshness": 2.4,
-        "sourceConfidence": 5.0,
-        "originality": 4.6,
-        "visualStrength": 2.2,
-        "rotation": 5.0
-      },
-      "radarScore": 70,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
     }
   ],
   "originalIdeas": [
@@ -534,7 +531,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.7212056420138888
+        "rotation": 0.7695837844675926
       },
       "gates": {
         "evidence": "passed",
@@ -978,6 +975,37 @@
       "eligibleEditorial": true
     },
     {
+      "id": "511:293205",
+      "detectedAt": "2026-08-25T21:38:12Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Toronto bound ON-RAMP at BURLOAK DRIVE, Burlington. Left shoulder and left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "5a309cfed0b16315",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 2.5,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 5.0,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 72,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
       "id": "burlington-crime-analysis-2026",
       "kind": "original",
       "surfaces": [
@@ -1008,7 +1036,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.7212056420138888
+        "rotation": 0.7695837844675926
       },
       "gates": {
         "evidence": "passed",
