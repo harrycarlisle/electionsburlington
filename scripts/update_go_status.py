@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build a small Burlington GO utility feed from the official Metrolinx GO API.
+"""Build Burlington GO utility data from the official Metrolinx GO API.
 
-Requires GO_API_KEY. The GO API is free but requires registration. Output is deliberately
-small and explicit about scheduled vs predicted times so the homepage never presents
-schedule data as realtime.
+Requires GO_API_KEY. Schedule/Journey supplies Burlington↔Union itineraries and
+Stop/NextService supplies current predictions/status. Output distinguishes scheduled
+and computed times so Burlington News never labels schedule-only data as live.
 """
 from __future__ import annotations
 
@@ -18,8 +18,9 @@ from zoneinfo import ZoneInfo
 BASE = "https://api.openmetrolinx.com/OpenDataAPI/api/V1"
 OUT = pathlib.Path("data/go-status.json")
 TZ = ZoneInfo("America/Toronto")
-BURLINGTON_CODES = ("BU", "BURL")
-UNION_CODES = ("UN", "UNI")
+BURLINGTON = "BU"
+UNION = "UN"
+LINE = "LW"
 
 
 def get_json(path: str, key: str) -> dict:
@@ -30,69 +31,95 @@ def get_json(path: str, key: str) -> dict:
         return json.load(response)
 
 
-def discover_stop_codes(key: str) -> tuple[str, str]:
-    payload = get_json("Stop/All", key)
-    candidates = payload.get("Stops") or payload.get("Stop") or payload.get("AllStops") or []
-    if isinstance(candidates, dict):
-        candidates = candidates.get("Stop") or candidates.get("Stops") or []
-    burlington = union = None
-    for stop in candidates if isinstance(candidates, list) else []:
-        name = str(stop.get("Name") or stop.get("StopName") or "").lower()
-        code = str(stop.get("Code") or stop.get("StopCode") or "").strip()
-        if not burlington and "burlington" in name and "go" in name:
-            burlington = code
-        if not union and "union" in name and "station" in name:
-            union = code
-    return burlington or BURLINGTON_CODES[0], union or UNION_CODES[0]
-
-
 def choose_direction(now: dt.datetime) -> tuple[str, str, str, str]:
-    # Commute-oriented default: toward Union before 2 p.m.; toward Burlington after.
+    # Commute-oriented default. The data model supports either direction without UI changes.
     if now.hour < 14:
-        return "Burlington", "Union", "burlington", "union"
-    return "Union", "Burlington", "union", "burlington"
+        return "Burlington", "Union", BURLINGTON, UNION
+    return "Union", "Burlington", UNION, BURLINGTON
+
+
+def first_trip_number(service: dict) -> str:
+    trips = service.get("Trips") or {}
+    if isinstance(trips, dict):
+        trips = trips.get("Trip") or []
+    if isinstance(trips, dict):
+        trips = [trips]
+    return str((trips[0] if trips else {}).get("Number") or "")
 
 
 def normalize_journeys(payload: dict) -> list[dict]:
-    journeys = payload.get("SchJourneys") or payload.get("Journeys") or []
+    journeys = payload.get("SchJourneys") or []
     if isinstance(journeys, dict):
-        journeys = journeys.get("Journey") or journeys.get("SchJourney") or []
+        journeys = journeys.get("Journey") or []
+    if isinstance(journeys, dict):
+        journeys = [journeys]
     output = []
     for journey in journeys if isinstance(journeys, list) else []:
         services = journey.get("Services") or []
-        if isinstance(services, dict):
+        if isinstance(services, dict) and "Service" in services:
             services = services.get("Service") or []
         if isinstance(services, dict):
             services = [services]
-        service = services[0] if services else {}
+        # Prefer the rail leg if a journey ever includes a transfer.
+        service = next((s for s in services if str(s.get("Code") or "").upper() == LINE), services[0] if services else {})
         start = service.get("StartTime") or journey.get("Time")
-        end = service.get("EndTime")
-        duration = service.get("Duration")
         if not start:
             continue
         output.append({
             "departure": start,
-            "arrival": end,
-            "duration": duration,
-            "line": service.get("Code") or "Lakeshore West",
+            "arrival": service.get("EndTime"),
+            "duration": service.get("Duration"),
+            "line": service.get("Code") or LINE,
             "type": service.get("Type") or "Train",
+            "tripNumber": first_trip_number(service),
             "scheduled": True,
         })
     return output[:3]
 
 
+def next_service_rows(payload: dict) -> list[dict]:
+    rows = (payload.get("NextService") or {}).get("Lines") or []
+    if isinstance(rows, dict):
+        rows = [rows]
+    return [row for row in rows if str(row.get("LineCode") or "").upper() == LINE]
+
+
+def attach_predictions(journeys: list[dict], next_service: dict) -> tuple[list[dict], bool]:
+    rows = next_service_rows(next_service)
+    by_trip = {str(row.get("TripNumber") or ""): row for row in rows if row.get("TripNumber")}
+    any_prediction = False
+    for journey in journeys:
+        row = by_trip.get(str(journey.get("tripNumber") or ""))
+        if not row:
+            continue
+        computed = row.get("ComputedDepartureTime")
+        scheduled = row.get("ScheduledDepartureTime")
+        if scheduled:
+            journey["departure"] = scheduled
+        if computed:
+            journey["computedDeparture"] = computed
+            any_prediction = True
+        journey["departureStatus"] = row.get("DepartureStatus") or row.get("Status") or ""
+        journey["platform"] = row.get("ActualPlatform") or row.get("ScheduledPlatform") or ""
+        journey["predictionUpdatedAt"] = row.get("UpdateTime") or ""
+    return journeys, any_prediction
+
+
 def relevant_alerts(payload: dict) -> list[dict]:
     alerts = payload.get("Messages") or payload.get("ServiceAlerts") or payload.get("Alerts") or []
     if isinstance(alerts, dict):
-        alerts = alerts.get("Message") or alerts.get("Alert") or []
+        alerts = alerts.get("Message") or alerts.get("Alert") or alerts.get("Messages") or []
     if isinstance(alerts, dict):
         alerts = [alerts]
     keep = []
     for alert in alerts if isinstance(alerts, list) else []:
-        text = " ".join(str(alert.get(k) or "") for k in ("Subject", "Message", "Description", "Lines", "LineName"))
+        text = " ".join(str(alert.get(k) or "") for k in ("Subject", "Message", "Description", "Lines", "LineName", "Route"))
         lower = text.lower()
-        if "lakeshore west" in lower or "burlington" in lower:
-            keep.append({"headline": str(alert.get("Subject") or "GO service update"), "detail": str(alert.get("Message") or alert.get("Description") or "").strip()})
+        if "lakeshore west" in lower or "burlington" in lower or " lw " in f" {lower} ":
+            keep.append({
+                "headline": str(alert.get("Subject") or alert.get("Title") or "GO service update").strip(),
+                "detail": str(alert.get("Message") or alert.get("Description") or "").strip(),
+            })
     return keep[:2]
 
 
@@ -103,33 +130,40 @@ def main() -> int:
         return 0
 
     now = dt.datetime.now(TZ)
-    burlington, union = discover_stop_codes(key)
-    origin_label, destination_label, origin_kind, destination_kind = choose_direction(now)
-    from_code = burlington if origin_kind == "burlington" else union
-    to_code = union if destination_kind == "union" else burlington
+    origin_label, destination_label, from_code, to_code = choose_direction(now)
     date = now.strftime("%Y%m%d")
     start = now.strftime("%H%M")
-    journey = get_json(f"Schedule/Journey/{date}/{from_code}/{to_code}/{start}/3", key)
+
+    schedule = get_json(f"Schedule/Journey/{date}/{from_code}/{to_code}/{start}/3", key)
+    journeys = normalize_journeys(schedule)
+    predicted = False
+    try:
+        journeys, predicted = attach_predictions(journeys, get_json(f"Stop/NextService/{from_code}", key))
+    except Exception as exc:
+        print(f"GO predictions unavailable; using schedule only: {type(exc).__name__}: {exc}")
+
     try:
         alerts = relevant_alerts(get_json("ServiceUpdate/ServiceAlert/All", key))
-    except Exception:
+    except Exception as exc:
+        print(f"GO alerts unavailable: {type(exc).__name__}: {exc}")
         alerts = []
 
     payload = {
         "generatedAt": now.isoformat(),
         "source": "Metrolinx GO API",
         "sourceUrl": "https://api.openmetrolinx.com/OpenDataAPI/Help",
-        "dataKind": "scheduled",
+        "dataKind": "realtime" if predicted else "scheduled",
         "route": "Lakeshore West",
+        "lineCode": LINE,
         "origin": {"label": origin_label, "stopCode": from_code},
         "destination": {"label": destination_label, "stopCode": to_code},
-        "journeys": normalize_journeys(journey),
+        "journeys": journeys,
         "alerts": alerts,
         "liveStatusUrl": "https://www.gotransit.com/en/see-schedules",
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Updated GO status: {origin_label} -> {destination_label} ({from_code} -> {to_code})")
+    print(f"Updated GO status: {origin_label} -> {destination_label} ({from_code} -> {to_code}); {payload['dataKind']}")
     return 0
 
 
