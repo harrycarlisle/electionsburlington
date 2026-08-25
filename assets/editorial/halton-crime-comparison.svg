@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">2024 Crime Severity Index comparison for selected Ontario police services</title>
+<desc id="desc">Halton 31.2, Durham 47.1, York 53.9, Peel 56.4, Hamilton 66.2, Toronto 68.7, Waterloo 72.7.</desc>
+<rect width="1200" height="760" fill="#eef5f8"/>
+<text x="72" y="92" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="800" letter-spacing="3" fill="#0d2c47">CRIME SEVERITY INDEX · 2024</text>
+<text x="72" y="148" font-family="Georgia,serif" font-size="54" font-weight="700" fill="#0d2035">Halton is the outlier.</text>
+<text x="72" y="190" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#516474">Lower index = lower volume/severity of police-reported crime.</text>
+<g font-family="Arial,Helvetica,sans-serif" font-size="22" fill="#0d2035">
+<text x="72" y="277" font-weight="800">Halton</text><rect x="260" y="250" width="287" height="34" rx="6" fill="#1774c9"/><text x="566" y="277" font-weight="800">31.2</text>
+<text x="72" y="347">Durham</text><rect x="260" y="320" width="433" height="34" rx="6" fill="#91a9b8"/><text x="712" y="347">47.1</text>
+<text x="72" y="417">York</text><rect x="260" y="390" width="496" height="34" rx="6" fill="#91a9b8"/><text x="775" y="417">53.9</text>
+<text x="72" y="487">Peel</text><rect x="260" y="460" width="519" height="34" rx="6" fill="#91a9b8"/><text x="798" y="487">56.4</text>
+<text x="72" y="557">Hamilton</text><rect x="260" y="530" width="609" height="34" rx="6" fill="#91a9b8"/><text x="888" y="557">66.2</text>
+<text x="72" y="627">Toronto</text><rect x="260" y="600" width="632" height="34" rx="6" fill="#91a9b8"/><text x="911" y="627">68.7</text>
+<text x="72" y="697">Waterloo</text><rect x="260" y="670" width="669" height="34" rx="6" fill="#91a9b8"/><text x="948" y="697">72.7</text>
+</g>
+<text x="72" y="738" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#667986">Source: Statistics Canada Table 35-10-0188-01, reproduced in HRPS 2025 Mid-Year Report. Halton is a regional police-service area, not Burlington alone.</text>
+</svg>
