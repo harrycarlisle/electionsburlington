@@ -36,7 +36,7 @@ The writer completes this list. A second pass—human or automated—must be abl
 
 - [ ] Five different candidates were written.
 - [ ] The chosen headline scored at least 10/14 on `headline-rubric.md`.
-- [ ] The deck is one sentence, or two short sentences, and adds a second fact or open loop.
+- [ ] The deck is one sentence (or two very short sentences), 12–22 words, and never over 30.
 - [ ] Both headline and deck remain accurate when read without the article.
 - [ ] The mobile line breaks were reviewed.
 

@@ -45,7 +45,14 @@ Weak deck:
 
 Why it fails: “shaped” is abstract, “the crossing Burlington knows” is generic, and the line hides the two strongest facts—the 84 properties and 14-minute timing.
 
-Decks should generally be one sentence, or two short sentences at most. They establish what the story is and why it is interesting. They should not summarize every conclusion or read like a report abstract.
+Decks default to one sentence. Target 12–22 words. Hard maximum: 30 words. If a deck needs two sentences, both must be very short. Add one useful curiosity or value beat. Do not summarize the whole article or repeat the headline.
+
+Example:
+
+- Too long: “The City says the South Service Road project is not an AI hyperscale facility. That distinction is real, but it does not answer what a 20-megawatt data centre means beside an established neighbourhood.”
+- Better: “The City says it is not an AI hyperscale campus. The bigger question is what 20 megawatts means for the neighbourhood beside it.”
+
+Decks establish what the story is and why it is interesting. They should not summarize every conclusion or read like a report abstract.
 
 Never make the deck repeat the headline in different words.
 

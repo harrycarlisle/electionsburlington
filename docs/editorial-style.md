@@ -14,7 +14,10 @@ If that sentence is muddy, the story is too broad.
 
 - The title should be clear and curiosity-driven.
 - The deck should create curiosity. It should not give away the full answer.
-- Keep decks to one sentence, or two short sentences at most. Establish what the story is and why it is interesting. Do not summarize every conclusion.
+- Default to one sentence. Target 12–22 words. Hard maximum: 30 words.
+- If a deck needs two sentences, both must be very short.
+- Add one useful curiosity or value beat. Do not summarize the whole article or repeat the headline.
+- Establish what the story is and why it is interesting. Do not summarize every conclusion.
 - Avoid generic local-news filler and weak listicles unless the subject is inherently a list.
 
 ## Story shape

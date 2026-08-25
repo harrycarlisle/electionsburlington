@@ -101,7 +101,7 @@
   "writing": {
     "singleGoal": true,
     "title": "clear + curiosity-driven",
-    "deck": "one sentence, or two short sentences; establish what the story is and why it is interesting without summarizing every conclusion",
+    "deck": "one sentence by default, 12-22 words, hard maximum 30; two very short sentences only if needed; add one curiosity/value beat; do not summarize the article or repeat the headline",
     "structure": ["title promise", "deck curiosity", "action", "consequence", "next implication", "concrete ending"],
     "answerReaderQuestions": ["where", "why", "how", "what changed", "why it matters", "what the reader should understand differently now"],
     "endingTypes": [

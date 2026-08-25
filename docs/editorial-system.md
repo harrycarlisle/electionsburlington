@@ -79,7 +79,7 @@ When generating a story, provide:
 Output:
 - 5 title options
 - selected title
-- deck (one sentence, or two short sentences)
+- deck (one sentence, 12–22 words, hard maximum 30; two very short sentences only if needed)
 - story goal
 - article body
 - concrete ending (unanswered question, next measurable thing, practical consequence, or new conflict)
@@ -96,6 +96,7 @@ Writing rules:
 - no fake quotes
 - do not overuse headings
 - do not repeat the title/deck in the first paragraph
+- do not let the deck summarize the whole article; add one curiosity/value beat only
 - do not dump long numeric lists in prose; use a visual for the full comparison
 - never end with “only time will tell,” “the story is what happens next,” “it remains to be seen,” “that could change,” or “the interesting question is what comes next”
 

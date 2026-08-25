@@ -11,11 +11,24 @@ from pathlib import Path
 from editorial_policy import is_low_risk
 ROOT=Path(__file__).resolve().parents[1];QUEUE=ROOT/'data'/'editorial-queue.json';LEDGER=ROOT/'data'/'auto-published.json';ARTICLES=ROOT/'articles'/'auto'
 def slugify(value:str)->str:return re.sub(r'[^a-z0-9]+','-',value.lower().replace('’',"'")).strip('-')[:72] or 'local-update'
+def word_count(value:str)->int:return len(re.findall(r"[A-Za-z0-9’']+", value or ''))
+def tighten_deck(value:str)->str:
+    text=re.sub(r'\s+',' ', (value or '').strip())
+    if not text: return 'A verified Burlington update.'
+    sentences=[part.strip() for part in re.split(r'(?<=[.!?])\s+', text) if part.strip()]
+    if word_count(text)<=22 and len(sentences)<=2: return text
+    if word_count(text)<=30 and len(sentences)==1: return text
+    keep=sentences[:2] if sentences else [text]
+    trimmed=' '.join(keep)
+    words=re.findall(r"\S+", trimmed)
+    if len(words)>30:
+        trimmed=' '.join(words[:30]).rstrip('.,;:') + '.'
+    return trimmed
 def load(path:Path,fallback):
     try:return json.loads(path.read_text(encoding='utf-8'))
     except Exception:return fallback
 def article_html(item:dict,path:str)->str:
-    title=html.escape(item.get('headline','Burlington update'));deck=html.escape(item.get('summary') or item.get('storyGoal') or 'A verified Burlington update.');why=html.escape(item.get('why') or item.get('storyGoal') or '');source=html.escape(item.get('source') or 'Source');source_url=html.escape(item.get('url') or '');date=html.escape(str(item.get('date') or ''));tag=html.escape(item.get('tag') or 'Burlington');canonical=f'https://burlingtonnews.ca/{path}'
+    title=html.escape(item.get('headline','Burlington update'));deck=html.escape(tighten_deck(item.get('summary') or item.get('storyGoal') or 'A verified Burlington update.'));why=html.escape(item.get('why') or item.get('storyGoal') or '');source=html.escape(item.get('source') or 'Source');source_url=html.escape(item.get('url') or '');date=html.escape(str(item.get('date') or ''));tag=html.escape(item.get('tag') or 'Burlington');canonical=f'https://burlingtonnews.ca/{path}'
     ending=html.escape(item.get('ending') or item.get('next') or '')
     body=f'<p>{deck}</p>'
     if why and why!=deck:body+=f'<h2>Why it matters</h2><p>{why}</p>'
@@ -29,6 +42,6 @@ def main()->int:
     for item in queue.get('publishReady',[]):
         source_url=item.get('url')
         if not source_url or source_url in known or not is_low_risk(item):continue
-        date=str(item.get('date') or 'update');slug=f"{date}-{slugify(item.get('headline',''))}.html";relative=f'articles/auto/{slug}';target=ROOT/relative;target.write_text(article_html(item,relative),encoding='utf-8');record={'headline':item.get('headline'),'deck':item.get('summary'),'date':item.get('date'),'tag':item.get('tag') or 'Burlington','path':'/'+relative,'sourceUrl':source_url,'editorialScore':item.get('editorialScore')};ledger.setdefault('items',[]).insert(0,record);known.add(source_url);added.append(record)
+        date=str(item.get('date') or 'update');slug=f"{date}-{slugify(item.get('headline',''))}.html";relative=f'articles/auto/{slug}';target=ROOT/relative;target.write_text(article_html(item,relative),encoding='utf-8');record={'headline':item.get('headline'),'deck':tighten_deck(item.get('summary') or ''),'date':item.get('date'),'tag':item.get('tag') or 'Burlington','path':'/'+relative,'sourceUrl':source_url,'editorialScore':item.get('editorialScore')};ledger.setdefault('items',[]).insert(0,record);known.add(source_url);added.append(record)
     ledger['items']=ledger.get('items',[])[:100];LEDGER.write_text(json.dumps(ledger,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');print(f'Auto-published {len(added)} verified low-risk brief(s)');return 0
 if __name__=='__main__':raise SystemExit(main())

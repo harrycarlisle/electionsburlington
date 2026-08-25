@@ -18,7 +18,7 @@ Score each candidate headline from 0–2 on every line. A publishable headline n
 2. Identify the most surprising verified fact in the reporting.
 3. Test the headline at 375 CSS pixels. Avoid a final line containing one weak word.
 4. Read it aloud. Remove bureaucratic phrases and unnecessary setup.
-5. Ask whether the deck adds new information in one sentence, or two short sentences at most.
+5. Ask whether the deck adds one new curiosity beat in one sentence (12–22 words, hard maximum 30). Two very short sentences are allowed only if both stay tight.
 6. Search the archive for near-duplicate wording.
 7. Run a final claim-to-source check after edits.
 
