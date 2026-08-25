@@ -172,10 +172,12 @@
     if (goInfo.alert) {
       return `<a class="now-chip now-chip-go is-alert" href="${esc(goInfo.url)}" aria-label="GO alert: ${esc(goInfo.headline)}">${icons.go}<span><small>GO</small><strong>${esc(goInfo.headline)}</strong></span></a>`;
     }
-    const primaryTimes = goInfo.primary.journeys.slice(0, 1).map(item => departureLabel(item, true)).filter(Boolean);
+    const primaryTimes = goInfo.primary.journeys.slice(0, 2).map(item => departureLabel(item, true)).filter(Boolean);
+    const secondaryTime = goInfo.secondary.journeys[0] ? departureLabel(goInfo.secondary.journeys[0], true) : '';
     const extra = [...goInfo.primary.journeys.slice(0, 3).map(item => `${goInfo.primary.name} ${departureLabel(item, true)}`), ...goInfo.secondary.journeys.slice(0, 2).map(item => `${goInfo.secondary.name} ${departureLabel(item, true)}`)].filter(item => !item.endsWith(' '));
-    return `<button type="button" class="now-chip now-chip-go" data-go-toggle aria-expanded="false" aria-controls="nowGoPanel" aria-label="GO ${esc(goInfo.primary.name)} ${esc(primaryTimes.join(' and ') || 'times')}. Tap for more trains.">
-      ${icons.go}<span><small>GO</small><strong>${esc(goInfo.primary.name)} ${esc(primaryTimes.join(' · ') || 'times')}</strong></span>
+    const secondaryLine = secondaryTime ? `<em>${esc(goInfo.secondary.name)} ${esc(secondaryTime)}</em>` : '';
+    return `<button type="button" class="now-chip now-chip-go" data-go-toggle aria-expanded="false" aria-controls="nowGoPanel" aria-label="GO ${esc(goInfo.primary.name)} ${esc(primaryTimes.join(' and ') || 'times')}${secondaryTime ? `, ${esc(goInfo.secondary.name)} ${esc(secondaryTime)}` : ''}. Tap for more trains.">
+      ${icons.go}<span><small>GO</small><strong>${esc(goInfo.primary.name)} ${esc(primaryTimes.join(' · ') || 'times')}</strong>${secondaryLine}</span>
     </button>
     <div class="now-go-panel" id="nowGoPanel" hidden data-go-panel>
       ${extra.map(item => `<span>${esc(item)}</span>`).join('')}
