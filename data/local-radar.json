@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T19:44:21.312005-04:00",
+  "generatedAt": "2026-08-25T19:48:11.033240-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -117,7 +117,7 @@
         "latest"
       ],
       "headline": "How bad is Burlington's crime, really?",
-      "deck": "Burlington has a reputation for being safe. The best comparable data broadly supports it, but one category is moving in the opposite direction.",
+      "deck": "The comparable data mostly supports the safe reputation. One category is moving the other way.",
       "label": "Public safety",
       "labelEssential": true,
       "url": "articles/how-bad-is-burlington-crime.html",
@@ -139,7 +139,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.07683352178240743
+        "rotation": 0.08215114296296289
       },
       "gates": {
         "evidence": "passed",
@@ -509,7 +509,7 @@
         "latest"
       ],
       "headline": "How bad is Burlington's crime, really?",
-      "deck": "Burlington has a reputation for being safe. The best comparable data broadly supports it, but one category is moving in the opposite direction.",
+      "deck": "The comparable data mostly supports the safe reputation. One category is moving the other way.",
       "label": "Public safety",
       "labelEssential": true,
       "url": "articles/how-bad-is-burlington-crime.html",
@@ -531,7 +531,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.07683352178240743
+        "rotation": 0.08215114296296289
       },
       "gates": {
         "evidence": "passed",
@@ -983,7 +983,7 @@
         "latest"
       ],
       "headline": "How bad is Burlington's crime, really?",
-      "deck": "Burlington has a reputation for being safe. The best comparable data broadly supports it, but one category is moving in the opposite direction.",
+      "deck": "The comparable data mostly supports the safe reputation. One category is moving the other way.",
       "label": "Public safety",
       "labelEssential": true,
       "url": "articles/how-bad-is-burlington-crime.html",
@@ -1005,7 +1005,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.07683352178240743
+        "rotation": 0.08215114296296289
       },
       "gates": {
         "evidence": "passed",
@@ -2231,7 +2231,7 @@
         "latest"
       ],
       "headline": "Burlington's proposed data centre is not what many people think.",
-      "deck": "The South Service Road proposal would use about 20 MW of electricity, but City records say it is not an AI hyperscale facility.",
+      "deck": "The City says it is not an AI hyperscale campus. The bigger question is what 20 megawatts means for the neighbourhood beside it.",
       "label": "Development",
       "labelEssential": true,
       "url": "articles/burlington-data-centre-not-ai.html",
