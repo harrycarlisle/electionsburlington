@@ -148,7 +148,7 @@
     metas.forEach(([attr,key,value])=>{let node=document.querySelector(`meta[${attr}="${key}"]`);if(!node){node=document.createElement('meta');node.setAttribute(attr,key);document.head.appendChild(node)}node.content=value});
   }
 
-  document.addEventListener('DOMContentLoaded',()=>{
+  function boot(){
     lockArticleSearch();
     ensureHero();
     addShareTools();
@@ -158,5 +158,7 @@
     addSchema();
     document.querySelectorAll('.article-aside').forEach(node=>node.classList.add('article-aside-legacy'));
     addRelated();
-  });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);
+  else boot();
 })();
