@@ -48,14 +48,15 @@
     const next = theme === 'dark' ? 'dark' : 'light';
     root.dataset.theme = next;
     root.style.colorScheme = next;
-    document.querySelectorAll('[data-theme-choice]').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.themeChoice === next)));
+    const toggle = document.querySelector('[data-theme-toggle]');
+    if (toggle) {
+      const target = next === 'dark' ? 'Light mode' : 'Dark mode';
+      toggle.textContent = target;
+      toggle.setAttribute('aria-label',`Switch to ${target.toLowerCase()}`);
+    }
     if (persist) try { localStorage.setItem(themeKey,next); } catch (_) {}
   };
   setTheme(root.dataset.theme || 'light',false);
-  document.querySelectorAll('.site-footer a').forEach(link => {
-    if (link.getAttribute('href') === 'independent.html') { link.href = 'about.html'; link.textContent = 'About Burlington News'; }
-    if (link.getAttribute('href') === 'methodology.html') link.textContent = 'Sources';
-  });
 
   const rotatingPrompts = ['Search This Weekend','Search “I’m bored”','Search Best Food','Search Best Tacos','Search the election'];
   if (searchInput && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -75,11 +76,7 @@
     menu.setAttribute('aria-expanded', String(open));
     menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   });
-  nav?.querySelector('.home-theme-choice')?.addEventListener('click', event => {
-    const button = event.target.closest('[data-theme-choice]');
-    if (!button) return;
-    setTheme(button.dataset.themeChoice);
-  });
+  nav?.querySelector('[data-theme-toggle]')?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
   nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
     nav.classList.remove('is-open');
     menu?.setAttribute('aria-expanded','false');
@@ -140,7 +137,7 @@
     .then(response => response.ok ? response.json() : Promise.reject())
     .then(data => {
       if (!latestList || !Array.isArray(data.latest) || !data.latest.length) return;
-      latestList.innerHTML = data.latest.slice(0,3).map((item,index) => {
+      latestList.innerHTML = data.latest.slice(0,3).map(item => {
         const external = /^https?:\/\//.test(item.url || '');
         const credit = imageCredits[item.image] || '';
         const visual = item.image ? `<span class="newest-thumb"><img src="${esc(item.image)}" alt="${esc(item.alt || '')}" loading="lazy">${credit && !/^Burlington News/i.test(credit) ? `<i>${esc(credit)}</i>` : ''}</span>` : '<span class="puzzle-icon blue">BN</span>';
