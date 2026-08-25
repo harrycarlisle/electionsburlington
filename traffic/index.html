@@ -3,41 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Skyway Traffic Cameras | Burlington News</title>
-  <meta name="description" content="See live Ontario 511 cameras at the Burlington Skyway, a visual traffic estimate and current reported incidents from the official Ontario 511 API.">
+  <title>Traffic cameras | Burlington News</title>
+  <meta name="description" content="Live Ontario 511 cameras and route-aware traffic context for common trips from Burlington.">
   <link rel="canonical" href="https://burlingtonnews.ca/traffic/">
   <link rel="stylesheet" href="site-extra.css">
   <link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle">
   <link rel="stylesheet" href="/site-shell.css?v=20260824z4" data-style="site-shell">
-  <link rel="stylesheet" href="/publication-polish.css?v=20260825e" data-style="publication-polish">
-  <link rel="stylesheet" href="/product-pass.css?v=20260825e">
-  <script src="/site-search.js?v=20260825e" defer></script>
-  <script src="/site-extra.js?v=20260825e" defer></script>
-  <script src="/skyway-traffic.js?v=20260825e" defer></script>
-  <style>
-    .traffic-shell{width:min(calc(100% - 40px),1080px);margin:34px auto 74px}.traffic-hero{position:relative;padding:28px 0 30px}.traffic-kicker{color:#43873b;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.09em}.traffic-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,7vw,72px);line-height:.94;letter-spacing:-.05em;margin:9px 0 10px;max-width:760px}.traffic-hero p{margin:0;color:var(--muted);font-size:17px;max-width:660px}.live-chip{position:absolute;right:0;top:34px;display:flex;align-items:center;gap:8px;padding:9px 11px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:10px;font-weight:800}.live-chip i{width:8px;height:8px;border-radius:50%;background:#31a35a;box-shadow:0 0 0 4px rgba(49,163,90,.12)}
-    .traffic-summary{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;margin:0 0 24px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.traffic-summary strong{display:block;color:var(--navy);font-size:16px}.traffic-summary span{display:block;margin-top:3px;color:var(--muted);font-size:11px;line-height:1.4}.traffic-summary a{color:var(--blue);font-size:11px;font-weight:800;text-decoration:none;white-space:nowrap}.traffic-summary a:hover{text-decoration:underline}
-    .camera-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.camera-card{position:relative;min-height:0;background:#132433;overflow:hidden;color:#fff;border-radius:14px}.camera-card img[data-camera]{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}.camera-caption{position:absolute;z-index:1;left:12px;right:12px;top:12px;display:flex;justify-content:space-between;gap:12px;align-items:start;text-shadow:0 1px 8px rgba(0,0,0,.7)}.camera-caption strong{font-family:Georgia,"Times New Roman",serif;font-size:20px}.camera-caption span{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#cce8f8}.camera-error{position:absolute;inset:0 auto auto 0;display:none;place-items:center;height:56%;padding:20px;text-align:center;color:#cdd8de;font-size:13px}.camera-card.is-error .camera-error{display:grid}.camera-card.is-error img[data-camera]{opacity:.12}
-    .analysis-note{margin-top:18px;padding:16px 0;border-top:1px solid var(--line)}.analysis-note strong{color:var(--navy);font-size:12px}.analysis-note p{margin:5px 0 0;color:var(--muted);font-size:10px;line-height:1.5}.analysis-note a{color:var(--blue);font-weight:750}
-    @media(max-width:800px){.live-chip{position:static;width:max-content;margin-top:18px}.camera-grid{grid-template-columns:1fr}.traffic-summary{grid-template-columns:1fr}}
-    @media(max-width:560px){.traffic-shell{width:calc(100% - 30px);margin-top:18px}.traffic-hero{padding-top:18px}.traffic-hero h1{font-size:43px}.traffic-hero p{font-size:15px}.camera-card,.camera-card:first-child{min-height:215px}.camera-caption strong{font-size:19px}}
-  </style>
+  <link rel="stylesheet" href="/publication-polish.css?v=20260825g" data-style="publication-polish">
+  <link rel="stylesheet" href="/product-pass.css?v=20260825g">
+  <script src="/site-search.js?v=20260825g" defer></script>
+  <script src="/site-extra.js?v=20260825g" defer></script>
+  <script src="/skyway-traffic.js?v=20260825g" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="header"><div class="wrap header-inner"><a class="brand" href="index.html">Burlington News</a><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
-  <main id="main" class="traffic-shell">
-    <section class="traffic-hero"><div><span class="traffic-kicker">Live local tool</span><h1>How does the Skyway look?</h1><p>Live Ontario 511 camera views, refreshed every minute.</p></div><div class="live-chip"><i aria-hidden="true"></i><span id="cameraStatus">Loading cameras</span></div></section>
-
-    <section class="traffic-summary" aria-live="polite"><div><strong id="trafficEstimate">Checking Skyway traffic…</strong><span id="incidentSummary">Loading Ontario 511 incident data.</span></div><a href="https://511on.ca/" target="_blank" rel="noopener">Open Ontario 511 →</a></section>
-
-    <section class="camera-grid" aria-label="Live Burlington Skyway traffic cameras">
-      <figure class="camera-card"><img crossorigin="anonymous" data-camera="10" src="https://511on.ca/map/Cctv/10" alt="Live Ontario 511 camera view looking Fort Erie-bound at the Burlington Skyway"><figcaption class="camera-caption"><strong>Fort Erie-bound</strong><span>Ontario 511 · live</span></figcaption><div class="camera-error">This camera is temporarily unavailable.</div></figure>
-      <figure class="camera-card"><img crossorigin="anonymous" data-camera="11" src="https://511on.ca/map/Cctv/11" alt="Live overhead Ontario 511 camera view at the Burlington Skyway"><figcaption class="camera-caption"><strong>Overhead</strong><span>Ontario 511 · live</span></figcaption><div class="camera-error">This camera is temporarily unavailable.</div></figure>
-      <figure class="camera-card"><img crossorigin="anonymous" data-camera="12" src="https://511on.ca/map/Cctv/12" alt="Live Ontario 511 camera view looking Toronto-bound at the Burlington Skyway"><figcaption class="camera-caption"><strong>Toronto-bound</strong><span>Ontario 511 · live</span></figcaption><div class="camera-error">This camera is temporarily unavailable.</div></figure>
+  <header class="header"><div class="wrap header-inner"><a class="brand" href="/">Burlington News</a><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
+  <main id="main" class="traffic-shell traffic-page">
+    <section class="traffic-hero">
+      <div>
+        <span class="traffic-kicker">Live local tool</span>
+        <h1>How does the road look?</h1>
+        <p>Choose a destination to see the Burlington cameras and incidents that matter for that trip.</p>
+      </div>
+      <div class="live-chip"><i aria-hidden="true"></i><span id="cameraStatus">Loading cameras</span></div>
     </section>
 
-    <section class="analysis-note"><strong>How the traffic status works</strong><p>Burlington News checks the official Ontario 511 traffic-events API for incidents near the Skyway and, when the browser can safely read the live camera frames, makes a lightweight visual estimate from the current images. The visual estimate is a convenience, not an official traffic measurement. For closures, collisions and roadwork, Ontario 511 is the source of record. Camera and event data are Ontario Ministry of Transportation data under the <a href="https://www.ontario.ca/page/open-government-licence-ontario" target="_blank" rel="noopener">Open Government Licence - Ontario</a>.</p></section>
+    <section class="route-picker" aria-label="Common destinations from Burlington">
+      <p class="route-ask">Where are you going?</p>
+      <div class="route-chips" id="routeChips"></div>
+      <p class="route-origin">From Downtown Burlington. Camera membership is based on the driving route, not an average of every camera.</p>
+    </section>
+
+    <section class="route-status" id="routeStatus" aria-live="polite"></section>
+    <section class="route-based" id="routeBased"></section>
+
+    <section class="camera-live" id="cameraLive" aria-label="Cameras on this route"></section>
+    <p class="map-credit">Map data © OpenStreetMap contributors. Camera images © King's Printer for Ontario.</p>
+
+    <section class="camera-other" id="cameraOtherWrap" hidden>
+      <h2>Other cameras</h2>
+      <ul id="cameraOther"></ul>
+    </section>
+
+    <section class="analysis-note">
+      <strong>How this page works</strong>
+      <p>Incidents come from the official Ontario 511 events feed and are rewritten into a location, direction and nearby interchange. Route cameras are selected by mapping official camera coordinates to an OpenStreetMap driving route. Traffic density is labelled “looks” only when a scheduled estimate exists. It is not an official speed reading. Ontario 511 remains the source of record for closures and collisions.</p>
+    </section>
   </main>
 </body>
 </html>

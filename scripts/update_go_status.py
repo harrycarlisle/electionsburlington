@@ -126,6 +126,7 @@ def relevant_alerts(payload: dict) -> list[dict]:
 def build_api(key: str, now: dt.datetime) -> dict:
     date = now.strftime("%Y%m%d")
     start = now.strftime("%H%M")
+    tomorrow = (now + dt.timedelta(days=1)).strftime("%Y%m%d")
     try:
         rows = next_service_rows(get_json(f"Stop/NextService/{BURLINGTON}", key))
     except Exception as exc:
@@ -135,6 +136,11 @@ def build_api(key: str, now: dt.datetime) -> dict:
     routes = []
     for label, code in TARGETS:
         journeys = normalize_journeys(get_json(f"Schedule/Journey/{date}/{BURLINGTON}/{code}/{start}/3", key))
+        if len(journeys) < 2:
+            extra = normalize_journeys(get_json(f"Schedule/Journey/{tomorrow}/{BURLINGTON}/{code}/0000/3", key))
+            for item in extra:
+                item["nextServiceDay"] = True
+            journeys = (journeys + extra)[:3]
         predicted = attach_predictions(journeys, rows) or predicted
         routes.append({
             "origin": {"label": "Burlington", "stopCode": BURLINGTON},
@@ -197,42 +203,7 @@ def pretty_duration(start: str, end: str) -> str:
     return f"{minutes} min"
 
 
-def build_gtfs(now: dt.datetime) -> dict:
-    data = request(GTFS_URL)
-    with zipfile.ZipFile(io.BytesIO(data)) as zf:
-        stops = read_csv(zf, "stops.txt")
-        routes = read_csv(zf, "routes.txt")
-        trips = read_csv(zf, "trips.txt")
-        stop_times = read_csv(zf, "stop_times.txt")
-        calendar = read_csv(zf, "calendar.txt") if "calendar.txt" in zf.namelist() else []
-        exceptions = read_csv(zf, "calendar_dates.txt") if "calendar_dates.txt" in zf.namelist() else []
-
-    stop_ids: dict[str, str] = {}
-    for row in stops:
-        name = str(row.get("stop_name") or "").lower()
-        code = str(row.get("stop_code") or "").upper()
-        if code == BURLINGTON or "burlington go" in name:
-            stop_ids["Burlington"] = row["stop_id"]
-        if code == UNION or "union station" in name:
-            stop_ids["Union"] = row["stop_id"]
-        if code == WEST_HARBOUR or "west harbour go" in name:
-            stop_ids["West Harbour"] = row["stop_id"]
-    if not all(name in stop_ids for name in ("Burlington", "Union", "West Harbour")):
-        raise RuntimeError(f"Could not resolve required GTFS stops: {stop_ids}")
-
-    active = active_services(calendar, exceptions, now.date()) if calendar or exceptions else {row["service_id"] for row in trips}
-    lw_route_ids = {
-        row["route_id"] for row in routes
-        if str(row.get("route_short_name") or "").upper() == LINE or "lakeshore west" in str(row.get("route_long_name") or "").lower()
-    }
-    eligible_trips = {row["trip_id"]: row for row in trips if row.get("service_id") in active and row.get("route_id") in lw_route_ids}
-    grouped: dict[str, list[dict]] = {}
-    for row in stop_times:
-        trip_id = row.get("trip_id")
-        if trip_id in eligible_trips:
-            grouped.setdefault(trip_id, []).append(row)
-
-    now_sec = now.hour * 3600 + now.minute * 60 + now.second
+def collect_gtfs_journeys(stop_ids: dict[str, str], eligible_trips: dict, grouped: dict, now_sec: int) -> list[dict]:
     route_payloads = []
     for label, code in TARGETS:
         destination_id = stop_ids[label]
@@ -265,6 +236,74 @@ def build_gtfs(now: dt.datetime) -> dict:
             "destination": {"label": label, "stopCode": code},
             "journeys": candidates[:3],
         })
+    return route_payloads
+
+
+def build_gtfs(now: dt.datetime) -> dict:
+    data = request(GTFS_URL)
+    with zipfile.ZipFile(io.BytesIO(data)) as zf:
+        stops = read_csv(zf, "stops.txt")
+        routes = read_csv(zf, "routes.txt")
+        trips = read_csv(zf, "trips.txt")
+        stop_times = read_csv(zf, "stop_times.txt")
+        calendar = read_csv(zf, "calendar.txt") if "calendar.txt" in zf.namelist() else []
+        exceptions = read_csv(zf, "calendar_dates.txt") if "calendar_dates.txt" in zf.namelist() else []
+
+    stop_ids: dict[str, str] = {}
+    for row in stops:
+        sid = str(row.get("stop_id") or "").upper()
+        code = str(row.get("stop_code") or "").upper()
+        name = str(row.get("stop_name") or "").strip()
+        if "bus" in name.lower():
+            continue
+        if sid == BURLINGTON or code == BURLINGTON or name == "Burlington GO":
+            stop_ids["Burlington"] = row["stop_id"]
+        if sid == UNION or code == UNION or name == "Union Station GO":
+            stop_ids["Union"] = row["stop_id"]
+        if sid == WEST_HARBOUR or code == WEST_HARBOUR or name == "West Harbour GO":
+            stop_ids["West Harbour"] = row["stop_id"]
+    if not all(name in stop_ids for name in ("Burlington", "Union", "West Harbour")):
+        raise RuntimeError(f"Could not resolve required GTFS stops: {stop_ids}")
+
+    active = active_services(calendar, exceptions, now.date()) if calendar or exceptions else {row["service_id"] for row in trips}
+    lw_route_ids = {
+        row["route_id"] for row in routes
+        if str(row.get("route_short_name") or "").upper() == LINE or "lakeshore west" in str(row.get("route_long_name") or "").lower()
+    }
+    eligible_trips = {row["trip_id"]: row for row in trips if row.get("service_id") in active and row.get("route_id") in lw_route_ids}
+    grouped: dict[str, list[dict]] = {}
+    for row in stop_times:
+        trip_id = row.get("trip_id")
+        if trip_id in eligible_trips:
+            grouped.setdefault(trip_id, []).append(row)
+
+    now_sec = now.hour * 3600 + now.minute * 60 + now.second
+    route_payloads = collect_gtfs_journeys(stop_ids, eligible_trips, grouped, now_sec)
+
+    # Official GTFS only covers the current service date. Late evening can
+    # leave fewer than two remaining trips, so also search the next service
+    # date rather than inventing a cadence.
+    if any(len(route.get("journeys") or []) < 2 for route in route_payloads):
+        next_day = now.date() + dt.timedelta(days=1)
+        next_active = active_services(calendar, exceptions, next_day) if calendar or exceptions else {row["service_id"] for row in trips}
+        next_trips = {row["trip_id"]: row for row in trips if row.get("service_id") in next_active and row.get("route_id") in lw_route_ids}
+        next_grouped: dict[str, list[dict]] = {}
+        for row in stop_times:
+            trip_id = row.get("trip_id")
+            if trip_id in next_trips:
+                next_grouped.setdefault(trip_id, []).append(row)
+        extra = collect_gtfs_journeys(stop_ids, next_trips, next_grouped, 0)
+        for current, later in zip(route_payloads, extra):
+            seen = {(item.get("departure"), item.get("tripNumber")) for item in current.get("journeys") or []}
+            for item in later.get("journeys") or []:
+                key = (item.get("departure"), item.get("tripNumber"))
+                if key in seen:
+                    continue
+                item = dict(item)
+                item["nextServiceDay"] = True
+                current.setdefault("journeys", []).append(item)
+                seen.add(key)
+            current["journeys"] = current.get("journeys", [])[:3]
 
     return {
         "generatedAt": now.isoformat(),

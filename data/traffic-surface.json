@@ -1,0 +1,1326 @@
+{
+  "generatedAt": "2026-08-25T15:56:45.601742-04:00",
+  "source": "Ontario 511 events + OSRM geometry + camera inventory",
+  "licence": "Open Government Licence - Ontario",
+  "incidents": [
+    {
+      "id": "511:254943",
+      "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
+      "rawHeadline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+      "roadway": "QEW",
+      "direction": "Toronto-bound",
+      "type": "closure",
+      "facility": "on-ramp",
+      "nearestRoad": "Dorval Drive",
+      "municipality": "Oakville",
+      "context": "Oakville · Dorval Drive / QEW · on-ramp",
+      "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
+      "latitude": 43.446465,
+      "longitude": -79.70016,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:288257",
+      "title": "QEW Fort Erie-bound off-ramp closed at Christie St / Lakeview Ave",
+      "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at CHRISTIE ST / LAKEVIEW AVE, Grimsby. ALL LANES CLOSED.",
+      "roadway": "QEW",
+      "direction": "Fort Erie-bound",
+      "type": "closure",
+      "facility": "off-ramp",
+      "nearestRoad": "Christie St / Lakeview Ave",
+      "municipality": "Grimsby",
+      "context": "Grimsby · Christie St / Lakeview Ave / QEW · off-ramp",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.19871,
+      "longitude": -79.56138,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:288279",
+      "title": "QEW Fort Erie-bound off-ramp closed at Christie St / Lakeview Ave",
+      "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at CHRISTIE ST / LAKEVIEW AVE, Grimsby. ALL LANES CLOSED.",
+      "roadway": "QEW",
+      "direction": "Fort Erie-bound",
+      "type": "closure",
+      "facility": "off-ramp",
+      "nearestRoad": "Christie St / Lakeview Ave",
+      "municipality": "Grimsby",
+      "context": "Grimsby · Christie St / Lakeview Ave / QEW · off-ramp",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.19871,
+      "longitude": -79.56138,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:290441",
+      "title": "Hwy 405 Fort Erie-bound off-ramp closed at Stanley Ave",
+      "rawHeadline": "Nightly Construction on HWY 405 Eastbound Off-ramp at STANLEY AVE, Niagara-On-The-Lake. ALL LANES CLOSED.",
+      "roadway": "Hwy 405",
+      "direction": "Fort Erie-bound",
+      "type": "closure",
+      "facility": "off-ramp",
+      "nearestRoad": "Stanley Ave",
+      "municipality": "Niagara",
+      "context": "Niagara · Stanley Ave / Hwy 405 · off-ramp",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.14677,
+      "longitude": -79.08734,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:290769",
+      "title": "QEW Fort Erie-bound on-ramp closed at Bartlett Avenue",
+      "rawHeadline": "Nightly Construction on QEW Fort Erie Bound On-ramp at BARTLETT AVENUE, Grimsby. ALL LANES CLOSED.",
+      "roadway": "QEW",
+      "direction": "Fort Erie-bound",
+      "type": "closure",
+      "facility": "on-ramp",
+      "nearestRoad": "Bartlett Avenue",
+      "municipality": "Niagara",
+      "context": "Niagara · Bartlett Avenue / QEW · on-ramp",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.189972,
+      "longitude": -79.52388,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:290770",
+      "title": "QEW Fort Erie-bound off-ramp closed at Bartlett Avenue",
+      "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at BARTLETT AVENUE, Grimsby. ALL LANES CLOSED.",
+      "roadway": "QEW",
+      "direction": "Fort Erie-bound",
+      "type": "closure",
+      "facility": "off-ramp",
+      "nearestRoad": "Bartlett Avenue",
+      "municipality": "Niagara",
+      "context": "Niagara · Bartlett Avenue / QEW · off-ramp",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.189972,
+      "longitude": -79.52388,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:290771",
+      "title": "QEW Fort Erie-bound off-ramp closed at Ontario Street -Beamsville",
+      "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at ONTARIO STREET -BEAMSVILLE, Lincoln. ALL LANES CLOSED.",
+      "roadway": "QEW",
+      "direction": "Fort Erie-bound",
+      "type": "closure",
+      "facility": "off-ramp",
+      "nearestRoad": "Ontario Street -Beamsville",
+      "municipality": "Niagara",
+      "context": "Niagara · Ontario Street -Beamsville / QEW · off-ramp",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.18898,
+      "longitude": -79.47688,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:290772",
+      "title": "QEW Fort Erie-bound on-ramp closed at Bartlett Avenue",
+      "rawHeadline": "Nightly Construction on QEW Fort Erie Bound On-ramp at BARTLETT AVENUE, Grimsby. ALL LANES CLOSED.",
+      "roadway": "QEW",
+      "direction": "Fort Erie-bound",
+      "type": "closure",
+      "facility": "on-ramp",
+      "nearestRoad": "Bartlett Avenue",
+      "municipality": "Niagara",
+      "context": "Niagara · Bartlett Avenue / QEW · on-ramp",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.189972,
+      "longitude": -79.52388,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:290773",
+      "title": "QEW Fort Erie-bound on-ramp closed at Ontario Street -Beamsville",
+      "rawHeadline": "Nightly Construction on QEW Fort Erie Bound On-ramp at ONTARIO STREET -BEAMSVILLE, Lincoln. ALL LANES CLOSED.",
+      "roadway": "QEW",
+      "direction": "Fort Erie-bound",
+      "type": "closure",
+      "facility": "on-ramp",
+      "nearestRoad": "Ontario Street -Beamsville",
+      "municipality": "Niagara",
+      "context": "Niagara · Ontario Street -Beamsville / QEW · on-ramp",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.18898,
+      "longitude": -79.47688,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:290774",
+      "title": "QEW Fort Erie-bound on-ramp closed at Ontario Street -Beamsville",
+      "rawHeadline": "Nightly Construction on QEW Fort Erie Bound On-ramp at ONTARIO STREET -BEAMSVILLE, Lincoln. ALL LANES CLOSED.",
+      "roadway": "QEW",
+      "direction": "Fort Erie-bound",
+      "type": "closure",
+      "facility": "on-ramp",
+      "nearestRoad": "Ontario Street -Beamsville",
+      "municipality": "Niagara",
+      "context": "Niagara · Ontario Street -Beamsville / QEW · on-ramp",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.18898,
+      "longitude": -79.47688,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:290930",
+      "title": "Construction on QEW near Fairview Street",
+      "rawHeadline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 4 Left Lane(s).",
+      "roadway": "QEW",
+      "direction": "Fort Erie-bound",
+      "type": "construction",
+      "facility": "mainline",
+      "nearestRoad": "Fairview Street",
+      "municipality": "Burlington",
+      "context": "Burlington · Fairview Street / QEW",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.327545,
+      "longitude": -79.825485,
+      "score": 0,
+      "affectsSkyway": true,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:292416",
+      "title": "Construction on QEW near Burlington Skyway",
+      "rawHeadline": "Nightly Construction on QEW Toronto bound  between BEACH BLVD, Hamilton and BURLINGTON SKYWAY, Burlington. 2 Right Lane(s).",
+      "roadway": "QEW",
+      "direction": "Toronto-bound",
+      "type": "construction",
+      "facility": "mainline",
+      "nearestRoad": "Burlington Skyway",
+      "municipality": "Burlington",
+      "context": "Burlington · Burlington Skyway / QEW",
+      "impact": "Could affect Skyway crossings between Burlington and Hamilton.",
+      "latitude": 43.265415,
+      "longitude": -79.77339,
+      "score": 0,
+      "affectsSkyway": true,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    }
+  ],
+  "skyway": {
+    "value": "Check cameras",
+    "alert": false,
+    "detail": ""
+  },
+  "homepageTraffic": {
+    "label": "Traffic",
+    "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
+    "context": "Oakville · Dorval Drive",
+    "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
+    "freshness": "",
+    "url": "/traffic/",
+    "alert": true
+  },
+  "routes": {
+    "toronto": {
+      "id": "toronto",
+      "label": "Toronto",
+      "origin": "Downtown Burlington",
+      "destination": "Toronto",
+      "geometrySource": "osrm",
+      "metres": 55705.7,
+      "status": {
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "QEW Toronto-bound on-ramp closed at Dorval Drive",
+        "looks": ""
+      },
+      "incidents": [
+        {
+          "id": "511:254943",
+          "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
+          "rawHeadline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+          "roadway": "QEW",
+          "direction": "Toronto-bound",
+          "type": "closure",
+          "facility": "on-ramp",
+          "nearestRoad": "Dorval Drive",
+          "municipality": "Oakville",
+          "context": "Oakville · Dorval Drive / QEW · on-ramp",
+          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
+          "latitude": 43.446465,
+          "longitude": -79.70016,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:290930",
+          "title": "Construction on QEW near Fairview Street",
+          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 4 Left Lane(s).",
+          "roadway": "QEW",
+          "direction": "Fort Erie-bound",
+          "type": "construction",
+          "facility": "mainline",
+          "nearestRoad": "Fairview Street",
+          "municipality": "Burlington",
+          "context": "Burlington · Fairview Street / QEW",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.327545,
+          "longitude": -79.825485,
+          "score": 0,
+          "affectsSkyway": true,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:292475",
+          "title": "Construction on QEW near Brant Street",
+          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound  between GUELPH LINE and BRANT STREET, Burlington. 2 Alternating Lane(s).",
+          "roadway": "QEW",
+          "direction": "Fort Erie-bound",
+          "type": "construction",
+          "facility": "mainline",
+          "nearestRoad": "Brant Street",
+          "municipality": "Burlington",
+          "context": "Burlington · Brant Street / QEW",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.35202,
+          "longitude": -79.80386,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        }
+      ],
+      "cameras": [
+        {
+          "cameraId": 226,
+          "viewId": 586,
+          "cameraName": "QEW West of Brant Street",
+          "viewName": "QEW West of Brant Street",
+          "looks": "",
+          "routeOrder": 99
+        },
+        {
+          "cameraId": 227,
+          "viewId": 587,
+          "cameraName": "QEW East of Brant Street",
+          "viewName": "QEW East of Brant Street",
+          "looks": "",
+          "routeOrder": 105
+        },
+        {
+          "cameraId": 228,
+          "viewId": 588,
+          "cameraName": "QEW at Guelph Line",
+          "viewName": "QEW at Guelph Line",
+          "looks": "",
+          "routeOrder": 199
+        },
+        {
+          "cameraId": 229,
+          "viewId": 589,
+          "cameraName": "QEW East of Guelph Line",
+          "viewName": "QEW East of Guelph Line",
+          "looks": "",
+          "routeOrder": 208
+        },
+        {
+          "cameraId": 230,
+          "viewId": 590,
+          "cameraName": "QEW at Walkers Line",
+          "viewName": "QEW at Walkers Line",
+          "looks": "",
+          "routeOrder": 214
+        },
+        {
+          "cameraId": 231,
+          "viewId": 591,
+          "cameraName": "QEW East of Walkers Line",
+          "viewName": "QEW East of Walkers Line",
+          "looks": "",
+          "routeOrder": 219
+        },
+        {
+          "cameraId": 232,
+          "viewId": 592,
+          "cameraName": "QEW at Appleby Line",
+          "viewName": "QEW at Appleby Line",
+          "looks": "",
+          "routeOrder": 222
+        },
+        {
+          "cameraId": 233,
+          "viewId": 593,
+          "cameraName": "QEW East of Appleby Line",
+          "viewName": "QEW East of Appleby Line",
+          "looks": "",
+          "routeOrder": 225
+        },
+        {
+          "cameraId": 234,
+          "viewId": 594,
+          "cameraName": "QEW at Burloak Drive",
+          "viewName": "QEW at Burloak Drive",
+          "looks": "",
+          "routeOrder": 230
+        },
+        {
+          "cameraId": 235,
+          "viewId": 595,
+          "cameraName": "QEW East of Burloak Drive",
+          "viewName": "QEW East of Burloak Drive",
+          "looks": "",
+          "routeOrder": 233
+        },
+        {
+          "cameraId": 236,
+          "viewId": 596,
+          "cameraName": "QEW at Bronte Road",
+          "viewName": "QEW at Bronte Road",
+          "looks": "",
+          "routeOrder": 236
+        },
+        {
+          "cameraId": 237,
+          "viewId": 597,
+          "cameraName": "QEW East of Bronte Road",
+          "viewName": "QEW East of Bronte Road",
+          "looks": "",
+          "routeOrder": 242
+        },
+        {
+          "cameraId": 238,
+          "viewId": 598,
+          "cameraName": "QEW at Third Line",
+          "viewName": "QEW at Third Line",
+          "looks": "",
+          "routeOrder": 250
+        },
+        {
+          "cameraId": 239,
+          "viewId": 599,
+          "cameraName": "QEW East of Third Line",
+          "viewName": "QEW East of Third Line",
+          "looks": "",
+          "routeOrder": 255
+        },
+        {
+          "cameraId": 240,
+          "viewId": 600,
+          "cameraName": "QEW at Fourth Line",
+          "viewName": "QEW at Fourth Line",
+          "looks": "",
+          "routeOrder": 256
+        },
+        {
+          "cameraId": 241,
+          "viewId": 601,
+          "cameraName": "QEW at Dorval Drive",
+          "viewName": "QEW at Dorval Drive",
+          "looks": "",
+          "routeOrder": 260
+        },
+        {
+          "cameraId": 242,
+          "viewId": 602,
+          "cameraName": "QEW East of Dorval Drive",
+          "viewName": "QEW East of Dorval Drive",
+          "looks": "",
+          "routeOrder": 268
+        },
+        {
+          "cameraId": 223,
+          "viewId": 583,
+          "cameraName": "QEW at Trafalgar Road",
+          "viewName": "QEW at Trafalgar Road",
+          "looks": "",
+          "routeOrder": 272
+        },
+        {
+          "cameraId": 243,
+          "viewId": 603,
+          "cameraName": "QEW at Royal Windsor Drive",
+          "viewName": "QEW at Royal Windsor Drive",
+          "looks": "",
+          "routeOrder": 283
+        },
+        {
+          "cameraId": 245,
+          "viewId": 605,
+          "cameraName": "QEW at Ford Drive",
+          "viewName": "QEW at Ford Drive",
+          "looks": "",
+          "routeOrder": 291
+        }
+      ]
+    },
+    "oakville": {
+      "id": "oakville",
+      "label": "Oakville",
+      "origin": "Downtown Burlington",
+      "destination": "Oakville",
+      "geometrySource": "osrm",
+      "metres": 19823.6,
+      "status": {
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "QEW Toronto-bound on-ramp closed at Dorval Drive",
+        "looks": ""
+      },
+      "incidents": [
+        {
+          "id": "511:254943",
+          "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
+          "rawHeadline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+          "roadway": "QEW",
+          "direction": "Toronto-bound",
+          "type": "closure",
+          "facility": "on-ramp",
+          "nearestRoad": "Dorval Drive",
+          "municipality": "Oakville",
+          "context": "Oakville · Dorval Drive / QEW · on-ramp",
+          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
+          "latitude": 43.446465,
+          "longitude": -79.70016,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:290930",
+          "title": "Construction on QEW near Fairview Street",
+          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 4 Left Lane(s).",
+          "roadway": "QEW",
+          "direction": "Fort Erie-bound",
+          "type": "construction",
+          "facility": "mainline",
+          "nearestRoad": "Fairview Street",
+          "municipality": "Burlington",
+          "context": "Burlington · Fairview Street / QEW",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.327545,
+          "longitude": -79.825485,
+          "score": 0,
+          "affectsSkyway": true,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:292475",
+          "title": "Construction on QEW near Brant Street",
+          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound  between GUELPH LINE and BRANT STREET, Burlington. 2 Alternating Lane(s).",
+          "roadway": "QEW",
+          "direction": "Fort Erie-bound",
+          "type": "construction",
+          "facility": "mainline",
+          "nearestRoad": "Brant Street",
+          "municipality": "Burlington",
+          "context": "Burlington · Brant Street / QEW",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.35202,
+          "longitude": -79.80386,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        }
+      ],
+      "cameras": [
+        {
+          "cameraId": 226,
+          "viewId": 586,
+          "cameraName": "QEW West of Brant Street",
+          "viewName": "QEW West of Brant Street",
+          "looks": "",
+          "routeOrder": 99
+        },
+        {
+          "cameraId": 227,
+          "viewId": 587,
+          "cameraName": "QEW East of Brant Street",
+          "viewName": "QEW East of Brant Street",
+          "looks": "",
+          "routeOrder": 105
+        },
+        {
+          "cameraId": 228,
+          "viewId": 588,
+          "cameraName": "QEW at Guelph Line",
+          "viewName": "QEW at Guelph Line",
+          "looks": "",
+          "routeOrder": 199
+        },
+        {
+          "cameraId": 229,
+          "viewId": 589,
+          "cameraName": "QEW East of Guelph Line",
+          "viewName": "QEW East of Guelph Line",
+          "looks": "",
+          "routeOrder": 208
+        },
+        {
+          "cameraId": 230,
+          "viewId": 590,
+          "cameraName": "QEW at Walkers Line",
+          "viewName": "QEW at Walkers Line",
+          "looks": "",
+          "routeOrder": 214
+        },
+        {
+          "cameraId": 231,
+          "viewId": 591,
+          "cameraName": "QEW East of Walkers Line",
+          "viewName": "QEW East of Walkers Line",
+          "looks": "",
+          "routeOrder": 219
+        },
+        {
+          "cameraId": 232,
+          "viewId": 592,
+          "cameraName": "QEW at Appleby Line",
+          "viewName": "QEW at Appleby Line",
+          "looks": "",
+          "routeOrder": 222
+        },
+        {
+          "cameraId": 233,
+          "viewId": 593,
+          "cameraName": "QEW East of Appleby Line",
+          "viewName": "QEW East of Appleby Line",
+          "looks": "",
+          "routeOrder": 225
+        },
+        {
+          "cameraId": 234,
+          "viewId": 594,
+          "cameraName": "QEW at Burloak Drive",
+          "viewName": "QEW at Burloak Drive",
+          "looks": "",
+          "routeOrder": 230
+        },
+        {
+          "cameraId": 235,
+          "viewId": 595,
+          "cameraName": "QEW East of Burloak Drive",
+          "viewName": "QEW East of Burloak Drive",
+          "looks": "",
+          "routeOrder": 233
+        },
+        {
+          "cameraId": 236,
+          "viewId": 596,
+          "cameraName": "QEW at Bronte Road",
+          "viewName": "QEW at Bronte Road",
+          "looks": "",
+          "routeOrder": 236
+        },
+        {
+          "cameraId": 237,
+          "viewId": 597,
+          "cameraName": "QEW East of Bronte Road",
+          "viewName": "QEW East of Bronte Road",
+          "looks": "",
+          "routeOrder": 242
+        },
+        {
+          "cameraId": 238,
+          "viewId": 598,
+          "cameraName": "QEW at Third Line",
+          "viewName": "QEW at Third Line",
+          "looks": "",
+          "routeOrder": 250
+        },
+        {
+          "cameraId": 239,
+          "viewId": 599,
+          "cameraName": "QEW East of Third Line",
+          "viewName": "QEW East of Third Line",
+          "looks": "",
+          "routeOrder": 255
+        },
+        {
+          "cameraId": 240,
+          "viewId": 600,
+          "cameraName": "QEW at Fourth Line",
+          "viewName": "QEW at Fourth Line",
+          "looks": "",
+          "routeOrder": 256
+        },
+        {
+          "cameraId": 241,
+          "viewId": 601,
+          "cameraName": "QEW at Dorval Drive",
+          "viewName": "QEW at Dorval Drive",
+          "looks": "",
+          "routeOrder": 272
+        },
+        {
+          "cameraId": 242,
+          "viewId": 602,
+          "cameraName": "QEW East of Dorval Drive",
+          "viewName": "QEW East of Dorval Drive",
+          "looks": "",
+          "routeOrder": 316
+        }
+      ]
+    },
+    "hamilton": {
+      "id": "hamilton",
+      "label": "Hamilton",
+      "origin": "Downtown Burlington",
+      "destination": "Hamilton",
+      "geometrySource": "osrm",
+      "metres": 19558.8,
+      "status": {
+        "level": "unknown",
+        "headline": "Check cameras",
+        "detail": "No current camera estimate.",
+        "looks": ""
+      },
+      "incidents": [
+        {
+          "id": "511:290930",
+          "title": "Construction on QEW near Fairview Street",
+          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 4 Left Lane(s).",
+          "roadway": "QEW",
+          "direction": "Fort Erie-bound",
+          "type": "construction",
+          "facility": "mainline",
+          "nearestRoad": "Fairview Street",
+          "municipality": "Burlington",
+          "context": "Burlington · Fairview Street / QEW",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.327545,
+          "longitude": -79.825485,
+          "score": 0,
+          "affectsSkyway": true,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:292478",
+          "title": "Construction on QEW near Fairview Street",
+          "rawHeadline": "Nightly Construction on QEW Toronto bound  between NORTHSHORE BLVD and FAIRVIEW STREET/PLAINS ROAD, Burlington. 2 Alternating Lane(s).",
+          "roadway": "QEW",
+          "direction": "Toronto-bound",
+          "type": "construction",
+          "facility": "mainline",
+          "nearestRoad": "Fairview Street",
+          "municipality": "Burlington",
+          "context": "Burlington · Fairview Street / QEW",
+          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
+          "latitude": 43.315086,
+          "longitude": -79.80735,
+          "score": 0,
+          "affectsSkyway": true,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:292479",
+          "title": "Construction on QEW near Brant Street",
+          "rawHeadline": "Nightly Construction on QEW Toronto bound  between FAIRVIEW STREET/PLAINS ROAD and BRANT STREET, Burlington. 1 Alternating Lane(s).",
+          "roadway": "QEW",
+          "direction": "Toronto-bound",
+          "type": "construction",
+          "facility": "mainline",
+          "nearestRoad": "Brant Street",
+          "municipality": "Burlington",
+          "context": "Burlington · Brant Street / QEW",
+          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
+          "latitude": 43.327545,
+          "longitude": -79.825485,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        }
+      ],
+      "cameras": [
+        {
+          "cameraId": 1403,
+          "viewId": 2826,
+          "cameraName": "QEW West of Northshore Boulevard",
+          "viewName": "QEW West of Northshore Boulevard",
+          "looks": "",
+          "routeOrder": 116
+        },
+        {
+          "cameraId": 4,
+          "viewId": 10,
+          "cameraName": "Burlington Skyway — Fort Erie-bound",
+          "viewName": "Fort Erie-bound view",
+          "looks": "",
+          "routeOrder": 117
+        },
+        {
+          "cameraId": 4,
+          "viewId": 11,
+          "cameraName": "Burlington Skyway — Overhead",
+          "viewName": "Overhead",
+          "looks": "",
+          "routeOrder": 117
+        },
+        {
+          "cameraId": 4,
+          "viewId": 12,
+          "cameraName": "Burlington Skyway — Toronto-bound",
+          "viewName": "Toronto-bound view",
+          "looks": "",
+          "routeOrder": 117
+        },
+        {
+          "cameraId": 1404,
+          "viewId": 2827,
+          "cameraName": "QEW East of Northshore Boulevard",
+          "viewName": "QEW East of Northshore Boulevard",
+          "looks": "",
+          "routeOrder": 128
+        },
+        {
+          "cameraId": 224,
+          "viewId": 584,
+          "cameraName": "QEW at Fairview Street",
+          "viewName": "QEW at Fairview Street",
+          "looks": "",
+          "routeOrder": 145
+        },
+        {
+          "cameraId": 227,
+          "viewId": 587,
+          "cameraName": "QEW East of Brant Street",
+          "viewName": "QEW East of Brant Street",
+          "looks": "",
+          "routeOrder": 189
+        },
+        {
+          "cameraId": 226,
+          "viewId": 586,
+          "cameraName": "QEW West of Brant Street",
+          "viewName": "QEW West of Brant Street",
+          "looks": "",
+          "routeOrder": 191
+        }
+      ]
+    },
+    "stoney-creek": {
+      "id": "stoney-creek",
+      "label": "Stoney Creek",
+      "origin": "Downtown Burlington",
+      "destination": "Stoney Creek",
+      "geometrySource": "osrm",
+      "metres": 27158.9,
+      "status": {
+        "level": "unknown",
+        "headline": "Check cameras",
+        "detail": "No current camera estimate.",
+        "looks": ""
+      },
+      "incidents": [
+        {
+          "id": "511:290930",
+          "title": "Construction on QEW near Fairview Street",
+          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 4 Left Lane(s).",
+          "roadway": "QEW",
+          "direction": "Fort Erie-bound",
+          "type": "construction",
+          "facility": "mainline",
+          "nearestRoad": "Fairview Street",
+          "municipality": "Burlington",
+          "context": "Burlington · Fairview Street / QEW",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.327545,
+          "longitude": -79.825485,
+          "score": 0,
+          "affectsSkyway": true,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:292416",
+          "title": "Construction on QEW near Burlington Skyway",
+          "rawHeadline": "Nightly Construction on QEW Toronto bound  between BEACH BLVD, Hamilton and BURLINGTON SKYWAY, Burlington. 2 Right Lane(s).",
+          "roadway": "QEW",
+          "direction": "Toronto-bound",
+          "type": "construction",
+          "facility": "mainline",
+          "nearestRoad": "Burlington Skyway",
+          "municipality": "Burlington",
+          "context": "Burlington · Burlington Skyway / QEW",
+          "impact": "Could affect Skyway crossings between Burlington and Hamilton.",
+          "latitude": 43.265415,
+          "longitude": -79.77339,
+          "score": 0,
+          "affectsSkyway": true,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:292478",
+          "title": "Construction on QEW near Fairview Street",
+          "rawHeadline": "Nightly Construction on QEW Toronto bound  between NORTHSHORE BLVD and FAIRVIEW STREET/PLAINS ROAD, Burlington. 2 Alternating Lane(s).",
+          "roadway": "QEW",
+          "direction": "Toronto-bound",
+          "type": "construction",
+          "facility": "mainline",
+          "nearestRoad": "Fairview Street",
+          "municipality": "Burlington",
+          "context": "Burlington · Fairview Street / QEW",
+          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
+          "latitude": 43.315086,
+          "longitude": -79.80735,
+          "score": 0,
+          "affectsSkyway": true,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        }
+      ],
+      "cameras": [
+        {
+          "cameraId": 1403,
+          "viewId": 2826,
+          "cameraName": "QEW West of Northshore Boulevard",
+          "viewName": "QEW West of Northshore Boulevard",
+          "looks": "",
+          "routeOrder": 116
+        },
+        {
+          "cameraId": 1404,
+          "viewId": 2827,
+          "cameraName": "QEW East of Northshore Boulevard",
+          "viewName": "QEW East of Northshore Boulevard",
+          "looks": "",
+          "routeOrder": 128
+        },
+        {
+          "cameraId": 224,
+          "viewId": 584,
+          "cameraName": "QEW at Fairview Street",
+          "viewName": "QEW at Fairview Street",
+          "looks": "",
+          "routeOrder": 160
+        },
+        {
+          "cameraId": 4,
+          "viewId": 10,
+          "cameraName": "Burlington Skyway — Fort Erie-bound",
+          "viewName": "Fort Erie-bound view",
+          "looks": "",
+          "routeOrder": 218
+        },
+        {
+          "cameraId": 4,
+          "viewId": 11,
+          "cameraName": "Burlington Skyway — Overhead",
+          "viewName": "Overhead",
+          "looks": "",
+          "routeOrder": 218
+        },
+        {
+          "cameraId": 4,
+          "viewId": 12,
+          "cameraName": "Burlington Skyway — Toronto-bound",
+          "viewName": "Toronto-bound view",
+          "looks": "",
+          "routeOrder": 218
+        },
+        {
+          "cameraId": 220,
+          "viewId": 580,
+          "cameraName": "Burlington Skyway — Toronto side",
+          "viewName": "Toronto side",
+          "looks": "",
+          "routeOrder": 225
+        },
+        {
+          "cameraId": 219,
+          "viewId": 579,
+          "cameraName": "Burlington Skyway — Hamilton side",
+          "viewName": "Hamilton side",
+          "looks": "",
+          "routeOrder": 225
+        },
+        {
+          "cameraId": 218,
+          "viewId": 578,
+          "cameraName": "QEW East of Eastport Drive - Toronto Bound",
+          "viewName": "Toronto-bound view",
+          "looks": "",
+          "routeOrder": 229
+        },
+        {
+          "cameraId": 217,
+          "viewId": 577,
+          "cameraName": "QEW West of Eastport Drive",
+          "viewName": "QEW West of Eastport Drive",
+          "looks": "",
+          "routeOrder": 235
+        },
+        {
+          "cameraId": 216,
+          "viewId": 576,
+          "cameraName": "QEW at Woodward Avenue",
+          "viewName": "QEW at Woodward Avenue",
+          "looks": "",
+          "routeOrder": 247
+        },
+        {
+          "cameraId": 215,
+          "viewId": 575,
+          "cameraName": "QEW at Nikola Tesla Boulevard",
+          "viewName": "QEW at Nikola Tesla Boulevard",
+          "looks": "",
+          "routeOrder": 255
+        },
+        {
+          "cameraId": 214,
+          "viewId": 574,
+          "cameraName": "QEW at Red Hill Valley Parkway",
+          "viewName": "QEW at Red Hill Valley Parkway",
+          "looks": "",
+          "routeOrder": 262
+        },
+        {
+          "cameraId": 213,
+          "viewId": 573,
+          "cameraName": "QEW at Centennial Parkway",
+          "viewName": "QEW at Centennial Parkway",
+          "looks": "",
+          "routeOrder": 305
+        },
+        {
+          "cameraId": 212,
+          "viewId": 572,
+          "cameraName": "QEW at Grays Road",
+          "viewName": "QEW at Grays Road",
+          "looks": "",
+          "routeOrder": 332
+        },
+        {
+          "cameraId": 211,
+          "viewId": 571,
+          "cameraName": "QEW at Millen Road",
+          "viewName": "QEW at Millen Road",
+          "looks": "",
+          "routeOrder": 335
+        },
+        {
+          "cameraId": 1411,
+          "viewId": 2842,
+          "cameraName": "QEW West of Fifty Road",
+          "viewName": "QEW West of Fifty Road",
+          "looks": "",
+          "routeOrder": 405
+        }
+      ]
+    },
+    "niagara-falls": {
+      "id": "niagara-falls",
+      "label": "Niagara Falls",
+      "origin": "Downtown Burlington",
+      "destination": "Niagara Falls",
+      "geometrySource": "osrm",
+      "metres": 78564.8,
+      "status": {
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "QEW Fort Erie-bound off-ramp closed at Christie St / Lakeview Ave",
+        "looks": ""
+      },
+      "incidents": [
+        {
+          "id": "511:288257",
+          "title": "QEW Fort Erie-bound off-ramp closed at Christie St / Lakeview Ave",
+          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at CHRISTIE ST / LAKEVIEW AVE, Grimsby. ALL LANES CLOSED.",
+          "roadway": "QEW",
+          "direction": "Fort Erie-bound",
+          "type": "closure",
+          "facility": "off-ramp",
+          "nearestRoad": "Christie St / Lakeview Ave",
+          "municipality": "Grimsby",
+          "context": "Grimsby · Christie St / Lakeview Ave / QEW · off-ramp",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.19871,
+          "longitude": -79.56138,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:288279",
+          "title": "QEW Fort Erie-bound off-ramp closed at Christie St / Lakeview Ave",
+          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at CHRISTIE ST / LAKEVIEW AVE, Grimsby. ALL LANES CLOSED.",
+          "roadway": "QEW",
+          "direction": "Fort Erie-bound",
+          "type": "closure",
+          "facility": "off-ramp",
+          "nearestRoad": "Christie St / Lakeview Ave",
+          "municipality": "Grimsby",
+          "context": "Grimsby · Christie St / Lakeview Ave / QEW · off-ramp",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.19871,
+          "longitude": -79.56138,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:290769",
+          "title": "QEW Fort Erie-bound on-ramp closed at Bartlett Avenue",
+          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound On-ramp at BARTLETT AVENUE, Grimsby. ALL LANES CLOSED.",
+          "roadway": "QEW",
+          "direction": "Fort Erie-bound",
+          "type": "closure",
+          "facility": "on-ramp",
+          "nearestRoad": "Bartlett Avenue",
+          "municipality": "Niagara",
+          "context": "Niagara · Bartlett Avenue / QEW · on-ramp",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.189972,
+          "longitude": -79.52388,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        }
+      ],
+      "cameras": [
+        {
+          "cameraId": 1403,
+          "viewId": 2826,
+          "cameraName": "QEW West of Northshore Boulevard",
+          "viewName": "QEW West of Northshore Boulevard",
+          "looks": "",
+          "routeOrder": 116
+        },
+        {
+          "cameraId": 1404,
+          "viewId": 2827,
+          "cameraName": "QEW East of Northshore Boulevard",
+          "viewName": "QEW East of Northshore Boulevard",
+          "looks": "",
+          "routeOrder": 128
+        },
+        {
+          "cameraId": 224,
+          "viewId": 584,
+          "cameraName": "QEW at Fairview Street",
+          "viewName": "QEW at Fairview Street",
+          "looks": "",
+          "routeOrder": 160
+        },
+        {
+          "cameraId": 4,
+          "viewId": 10,
+          "cameraName": "Burlington Skyway — Fort Erie-bound",
+          "viewName": "Fort Erie-bound view",
+          "looks": "",
+          "routeOrder": 218
+        },
+        {
+          "cameraId": 4,
+          "viewId": 11,
+          "cameraName": "Burlington Skyway — Overhead",
+          "viewName": "Overhead",
+          "looks": "",
+          "routeOrder": 218
+        },
+        {
+          "cameraId": 4,
+          "viewId": 12,
+          "cameraName": "Burlington Skyway — Toronto-bound",
+          "viewName": "Toronto-bound view",
+          "looks": "",
+          "routeOrder": 218
+        },
+        {
+          "cameraId": 220,
+          "viewId": 580,
+          "cameraName": "Burlington Skyway — Toronto side",
+          "viewName": "Toronto side",
+          "looks": "",
+          "routeOrder": 225
+        },
+        {
+          "cameraId": 219,
+          "viewId": 579,
+          "cameraName": "Burlington Skyway — Hamilton side",
+          "viewName": "Hamilton side",
+          "looks": "",
+          "routeOrder": 225
+        },
+        {
+          "cameraId": 218,
+          "viewId": 578,
+          "cameraName": "QEW East of Eastport Drive - Toronto Bound",
+          "viewName": "Toronto-bound view",
+          "looks": "",
+          "routeOrder": 229
+        },
+        {
+          "cameraId": 217,
+          "viewId": 577,
+          "cameraName": "QEW West of Eastport Drive",
+          "viewName": "QEW West of Eastport Drive",
+          "looks": "",
+          "routeOrder": 235
+        },
+        {
+          "cameraId": 216,
+          "viewId": 576,
+          "cameraName": "QEW at Woodward Avenue",
+          "viewName": "QEW at Woodward Avenue",
+          "looks": "",
+          "routeOrder": 247
+        },
+        {
+          "cameraId": 215,
+          "viewId": 575,
+          "cameraName": "QEW at Nikola Tesla Boulevard",
+          "viewName": "QEW at Nikola Tesla Boulevard",
+          "looks": "",
+          "routeOrder": 255
+        },
+        {
+          "cameraId": 214,
+          "viewId": 574,
+          "cameraName": "QEW at Red Hill Valley Parkway",
+          "viewName": "QEW at Red Hill Valley Parkway",
+          "looks": "",
+          "routeOrder": 262
+        },
+        {
+          "cameraId": 213,
+          "viewId": 573,
+          "cameraName": "QEW at Centennial Parkway",
+          "viewName": "QEW at Centennial Parkway",
+          "looks": "",
+          "routeOrder": 305
+        },
+        {
+          "cameraId": 212,
+          "viewId": 572,
+          "cameraName": "QEW at Grays Road",
+          "viewName": "QEW at Grays Road",
+          "looks": "",
+          "routeOrder": 332
+        },
+        {
+          "cameraId": 211,
+          "viewId": 571,
+          "cameraName": "QEW at Millen Road",
+          "viewName": "QEW at Millen Road",
+          "looks": "",
+          "routeOrder": 335
+        },
+        {
+          "cameraId": 1411,
+          "viewId": 2842,
+          "cameraName": "QEW West of Fifty Road",
+          "viewName": "QEW West of Fifty Road",
+          "looks": "",
+          "routeOrder": 348
+        },
+        {
+          "cameraId": 1227,
+          "viewId": 2418,
+          "cameraName": "QEW near Ontario Street (Beamsville)",
+          "viewName": "Toronto-bound view",
+          "looks": "",
+          "routeOrder": 405
+        },
+        {
+          "cameraId": 1227,
+          "viewId": 2419,
+          "cameraName": "QEW near Ontario Street (Beamsville)",
+          "viewName": "Overhead",
+          "looks": "",
+          "routeOrder": 405
+        },
+        {
+          "cameraId": 1227,
+          "viewId": 2420,
+          "cameraName": "QEW near Ontario Street (Beamsville)",
+          "viewName": "Fort Erie-bound view",
+          "looks": "",
+          "routeOrder": 405
+        },
+        {
+          "cameraId": 1285,
+          "viewId": 2559,
+          "cameraName": "QEW at Jordan Road",
+          "viewName": "Toronto-bound view",
+          "looks": "",
+          "routeOrder": 447
+        },
+        {
+          "cameraId": 1285,
+          "viewId": 2560,
+          "cameraName": "QEW at Jordan Road",
+          "viewName": "Fort Erie-bound view",
+          "looks": "",
+          "routeOrder": 447
+        }
+      ]
+    }
+  },
+  "attribution": "Map routes from OpenStreetMap via OSRM. Camera and incident data © King's Printer for Ontario."
+}

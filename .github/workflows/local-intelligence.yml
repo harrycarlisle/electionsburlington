@@ -27,13 +27,18 @@ jobs:
         run: python -m pip install --disable-pip-version-check gtfs-realtime-bindings==1.0.0
       - name: Refresh official local feeds
         run: python scripts/update_local_intelligence.py
+      - name: Refresh traffic cameras and route surface
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TRAFFIC_VISION_KEY: ${{ secrets.TRAFFIC_VISION_KEY }}
+        run: |
+          python scripts/build_traffic_cameras.py
+          python scripts/analyze_traffic_cameras.py
+          python scripts/build_traffic_surface.py
       - name: Commit changed data
         run: |
-          if git diff --quiet -- data/local-intelligence.json data/local-intelligence-previous.json data/local-leads.json; then
-            echo "No local intelligence changes"
-            exit 0
-          fi
           python scripts/safe_bot_commit.py \
             --name "Burlington News Bot" \
             --message "Update local intelligence" \
-            data/local-intelligence.json data/local-intelligence-previous.json data/local-leads.json
+            data/local-intelligence.json data/local-intelligence-previous.json data/local-leads.json \
+            data/traffic-cameras.json data/traffic-surface.json data/traffic-routes.json data/traffic-estimates.json

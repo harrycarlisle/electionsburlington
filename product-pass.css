@@ -113,3 +113,76 @@ html[data-theme="dark"] .bored-actions button{background:#11191d;color:#edf4f8;b
 }
 html[data-theme="dark"] .menu-theme-toggle,
 html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8ef;border-color:#3c4d58}
+
+/* Compact homepage status strip: no Right Now chrome. */
+.local-now{margin:6px 0 22px!important;padding:0 0 14px!important;border-top:0!important;border-bottom:1px solid var(--line)!important}
+.local-now .now-heading{display:none!important}
+.now-strip{display:grid;gap:10px}
+.now-item{display:grid;grid-template-columns:72px minmax(0,1fr);gap:8px 12px;align-items:baseline;padding:0;margin:0;text-decoration:none;color:var(--ink);min-width:0}
+.now-item small{font:800 10px/1.2 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.now-item strong,.now-item .now-weather-value{font:650 15px/1.25 Arial,sans-serif;color:var(--ink)}
+.now-item em{grid-column:2;font-style:normal;color:var(--muted);font-size:12px;line-height:1.35}
+.now-item.is-alert strong{font-weight:800}
+.now-go-lines{display:grid;gap:2px}
+.now-go-lines a{color:inherit;text-decoration:none;font-size:15px;line-height:1.3}
+.now-go-lines b{font-weight:750;margin-right:6px}
+.now-go-lines a:hover{text-decoration:underline}
+.now-weather-value{display:inline!important}
+.now-utilities,.now-priority{display:none!important}
+
+/* Traffic page: editorial camera rows, not a cramped 3-up grid. */
+.traffic-page{width:min(calc(100% - 40px),1120px);margin:28px auto 80px}
+.traffic-page .traffic-hero{position:relative;padding:18px 0 22px}
+.traffic-page .traffic-kicker,.route-ask,.route-kicker{color:var(--muted);font:800 11px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.traffic-page h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,6vw,68px);line-height:.96;letter-spacing:-.04em;margin:8px 0 10px;max-width:16ch}
+.traffic-page .traffic-hero p,.route-origin,.analysis-note p{margin:0;color:var(--muted);font-size:16px;line-height:1.5;max-width:62ch}
+.traffic-page .live-chip{position:absolute;right:0;top:28px;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:750;color:var(--muted)}
+.traffic-page .live-chip i{width:8px;height:8px;border-radius:50%;background:#2fa866}
+.route-picker{padding:8px 0 18px}
+.route-chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 10px}
+.route-chips button{min-height:40px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);font:750 13px/1 Arial,sans-serif;cursor:pointer}
+.route-chips button[aria-pressed="true"]{background:var(--navy);color:var(--paper);border-color:var(--navy)}
+.route-chips .is-quiet{border-style:dashed}
+.route-status{padding:8px 0 6px}
+.route-status h2{margin:6px 0 6px;font:700 28px/1.1 Georgia,"Times New Roman",serif;color:var(--navy)}
+.route-based{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;margin:0 0 22px;color:var(--muted);font-size:13px}
+.route-based small{font:800 10px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.route-based div{display:flex;flex-wrap:wrap;gap:8px 14px}
+.camera-live{display:grid;gap:28px}
+.traffic-camera{display:grid;gap:12px;min-width:0}
+.traffic-camera-media{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:10px;min-height:260px}
+.traffic-camera-shot,.traffic-camera-map{position:relative;margin:0;overflow:hidden;background:#d7e1e8;border-radius:2px;min-height:0}
+.traffic-camera-shot img,.traffic-camera-map img{width:100%;height:100%;object-fit:cover;display:block}
+.traffic-camera-shot img{aspect-ratio:16/10}
+.traffic-camera-map{aspect-ratio:16/10}
+.traffic-pin{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#c23b22;border:2px solid #fff;box-shadow:0 0 0 5px rgba(194,59,34,.16)}
+.traffic-pin i{position:absolute;left:12px;top:5px;width:16px;height:2px;background:#c23b22;transform-origin:left center}
+.traffic-pin.is-east i{transform:rotate(-18deg)}
+.traffic-pin.is-west i{transform:rotate(162deg)}
+.traffic-camera-copy{display:grid;gap:3px}
+.traffic-camera-copy strong{font:700 22px/1.15 Georgia,"Times New Roman",serif;color:var(--navy)}
+.traffic-camera-copy span,.traffic-camera-copy em{color:var(--muted);font:13px/1.4 Arial,sans-serif;font-style:normal}
+.camera-other{margin-top:28px;padding-top:16px}
+.camera-other h2{margin:0 0 8px;font:800 11px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.camera-other ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.camera-other li{display:flex;justify-content:space-between;gap:16px;padding:8px 0;color:var(--ink);font-size:14px}
+.camera-other span{color:var(--muted);font-size:12px}
+.map-credit,.analysis-note{margin-top:16px;color:var(--muted);font-size:11px;line-height:1.45}
+.analysis-note{padding-top:18px}
+.analysis-note strong{display:block;margin-bottom:6px;color:var(--navy);font-size:12px}
+.camera-grid,.camera-card,.camera-map-credit{display:none}
+html[data-theme="dark"] .route-chips button[aria-pressed="true"]{background:#edf4f8;color:#101517;border-color:#edf4f8}
+html[data-theme="dark"] .traffic-camera-copy strong,.traffic-page .route-status h2{color:var(--navy)}
+@media(max-width:800px){
+  .traffic-page{width:calc(100% - 32px);margin-top:16px}
+  .traffic-page .live-chip{position:static;margin-top:14px}
+  .traffic-camera-media{grid-template-columns:1fr;min-height:0}
+  .traffic-camera-copy strong{font-size:20px}
+  .now-item{grid-template-columns:64px minmax(0,1fr)}
+}
+@media(max-width:560px){
+  .traffic-page h1{font-size:40px}
+  .route-status h2{font-size:24px}
+  .route-chips button{min-height:38px;font-size:12px}
+  html,body{overflow-x:hidden}
+}

@@ -82,7 +82,11 @@
         if (!Number.isFinite(temperature)) return;
         const condition = weatherLabel(Number(data.current?.weather_code));
         hosts.forEach(host => {
-          host.innerHTML = `${weatherIcon}<strong>${temperature}°C</strong>${condition ? `<em>${condition}</em>` : ''}`;
+          if (host.hasAttribute('data-weather-compact')) {
+            host.innerHTML = condition ? `${temperature}°C · ${esc(condition)}` : `${temperature}°C`;
+          } else {
+            host.innerHTML = `${weatherIcon}<strong>${temperature}°C</strong>${condition ? `<em>${condition}</em>` : ''}`;
+          }
           host.setAttribute('aria-label', `${temperature} degrees Celsius in Burlington${condition ? `, ${condition}` : ''}`);
           host.hidden = false;
         });

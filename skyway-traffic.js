@@ -1,126 +1,222 @@
 (() => {
-  const grid = document.querySelector('.camera-grid');
-  const cameraStatus = document.getElementById('cameraStatus');
-  const trafficEstimate = document.getElementById('trafficEstimate');
-  const incidentSummary = document.getElementById('incidentSummary');
-  const liveCameras = new Set();
-  const SKYWAY = {lat:43.295, lon:-79.79};
-  const kmBetween = (a,b,c,d) => {
-    const r=6371, toRad=x=>x*Math.PI/180;
-    const dLat=toRad(c-a), dLon=toRad(d-b);
-    const q=Math.sin(dLat/2)**2+Math.cos(toRad(a))*Math.cos(toRad(c))*Math.sin(dLon/2)**2;
-    return 2*r*Math.asin(Math.sqrt(q));
-  };
-  function tileXY(lat, lon, zoom) {
+  const DESTINATIONS = [
+    {id:'toronto', label:'Toronto'},
+    {id:'oakville', label:'Oakville'},
+    {id:'hamilton', label:'Hamilton'},
+    {id:'stoney-creek', label:'Stoney Creek'},
+    {id:'niagara-falls', label:'Niagara Falls'}
+  ];
+  const live = new Set();
+  let cameras = [];
+  let surface = null;
+  let estimates = {};
+  let mode = 'toronto';
+
+  const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const byId = id => document.getElementById(id);
+
+  function tileInfo(lat, lon, zoom) {
     const n = 2 ** zoom;
-    const x = Math.floor((lon + 180) / 360 * n);
-    const y = Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * n);
-    return {x, y, zoom};
+    const x = (lon + 180) / 360 * n;
+    const latRad = lat * Math.PI / 180;
+    const y = (1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * n;
+    return {
+      zoom,
+      tileX: Math.floor(x),
+      tileY: Math.floor(y),
+      left: ((x - Math.floor(x)) * 100).toFixed(2),
+      top: ((y - Math.floor(y)) * 100).toFixed(2)
+    };
   }
-  function mapMarkup(cam) {
-    const tile = tileXY(cam.lat, cam.lon, 13);
-    return `<div class="camera-map"><img src="https://tile.openstreetmap.org/${tile.zoom}/${tile.x}/${tile.y}.png" alt="OpenStreetMap location of ${cam.name}" loading="lazy"><span class="camera-pin" aria-hidden="true"><i></i></span></div><p class="camera-map-credit">© OpenStreetMap contributors</p>`;
+
+  function mapZoom(cam) {
+    const name = `${cam.cameraName || ''} ${cam.nearestRoad || ''}`;
+    return /skyway|eastport/i.test(name) ? 11 : 12;
   }
+
+  function directionClass(direction) {
+    const value = String(direction || '').toLowerCase();
+    if (value.includes('toronto') || value.includes('east')) return 'is-east';
+    if (value.includes('fort erie') || value.includes('west') || value.includes('niagara')) return 'is-west';
+    return '';
+  }
+
+  function looksFor(cam) {
+    const key = String(cam.viewId || cam.cameraId);
+    return estimates[key]?.traffic || cam.looks || '';
+  }
+
+  function looksLine(cam) {
+    const looks = looksFor(cam);
+    return looks ? `Traffic looks ${looks}` : '';
+  }
+
+  function cameraCard(cam) {
+    const zoom = mapZoom(cam);
+    const tile = tileInfo(cam.latitude, cam.longitude, zoom);
+    const looks = looksLine(cam);
+    const dir = directionClass(cam.direction);
+    return `<article class="traffic-camera" data-view="${esc(cam.viewId)}">
+      <div class="traffic-camera-media">
+        <figure class="traffic-camera-shot">
+          <img crossorigin="anonymous" data-camera="${esc(cam.viewId)}" src="https://511on.ca/map/Cctv/${esc(cam.viewId)}" alt="Live Ontario 511 camera: ${esc(cam.cameraName)}">
+        </figure>
+        <div class="traffic-camera-map" aria-hidden="true">
+          <img src="https://tile.openstreetmap.org/${tile.zoom}/${tile.tileX}/${tile.tileY}.png" alt="">
+          <span class="traffic-pin ${dir}" style="left:${tile.left}%;top:${tile.top}%"><i></i></span>
+        </div>
+      </div>
+      <div class="traffic-camera-copy">
+        <strong>${esc(cam.cameraName)}</strong>
+        <span>${esc(cam.viewName || cam.direction || '')}</span>
+        ${looks ? `<em>${esc(looks)}</em>` : ''}
+      </div>
+    </article>`;
+  }
+
+  function unavailableRow(cam) {
+    return `<li><strong>${esc(cam.cameraName)}</strong><span>Temporarily unavailable</span></li>`;
+  }
+
+  function selectedRoute() {
+    return surface?.routes?.[mode] || null;
+  }
+
+  function camerasForMode() {
+    if (mode === 'all') return cameras.filter(cam => cam.group === 'primary' || cameras.length < 20);
+    const route = selectedRoute();
+    const ids = new Set((route?.cameras || []).map(item => String(item.viewId || item.cameraId)));
+    const matched = cameras.filter(cam => ids.has(String(cam.viewId)) || ids.has(String(cam.cameraId)));
+    if (matched.length) return matched;
+    return cameras.filter(cam => cam.group === 'primary');
+  }
+
+  function renderRoute() {
+    const status = byId('routeStatus');
+    const based = byId('routeBased');
+    const route = selectedRoute();
+    if (!status) return;
+    if (mode === 'all' || !route) {
+      status.innerHTML = `<p class="route-kicker">All cameras</p><h2>Burlington-area cameras</h2><p>Official Ontario 511 views along the QEW, Skyway and nearby interchanges.</p>`;
+      if (based) based.innerHTML = '';
+      return;
+    }
+    const incident = (route.incidents || []).find(item => item.type === 'closure' || item.type === 'collision');
+    const headline = incident ? 'Delay likely' : (route.status?.headline || 'Check cameras');
+    const detail = incident ? incident.title : (route.status?.detail || 'No major incidents detected on this Burlington route.');
+    const empty = !incident && !route.status?.looks;
+    status.innerHTML = `<p class="route-kicker">${esc(route.label)}</p><h2>${esc(headline)}</h2><p>${esc(empty ? 'No current camera estimate. Live cameras for this route are below.' : detail)}</p>`;
+    const bits = (route.cameras || []).map(item => {
+      const looks = item.looks || estimates[String(item.viewId)]?.traffic || '';
+      const short = String(item.cameraName || '').replace(/^QEW (at|east of|west of) /i, '');
+      return looks ? `<span>${esc(short)} · ${esc(looks)}</span>` : '';
+    }).filter(Boolean);
+    if (based) based.innerHTML = bits.length ? `<small>Based on</small><div>${bits.join('')}</div>` : '';
+  }
+
+  function renderCameras() {
+    const liveHost = byId('cameraLive');
+    const otherHost = byId('cameraOther');
+    const otherWrap = byId('cameraOtherWrap');
+    const chosen = camerasForMode();
+    const available = [];
+    const unavailable = [];
+    chosen.forEach(cam => {
+      const officialDown = String(cam.status || '').toLowerCase() === 'disabled';
+      if (officialDown) unavailable.push(cam);
+      else available.push(cam);
+    });
+    if (liveHost) liveHost.innerHTML = available.map(cameraCard).join('');
+    if (otherHost) otherHost.innerHTML = unavailable.map(unavailableRow).join('');
+    if (otherWrap) otherWrap.hidden = !unavailable.length;
+    bindImages();
+    paintStatus();
+  }
+
   function paintStatus() {
+    const el = byId('cameraStatus');
     const images = [...document.querySelectorAll('[data-camera]')];
-    if (cameraStatus) cameraStatus.textContent = `${liveCameras.size} of ${images.length} cameras live`;
+    if (el) el.textContent = images.length ? `${live.size} of ${images.length} cameras live` : 'Loading cameras';
   }
+
   function bindImages() {
     document.querySelectorAll('[data-camera]').forEach(image => {
+      if (image.dataset.bound) return;
+      image.dataset.bound = '1';
+      const card = image.closest('.traffic-camera');
+      const moveUnavailable = () => {
+        live.delete(image.dataset.camera);
+        if (!card) return;
+        const cam = cameras.find(item => String(item.viewId) === String(image.dataset.camera));
+        card.remove();
+        const otherHost = byId('cameraOther');
+        const otherWrap = byId('cameraOtherWrap');
+        if (cam && otherHost && !otherHost.querySelector(`[data-missing="${cam.viewId}"]`)) {
+          otherHost.insertAdjacentHTML('beforeend', `<li data-missing="${esc(cam.viewId)}"><strong>${esc(cam.cameraName)}</strong><span>Temporarily unavailable</span></li>`);
+        }
+        if (otherWrap) otherWrap.hidden = !otherHost?.children.length;
+        paintStatus();
+      };
       image.addEventListener('load', () => {
-        image.closest('.camera-card')?.classList.remove('is-error');
-        liveCameras.add(image.dataset.camera);
-        paintStatus();
-        scheduleVisualEstimate();
-      });
-      image.addEventListener('error', () => {
-        liveCameras.delete(image.dataset.camera);
-        image.closest('.camera-card')?.classList.add('is-error');
+        if (!image.naturalWidth) return moveUnavailable();
+        live.add(image.dataset.camera);
         paintStatus();
       });
-      if (image.complete && image.naturalWidth) {
-        liveCameras.add(image.dataset.camera);
+      image.addEventListener('error', moveUnavailable);
+      if (image.complete) {
+        if (image.naturalWidth) live.add(image.dataset.camera);
+        else moveUnavailable();
         paintStatus();
       }
     });
   }
-  async function loadIncidents() {
-    if (!incidentSummary) return;
-    try {
-      const response = await fetch('https://511on.ca/api/v2/get/event?format=json&lang=en', {cache:'no-store'});
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const events = await response.json();
-      const nearby = (Array.isArray(events) ? events : []).filter(event => {
-        const lat = Number(event.Latitude), lon = Number(event.Longitude);
-        if (!Number.isFinite(lat) || !Number.isFinite(lon)) return false;
-        const road = String(event.RoadwayName || '').toLowerCase();
-        return kmBetween(SKYWAY.lat, SKYWAY.lon, lat, lon) <= 8 && (road.includes('qew') || road.includes('403') || road.includes('skyway') || road.includes('burlington'));
+
+  function renderChips() {
+    const host = byId('routeChips');
+    if (!host) return;
+    host.innerHTML = DESTINATIONS.map(item => `<button type="button" data-route="${item.id}"${item.id === mode ? ' aria-pressed="true"' : ''}>${esc(item.label)}</button>`).join('') +
+      `<button type="button" class="is-quiet" data-route="all"${mode === 'all' ? ' aria-pressed="true"' : ''}>View all cameras</button>`;
+    host.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', () => {
+        mode = button.dataset.route;
+        renderChips();
+        renderRoute();
+        renderCameras();
       });
-      const serious = nearby.filter(event => event.IsFullClosure || /accident|collision|closure/i.test(`${event.EventType || ''} ${event.EventSubType || ''} ${event.Description || ''}`));
-      if (serious.length) incidentSummary.textContent = `Ontario 511 reports ${serious.length} active ${serious.length === 1 ? 'incident' : 'incidents'} near the Burlington Skyway.`;
-      else if (nearby.length) incidentSummary.textContent = `Ontario 511 reports ${nearby.length} active road ${nearby.length === 1 ? 'notice' : 'notices'} near the Skyway.`;
-      else incidentSummary.textContent = '';
-    } catch (_) {
-      incidentSummary.textContent = '';
-    }
+    });
   }
-  let visualTimer;
-  function scheduleVisualEstimate() {
-    clearTimeout(visualTimer);
-    visualTimer = setTimeout(runVisualEstimate, 900);
-  }
-  function frameScore(image) {
-    const canvas = document.createElement('canvas');
-    const w = 160, h = 90;
-    canvas.width = w; canvas.height = h;
-    const ctx = canvas.getContext('2d', {willReadFrequently:true});
-    ctx.drawImage(image, 0, 0, w, h);
-    const data = ctx.getImageData(0, Math.floor(h * .28), w, Math.floor(h * .72)).data;
-    let edges = 0, samples = 0, prev = null;
-    for (let i = 0; i < data.length; i += 16) {
-      const lum = .2126 * data[i] + .7152 * data[i + 1] + .0722 * data[i + 2];
-      if (prev !== null && Math.abs(lum - prev) > 34) edges++;
-      prev = lum; samples++;
-    }
-    return samples ? edges / samples : 0;
-  }
-  function runVisualEstimate() {
-    const images = [...document.querySelectorAll('[data-camera]')];
-    const readable = images.filter(i => liveCameras.has(i.dataset.camera) && i.naturalWidth);
-    if (!readable.length) { trafficEstimate.textContent = 'Checking live cameras…'; return; }
-    try {
-      const scores = readable.map(frameScore);
-      const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
-      const label = avg > .34 ? 'heavy' : avg > .25 ? 'moderate' : 'light';
-      trafficEstimate.textContent = `Traffic looks ${label}`;
-      trafficEstimate.title = 'Experimental visual estimate from current camera frames; not an official traffic-speed measurement.';
-    } catch (_) {
-      trafficEstimate.textContent = 'Cameras are live';
-    }
-  }
+
   function refresh() {
     if (document.hidden) return;
-    liveCameras.clear();
-    const images = [...document.querySelectorAll('[data-camera]')];
-    if (cameraStatus) cameraStatus.textContent = `Refreshing ${images.length} cameras…`;
-    images.forEach(image => { image.src = `https://511on.ca/map/Cctv/${image.dataset.camera}?t=${Date.now()}`; });
-    loadIncidents();
-  }
-  fetch('/data/traffic-cameras.json', {cache:'no-store'})
-    .then(response => response.ok ? response.json() : Promise.reject())
-    .then(data => {
-      if (grid) {
-        grid.innerHTML = (data.cameras || []).map(cam => `<figure class="camera-card"><img crossorigin="anonymous" data-camera="${cam.viewId}" src="https://511on.ca/map/Cctv/${cam.viewId}" alt="Live Ontario 511 camera at ${cam.name}, ${cam.detail}"><figcaption class="camera-caption"><strong>${cam.name}</strong><span>${cam.detail} · Ontario 511</span></figcaption><div class="camera-error">This camera is temporarily unavailable.</div>${mapMarkup(cam)}</figure>`).join('');
-      }
-      bindImages();
-      loadIncidents();
-      scheduleVisualEstimate();
-    })
-    .catch(() => {
-      bindImages();
-      loadIncidents();
-      scheduleVisualEstimate();
+    live.clear();
+    document.querySelectorAll('[data-camera]').forEach(image => {
+      image.src = `https://511on.ca/map/Cctv/${image.dataset.camera}?t=${Date.now()}`;
     });
+  }
+
+  function applyEstimates(data) {
+    estimates = {};
+    (data?.cameras || []).forEach(item => {
+      estimates[String(item.viewId || item.cameraId)] = item;
+    });
+    (cameras).forEach(cam => {
+      cam.looks = estimates[String(cam.viewId)]?.traffic || estimates[String(cam.cameraId)]?.traffic || cam.looks || '';
+    });
+  }
+
+  Promise.allSettled([
+    fetch('/data/traffic-cameras.json', {cache:'no-store'}).then(r => r.ok ? r.json() : null),
+    fetch('/data/traffic-surface.json', {cache:'no-store'}).then(r => r.ok ? r.json() : null),
+    fetch('/data/traffic-estimates.json', {cache:'no-store'}).then(r => r.ok ? r.json() : null)
+  ]).then(results => {
+    cameras = results[0].status === 'fulfilled' && results[0].value ? (results[0].value.cameras || []) : [];
+    surface = results[1].status === 'fulfilled' ? results[1].value : null;
+    applyEstimates(results[2].status === 'fulfilled' ? results[2].value : null);
+    renderChips();
+    renderRoute();
+    renderCameras();
+  });
+
   setInterval(refresh, 60000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
 })();
