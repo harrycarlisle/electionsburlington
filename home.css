@@ -76,13 +76,10 @@
 }
 @media(max-width:900px){
   .shell{width:calc(100% - 32px)}
-  .now-strip{grid-template-columns:1fr 1fr!important}
-  .now-item{border-right:0!important;border-bottom:1px solid var(--line)}
 }
 @media(max-width:680px){
   .shell{width:calc(100% - 24px)}
-  .now-strip{grid-template-columns:1fr!important}
-  .top-image{min-height:0}
+  .top-image{min-height:0;aspect-ratio:4/3}
 }
 .search-prompt-fade{
   position:absolute;left:16px;right:42px;top:0;bottom:0;

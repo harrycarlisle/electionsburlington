@@ -171,8 +171,147 @@ html[data-theme="dark"] .now-item .now-weather-value{
 }
 html[data-theme="dark"] .now-go-lines a{color:#edf4f8}
 html[data-theme="dark"] .now-icon svg{stroke:#fff}
-@media(max-width:900px){
-  html[data-theme="dark"] .now-item{border-bottom-color:#30404b}
+@media(max-width:900px) and (min-width:721px){
+  .now-strip{grid-template-columns:1.35fr .7fr .7fr 1.05fr .9fr}
+  .now-item{padding:12px 12px}
+  .now-go-lines a{font-size:14px}
+}
+
+.now-mobile{display:none}
+@media(min-width:721px){
+  .now-mobile{display:none!important}
+  .now-desktop{display:block}
+}
+@media(max-width:720px){
+  .now-desktop{display:none}
+  .now-mobile{display:block}
+  .masthead{
+    min-height:52px!important;
+    padding:6px 0!important;
+    gap:8px!important;
+    grid-template-columns:auto minmax(0,1fr) 40px!important;
+    grid-template-areas:"brand search menu"!important;
+    align-items:center!important;
+  }
+  .brand-mark-only img,.masthead .brand img{width:32px!important;height:35px!important}
+  .publication-shell .header-search,
+  .header-search{
+    height:36px!important;
+    width:100%!important;
+    max-width:none!important;
+    border-radius:10px!important;
+  }
+  .publication-shell .header-search input,
+  .header-search input{font-size:13px!important;padding-left:12px!important}
+  .publication-shell .header-search>svg,
+  .header-search>svg{width:16px!important;height:16px!important;margin-right:10px!important}
+  .menu-button{width:40px!important;height:40px!important;min-width:40px!important;border-radius:8px!important}
+  .home-main{padding-top:6px!important}
+  .local-now{margin:2px 0 14px!important;padding:0!important;border:0!important;background:transparent!important}
+  .now-mobile .now-kicker{
+    margin:0 0 8px;
+    font-size:10px;
+    letter-spacing:.1em;
+    color:var(--muted);
+  }
+  .now-incident{
+    display:block;
+    margin:0 0 8px;
+    padding:0 0 8px;
+    border:0;
+    border-bottom:1px solid var(--line);
+    text-decoration:none;
+    color:inherit;
+    min-height:44px;
+  }
+  .now-incident small{
+    display:block;
+    margin-bottom:2px;
+    font:800 10px/1 Arial,Helvetica,sans-serif;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#c23b22;
+  }
+  .now-incident strong{
+    display:block;
+    font:750 1.05rem/1.2 Arial,Helvetica,sans-serif;
+    color:var(--ink);
+  }
+  .now-incident em{
+    display:block;
+    margin-top:2px;
+    font:500 .78rem/1.3 Arial,Helvetica,sans-serif;
+    font-style:normal;
+    color:var(--muted);
+  }
+  .now-chips{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 8px;
+  }
+  .now-chip{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    min-height:44px;
+    min-width:0;
+    margin:0;
+    padding:4px 2px;
+    border:0;
+    background:transparent;
+    color:inherit;
+    text-decoration:none;
+    text-align:left;
+    cursor:pointer;
+    font:inherit;
+  }
+  .now-chip:focus-visible,
+  .now-incident:focus-visible{
+    outline:2px solid var(--blue,#0864c7);
+    outline-offset:2px;
+    border-radius:6px;
+  }
+  .now-chip .now-icon{
+    width:22px;
+    height:22px;
+    flex:0 0 auto;
+    grid-row:auto;
+  }
+  .now-chip .now-icon svg{width:11px;height:11px}
+  .now-chip span{min-width:0;display:grid;gap:1px}
+  .now-chip small{
+    font:700 .62rem/1 Arial,Helvetica,sans-serif;
+    letter-spacing:.04em;
+    text-transform:none;
+    color:var(--muted);
+  }
+  .now-chip strong,
+  .now-chip .now-weather-value{
+    font:650 .82rem/1.2 Arial,Helvetica,sans-serif!important;
+    color:var(--ink);
+  }
+  .now-chip em{
+    font:500 .7rem/1.2 Arial,Helvetica,sans-serif;
+    font-style:normal;
+    color:var(--muted);
+  }
+  .now-chip-weather small{display:none}
+  .now-go-panel{
+    grid-column:1/-1;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 10px;
+    padding:2px 2px 6px 30px;
+    color:var(--muted);
+    font:600 .75rem/1.3 Arial,Helvetica,sans-serif;
+  }
+  .now-go-panel[hidden]{display:none}
+  .now-go-panel a{color:var(--blue,#0864c7);font-weight:750}
+  .top-image{aspect-ratio:4/3}
+  html[data-theme="dark"] .now-incident{border-color:var(--line)}
+  html[data-theme="dark"] .now-incident small{color:#ff8a80}
+  html[data-theme="dark"] .now-chip .now-icon-weather{background:#b8860b}
+  html[data-theme="dark"] .now-chip .now-icon-go{background:#3d8f5a}
 }
 
 /* Traffic page: editorial camera rows, not a cramped 3-up grid. */
