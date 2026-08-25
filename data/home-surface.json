@@ -7,7 +7,7 @@
       "kind": "feature",
       "headline": "Ontario nearly replaced the Skyway with three tunnels.",
       "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
-      "label": "The Monday Feature · 9 min",
+      "label": "Feature",
       "labelEssential": true,
       "url": "articles/skyway-bridge-story.html",
       "image": "assets/home/skyway-reader.webp",
@@ -20,7 +20,7 @@
       "kind": "current",
       "headline": "Five people want to lead Burlington. Start with their biggest differences.",
       "deck": "Compare their plans, records and unanswered questions without campaign spin.",
-      "label": "2026 municipal election",
+      "label": "Election",
       "labelEssential": true,
       "url": "election-guide.html#candidates",
       "mediaKey": "candidate-montage",
@@ -30,8 +30,8 @@
     {
       "id": "ribfest-2026",
       "kind": "seasonal",
-      "headline": "Ribfest turns 30,with nearly $6 million behind the smoke.",
-      "label": "Labour Day weekend",
+      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
+      "label": "Events",
       "labelEssential": true,
       "url": "articles/ribfest-2026.html",
       "image": "assets/home/ribs.webp",
@@ -41,10 +41,20 @@
   ],
   "rail": [
     {
+      "id": "millcroft-phase-2-138-homes",
+      "kind": "current",
+      "headline": "Millcroft Phase 2 proposes 138 homes. It has not been approved.",
+      "label": "Development",
+      "labelEssential": true,
+      "url": "articles/millcroft-phase-2-138-homes.html",
+      "published": "2026-08-24",
+      "activeFrom": "2026-08-24"
+    },
+    {
       "id": "ontario-student-rights-school",
       "kind": "service",
       "headline": "Can a teacher take your phone? Seven school rules students should know.",
-      "label": "Back to school",
+      "label": "Schools",
       "labelEssential": true,
       "url": "articles/ontario-student-rights-school.html",
       "image": "assets/home/school-rights.webp",
@@ -56,31 +66,30 @@
       "id": "ward-change-2026",
       "kind": "service",
       "headline": "Your ward may have changed. Check before you vote.",
-      "label": "2026 election",
+      "label": "Election",
       "labelEssential": true,
       "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
       "image": "assets/editorial/burlington-wards-2026.svg",
       "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
       "activeFrom": "2026-08-21"
-    },
-    {
-      "id": "ribfest-2026",
-      "kind": "seasonal",
-      "headline": "Ribfest turns 30,with nearly $6 million behind the smoke.",
-      "label": "Labour Day weekend",
-      "labelEssential": true,
-      "url": "articles/ribfest-2026.html",
-      "image": "assets/home/ribs.webp",
-      "alt": "Barbecue ribs smoking over a pit",
-      "activeFrom": "2026-08-18"
     }
   ],
   "latest": [
     {
+      "id": "millcroft-phase-2-138-homes",
+      "kind": "current",
+      "headline": "Millcroft Phase 2 proposes 138 homes. It has not been approved.",
+      "label": "Development",
+      "labelEssential": true,
+      "url": "articles/millcroft-phase-2-138-homes.html",
+      "published": "2026-08-24",
+      "activeFrom": "2026-08-24"
+    },
+    {
       "id": "ontario-student-rights-school",
       "kind": "service",
       "headline": "Can a teacher take your phone? Seven school rules students should know.",
-      "label": "Back to school",
+      "label": "Schools",
       "labelEssential": true,
       "url": "articles/ontario-student-rights-school.html",
       "image": "assets/home/school-rights.webp",
@@ -92,81 +101,23 @@
       "id": "730-brant-vacant-building",
       "kind": "investigation",
       "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
-      "label": "Unfinished Burlington",
+      "label": "Development",
       "labelEssential": true,
       "url": "articles/730-brant-vacant-building.html",
       "published": "2026-08-24"
-    },
-    {
-      "id": "fishway-2025",
-      "kind": "evergreen",
-      "headline": "What 26,503 fish revealed about a damaged marsh.",
-      "url": "articles/fishway-26000-fish.html",
-      "image": "assets/home/fishway.webp",
-      "alt": "The Cootes Paradise Fishway across the water",
-      "published": "2026-08-23"
     }
   ],
   "audit": [
-    {
-      "id": "skyway-tunnels",
-      "state": "eligible",
-      "placementScore": 85,
-      "reason": "all gates passed"
-    },
-    {
-      "id": "ward-change-2026",
-      "state": "eligible",
-      "placementScore": 93,
-      "reason": "all gates passed"
-    },
-    {
-      "id": "election-field-2026",
-      "state": "eligible",
-      "placementScore": 96,
-      "reason": "all gates passed"
-    },
-    {
-      "id": "back-to-school-2026",
-      "state": "eligible",
-      "placementScore": 84,
-      "reason": "all gates passed"
-    },
-    {
-      "id": "ontario-student-rights-school",
-      "state": "eligible",
-      "placementScore": 100,
-      "reason": "all gates passed"
-    },
-    {
-      "id": "730-brant-vacant-building",
-      "state": "eligible",
-      "placementScore": 93,
-      "reason": "all gates passed"
-    },
-    {
-      "id": "ribfest-2026",
-      "state": "eligible",
-      "placementScore": 90,
-      "reason": "all gates passed"
-    },
-    {
-      "id": "sports-lockers",
-      "state": "eligible",
-      "placementScore": 80,
-      "reason": "all gates passed"
-    },
-    {
-      "id": "fishway-2025",
-      "state": "eligible",
-      "placementScore": 65,
-      "reason": "all gates passed"
-    },
-    {
-      "id": "salamander-migration",
-      "state": "archive",
-      "placementScore": 80,
-      "reason": "seasonal window ended 2026-04-30"
-    }
+    {"id":"skyway-tunnels","state":"eligible","placementScore":85,"reason":"all gates passed"},
+    {"id":"ward-change-2026","state":"eligible","placementScore":93,"reason":"all gates passed"},
+    {"id":"election-field-2026","state":"eligible","placementScore":96,"reason":"all gates passed"},
+    {"id":"back-to-school-2026","state":"eligible","placementScore":84,"reason":"all gates passed"},
+    {"id":"ontario-student-rights-school","state":"eligible","placementScore":100,"reason":"all gates passed"},
+    {"id":"730-brant-vacant-building","state":"eligible","placementScore":93,"reason":"all gates passed"},
+    {"id":"millcroft-phase-2-138-homes","state":"eligible","placementScore":94,"reason":"all gates passed; primary City record confirms proposal and current review status"},
+    {"id":"ribfest-2026","state":"eligible","placementScore":90,"reason":"all gates passed"},
+    {"id":"sports-lockers","state":"eligible","placementScore":80,"reason":"all gates passed"},
+    {"id":"fishway-2025","state":"eligible","placementScore":65,"reason":"all gates passed"},
+    {"id":"salamander-migration","state":"archive","placementScore":80,"reason":"seasonal window ended 2026-04-30"}
   ]
 }
