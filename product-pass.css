@@ -153,7 +153,8 @@ html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8
 .traffic-camera-media{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:10px;min-height:260px}
 .traffic-camera-shot,.traffic-camera-map{position:relative;margin:0;overflow:hidden;background:#d7e1e8;border-radius:2px;min-height:0}
 .traffic-camera-shot img,.traffic-camera-map img{width:100%;height:100%;object-fit:cover;display:block}
-.traffic-camera-shot img{aspect-ratio:16/10}
+.traffic-camera-shot{aspect-ratio:16/10}
+.traffic-camera-shot img{height:calc(100% + 32px);margin-bottom:-32px;object-position:center 35%}
 .traffic-camera-map{aspect-ratio:16/10}
 .traffic-pin{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#c23b22;border:2px solid #fff;box-shadow:0 0 0 5px rgba(194,59,34,.16)}
 .traffic-pin i{position:absolute;left:12px;top:5px;width:16px;height:2px;background:#c23b22;transform-origin:left center}

@@ -41,7 +41,7 @@
     const events = (Array.isArray(data?.events) ? data.events : []).filter(item => Date.parse(item.end || item.start) > now).sort((a, b) => Date.parse(a.start) - Date.parse(b.start));
     const event = events[0];
     if (!event) return null;
-    return {title:event.title, dateLabel:event.dateLabel || shortDate(event.start), url:`/explore/#event-${encodeURIComponent(event.id || '')}`};
+    return {title:event.title, dateLabel:shortDate(event.start), url:`/explore/#event-${encodeURIComponent(event.id || '')}`};
   }
 
   function trafficItem(surface, intel) {
