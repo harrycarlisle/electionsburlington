@@ -1,0 +1,70 @@
+/* Burlington News publication polish: quieter dividers, stronger hierarchy, consistent controls. */
+:root{--pub-mobile:680px}
+
+/* Shared shell */
+.publication-utility{display:none!important}
+.publication-shell .header{top:var(--news-banner-h,0)!important}
+.publication-shell :is(.hero-button,.button,.nav-action,.partner-callout>a,.play-strip a){font-weight:800!important}
+.publication-shell :is(.hero-button-primary,.button.primary,.nav-action.primary){background:var(--navy)!important;color:var(--paper)!important;border-color:var(--navy)!important}
+.publication-shell :is(.hero-button-secondary,.button.secondary){background:transparent!important;color:var(--navy)!important;border:1px solid var(--line)!important}
+.publication-shell .mini-heading a::after,.publication-shell a.all-stories::after{content:' →';white-space:pre}
+
+/* Homepage publication rhythm */
+.home-main{padding-top:18px!important}
+.local-now{margin:10px 0 30px!important;padding:15px 0 18px!important;border-top:0!important;border-bottom:1px solid var(--line)!important}
+.now-heading{margin-bottom:12px!important}
+.now-empty{margin:0 0 12px!important}
+.now-services{display:flex!important;flex-wrap:wrap!important;gap:8px 18px!important;border:0!important}
+.now-service{display:inline-flex!important;align-items:baseline!important;gap:6px!important;padding:0!important;border:0!important;background:transparent!important}
+.now-service small{font-size:9px!important;text-transform:uppercase!important;letter-spacing:.06em!important}
+.now-service strong{font-size:11px!important}
+.now-go{border-bottom:0!important;margin-bottom:10px!important;padding-bottom:2px!important}
+.now-go-routes{display:grid;gap:8px}
+.now-go-route{padding:9px 0;border-top:1px solid var(--line)}
+.lead-grid,.lower-grid{gap:32px!important}
+.mini-heading{padding-bottom:10px!important;border-bottom:1px solid var(--line)!important}
+.mini-heading a{font-size:9px!important}
+.newest-list>a{padding:16px 0!important}
+.pick-grid{gap:22px!important;margin-top:16px!important}
+.pick-card{border-radius:14px!important}
+.pick-card>.kicker{margin-top:15px!important}
+.explore-band{margin-top:48px!important;padding:34px 0!important;border-top:1px solid var(--line)!important;border-bottom:0!important;gap:38px!important}
+.explore-band-copy p{font-size:13px!important;line-height:1.55!important}
+.explore-band-visual{border-radius:14px!important}
+.weekly-newsletter{margin-top:44px!important}
+.partner-callout{margin-top:22px!important;padding:26px!important;border-radius:14px!important}
+
+/* Consistent taxonomy labels */
+.kicker,.newest-list small,.story-card>span,.publication-kicker{color:var(--blue)!important}
+
+/* Dark mode contrast fixes */
+html[data-theme="dark"] :is(.hero-button-primary,.button.primary,.nav-action.primary){background:#edf4f8!important;color:#101517!important;border-color:#edf4f8!important}
+html[data-theme="dark"] :is(.hero-button-secondary,.button.secondary,.partner-callout>a,.play-strip a){color:#edf4f8!important;border-color:#52636d!important}
+html[data-theme="dark"] .partner-callout>a{background:#17232c!important}
+html[data-theme="dark"] :is(input,select,textarea,.header-search,.site-search-link){background:#11191d!important;color:#edf4f8!important;border-color:#3a474e!important}
+html[data-theme="dark"] :is(input,textarea)::placeholder{color:#93a1aa!important}
+html[data-theme="dark"] .header-search>svg{stroke:#edf4f8!important}
+html[data-theme="dark"] .puzzle-icon.yellow{color:#101517!important}
+html[data-theme="dark"] .newest-list>a,html[data-theme="dark"] .latest-puzzles>a{border-color:var(--line)!important}
+
+@media(max-width:680px){
+  .shell{width:calc(100% - 32px)!important}
+  .site-header{position:sticky;top:0!important}
+  .masthead{min-height:70px!important;padding:10px 0!important;border-bottom:0!important}
+  .home-main{padding-top:4px!important}
+  .local-now{margin-top:4px!important;margin-bottom:28px!important;padding-top:10px!important}
+  .now-heading{margin-bottom:10px!important}.now-heading>span{font-size:10px!important}.now-heading time{font-size:9px!important}
+  .now-empty{gap:5px!important}.now-empty strong{font-size:18px!important}.now-empty span{font-size:11px!important;line-height:1.45!important}
+  .now-services{display:flex!important;gap:8px 14px!important}.now-service{flex:0 0 auto!important}
+  .lead-grid,.lower-grid{gap:34px!important}.lower-grid{margin-top:38px!important}
+  .top-story{border-radius:14px!important}.top-copy{padding:18px 18px 20px!important}.top-copy h1{font-size:clamp(36px,10.8vw,48px)!important;line-height:.98!important}
+  .top-copy p{font-size:13px!important;line-height:1.5!important}
+  .newest-list{display:block!important}.newest-list>a{grid-template-columns:86px 1fr!important;gap:14px!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;padding:17px 0!important}
+  .newest-list img{width:86px!important;height:78px!important;border-radius:9px!important}.newest-list strong{font-size:19px!important;line-height:1.08!important}.newest-list small,.newest-list time{font-size:9px!important}
+  .pick-grid{grid-template-columns:1fr!important;gap:24px!important}.pick-card{padding-bottom:20px!important}.pick-card h3{font-size:28px!important;line-height:1.02!important}.pick-card p{font-size:12px!important;line-height:1.5!important}
+  .latest-puzzles>a{padding:17px 0!important}.latest-puzzles strong{font-size:20px!important}.puzzle-icon{width:48px!important;height:48px!important;border-radius:11px!important}
+  .explore-band{display:block!important;margin-top:44px!important;padding:32px 0 0!important}.explore-band-copy h2{font-size:46px!important}.explore-band-copy p{max-width:none!important;font-size:14px!important}.explore-band-copy a{display:inline-block;margin-bottom:24px;font-size:12px!important}.explore-band-visual{min-height:300px!important}
+  .weekly-newsletter{padding:24px!important;border-radius:14px!important}.partner-callout{align-items:stretch!important;flex-direction:column!important}.partner-callout>a{text-align:center!important}
+  .publication-shell :is(.content-shell,.method-shell,.record-shell,.updates-page,.puzzles-main,.sports-shell,.traffic-shell,.ward-shell,.explore-main,.feedback-main,.beginner){width:calc(100% - 32px)!important}
+  .publication-shell .header .header-inner{width:calc(100% - 32px)!important;padding-inline:0!important}
+}
