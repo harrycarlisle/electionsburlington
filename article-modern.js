@@ -121,9 +121,9 @@
   function lockArticleSearch() {
     const paint = () => {
       const input = document.querySelector('.header-search input,.site-search input');
-      if (input && input.placeholder !== 'Search Burlington') input.placeholder = 'Search Burlington';
+      if (input && input.placeholder !== 'Search anything') input.placeholder = 'Search anything';
       const label = document.querySelector('.site-search-link span');
-      if (label && label.textContent !== 'Search Burlington') label.textContent = 'Search Burlington';
+      if (label && label.textContent !== 'Search anything') label.textContent = 'Search anything';
     };
     paint();
     new MutationObserver(paint).observe(document.documentElement, {childList: true, subtree: true, characterData: true});
