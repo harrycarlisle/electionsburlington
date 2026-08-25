@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-25T19:40:37Z",
+  "generatedAt": "2026-08-25T20:39:46Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 34,
-    "trafficIncidents": 34,
+    "activeSignals": 33,
+    "trafficIncidents": 33,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -80,22 +80,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "18f32b7541863775"
-    },
-    {
-      "id": "511:293102",
-      "kind": "traffic",
-      "headline": "Collision on HWY 403 HAMILTON Eastbound  at Johnson Road, Brantford. Right lane closed.",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Eastbound",
-      "score": 75,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.167822222,
-      "longitude": -80.19035,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "87ab7785eb2264e7"
     },
     {
       "id": "511:289628",
@@ -496,6 +480,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "0e48fe503f157d65"
+    },
+    {
+      "id": "511:290747",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 401 Eastbound  between GUELPH LINE and REGIONAL ROAD 25, Milton. 2 Alternating Lane(s).",
+      "location": "HWY 401",
+      "direction": "Eastbound",
+      "score": 43,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.49118,
+      "longitude": -79.987885,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "61abbaca9b4a3dc0"
     }
   ],
   "topSignal": {

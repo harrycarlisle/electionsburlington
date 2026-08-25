@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-08-25T20:39:46Z",
+  "generatedAt": "2026-08-25T21:38:12Z",
   "items": [
+    {
+      "id": "511:293205",
+      "detectedAt": "2026-08-25T21:38:12Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Toronto bound ON-RAMP at BURLOAK DRIVE, Burlington. Left shoulder and left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:254943",
       "detectedAt": "2026-08-25T17:09:36Z",
