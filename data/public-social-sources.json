@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "purpose": "Public social accounts are discovery sources only. Claims are not upgraded to verified news until corroborated by a primary record or established reporting.",
+  "sources": [
+    {
+      "id": "mayor-meed-ward-facebook",
+      "name": "Mayor Marianne Meed Ward",
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/MayorMarianneMeedWard/",
+      "scope": ["city-hall", "development", "traffic", "community"],
+      "confidence": 2,
+      "discoveryOnly": true,
+      "notes": "Public posts and videos can trigger a verification search. Link to the original public post when a stable post URL is available."
+    },
+    {
+      "id": "mayor-meed-ward-site",
+      "name": "Mayor Marianne Meed Ward",
+      "platform": "Website",
+      "url": "https://www.mariannemeedward.ca/latest-news",
+      "scope": ["city-hall", "development", "community"],
+      "confidence": 4,
+      "discoveryOnly": false,
+      "notes": "First-party mayoral updates. Still distinguish advocacy/opinion from City records."
+    }
+  ]
+}
