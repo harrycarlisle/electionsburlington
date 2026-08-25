@@ -6,7 +6,7 @@ The purpose of this archive is to build a long-term, source-backed record while 
 
 ## Source changes
 - **Meed Ward campaign:** No detected change — https://votemarianne.ca/
-- **Lisa Kearns campaign:** Fetch failed — review manually — https://lisakearns.ca/
+- **Lisa Kearns campaign:** CHANGED — review — https://lisakearns.ca/
 - **Rory Nisan campaign:** CHANGED — review — https://rorynisan.ca/
 - **Official candidate list:** CHANGED — review — https://myvote.burlington.ca/for-voters/list-of-candidates/
 - **Official voting information:** No detected change — https://myvote.burlington.ca/for-voters/how-to-vote/
@@ -32,6 +32,7 @@ The purpose of this archive is to build a long-term, source-backed record while 
 - Date / person or institution / topic / what happened / status (proposed, voted, funded, started, completed, reversed) / source type / source URL / supporting or critical context / reviewer note.
 
 ## Changed sources requiring review
+- Lisa Kearns campaign
 - Rory Nisan campaign
 - Official candidate list
 - Burlington council records
