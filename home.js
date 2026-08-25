@@ -63,9 +63,10 @@
   setTheme(root.dataset.theme || 'light', false);
 
   window.BurlingtonSearch?.install(document.getElementById('headerSearch'), {
-    rotate: true,
-    prompts: ['Search “This weekend”', 'Search “I’m bored”', 'Search “Best food”', 'Search “Election”']
+    homepage: true,
+    rotate: true
   });
+  window.BurlingtonIdeas?.mountHome(document.getElementById('homeIdea'));
 
   menu?.addEventListener('click', () => {
     const open = nav.classList.toggle('is-open');

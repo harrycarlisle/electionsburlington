@@ -47,11 +47,9 @@
   let selectedDate = dayKey(new Date());
   let calendarMode = 'week';
   let showAll = false;
-  let ideaIndex = 0;
   const done = readSet(storage.done);
   const wanted = readSet(storage.want);
   const savedEvents = readSet(storage.events);
-  const boredPrefs = readObject(storage.bored);
 
   const detailDialog = qs('#detailDialog');
   const dialogContent = qs('#dialogContent');
@@ -170,14 +168,16 @@
     });
   }
 
-  function mapsUrl(idea) {
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${idea.title} Burlington Ontario`)}`;
-  }
   function paintIdea() {
-    if (!ideas.length) return;
-    const idea = ideas[ideaIndex % ideas.length];
-    const pref = boredPrefs[idea.id] || {};
-    qs('#boredIdea').innerHTML = `${imageMarkup(idea,'bored-visual')}<div class="bored-copy"><strong>${esc(idea.title)}</strong><p>${esc(idea.copy)}</p><div class="bored-actions"><button type="button" data-bored="like" class="${pref.like?'is-on':''}">👍 Like this</button><button type="button" data-bored="skip" class="${pref.skip?'is-on':''}">👎 Not for me</button><button type="button" data-bored="do" class="${pref.planned?'is-on':''}">✓ Let’s do this</button></div>${pref.planned?`<p class="empty-note"><a href="${esc(mapsUrl(idea))}" target="_blank" rel="noopener">Open in Google Maps</a>${pref.done?' · Marked done':''}</p>`:''}</div>`;
+    const start = () => window.BurlingtonIdeas?.mountExplore(qs('#boredIdea'), qs('#pickAnother'));
+    if (window.BurlingtonIdeas) return start();
+    let tries = 0;
+    const wait = setInterval(() => {
+      if (window.BurlingtonIdeas || ++tries > 50) {
+        clearInterval(wait);
+        start();
+      }
+    }, 40);
   }
 
   function paintSavedEvents() {
@@ -241,20 +241,6 @@
       if (button) openEvent(button.dataset.event);
     });
     qs('#showAllEvents').addEventListener('click', () => { showAll = !showAll; paintEvents(); });
-    qs('#pickAnother').addEventListener('click', () => { ideaIndex = (ideaIndex + 1) % ideas.length; paintIdea(); });
-    qs('#boredIdea').addEventListener('click', event => {
-      const button = event.target.closest('[data-bored]');
-      if (!button) return;
-      const idea = ideas[ideaIndex % ideas.length];
-      if (!idea) return;
-      const pref = boredPrefs[idea.id] || {};
-      if (button.dataset.bored === 'like') pref.like = !pref.like;
-      if (button.dataset.bored === 'skip') { pref.skip = !pref.skip; if (pref.skip) { ideaIndex = (ideaIndex + 1) % ideas.length; } }
-      if (button.dataset.bored === 'do') pref.planned = !pref.planned;
-      boredPrefs[idea.id] = pref;
-      writeObject(storage.bored, boredPrefs);
-      paintIdea();
-    });
     qs('#savedEvents').addEventListener('click', event => {
       const button = event.target.closest('[data-remove-event]');
       if (!button) return;
@@ -315,9 +301,9 @@
       paintWeek();
       paintMonth();
       paintEvents();
-      paintIdea();
       paintPassport();
       installEvents();
+      paintIdea();
       const hash = location.hash.replace('#event-','');
       if (hash && events.some(item => item.id === hash)) openEvent(hash);
     } catch (error) {

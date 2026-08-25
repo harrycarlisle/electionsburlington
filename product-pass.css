@@ -34,6 +34,16 @@
   width:100%;height:100%;min-width:0;padding:0 10px 0 16px;border:0;outline:0;
   border-radius:inherit;background:transparent;color:var(--ink);font:500 12px/1 Arial,sans-serif
 }
+.search-prompt-fade{
+  position:absolute;left:16px;right:42px;top:0;bottom:0;z-index:1;
+  display:flex;align-items:center;pointer-events:none;
+  color:var(--muted);font:500 12px/1 Arial,sans-serif;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  opacity:1;transition:opacity .35s ease
+}
+.search-prompt-fade.is-hidden{opacity:0}
+.search-prompt-fade[hidden]{display:flex;opacity:0}
+@media(prefers-reduced-motion:reduce){.search-prompt-fade{transition:none}}
 .publication-shell .header-search>svg{width:18px;height:18px;margin-right:13px;fill:none;stroke:currentColor;stroke-width:1.9;flex:0 0 auto}
 .publication-shell .header-controls{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
 .publication-shell .search-popover{position:absolute;z-index:80;top:calc(100% + 8px);left:0;right:0;max-height:65vh;overflow:auto;padding:12px;border:1px solid var(--line);border-radius:13px;background:var(--card,#fff);box-shadow:0 20px 55px rgba(13,36,61,.18)}
@@ -66,8 +76,10 @@
 .camera-pin i{position:absolute;left:14px;top:1px;width:16px;height:2px;background:#c23b22}
 .camera-map-credit{margin:6px 0 0;font-size:9px;color:var(--muted)}
 .bored-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.bored-actions button{min-height:40px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;font:750 12px/1 Arial,sans-serif}
+.bored-actions button,.bored-actions a{min-height:40px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:inherit;cursor:pointer;font:750 12px/1 Arial,sans-serif;text-decoration:none;display:inline-flex;align-items:center}
 .bored-actions .is-on{border-color:#2b7a4b;background:#e7f4eb}
+.bored-copy .idea-shuffle{margin:14px 0 0}
+.bored-maps{color:#0864c7}
 .receipt-shell{margin-top:14px;padding:12px;border:1px dashed var(--line);border-radius:10px;font-size:12px}
 .star-rating{display:flex;gap:4px}
 .star-rating button{border:0;background:transparent;font-size:18px;cursor:pointer;color:#c5ccd1}
