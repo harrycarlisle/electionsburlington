@@ -12,11 +12,11 @@ If that sentence is muddy, the story is too broad.
 
 ## Story shape
 1. **Title:** clear, specific, curiosity-driven, with a promised payoff.
-2. **Deck:** one or two sentences that explain the change and consequence.
+2. **Deck:** one sentence, or two short sentences at most. Establish what the story is and why it is interesting, without summarizing every conclusion.
 3. **Curiosity intro:** begin with what changed or the surprising tension, not throat-clearing.
 4. **Action -> consequence:** every section advances from what happened to what it changes.
 5. **Next implication:** once one question is answered, move to the next consequence/conflict.
-6. **Ending:** answer what happens next or what the reader should watch.
+6. **Ending:** a concrete payoff. Use one of: an unanswered question, the next measurable thing, a practical consequence, or a new conflict. Never end with generic “what happens next” filler.
 
 Avoid listicle framing unless the subject is inherently a list. Do not write generic 'everything you need to know' pieces.
 
@@ -79,10 +79,10 @@ When generating a story, provide:
 Output:
 - 5 title options
 - selected title
-- deck
+- deck (one sentence, or two short sentences)
 - story goal
 - article body
-- what happens next
+- concrete ending (unanswered question, next measurable thing, practical consequence, or new conflict)
 - meta description
 - share copy
 - image concept
@@ -96,3 +96,14 @@ Writing rules:
 - no fake quotes
 - do not overuse headings
 - do not repeat the title/deck in the first paragraph
+- do not dump long numeric lists in prose; use a visual for the full comparison
+- never end with “only time will tell,” “the story is what happens next,” “it remains to be seen,” “that could change,” or “the interesting question is what comes next”
+
+ARTICLE ENDING CHECK — before publishing, ask:
+1. Has the article answered its original question?
+2. What is the most interesting fact or consequence created by that answer?
+3. Is there one specific unresolved question?
+4. Is there a concrete next event or data point?
+5. What should a Burlington reader understand differently now?
+
+The final paragraph must answer at least one of questions 2–5. Reject generic endings.

@@ -206,19 +206,8 @@
     return layout;
   }
 
-  function addDetailChips() {
-    const details = detailMap[currentSlug];
-    if (!details?.length) return;
-    const head = document.querySelector('.article-head');
-    if (!head || head.querySelector('.article-glance')) return;
-    document.querySelectorAll('.article-detail-rail, .article-aside').forEach(node => node.classList.add('article-aside-legacy'));
-    const wrap = document.createElement('div');
-    wrap.className = 'article-glance';
-    wrap.setAttribute('aria-label', 'At a glance');
-    wrap.innerHTML = `<span class="article-glance-label">At a glance</span><ul>${details.map(([label, value]) => `<li><b>${esc(label)}</b> ${esc(value)}</li>`).join('')}</ul>`;
-    const listen = head.querySelector('.article-listen');
-    const byline = head.querySelector('.article-byline, .byline');
-    (listen || byline || head.lastElementChild)?.insertAdjacentElement('afterend', wrap);
+  function hideGlanceChips() {
+    document.querySelectorAll('.article-glance').forEach(node => node.remove());
   }
 
   function articleText() {
@@ -496,7 +485,7 @@
     cleanArticleCopy();
     addReadTime();
     addListen();
-    addDetailChips();
+    hideGlanceChips();
     addEndCopy();
     normalizeArticleMeta();
     addSchema();

@@ -29,12 +29,14 @@ The writer completes this list. A second pass—human or automated—must be abl
 - [ ] Contractions sound natural rather than artificially formal.
 - [ ] Repeated conclusions and five-part template sections were removed.
 - [ ] The ending answers the opening rather than announcing a lesson.
+- [ ] The ending is a concrete payoff (unanswered question, next measurable thing, practical consequence, or new conflict), not generic “what happens next” filler.
+- [ ] The article-ending check was run: the final paragraph answers at least one of the interesting consequence, unresolved question, next measurable event, or changed reader understanding.
 
 ## Headline pass
 
 - [ ] Five different candidates were written.
 - [ ] The chosen headline scored at least 10/14 on `headline-rubric.md`.
-- [ ] The deck adds a second fact or open loop.
+- [ ] The deck is one sentence, or two short sentences, and adds a second fact or open loop.
 - [ ] Both headline and deck remain accurate when read without the article.
 - [ ] The mobile line breaks were reviewed.
 

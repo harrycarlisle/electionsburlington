@@ -101,10 +101,37 @@
   "writing": {
     "singleGoal": true,
     "title": "clear + curiosity-driven",
-    "deck": "create curiosity rather than give away the full answer",
-    "structure": ["title promise", "deck curiosity", "action", "consequence", "next implication", "what happens next"],
-    "answerReaderQuestions": ["where", "why", "how", "what changed", "why it matters", "what happens next"],
+    "deck": "one sentence, or two short sentences; establish what the story is and why it is interesting without summarizing every conclusion",
+    "structure": ["title promise", "deck curiosity", "action", "consequence", "next implication", "concrete ending"],
+    "answerReaderQuestions": ["where", "why", "how", "what changed", "why it matters", "what the reader should understand differently now"],
+    "endingTypes": [
+      "unanswered question",
+      "next measurable thing",
+      "practical consequence",
+      "new conflict"
+    ],
+    "endingCheck": [
+      "Has the article answered its original question?",
+      "What is the most interesting fact or consequence created by that answer?",
+      "Is there one specific unresolved question?",
+      "Is there a concrete next event or data point?",
+      "What should a Burlington reader understand differently now?"
+    ],
+    "endingRule": "The final paragraph must answer at least one of endingCheck items 2-5. Reject generic endings.",
     "ifSourceDoesNotDisclose": "Say that clearly instead of writing around the hole.",
-    "avoid": ["listicle framing unless the subject requires a list", "filler intros", "generic everything-you-need-to-know language", "unsupported claims", "fake quotes", "auto-publishing weak or unclear stories for volume"]
+    "avoid": [
+      "listicle framing unless the subject requires a list",
+      "filler intros",
+      "generic everything-you-need-to-know language",
+      "unsupported claims",
+      "fake quotes",
+      "auto-publishing weak or unclear stories for volume",
+      "long numeric lists in prose when a visual can carry the comparison",
+      "only time will tell",
+      "the story is what happens next",
+      "it remains to be seen",
+      "that could change",
+      "the interesting question is what comes next"
+    ]
   }
 }

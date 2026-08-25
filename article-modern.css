@@ -105,10 +105,7 @@
 }
 
 .bn-story-page .article-glance{
-  margin:16px 0 0;
-  padding:11px 0 2px;
-  border-top:1px solid color-mix(in srgb,currentColor 12%,transparent);
-  border-bottom:1px solid color-mix(in srgb,currentColor 12%,transparent);
+  display:none!important;
 }
 .bn-story-page .article-glance-label{
   display:block;
@@ -264,6 +261,37 @@
 .bn-story-page .csi-bars .is-home b{font-weight:800}
 .bn-story-page .csi-bars b{text-align:right}
 
+.bn-story-page .crime-shift{
+  margin:1.6em 0 1.8em;
+  padding:14px 16px 12px;
+  border:1px solid color-mix(in srgb,currentColor 12%,transparent);
+  border-radius:12px;
+  background:color-mix(in srgb,currentColor 3.5%,transparent);
+}
+.bn-story-page .crime-shift-list{
+  display:grid;
+  gap:0;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.bn-story-page .crime-shift-list li{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:16px;
+  padding:.55rem 0;
+  border-bottom:1px solid color-mix(in srgb,currentColor 10%,transparent);
+  font:650 .92rem/1.2 Arial,Helvetica,sans-serif;
+}
+.bn-story-page .crime-shift-list li:last-child{border-bottom:0;padding-bottom:.15rem}
+.bn-story-page .crime-shift-list b{
+  font:800 .95rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  letter-spacing:-.02em;
+}
+.bn-story-page .crime-shift-list .is-down b{color:#0d7a4a}
+.bn-story-page .crime-shift-list .is-up b{color:#b42318}
+
 .bn-story-page .article-compare{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -386,7 +414,6 @@
   .bn-story-page .article-byline,
   .bn-story-page .byline{margin-top:.15rem}
   .bn-story-page .article-listen{margin-top:12px}
-  .bn-story-page .article-glance{margin-top:14px}
   .bn-story-page .article-hero{margin:18px 0 26px;border-radius:8px}
   .bn-story-page .article-body{font-size:1.08rem;line-height:1.7}
   .bn-story-page .article-body h2{font-size:1.55rem}
@@ -402,13 +429,15 @@ html[data-theme="dark"] .bn-story-page .article-deck,
 html[data-theme="dark"] .bn-story-page .article-head .dek{
   color:var(--muted);
 }
-html[data-theme="dark"] .bn-story-page .article-glance li,
 html[data-theme="dark"] .bn-story-page .article-compare>div,
 html[data-theme="dark"] .bn-story-page .article-body .fact-box,
-html[data-theme="dark"] .bn-story-page .article-body .article-note{
+html[data-theme="dark"] .bn-story-page .article-body .article-note,
+html[data-theme="dark"] .bn-story-page .crime-shift{
   background:rgba(255,255,255,.04);
   border-color:var(--line);
 }
+html[data-theme="dark"] .bn-story-page .crime-shift-list .is-down b{color:#5ee0a4}
+html[data-theme="dark"] .bn-story-page .crime-shift-list .is-up b{color:#ff8a80}
 html[data-theme="dark"] .bn-story-page .csi-bars i{
   background:rgba(237,244,248,.22);
 }
