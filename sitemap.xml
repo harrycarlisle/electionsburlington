@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://burlingtonnews.ca/</loc></url>
+  <url><loc>https://burlingtonnews.ca/</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://burlingtonnews.ca/updates.html</loc><lastmod>2026-08-24</lastmod></url>
   <url><loc>https://burlingtonnews.ca/election-guide.html</loc></url>
   <url><loc>https://burlingtonnews.ca/articles/millcroft-phase-2-138-homes.html</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://burlingtonnews.ca/articles/nelson-quarry-tribunal-decision.html</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://burlingtonnews.ca/articles/upper-middle-road-construction-2026.html</loc><lastmod>2026-08-24</lastmod></url>
+  <url><loc>https://burlingtonnews.ca/articles/burlington-rabies-bat-2026.html</loc><lastmod>2026-08-24</lastmod></url>
   <url><loc>https://burlingtonnews.ca/articles/ribfest-2026.html</loc></url>
   <url><loc>https://burlingtonnews.ca/articles/back-to-school-2026.html</loc></url>
   <url><loc>https://burlingtonnews.ca/articles/ontario-student-rights-school.html</loc></url>
@@ -12,21 +16,6 @@
   <url><loc>https://burlingtonnews.ca/articles/skyway-bridge-story.html</loc></url>
   <url><loc>https://burlingtonnews.ca/guides/best-of-burlington.html</loc></url>
   <url><loc>https://burlingtonnews.ca/guides/burlington-food-spots.html</loc><lastmod>2026-08-24</lastmod></url>
-  <url><loc>https://burlingtonnews.ca/head-to-head.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/ballot.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/ward.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/elections-for-beginners.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/updates.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/methodology.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/puzzles.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/explore.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/skyway-traffic.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/sports.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/promises.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/independent.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/about.html</loc><lastmod>2026-08-24</lastmod></url>
-  <url><loc>https://burlingtonnews.ca/help.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/feedback/</loc></url>
-  <url><loc>https://burlingtonnews.ca/privacy.html</loc></url>
-  <url><loc>https://burlingtonnews.ca/terms.html</loc></url>
+  <url><loc>https://burlingtonnews.ca/head-to-head.html</loc></url><url><loc>https://burlingtonnews.ca/ballot.html</loc></url><url><loc>https://burlingtonnews.ca/ward.html</loc></url><url><loc>https://burlingtonnews.ca/elections-for-beginners.html</loc></url>
+  <url><loc>https://burlingtonnews.ca/methodology.html</loc></url><url><loc>https://burlingtonnews.ca/puzzles.html</loc></url><url><loc>https://burlingtonnews.ca/explore.html</loc></url><url><loc>https://burlingtonnews.ca/skyway-traffic.html</loc></url><url><loc>https://burlingtonnews.ca/sports.html</loc></url><url><loc>https://burlingtonnews.ca/promises.html</loc></url><url><loc>https://burlingtonnews.ca/independent.html</loc></url><url><loc>https://burlingtonnews.ca/about.html</loc><lastmod>2026-08-24</lastmod></url><url><loc>https://burlingtonnews.ca/help.html</loc></url><url><loc>https://burlingtonnews.ca/feedback/</loc></url><url><loc>https://burlingtonnews.ca/privacy.html</loc></url><url><loc>https://burlingtonnews.ca/terms.html</loc></url>
 </urlset>
