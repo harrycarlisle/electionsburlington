@@ -1,6 +1,6 @@
 {
   "generatedFor": "2026-08-25",
-  "method": "Evidence and rights gates first. Placement blends interest, Burlington relevance, novelty, familiarity, consequence, breadth, source confidence, originality, freshness and rotation pressure. Aggregation-only items are penalized.",
+  "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure.",
   "feature": [
     {
       "id": "data-centre-not-ai",
@@ -13,19 +13,8 @@
       "image": "assets/explore/burlington-orientation-map.svg",
       "alt": "Orientation map of Burlington",
       "published": "2026-08-24",
-      "activeFrom": "2026-08-24"
-    },
-    {
-      "id": "election-field-2026",
-      "kind": "current",
-      "headline": "Five people want to lead Burlington. Start with their biggest differences.",
-      "deck": "Compare their plans, records and unanswered questions without campaign spin.",
-      "label": "Election",
-      "labelEssential": true,
-      "url": "election-guide.html#candidates",
-      "mediaKey": "candidate-montage",
-      "byline": "By the Burlington News Election Desk",
-      "activeFrom": "2026-08-21"
+      "activeFrom": "2026-08-24",
+      "placementScore": 89
     },
     {
       "id": "skyway-tunnels",
@@ -38,7 +27,20 @@
       "image": "assets/home/skyway-reader.webp",
       "alt": "The Burlington Bay James N. Allan Skyway",
       "credit": "Dave Lauretti · CC BY 2.0",
-      "published": "2026-08-24"
+      "published": "2026-08-24",
+      "placementScore": 82
+    },
+    {
+      "id": "ribfest-2026",
+      "kind": "seasonal",
+      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
+      "label": "Events",
+      "labelEssential": true,
+      "url": "articles/ribfest-2026.html",
+      "image": "assets/home/ribs.webp",
+      "alt": "Barbecue ribs smoking over a pit",
+      "activeFrom": "2026-08-18",
+      "placementScore": 78
     }
   ],
   "rail": [
@@ -52,7 +54,8 @@
       "image": "assets/home/school-rights.webp",
       "alt": "A yellow Ontario school bus",
       "published": "2026-08-24",
-      "activeFrom": "2026-08-24"
+      "activeFrom": "2026-08-24",
+      "placementScore": 90
     },
     {
       "id": "data-centre-not-ai",
@@ -65,7 +68,8 @@
       "image": "assets/explore/burlington-orientation-map.svg",
       "alt": "Orientation map of Burlington",
       "published": "2026-08-24",
-      "activeFrom": "2026-08-24"
+      "activeFrom": "2026-08-24",
+      "placementScore": 89
     },
     {
       "id": "ward-change-2026",
@@ -76,7 +80,8 @@
       "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
       "image": "assets/editorial/burlington-wards-2026.svg",
       "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
-      "activeFrom": "2026-08-21"
+      "activeFrom": "2026-08-21",
+      "placementScore": 81
     }
   ],
   "latest": [
@@ -90,7 +95,8 @@
       "image": "assets/home/school-rights.webp",
       "alt": "A yellow Ontario school bus",
       "published": "2026-08-24",
-      "activeFrom": "2026-08-24"
+      "activeFrom": "2026-08-24",
+      "placementScore": 90
     },
     {
       "id": "data-centre-not-ai",
@@ -103,7 +109,8 @@
       "image": "assets/explore/burlington-orientation-map.svg",
       "alt": "Orientation map of Burlington",
       "published": "2026-08-24",
-      "activeFrom": "2026-08-24"
+      "activeFrom": "2026-08-24",
+      "placementScore": 89
     },
     {
       "id": "730-brant-vacant-building",
@@ -114,80 +121,117 @@
       "url": "articles/730-brant-vacant-building.html",
       "image": "assets/editorial/730-brant-share.webp",
       "alt": "730 Brant Street Burlington News illustration",
-      "published": "2026-08-24"
+      "published": "2026-08-24",
+      "placementScore": 87
+    },
+    {
+      "id": "ward-change-2026",
+      "kind": "service",
+      "headline": "Your ward may have changed. Check before you vote.",
+      "label": "Election",
+      "labelEssential": true,
+      "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
+      "image": "assets/editorial/burlington-wards-2026.svg",
+      "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
+      "activeFrom": "2026-08-21",
+      "placementScore": 81
+    },
+    {
+      "id": "ribfest-2026",
+      "kind": "seasonal",
+      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
+      "label": "Events",
+      "labelEssential": true,
+      "url": "articles/ribfest-2026.html",
+      "image": "assets/home/ribs.webp",
+      "alt": "Barbecue ribs smoking over a pit",
+      "activeFrom": "2026-08-18",
+      "placementScore": 78
+    },
+    {
+      "id": "back-to-school-2026",
+      "kind": "seasonal",
+      "headline": "The dates Burlington families need before school starts.",
+      "label": "Schools",
+      "labelEssential": true,
+      "url": "articles/back-to-school-2026.html",
+      "image": "assets/home/school-rights.webp",
+      "alt": "A yellow Ontario school bus",
+      "activeFrom": "2026-08-17",
+      "placementScore": 77
     }
   ],
   "audit": [
     {
       "id": "data-centre-not-ai",
       "state": "eligible",
-      "placementScore": 93,
+      "placementScore": 89,
       "reason": "all gates passed"
     },
     {
       "id": "skyway-tunnels",
       "state": "eligible",
-      "placementScore": 86,
+      "placementScore": 82,
       "reason": "all gates passed"
     },
     {
       "id": "ward-change-2026",
       "state": "eligible",
-      "placementScore": 85,
+      "placementScore": 81,
       "reason": "all gates passed"
     },
     {
       "id": "election-field-2026",
       "state": "eligible",
-      "placementScore": 87,
+      "placementScore": 80,
       "reason": "all gates passed"
     },
     {
       "id": "back-to-school-2026",
       "state": "eligible",
-      "placementScore": 76,
+      "placementScore": 77,
       "reason": "all gates passed"
     },
     {
       "id": "ontario-student-rights-school",
       "state": "eligible",
-      "placementScore": 95,
+      "placementScore": 90,
       "reason": "all gates passed"
     },
     {
       "id": "730-brant-vacant-building",
       "state": "eligible",
-      "placementScore": 92,
+      "placementScore": 87,
       "reason": "all gates passed"
     },
     {
       "id": "millcroft-phase-2-138-homes",
       "state": "eligible",
-      "placementScore": 75,
+      "placementScore": 73,
       "reason": "all gates passed"
     },
     {
       "id": "ribfest-2026",
       "state": "eligible",
-      "placementScore": 81,
+      "placementScore": 78,
       "reason": "all gates passed"
     },
     {
       "id": "sports-lockers",
       "state": "eligible",
-      "placementScore": 74,
+      "placementScore": 68,
       "reason": "all gates passed"
     },
     {
       "id": "fishway-2025",
       "state": "eligible",
-      "placementScore": 77,
+      "placementScore": 75,
       "reason": "all gates passed"
     },
     {
       "id": "salamander-migration",
       "state": "archive",
-      "placementScore": 78,
+      "placementScore": 75,
       "reason": "seasonal window ended 2026-04-30"
     }
   ]
