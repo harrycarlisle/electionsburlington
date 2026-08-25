@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-08-25T14:27:39.949170-04:00",
+  "source": "Metrolinx GO Transit GTFS",
+  "sourceUrl": "https://www.gotransit.com/en/partner-with-us/software-developers",
+  "dataKind": "scheduled",
+  "route": "Lakeshore West",
+  "lineCode": "LW",
+  "routes": [
+    {
+      "origin": {
+        "label": "Burlington",
+        "stopCode": "BU"
+      },
+      "destination": {
+        "label": "Union",
+        "stopCode": "UN"
+      },
+      "journeys": [
+        {
+          "departure": "23:35:00",
+          "arrival": "24:50:00",
+          "duration": "75 min",
+          "line": "LW",
+          "type": "Train",
+          "tripNumber": "20260825-18-18900",
+          "scheduled": true
+        }
+      ]
+    },
+    {
+      "origin": {
+        "label": "Burlington",
+        "stopCode": "BU"
+      },
+      "destination": {
+        "label": "West Harbour",
+        "stopCode": "WR"
+      },
+      "journeys": [
+        {
+          "departure": "26:20:00",
+          "arrival": "26:55:00",
+          "duration": "35 min",
+          "line": "LW",
+          "type": "Train",
+          "tripNumber": "20260825-18-18951",
+          "scheduled": true
+        }
+      ]
+    }
+  ],
+  "alerts": [],
+  "liveStatusUrl": "https://www.gotransit.com/en/see-schedules",
+  "attribution": "Data used in this product or service is provided with the permission of Metrolinx. Metrolinx makes no representations or warranties of any kind, express or implied, with respect to the Data and assumes no responsibility for the accuracy or currency of the data used in this product or service."
+}
