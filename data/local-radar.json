@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T19:13:20.258808-04:00",
+  "generatedAt": "2026-08-25T19:44:21.312005-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -139,7 +139,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.033753586666666724
+        "rotation": 0.07683352178240743
       },
       "gates": {
         "evidence": "passed",
@@ -531,7 +531,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.033753586666666724
+        "rotation": 0.07683352178240743
       },
       "gates": {
         "evidence": "passed",
@@ -1005,7 +1005,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.033753586666666724
+        "rotation": 0.07683352178240743
       },
       "gates": {
         "evidence": "passed",
@@ -1626,6 +1626,68 @@
         "sourceConfidence": 5.0,
         "originality": 4.6,
         "visualStrength": 2.2,
+        "rotation": 5.0
+      },
+      "radarScore": 70,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "511:293256",
+      "detectedAt": "2026-08-25T23:33:38Z",
+      "score": 90,
+      "headline": "Collision on QEW Fort Erie bound HOV at TRAFALGAR ROAD, Oakville. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "7070cf48dc4802e8",
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.8,
+        "freshness": 5.0,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 70,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "511:293255",
+      "detectedAt": "2026-08-25T23:33:38Z",
+      "score": 75,
+      "headline": "Collision on QEW Fort Erie bound  at TRAFALGAR ROAD, Oakville. Left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "9c7d99a457d4668a",
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.8,
+        "freshness": 5.0,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
         "rotation": 5.0
       },
       "radarScore": 70,
