@@ -1,7 +1,6 @@
 (() => {
   const menu = document.getElementById('menuButton');
   const nav = document.getElementById('primaryNav');
-  const today = document.getElementById('today');
   const searchForm = document.getElementById('headerSearch');
   const searchInput = document.getElementById('siteSearch');
   const searchResults = document.getElementById('searchResults');
@@ -21,16 +20,30 @@
     const days = Math.floor(hours / 24);
     return days === 1 ? '1 day ago' : `${days} days ago`;
   };
+  const categoryLabel = item => {
+    const haystack = `${item?.label || ''} ${item?.tag || ''} ${item?.kind || ''} ${item?.headline || ''}`.toLowerCase();
+    if (/election|ward|vote|candidate|ballot/.test(haystack)) return 'Election';
+    if (/school|student|teacher|back to school/.test(haystack)) return 'Schools';
+    if (/development|brant|building|housing|millcroft|zoning|construction/.test(haystack)) return 'Development';
+    if (/traffic|qew|skyway|road|closure/.test(haystack)) return 'Traffic';
+    if (/sport|soccer|hockey|ringette|lacrosse/.test(haystack)) return 'Sports';
+    if (/food|restaurant|ribfest|taco/.test(haystack)) return 'Food';
+    if (/event|festival|weekend/.test(haystack)) return 'Events';
+    if (/fish|wildlife|nature|salamander|marsh|park/.test(haystack)) return 'Nature';
+    if (/feature|history|skyway/.test(haystack)) return 'Feature';
+    return 'Burlington';
+  };
 
   const searchIndex = [
-    {title:'Ontario nearly replaced the Skyway with three tunnels',url:'articles/skyway-bridge-story.html',section:'History',keywords:'skyway bridge canal qew tunnels'},
+    {title:'Ontario nearly replaced the Skyway with three tunnels',url:'articles/skyway-bridge-story.html',section:'Feature',keywords:'skyway bridge canal qew tunnels'},
+    {title:'Millcroft Greens Phase 2 proposes 138 homes',url:'https://www.burlington.ca/en/news/current-development-projects/millcroft-greens-phase-2.aspx',section:'Development',keywords:'millcroft golf course homes development ward 6 MZO'},
     {title:'Ribfest turns 30',url:'articles/ribfest-2026.html',section:'Events',keywords:'ribfest ribs labour day food festival'},
     {title:'The school dates Burlington families need',url:'articles/back-to-school-2026.html',section:'Schools',keywords:'school calendar hdsb September'},
     {title:'What Ontario students can actually be searched for',url:'articles/ontario-student-rights-school.html',section:'Schools',keywords:'teacher phone detention bag locker search student rights school'},
-    {title:'730 Brant sat empty for more than a decade, then caught fire',url:'articles/730-brant-vacant-building.html',section:'Investigation',keywords:'abandoned vacant building fire Brant Street owner redevelopment'},
+    {title:'730 Brant sat empty for more than a decade, then caught fire',url:'articles/730-brant-vacant-building.html',section:'Development',keywords:'abandoned vacant building fire Brant Street owner redevelopment'},
     {title:'Explore Burlington',url:'explore.html',section:'Explore',keywords:'this weekend bored passport calendar places free farmers market'},
     {title:'Burlington food spots worth trying',url:'guides/burlington-food-spots.html',section:'Food',keywords:'best food tacos burger sandwich banh mi coffee restaurants'},
-    {title:'Burlington 2026 Election Guide',url:'election-guide.html',section:'Elections',keywords:'vote mayor candidates ward ballot'},
+    {title:'Burlington 2026 Election Guide',url:'election-guide.html',section:'Election',keywords:'vote mayor candidates ward ballot'},
     {title:'Burlington sports',url:'sports.html',section:'Sports',keywords:'soccer hockey lacrosse ultimate ringette'},
     {title:'Games about Burlington',url:'puzzles.html',section:'Games',keywords:'quiz puzzle trivia swipe'},
     {title:'Live Skyway traffic cameras',url:'skyway-traffic.html',section:'Traffic',keywords:'qew skyway traffic camera commute'}
@@ -43,7 +56,6 @@
     'assets/home/fishway.webp': 'Jeff Hitchcock · CC BY 2.0'
   };
 
-  if (today) today.textContent = new Intl.DateTimeFormat('en-CA',{weekday:'long',month:'long',day:'numeric',year:'numeric'}).format(new Date());
   const setTheme = (theme,persist=true) => {
     const next = theme === 'dark' ? 'dark' : 'light';
     root.dataset.theme = next;
@@ -141,7 +153,7 @@
         const external = /^https?:\/\//.test(item.url || '');
         const credit = imageCredits[item.image] || '';
         const visual = item.image ? `<span class="newest-thumb"><img src="${esc(item.image)}" alt="${esc(item.alt || '')}" loading="lazy">${credit && !/^Burlington News/i.test(credit) ? `<i>${esc(credit)}</i>` : ''}</span>` : '<span class="puzzle-icon blue">BN</span>';
-        return `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}>${visual}<span>${item.labelEssential && item.label ? `<small>${esc(item.label)}</small>` : ''}<strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
+        return `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}>${visual}<span><small>${esc(categoryLabel(item))}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
       }).join('');
     }).catch(() => {});
 
@@ -162,7 +174,7 @@
       if (!item) return;
       const visual = leadImages[item.tag] || leadImages['Your ward'];
       const external = /^https?:\/\//.test(item.url || '');
-      lead.innerHTML = `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${visual[0]}" width="1600" height="1000" alt="${esc(visual[1])}" fetchpriority="high"><span class="image-credit">${esc(visual[2])}</span></div><div class="top-copy"><span class="kicker">Recently verified</span><h1>${esc(item.headline)}</h1><p>${esc(item.summary)}</p></div></a>`;
+      lead.innerHTML = `<a href="${esc(item.url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${visual[0]}" width="1600" height="1000" alt="${esc(visual[1])}" fetchpriority="high"><span class="image-credit">${esc(visual[2])}</span></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(item.headline)}</h1><p>${esc(item.summary)}</p></div></a>`;
     }).catch(() => {});
 
   document.querySelector('.weekly-newsletter form')?.addEventListener('submit', event => {
