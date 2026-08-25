@@ -1,19 +1,19 @@
 {
   "generatedFor": "2026-08-24",
-  "method": "Evidence and rights gates first; eligible stories are sorted by relevance, breadth, novelty, familiarity and consequence. Scores choose placement and are not shown to readers.",
+  "method": "Evidence and rights gates first. Placement blends interest, Burlington relevance, novelty, familiarity, consequence, breadth, source confidence, originality, freshness and rotation pressure. Aggregation-only items are penalized.",
   "feature": [
     {
-      "id": "skyway-tunnels",
-      "kind": "feature",
-      "headline": "Ontario nearly replaced the Skyway with three tunnels.",
-      "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
-      "label": "Feature",
+      "id": "data-centre-not-ai",
+      "kind": "explainer",
+      "headline": "Burlington's proposed data centre is not what many people think.",
+      "deck": "The South Service Road proposal would use about 20 MW of electricity, but City records say it is not an AI hyperscale facility.",
+      "label": "Development",
       "labelEssential": true,
-      "url": "articles/skyway-bridge-story.html",
-      "image": "assets/home/skyway-reader.webp",
-      "alt": "The Burlington Bay James N. Allan Skyway",
-      "credit": "Dave Lauretti · CC BY 2.0",
-      "published": "2026-08-24"
+      "url": "articles/burlington-data-centre-not-ai.html",
+      "image": "assets/explore/burlington-orientation-map.svg",
+      "alt": "Orientation map of Burlington",
+      "published": "2026-08-24",
+      "activeFrom": "2026-08-24"
     },
     {
       "id": "election-field-2026",
@@ -28,28 +28,20 @@
       "activeFrom": "2026-08-21"
     },
     {
-      "id": "ribfest-2026",
-      "kind": "seasonal",
-      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
-      "label": "Events",
+      "id": "skyway-tunnels",
+      "kind": "feature",
+      "headline": "Ontario nearly replaced the Skyway with three tunnels.",
+      "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
+      "label": "Feature",
       "labelEssential": true,
-      "url": "articles/ribfest-2026.html",
-      "image": "assets/home/ribs.webp",
-      "alt": "Barbecue ribs smoking over a pit",
-      "activeFrom": "2026-08-18"
+      "url": "articles/skyway-bridge-story.html",
+      "image": "assets/home/skyway-reader.webp",
+      "alt": "The Burlington Bay James N. Allan Skyway",
+      "credit": "Dave Lauretti · CC BY 2.0",
+      "published": "2026-08-24"
     }
   ],
   "rail": [
-    {
-      "id": "millcroft-phase-2-138-homes",
-      "kind": "current",
-      "headline": "Millcroft Phase 2 proposes 138 homes. It has not been approved.",
-      "label": "Development",
-      "labelEssential": true,
-      "url": "articles/millcroft-phase-2-138-homes.html",
-      "published": "2026-08-24",
-      "activeFrom": "2026-08-24"
-    },
     {
       "id": "ontario-student-rights-school",
       "kind": "service",
@@ -59,6 +51,19 @@
       "url": "articles/ontario-student-rights-school.html",
       "image": "assets/home/school-rights.webp",
       "alt": "A yellow Ontario school bus",
+      "published": "2026-08-24",
+      "activeFrom": "2026-08-24"
+    },
+    {
+      "id": "data-centre-not-ai",
+      "kind": "explainer",
+      "headline": "Burlington's proposed data centre is not what many people think.",
+      "deck": "The South Service Road proposal would use about 20 MW of electricity, but City records say it is not an AI hyperscale facility.",
+      "label": "Development",
+      "labelEssential": true,
+      "url": "articles/burlington-data-centre-not-ai.html",
+      "image": "assets/explore/burlington-orientation-map.svg",
+      "alt": "Orientation map of Burlington",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24"
     },
@@ -76,16 +81,6 @@
   ],
   "latest": [
     {
-      "id": "millcroft-phase-2-138-homes",
-      "kind": "current",
-      "headline": "Millcroft Phase 2 proposes 138 homes. It has not been approved.",
-      "label": "Development",
-      "labelEssential": true,
-      "url": "articles/millcroft-phase-2-138-homes.html",
-      "published": "2026-08-24",
-      "activeFrom": "2026-08-24"
-    },
-    {
       "id": "ontario-student-rights-school",
       "kind": "service",
       "headline": "Can a teacher take your phone? Seven school rules students should know.",
@@ -98,26 +93,102 @@
       "activeFrom": "2026-08-24"
     },
     {
+      "id": "data-centre-not-ai",
+      "kind": "explainer",
+      "headline": "Burlington's proposed data centre is not what many people think.",
+      "deck": "The South Service Road proposal would use about 20 MW of electricity, but City records say it is not an AI hyperscale facility.",
+      "label": "Development",
+      "labelEssential": true,
+      "url": "articles/burlington-data-centre-not-ai.html",
+      "image": "assets/explore/burlington-orientation-map.svg",
+      "alt": "Orientation map of Burlington",
+      "published": "2026-08-24",
+      "activeFrom": "2026-08-24"
+    },
+    {
       "id": "730-brant-vacant-building",
       "kind": "investigation",
       "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
       "label": "Development",
       "labelEssential": true,
       "url": "articles/730-brant-vacant-building.html",
+      "image": "assets/editorial/730-brant-share.webp",
+      "alt": "730 Brant Street Burlington News illustration",
       "published": "2026-08-24"
     }
   ],
   "audit": [
-    {"id":"skyway-tunnels","state":"eligible","placementScore":85,"reason":"all gates passed"},
-    {"id":"ward-change-2026","state":"eligible","placementScore":93,"reason":"all gates passed"},
-    {"id":"election-field-2026","state":"eligible","placementScore":96,"reason":"all gates passed"},
-    {"id":"back-to-school-2026","state":"eligible","placementScore":84,"reason":"all gates passed"},
-    {"id":"ontario-student-rights-school","state":"eligible","placementScore":100,"reason":"all gates passed"},
-    {"id":"730-brant-vacant-building","state":"eligible","placementScore":93,"reason":"all gates passed"},
-    {"id":"millcroft-phase-2-138-homes","state":"eligible","placementScore":94,"reason":"all gates passed; primary City record confirms proposal and current review status"},
-    {"id":"ribfest-2026","state":"eligible","placementScore":90,"reason":"all gates passed"},
-    {"id":"sports-lockers","state":"eligible","placementScore":80,"reason":"all gates passed"},
-    {"id":"fishway-2025","state":"eligible","placementScore":65,"reason":"all gates passed"},
-    {"id":"salamander-migration","state":"archive","placementScore":80,"reason":"seasonal window ended 2026-04-30"}
+    {
+      "id": "data-centre-not-ai",
+      "state": "eligible",
+      "placementScore": 97,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "skyway-tunnels",
+      "state": "eligible",
+      "placementScore": 86,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "ward-change-2026",
+      "state": "eligible",
+      "placementScore": 87,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "election-field-2026",
+      "state": "eligible",
+      "placementScore": 88,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "back-to-school-2026",
+      "state": "eligible",
+      "placementScore": 76,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "ontario-student-rights-school",
+      "state": "eligible",
+      "placementScore": 99,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "730-brant-vacant-building",
+      "state": "eligible",
+      "placementScore": 92,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "millcroft-phase-2-138-homes",
+      "state": "eligible",
+      "placementScore": 78,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "ribfest-2026",
+      "state": "eligible",
+      "placementScore": 81,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "sports-lockers",
+      "state": "eligible",
+      "placementScore": 74,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "fishway-2025",
+      "state": "eligible",
+      "placementScore": 77,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "salamander-migration",
+      "state": "archive",
+      "placementScore": 78,
+      "reason": "seasonal window ended 2026-04-30"
+    }
   ]
 }
