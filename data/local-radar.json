@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T23:15:52.178225-04:00",
+  "generatedAt": "2026-08-25T23:26:25.628610-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -64,6 +64,37 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": true
+    },
+    {
+      "id": "511:293299",
+      "detectedAt": "2026-08-26T03:15:05Z",
+      "score": 65,
+      "headline": "Disabled Vehicle on HWY 401 Westbound  at GUELPH LINE, Milton. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "HWY 401",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "a1a160628b996c78",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.0,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 5.0,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 73,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
     },
     {
       "id": "back-to-school-2026",
@@ -384,40 +415,6 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": false
-    },
-    {
-      "title": "Third-Party Advertisers",
-      "url": "https://myvote.burlington.ca/third-party-advertisers/",
-      "source": "City of Burlington Election",
-      "sourceType": "official",
-      "scope": "election",
-      "allowImage": true,
-      "pageRank": 13,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington",
-      "kind": "source",
-      "headline": "Third-Party Advertisers",
-      "radarId": "35e1a372972f9b7c",
-      "signals": {
-        "interest": 3.0999999999999996,
-        "relevance": 5.0,
-        "novelty": 2.5,
-        "familiarity": 3.5,
-        "consequence": 2.8,
-        "freshness": 2.4,
-        "sourceConfidence": 5.0,
-        "originality": 4.6,
-        "visualStrength": 2.2,
-        "rotation": 5.0
-      },
-      "radarScore": 70,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
     }
   ],
   "originalIdeas": [
@@ -577,7 +574,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.030320312754629652
+        "rotation": 0.04498351611111118
       },
       "gates": {
         "evidence": "passed",
@@ -947,6 +944,37 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": true
+    },
+    {
+      "id": "511:293299",
+      "detectedAt": "2026-08-26T03:15:05Z",
+      "score": 65,
+      "headline": "Disabled Vehicle on HWY 401 Westbound  at GUELPH LINE, Milton. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "HWY 401",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "a1a160628b996c78",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.0,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 5.0,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 73,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
     },
     {
       "id": "back-to-school-2026",
@@ -1687,7 +1715,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.030320312754629652
+        "rotation": 0.04498351611111118
       },
       "gates": {
         "evidence": "passed",
