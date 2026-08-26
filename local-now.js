@@ -2,10 +2,11 @@
   const host = document.getElementById('localNow');
   if (!host) return;
 
-  const VARIANT = 'mode-tabs';
-  const MODE_KEY = 'liveUtilityMode';
+  const VARIANT = 'icon-carousel';
   const MODES = ['driving', 'go', 'skyway', 'today'];
-  const MODE_LABEL = {driving:'Driving', go:'GO', skyway:'Skyway', today:'Today'};
+  const MODE_LABEL = {driving:'Driving', go:'GO transit', skyway:'Skyway', today:'Today'};
+  const SWIPE_PX = 36;
+  const AUTO_MS = 7000;
 
   window.liveUtilityVariant = VARIANT;
 
@@ -14,10 +15,14 @@
   const goTripUrl = destination => `https://www.gotransit.com/en/see-schedules?tripPoint=7700&departure=BU&destination=${encodeURIComponent(destination)}&date=${encodeURIComponent(torontoDay())}&transfers=true`;
   const torontoHour = (value) => Number(new Intl.DateTimeFormat('en-CA', {timeZone:'America/Toronto', hour:'numeric', hourCycle:'h23'}).format(value ? new Date(value) : new Date()));
   const torontoMinute = (value) => Number(new Intl.DateTimeFormat('en-CA', {timeZone:'America/Toronto', minute:'2-digit'}).format(value ? new Date(value) : new Date()));
+  const reduceMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let selectedMode = null;
   let viewed = false;
   let lastModels = null;
+  let userTouched = false;
+  let autoTimer = 0;
+  let rotatedOnce = false;
 
   function track(name, mode) {
     const detail = {event:name, liveUtilityVariant:VARIANT, mode:mode || selectedMode || 'driving'};
@@ -28,17 +33,12 @@
     try { window.dispatchEvent(new CustomEvent(name, {detail})); } catch (_) {}
   }
 
-  function readStoredMode() {
-    try {
-      const value = String(localStorage.getItem(MODE_KEY) || '').toLowerCase();
-      return MODES.includes(value) ? value : '';
-    } catch (_) {
-      return '';
+  function noteInteraction() {
+    userTouched = true;
+    if (autoTimer) {
+      clearTimeout(autoTimer);
+      autoTimer = 0;
     }
-  }
-
-  function storeMode(mode) {
-    try { localStorage.setItem(MODE_KEY, mode); } catch (_) {}
   }
 
   function timeOnly(value) {
@@ -46,7 +46,7 @@
     const match = String(value).match(/(\d{1,2}):(\d{2})/);
     if (!match) return String(value);
     const hour24 = Number(match[1]) % 24;
-    const suffix = hour24 >= 12 ? 'pm' : 'am';
+    const suffix = hour24 >= 12 ? 'p.m.' : 'a.m.';
     const hour = hour24 % 12 || 12;
     return `${hour}:${match[2]} ${suffix}`;
   }
@@ -57,17 +57,26 @@
     return match ? Number(match[1]) * 60 + Number(match[2]) : null;
   }
 
-  function departureLabel(journey) {
-    const raw = journey?.computedDeparture || journey?.departure;
-    const time = timeOnly(raw);
-    if (!time) return '';
-    const status = String(journey.departureStatus || '');
-    if (journey.computedDeparture && /late|delay|delayed/i.test(status)) return `${time} delayed`;
-    return time;
+  function delayFromJourney(journey) {
+    const scheduled = String(journey?.departure || '');
+    const computed = String(journey?.computedDeparture || '');
+    const a = scheduled.match(/(\d{1,2}):(\d{2})/);
+    const b = computed.match(/(\d{1,2}):(\d{2})/);
+    if (!a || !b || !journey?.computedDeparture) return null;
+    const delta = (Number(b[1]) * 60 + Number(b[2])) - (Number(a[1]) * 60 + Number(a[2]));
+    return delta > 0 ? delta : null;
   }
 
-  function routeJourneys(data, code, count) {
-    const route = (Array.isArray(data?.routes) ? data.routes : []).find(item => String(item.destination?.stopCode || '').toUpperCase() === code);
+  function departureStamp(journey) {
+    return timeOnly(journey?.computedDeparture || journey?.departure);
+  }
+
+  function routeJourneys(data, origin, dest, count) {
+    const allRoutes = Array.isArray(data?.routes) ? data.routes : [];
+    const route = allRoutes.find(item =>
+      String(item.destination?.stopCode || '').toUpperCase() === dest
+      && (!origin || String(item.origin?.stopCode || '').toUpperCase() === origin)
+    ) || allRoutes.find(item => String(item.destination?.stopCode || '').toUpperCase() === dest);
     const all = Array.isArray(route?.journeys) ? route.journeys : [];
     const fresh = data?.generatedAt && torontoDay(data.generatedAt) === torontoDay();
     const nowMin = torontoHour() * 60 + torontoMinute();
@@ -75,26 +84,58 @@
       const minutes = journeyMinutes(item);
       return minutes == null || minutes >= nowMin - 4;
     }) : all;
-    return (upcoming.length ? upcoming : all).slice(0, count);
+    return {route, journeys:(upcoming.length ? upcoming : all).slice(0, count)};
+  }
+
+  function officialCause(text) {
+    const hay = String(text || '');
+    if (!hay) return '';
+    if (/police investigation|investigating/i.test(hay)) return 'Police investigation';
+    if (/emergency response|ambulance|hazmat/i.test(hay)) return 'Emergency response';
+    if (/\bpedestrian|trespass/i.test(hay)) return 'Pedestrian incident';
+    if (/track issue|broken rail/i.test(hay)) return 'Track issue';
+    if (/signal (issue|problem)/i.test(hay)) return 'Signal issue';
+    if (/mechanical|train fault|disabled train/i.test(hay)) return 'Mechanical issue';
+    if (/weather|storm|snow|ice/i.test(hay)) return 'Weather';
+    return '';
   }
 
   function goModel(data) {
     const alert = Array.isArray(data?.alerts) && data.alerts[0];
-    const union = routeJourneys(data, 'UN', 2);
-    const west = routeJourneys(data, 'WR', 2);
-    const scheduled = String(data?.dataKind || '').toLowerCase() === 'scheduled' || union.concat(west).every(item => item.scheduled !== false && !item.computedDeparture);
-    const severe = Boolean(alert) && /cancel|cancelled|suspend|severe|stopped|stoppage|delay|disruption|bus replace/i.test(`${alert.headline || ''} ${alert.description || ''}`);
+    const alertText = `${alert?.headline || ''} ${alert?.detail || ''} ${alert?.description || ''}`;
+    const inboundPreferred = torontoHour() >= 15;
+    const outbound = routeJourneys(data, 'BU', 'UN', 1);
+    const inbound = routeJourneys(data, 'UN', 'BU', 1);
+    const chosen = inboundPreferred && inbound.journeys.length ? inbound : outbound;
+    const journey = chosen.journeys[0];
+    const scheduledOnly = String(data?.dataKind || '').toLowerCase() === 'scheduled' || (journey && journey.scheduled !== false && !journey.computedDeparture);
+    const critical = Boolean(alert) && /cancel|cancelled|suspend|stopped|stoppage|bus replac/i.test(alertText);
+    const delay = journey ? delayFromJourney(journey) : null;
+    const realtime = Boolean(journey?.computedDeparture) && !scheduledOnly;
+    let status = '';
+    if (critical) status = '';
+    else if (delay) status = `+${delay} min`;
+    else if (realtime && /on time|ontime|arrived/i.test(String(journey.departureStatus || ''))) status = 'On time';
+    else if (realtime) status = String(journey.departureStatus || 'Live');
+    else status = 'Scheduled';
+    const platform = journey?.platform ? `Platform ${journey.platform}` : '';
+    const origin = chosen.route?.origin?.label || (inboundPreferred && inbound.journeys.length ? 'Union' : 'Burlington');
+    const dest = chosen.route?.destination?.label || (inboundPreferred && inbound.journeys.length ? 'Burlington' : 'Union');
+    const destCode = chosen.route?.destination?.stopCode || 'UN';
     return {
       alert: Boolean(alert),
-      severe,
-      headline: alert?.headline || 'Service alert',
-      scheduled,
-      dataKind: data?.dataKind || (scheduled ? 'scheduled' : 'live'),
-      url: data?.liveStatusUrl || 'https://www.gotransit.com/en/see-schedules',
-      lines: [
-        {code:'UN', label:'Burlington → Union', url:goTripUrl('UN'), journeys:union},
-        {code:'WR', label:'Burlington → West Harbour', url:goTripUrl('WR'), journeys:west}
-      ]
+      critical,
+      severe: critical,
+      headline: critical ? (alert.headline || 'Service suspended') : `${origin} → ${dest}`,
+      time: critical ? '' : departureStamp(journey),
+      status,
+      detail: critical
+        ? (alert.detail || alert.description || 'Lakeshore West service update')
+        : [status !== 'Scheduled' && status !== 'On time' ? '' : '', platform, officialCause(alertText)].filter(Boolean).join(' · ') || (scheduledOnly ? 'Next scheduled departure' : ''),
+      scheduled: scheduledOnly,
+      dataKind: data?.dataKind || (scheduledOnly ? 'scheduled' : 'live'),
+      url: critical ? (data?.liveStatusUrl || 'https://www.gotransit.com/en/see-schedules') : goTripUrl(destCode),
+      cause: officialCause(alertText)
     };
   }
 
@@ -124,29 +165,44 @@
     if (day === today) return torontoHour(start) >= 17 ? 'Tonight' : 'Today';
     if (day === shiftDay(today, 1)) return 'Tomorrow';
     const weekday = new Intl.DateTimeFormat('en-CA', {timeZone:'America/Toronto', weekday:'short'}).format(new Date(start));
-    const todayWeekday = new Intl.DateTimeFormat('en-CA', {timeZone:'America/Toronto', weekday:'short'}).format(new Date());
-    const weekend = /Sat|Sun/i.test(weekday);
-    const approaching = /Thu|Fri|Sat|Sun/i.test(todayWeekday);
-    if (weekend && approaching) return 'This weekend';
     return weekday;
+  }
+
+  function eventQuality(event) {
+    const title = String(event.title || '');
+    if (/^(meeting|notice|update)$/i.test(title)) return 0;
+    if (/farmers market|ribfest|festival|election|voting|closure|eclipse|advance/i.test(title)) return 5;
+    if (event.scope === 'Burlington' || event.category) return 3;
+    return 1;
   }
 
   function nextEvent(data) {
     const now = Date.now();
-    const events = (Array.isArray(data?.events) ? data.events : []).filter(item => Date.parse(item.end || item.start) > now).sort((a, b) => Date.parse(a.start) - Date.parse(b.start));
-    const event = events[0];
-    if (!event) return null;
-    const start = event.start ? new Date(event.start) : null;
-    const end = event.end ? new Date(event.end) : null;
+    const hour = torontoHour();
+    const events = (Array.isArray(data?.events) ? data.events : [])
+      .filter(item => Date.parse(item.end || item.start) > now)
+      .filter(item => eventQuality(item) >= 3)
+      .sort((a, b) => {
+        const quality = eventQuality(b) - eventQuality(a);
+        return quality || Date.parse(a.start) - Date.parse(b.start);
+      });
+    const preferTomorrow = hour >= 20;
+    const todayStamp = torontoDay();
+    const tomorrowStamp = shiftDay(todayStamp, 1);
+    const picked = events.find(item => preferTomorrow ? torontoDay(item.start) === tomorrowStamp : torontoDay(item.start) === todayStamp)
+      || events[0];
+    if (!picked) return null;
+    const start = picked.start ? new Date(picked.start) : null;
+    const end = picked.end ? new Date(picked.end) : null;
     const hours = start && Number.isFinite(start.getTime())
       ? (end && Number.isFinite(end.getTime()) ? `${clockLabel(start)}–${clockLabel(end)}` : clockLabel(start))
       : '';
     return {
-      title: event.title || 'Burlington event',
+      title: picked.title || 'Burlington event',
       relative: start ? relativeDay(start) : '',
-      dateLabel: start ? prettyDate(start) : (event.dateLabel || ''),
+      dateLabel: start ? prettyDate(start) : (picked.dateLabel || ''),
       hours,
-      url: `/explore/#event-${encodeURIComponent(event.id || '')}`
+      url: `/explore/#event-${encodeURIComponent(picked.id || '')}`
     };
   }
 
@@ -157,13 +213,22 @@
       .trim();
   }
 
+  function commuteDestination() {
+    const hour = torontoHour();
+    if (hour < 11) return 'Toronto';
+    if (hour < 15) return 'Oakville';
+    if (hour < 19) return 'Hamilton';
+    return 'Niagara';
+  }
+
   function destinationFrom(item) {
     const hay = `${item.direction || ''} ${item.title || ''} ${item.impact || ''} ${item.context || ''}`;
     if (/niagara|fort erie/i.test(hay)) return 'Niagara';
     if (/hamilton/i.test(hay) && !/toronto/i.test(hay)) return 'Hamilton';
+    if (/stoney creek/i.test(hay)) return 'Stoney Creek';
     if (/oakville or toronto|toronto/i.test(hay)) return 'Toronto';
     if (/oakville/i.test(hay)) return 'Oakville';
-    return torontoHour() >= 15 ? 'Hamilton' : 'Toronto';
+    return commuteDestination();
   }
 
   function roadwayFrom(item) {
@@ -183,12 +248,42 @@
     return null;
   }
 
+  function routeIdFor(dest) {
+    const value = String(dest || '').toLowerCase();
+    if (value.includes('oakville')) return 'oakville';
+    if (value.includes('stoney')) return 'stoney-creek';
+    if (value.includes('niagara')) return 'niagara-falls';
+    if (value.includes('hamilton')) return 'hamilton';
+    return 'toronto';
+  }
+
+  function looksLabel(value) {
+    const looks = String(value || '').toLowerCase();
+    if (!looks || looks === 'unknown' || looks === 'check cameras') return '';
+    if (looks === 'heavy') return 'Heavy';
+    if (looks === 'moderate' || looks === 'slow') return 'Moderate';
+    if (looks === 'clear' || looks === 'light') return 'Light traffic';
+    return '';
+  }
+
+  function isRamp(item) {
+    return item?.facility === 'on-ramp' || item?.facility === 'off-ramp' || /on-ramp|off-ramp|\bramp\b/i.test(`${item?.title || ''} ${item?.rawHeadline || ''}`);
+  }
+
+  function isMainlineClosure(item) {
+    const text = `${item?.title || ''} ${item?.rawHeadline || ''}`;
+    if (isRamp(item)) return false;
+    if (/construction|nightly/i.test(text) && !/all lanes closed|completely closed|fully closed/i.test(text)) return false;
+    return item?.type === 'closure' && /all lanes closed|completely closed|fully closed|closed in both directions/i.test(text);
+  }
+
   function drivingModel(surface, intel) {
     const incidents = Array.isArray(surface?.incidents) ? surface.incidents : [];
     const ready = surface?.homepageTraffic;
-    const local = incidents.find(item => /burlington/i.test(item.municipality || '') && (item.type === 'closure' || item.type === 'collision'))
-      || incidents.find(item => item.type === 'closure' || item.type === 'collision');
-    const commute = surface?.routes?.toronto || surface?.routes?.hamilton || {};
+    const local = incidents.find(item => /burlington/i.test(item.municipality || '') && (item.type === 'closure' || item.type === 'collision') && !isRamp(item))
+      || incidents.find(item => (item.type === 'collision') || (item.type === 'closure' && !isRamp(item)));
+    const destHint = commuteDestination();
+    const commute = surface?.routes?.[routeIdFor(destHint)] || surface?.routes?.toronto || surface?.routes?.hamilton || {};
     const source = local || (ready?.title ? {
       title: ready.title,
       context: ready.context || '',
@@ -198,7 +293,8 @@
       nearestRoad: '',
       type: /clos/i.test(ready.title) ? 'closure' : (/collision|crash/i.test(ready.title) ? 'collision' : ''),
       roadway: '',
-      rawHeadline: ''
+      rawHeadline: '',
+      facility: /ramp/i.test(ready.title) ? 'on-ramp' : ''
     } : null);
 
     if (source || ready?.title) {
@@ -209,178 +305,150 @@
       const type = String(item.type || (/clos/i.test(ready?.title || '') ? 'closure' : (/collision|crash/i.test(ready?.title || '') ? 'collision' : '')));
       const minutes = delayMinutesFrom(item) || delayMinutesFrom(ready || {});
       const laneClosed = /lane closed|lanes closed|all lanes/i.test(`${item.rawHeadline || ''} ${item.title || ''} ${ready?.title || ''}`);
-      const intensity = type === 'closure' || laneClosed ? 'Heavy' : (type === 'collision' ? 'Heavy' : (/delay/i.test(commute?.status?.level || '') ? 'Moderate' : ''));
-      const eventLabel = type === 'closure' ? 'Closure' : (type === 'collision' ? 'Collision' : 'Incident');
+      const intensity = type === 'closure' || laneClosed ? 'Heavy' : (type === 'collision' ? 'Heavy' : looksLabel(commute?.status?.looks || commute?.status?.level));
+      const eventLabel = type === 'closure' ? (isRamp(item) ? 'Ramp closed' : 'Closure') : (type === 'collision' ? 'Collision' : 'Incident');
       const placeLine = place
         ? (type === 'collision' || type === 'closure' ? `${eventLabel} near ${place}` : `${intensity || 'Watch'} near ${place}`)
         : (ready?.context || item.context || '');
       const metric = minutes
         ? `+${minutes} min`
-        : (type || ready?.alert ? 'Delay likely' : (intensity ? `${intensity}` : 'Clear'));
-      const major = Boolean((ready?.alert || type === 'collision' || type === 'closure') && (/burlington/i.test(item.municipality || ready?.context || '') || /qew|403|skyway/i.test(`${item.roadway || ''} ${ready?.title || item.title || ''}`)));
+        : (type === 'closure' && isRamp(item) ? 'Ramp closed' : (type === 'collision' || (type === 'closure' && !isRamp(item)) ? 'Delay likely' : (intensity || 'Clear')));
+      const critical = isMainlineClosure(item) && /qew|403|skyway/i.test(`${item.roadway || ''} ${ready?.title || item.title || ''}`);
       return {
         alert: Boolean(ready?.alert || type),
-        major,
-        kicker: 'Traffic now',
+        major: Boolean((type === 'collision' || (type === 'closure' && !isRamp(item))) && /burlington|qew|403|skyway/i.test(`${item.municipality || ''} ${item.roadway || ''} ${ready?.title || item.title || ''}`)),
+        critical,
         title: `${road} → ${dest}`,
         metric,
-        detail: intensity && place ? `${intensity} near ${place}` : placeLine,
-        extra: minutes && (type === 'collision' || type === 'closure') && place ? `${eventLabel} near ${place}` : '',
-        url: ready?.url || '/traffic/'
+        detail: intensity && place && !minutes ? `${intensity} near ${place}` : placeLine,
+        extra: minutes && place ? `${eventLabel} near ${place}` : '',
+        url: `/traffic/?route=${routeIdFor(dest)}`
       };
     }
 
     const top = intel?.topSignal;
     if (top && Number(top.score) >= 90 && /collision|closure|closed/i.test(`${top.headline || ''}`)) {
       return {
-        alert:true, major:true, kicker:'Traffic now', title:top.headline, metric:'Delay likely',
+        alert:true, major:true, critical:false, title:top.headline, metric:'Delay likely',
         detail:top.location || '', extra:'', url:top.url || '/traffic/'
       };
     }
 
-    const dest = torontoHour() >= 15 ? 'Hamilton' : 'Toronto';
-    const looks = String(commute?.status?.looks || commute?.status?.level || '').toLowerCase();
-    if (looks && looks !== 'unknown' && looks !== 'check cameras') {
+    const dest = commuteDestination();
+    const looks = looksLabel(commute?.status?.looks);
+    if (looks) {
       return {
-        alert:false, major:false, kicker:'Traffic now', title:`QEW → ${dest}`,
-        metric: looks === 'heavy' ? 'Heavy' : (looks === 'moderate' ? 'Moderate' : 'Light'),
-        detail: looks === 'clear' || looks === 'light' ? 'No major delay' : 'Live conditions',
-        extra:'', url:'/traffic/'
+        alert:false, major:false, critical:false, title:`QEW → ${dest}`,
+        metric: looks,
+        detail: looks === 'Light traffic' ? 'No major delay' : 'Live conditions',
+        extra:'', url:`/traffic/?route=${routeIdFor(dest)}`
       };
     }
 
     return {
-      alert:false, major:false, kicker:'Traffic now', title:`QEW → ${dest}`,
-      metric:'Clear', detail:'No major delay', extra:'', url:'/traffic/'
+      alert:false, major:false, critical:false, title:`QEW → ${dest}`,
+      metric:'Clear', detail:'No major delay', extra:'', url:`/traffic/?route=${routeIdFor(dest)}`
     };
   }
 
   function skywayModel(surface) {
     const skyway = surface?.skyway || {};
     const incidents = (Array.isArray(surface?.incidents) ? surface.incidents : []).filter(item => item.affectsSkyway);
-    const major = incidents.find(item => item.type === 'collision' || item.type === 'closure');
+    const major = incidents.find(item => item.type === 'collision' || (item.type === 'closure' && !isRamp(item)));
     const watch = incidents.find(item => item.type === 'construction');
     const raw = String(skyway.value || '').trim();
-    const looks = /^(light|moderate|heavy|clear|slow)$/i.test(raw) ? raw.toLowerCase() : '';
+    const looks = looksLabel(raw);
 
     if (major) {
-      const dest = /fort erie|niagara|hamilton/i.test(`${major.direction || ''} ${major.title || ''}`) ? 'Niagara-bound' : 'Toronto-bound';
+      const niagara = /fort erie|niagara|hamilton/i.test(`${major.direction || ''} ${major.title || ''}`);
+      const dest = niagara ? 'Niagara' : 'Toronto';
       const minutes = delayMinutesFrom(major);
       return {
-        alert:true, major:true, kicker:'Skyway',
-        title: major.type === 'closure' ? `Closed ${dest}` : `Heavy ${dest}`,
-        metric: minutes ? `+${minutes} min` : 'Delay likely',
+        alert:true,
+        major:true,
+        critical: major.type === 'closure',
+        title: `Skyway → ${dest}`,
+        metric: minutes ? `+${minutes} min` : (major.type === 'closure' ? 'Closed' : 'Delay likely'),
         detail: shortPlace(major.nearestRoad) ? `${major.type === 'closure' ? 'Closure' : 'Collision'} near ${shortPlace(major.nearestRoad)}` : (major.title || ''),
-        url:'/traffic/'
+        url:`/traffic/?route=${niagara ? 'hamilton' : 'toronto'}&focus=skyway`
       };
     }
 
     if (looks) {
-      const title = looks === 'heavy' ? 'Heavy Toronto-bound' : looks === 'light' || looks === 'clear' ? 'Light' : 'Moderate';
       return {
-        alert: looks === 'heavy', major: looks === 'heavy', kicker:'Skyway', title,
-        metric: looks === 'heavy' ? 'Slow near bridge' : (looks === 'light' || looks === 'clear' ? 'All monitored approaches moving' : 'Slow near bridge'),
-        detail:'', url:'/traffic/'
+        alert: looks === 'Heavy', major: looks === 'Heavy', critical:false,
+        title:'Skyway → Toronto',
+        metric: looks,
+        detail: looks === 'Heavy' ? 'Slow approaching the bridge' : '',
+        url:'/traffic/?route=toronto&focus=skyway'
       };
     }
 
     if (watch) {
       return {
-        alert:false, major:false, kicker:'Skyway',
-        title:'Watch',
-        metric:'Construction nearby',
-        detail: shortPlace(watch.nearestRoad) ? `Near ${shortPlace(watch.nearestRoad)}` : 'On a monitored approach',
-        url:'/traffic/'
+        alert:false, major:false, critical:false,
+        title:'Skyway → Niagara',
+        metric:'Watch',
+        detail: shortPlace(watch.nearestRoad) ? `Construction near ${shortPlace(watch.nearestRoad)}` : 'Construction on a monitored approach',
+        url:'/traffic/?route=hamilton&focus=skyway'
       };
     }
 
     return {
-      alert:false, major:false, kicker:'Skyway',
-      title:'Looks moderate from live cameras',
-      metric:'',
-      detail:'Toronto-bound from live cameras',
-      url:'/traffic/',
+      alert:false, major:false, critical:false,
+      title:'Skyway → Toronto',
+      metric:'Cameras available',
+      detail:'',
+      url:'/traffic/?route=toronto&focus=skyway',
       lowConfidence:true
     };
   }
 
   function chooseDefault(models) {
-    if (models.driving.major) return 'driving';
-    if (models.go.severe) return 'go';
-    if (models.skyway.major) return 'skyway';
-    return readStoredMode() || 'driving';
+    if (models.go.critical) return 'go';
+    if (models.skyway.critical) return 'skyway';
+    if (models.driving.critical) return 'driving';
+    return 'driving';
   }
 
   const icon = (name, path) => `<span class="now-icon now-icon-${name}" aria-hidden="true"><svg viewBox="0 0 24 24">${path}</svg></span>`;
   const icons = {
-    driving: icon('traffic', '<circle cx="12" cy="12" r="7"/><path d="M7 16h10M8.5 16l.8-3h5.4l.8 3M9 10h6M10 7h4"/>'),
-    go: icon('go', '<path d="M4 12h16M7 8l-3 4 3 4M17 8l3 4-3 4"/>'),
+    driving: icon('traffic', '<path d="M5 16h14l-1.2-6.2A2 2 0 0 0 15.9 8H8.1a2 2 0 0 0-1.9 1.8L5 16Z"/><path d="M7 16v2M17 16v2M8 11h8"/>'),
+    go: icon('go', '<rect x="6" y="4" width="12" height="16" rx="3"/><path d="M9 8h6M9 12h6M10 18h4"/>'),
     skyway: icon('skyway', '<path d="M3 16h18M5 16c2-6 5-9 7-9s5 3 7 9"/><path d="M8 16v-3M16 16v-3"/>'),
     today: icon('next', '<rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 11h16"/>')
   };
 
-  function drivingCard(model) {
-    const detail = model.detail || model.extra;
-    return `<a class="now-mode-card now-card-driving${model.alert ? ' is-alert' : ''}" href="${esc(model.url)}" data-utility-card="driving">
-      <small>Traffic now</small>
-      <span class="now-card-head">${icons.driving}<strong>${esc(model.title)}</strong></span>
-      <span class="now-card-metrics">${model.metric ? `<b>${esc(model.metric)}</b>` : ''}${detail ? `<em>${esc(detail)}</em>` : ''}</span>
-    </a>`;
-  }
-
-  function goCard(model) {
-    if (model.alert) {
-      return `<a class="now-mode-card now-card-go is-alert" href="${esc(model.url)}" data-utility-card="go">
-        <small>GO</small>
-        <span class="now-card-head">${icons.go}<strong>${esc(model.headline)}</strong></span>
-        <span class="now-card-metrics"><em>Live service update</em></span>
-      </a>`;
+  function compactCard(mode, model) {
+    if (mode === 'today' && !model) {
+      return `<a class="now-card" href="/explore/" data-utility-card="today"><span class="now-card-copy"><strong>See Burlington events</strong></span></a>`;
     }
-    const lines = model.lines.map(line => {
-      const next = departureLabel(line.journeys[0]);
-      const follow = departureLabel(line.journeys[1]);
-      return `<span class="now-go-line"><span class="now-go-route">${esc(line.label)}</span><span class="now-go-times"><b>${esc(next || 'See schedule')}</b>${follow ? `<em>${esc(follow)}</em>` : ''}</span></span>`;
-    }).join('');
-    return `<a class="now-mode-card now-card-go" href="${esc(model.url)}" data-utility-card="go" target="_blank" rel="noopener">
-      <small>GO${model.scheduled ? ' · Scheduled' : ''}</small>
-      <span class="now-go-lines">${lines}</span>
-    </a>`;
-  }
-
-  function skywayCard(model) {
-    return `<a class="now-mode-card now-card-skyway${model.alert ? ' is-alert' : ''}" href="${esc(model.url)}" data-utility-card="skyway">
-      <small>Skyway</small>
-      <span class="now-card-head">${icons.skyway}<strong>${esc(model.title)}</strong></span>
-      <span class="now-card-metrics">${model.metric ? `<b>${esc(model.metric)}</b>` : ''}${model.detail ? `<em>${esc(model.detail)}</em>` : ''}</span>
-    </a>`;
-  }
-
-  function todayCard(model) {
-    if (!model) {
-      return `<a class="now-mode-card now-card-today" href="/explore/" data-utility-card="today">
-        <small>Next</small>
-        <span class="now-card-head">${icons.today}<strong>See Burlington events</strong></span>
-      </a>`;
-    }
-    const when = [model.relative, model.dateLabel].filter(Boolean).join(' · ');
-    return `<a class="now-mode-card now-card-today" href="${esc(model.url)}" data-utility-card="today">
-      <small>Next</small>
-      <span class="now-card-head">${icons.today}<strong>${esc(model.title)}</strong></span>
-      <span class="now-card-metrics">${when ? `<b>${esc(when)}</b>` : ''}${model.hours ? `<em>${esc(model.hours)}</em>` : ''}</span>
+    const title = mode === 'today' ? model.title : model.title || model.headline;
+    const metric = mode === 'go' ? (model.time || '') : (model.metric || '');
+    const detail = mode === 'go'
+      ? [model.status, model.cause || model.detail].filter(Boolean).join(' · ')
+      : (mode === 'today' ? [model.relative, model.hours].filter(Boolean).join(' · ') : (model.extra || model.detail || ''));
+    const href = model.url || '#';
+    const extra = mode === 'go' && model.url && /gotransit\.com/.test(model.url) ? ' target="_blank" rel="noopener"' : '';
+    return `<a class="now-card now-card-${mode}${model.alert ? ' is-alert' : ''}" href="${esc(href)}" data-utility-card="${mode}"${extra}>
+      <span class="now-card-copy">
+        <strong>${esc(title)}</strong>
+        ${detail ? `<em>${esc(detail)}</em>` : ''}
+      </span>
+      ${metric ? `<b class="now-card-metric">${esc(metric)}</b>` : ''}
     </a>`;
   }
 
   function cardFor(mode, models) {
-    if (mode === 'go') return goCard(models.go);
-    if (mode === 'skyway') return skywayCard(models.skyway);
-    if (mode === 'today') return todayCard(models.today);
-    return drivingCard(models.driving);
+    if (mode === 'go') return compactCard('go', models.go);
+    if (mode === 'skyway') return compactCard('skyway', models.skyway);
+    if (mode === 'today') return compactCard('today', models.today);
+    return compactCard('driving', models.driving);
   }
 
   function applyMode(mode, focusTab) {
     if (!lastModels || !MODES.includes(mode)) return;
     selectedMode = mode;
-    storeMode(mode);
     const tabs = [...host.querySelectorAll('[role="tab"]')];
     tabs.forEach(tab => {
       const on = tab.dataset.mode === mode;
@@ -389,20 +457,88 @@
       tab.classList.toggle('is-active', on);
       if (on && focusTab) tab.focus();
     });
+    host.querySelectorAll('[data-now-dot]').forEach(dot => {
+      const on = dot.dataset.mode === mode;
+      dot.classList.toggle('is-active', on);
+      dot.setAttribute('aria-current', on ? 'true' : 'false');
+    });
     const panel = host.querySelector('[role="tabpanel"]');
     if (panel) {
       panel.id = `nowPanel-${mode}`;
       panel.setAttribute('aria-labelledby', `nowTab-${mode}`);
       panel.innerHTML = cardFor(mode, lastModels);
-      panel.querySelector('[data-utility-card]')?.addEventListener('click', () => track('live_utility_card_click', mode));
+      bindCard(panel);
     }
     tabs.forEach(tab => tab.setAttribute('aria-controls', `nowPanel-${mode}`));
+  }
+
+  function stepMode(delta) {
+    const index = MODES.indexOf(selectedMode);
+    const next = MODES[(index + delta + MODES.length) % MODES.length];
+    if (next !== selectedMode) {
+      applyMode(next);
+      track('live_utility_mode_change', next);
+    }
+  }
+
+  function bindCard(panel) {
+    const card = panel.querySelector('[data-utility-card]');
+    if (!card) return;
+    let startX = 0;
+    let startY = 0;
+    let swiping = false;
+    let tracking = false;
+
+    const start = event => {
+      const point = event.touches ? event.touches[0] : event;
+      startX = point.clientX;
+      startY = point.clientY;
+      swiping = false;
+      tracking = true;
+    };
+    const move = event => {
+      if (!tracking) return;
+      const point = event.touches ? event.touches[0] : event;
+      const dx = point.clientX - startX;
+      const dy = point.clientY - startY;
+      if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+        swiping = true;
+        if (event.cancelable) event.preventDefault();
+      }
+    };
+    const end = event => {
+      if (!tracking) return;
+      tracking = false;
+      const point = event.changedTouches ? event.changedTouches[0] : event;
+      const dx = point.clientX - startX;
+      if (swiping && Math.abs(dx) >= SWIPE_PX) {
+        noteInteraction();
+        stepMode(dx < 0 ? 1 : -1);
+      }
+    };
+
+    card.addEventListener('click', event => {
+      if (swiping) {
+        event.preventDefault();
+        event.stopPropagation();
+        return;
+      }
+      track('live_utility_card_click', selectedMode);
+    });
+    card.addEventListener('pointerdown', start);
+    card.addEventListener('pointermove', move);
+    card.addEventListener('pointerup', end);
+    card.addEventListener('pointercancel', () => { tracking = false; });
+    card.addEventListener('touchstart', start, {passive:true});
+    card.addEventListener('touchmove', move, {passive:false});
+    card.addEventListener('touchend', end);
   }
 
   function bindTabs() {
     const tabs = [...host.querySelectorAll('[role="tab"]')];
     tabs.forEach((tab, index) => {
       tab.addEventListener('click', () => {
+        noteInteraction();
         if (tab.dataset.mode === selectedMode) return;
         applyMode(tab.dataset.mode);
         track('live_utility_mode_change', tab.dataset.mode);
@@ -416,11 +552,29 @@
         else if (event.key === 'Enter' || event.key === ' ') next = index;
         else return;
         event.preventDefault();
+        noteInteraction();
         const mode = tabs[next].dataset.mode;
         if (mode !== selectedMode) track('live_utility_mode_change', mode);
         applyMode(mode, true);
       });
     });
+    host.querySelectorAll('[data-now-dot]').forEach(dot => {
+      dot.addEventListener('click', () => {
+        noteInteraction();
+        if (dot.dataset.mode === selectedMode) return;
+        applyMode(dot.dataset.mode);
+        track('live_utility_mode_change', dot.dataset.mode);
+      });
+    });
+  }
+
+  function startAutoAdvance() {
+    if (reduceMotion() || userTouched || rotatedOnce) return;
+    autoTimer = window.setTimeout(() => {
+      if (userTouched || rotatedOnce) return;
+      rotatedOnce = true;
+      stepMode(1);
+    }, AUTO_MS);
   }
 
   function render(payload) {
@@ -436,18 +590,24 @@
 
     host.dataset.liveUtilityVariant = VARIANT;
     host.innerHTML = `
-      <p class="now-kicker"><span class="now-kicker-label"><i class="now-dot" aria-hidden="true"></i> Live local update</span><span class="now-kicker-weather" data-weather-temperature data-weather-compact></span></p>
-      <div class="now-tabs" role="tablist" aria-label="Live local update">
-        ${MODES.map(mode => `<button type="button" class="now-tab now-tab-${mode}${mode === initial ? ' is-active' : ''}" role="tab" id="nowTab-${mode}" data-mode="${mode}" aria-selected="${mode === initial}" aria-controls="nowPanel-${initial}" tabindex="${mode === initial ? 0 : -1}">${icons[mode]}<span>${MODE_LABEL[mode]}</span></button>`).join('')}
+      <div class="now-selectors">
+        <span class="now-live" aria-hidden="true"><i class="now-dot"></i></span>
+        <div class="now-tabs" role="tablist" aria-label="Live local update">
+          ${MODES.map(mode => `<button type="button" class="now-tab now-tab-${mode}${mode === initial ? ' is-active' : ''}" role="tab" id="nowTab-${mode}" data-mode="${mode}" aria-label="${MODE_LABEL[mode]}" aria-selected="${mode === initial}" aria-controls="nowPanel-${initial}" tabindex="${mode === initial ? 0 : -1}">${icons[mode]}</button>`).join('')}
+        </div>
       </div>
       <div class="now-panel" role="tabpanel" id="nowPanel-${initial}" aria-labelledby="nowTab-${initial}">
         ${cardFor(initial, models)}
+      </div>
+      <div class="now-dots" role="group" aria-label="Utility pages">
+        ${MODES.map(mode => `<button type="button" class="now-dot-btn${mode === initial ? ' is-active' : ''}" data-now-dot data-mode="${mode}" aria-label="${MODE_LABEL[mode]}" aria-current="${mode === initial ? 'true' : 'false'}"></button>`).join('')}
       </div>`;
     bindTabs();
-    host.querySelector('[data-utility-card]')?.addEventListener('click', () => track('live_utility_card_click', initial));
+    bindCard(host.querySelector('[role="tabpanel"]'));
     if (!viewed) {
       viewed = true;
       track('live_utility_view', initial);
+      startAutoAdvance();
     }
   }
 

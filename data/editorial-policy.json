@@ -94,6 +94,41 @@
     "minimumCandidates": 1,
     "excludeStatuses": ["published", "hold-duplicate"]
   },
+  "liveUtility": {
+    "defaultMode": "driving",
+    "overrideThreshold": "critical",
+    "persistLastMode": false,
+    "critical": [
+      "GO or Lakeshore West service suspended, cancelled, stopped or bus-replaced",
+      "Skyway fully closed or all lanes closed on the bridge",
+      "QEW or 403 mainline complete closure affecting Burlington travel",
+      "Tornado warning, evacuation or a major Burlington emergency",
+      "Widespread power emergency with immediate local risk"
+    ],
+    "notCritical": [
+      "GO delay under 15 minutes",
+      "Moderate or heavy traffic without a mainline closure",
+      "On-ramp or off-ramp closure",
+      "Nightly or routine construction",
+      "Single-lane restriction"
+    ]
+  },
+  "breakingNow": {
+    "maxItems": 2,
+    "minScore": 3.45,
+    "minConfidence": 4.0,
+    "communityMinConfidence": 2.0,
+    "communityRequiresLabel": true,
+    "hideWhenEmpty": true,
+    "weights": {
+      "localRelevance": 0.25,
+      "impact": 0.25,
+      "recency": 0.20,
+      "confidence": 0.15,
+      "breadth": 0.10,
+      "novelty": 0.05
+    }
+  },
   "eligibility": {
     "rightNow": {
       "minFreshness": 3.2,

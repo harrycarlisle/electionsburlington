@@ -10,7 +10,14 @@
   let cameras = [];
   let surface = null;
   let estimates = {};
-  let mode = 'toronto';
+  function routeFromLocation() {
+    const params = new URLSearchParams(location.search);
+    const requested = params.get('route') || params.get('destination') || '';
+    if (DESTINATIONS.some(item => item.id === requested)) return requested;
+    if (params.get('focus') === 'skyway') return 'hamilton';
+    return 'toronto';
+  }
+  let mode = routeFromLocation();
 
   const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const byId = id => document.getElementById(id);
@@ -202,6 +209,10 @@
     host.querySelectorAll('button').forEach(button => {
       button.addEventListener('click', () => {
         mode = button.dataset.route;
+        const next = new URL(location.href);
+        if (mode === 'all') next.searchParams.delete('route');
+        else next.searchParams.set('route', mode);
+        history.replaceState(null, '', next);
         renderChips();
         renderRoute();
         renderCameras();

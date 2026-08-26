@@ -2,7 +2,7 @@ name: Community conversation signal
 
 on:
   schedule:
-    - cron: "12 * * * *"
+    - cron: "2,17,32,47 * * * *"
   workflow_dispatch:
 
 permissions:

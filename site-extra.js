@@ -63,11 +63,11 @@
     ensureStyle('/site-bundle.css?v=20260824z4', 'site-bundle');
     ensureStyle('/site-shell.css?v=20260824z4', 'site-shell');
     ensureStyle('/publication-polish.css?v=20260825t', 'publication-polish');
-    ensureStyle('/product-pass.css?v=20260826f', 'product-pass');
+    ensureStyle('/product-pass.css?v=20260826u', 'product-pass');
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826t', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826h', 'site-header');
+    ensureStyle('/site-header.css?v=20260826i', 'site-header');
   }
 
   function ensureUtilityBar() {
@@ -218,11 +218,16 @@
     return `<a class="menu-link${extra}${active ? ' is-active' : ''}" role="listitem" href="${href}"${active ? ' aria-current="page"' : ''}><span>${label}</span></a>`;
   }
 
+  function drawerSearchMarkup() {
+    return `<form class="drawer-search header-search" data-drawer-search role="search" autocomplete="off"><label class="sr-only" for="drawerSearchInput">Search Burlington News</label><input id="drawerSearchInput" type="search" spellcheck="false" aria-autocomplete="list" aria-controls="drawerSearchResults" aria-expanded="false" placeholder="Search Burlington News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.8"></circle><path d="m15 15 4.2 4.2"></path></svg><div class="search-popover" hidden><div class="search-suggestions"></div><div class="search-results" id="drawerSearchResults" role="listbox" aria-live="polite"></div></div></form>`;
+  }
+
   function buildDrawer(nav) {
     const electionPrimary = electionInPrimaryNav();
     nav.className = 'nav menu-panel';
     nav.innerHTML = `
       <button class="menu-theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"></button>
+      ${drawerSearchMarkup()}
       <p class="menu-heading">Main</p>
       <div class="menu-primary" role="list">
         ${navLink('/', 'home', 'Home')}
@@ -241,7 +246,17 @@
         ${navLink('/help.html', 'help', 'Help & accessibility', 'secondary')}
         ${navLink('/feedback/', 'feedback', 'Feedback', 'secondary')}
         ${navLink('/work-with-us/', 'work', 'Work with us', 'secondary')}
-      </div>`;
+      </div>
+      <p class="menu-drawer-weather"><a class="drawer-weather-line" href="https://weather.gc.ca/city/pages/on-15_metric_e.html" rel="noopener" data-weather-temperature data-weather-drawer>Burlington weather</a></p>`;
+    installDrawerSearch(nav);
+    try { window.BurlingtonWeather?.load(); } catch (_) {}
+  }
+
+  function installDrawerSearch(nav) {
+    const form = (nav || document).querySelector('[data-drawer-search]');
+    if (form && window.BurlingtonSearch) {
+      window.BurlingtonSearch.install(form, {homepage:false, rotate:false, placeholder:'Search Burlington News'});
+    }
   }
 
   function weatherChipMarkup() {
@@ -249,7 +264,7 @@
   }
 
   function searchMarkup() {
-    return '<form class="header-search" role="search" autocomplete="off"><label class="sr-only" for="siteSearch">Search Burlington</label><input id="siteSearch" type="search" spellcheck="false" aria-autocomplete="list" aria-controls="searchResults" aria-expanded="false" placeholder="Search Burlington"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.8"></circle><path d="m15 15 4.2 4.2"></path></svg><div class="search-popover" hidden><div class="search-suggestions"></div><div class="search-results" role="listbox" aria-live="polite"></div></div></form>';
+    return '<form class="header-search" role="search" autocomplete="off"><label class="sr-only" for="siteSearch">Search Burlington News</label><input id="siteSearch" type="search" spellcheck="false" aria-autocomplete="list" aria-controls="searchResults" aria-expanded="false" placeholder="Search Burlington News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.8"></circle><path d="m15 15 4.2 4.2"></path></svg><div class="search-popover" hidden><div class="search-suggestions"></div><div class="search-results" role="listbox" aria-live="polite"></div></div></form>';
   }
 
   function ensureBackdrop() {
@@ -330,12 +345,12 @@
       const input = search.querySelector('input');
       const label = search.querySelector('label');
       if (input && !isHome()) {
-        input.placeholder = 'Search Burlington';
+        input.placeholder = 'Search Burlington News';
         input.removeAttribute('id');
         input.id = 'siteSearch';
       }
       if (label) {
-        label.textContent = 'Search Burlington';
+        label.textContent = 'Search Burlington News';
         label.setAttribute('for', 'siteSearch');
       }
       if (!controls.contains(search)) controls.appendChild(search);
@@ -391,7 +406,7 @@
       menu.setAttribute('aria-label', 'Close site menu');
       backdrop.hidden = false;
       lockScroll();
-      requestAnimationFrame(() => nav.querySelector('a,button')?.focus());
+      requestAnimationFrame(() => nav.querySelector('[data-drawer-search] input, a, button:not([data-theme-toggle])')?.focus());
     };
 
     if (header) header.dataset.bnShell = 'ready';
@@ -401,12 +416,15 @@
       if (nav.classList.contains('open')) close();
       else openMenu();
     });
-    nav.addEventListener('click', event => event.stopPropagation());
-    nav.querySelector('[data-theme-toggle]')?.addEventListener('click', event => {
+    nav.addEventListener('click', event => {
       event.stopPropagation();
-      setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+      if (event.target.closest('[data-theme-toggle]')) {
+        setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+        return;
+      }
+      const link = event.target.closest('a');
+      if (link && !link.closest('[data-drawer-search]')) close();
     });
-    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => close()));
     backdrop.addEventListener('click', () => close());
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && nav.classList.contains('open')) close(true);
@@ -554,7 +572,7 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826h', 'site-header');
+      ensureStyle('/site-header.css?v=20260826i', 'site-header');
     }
     ensureUtilityBar();
     ensureBanner();
@@ -570,16 +588,17 @@
     if (electionHeading) electionHeading.textContent = 'Meet the mayoral candidates';
     ensureFooter();
     applyBrand();
-    ensureScript('/site-search.js?v=20260826e', 'site-search');
+    ensureScript('/site-search.js?v=20260826f', 'site-search');
     if (!isHome() && !isElectionPage() && !isArticle()) ensureScript('/site-bundle.js?v=20260826w', 'site-bundle');
-    ensureScript('/weather-alert.js?v=20260826e', 'weather-alert');
+    ensureScript('/weather-alert.js?v=20260826f', 'weather-alert');
     if (isArticle()) ensureScript('/article-modern.js?v=20260826c', 'article-modern');
     setTheme(root.dataset.theme || preferredTheme(), false);
-    const search = document.querySelector('.header-search');
+    const search = document.querySelector('.header-controls .header-search');
     const ready = () => {
       if (search && window.BurlingtonSearch) {
         window.BurlingtonSearch.install(search, { homepage: isHome(), rotate: isHome() });
       }
+      installDrawerSearch(document.getElementById('mainNav'));
     };
     if (window.BurlingtonSearch) ready();
     else {

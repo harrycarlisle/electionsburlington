@@ -1,7 +1,7 @@
 (() => {
   const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const normalize = value => String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
-  const INNER_PLACEHOLDER = 'Search Burlington';
+  const INNER_PLACEHOLDER = 'Search Burlington News';
   const HOME_PROMPTS = [
     'Search “Date night”',
     'Search “This weekend”',
@@ -65,24 +65,26 @@
   }
 
   function install(form, options={}) {
-    if (!form) return;
+    if (!form || form.dataset.searchReady === 'true') return;
     const input = form.querySelector('input[type="search"], input');
     const popover = form.querySelector('.search-popover');
     const results = form.querySelector('.search-results');
     const suggestions = form.querySelector('.search-suggestions');
     if (!input || !popover || !results) return;
+    form.dataset.searchReady = 'true';
 
     const homepage = options.homepage ?? isHomepage();
     const prompts = options.prompts || HOME_PROMPTS;
     const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const rotating = homepage && options.rotate !== false;
+    const rotating = homepage && options.rotate !== false && !form.hasAttribute('data-drawer-search');
+    const placeholder = options.placeholder || (homepage && rotating ? prompts[0] : INNER_PLACEHOLDER);
     const chips = homepage ? homeSuggested : innerSuggested;
     let promptIndex = 0;
     let timer = 0;
     let fading = false;
     let overlay = form.querySelector('.search-prompt-fade');
 
-    input.placeholder = homepage ? prompts[0] : INNER_PLACEHOLDER;
+    input.placeholder = placeholder;
     form.classList.toggle('is-home-search', homepage);
     form.classList.toggle('is-inner-search', !homepage);
     if (suggestions) suggestions.innerHTML = chips.map(term => `<button type="button" data-search="${esc(term)}">${esc(term)}</button>`).join('');

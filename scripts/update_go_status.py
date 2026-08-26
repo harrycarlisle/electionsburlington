@@ -148,6 +148,23 @@ def build_api(key: str, now: dt.datetime) -> dict:
             "journeys": journeys,
         })
     try:
+        inbound = normalize_journeys(get_json(f"Schedule/Journey/{date}/{UNION}/{BURLINGTON}/{start}/3", key))
+        if len(inbound) < 2:
+            extra = normalize_journeys(get_json(f"Schedule/Journey/{tomorrow}/{UNION}/{BURLINGTON}/0000/3", key))
+            for item in extra:
+                item["nextServiceDay"] = True
+            inbound = (inbound + extra)[:3]
+        inbound_pred = attach_predictions(inbound, rows)
+        predicted = inbound_pred or predicted
+        routes.append({
+            "origin": {"label": "Union", "stopCode": UNION},
+            "destination": {"label": "Burlington", "stopCode": BURLINGTON},
+            "direction": "inbound",
+            "journeys": inbound,
+        })
+    except Exception as exc:
+        print(f"GO inbound schedule unavailable: {type(exc).__name__}: {exc}")
+    try:
         alerts = relevant_alerts(get_json("ServiceUpdate/ServiceAlert/All", key))
     except Exception as exc:
         print(f"GO alerts unavailable: {type(exc).__name__}: {exc}")
@@ -235,6 +252,39 @@ def collect_gtfs_journeys(stop_ids: dict[str, str], eligible_trips: dict, groupe
             "origin": {"label": "Burlington", "stopCode": BURLINGTON},
             "destination": {"label": label, "stopCode": code},
             "journeys": candidates[:3],
+        })
+    inbound = []
+    origin_id = stop_ids.get("Union")
+    dest_id = stop_ids.get("Burlington")
+    if origin_id and dest_id:
+        for trip_id, rows in grouped.items():
+            rows.sort(key=lambda item: int(item.get("stop_sequence") or 0))
+            origin = next((r for r in rows if r.get("stop_id") == origin_id), None)
+            destination = next((r for r in rows if r.get("stop_id") == dest_id), None)
+            if not origin or not destination:
+                continue
+            if int(destination.get("stop_sequence") or 0) <= int(origin.get("stop_sequence") or 0):
+                continue
+            departure = origin.get("departure_time") or origin.get("arrival_time") or ""
+            arrival = destination.get("arrival_time") or destination.get("departure_time") or ""
+            if seconds(departure) < now_sec:
+                continue
+            trip = eligible_trips[trip_id]
+            inbound.append({
+                "departure": departure,
+                "arrival": arrival,
+                "duration": pretty_duration(departure, arrival),
+                "line": LINE,
+                "type": "Train",
+                "tripNumber": trip.get("trip_short_name") or trip_id,
+                "scheduled": True,
+            })
+        inbound.sort(key=lambda item: seconds(item["departure"]))
+        route_payloads.append({
+            "origin": {"label": "Union", "stopCode": UNION},
+            "destination": {"label": "Burlington", "stopCode": BURLINGTON},
+            "direction": "inbound",
+            "journeys": inbound[:3],
         })
     return route_payloads
 

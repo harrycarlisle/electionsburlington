@@ -1,0 +1,40 @@
+name: Burlington breaking now
+
+on:
+  schedule:
+    # 15 minutes, offset from GO / 511 / Reddit jobs. GitHub cron is the
+    # closest sustainable cadence; do not poll official pages more often.
+    - cron: '4,19,34,49 * * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/build_breaking_now.py'
+      - 'scripts/sources/**'
+      - '.github/workflows/breaking-now.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: burlington-news-breaking
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build breaking now from cached official and community feeds
+        run: python scripts/build_breaking_now.py --offline
+      - name: Commit breaking surface
+        run: >-
+          python scripts/safe_bot_commit.py
+          --name "burlington-news-breaking"
+          --message "Update Burlington breaking now"
+          data/breaking-now.json data/discovery-queue.json
