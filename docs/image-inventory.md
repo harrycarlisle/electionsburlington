@@ -33,7 +33,7 @@ Decision values: KEEP · REPLACE · MOVE INSIDE ARTICLE · SOURCE REAL PHOTO · 
 - Cafe: `/assets/local-business/nostalgia-games-cafe.webp`. No photographer was supplied, so do not invent a credit. The old FINAL GAME illustration is retired from primary surfaces.
 - Kerncliff Park (official City spelling): `/assets/explore/kerncliff-park.webp`. Master: `/assets/Kerncliffe-Park.png`.
 - Winona Peach Festival: `/assets/explore/winona-peach-festival.webp`. Master: `/assets/Peaches.jpg`.
-- E-scooter story: original diagram `/assets/editorial/centennial-trail-e-scooter.svg`. Do not invent documentary photography.
+- E-scooter story: original diagram `/assets/editorial/centennial-trail-e-scooter.webp` (SVG master retained). Do not invent documentary photography.
 
 ## Keep (do not overwrite)
 

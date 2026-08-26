@@ -45,6 +45,7 @@ import {
     sports: 'Sports',
     nature: 'Nature',
     traffic: 'Traffic',
+    transportation: 'Transportation',
     canada: 'Canada',
     burlington: 'Burlington'
   };
@@ -70,7 +71,7 @@ import {
     if (/tunnel|history/.test(haystack)) return 'History';
     if (/development|brant|building|housing|millcroft|zoning|construction|data centre/.test(haystack)) return 'Development';
     if (/traffic|qew|skyway|road|closure/.test(haystack)) return 'Traffic';
-    if (/sport|soccer|hockey|ringette|lacrosse|ultimate|golf/.test(haystack)) return 'Sports';
+    if (/(^|[^a-z])sport|soccer|hockey|ringette|lacrosse|ultimate|golf/.test(haystack)) return 'Sports';
     if (/event|festival|weekend|concert/.test(haystack)) return 'Events';
     if (/fish|wildlife|nature|salamander|marsh|park|quarry|rabies/.test(haystack)) return 'Nature';
     if (/crime|police|safety/.test(haystack)) return 'Public safety';

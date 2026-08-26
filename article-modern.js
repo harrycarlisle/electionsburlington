@@ -172,7 +172,7 @@
       'burlington-ultimate-team-0-24': ['/assets/ultimate-frisbee-burlington.png', 'Burlington ultimate players on a grass field during a recreational game.', ''],
       'how-bad-is-burlington-crime': ['/assets/stories/public-safety/halton-police-crime-burlington.webp', 'Illustrative Burlington News visual of a Halton Regional Police vehicle behind crime-scene tape.', 'Burlington News visual'],
       'nostalgia-games-cafe-closure': ['/assets/local-business/nostalgia-games-cafe.webp', 'The interior of Nostalgia Candy Café, with a blue counter, wooden tables and a wall logo.', ''],
-      'e-scooter-burlington-rules': ['/assets/editorial/centennial-trail-e-scooter.svg', 'Diagram showing e-scooters are allowed only on Centennial Trail between Brant Street and Burloak Drive.', 'Burlington News diagram']
+      'e-scooter-burlington-rules': ['/assets/editorial/centennial-trail-e-scooter.webp', 'Diagram showing e-scooters are allowed only on Centennial Trail between Brant Street and Burloak Drive.', 'Burlington News diagram']
     };
     return map[currentSlug] || ['/assets/editorial/home-share.webp', 'Burlington News', 'Burlington News'];
   }
