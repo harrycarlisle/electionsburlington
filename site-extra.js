@@ -65,8 +65,9 @@
     ensureStyle('/publication-polish.css?v=20260825t', 'publication-polish');
     ensureStyle('/product-pass.css?v=20260826f', 'product-pass');
     ensureStyle('/site-header.css?v=20260826f', 'site-header');
-    if (isArticle()) ensureStyle('/article-modern.css?v=20260825r', 'article-modern');
+    if (isArticle()) ensureStyle('/article-modern.css?v=20260826t', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
+    ensureStyle('/type-system.css?v=20260826a', 'type-system');
   }
 
   function ensureUtilityBar() {
@@ -479,7 +480,10 @@
     if (isHome()) document.body.classList.add('home-shell');
     else document.body.classList.add('publication-shell');
     if (!isHome()) ensureStyles();
-    else ensureStyle('/site-header.css?v=20260826f', 'site-header');
+    else {
+      ensureStyle('/site-header.css?v=20260826f', 'site-header');
+      ensureStyle('/type-system.css?v=20260826a', 'type-system');
+    }
     ensureUtilityBar();
     ensureBanner();
     addSeo();

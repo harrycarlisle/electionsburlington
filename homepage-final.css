@@ -43,7 +43,7 @@
   display:grid;gap:10px;min-width:0;margin:0;padding:0;border:0
 }
 .explore-idea[hidden]{display:none}
-.home-idea-title{margin:0;color:var(--navy);font:700 22px/1.2 var(--serif);letter-spacing:-.03em}
+.home-idea-title{margin:0;color:var(--navy);font:700 20px/1.2 var(--sans);letter-spacing:-.015em}
 .home-idea-visual{
   position:relative;width:100%;overflow:hidden;border-radius:12px;background:var(--soft)
 }
@@ -94,8 +94,8 @@
   .now-mode-card{min-height:145px;max-height:185px;padding:10px 12px}
   .now-card-go .now-go-line{flex-direction:row;align-items:baseline}
   .lead-grid{gap:18px!important}
-  .top-copy{padding:12px 0 2px!important}
-  .top-copy p{margin-top:8px!important;font-size:15px!important;line-height:1.35!important}
+  .top-copy{padding:22px 16px 24px!important}
+  .top-copy p{margin-top:14px!important;font-size:16px!important;line-height:1.42!important}
   .newest-list>a{padding:11px 0!important}
   .newest-list small{margin-bottom:4px;font-size:10px;color:var(--blue)}
   .newest-list strong{font-size:17px!important;line-height:1.2!important}

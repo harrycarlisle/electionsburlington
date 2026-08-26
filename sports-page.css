@@ -11,14 +11,14 @@
 .illustration-credit{position:absolute;z-index:1;left:10px;bottom:auto;top:10px;color:rgba(255,255,255,.72);font:500 10px/1 Inter,Arial,sans-serif}
 .sports-block{margin-top:34px}
 .sports-block-head{display:flex;align-items:end;justify-content:space-between;gap:16px;padding-bottom:10px;border-bottom:1px solid var(--line,#dfe4ea)}
-.sports-block-head h2{margin:0;color:var(--navy);font:700 26px/1 var(--serif,Georgia,serif)}
+.sports-block-head h2{margin:0;color:var(--navy);font:700 26px/1.1 var(--sans,Inter,ui-sans-serif,sans-serif)}
 .sports-block-head span{color:var(--muted);font:650 12px/1 Inter,Arial,sans-serif}
 .story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:16px}
 .story-card{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit}
 .story-visual{aspect-ratio:16/10;overflow:hidden;margin-bottom:12px;border-radius:10px;background:var(--soft,#f5f7fa)}
 .story-visual img{width:100%;height:100%;object-fit:cover}
 .story-card span{color:var(--blue,#0864c7);font:800 10px/1 Inter,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}
-.story-card h3{margin:7px 0;color:var(--navy);font:700 20px/1.15 var(--serif,Georgia,serif)}
+.story-card h3{margin:7px 0;color:var(--navy);font:700 20px/1.15 var(--sans,Inter,ui-sans-serif,sans-serif)}
 .story-card p{margin:0;color:var(--muted);font:400 14px/1.4 Inter,Arial,sans-serif}
 .story-card small{display:block;margin-top:8px;color:var(--muted);font:650 11px/1 Inter,Arial,sans-serif}
 .legacy-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:16px;background:var(--line);border:1px solid var(--line)}
@@ -29,7 +29,7 @@
 .legacy-card:nth-child(4) .legacy-mark{background:#9e4b3e;color:#fff}
 .legacy-copy{align-self:center;padding:16px}
 .legacy-copy small{display:block;color:var(--blue,#0864c7);font:800 10px/1 Inter,Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase}
-.legacy-copy strong{display:block;margin-top:6px;color:var(--navy);font:700 18px/1.15 var(--serif,Georgia,serif)}
+.legacy-copy strong{display:block;margin-top:6px;color:var(--navy);font:700 18px/1.15 var(--sans,Inter,ui-sans-serif,sans-serif)}
 .legacy-copy span{display:block;margin-top:6px;color:var(--muted);font:400 13px/1.4 Inter,Arial,sans-serif}
 @media(max-width:900px){.story-grid{grid-template-columns:1fr 1fr}.legacy-grid{grid-template-columns:1fr}}
 @media(max-width:720px){
