@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">Downtown public art editorial graphic</title>
+  <rect width="1600" height="900" fill="#10243a"/>
+  <circle cx="520" cy="470" r="170" fill="#0864c7"/>
+  <rect x="820" y="280" width="220" height="380" fill="#e7c36a"/>
+  <path d="M1120 660 1280 280l160 380z" fill="#d96b4c"/>
+  <text x="80" y="120" fill="#e8f1f8" font-family="Georgia, serif" font-size="64" font-weight="700">Public art</text>
+  <text x="84" y="180" fill="#8fb3c9" font-family="Arial, sans-serif" font-size="28" letter-spacing="3">BURLINGTON NEWS</text>
+</svg>

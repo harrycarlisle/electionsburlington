@@ -6,6 +6,8 @@
     "test:contact": "node scripts/test-contact-api.js",
     "test:go": "node scripts/test-go-card.js",
     "test:traffic": "node scripts/test-traffic-route.js",
+    "test:explore-ideas": "node scripts/test-explore-ideas.js",
+    "test:explore-events": "node scripts/test-explore-events.js",
     "dev:contact": "node scripts/dev-contact-server.js"
   }
 }
