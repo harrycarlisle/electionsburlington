@@ -50,6 +50,8 @@ The weekly feature uses the same gates but values familiarity and novelty more h
 
 Never lightly rewrite a Reddit, Facebook or X post and present it as journalism. Treat it as a lead, obtain permission where a private person's experience is central, verify the important facts and be explicit about what remains one person's account.
 
+YouTube and other public videos are the same class of lead. See [video-leads.md](video-leads.md). They can inspire an independently reported explainer on a quiet news day. They cannot be paraphrased into a story and they cannot auto-publish.
+
 ## Coverage and bias review
 
 Ground News compares how many left-, centre- and right-rated outlets cover the same event. Its ratings apply to publishers and are averaged from outside rating organizations; the coverage bar does not declare an individual story left- or right-wing.
