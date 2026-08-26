@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T17:28:12.284152-04:00",
+  "generatedAt": "2026-08-26T17:44:34.038488-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -2517,37 +2517,6 @@
       "eligibleEditorial": true
     },
     {
-      "id": "511:293205",
-      "detectedAt": "2026-08-25T21:38:12Z",
-      "score": 75,
-      "headline": "Disabled Vehicle on QEW Toronto bound ON-RAMP at BURLOAK DRIVE, Burlington. Left shoulder and left lane closed.",
-      "kind": "traffic",
-      "location": "QEW",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "5a309cfed0b16315",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 2.5,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 2.4,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 65,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
-    },
-    {
       "id": "511:293767",
       "detectedAt": "2026-08-26T16:56:06Z",
       "score": 90,
@@ -2669,6 +2638,37 @@
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "511:293205",
+      "detectedAt": "2026-08-25T21:38:12Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Toronto bound ON-RAMP at BURLOAK DRIVE, Burlington. Left shoulder and left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "5a309cfed0b16315",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 2.5,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 62,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": false,
       "eligibleEditorial": false
     },
     {
