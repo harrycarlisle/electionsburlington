@@ -92,15 +92,10 @@
   function paintButtons(appearance, mode) {
     document.querySelectorAll('[data-theme-toggle]').forEach(button => {
       const target = appearance === 'dark' ? 'light' : 'dark';
-      const label = mode === 'auto'
-        ? `Switch to ${target} mode`
-        : `Switch to ${target} mode`;
+      const label = target === 'dark' ? 'Dark mode' : 'Light mode';
       button.setAttribute('aria-label', label);
       button.setAttribute('title', label);
       button.dataset.themeMode = mode;
-    });
-    document.querySelectorAll('[data-theme-auto]').forEach(button => {
-      button.hidden = mode === 'auto';
     });
   }
 

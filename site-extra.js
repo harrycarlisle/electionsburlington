@@ -33,7 +33,7 @@
       const appearance = window.BurlingtonTheme.apply(mode, persist);
       document.querySelectorAll('[data-theme-toggle]').forEach(button => {
         const target = appearance === 'dark' ? 'light' : 'dark';
-        const label = `Switch to ${target} mode`;
+        const label = target === 'dark' ? 'Dark mode' : 'Light mode';
         button.innerHTML = themeIcon(appearance);
         button.setAttribute('aria-label', label);
         button.setAttribute('title', label);
@@ -45,7 +45,7 @@
     root.style.colorScheme = next;
     document.querySelectorAll('[data-theme-toggle]').forEach(button => {
       const target = next === 'dark' ? 'light' : 'dark';
-      const label = `Switch to ${target} mode`;
+      const label = target === 'dark' ? 'Dark mode' : 'Light mode';
       button.innerHTML = themeIcon(next);
       button.setAttribute('aria-label', label);
       button.setAttribute('title', label);
@@ -85,8 +85,8 @@
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826tb', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826ta', 'site-header');
-    ensureStyle('/desktop-system.css?v=20260826ta', 'desktop-system');
+    ensureStyle('/site-header.css?v=20260826ht', 'site-header');
+    ensureStyle('/desktop-system.css?v=20260826ht', 'desktop-system');
   }
 
   function ensureUtilityBar() {
@@ -252,11 +252,9 @@
     nav.className = 'nav menu-panel';
     nav.innerHTML = `
       <div class="menu-drawer-top">
-        <button class="menu-theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"></button>
+        <button class="menu-theme-toggle" type="button" data-theme-toggle aria-label="Dark mode"></button>
         ${drawerSearchMarkup()}
       </div>
-      <button class="menu-theme-auto" type="button" data-theme-auto>Use automatic theme</button>
-      <p class="menu-heading">Main</p>
       <div class="menu-primary" role="list">
         ${navLink('/', 'home', 'Home')}
         ${navLink('/news/', 'news', 'News')}
@@ -266,7 +264,6 @@
         ${navLink('/games/', 'games', 'Puzzles')}
       </div>
       <div class="menu-separator" aria-hidden="true"></div>
-      <p class="menu-heading">Secondary</p>
       <div class="menu-primary menu-secondary" role="list">
         ${electionPrimary ? '' : navLink('/elections/', 'elections', 'Elections', 'secondary')}
         ${navLink('/traffic/', 'traffic', 'Traffic', 'secondary')}
@@ -297,7 +294,7 @@
   }
 
   function themeToggleMarkup() {
-    return '<button class="header-theme-toggle" type="button" data-theme-toggle title="Switch to dark mode" aria-label="Switch to dark mode"></button>';
+    return '<button class="header-theme-toggle" type="button" data-theme-toggle title="Dark mode" aria-label="Dark mode"></button>';
   }
 
   function searchMarkup() {
@@ -460,10 +457,6 @@
     });
     nav.addEventListener('click', event => {
       event.stopPropagation();
-      if (event.target.closest('[data-theme-auto]')) {
-        setTheme('auto');
-        return;
-      }
       if (event.target.closest('[data-theme-toggle]')) {
         if (window.BurlingtonTheme) window.BurlingtonTheme.toggleManual();
         else setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
@@ -636,10 +629,10 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826ta', 'site-header');
-      ensureStyle('/desktop-system.css?v=20260826hf', 'desktop-system');
+      ensureStyle('/site-header.css?v=20260826ht', 'site-header');
+      ensureStyle('/desktop-system.css?v=20260826ht', 'desktop-system');
     }
-    ensureScript('/theme-boot.js?v=20260826ds', 'theme-boot');
+    ensureScript('/theme-boot.js?v=20260826ht', 'theme-boot');
     ensureUtilityBar();
     ensureBanner();
     addSeo();
