@@ -5,7 +5,9 @@
 .partner-callout,
 .latest-puzzles{display:none!important}
 
-.local-now{margin:0 0 10px!important;padding:0!important;border:0!important;background:transparent!important}
+.local-now{margin:0 0 8px!important;padding:0!important;border:0!important;background:transparent!important}
+.local-now.is-header-card{margin:0 0 6px!important}
+.breaking-now[hidden]{display:none!important;margin:0!important;padding:0!important}
 .now-kicker,.now-selectors{display:none!important}
 .now-live{display:grid;place-items:center;width:12px}
 .now-dot{width:7px;height:7px;border-radius:50%;background:#2fa866;box-shadow:0 0 0 3px rgba(47,168,102,.14)}
