@@ -20,7 +20,10 @@
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "placementScore": 87
+      "placementScore": 87,
+      "publishedAt": "2026-08-25T12:00:00-04:00",
+      "datePublished": "2026-08-25T12:00:00-04:00",
+      "status": "normal"
     },
     {
       "id": "skyway-tunnels",
@@ -39,7 +42,10 @@
       "alt": "The Burlington Bay James N. Allan Skyway",
       "credit": "Dave Lauretti · CC BY 2.0",
       "published": "2026-08-24",
-      "placementScore": 82
+      "placementScore": 82,
+      "publishedAt": "2026-08-24T12:00:00-04:00",
+      "datePublished": "2026-08-24T12:00:00-04:00",
+      "status": "normal"
     },
     {
       "id": "ribfest-2026",
@@ -56,7 +62,10 @@
       "image": "assets/home/ribs.webp",
       "alt": "Barbecue ribs smoking over a pit",
       "activeFrom": "2026-08-18",
-      "placementScore": 78
+      "placementScore": 78,
+      "publishedAt": "2026-08-18T12:00:00-04:00",
+      "datePublished": "2026-08-18T12:00:00-04:00",
+      "status": "normal"
     }
   ],
   "rail": [
@@ -75,7 +84,10 @@
       "alt": "A yellow Ontario school bus",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
-      "placementScore": 88
+      "placementScore": 88,
+      "publishedAt": "2026-08-24T12:00:00-04:00",
+      "datePublished": "2026-08-24T12:00:00-04:00",
+      "status": "normal"
     },
     {
       "id": "data-centre-not-ai",
@@ -93,7 +105,10 @@
       "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
-      "placementScore": 86
+      "placementScore": 86,
+      "publishedAt": "2026-08-24T12:00:00-04:00",
+      "datePublished": "2026-08-24T12:00:00-04:00",
+      "status": "normal"
     },
     {
       "id": "nostalgia-games-cafe-closure",
@@ -114,7 +129,10 @@
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
-      "placementScore": 85
+      "placementScore": 85,
+      "publishedAt": "2026-08-25T12:00:00-04:00",
+      "datePublished": "2026-08-25T12:00:00-04:00",
+      "status": "normal"
     }
   ],
   "latest": [
@@ -133,7 +151,10 @@
       "alt": "A yellow Ontario school bus",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
-      "placementScore": 88
+      "placementScore": 88,
+      "publishedAt": "2026-08-24T12:00:00-04:00",
+      "datePublished": "2026-08-24T12:00:00-04:00",
+      "status": "normal"
     },
     {
       "id": "data-centre-not-ai",
@@ -151,7 +172,10 @@
       "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
-      "placementScore": 86
+      "placementScore": 86,
+      "publishedAt": "2026-08-24T12:00:00-04:00",
+      "datePublished": "2026-08-24T12:00:00-04:00",
+      "status": "normal"
     },
     {
       "id": "nostalgia-games-cafe-closure",
@@ -172,7 +196,10 @@
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
-      "placementScore": 85
+      "placementScore": 85,
+      "publishedAt": "2026-08-25T12:00:00-04:00",
+      "datePublished": "2026-08-25T12:00:00-04:00",
+      "status": "normal"
     },
     {
       "id": "ribfest-2026",
@@ -189,7 +216,10 @@
       "image": "assets/home/ribs.webp",
       "alt": "Barbecue ribs smoking over a pit",
       "activeFrom": "2026-08-18",
-      "placementScore": 78
+      "placementScore": 78,
+      "publishedAt": "2026-08-18T12:00:00-04:00",
+      "datePublished": "2026-08-18T12:00:00-04:00",
+      "status": "normal"
     },
     {
       "id": "fishway-2025",
@@ -206,7 +236,10 @@
       "image": "assets/home/fishway.webp",
       "alt": "The Cootes Paradise Fishway across the water",
       "published": "2026-08-23",
-      "placementScore": 75
+      "placementScore": 75,
+      "publishedAt": "2026-08-23T12:00:00-04:00",
+      "datePublished": "2026-08-23T12:00:00-04:00",
+      "status": "normal"
     },
     {
       "id": "ward-change-2026",
@@ -223,7 +256,10 @@
       "image": "assets/editorial/burlington-wards-2026.svg",
       "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
       "activeFrom": "2026-08-21",
-      "placementScore": 80
+      "placementScore": 80,
+      "publishedAt": "2026-08-21T12:00:00-04:00",
+      "datePublished": "2026-08-21T12:00:00-04:00",
+      "status": "normal"
     }
   ],
   "picks": [
@@ -246,7 +282,10 @@
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
       "storyGoal": "Explain how Toss Bosses went 0-24 after a name change from Panic at the Disco, and why the rec team keeps coming back.",
-      "placementScore": 82
+      "placementScore": 82,
+      "publishedAt": "2026-08-26T12:00:00-04:00",
+      "datePublished": "2026-08-26T12:00:00-04:00",
+      "status": "normal"
     },
     {
       "id": "skyway-tunnels",
@@ -265,7 +304,10 @@
       "alt": "The Burlington Bay James N. Allan Skyway",
       "credit": "Dave Lauretti · CC BY 2.0",
       "published": "2026-08-24",
-      "placementScore": 82
+      "placementScore": 82,
+      "publishedAt": "2026-08-24T12:00:00-04:00",
+      "datePublished": "2026-08-24T12:00:00-04:00",
+      "status": "normal"
     },
     {
       "id": "ribfest-2026",
@@ -282,7 +324,10 @@
       "image": "assets/home/ribs.webp",
       "alt": "Barbecue ribs smoking over a pit",
       "activeFrom": "2026-08-18",
-      "placementScore": 78
+      "placementScore": 78,
+      "publishedAt": "2026-08-18T12:00:00-04:00",
+      "datePublished": "2026-08-18T12:00:00-04:00",
+      "status": "normal"
     }
   ],
   "audit": [
@@ -374,14 +419,7 @@
       "id": "burlington-ultimate-team-0-24",
       "state": "eligible",
       "placementScore": 82,
-      "reason": "all gates passed",
-      "headline": "This Burlington team is 0–24. Why do they keep coming back?",
-      "deck": "After an 0–12 season, they changed the name. Twelve games later, they were still waiting for a win.",
-      "url": "articles/burlington-ultimate-team-0-24.html",
-      "image": "assets/sports/burlington-ultimate-toss-bosses.webp",
-      "alt": "A high-angle photo of an ultimate game on a grass field, with two teams of seven in blue and black and labeled end zones.",
-      "credit": "",
-      "storyGoal": "Explain how Toss Bosses went 0-24 after a name change from Panic at the Disco, and why the rec team keeps coming back."
+      "reason": "all gates passed"
     }
   ]
 }
