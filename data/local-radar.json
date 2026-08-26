@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T23:26:25.628610-04:00",
+  "generatedAt": "2026-08-25T23:29:34.677193-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -574,7 +574,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.04498351611111118
+        "rotation": 0.04935964071759269
       },
       "gates": {
         "evidence": "passed",
@@ -1715,7 +1715,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.04498351611111118
+        "rotation": 0.04935964071759269
       },
       "gates": {
         "evidence": "passed",
