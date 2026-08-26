@@ -449,6 +449,7 @@
       viewed = true;
       track('live_utility_view', initial);
     }
+    window.BurlingtonWeather?.load();
   }
 
   function load() {

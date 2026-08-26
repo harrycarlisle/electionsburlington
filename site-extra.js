@@ -67,7 +67,7 @@
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826t', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826h', 'site-header');
+    ensureStyle('/site-header.css?v=20260826i', 'site-header');
   }
 
   function ensureUtilityBar() {
@@ -422,6 +422,7 @@
     } else if (!controls.contains(weather)) {
       controls.insertBefore(weather, search || null);
     }
+    window.BurlingtonWeather?.load();
   }
 
   function installDesktopNav() {
@@ -539,7 +540,7 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826h', 'site-header');
+      ensureStyle('/site-header.css?v=20260826i', 'site-header');
     }
     ensureUtilityBar();
     ensureBanner();
@@ -556,8 +557,11 @@
     ensureFooter();
     applyBrand();
     ensureScript('/site-search.js?v=20260826e', 'site-search');
-    if (!isHome() && !isElectionPage() && !isArticle()) ensureScript('/site-bundle.js?v=20260826w', 'site-bundle');
+    if (!isHome() && !isElectionPage() && !isArticle()) ensureScript('/site-bundle.js?v=20260826y', 'site-bundle');
     ensureScript('/weather-alert.js?v=20260826e', 'weather-alert');
+    const refreshWeather = () => window.BurlingtonWeather?.load();
+    if (window.BurlingtonWeather) refreshWeather();
+    else setTimeout(refreshWeather, 80);
     if (isArticle()) ensureScript('/article-modern.js?v=20260826c', 'article-modern');
     setTheme(root.dataset.theme || preferredTheme(), false);
     const search = document.querySelector('.header-search');
