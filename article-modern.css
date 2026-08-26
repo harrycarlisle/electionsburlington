@@ -416,6 +416,7 @@
   width:100%;
   aspect-ratio:16/10;
   object-fit:cover;
+  object-position:center 40%;
   margin-bottom:10px;
   border-radius:6px;
 }

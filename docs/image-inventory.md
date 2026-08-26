@@ -4,7 +4,7 @@ Audit date: 2026-08-26. Rights notes are editorial, not legal advice.
 
 | Slug | Hero | Type | Rights | Alt / credit | Card / OG | Status |
 |---|---|---|---|---|---|---|
-| how-bad-is-burlington-crime | `/assets/editorial/halton-police-dusk.webp` | generic public-safety photo | keep; not a specific Burlington crime scene | Halton police cruiser at dusk | homepage hero uses dusk photo, not the CSI chart | strong |
+| how-bad-is-burlington-crime | `/assets/stories/public-safety/halton-police-crime-burlington.webp` | illustrative public-safety photo | keep; not a photograph of a specific incident | Burlington News visual · Halton police SUV facing camera | homepage, article, archive, OG, schema | strong |
 | burlington-data-centre-not-ai | `/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp` | AI/illustrative site concept | labelled illustrative; not a final rendering | site context / illustrative concept | OG JPEG in `assets/stories/data-centre/` | strong; old SVG is secondary only |
 | nostalgia-games-cafe-closure | `/assets/editorial/nostalgia-cafe-closure.svg` | original illustration | Burlington News | cafe closure illustration | same | keep as illustration |
 | skyway-bridge-story | `/assets/home/skyway-reader.webp` | photograph | credited in home-surface | Skyway across Burlington Bay | same | strong |
@@ -22,10 +22,11 @@ Audit date: 2026-08-26. Rights notes are editorial, not legal advice.
 | elections candidates | `/assets/candidates/mw.webp`, `lk.webp`, `rn.webp`, `yr.webp` | real event/portrait photos | existing repo assets | named candidate | Keith Demoe has no verified photo | keep; do not invent portraits |
 
 ## Keep
-- Halton police dusk, Skyway reader, Ribfest ribs, data-centre aerial concept, Brant Street Pier (`assets/explore/brant-street-pier.webp`), farmers market, Mount Nemo night sky, sports illustrations clearly labelled as illustrations, candidate photos already in repo.
+- Forward-facing Halton police visual (`assets/stories/public-safety/halton-police-crime-burlington.webp`), Skyway reader, Ribfest ribs, data-centre aerial concept, Brant Street Pier (`assets/explore/brant-street-pier.webp`), farmers market, Mount Nemo night sky, sports illustrations clearly labelled as illustrations, candidate photos already in repo. Do not use the older rear-facing dusk SUV as the crime-story hero.
 
 ## Do not use as documentary
 - Data-centre concept as an approved building rendering
+- The crime-story police SUV as documentary photography of a specific incident
 - Ultimate waterfront illustration as a Hotspots game
 - Orientation map as a stand-in for every development story
 - Fake City Hall / fake pier / invented candidate faces

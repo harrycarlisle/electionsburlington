@@ -4,7 +4,8 @@ Rights rule: do not reuse Reddit, Facebook or news-publisher photography without
 
 ## 1. Images already present and reusable
 
-- `assets/editorial/halton-crime-comparison.svg` — Burlington News chart
+- `assets/stories/public-safety/halton-police-crime-burlington.webp` — Burlington News visual for the crime story (illustrative, not a specific incident)
+- `assets/editorial/halton-crime-comparison.svg` — Burlington News CSI chart (in-article only)
 - `assets/editorial/nostalgia-cafe-closure.svg` — Burlington News illustration
 - `assets/editorial/730-brant-share.webp` / `.svg` — Burlington News illustration
 - `assets/editorial/burlington-wards-2026.svg` — Burlington News diagram
@@ -27,7 +28,7 @@ Rights rule: do not reuse Reddit, Facebook or news-publisher photography without
 - Owned downtown Burlington street photography
 - City Hall exterior
 - Suburban neighbourhood street
-- Police/crime abstract (no identifiable people)
+- Additional police/crime visuals if a story needs a different scene (the forward-facing SUV is the crime-story hero)
 - GO platform / Lakeshore West commute
 - School yard that is not the same bus photo
 - Construction / development site
