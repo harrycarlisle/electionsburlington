@@ -1,8 +1,8 @@
 {
   "Burlington council records": {
     "bytes": 248495,
-    "checked_at": "2026-08-26T01:37:57.560609+00:00",
-    "sha256": "cc4188e3db8780a8b0a783f391bb982fa15c6ccb6ba0dd02d14456a0ed5b41e0",
+    "checked_at": "2026-08-26T01:59:52.178862+00:00",
+    "sha256": "934c09b3c5ad258bc00a2ae78fb7944953161384e92be4959b223938c204e2d2",
     "url": "https://burlingtonpublishing.escribemeetings.com/"
   },
   "Lisa Kearns campaign": {
@@ -13,26 +13,26 @@
   },
   "Meed Ward campaign": {
     "bytes": 166203,
-    "checked_at": "2026-08-26T01:37:57.560609+00:00",
+    "checked_at": "2026-08-26T01:59:52.178862+00:00",
     "sha256": "c0ae67dd09a7cdb9ab8ac9977c917ef9a0181c3eef94bb484116cef584fa92c1",
     "url": "https://votemarianne.ca/"
   },
   "Official candidate list": {
     "bytes": 77688,
-    "checked_at": "2026-08-26T01:37:57.560609+00:00",
-    "sha256": "be1c864e3a4cab156666949366efe4817e48ae7ff4b138f424183f4861ba31f6",
+    "checked_at": "2026-08-26T01:59:52.178862+00:00",
+    "sha256": "672f63460cf87f6e7e01e91c42808adf9b8e428cbbfc52f1f1218edbaf9cd604",
     "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
   },
   "Official voting information": {
     "bytes": 64015,
-    "checked_at": "2026-08-26T01:37:57.560609+00:00",
+    "checked_at": "2026-08-26T01:59:52.178862+00:00",
     "sha256": "43affcdb60e10e77ad8c5a63bfc194920d8f36e6120de76482d335584542b0ac",
     "url": "https://myvote.burlington.ca/for-voters/how-to-vote/"
   },
   "Rory Nisan campaign": {
     "bytes": 50580,
-    "checked_at": "2026-08-26T01:37:57.560609+00:00",
-    "sha256": "5c0ec350b190a18990c720e01ae00457446fc04592ff61d1472b0bb50e0e73b7",
+    "checked_at": "2026-08-26T01:59:52.178862+00:00",
+    "sha256": "9228941826b76e256d56b5c7331085a763480f6e0222f68d809962cfc12aa316",
     "url": "https://rorynisan.ca/"
   }
 }
