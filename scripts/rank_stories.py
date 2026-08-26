@@ -114,13 +114,129 @@ def score(item: dict, today: dt.date, radar_rows: list[dict]) -> int:
     return round(max(0.0, min(5.0, blended)) / 5 * 100)
 
 
+TOPIC_ALIASES = {
+    "public safety": "public-safety",
+    "crime": "public-safety",
+    "local business": "food",
+    "food": "food",
+    "development": "development",
+    "feature": "history",
+    "history": "history",
+    "election": "election",
+    "schools": "schools",
+    "events": "events",
+    "sports": "sports",
+    "nature": "nature",
+    "traffic": "traffic",
+    "canada": "canada",
+    "burlington": "burlington",
+}
+
+SUBJECT_PATTERNS = (
+    ("data-centre", r"data.?centre|3110|south service"),
+    ("school-policy", r"teacher take your phone|school rules|student rights"),
+    ("school-calendar", r"school starts|back to school|sept\.? 8"),
+    ("crime", r"crime|police|csi|severity index"),
+    ("local-food", r"cafe|restaurant|board-game|ribfest|food"),
+    ("730-brant", r"730 brant"),
+    ("millcroft", r"millcroft"),
+    ("skyway", r"skyway|tunnels"),
+    ("election", r"ward|vote|candidate|ballot|mayor"),
+    ("sports", r"sports|0.24|hotspots|lockers"),
+    ("wildlife", r"salamander|fishway|marsh|rabies"),
+    ("road-construction", r"upper middle|road closure|construction"),
+    ("events", r"ribfest|festival"),
+    ("transit", r"\bgo\b|transit|bus"),
+)
+
+
+def category_key(item: dict) -> str:
+    explicit = str(item.get("topic") or "").strip().lower()
+    if explicit:
+        return TOPIC_ALIASES.get(explicit, explicit.replace(" ", "-"))
+    label = str(item.get("label") or "").strip().lower()
+    if label:
+        return TOPIC_ALIASES.get(label, label.replace(" ", "-"))
+    haystack = f"{item.get('headline') or ''} {item.get('id') or ''}".lower()
+    for key, pattern in SUBJECT_PATTERNS:
+        if re.search(pattern, haystack):
+            return TOPIC_ALIASES.get(key, key)
+    return "burlington"
+
+
+def subject_keys(item: dict) -> set[str]:
+    subjects = item.get("subjects") or item.get("topics") or []
+    keys = {str(value).strip().lower() for value in subjects if str(value).strip()}
+    haystack = f"{item.get('id') or ''} {item.get('headline') or ''} {item.get('label') or ''}".lower()
+    for key, pattern in SUBJECT_PATTERNS:
+        if re.search(pattern, haystack):
+            keys.add(key)
+    return keys
+
+
+def source_key(item: dict) -> str:
+    raw = str(item.get("source") or item.get("sourceName") or item.get("byline") or "").strip().lower()
+    return re.sub(r"[^a-z0-9]+", "", raw)
+
+
+def adjusted_score(item: dict, selected: list[dict]) -> float:
+    base = float(item.get("placementScore") or 0)
+    if not selected:
+        return base
+    category = category_key(item)
+    subjects = subject_keys(item)
+    source = source_key(item)
+    penalty = 1.0
+    if category_key(selected[-1]) == category:
+        penalty *= 0.75
+    if any(category_key(other) == category for other in selected):
+        penalty *= 0.85
+    if subjects and any(subjects & subject_keys(other) for other in selected):
+        penalty *= 0.80
+    if source and any(source_key(other) == source for other in selected):
+        penalty *= 0.90
+    return base * penalty
+
+
+def pool_score(item: dict, selected: list[dict], pool: str = "") -> float:
+    value = adjusted_score(item, selected)
+    if pool == "newest" and item.get("evergreen"):
+        value *= 0.94
+    return value
+
+
+def diversify(candidates: list[dict], limit: int, exclude_ids: set[str] | None = None, pool: str = "") -> list[dict]:
+    """Rerank a scored list so nearby homepage slots prefer different topics.
+
+    Penalties discourage repeats. A much stronger same-topic story can still win
+    so diversity never forces a weak item into a prominent slot.
+    """
+    exclude = exclude_ids or set()
+    remaining = [item for item in candidates if item.get("id") and item.get("id") not in exclude]
+    selected: list[dict] = []
+    while remaining and len(selected) < limit:
+        best = max(
+            remaining,
+            key=lambda item: (pool_score(item, selected, pool), item.get("published", "")),
+        )
+        selected.append(best)
+        remaining = [item for item in remaining if item.get("id") != best.get("id")]
+    return selected
+
+
 def public_item(item: dict) -> dict:
     keys = (
-        "id", "kind", "headline", "deck", "label", "labelEssential", "url", "image",
-        "alt", "credit", "mediaKey", "byline", "published", "activeFrom", "storyGoal"
+        "id", "kind", "headline", "deck", "label", "labelEssential", "topic", "subjects",
+        "url", "image", "alt", "credit", "mediaKey", "byline", "published", "activeFrom",
+        "storyGoal",
     )
     result = {key: item[key] for key in keys if key in item}
     result["placementScore"] = item.get("placementScore")
+    result["topic"] = category_key(item)
+    if "subjects" not in result:
+        subjects = sorted(subject_keys(item))
+        if subjects:
+            result["subjects"] = subjects
     return result
 
 
@@ -144,16 +260,33 @@ def main() -> int:
 
     feature_candidates = [item for item in eligible if "feature" in item.get("surfaces", []) and item.get("image")]
     feature_candidates.sort(key=lambda item: (item["placementScore"], item.get("published", "")), reverse=True)
-    rail = [public_item(item) for item in eligible if "rail" in item.get("surfaces", [])][:3]
     latest_candidates = [item for item in eligible if "latest" in item.get("surfaces", [])]
     latest_candidates.sort(key=lambda item: (item["placementScore"], item.get("published", item.get("activeFrom", ""))), reverse=True)
+    rail_candidates = [item for item in eligible if "rail" in item.get("surfaces", [])]
+    rail_candidates.sort(key=lambda item: (item["placementScore"], item.get("published", "")), reverse=True)
+
+    hero = feature_candidates[0] if feature_candidates else None
+    used_ids = {hero["id"]} if hero else set()
+    latest_raw = diversify(latest_candidates, 6, used_ids, pool="newest")
+    visible_newest = latest_raw[:3]
+    used_ids.update(item["id"] for item in visible_newest)
+
+    pick_pool = [item for item in eligible if item.get("image")]
+    pick_pool.sort(key=lambda item: (item["placementScore"], item.get("published", "")), reverse=True)
+    picks_raw = diversify(pick_pool, 3, used_ids)
+    if len(picks_raw) < 3:
+        picks_raw = diversify(pick_pool, 3, {hero["id"]} if hero else set())
+
+    rail_raw = diversify(rail_candidates, 3, {hero["id"]} if hero else set())
+    feature_rest = diversify(feature_candidates[1:], 3, used_ids)
 
     result = {
         "generatedFor": today.isoformat(),
-        "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure.",
-        "feature": [public_item(item) for item in feature_candidates[:4]],
-        "rail": rail,
-        "latest": [public_item(item) for item in latest_candidates[:6]],
+        "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure, then applies a diversity rerank so nearby homepage slots prefer different categories and subjects.",
+        "feature": [public_item(item) for item in ([hero] if hero else []) + feature_rest],
+        "rail": [public_item(item) for item in rail_raw],
+        "latest": [public_item(item) for item in latest_raw],
+        "picks": [public_item(item) for item in picks_raw],
         "audit": [
             {"id": item["id"], "state": item["state"], "placementScore": item["placementScore"], "reason": item["reason"]}
             for item in audited

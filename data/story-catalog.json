@@ -11,13 +11,13 @@
         "latest"
       ],
       "headline": "How bad is Burlington's crime, really?",
-      "deck": "The comparable data mostly supports the safe reputation. One category is moving the other way.",
+      "deck": "Halton is unusually safe. One part of the crime data is moving the wrong way.",
       "label": "Public safety",
       "labelEssential": true,
       "url": "articles/how-bad-is-burlington-crime.html",
       "image": "assets/editorial/halton-crime-comparison.svg",
       "alt": "Chart comparing Halton's Crime Severity Index with selected Ontario police services",
-      "credit": "Burlington News chart \u00b7 Statistics Canada / Halton Regional Police Service",
+      "credit": "Burlington News chart · Statistics Canada / Halton Regional Police Service",
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "activeUntil": "2026-09-30",
@@ -39,7 +39,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
-      "lastHomepageLead": "2026-08-25"
+      "lastHomepageLead": "2026-08-26",
+      "topic": "public-safety",
+      "subjects": [
+        "crime"
+      ]
     },
     {
       "id": "nostalgia-games-cafe-closure",
@@ -77,7 +81,12 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "food",
+      "subjects": [
+        "local-food",
+        "cafe-closure"
+      ]
     },
     {
       "id": "data-centre-not-ai",
@@ -111,7 +120,11 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "development",
+      "subjects": [
+        "data-centre"
+      ]
     },
     {
       "id": "skyway-tunnels",
@@ -126,7 +139,7 @@
       "url": "articles/skyway-bridge-story.html",
       "image": "assets/home/skyway-reader.webp",
       "alt": "The Burlington Bay James N. Allan Skyway",
-      "credit": "Dave Lauretti \u00b7 CC BY 2.0",
+      "credit": "Dave Lauretti · CC BY 2.0",
       "published": "2026-08-24",
       "evergreen": true,
       "signals": {
@@ -141,7 +154,12 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "history",
+      "subjects": [
+        "skyway",
+        "history"
+      ]
     },
     {
       "id": "ward-change-2026",
@@ -170,7 +188,12 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "election",
+      "subjects": [
+        "election",
+        "wards"
+      ]
     },
     {
       "id": "election-field-2026",
@@ -199,7 +222,12 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "election",
+      "subjects": [
+        "election",
+        "mayor"
+      ]
     },
     {
       "id": "back-to-school-2026",
@@ -228,7 +256,11 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "schools",
+      "subjects": [
+        "school-calendar"
+      ]
     },
     {
       "id": "ontario-student-rights-school",
@@ -258,7 +290,11 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "schools",
+      "subjects": [
+        "school-policy"
+      ]
     },
     {
       "id": "730-brant-vacant-building",
@@ -286,7 +322,12 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "development",
+      "subjects": [
+        "730-brant",
+        "vacant-building"
+      ]
     },
     {
       "id": "millcroft-phase-2-138-homes",
@@ -315,7 +356,12 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "development",
+      "subjects": [
+        "millcroft",
+        "housing"
+      ]
     },
     {
       "id": "ribfest-2026",
@@ -345,7 +391,12 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "events",
+      "subjects": [
+        "events",
+        "ribfest"
+      ]
     },
     {
       "id": "sports-lockers",
@@ -371,7 +422,11 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "sports",
+      "subjects": [
+        "sports"
+      ]
     },
     {
       "id": "fishway-2025",
@@ -399,7 +454,12 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "nature",
+      "subjects": [
+        "wildlife",
+        "fishway"
+      ]
     },
     {
       "id": "salamander-migration",
@@ -428,7 +488,12 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "nature",
+      "subjects": [
+        "wildlife",
+        "salamander"
+      ]
     },
     {
       "id": "burlington-hotspots-0-24",
@@ -436,7 +501,7 @@
       "surfaces": [
         "sports"
       ],
-      "headline": "A Burlington team just went 0\u201324. How does that even happen?",
+      "headline": "A Burlington team just went 0–24. How does that even happen?",
       "deck": "Zero wins. Twenty-four losses. The next game is not a chance to repair that record.",
       "label": "Sports",
       "labelEssential": true,
@@ -462,7 +527,12 @@
         "burlington": "passed",
         "imageRights": "passed",
         "duplicate": "passed"
-      }
+      },
+      "topic": "sports",
+      "subjects": [
+        "sports",
+        "hidden-gem"
+      ]
     }
   ]
 }

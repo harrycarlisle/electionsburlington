@@ -80,6 +80,15 @@
     "yesterdayPenalty": 1.4,
     "recoverPerDay": 1.0
   },
+  "homepageDiversity": {
+    "purpose": "Rerank after base scoring so visible homepage clusters prefer different categories and subjects. Do not replace interest/relevance ranking or force weak stories.",
+    "sameCategoryPrevious": 0.75,
+    "sameCategoryInBlock": 0.85,
+    "sameSubject": 0.80,
+    "sameSource": 0.90,
+    "newestEvergreen": 0.94,
+    "excludeHeroFromNewestAndPicks": true
+  },
   "originalStory": {
     "cadence": "At least one original-story candidate every daily news watch. Publish nothing when reporting is not strong enough.",
     "minimumCandidates": 1,

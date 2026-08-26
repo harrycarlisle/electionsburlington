@@ -1,6 +1,6 @@
 {
-  "generatedFor": "2026-08-25",
-  "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure.",
+  "generatedFor": "2026-08-26",
+  "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure, then applies a diversity rerank so nearby homepage slots prefer different categories and subjects.",
   "feature": [
     {
       "id": "burlington-crime-analysis-2026",
@@ -9,6 +9,10 @@
       "deck": "Halton is unusually safe. One part of the crime data is moving the wrong way.",
       "label": "Public safety",
       "labelEssential": true,
+      "topic": "public-safety",
+      "subjects": [
+        "crime"
+      ],
       "url": "articles/how-bad-is-burlington-crime.html",
       "image": "assets/editorial/halton-crime-comparison.svg",
       "alt": "Chart comparing Halton's Crime Severity Index with selected Ontario police services",
@@ -16,37 +20,7 @@
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "placementScore": 94
-    },
-    {
-      "id": "data-centre-not-ai",
-      "kind": "explainer",
-      "headline": "Burlington's proposed data centre is not what many people think.",
-      "deck": "The City says it is not an AI hyperscale campus. The bigger question is what 20 megawatts means for the neighbourhood beside it.",
-      "label": "Development",
-      "labelEssential": true,
-      "url": "articles/burlington-data-centre-not-ai.html",
-      "image": "assets/stories/data-centre/3110-south-service-road-data-centre.webp",
-      "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
-      "published": "2026-08-24",
-      "activeFrom": "2026-08-24",
-      "placementScore": 89
-    },
-    {
-      "id": "nostalgia-games-cafe-closure",
-      "kind": "original",
-      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
-      "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
-      "label": "Local business",
-      "labelEssential": true,
-      "url": "articles/nostalgia-games-cafe-closure.html",
-      "image": "assets/editorial/nostalgia-cafe-closure.svg",
-      "alt": "Board-game cafe closure illustration",
-      "credit": "Burlington News illustration",
-      "published": "2026-08-25",
-      "activeFrom": "2026-08-25",
-      "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
-      "placementScore": 88
+      "placementScore": 87
     },
     {
       "id": "skyway-tunnels",
@@ -55,43 +29,53 @@
       "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
       "label": "Feature",
       "labelEssential": true,
+      "topic": "history",
+      "subjects": [
+        "skyway",
+        "history"
+      ],
       "url": "articles/skyway-bridge-story.html",
       "image": "assets/home/skyway-reader.webp",
       "alt": "The Burlington Bay James N. Allan Skyway",
       "credit": "Dave Lauretti · CC BY 2.0",
       "published": "2026-08-24",
       "placementScore": 82
+    },
+    {
+      "id": "ribfest-2026",
+      "kind": "seasonal",
+      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
+      "label": "Events",
+      "labelEssential": true,
+      "topic": "events",
+      "subjects": [
+        "events",
+        "ribfest"
+      ],
+      "url": "articles/ribfest-2026.html",
+      "image": "assets/home/ribs.webp",
+      "alt": "Barbecue ribs smoking over a pit",
+      "activeFrom": "2026-08-18",
+      "placementScore": 78
     }
   ],
   "rail": [
     {
-      "id": "burlington-crime-analysis-2026",
-      "kind": "original",
-      "headline": "How bad is Burlington's crime, really?",
-      "deck": "Halton is unusually safe. One part of the crime data is moving the wrong way.",
-      "label": "Public safety",
-      "labelEssential": true,
-      "url": "articles/how-bad-is-burlington-crime.html",
-      "image": "assets/editorial/halton-crime-comparison.svg",
-      "alt": "Chart comparing Halton's Crime Severity Index with selected Ontario police services",
-      "credit": "Burlington News chart · Statistics Canada / Halton Regional Police Service",
-      "published": "2026-08-25",
-      "activeFrom": "2026-08-25",
-      "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "placementScore": 94
-    },
-    {
       "id": "ontario-student-rights-school",
       "kind": "service",
       "headline": "Can a teacher take your phone? Seven school rules students should know.",
       "label": "Schools",
       "labelEssential": true,
+      "topic": "schools",
+      "subjects": [
+        "school-policy"
+      ],
       "url": "articles/ontario-student-rights-school.html",
       "image": "assets/home/school-rights.webp",
       "alt": "A yellow Ontario school bus",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
-      "placementScore": 90
+      "placementScore": 88
     },
     {
       "id": "data-centre-not-ai",
@@ -100,57 +84,16 @@
       "deck": "The City says it is not an AI hyperscale campus. The bigger question is what 20 megawatts means for the neighbourhood beside it.",
       "label": "Development",
       "labelEssential": true,
+      "topic": "development",
+      "subjects": [
+        "data-centre"
+      ],
       "url": "articles/burlington-data-centre-not-ai.html",
       "image": "assets/stories/data-centre/3110-south-service-road-data-centre.webp",
       "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
-      "placementScore": 89
-    }
-  ],
-  "latest": [
-    {
-      "id": "burlington-crime-analysis-2026",
-      "kind": "original",
-      "headline": "How bad is Burlington's crime, really?",
-      "deck": "Halton is unusually safe. One part of the crime data is moving the wrong way.",
-      "label": "Public safety",
-      "labelEssential": true,
-      "url": "articles/how-bad-is-burlington-crime.html",
-      "image": "assets/editorial/halton-crime-comparison.svg",
-      "alt": "Chart comparing Halton's Crime Severity Index with selected Ontario police services",
-      "credit": "Burlington News chart · Statistics Canada / Halton Regional Police Service",
-      "published": "2026-08-25",
-      "activeFrom": "2026-08-25",
-      "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "placementScore": 94
-    },
-    {
-      "id": "ontario-student-rights-school",
-      "kind": "service",
-      "headline": "Can a teacher take your phone? Seven school rules students should know.",
-      "label": "Schools",
-      "labelEssential": true,
-      "url": "articles/ontario-student-rights-school.html",
-      "image": "assets/home/school-rights.webp",
-      "alt": "A yellow Ontario school bus",
-      "published": "2026-08-24",
-      "activeFrom": "2026-08-24",
-      "placementScore": 90
-    },
-    {
-      "id": "data-centre-not-ai",
-      "kind": "explainer",
-      "headline": "Burlington's proposed data centre is not what many people think.",
-      "deck": "The City says it is not an AI hyperscale campus. The bigger question is what 20 megawatts means for the neighbourhood beside it.",
-      "label": "Development",
-      "labelEssential": true,
-      "url": "articles/burlington-data-centre-not-ai.html",
-      "image": "assets/stories/data-centre/3110-south-service-road-data-centre.webp",
-      "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
-      "published": "2026-08-24",
-      "activeFrom": "2026-08-24",
-      "placementScore": 89
+      "placementScore": 86
     },
     {
       "id": "nostalgia-games-cafe-closure",
@@ -159,6 +102,11 @@
       "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
       "label": "Local business",
       "labelEssential": true,
+      "topic": "food",
+      "subjects": [
+        "local-food",
+        "cafe-closure"
+      ],
       "url": "articles/nostalgia-games-cafe-closure.html",
       "image": "assets/editorial/nostalgia-cafe-closure.svg",
       "alt": "Board-game cafe closure illustration",
@@ -166,19 +114,65 @@
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
+      "placementScore": 85
+    }
+  ],
+  "latest": [
+    {
+      "id": "ontario-student-rights-school",
+      "kind": "service",
+      "headline": "Can a teacher take your phone? Seven school rules students should know.",
+      "label": "Schools",
+      "labelEssential": true,
+      "topic": "schools",
+      "subjects": [
+        "school-policy"
+      ],
+      "url": "articles/ontario-student-rights-school.html",
+      "image": "assets/home/school-rights.webp",
+      "alt": "A yellow Ontario school bus",
+      "published": "2026-08-24",
+      "activeFrom": "2026-08-24",
       "placementScore": 88
     },
     {
-      "id": "730-brant-vacant-building",
-      "kind": "investigation",
-      "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
+      "id": "data-centre-not-ai",
+      "kind": "explainer",
+      "headline": "Burlington's proposed data centre is not what many people think.",
+      "deck": "The City says it is not an AI hyperscale campus. The bigger question is what 20 megawatts means for the neighbourhood beside it.",
       "label": "Development",
       "labelEssential": true,
-      "url": "articles/730-brant-vacant-building.html",
-      "image": "assets/editorial/730-brant-share.webp",
-      "alt": "730 Brant Street Burlington News illustration",
+      "topic": "development",
+      "subjects": [
+        "data-centre"
+      ],
+      "url": "articles/burlington-data-centre-not-ai.html",
+      "image": "assets/stories/data-centre/3110-south-service-road-data-centre.webp",
+      "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
       "published": "2026-08-24",
-      "placementScore": 87
+      "activeFrom": "2026-08-24",
+      "placementScore": 86
+    },
+    {
+      "id": "nostalgia-games-cafe-closure",
+      "kind": "original",
+      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
+      "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
+      "label": "Local business",
+      "labelEssential": true,
+      "topic": "food",
+      "subjects": [
+        "local-food",
+        "cafe-closure"
+      ],
+      "url": "articles/nostalgia-games-cafe-closure.html",
+      "image": "assets/editorial/nostalgia-cafe-closure.svg",
+      "alt": "Board-game cafe closure illustration",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
+      "placementScore": 85
     },
     {
       "id": "ward-change-2026",
@@ -186,30 +180,128 @@
       "headline": "Your ward may have changed. Check before you vote.",
       "label": "Election",
       "labelEssential": true,
+      "topic": "election",
+      "subjects": [
+        "election",
+        "wards"
+      ],
       "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
       "image": "assets/editorial/burlington-wards-2026.svg",
       "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
       "activeFrom": "2026-08-21",
-      "placementScore": 81
+      "placementScore": 80
+    },
+    {
+      "id": "fishway-2025",
+      "kind": "evergreen",
+      "headline": "What 26,503 fish revealed about a damaged marsh.",
+      "label": "Nature",
+      "labelEssential": true,
+      "topic": "nature",
+      "subjects": [
+        "wildlife",
+        "fishway"
+      ],
+      "url": "articles/fishway-26000-fish.html",
+      "image": "assets/home/fishway.webp",
+      "alt": "The Cootes Paradise Fishway across the water",
+      "published": "2026-08-23",
+      "placementScore": 75
+    },
+    {
+      "id": "730-brant-vacant-building",
+      "kind": "investigation",
+      "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
+      "label": "Development",
+      "labelEssential": true,
+      "topic": "development",
+      "subjects": [
+        "730-brant",
+        "vacant-building"
+      ],
+      "url": "articles/730-brant-vacant-building.html",
+      "image": "assets/editorial/730-brant-share.webp",
+      "alt": "730 Brant Street Burlington News illustration",
+      "published": "2026-08-24",
+      "placementScore": 87
+    }
+  ],
+  "picks": [
+    {
+      "id": "730-brant-vacant-building",
+      "kind": "investigation",
+      "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
+      "label": "Development",
+      "labelEssential": true,
+      "topic": "development",
+      "subjects": [
+        "730-brant",
+        "vacant-building"
+      ],
+      "url": "articles/730-brant-vacant-building.html",
+      "image": "assets/editorial/730-brant-share.webp",
+      "alt": "730 Brant Street Burlington News illustration",
+      "published": "2026-08-24",
+      "placementScore": 87
+    },
+    {
+      "id": "burlington-hotspots-0-24",
+      "kind": "original",
+      "headline": "A Burlington team just went 0–24. How does that even happen?",
+      "deck": "Zero wins. Twenty-four losses. The next game is not a chance to repair that record.",
+      "label": "Sports",
+      "labelEssential": true,
+      "topic": "sports",
+      "subjects": [
+        "sports",
+        "hidden-gem"
+      ],
+      "url": "articles/burlington-hotspots-0-24.html",
+      "image": "assets/sports/ultimate-waterfront.webp",
+      "alt": "Editorial illustration of a waterfront field sport near the Skyway",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain an unusually extreme local rec-league record without treating 0-24 as a joke or rewriting it as 24-0.",
+      "placementScore": 82
+    },
+    {
+      "id": "skyway-tunnels",
+      "kind": "feature",
+      "headline": "Ontario nearly replaced the Skyway with three tunnels.",
+      "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
+      "label": "Feature",
+      "labelEssential": true,
+      "topic": "history",
+      "subjects": [
+        "skyway",
+        "history"
+      ],
+      "url": "articles/skyway-bridge-story.html",
+      "image": "assets/home/skyway-reader.webp",
+      "alt": "The Burlington Bay James N. Allan Skyway",
+      "credit": "Dave Lauretti · CC BY 2.0",
+      "published": "2026-08-24",
+      "placementScore": 82
     }
   ],
   "audit": [
     {
       "id": "burlington-crime-analysis-2026",
       "state": "eligible",
-      "placementScore": 94,
+      "placementScore": 87,
       "reason": "all gates passed"
     },
     {
       "id": "nostalgia-games-cafe-closure",
       "state": "eligible",
-      "placementScore": 88,
+      "placementScore": 85,
       "reason": "all gates passed"
     },
     {
       "id": "data-centre-not-ai",
       "state": "eligible",
-      "placementScore": 89,
+      "placementScore": 86,
       "reason": "all gates passed"
     },
     {
@@ -221,13 +313,13 @@
     {
       "id": "ward-change-2026",
       "state": "eligible",
-      "placementScore": 81,
+      "placementScore": 80,
       "reason": "all gates passed"
     },
     {
       "id": "election-field-2026",
       "state": "eligible",
-      "placementScore": 80,
+      "placementScore": 79,
       "reason": "all gates passed"
     },
     {
@@ -239,7 +331,7 @@
     {
       "id": "ontario-student-rights-school",
       "state": "eligible",
-      "placementScore": 90,
+      "placementScore": 88,
       "reason": "all gates passed"
     },
     {
@@ -251,7 +343,7 @@
     {
       "id": "millcroft-phase-2-138-homes",
       "state": "eligible",
-      "placementScore": 73,
+      "placementScore": 71,
       "reason": "all gates passed"
     },
     {
@@ -277,6 +369,12 @@
       "state": "archive",
       "placementScore": 75,
       "reason": "seasonal window ended 2026-04-30"
+    },
+    {
+      "id": "burlington-hotspots-0-24",
+      "state": "eligible",
+      "placementScore": 82,
+      "reason": "all gates passed"
     }
   ]
 }
