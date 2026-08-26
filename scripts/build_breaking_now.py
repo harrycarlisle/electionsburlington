@@ -130,10 +130,18 @@ def diversify_top(items: list[dict], limit: int = 2) -> list[dict]:
             break
     if second is None:
         second = items[1]
-    # Impact outranks diversity: if the second same-category item is far stronger, keep it.
+    # Prefer a different category. Impact outranks that only when the
+    # diverse alternative is weak filler, or the same-category item is a
+    # genuine emergency and at least as strong.
     same = items[1]
-    if str(same.get("category") or "") == str(first.get("category") or ""):
-        if float(same.get("impactScore") or 0) >= 4.6 and float(same.get("breakingScore") or 0) >= float(second.get("breakingScore") or 0) + 0.25:
+    if str(same.get("category") or "") == str(first.get("category") or "") and second is not None:
+        same_impact = float(same.get("impactScore") or 0)
+        same_score = float(same.get("breakingScore") or 0)
+        diverse_impact = float(second.get("impactScore") or 0)
+        diverse_score = float(second.get("breakingScore") or 0)
+        weak_filler = diverse_impact < 3.8
+        stronger_emergency = same_impact >= 4.6 and same_score + 0.05 >= diverse_score
+        if weak_filler or stronger_emergency:
             second = same
     return [first, second]
 
