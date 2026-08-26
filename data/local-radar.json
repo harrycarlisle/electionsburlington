@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T23:29:34.677193-04:00",
+  "generatedAt": "2026-08-26T00:26:47.039390-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -66,37 +66,6 @@
       "eligibleEditorial": true
     },
     {
-      "id": "511:293299",
-      "detectedAt": "2026-08-26T03:15:05Z",
-      "score": 65,
-      "headline": "Disabled Vehicle on HWY 401 Westbound  at GUELPH LINE, Milton. Right lane and right shoulder closed.",
-      "kind": "traffic",
-      "location": "HWY 401",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "a1a160628b996c78",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.0,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 5.0,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 73,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
-    },
-    {
       "id": "back-to-school-2026",
       "kind": "original",
       "surfaces": [
@@ -142,6 +111,37 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": true
+    },
+    {
+      "id": "511:293299",
+      "detectedAt": "2026-08-26T03:15:05Z",
+      "score": 65,
+      "headline": "Disabled Vehicle on HWY 401 Westbound  at GUELPH LINE, Milton. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "HWY 401",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "a1a160628b996c78",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.0,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 4.6,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 72,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
     },
     {
       "title": "Halton District School Board",
@@ -574,7 +574,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.04935964071759269
+        "rotation": 0.0
       },
       "gates": {
         "evidence": "passed",
@@ -582,7 +582,7 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
-      "lastHomepageLead": "2026-08-26",
+      "lastHomepageLead": "2026-08-25",
       "topic": "public-safety",
       "subjects": [
         "crime"
@@ -946,37 +946,6 @@
       "eligibleEditorial": true
     },
     {
-      "id": "511:293299",
-      "detectedAt": "2026-08-26T03:15:05Z",
-      "score": 65,
-      "headline": "Disabled Vehicle on HWY 401 Westbound  at GUELPH LINE, Milton. Right lane and right shoulder closed.",
-      "kind": "traffic",
-      "location": "HWY 401",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "a1a160628b996c78",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.0,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 5.0,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 73,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
-    },
-    {
       "id": "back-to-school-2026",
       "kind": "original",
       "surfaces": [
@@ -1022,6 +991,37 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": true
+    },
+    {
+      "id": "511:293299",
+      "detectedAt": "2026-08-26T03:15:05Z",
+      "score": 65,
+      "headline": "Disabled Vehicle on HWY 401 Westbound  at GUELPH LINE, Milton. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "HWY 401",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "a1a160628b996c78",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.0,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 4.6,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 72,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
     },
     {
       "id": "burlington-hotspots-0-24",
@@ -1654,37 +1654,6 @@
       "eligibleEditorial": false
     },
     {
-      "id": "511:293205",
-      "detectedAt": "2026-08-25T21:38:12Z",
-      "score": 75,
-      "headline": "Disabled Vehicle on QEW Toronto bound ON-RAMP at BURLOAK DRIVE, Burlington. Left shoulder and left lane closed.",
-      "kind": "traffic",
-      "location": "QEW",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "5a309cfed0b16315",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 2.5,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 4.0,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 69,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
-    },
-    {
       "id": "burlington-crime-analysis-2026",
       "kind": "original",
       "surfaces": [
@@ -1715,7 +1684,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.04935964071759269
+        "rotation": 0.0
       },
       "gates": {
         "evidence": "passed",
@@ -1723,7 +1692,7 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
-      "lastHomepageLead": "2026-08-26",
+      "lastHomepageLead": "2026-08-25",
       "topic": "public-safety",
       "subjects": [
         "crime"
@@ -1951,6 +1920,37 @@
         "familiarity": 2.5,
         "consequence": 2.8,
         "freshness": 4.0,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 67,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "511:293205",
+      "detectedAt": "2026-08-25T21:38:12Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Toronto bound ON-RAMP at BURLOAK DRIVE, Burlington. Left shoulder and left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "5a309cfed0b16315",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 2.5,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 3.2,
         "sourceConfidence": 5.0,
         "originality": 2.6,
         "visualStrength": 4.0,
