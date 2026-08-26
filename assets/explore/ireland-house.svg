@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">Ireland House editorial graphic</title>
+  <rect width="1600" height="900" fill="#2b1c14"/>
+  <rect x="0" y="620" width="1600" height="280" fill="#3d5a32"/>
+  <path d="M520 620V360h560v260" fill="#c4a574"/>
+  <path d="M490 360h620l-90-130H580z" fill="#6b3a22"/>
+  <rect x="610" y="410" width="110" height="90" fill="#7ea4c4"/>
+  <rect x="880" y="410" width="110" height="90" fill="#7ea4c4"/>
+  <rect x="760" y="500" width="80" height="120" fill="#3a2714"/>
+  <text x="80" y="120" fill="#f3e6d2" font-family="Georgia, serif" font-size="64" font-weight="700">Ireland House</text>
+  <text x="84" y="180" fill="#d2b48c" font-family="Arial, sans-serif" font-size="28" letter-spacing="3">BURLINGTON NEWS</text>
+</svg>

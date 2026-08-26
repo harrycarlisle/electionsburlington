@@ -1,25 +1,116 @@
 {
-  "updated": "2026-08-24T15:30:00-04:00",
+  "updated": "2026-08-26T13:30:00-04:00",
   "timezone": "America/Toronto",
   "events": [
     {
       "id": "lions-market-2026-08-26",
       "title": "Burlington Farmers Market",
       "category": "Market",
-      "start": "2026-08-26T08:00:00-04:00",
-      "end": "2026-08-26T14:00:00-04:00",
-      "dateLabel": "Wed, Aug. 26 · 8 a.m. to 2 p.m.",
+      "start": "2026-08-26T07:00:00-04:00",
+      "end": "2026-08-26T14:30:00-04:00",
+      "dateLabel": "Wed, Aug. 26 · 7 a.m. to 2:30 p.m.",
       "location": "Burlington Centre, 777 Guelph Line",
       "summary": "Shop local produce, prepared food and handmade goods at the Lions Club market.",
-      "details": "The Burlington Lions Club lists the market on Wednesdays, Fridays and Saturdays through October. This card uses the event-specific hours published for August 26.",
-      "bring": ["A reusable bag", "A shopping list", "A way to keep cold items chilled"],
+      "details": "The Burlington Lions Club lists the market Wednesdays, Fridays and Saturdays from 7 a.m. to 2:30 p.m., May 20 through Oct. 24, 2026. Wednesday evenings also run 2:30 to 7:30 p.m. through Sept. 30.",
+      "bring": [
+        "A reusable bag",
+        "A shopping list",
+        "A way to keep cold items chilled"
+      ],
       "source": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
       "sourceName": "Burlington Lions Club",
       "image": "assets/explore/farmers-market.webp",
-      "imageAlt": "Editorial illustration of Burlington Farmers Market in late summer",
+      "imageAlt": "Editorial illustration of a late-summer farmers market",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "scope": "Burlington"
+      "scope": "Burlington",
+      "city": "Burlington",
+      "venue": "Burlington Centre",
+      "travel": "In Burlington",
+      "weight": 5,
+      "verifiedAt": "2026-08-26T12:00:00-04:00"
+    },
+    {
+      "id": "lions-market-2026-08-28",
+      "title": "Burlington Farmers Market",
+      "category": "Market",
+      "start": "2026-08-28T07:00:00-04:00",
+      "end": "2026-08-28T14:30:00-04:00",
+      "dateLabel": "Fri, Aug. 28 · 7 a.m. to 2:30 p.m.",
+      "location": "Burlington Centre, 777 Guelph Line",
+      "summary": "Shop local produce, prepared food and handmade goods at the Lions Club market.",
+      "details": "The Burlington Lions Club lists the market Wednesdays, Fridays and Saturdays from 7 a.m. to 2:30 p.m. at Burlington Centre, 777 Guelph Line, through Oct. 24, 2026.",
+      "bring": [
+        "A reusable bag",
+        "A shopping list",
+        "A way to keep cold items chilled"
+      ],
+      "source": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
+      "sourceName": "Burlington Lions Club",
+      "image": "assets/explore/farmers-market.webp",
+      "imageAlt": "Editorial illustration of a late-summer farmers market",
+      "credit": "Burlington News illustration",
+      "illustration": true,
+      "scope": "Burlington",
+      "city": "Burlington",
+      "venue": "Burlington Centre",
+      "travel": "In Burlington",
+      "weight": 5,
+      "verifiedAt": "2026-08-26T13:30:00-04:00"
+    },
+    {
+      "id": "lions-market-2026-08-29",
+      "title": "Burlington Farmers Market",
+      "category": "Market",
+      "start": "2026-08-29T07:00:00-04:00",
+      "end": "2026-08-29T14:30:00-04:00",
+      "dateLabel": "Sat, Aug. 29 · 7 a.m. to 2:30 p.m.",
+      "location": "Burlington Centre, 777 Guelph Line",
+      "summary": "Shop local produce, prepared food and handmade goods at the Lions Club market.",
+      "details": "The Burlington Lions Club lists the market Wednesdays, Fridays and Saturdays from 7 a.m. to 2:30 p.m. at Burlington Centre, 777 Guelph Line, through Oct. 24, 2026.",
+      "bring": [
+        "A reusable bag",
+        "A shopping list",
+        "A way to keep cold items chilled"
+      ],
+      "source": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
+      "sourceName": "Burlington Lions Club",
+      "image": "assets/explore/farmers-market.webp",
+      "imageAlt": "Editorial illustration of a late-summer farmers market",
+      "credit": "Burlington News illustration",
+      "illustration": true,
+      "scope": "Burlington",
+      "city": "Burlington",
+      "venue": "Burlington Centre",
+      "travel": "In Burlington",
+      "weight": 5,
+      "verifiedAt": "2026-08-26T13:30:00-04:00"
+    },
+    {
+      "id": "movies-under-the-stars-2026-08-27",
+      "title": "Movies Under the Stars: Ice Princess",
+      "category": "Movie",
+      "start": "2026-08-27T20:00:00-04:00",
+      "end": "2026-08-27T23:00:00-04:00",
+      "dateLabel": "Thu, Aug. 27 · 8 p.m. at Kilbride Park",
+      "location": "Kilbride Park, Burlington",
+      "city": "Burlington",
+      "venue": "Kilbride Park",
+      "summary": "The City’s free outdoor movie series ends Thursday with Ice Princess.",
+      "details": "Access Storage Movies Under the Stars is a Thursday series. The official City schedule lists Ice Princess at Kilbride Park on August 27. Bring a chair or blanket. Weather can cancel the show; the City posts cancellations by 3 p.m. There is no verified Friday, August 28 movie night.",
+      "bring": [
+        "A lawn chair or blanket",
+        "Bug spray",
+        "A weather check before you leave"
+      ],
+      "source": "https://www.burlington.ca/en/news/festivals-and-events/movies-under-the-stars.aspx",
+      "sourceName": "City of Burlington",
+      "image": "assets/explore/movies-under-the-stars.webp",
+      "imageAlt": "Editorial reconstruction of a community outdoor movie night in a park. Not a photograph of Kilbride Park.",
+      "credit": "Burlington News editorial visual",
+      "illustration": true,
+      "scope": "Burlington",
+      "verifiedAt": "2026-08-26"
     },
     {
       "id": "partial-lunar-eclipse-2026",
@@ -31,14 +122,106 @@
       "location": "Visible across Burlington with a clear view of the sky",
       "summary": "The partial eclipse begins at 10:33 p.m. and reaches maximum at 12:12 a.m.",
       "details": "The penumbral phase starts at 9:23 p.m. The partial phase starts at 10:33 p.m., reaches maximum at 12:12 a.m. and ends at 1:51 a.m. No eye protection is required for a lunar eclipse.",
-      "bring": ["A warm layer", "Binoculars if you have them", "A low-brightness flashlight"],
+      "bring": [
+        "A warm layer",
+        "Binoculars if you have them",
+        "A low-brightness flashlight"
+      ],
       "source": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828",
       "sourceName": "Timeanddate.com; checked against NASA",
-      "image": "assets/explore/lunar-eclipse.webp",
-      "imageAlt": "Illustration of a partial lunar eclipse above Lake Ontario",
+      "image": "assets/explore/night-sky-mount-nemo.webp",
+      "imageAlt": "Night-sky illustration above the Niagara Escarpment. Not a Burlington photograph of this eclipse.",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "scope": "Burlington"
+      "scope": "Burlington",
+      "city": "Burlington",
+      "venue": "Anywhere with a clear view of the sky",
+      "travel": "Visible across Burlington",
+      "weight": 8,
+      "verifiedAt": "2026-08-26T12:00:00-04:00"
+    },
+    {
+      "id": "winona-peach-festival-2026",
+      "title": "Winona Peach Festival",
+      "category": "Festival",
+      "start": "2026-08-28T17:00:00-04:00",
+      "end": "2026-08-30T18:00:00-04:00",
+      "dateLabel": "Aug. 28 to 30",
+      "location": "Winona Park, 1328 Barton Street, Stoney Creek",
+      "city": "Stoney Creek",
+      "venue": "Winona Park",
+      "travel": "About 25 minutes east of Burlington along the QEW",
+      "summary": "A free three-day peach festival with food, live music, crafts and a midway.",
+      "details": "This is a nearby Stoney Creek festival, not a Burlington event. Hours are Friday 5 to 11 p.m., Saturday 10 a.m. to 11 p.m. and Sunday 10 a.m. to 6 p.m. Admission ends at 9:30 p.m. Friday and Saturday. The official site says bag checks and metal detectors are in use.",
+      "bring": [
+        "A payment card or cash",
+        "A bag that is easy to check",
+        "A plan for parking or the HSR shuttle"
+      ],
+      "source": "https://winonapeach.com/",
+      "sourceName": "Winona Peach Festival",
+      "visualText": "NEARBY",
+      "scope": "Stoney Creek",
+      "weight": 7,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/explore/farmers-market.webp",
+      "imageAlt": "Late-summer produce at a local market. Editorial illustration, not a Winona Festival photo.",
+      "credit": "Burlington News illustration",
+      "illustration": true
+    },
+    {
+      "id": "elizabeth-gardens-art-walk-2026",
+      "title": "Elizabeth Gardens Art Walk",
+      "category": "Public art",
+      "start": "2026-08-30T10:00:00-04:00",
+      "end": "2026-08-30T16:00:00-04:00",
+      "dateLabel": "Sun, Aug. 30 · 10 a.m. to 4 p.m.",
+      "location": "Lions Park and Lions Hall, 471 Pearl Street",
+      "city": "Burlington",
+      "venue": "Lions Park",
+      "travel": "Elizabeth Gardens neighbourhood, Burlington",
+      "summary": "A free outdoor art walk with local artists, hands-on activities and live music.",
+      "details": "The Elizabeth Gardens Creative Collective lists the sixth annual Art Walk as rain or shine. Admission is free. The organizers describe outdoor exhibitions, demos, a scavenger hunt and kids’ activities.",
+      "bring": [
+        "Comfortable walking shoes",
+        "Cash or a card for art you want to buy",
+        "A water bottle"
+      ],
+      "source": "https://creativecollectiveonline.com/art-walk/",
+      "sourceName": "Elizabeth Gardens Creative Collective",
+      "scope": "Burlington",
+      "weight": 6,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/explore/art-walk.svg",
+      "imageAlt": "Burlington News editorial graphic for Art Walk",
+      "credit": "Burlington News illustration",
+      "illustration": true
+    },
+    {
+      "id": "movies-under-the-stars-2026-09-03",
+      "title": "Movies Under the Stars: Lilo & Stitch",
+      "category": "Movie",
+      "start": "2026-09-03T20:00:00-04:00",
+      "end": "2026-09-03T23:00:00-04:00",
+      "dateLabel": "Thu, Sept. 3 · 8 p.m. at Ireland Park",
+      "location": "Ireland Park, Burlington",
+      "city": "Burlington",
+      "venue": "Ireland Park",
+      "summary": "The official City table also lists a September 3 screening at Ireland Park.",
+      "details": "The City page intro says the series runs through August 27, but the published schedule table includes Thursday, September 3 at Ireland Park for Lilo & Stitch 2025. Confirm closer to the date.",
+      "bring": [
+        "A lawn chair or blanket",
+        "Bug spray",
+        "A weather check before you leave"
+      ],
+      "source": "https://www.burlington.ca/en/news/festivals-and-events/movies-under-the-stars.aspx",
+      "sourceName": "City of Burlington",
+      "image": "assets/explore/movies-under-the-stars.webp",
+      "imageAlt": "Editorial reconstruction of a community outdoor movie night in a park.",
+      "credit": "Burlington News editorial visual",
+      "illustration": true,
+      "scope": "Burlington",
+      "verifiedAt": "2026-08-26"
     },
     {
       "id": "ribfest-2026",
@@ -50,13 +233,80 @@
       "location": "Spencer Smith Park",
       "summary": "Four days of rib teams, music and fundraising on Burlington’s waterfront.",
       "details": "The festival runs 11 a.m. to 11 p.m. Friday through Sunday and 11 a.m. to 7 p.m. Monday. Food and drinks cost extra after admission.",
-      "bring": ["A payment card or cash", "Water", "A plan for transit or parking"],
+      "bring": [
+        "A payment card or cash",
+        "Water",
+        "A plan for transit or parking"
+      ],
       "source": "https://canadaslargestribfest.com/",
       "sourceName": "Canada’s Largest Ribfest",
       "image": "assets/home/ribs.webp",
       "imageAlt": "Ribs cooking over a barbecue pit",
       "credit": "Thogru via Wikimedia Commons · CC BY-SA 3.0",
-      "scope": "Burlington"
+      "scope": "Burlington",
+      "city": "Burlington",
+      "venue": "Spencer Smith Park",
+      "travel": "Downtown Burlington waterfront",
+      "weight": 9,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "illustration": false
+    },
+    {
+      "id": "rbg-after-dark-anchorball-sept-5-2026",
+      "title": "RBG After Dark: ANCHORBALL",
+      "category": "Night",
+      "start": "2026-09-05T18:30:00-04:00",
+      "end": "2026-09-05T22:30:00-04:00",
+      "dateLabel": "Sat, Sept. 5 · 6:30 to 10:30 p.m.",
+      "location": "Hendrie Park, Royal Botanical Gardens",
+      "city": "Burlington",
+      "venue": "Hendrie Park",
+      "travel": "RBG Centre, 680 Plains Rd. W.",
+      "summary": "A 19+ evening walk through the ANCHORBALL sculptures with food, drinks and live entertainment.",
+      "details": "Royal Botanical Gardens lists the remaining After Dark date as Sept. 5. Final entry is 9 p.m. Separate evening tickets are required. This is not the daytime garden admission.",
+      "bring": [
+        "Photo ID if you look under 25",
+        "A warm layer",
+        "A payment card for food or drinks"
+      ],
+      "source": "https://www.rbg.ca/events/anchorball-a-curious-art-journey/",
+      "sourceName": "Royal Botanical Gardens",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rock%20Gardens.JPG?width=1280",
+      "imageAlt": "Rock Garden at Royal Botanical Gardens",
+      "credit": "Nhl4hamilton via Wikimedia Commons · public domain",
+      "scope": "Burlington",
+      "weight": 7,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "illustration": false
+    },
+    {
+      "id": "kerrfest-oakville-2026",
+      "title": "Kerrfest",
+      "category": "Festival",
+      "start": "2026-09-11T15:45:00-04:00",
+      "end": "2026-09-13T18:00:00-04:00",
+      "dateLabel": "Sept. 11 to 13",
+      "location": "Westwood Park, 173 Kerr Street, Oakville",
+      "city": "Oakville",
+      "venue": "Westwood Park",
+      "travel": "About 15 minutes east of Burlington",
+      "summary": "Oakville’s Kerr Village festival with a Colin James and Jim Cuddy weekend.",
+      "details": "This is a nearby Oakville festival, not a Burlington event. Visit Oakville lists Friday doors at 3:45 p.m., Saturday at 11:45 a.m. and Sunday kids programming from about 11 a.m. The Kerr Village BIA lineup names Colin James on Friday and the Jim Cuddy Band on Saturday. Confirm tickets and the Sunday schedule before you go.",
+      "bring": [
+        "A transit or parking plan",
+        "A payment card",
+        "A warm layer for the evening sets"
+      ],
+      "source": "https://visitoakville.com/events/kerrfest-2026/",
+      "sourceName": "Visit Oakville; Kerr Village BIA lineup",
+      "visualText": "NEARBY",
+      "scope": "Oakville",
+      "weight": 8,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/explore/community-cleanup.webp",
+      "imageAlt": "Neighbours outdoors in a local park. Editorial illustration.",
+      "credit": "Burlington News illustration",
+      "illustration": true
     },
     {
       "id": "supercrawl-2026",
@@ -68,11 +318,196 @@
       "location": "James Street North, Hamilton",
       "summary": "A free weekend of music, art and street programming about 20 minutes from Burlington.",
       "details": "This is a nearby Hamilton pick, not a Burlington event. Check the official schedule before leaving because set times and road closures can change.",
-      "bring": ["Comfortable shoes", "A transit or parking plan", "A charged phone"],
+      "bring": [
+        "Comfortable shoes",
+        "A transit or parking plan",
+        "A charged phone"
+      ],
       "source": "https://supercrawl.ca/2026/",
       "sourceName": "Supercrawl",
       "visualText": "NEARBY",
-      "scope": "Hamilton"
+      "scope": "Hamilton",
+      "city": "Hamilton",
+      "venue": "James Street North",
+      "travel": "About 20 minutes from Burlington",
+      "weight": 8,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/editorial/explore-collage.webp",
+      "imageAlt": "Illustrated collage used as a nearby-event visual",
+      "credit": "Burlington News illustration",
+      "illustration": true
+    },
+    {
+      "id": "burlington-asian-night-market-2026",
+      "title": "Burlington Asian Night Market",
+      "category": "Night market",
+      "start": "2026-09-18T17:00:00-04:00",
+      "end": "2026-09-20T21:00:00-04:00",
+      "dateLabel": "Sept. 18 to 20",
+      "location": "Mapleview Shopping Centre, 900 Maple Avenue",
+      "city": "Burlington",
+      "venue": "Mapleview Shopping Centre",
+      "travel": "Central Burlington, near the QEW",
+      "summary": "A free weekend of Asian street food, vendors and night-market entertainment.",
+      "details": "The organizer lists Friday 5 to 11 p.m., Saturday noon to 11 p.m. and Sunday noon to 9 p.m. Tourism Burlington also carries the weekend. Admission is listed as free. Food and shopping cost extra.",
+      "bring": [
+        "A reusable bag",
+        "A payment card or cash",
+        "A plan for parking at Mapleview"
+      ],
+      "source": "https://nightmarkets.ca/event/burlington-asian-night-market-2026/",
+      "sourceName": "Asian Night Market; listed by Tourism Burlington",
+      "scope": "Burlington",
+      "weight": 8,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/explore/farmers-market.webp",
+      "imageAlt": "Evening market food stalls. Editorial illustration.",
+      "credit": "Burlington News illustration",
+      "illustration": true
+    },
+    {
+      "id": "ticats-alouettes-2026-09-18",
+      "title": "Tiger-Cats vs. Montreal Alouettes",
+      "category": "Sports",
+      "start": "2026-09-18T19:30:00-04:00",
+      "end": "2026-09-18T22:30:00-04:00",
+      "dateLabel": "Fri, Sept. 18 · 7:30 p.m.",
+      "location": "Hamilton Stadium, 64 Melrose Ave. N., Hamilton",
+      "city": "Hamilton",
+      "venue": "Hamilton Stadium",
+      "travel": "About 20 minutes from Burlington",
+      "summary": "A Friday night CFL home game in Hamilton.",
+      "details": "This is a nearby Hamilton sports date, not a Burlington event. Tourism Hamilton lists kickoff at 7:30 p.m. at Hamilton Stadium. Confirm tickets and gate times on the Tiger-Cats schedule before you leave.",
+      "bring": [
+        "Tickets on your phone",
+        "A transit or parking plan",
+        "A layer for the evening"
+      ],
+      "source": "https://www.ticats.ca/schedule/",
+      "sourceName": "Hamilton Tiger-Cats; Tourism Hamilton",
+      "visualText": "NEARBY",
+      "scope": "Hamilton",
+      "weight": 6,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/editorial/sports-collage.webp",
+      "imageAlt": "Illustrated local sports collage",
+      "credit": "Burlington News illustration",
+      "illustration": true
+    },
+    {
+      "id": "salsa-saturdays-pier8-2026-09-19",
+      "title": "Salsa Saturdays at Pier 8",
+      "category": "Music",
+      "start": "2026-09-19T19:00:00-04:00",
+      "end": "2026-09-19T22:30:00-04:00",
+      "dateLabel": "Sat, Sept. 19 · 7 to 10:30 p.m.",
+      "location": "Pier 8 outdoor rink, 47 Discovery Drive, Hamilton",
+      "city": "Hamilton",
+      "venue": "Pier 8 outdoor rink",
+      "travel": "About 25 minutes to the Hamilton waterfront",
+      "summary": "A free sunset salsa lesson and dance on the Hamilton waterfront.",
+      "details": "This is a nearby Hamilton event, not a Burlington event. The City of Hamilton lists a beginner lesson from 7 to 7:30 p.m. and dancing on the rink until 10:30 p.m. No ticket is required. Donations are appreciated. No partner or experience is needed.",
+      "bring": [
+        "Comfortable shoes you can dance in",
+        "A water bottle",
+        "A transit or parking plan"
+      ],
+      "source": "https://www.hamilton.ca/things-do/festivals-events/events-calendar/salsa-saturdays-waterfront-2026-2",
+      "sourceName": "City of Hamilton",
+      "visualText": "NEARBY",
+      "scope": "Hamilton",
+      "weight": 6,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/explore/brant-street-pier.webp",
+      "imageAlt": "A public waterfront gathering place at dusk. Editorial visual, not Pier 8.",
+      "credit": "Burlington News",
+      "illustration": true
+    },
+    {
+      "id": "british-car-day-2026",
+      "title": "British Car Day at Bronte Creek",
+      "category": "Festival",
+      "start": "2026-09-20T09:00:00-04:00",
+      "end": "2026-09-20T16:00:00-04:00",
+      "dateLabel": "Sun, Sept. 20 · 9 a.m. to 4 p.m.",
+      "location": "Bronte Creek Provincial Park, 1219 Burloak Drive, Oakville",
+      "city": "Oakville",
+      "venue": "Bronte Creek Provincial Park",
+      "travel": "On the Burlington–Oakville line at Burloak Drive",
+      "summary": "North America’s largest one-day all-British car show, with more than 1,000 cars.",
+      "details": "This is a nearby Oakville park event, not a Burlington event. Spectators enter at 9 a.m. through the main Burloak gate. Ontario Parks charges a vehicle permit. Pedestrians and cyclists are free. Awards are at 2 p.m.",
+      "bring": [
+        "Cash for the park gate if you can",
+        "Comfortable walking shoes",
+        "Sun cover"
+      ],
+      "source": "https://britishcarday.com/BCD/",
+      "sourceName": "Toronto Triumph Club; Ontario Parks",
+      "visualText": "NEARBY",
+      "scope": "Oakville",
+      "weight": 8,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/explore/community-cleanup.webp",
+      "imageAlt": "Outdoor community gathering in a park. Editorial illustration.",
+      "credit": "Burlington News illustration",
+      "illustration": true
+    },
+    {
+      "id": "appleby-line-street-festival-2026",
+      "title": "Appleby Line Street Festival",
+      "category": "Festival",
+      "start": "2026-09-20T13:00:00-04:00",
+      "end": "2026-09-20T17:00:00-04:00",
+      "dateLabel": "Sun, Sept. 20 · 1 to 5 p.m.",
+      "location": "Appleby Line between Fairview Street and New Street",
+      "city": "Burlington",
+      "venue": "Appleby Line",
+      "travel": "East Burlington street closure",
+      "summary": "A free neighbourhood festival with vendors, food trucks, live music and a kid zone.",
+      "details": "The City of Burlington lists almost 150 vendors, a food truck alley, live music and a kid zone. The event is free and community-led.",
+      "bring": [
+        "Comfortable walking shoes",
+        "A reusable bag",
+        "A payment card or cash"
+      ],
+      "source": "https://www.burlington.ca/en/news/festivals-and-events/appleby-line-street-festival.aspx",
+      "sourceName": "City of Burlington",
+      "scope": "Burlington",
+      "weight": 7,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/explore/community-cleanup.webp",
+      "imageAlt": "Street-level community event illustration",
+      "credit": "Burlington News illustration",
+      "illustration": true
+    },
+    {
+      "id": "milton-fall-fair-2026",
+      "title": "Milton Fall Fair",
+      "category": "Fair",
+      "start": "2026-09-25T15:00:00-04:00",
+      "end": "2026-09-27T17:00:00-04:00",
+      "dateLabel": "Sept. 25 to 27",
+      "location": "Milton Fairgrounds, 136 Robert Street, Milton",
+      "city": "Milton",
+      "venue": "Milton Fairgrounds",
+      "travel": "About 25 minutes north of Burlington",
+      "summary": "The 171st Milton Fall Fair, with livestock, a midway and demolition derbies.",
+      "details": "This is a nearby Milton fair, not a Burlington event. Official hours are Friday 3 to 11 p.m., Saturday 9 a.m. to 11 p.m. and Sunday 10 a.m. to 5 p.m. Gate prices and the derby schedule are on the fair site.",
+      "bring": [
+        "A payment card or cash",
+        "A plan for the $10 parking",
+        "Weather-ready clothing"
+      ],
+      "source": "https://www.miltonfair.com/",
+      "sourceName": "Milton Fall Fair / Halton Agricultural Society",
+      "visualText": "NEARBY",
+      "scope": "Milton",
+      "weight": 6,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/explore/farmers-market.webp",
+      "imageAlt": "Fairground produce and late-summer market stalls. Editorial illustration.",
+      "credit": "Burlington News illustration",
+      "illustration": true
     },
     {
       "id": "patrick-watson-rbg-2026",
@@ -84,13 +519,23 @@
       "location": "Hendrie Park, Royal Botanical Gardens",
       "summary": "An outdoor fall concert in the garden. General admission doors open at 5:30 p.m.",
       "details": "General admission seating is on the turf and chairs are not supplied. The event is outdoors and may be postponed, rescheduled or cancelled for weather.",
-      "bring": ["A lawn chair", "A blanket or cushion", "A warm layer"],
+      "bring": [
+        "A lawn chair",
+        "A blanket or cushion",
+        "A warm layer"
+      ],
       "source": "https://secure.rbg.ca/10191",
       "sourceName": "Royal Botanical Gardens",
       "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rock%20Gardens.JPG?width=1280",
       "imageAlt": "Rock Garden at Royal Botanical Gardens",
       "credit": "Nhl4hamilton via Wikimedia Commons · public domain",
-      "scope": "Burlington"
+      "scope": "Burlington",
+      "city": "Burlington",
+      "venue": "Hendrie Park, Royal Botanical Gardens",
+      "travel": "RBG Centre, 680 Plains Rd. W.",
+      "weight": 8,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "illustration": false
     },
     {
       "id": "green-up-tree-planting-2026",
@@ -102,14 +547,80 @@
       "location": "Longmoor Park",
       "summary": "BurlingtonGreen and City forestry staff are planning a community planting morning.",
       "details": "The organizers plan to plant more than 500 native trees. Space is limited and registration was not yet open when this listing was checked.",
-      "bring": ["Closed-toe shoes", "Work gloves", "Water and weather-ready clothing"],
+      "bring": [
+        "Closed-toe shoes",
+        "Work gloves",
+        "Water and weather-ready clothing"
+      ],
       "source": "https://www.burlingtongreen.org/events/green-up-community-tree-planting-event/",
       "sourceName": "BurlingtonGreen",
       "image": "assets/explore/community-cleanup.webp",
       "imageAlt": "Illustration of neighbours volunteering on a Burlington park path",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "scope": "Burlington"
+      "scope": "Burlington",
+      "city": "Burlington",
+      "venue": "Longmoor Park",
+      "travel": "In Burlington",
+      "weight": 6,
+      "verifiedAt": "2026-08-26T12:00:00-04:00"
+    },
+    {
+      "id": "heritage-fibre-festival-2026",
+      "title": "Heritage Fibre Festival at Ireland House",
+      "category": "Heritage",
+      "start": "2026-09-26T10:00:00-04:00",
+      "end": "2026-09-26T15:00:00-04:00",
+      "dateLabel": "Sat, Sept. 26 · 10 a.m. to 3 p.m.",
+      "location": "Ireland House Museum, 2168 Guelph Line",
+      "city": "Burlington",
+      "venue": "Ireland House Museum",
+      "travel": "North-central Burlington",
+      "summary": "A pay-what-you-may Culture Days festival of spinning, weaving and historic-house demos.",
+      "details": "Museums of Burlington lists live fibre demonstrations, a vendor market, children’s activities and local music at Ireland House, 2168 Guelph Line. Admission is pay-what-you-may. Pre-registration is not required.",
+      "bring": [
+        "A donation if you can",
+        "Comfortable shoes for the grounds",
+        "A bag if you shop the market"
+      ],
+      "source": "https://museumsofburlington.ca/heritage-fibre-festival/",
+      "sourceName": "Museums of Burlington",
+      "scope": "Burlington",
+      "weight": 6,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/editorial/explore-collage.webp",
+      "imageAlt": "Illustrated Burlington history collage",
+      "credit": "Burlington News illustration",
+      "illustration": true
+    },
+    {
+      "id": "bronte-creek-harvest-festival-2026",
+      "title": "Harvest Festival at Bronte Creek",
+      "category": "Seasonal",
+      "start": "2026-09-26T10:00:00-04:00",
+      "end": "2026-09-27T16:00:00-04:00",
+      "dateLabel": "Sept. 26 and 27 · 10 a.m. to 4 p.m.",
+      "location": "Spruce Lane Farm, Bronte Creek Provincial Park, Oakville",
+      "city": "Oakville",
+      "venue": "Spruce Lane Farm",
+      "travel": "On the Burlington–Oakville line at Burloak Drive",
+      "summary": "A two-day heritage harvest weekend with cider pressing, wagon rides and pumpkin picking.",
+      "details": "This is a nearby Ontario Parks program, not a Burlington event. A valid park vehicle permit is required. Activities can change for weather. Tourism Burlington also lists the weekend.",
+      "bring": [
+        "A park permit or cash for the gate",
+        "Comfortable shoes",
+        "A bag if you pick a pumpkin"
+      ],
+      "source": "https://www.ontarioparks.ca/park/brontecreek/events",
+      "sourceName": "Ontario Parks",
+      "visualText": "NEARBY",
+      "scope": "Oakville",
+      "weight": 7,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/explore/farmers-market.webp",
+      "imageAlt": "Harvest-season produce. Editorial illustration, not a Bronte Creek photo.",
+      "credit": "Burlington News illustration",
+      "illustration": true
     }
   ],
   "boredIdeas": [
@@ -123,11 +634,17 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Downtown",
-      "tags": ["sunset", "date", "quick"],
+      "tags": [
+        "sunset",
+        "date",
+        "quick"
+      ],
       "image": "assets/explore/brant-street-pier.webp",
       "imageAlt": "Brant Street Pier at sunset",
       "credit": "Burlington News",
-      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/brant-street-pier.aspx"
+      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/brant-street-pier.aspx",
+      "safety": "public",
+      "nightOk": true
     },
     {
       "id": "farmers-market",
@@ -139,10 +656,26 @@
       "indoorOutdoor": "outdoor",
       "cost": "paid",
       "neighbourhood": "Central",
-      "tags": ["market", "event", "weekend", "family"],
+      "tags": [
+        "market",
+        "event",
+        "weekend",
+        "family"
+      ],
       "image": "assets/explore/farmers-market.webp",
       "imageAlt": "Produce at a Burlington farmers market",
-      "url": "https://www.burlingtonlionsclub.ca/burlington-farmers-market"
+      "url": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
+      "safety": "public",
+      "nightOk": false,
+      "hours": {
+        "days": [
+          "Wed",
+          "Fri",
+          "Sat"
+        ],
+        "open": "08:00",
+        "close": "14:00"
+      }
     },
     {
       "id": "rbg-walk",
@@ -154,11 +687,17 @@
       "indoorOutdoor": "outdoor",
       "cost": "paid",
       "neighbourhood": "North Shore",
-      "tags": ["trail", "family", "date"],
+      "tags": [
+        "trail",
+        "family",
+        "date"
+      ],
       "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rock%20Gardens.JPG?width=1280",
       "imageAlt": "Rock Garden at Royal Botanical Gardens",
       "credit": "Nhl4hamilton via Wikimedia Commons · public domain",
-      "url": "https://www.rbg.ca/"
+      "url": "https://www.rbg.ca/",
+      "safety": "isolated",
+      "nightOk": false
     },
     {
       "id": "kerncliff-boardwalk",
@@ -170,12 +709,18 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Aldershot",
-      "tags": ["trail", "quick"],
+      "tags": [
+        "trail",
+        "quick",
+        "boardwalk"
+      ],
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated Burlington landscape collage",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/kerncliff-park.aspx"
+      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/kerncliff-park.aspx",
+      "safety": "isolated",
+      "nightOk": false
     },
     {
       "id": "mount-nemo-lookout",
@@ -187,12 +732,19 @@
       "indoorOutdoor": "outdoor",
       "cost": "paid",
       "neighbourhood": "North Burlington",
-      "tags": ["trail", "date"],
+      "tags": [
+        "trail",
+        "date",
+        "escarpment",
+        "lookout"
+      ],
       "image": "assets/explore/night-sky-mount-nemo.webp",
       "imageAlt": "Night sky above the Burlington escarpment",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://www.conservationhalton.ca/parks/mount-nemo/"
+      "url": "https://www.conservationhalton.ca/parks/mount-nemo/",
+      "safety": "isolated",
+      "nightOk": false
     },
     {
       "id": "beachway-walk",
@@ -204,11 +756,18 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Beachway",
-      "tags": ["quick", "family"],
+      "tags": [
+        "quick",
+        "family",
+        "shoreline",
+        "trail"
+      ],
       "image": "assets/home/skyway.webp",
       "imageAlt": "Burlington Skyway and shoreline",
       "credit": "Burlington News file photo",
-      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/beachway-park.aspx"
+      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/beachway-park.aspx",
+      "safety": "isolated",
+      "nightOk": false
     },
     {
       "id": "joseph-brant-museum",
@@ -220,12 +779,17 @@
       "indoorOutdoor": "indoor",
       "cost": "paid",
       "neighbourhood": "Downtown",
-      "tags": ["rain", "family", "museum"],
+      "tags": [
+        "rain",
+        "family",
+        "museum"
+      ],
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated Burlington history collage",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://museumsofburlington.ca/joseph-brant-museum/"
+      "url": "https://museumsofburlington.ca/joseph-brant-museum/",
+      "safety": "indoor"
     },
     {
       "id": "ireland-house",
@@ -237,12 +801,17 @@
       "indoorOutdoor": "indoor",
       "cost": "paid",
       "neighbourhood": "East Burlington",
-      "tags": ["rain", "museum", "family"],
+      "tags": [
+        "rain",
+        "museum",
+        "family"
+      ],
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated Burlington history collage",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://museumsofburlington.ca/ireland-house-museum/"
+      "url": "https://museumsofburlington.ca/ireland-house-museum/",
+      "safety": "indoor"
     },
     {
       "id": "canal-lift",
@@ -254,11 +823,16 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Beachway",
-      "tags": ["quick", "family"],
+      "tags": [
+        "quick",
+        "family"
+      ],
       "image": "assets/home/skyway-reader.webp",
       "imageAlt": "The Burlington Skyway across the bay",
       "credit": "Burlington News file photo",
-      "url": "https://tc.canada.ca/en/ontario-region/burlington-canal-lift-bridge"
+      "url": "https://tc.canada.ca/en/ontario-region/burlington-canal-lift-bridge",
+      "safety": "public",
+      "nightOk": false
     },
     {
       "id": "public-art-three",
@@ -270,12 +844,18 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Downtown",
-      "tags": ["quick", "date", "downtown"],
+      "tags": [
+        "quick",
+        "date",
+        "downtown"
+      ],
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated collage of Burlington landmarks",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx"
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx",
+      "safety": "public",
+      "nightOk": true
     },
     {
       "id": "fishway-visit",
@@ -287,11 +867,17 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Harbour",
-      "tags": ["trail", "family"],
+      "tags": [
+        "trail",
+        "family",
+        "conservation"
+      ],
       "image": "assets/home/fishway.webp",
       "imageAlt": "Cootes Paradise Fishway",
       "credit": "Jeff Hitchcock via Wikimedia Commons · CC BY 2.0",
-      "url": "https://www.rbg.ca/gardens-trails/nature-sanctuaries/cootes-paradise/"
+      "url": "https://www.rbg.ca/gardens-trails/nature-sanctuaries/cootes-paradise/",
+      "safety": "isolated",
+      "nightOk": false
     },
     {
       "id": "burloak-path",
@@ -303,12 +889,19 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "East Burlington",
-      "tags": ["sunset", "date", "quick"],
+      "tags": [
+        "sunset",
+        "date",
+        "quick",
+        "shoreline"
+      ],
       "image": "assets/explore/moonlit-lake-ontario.webp",
       "imageAlt": "Moonlight over Lake Ontario",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/burloak-waterfront-park.aspx"
+      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/burloak-waterfront-park.aspx",
+      "safety": "isolated",
+      "nightOk": false
     },
     {
       "id": "jcs-bagels",
@@ -320,12 +913,30 @@
       "indoorOutdoor": "indoor",
       "cost": "paid",
       "neighbourhood": "Central",
-      "tags": ["coffee", "food", "rain", "quick"],
+      "tags": [
+        "coffee",
+        "food",
+        "rain",
+        "quick"
+      ],
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated Burlington food collage",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://jcshotbagels.com/"
+      "url": "https://jcshotbagels.com/",
+      "safety": "indoor",
+      "hours": {
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat"
+        ],
+        "open": "07:00",
+        "close": "15:00"
+      }
     },
     {
       "id": "moon-over-lake-ontario",
@@ -337,12 +948,19 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Downtown",
-      "tags": ["night", "date", "sunset"],
+      "tags": [
+        "night",
+        "date",
+        "sunset"
+      ],
       "image": "assets/explore/moonlit-lake-ontario.webp",
       "imageAlt": "Moonlight over Lake Ontario",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://www.timeanddate.com/moon/canada/burlington"
+      "url": "https://www.timeanddate.com/moon/canada/burlington",
+      "safety": "public",
+      "nightOk": true,
+      "staffedNight": false
     },
     {
       "id": "cassiopeia-north-burlington",
@@ -354,12 +972,18 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "North Burlington",
-      "tags": ["night", "stargazing"],
+      "tags": [
+        "night",
+        "stargazing",
+        "lookout"
+      ],
       "image": "assets/explore/night-sky-mount-nemo.webp",
       "imageAlt": "Starry sky above the escarpment",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://stellarium-web.org/"
+      "url": "https://stellarium-web.org/",
+      "safety": "isolated",
+      "nightOk": false
     },
     {
       "id": "eclipse-tonight",
@@ -371,11 +995,44 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Downtown",
-      "tags": ["night", "event"],
+      "tags": [
+        "night",
+        "event"
+      ],
       "activeUntil": "2026-08-28",
       "image": "assets/explore/lunar-eclipse.webp",
       "imageAlt": "Illustration of a partial lunar eclipse",
-      "url": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828"
+      "url": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828",
+      "safety": "public",
+      "nightOk": true,
+      "staffedNight": true
+    },
+    {
+      "id": "movies-under-the-stars",
+      "title": "Catch Movies Under the Stars",
+      "description": "Thursday outdoor movies in a City park. The next listing is Ice Princess at Kilbride Park.",
+      "placeName": "Kilbride Park",
+      "mapsQuery": "Kilbride Park, Burlington, Ontario",
+      "category": "event",
+      "indoorOutdoor": "outdoor",
+      "cost": "free",
+      "neighbourhood": "Kilbride",
+      "tags": [
+        "movie",
+        "event",
+        "night",
+        "family"
+      ],
+      "safety": "public",
+      "nightOk": true,
+      "staffedNight": true,
+      "activeUntil": "2026-09-03",
+      "eventEnd": "2026-09-03T23:00:00-04:00",
+      "image": "assets/explore/movies-under-the-stars.webp",
+      "imageAlt": "Editorial reconstruction of a community outdoor movie night",
+      "credit": "Burlington News editorial visual",
+      "illustration": true,
+      "url": "https://www.burlington.ca/en/news/festivals-and-events/movies-under-the-stars.aspx"
     }
   ]
 }

@@ -35,9 +35,16 @@
     if (type.includes('volunteer')) return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20v-9M12 14c-4 0-6-2-6-6 4 0 6 2 6 6Zm0 3c4 0 6-2 6-6-4 0-6 2-6 6Z"/></svg>';
     return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>';
   };
+  const imageSrc = path => {
+    const raw = String(path || '');
+    if (!raw) return '';
+    if (/^https?:\/\//i.test(raw) || raw.startsWith('data:')) return raw;
+    return raw.startsWith('/') ? raw : `/${raw}`;
+  };
+  const categoryArt = (item, className) => `<div class="${className} category-art category-${esc(String(item.category || item.visualText || 'local').toLowerCase().replace(/[^a-z]+/g,'-'))}"><span class="category-art-icon">${categoryIcon(item.category || item.visualText)}</span><span class="category-art-label">${esc(item.visualText || item.category || 'Local')}</span></div>`;
   const imageMarkup = (item, className) => item.image
-    ? `<div class="${className}"><img src="${esc(item.image)}" alt="${esc(item.imageAlt || '')}" loading="lazy">${item.credit && !item.illustration && !/^Burlington News/i.test(item.credit) ? `<span class="image-credit">${esc(item.credit)}</span>` : ''}</div>`
-    : `<div class="${className} category-art category-${esc(String(item.category || item.visualText || 'local').toLowerCase().replace(/[^a-z]+/g,'-'))}"><span class="category-art-icon">${categoryIcon(item.category || item.visualText)}</span><span class="category-art-label">${esc(item.visualText || item.category || 'Local')}</span></div>`;
+    ? `<div class="${className}"><img src="${esc(imageSrc(item.image))}" alt="${esc(item.imageAlt || '')}" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('category-art')">${item.credit && !item.illustration && !/^Burlington News/i.test(item.credit) ? `<span class="image-credit">${esc(item.credit)}</span>` : ''}</div>`
+    : categoryArt(item, className);
   const addToVisual = (markup, content) => markup.replace(/^(<div class="[^"]+">)/, `$1${content}`);
 
   let events = [];
@@ -45,7 +52,7 @@
   let places = [];
   let bonus = null;
   let selectedDate = dayKey(new Date());
-  let calendarMode = 'week';
+  let calendarMode = 'next-7';
   let showAll = false;
   const done = readSet(storage.done);
   const wanted = readSet(storage.want);
@@ -68,8 +75,10 @@
   function weekDates(anchor = new Date()) {
     const start = new Date(anchor);
     start.setHours(12,0,0,0);
-    const mondayOffset = (start.getDay() + 6) % 7;
-    start.setDate(start.getDate() - mondayOffset);
+    if (calendarMode === 'week') {
+      const mondayOffset = (start.getDay() + 6) % 7;
+      start.setDate(start.getDate() - mondayOffset);
+    }
     return Array.from({length:7}, (_, index) => {
       const date = new Date(start);
       date.setDate(start.getDate() + index);
@@ -115,10 +124,22 @@
     if (showAll) return future;
     let start = calendarMode === 'today' ? atStartOfDay(new Date(`${selectedDate}T12:00:00`)) : today;
     let end = atEndOfDay(start);
-    if (calendarMode === 'week') {
-      const days = weekDates(today);
-      start = atStartOfDay(days[0]);
-      end = atEndOfDay(days[6]);
+    if (calendarMode === 'week' || calendarMode === 'next-7') {
+      start = today;
+      end = atEndOfDay(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 6));
+    }
+    if (calendarMode === 'weekend') {
+      const day = today.getDay();
+      const toSaturday = (6 - day + 7) % 7;
+      start = atStartOfDay(new Date(today.getFullYear(), today.getMonth(), today.getDate() + toSaturday));
+      end = atEndOfDay(new Date(start.getFullYear(), start.getMonth(), start.getDate() + 1));
+    }
+    if (calendarMode === 'next-30') {
+      start = today;
+      end = atEndOfDay(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 29));
+    }
+    if (calendarMode === 'all') {
+      return future.slice(0, showAll ? future.length : 8);
     }
     if (calendarMode === 'month' || calendarMode === 'next-month') {
       const offset = calendarMode === 'next-month' ? 1 : 0;
@@ -126,18 +147,29 @@
       end = atEndOfDay(new Date(today.getFullYear(),today.getMonth() + offset + 1,0));
     }
     const selected = future.filter(event => overlaps(event,start,end));
-    return selected.slice(0, calendarMode === 'month' ? 6 : 3);
+    return selected.slice(0, calendarMode === 'month' || calendarMode === 'next-30' ? 6 : 3);
   }
 
   function setCalendarMode(mode) {
     calendarMode = mode;
     showAll = false;
     const isMonth = mode === 'month' || mode === 'next-month';
-    qs('#calendarTitle').textContent = mode === 'today' ? 'Today' : mode === 'month' ? 'This month' : mode === 'next-month' ? 'Next month' : 'This week';
-    qs('#weekStrip').hidden = isMonth;
+    const titles = {
+      today: 'Today',
+      'next-7': 'This week',
+      week: 'This week',
+      weekend: 'This weekend',
+      'next-30': 'Next 30 days',
+      all: 'All dates',
+      month: 'This month',
+      'next-month': 'Next month'
+    };
+    qs('#calendarTitle').textContent = titles[mode] || 'This week';
+    qs('#weekStrip').hidden = isMonth || mode === 'all' || mode === 'weekend' || mode === 'next-30';
     qs('#monthCalendar').hidden = !isMonth;
-    qs('#calendarView').value = mode;
+    if (qs('#calendarView').querySelector(`option[value="${mode}"]`)) qs('#calendarView').value = mode;
     if (isMonth) paintMonth(mode === 'next-month' ? 1 : 0);
+    if (mode === 'next-7' || mode === 'week') paintWeek();
     paintEvents();
   }
 
@@ -158,7 +190,7 @@
     const event = events.find(item => item.id === id);
     if (!event) return;
     const saved = savedEvents.has(id);
-    dialogContent.innerHTML = `${imageMarkup(event,'dialog-visual')}<div class="dialog-body"><span class="eyebrow">${esc(event.category)}${event.scope !== 'Burlington' ? ` · ${esc(event.scope)}` : ''}</span><h2>${esc(event.title)}</h2><div class="dialog-meta">${esc(event.dateLabel)} · ${esc(event.location)}</div><p>${esc(event.details)}</p>${event.bring?.length ? `<div class="bring-list"><strong>What to bring</strong><ul>${event.bring.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="dialog-actions"><a href="${esc(event.source)}" target="_blank" rel="noopener">Check official details</a><button type="button" id="dialogSave" data-id="${esc(id)}">${saved ? 'Saved ✓' : 'Save event'}</button></div><p class="publication-credit">Source: ${esc(event.sourceName)}. Event details were checked August 24, 2026.</p></div>`;
+    dialogContent.innerHTML = `${imageMarkup(event,'dialog-visual')}<div class="dialog-body"><span class="eyebrow">${esc(event.category)}${event.scope !== 'Burlington' ? ` · ${esc(event.scope)}` : ''}</span><h2>${esc(event.title)}</h2><div class="dialog-meta">${esc(event.dateLabel)} · ${esc(event.location)}</div><p>${esc(event.details)}</p>${event.bring?.length ? `<div class="bring-list"><strong>What to bring</strong><ul>${event.bring.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="dialog-actions"><a href="${esc(event.source)}" target="_blank" rel="noopener">Check official details</a><button type="button" id="dialogSave" data-id="${esc(id)}">${saved ? 'Saved ✓' : 'Save event'}</button></div><p class="publication-credit">Source: ${esc(event.sourceName)}. Event details were checked August 26, 2026.</p></div>`;
     if (typeof detailDialog.showModal === 'function') detailDialog.showModal();
     else detailDialog.setAttribute('open','');
     qs('#dialogSave')?.addEventListener('click', () => {
@@ -204,7 +236,7 @@
     const isDone = done.has(place.id);
     const isWanted = wanted.has(place.id);
     const placeholder = place.image ? '' : ' is-placeholder';
-    const actions = isBonus ? `<div class="passport-actions passport-bonus-actions"><a class="done-button" href="${esc(place.url)}" target="_blank" rel="noopener">Open bonus stop</a></div>` : `<div class="passport-actions"><button class="save-button ${isWanted ? 'is-saved' : ''}" type="button" data-want="${esc(place.id)}">${isWanted ? 'Want to go ✓' : 'Want to go'}</button><button class="done-button ${isDone ? 'is-done' : ''}" type="button" data-done="${esc(place.id)}">${isDone ? 'Done ✓' : 'Done'}</button><label class="save-button">Add photo<input type="file" accept="image/*" capture="environment" data-photo="${esc(place.id)}" hidden></label></div>`;
+    const actions = isBonus ? `<div class="passport-actions passport-bonus-actions"><a class="done-button" href="${esc(place.url)}" target="_blank" rel="noopener">Open bonus stop</a></div>` : `<div class="passport-actions"><button class="save-button ${isWanted ? 'is-saved' : ''}" type="button" data-want="${esc(place.id)}">${isWanted ? 'Want to go ✓' : 'Want to go'}</button><button class="done-button ${isDone ? 'is-done' : ''}" type="button" data-done="${esc(place.id)}">${isDone ? 'Done ✓' : 'Done'}</button></div>`;
     return `<article class="passport-card${isBonus ? ' bonus-card is-unlocked' : ''}${placeholder}" data-card-place="${esc(place.id)}">${addToVisual(imageMarkup(place,'passport-visual'),`<span class="passport-number">${isBonus ? '13' : place.number}</span>`)}<div class="passport-copy"><h3>${esc(place.title)}</h3><p>${esc(place.copy)}</p>${actions}</div></article>`;
   }
 
@@ -223,7 +255,6 @@
       if (!button) return;
       selectedDate = button.dataset.weekDate;
       calendarMode = 'today';
-      qs('#calendarView').value = 'today';
       qs('#calendarTitle').textContent = new Date(`${selectedDate}T12:00:00`).toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'});
       paintWeek();
       paintEvents();
@@ -260,14 +291,6 @@
         const id = doneButton.dataset.done;
         if (done.has(id)) done.delete(id); else done.add(id);
         paintPassport();
-      }
-    });
-    qs('#passportRail').addEventListener('change', event => {
-      const photo = event.target.closest('[data-photo]');
-      if (photo && event.target.files?.[0]) {
-        done.add(photo.dataset.photo);
-        paintPassport();
-        event.target.value = '';
       }
     });
     qs('#passportMap').addEventListener('click', event => {

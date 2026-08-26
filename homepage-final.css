@@ -250,11 +250,11 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
 }
 .home-work-band{
   margin:28px 0 0;
-  padding:22px 0 0;
+  padding:24px 0 0;
   border-top:1px solid var(--line)
 }
 .home-work-kicker{
-  margin:0 0 8px;
+  margin:0 0 10px;
   color:var(--muted);
   font:750 11px/1.2 var(--sans);
   letter-spacing:.08em;
@@ -263,15 +263,17 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
 .home-work-band h2{
   margin:0;
   max-width:none;
+  width:100%;
   color:var(--navy);
   font-family:var(--serif);
-  font-size:clamp(28px,6.2vw,34px);
-  line-height:1.08;
-  letter-spacing:-.03em
+  font-size:clamp(26px,7.1vw,34px);
+  line-height:1.12!important;
+  letter-spacing:-.03em;
+  text-wrap:pretty
 }
 .home-work-copy{
-  max-width:34em;
-  margin:10px 0 0;
+  max-width:36em;
+  margin:14px 0 0;
   color:var(--ink,#3a5166);
   font:400 15px/1.4 var(--sans)
 }
@@ -279,7 +281,7 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
   display:inline-flex;
   align-items:center;
   min-height:44px;
-  margin-top:12px;
+  margin-top:18px;
   color:var(--blue);
   font:750 15px/1 var(--sans);
   text-decoration:none
@@ -362,10 +364,11 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
   .explore-band{margin-top:28px;padding-top:22px;gap:24px}
   .explore-band-copy p{margin-top:12px;font-size:15px}
   .explore-band-cta{margin-top:16px}
-  .home-work-band{margin-top:28px;padding-top:22px}
-  .home-work-band h2{font-size:28px;max-width:none}
-  .home-work-copy{margin-top:10px;font-size:15px}
-  .home-work-cta{margin-top:10px}
+  .home-work-band{margin-top:28px;padding:26px 0 0}
+  .home-work-band h2{font-size:clamp(24px,6.6vw,28px)!important;max-width:none!important;width:100%;line-height:1.14!important}
+  .home-work-kicker{margin-bottom:10px;font-size:10px}
+  .home-work-copy{margin-top:12px;font-size:14px;line-height:1.4}
+  .home-work-cta{margin-top:16px;font-size:15px}
 }
 
 html[data-theme="dark"] .top-story,
