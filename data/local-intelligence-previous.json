@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T01:53:40Z",
+  "generatedAt": "2026-08-26T03:15:05Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -82,20 +82,20 @@
       "signature": "18f32b7541863775"
     },
     {
-      "id": "511:293205",
+      "id": "511:293299",
       "kind": "traffic",
-      "headline": "Disabled Vehicle on QEW Toronto bound ON-RAMP at BURLOAK DRIVE, Burlington. Left shoulder and left lane closed.",
-      "location": "QEW",
-      "direction": "Toronto Bound",
-      "score": 75,
-      "neighbourhood": "Orchard",
-      "latitude": 43.394781,
-      "longitude": -79.756623,
+      "headline": "Disabled Vehicle on HWY 401 Westbound  at GUELPH LINE, Milton. Right lane and right shoulder closed.",
+      "location": "HWY 401",
+      "direction": "Westbound",
+      "score": 65,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.4912624,
+      "longitude": -79.98811157,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "accidentsAndIncidents",
-      "signature": "74e89d0895458aa0"
+      "signature": "c169b34e355f8fbb"
     },
     {
       "id": "511:289628",
