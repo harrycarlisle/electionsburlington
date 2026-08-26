@@ -585,7 +585,7 @@
   }
 
   function startAutoAdvance() {
-    if (reduceMotion() || userTouched || rotatedOnce) return;
+    if (useHeaderCard() || reduceMotion() || userTouched || rotatedOnce) return;
     autoTimer = window.setTimeout(() => {
       if (userTouched || rotatedOnce) return;
       rotatedOnce = true;
