@@ -90,13 +90,14 @@
     let text = cleanDash(value).replace(/\s+/g, ' ').trim();
     if (!text) return '';
     const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
-    if (sentences.length > 1) {
-      const first = sentences[0].replace(/[.!?]$/, '');
-      const second = sentences[1].replace(/^[A-Z]/, ch => ch.toLowerCase());
-      text = `${first}, ${second}`;
-    }
+    if (sentences.length > 2) text = sentences.slice(0, 2).join(' ');
     const words = text.split(/\s+/);
-    if (words.length > 30) text = `${words.slice(0, 30).join(' ').replace(/[.,;:]$/, '')}.`;
+    if (words.length > 24) {
+      const first = sentences[0] || text;
+      text = first.split(/\s+/).length <= 24
+        ? first
+        : `${words.slice(0, 24).join(' ').replace(/[.,;:]$/, '')}.`;
+    }
     return text;
   }
 
@@ -125,16 +126,12 @@
       if (!item?.id || seen.has(item.id)) return false;
       seen.add(item.id);
       return true;
-    }).slice(0, 4);
+    }).slice(0, 3);
     latestList.innerHTML = rows.map(item => {
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
-      const image = storyImage(item, '');
       const category = categoryLabel(item);
-      const thumb = image
-        ? `<span class="newest-thumb"><img src="${esc(image)}" alt="" width="72" height="64" loading="lazy"></span>`
-        : '';
-      return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''} data-category="${esc(category)}">${thumb}<span><small>${esc(category)}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
+      return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''} data-category="${esc(category)}"><span><small>${esc(category)}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
     }).join('');
   }
 
@@ -144,7 +141,7 @@
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
       const image = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : '/assets/editorial/home-share.webp';
-      return `<a class="pick-card" href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="pick-image"><img src="${esc(image)}" alt="${esc(item.alt || item.headline)}" loading="lazy"><span class="image-credit">${esc(item.credit || 'Burlington News')}</span></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(item.headline)}</h3>${item.deck ? `<p>${esc(item.deck)}</p>` : ''}</a>`;
+      return `<a class="pick-card" href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="pick-image"><img src="${esc(image)}" alt="${esc(item.alt || item.headline)}" loading="lazy"></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(item.headline)}</h3></a>`;
     }).join('');
   }
 

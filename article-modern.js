@@ -121,9 +121,9 @@
   function lockArticleSearch() {
     const paint = () => {
       const input = document.querySelector('.header-search input,.site-search input');
-      if (input && input.placeholder !== 'Search anything') input.placeholder = 'Search anything';
+      if (input && input.placeholder !== 'Search Burlington') input.placeholder = 'Search Burlington';
       const label = document.querySelector('.site-search-link span');
-      if (label && label.textContent !== 'Search anything') label.textContent = 'Search anything';
+      if (label && label.textContent !== 'Search Burlington') label.textContent = 'Search Burlington';
     };
     paint();
     new MutationObserver(paint).observe(document.documentElement, {childList: true, subtree: true, characterData: true});
@@ -150,7 +150,7 @@
       'salamander-road-closure': ['/assets/home/salamander.webp', 'Jefferson salamander', 'Photo credit in source story'],
       'skyway-bridge-story': ['/assets/home/skyway-reader.webp', 'Burlington Bay James N. Allan Skyway', 'Photo credit in source story'],
       'upper-middle-road-construction-2026': ['/assets/explore/burlington-orientation-map.svg', 'Orientation map of Burlington', 'Burlington News map'],
-      'burlington-data-centre-not-ai': ['/assets/editorial/data-centre-site-context.svg', 'Two-panel diagram showing the proposed 3110 South Service Road data-centre site and nearby context', 'Burlington News diagram'],
+      'burlington-data-centre-not-ai': ['/assets/stories/data-centre/3110-south-service-road-data-centre.webp', 'Illustrative concept and site context for the proposed data centre at 3110 South Service Road, Burlington. This is not a rendering of the final building.', 'Site context and illustrative concept for the proposed 3110 South Service Road data-centre location. This is not a rendering of the final building.'],
       'how-bad-is-burlington-crime': ['/assets/editorial/halton-police-dusk.webp', 'A Halton police cruiser at dusk', 'Burlington News visual'],
       'nostalgia-games-cafe-closure': ['/assets/editorial/nostalgia-cafe-closure.svg', 'Editorial illustration of a closed board-game cafe', 'Burlington News illustration']
     };

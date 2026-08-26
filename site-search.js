@@ -1,16 +1,13 @@
 (() => {
   const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const normalize = value => String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
-  const INNER_PLACEHOLDER = 'Search anything';
+  const INNER_PLACEHOLDER = 'Search Burlington';
   const HOME_PROMPTS = [
-    'Search “I’m bored”',
-    'Search “Best tacos”',
-    'Search “This weekend”',
-    'Search “Things to do”',
-    'Search “Best food”',
-    'Search “What’s happening?”',
     'Search “Date night”',
-    'Search “Free things to do”'
+    'Search “This weekend”',
+    'Search “Best food”',
+    'Search “Best tacos”',
+    'Search “I’m bored”'
   ];
   const index = [
     {title:'How bad is Burlington’s crime, really?',url:'/stories/how-bad-is-burlington-crime/',section:'Public safety',keywords:'crime police safety statistics canada halton'},

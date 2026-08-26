@@ -298,7 +298,7 @@
       alert:false, major:false, kicker:'Skyway',
       title:'Looks moderate from live cameras',
       metric:'',
-      detail:'Cameras are the detail view',
+      detail:'Toronto-bound from live cameras',
       url:'/traffic/',
       lowConfidence:true
     };

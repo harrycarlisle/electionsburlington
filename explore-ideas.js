@@ -166,7 +166,10 @@
       : '';
     const maps = `<a class="bored-maps" href="${esc(mapsUrl(idea))}" target="_blank" rel="noopener">Open in Maps →</a>`;
     if (variant === 'home') {
-      return `<p class="home-idea-title">${esc(idea.title)}</p><div class="home-idea-actions"><button type="button" data-idea-shuffle>Another idea ↻</button><a href="/explore/#bored">More ideas</a></div>`;
+      const visual = idea.image
+        ? `<div class="home-idea-visual"><img src="${esc(imageSrc(idea.image))}" alt="${esc(idea.imageAlt || idea.title)}" loading="lazy"></div>`
+        : `<div class="home-idea-visual"><img src="/assets/explore/brant-street-pier.webp" alt="Brant Street Pier at sunset" loading="lazy"></div>`;
+      return `<p class="home-idea-title">${esc(idea.title)}</p>${visual}<div class="home-idea-actions"><button type="button" data-idea-shuffle>Another idea ↻</button><a href="/explore/">Explore →</a></div>`;
     }
     return `${image}<div class="bored-copy"><strong>${esc(idea.title)}</strong><p>${esc(idea.description || idea.copy || '')}</p><button class="primary-button idea-shuffle" type="button" data-idea-shuffle>Another idea ↻</button><div class="bored-actions"><button type="button" data-bored="like" class="${pref.like ? 'is-on' : ''}" aria-pressed="${pref.like ? 'true' : 'false'}">♡ Like</button><button type="button" data-bored="skip" class="${pref.skip ? 'is-on' : ''}" aria-pressed="${pref.skip ? 'true' : 'false'}">× Not for me</button>${maps}</div></div>`;
   }
@@ -176,10 +179,9 @@
     const paint = idea => {
       if (!idea) return;
       root.hidden = false;
-      const body = root.querySelector('.home-idea-body') || root;
-      body.innerHTML = ideaMarkup(idea, 'home');
+      root.innerHTML = ideaMarkup(idea, 'home');
     };
-    load().then(() => paint(pickNext())).catch(() => { root.hidden = true; });
+    load().then(() => paint(pickNext())).catch(() => { root.hidden = false; });
     root.addEventListener('click', event => {
       if (!event.target.closest('[data-idea-shuffle]')) return;
       paint(pickNext(currentId));
