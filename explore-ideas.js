@@ -1,8 +1,11 @@
-import {
-  scoreIdea,
-  pickNext as rankPick,
-  afterDarkMode
-} from '/lib/explore-ideas.js';
+(function bootIdeas() {
+const rank = globalThis.BurlingtonIdeaRank;
+if (!rank) {
+  setTimeout(bootIdeas, 20);
+  return;
+}
+const { scoreIdea, afterDarkMode } = rank;
+const rankPick = rank.pickNext;
 
 const STORAGE_PREFS = 'burlington-news-bored-prefs';
 const STORAGE_SEEN = 'burlington-news-bored-seen';
@@ -124,7 +127,6 @@ async function load() {
   if (!eventResponse.ok) throw new Error('Explore ideas unavailable');
   const data = await eventResponse.json();
   ideas = Array.isArray(data.boredIdeas) ? data.boredIdeas : [];
-  await loadWeather();
   return ideas;
 }
 
@@ -172,6 +174,7 @@ function mountExplore(root, extraButton) {
   });
   return load().then(() => {
     paint(pickNext());
+    loadWeather().then(() => paint(current() || pickNext()));
     if (location.hash === '#bored') {
       document.getElementById('boredCard')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     }
@@ -179,3 +182,4 @@ function mountExplore(root, extraButton) {
 }
 
 window.BurlingtonIdeas = { load, pickNext, current, mapsUrl, imageSrc, prefs, setPref, mountExplore, scoreIdea, afterDarkMode };
+})();
