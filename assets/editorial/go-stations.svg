@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="t d">
+  <title id="t">Aldershot, Burlington and Appleby GO stations along Lakeshore West</title>
+  <desc id="d">Simple orientation diagram of the three Burlington GO stations from west to east.</desc>
+  <rect width="960" height="420" fill="#eef4f8"/>
+  <path d="M40 250 C220 210 380 230 520 240 C680 252 820 220 920 200" fill="none" stroke="#0b335f" stroke-width="8"/>
+  <text x="40" y="60" fill="#0b335f" font-family="Georgia,serif" font-size="28">Lakeshore West · west to east</text>
+  <g fill="#0b335f">
+    <circle cx="170" cy="236" r="16"/>
+    <circle cx="480" cy="242" r="16"/>
+    <circle cx="800" cy="214" r="16"/>
+  </g>
+  <text x="110" y="300" fill="#18344d" font-family="Arial,sans-serif" font-size="20" font-weight="700">Aldershot</text>
+  <text x="420" y="306" fill="#18344d" font-family="Arial,sans-serif" font-size="20" font-weight="700">Burlington</text>
+  <text x="750" y="278" fill="#18344d" font-family="Arial,sans-serif" font-size="20" font-weight="700">Appleby</text>
+  <text x="40" y="380" fill="#5d7287" font-family="Arial,sans-serif" font-size="14">Diagram for orientation. Not a track map.</text>
+</svg>

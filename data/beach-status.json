@@ -1,0 +1,33 @@
+{
+  "updated": "2026-08-26T12:00:00-04:00",
+  "seasonStart": "2026-06-01",
+  "seasonEnd": "2026-09-07",
+  "officialResults": "https://www.halton.ca/For-Residents/Water-and-Environment/Recreational-Water/Beach-Water",
+  "thresholdNote": "Ontario treats beach water as not recommended for swimming when the geometric mean of at least five samples is 200 or more E. coli per 100 mL, or one sample is 400 or more.",
+  "beaches": [
+    {
+      "id": "beachway",
+      "name": "Beachway",
+      "address": "1094 Lakeshore Road, Burlington",
+      "status": "NO_CURRENT_SAMPLE",
+      "statusLabel": "NO CURRENT SAMPLE",
+      "sampleDate": "",
+      "detail": "Halton Region samples selected beaches weekly in season, usually on Wednesdays. Burlington News does not republish a sample as current unless the official result and sample date are on file. Check Halton’s beach-water page before you swim."
+    },
+    {
+      "id": "brant",
+      "name": "Brant Street Beach",
+      "address": "Lakeshore Road and Brant Street, Burlington",
+      "status": "NO_CURRENT_SAMPLE",
+      "statusLabel": "NO CURRENT SAMPLE",
+      "sampleDate": "",
+      "detail": "Lab results describe the water when it was sampled, not the hour you arrive. Rain, waves and cloudy water can change conditions between the sample and the swim."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Halton Region beach water",
+      "url": "https://www.halton.ca/For-Residents/Water-and-Environment/Recreational-Water/Beach-Water"
+    }
+  ]
+}

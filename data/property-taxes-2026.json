@@ -1,0 +1,33 @@
+{
+  "updated": "2026-08-26",
+  "year": 2026,
+  "overallIncreasePercent": 4.5,
+  "increasePer100kCva": 43.71,
+  "per100k": {
+    "2025": {"burlington": 499.11, "halton": 319.47, "education": 153.00, "total": 971.58},
+    "2026": {"burlington": 528.11, "halton": 334.18, "education": 153.00, "total": 1015.29}
+  },
+  "budgetChangePercent": {"burlington": 5.81, "halton": 4.6, "education": 0},
+  "shareOfIncreasePercent": {"burlington": 2.98, "halton": 1.51, "education": 0},
+  "2026ShareOfBillPercent": {"burlington": 52.02, "halton": 32.91, "education": 15.07},
+  "examples": [
+    {"assessment": 500000, "label": "$500,000 home"},
+    {"assessment": 800000, "label": "$800,000 home"},
+    {"assessment": 1000000, "label": "$1 million home"}
+  ],
+  "note": "Figures are urban residential amounts per $100,000 of current value assessment published by the City of Burlington. Individual bills also change with assessment, property class and any local charges.",
+  "sources": [
+    {
+      "label": "Understanding your property tax bill",
+      "url": "https://www.burlington.ca/en/property-taxes/understanding-your-property-tax-bill.aspx"
+    },
+    {
+      "label": "2026 approved budget summary",
+      "url": "https://www.burlington.ca/en/council-and-city-administration/resources/Budget-and-Finances/Approved-Budget-Book/2026/2026-Approved-Budget-Book-01-Budget-Summary.pdf"
+    },
+    {
+      "label": "City Council approves 2026 tax levy bylaw",
+      "url": "https://www.burlington.ca/en/news/city-council-approves-2026-tax-levy-bylaw.aspx"
+    }
+  ]
+}

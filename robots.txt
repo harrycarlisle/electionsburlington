@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://burlingtonnews.ca/sitemap.xml
+Sitemap: https://burlingtonnews.ca/news-sitemap.xml
+
