@@ -287,7 +287,7 @@
   }
 
   function weatherChipMarkup() {
-    return '<span class="header-weather" data-weather-chip data-weather-alert-host><span class="weather-chip-summary" data-weather-temperature aria-label="Burlington weather"><span class="weather-chip-icon weather-chip-clear" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span><strong class="weather-chip-temp">--</strong></span></span>';
+    return '<span class="header-weather" hidden data-weather-chip data-weather-alert-host><span class="weather-chip-summary" data-weather-temperature aria-label="Burlington weather"></span></span>';
   }
 
   function themeToggleMarkup() {
@@ -496,6 +496,7 @@
     if (!weather) {
       controls.insertAdjacentHTML('afterbegin', weatherChipMarkup());
       weather = controls.querySelector('[data-weather-chip]');
+      try { window.BurlingtonWeather?.load(); } catch (_) {}
     } else if (!controls.contains(weather)) {
       controls.insertBefore(weather, search || null);
     }

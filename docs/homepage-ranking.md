@@ -38,6 +38,16 @@ Cold start:
 - under 40 reads: 70% editorial / 30% behaviour
 - 40+ reads: behaviour can dominate, and a Most Read / Popular now label becomes honest
 
+## Breaking Now
+
+The module stays in the homepage. It is not a permanent empty card.
+
+- 0 qualified items or a failed feed: render nothing
+- 1 item: one compact row
+- 2+ items: show the top two only
+
+Desktop (1200px and up) uses a short kicker plus two equal columns. Narrower desktop/tablet stacks the rows. Mobile keeps the compact card with a live dot, kicker, dividers and chevrons.
+
 ## Refresh
 
 | Layer | Current cadence | Note |

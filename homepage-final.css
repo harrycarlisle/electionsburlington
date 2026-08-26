@@ -330,10 +330,23 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
   .now-card{min-height:58px;padding:10px 14px}
   .now-card-copy strong{font-size:16px}
   .now-dots{margin:11px 0 16px;gap:20px}
-  .breaking-now:not([hidden]):not(:empty):not(.is-empty){display:grid;grid-template-columns:auto 1fr;gap:0 24px;align-items:center;padding:10px 16px;margin-bottom:16px}
+  .breaking-now:not([hidden]):not(:empty):not(.is-empty){
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    align-items:stretch;
+    gap:6px 0;
+    padding:10px 16px;
+    margin-bottom:16px;
+    min-height:72px;
+    max-height:90px;
+    box-sizing:border-box
+  }
   .breaking-kicker{margin:0}
-  .breaking-list{grid-template-columns:1fr 1fr;gap:0 24px}
-  .breaking-row{padding:8px 0}
+  .breaking-list{grid-template-columns:minmax(0,1fr);gap:0}
+  .breaking-now[data-count="2"] .breaking-list{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 20px}
+  .breaking-row{min-height:32px;padding:2px 0;border-top:0}
+  .breaking-row strong{-webkit-line-clamp:1;white-space:nowrap;text-overflow:ellipsis;display:block}
+  .breaking-now[data-count="2"] .breaking-row + .breaking-row{padding-left:20px;border-left:1px solid var(--line)}
   .lead-grid{gap:40px}
   .top-copy{padding:22px 24px 24px!important}
   .top-copy .kicker{margin-bottom:10px!important;font-size:12px}
@@ -360,6 +373,11 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
   .home-work-copy{font-size:16px}
 }
 
+@media(min-width:901px) and (max-width:1199px){
+  .breaking-now:not([hidden]):not(:empty):not(.is-empty){max-height:none}
+  .breaking-now[data-count="2"] .breaking-list{grid-template-columns:minmax(0,1fr);gap:0}
+  .breaking-now[data-count="2"] .breaking-row + .breaking-row{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+}
 @media(max-width:900px){
   .lead-grid,.lower-grid{grid-template-columns:1fr}
   .shell{width:calc(100% - 40px)}
@@ -378,7 +396,7 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
   .now-card-copy strong{font-size:13px}
   .now-card-copy em{font-size:11px}
   .now-card-metric{font-size:11px;padding:2px 7px}
-  .now-dots{margin:6px 0 0}
+  .now-dots{margin:8px 0 14px}
   .lead-grid{gap:20px!important}
   .top-story{border:0;border-radius:0;background:transparent;padding-bottom:8px}
   .top-image{border-radius:12px;aspect-ratio:16/9;height:auto;max-height:220px}
