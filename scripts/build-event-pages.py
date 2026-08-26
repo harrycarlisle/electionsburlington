@@ -88,11 +88,11 @@ def page_html(event: dict) -> str:
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32x32.png">
 <meta name="theme-color" content="#071b35">
-<link rel="stylesheet" href="/site-extra.css?v=20260826seo">
+<link rel="stylesheet" href="/site-extra.css?v=20260826seo22">
 <link rel="stylesheet" href="/site-bundle.css?v=20260824z4">
 <link rel="stylesheet" href="/site-shell.css?v=20260824z5">
-<link rel="stylesheet" href="/authority.css?v=20260826seo">
-<script src="/site-extra.js?v=20260826seo" defer></script>
+<link rel="stylesheet" href="/authority.css?v=20260826seo22">
+<script src="/site-extra.js?v=20260826seo22" defer></script>
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 <script type="application/ld+json">{json.dumps(crumbs, ensure_ascii=False)}</script>
 </head>

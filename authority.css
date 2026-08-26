@@ -32,7 +32,16 @@
 .data-table th,.data-table td{padding:10px 12px;border-bottom:1px solid #edf1f4;text-align:left;vertical-align:top;font-size:14px}
 .data-table th{background:#f4f8fb;color:var(--navy);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
 .data-table tr:last-child td{border-bottom:0}
-.compare-wrap{overflow-x:auto}
+.compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.compare-wide .data-table{min-width:760px}
+.compare-wide .data-table th:first-child,
+.compare-wide .data-table td:first-child{
+  position:sticky;left:0;z-index:1;min-width:8.6rem;max-width:10.5rem;
+  background:#f4f8fb;box-shadow:1px 0 0 #edf1f4
+}
+.compare-wide .data-table td:first-child{background:#fff;font-weight:750}
+.compare-wide .data-table th:not(:first-child),
+.compare-wide .data-table td:not(:first-child){min-width:9.4rem}
 .updated{margin:22px 0 0;color:var(--muted);font-size:13px}
 .sources-list{margin:8px 0 0;padding-left:18px}
 .sources-list li+li{margin-top:6px}

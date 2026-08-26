@@ -188,7 +188,11 @@
     const events = (data.events || []).filter(event => {
       const begin = Date.parse(event.start);
       return begin >= start.getTime() && begin <= end.getTime();
-    }).sort((a, b) => Date.parse(a.start) - Date.parse(b.start));
+    }).sort((a, b) => {
+      const local = event => /burlington/i.test(`${event.scope || ''} ${event.city || ''}`) ? 20 : 0;
+      const score = event => local(event) + Number(event.weight || 0);
+      return score(b) - score(a) || Date.parse(a.start) - Date.parse(b.start);
+    });
     const root = document.getElementById('weekendList');
     if (!root) return;
     root.innerHTML = events.length ? events.map(event => {
