@@ -1,0 +1,33 @@
+/* Final mobile Newest rhythm: compact Morning Tee-style rows, no decks, clear dividers. */
+.newest-list .newest-hook{display:none!important}
+.newest-list>a,
+.newest-list>a:last-child{
+  padding:24px 0 22px!important;
+  border:0!important;
+  border-bottom:1px solid var(--line,#dfe4ea)!important;
+  border-radius:0!important
+}
+.newest-list small,
+.newest-list>a:first-child small{
+  margin:0 0 8px!important
+}
+.newest-list strong{
+  margin:0!important
+}
+.newest-list time,
+.newest-list>a:last-child time{
+  margin:14px 0 0!important
+}
+.newest + .lower-grid,
+.lower-grid{
+  margin-top:30px!important
+}
+@media(max-width:720px){
+  .newest .mini-heading{margin-bottom:0!important;padding-bottom:10px!important}
+  .newest-list>a,
+  .newest-list>a:last-child{padding:24px 0 22px!important}
+  .newest-list strong{font-size:18px!important;line-height:1.22!important}
+  .newest-list time{margin-top:14px!important;font-size:12px!important}
+  .lower-grid{margin-top:30px!important}
+}
+html[data-theme="dark"] .newest-list>a{border-color:#30404b!important}
