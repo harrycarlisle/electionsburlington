@@ -166,6 +166,10 @@
     }
     paintedRangeKey = key;
     scroller.innerHTML = months.map(monthBlock).join('');
+    const todayButton = scroller.querySelector(`.month-day[data-date="${CSS.escape(todayKey())}"]`);
+    if (todayButton && !dayFilter) {
+      scrollSelectedDayIntoCalendar(todayButton, { behavior: 'auto' });
+    }
   }
 
   function updateSelectedMarks() {
@@ -181,24 +185,32 @@
     });
   }
 
-  function scrollSelectedDayIntoCalendar(button) {
+  function scrollSelectedDayIntoCalendar(button, { behavior } = {}) {
     const scroller = qs('#monthScroller');
     const calendar = qs('#monthCalendar');
     if (!button || !scroller || !calendar || calendar.hidden) return;
-    const behavior = motionBehavior();
-    const scrollerRect = scroller.getBoundingClientRect();
-    const buttonRect = button.getBoundingClientRect();
-    const label = button.closest('.month-block')?.querySelector('.month-label');
-    const labelHeight = label ? label.getBoundingClientRect().height + 6 : 28;
-    const target = Math.max(0, scroller.scrollTop + (buttonRect.top - scrollerRect.top) - labelHeight);
-    scroller.scrollTo({ top: target, behavior });
+    const scrollBehavior = behavior || motionBehavior();
+    const align = () => {
+      if (!document.contains(button) || calendar.hidden) return;
+      const scrollerRect = scroller.getBoundingClientRect();
+      const buttonRect = button.getBoundingClientRect();
+      const label = button.closest('.month-block')?.querySelector('.month-label');
+      const labelHeight = label ? label.getBoundingClientRect().height + 4 : 26;
+      const delta = buttonRect.top - scrollerRect.top - labelHeight;
+      if (Math.abs(delta) > 1) {
+        scroller.scrollTo({ top: Math.max(0, scroller.scrollTop + delta), behavior: scrollBehavior });
+      }
+    };
+    align();
+    requestAnimationFrame(() => requestAnimationFrame(align));
+    if (scrollBehavior === 'smooth') window.setTimeout(align, 420);
     const card = qs('.calendar-card');
     const heading = qs('.explore-heading');
     if (!card) return;
     const headingBottom = heading ? heading.getBoundingClientRect().bottom : 8;
     const cardRect = card.getBoundingClientRect();
     if (cardRect.bottom < headingBottom + 48 || cardRect.top > window.innerHeight - 48) {
-      card.scrollIntoView({ behavior, block: 'nearest', inline: 'nearest' });
+      card.scrollIntoView({ behavior: scrollBehavior, block: 'nearest', inline: 'nearest' });
     }
   }
 
