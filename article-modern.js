@@ -152,7 +152,7 @@
       'upper-middle-road-construction-2026': ['/assets/explore/burlington-orientation-map.svg', 'Orientation map of Burlington', 'Burlington News map'],
       'burlington-data-centre-not-ai': ['/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp', 'Illustrative concept and site context for the proposed data centre at 3110 South Service Road, Burlington. This is not a rendering of the final building.', 'Illustrative site concept for 3110 South Service Road. This is not a rendering of the final building.'],
       'burlington-hotspots-0-24': ['/assets/sports/ultimate-waterfront.webp', 'Editorial illustration of a waterfront field sport near the Skyway', 'Burlington News illustration. This is not a photo of a Hotspots game.'],
-      'how-bad-is-burlington-crime': ['/assets/editorial/halton-police-dusk.webp', 'A Halton police cruiser at dusk', 'Burlington News visual'],
+      'how-bad-is-burlington-crime': ['/assets/stories/public-safety/halton-police-crime-burlington.webp', 'Illustrative Burlington News visual of a Halton Regional Police vehicle behind crime-scene tape.', 'Burlington News visual'],
       'nostalgia-games-cafe-closure': ['/assets/editorial/nostalgia-cafe-closure.svg', 'Editorial illustration of a closed board-game cafe', 'Burlington News illustration']
     };
     return map[currentSlug] || ['/assets/editorial/home-share.webp', 'Burlington News', 'Burlington News'];
@@ -188,7 +188,7 @@
     }
     const img = figure.querySelector('img');
     const currentSrc = img?.getAttribute('src') || '';
-    if (currentSlug === 'how-bad-is-burlington-crime' || !img || /halton-crime-comparison/.test(currentSrc)) {
+    if (currentSlug === 'how-bad-is-burlington-crime' || !img || /halton-crime-comparison|halton-police-dusk/.test(currentSrc)) {
       applyHeroMedia(figure, src, alt, credit);
     }
   }

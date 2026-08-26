@@ -14,6 +14,7 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from build_breaking_now import diversify_top
 from sources.cause import official_cause
 from sources.model import quick_update
 from sources.relevance import police_relevance
@@ -240,6 +241,20 @@ class BreakingThresholdTests(unittest.TestCase):
         ok, reason = passes_breaking_threshold(row, NOW)
         self.assertTrue(ok, reason)
 
+    def test_celebrity_news_rejected(self):
+        row = item(
+            headline="Celebrity announces a surprise album on the red carpet",
+            category="ENTERTAINMENT",
+            sourceType="reporting",
+            sourceName="National wire",
+            verificationStatus="reported",
+            confidenceScore=4,
+            city="Los Angeles",
+        )
+        ok, reason = passes_breaking_threshold(row, NOW)
+        self.assertFalse(ok)
+        self.assertIn(reason, {"not-burlington-enough", "low-impact"})
+
     def test_stale_routine_drops(self):
         row = item(
             headline="Minor collision on New Street has been cleared",
@@ -271,6 +286,73 @@ class CauseAndDedupeTests(unittest.TestCase):
         clustered = cluster_updates(rows)
         self.assertEqual(len(clustered), 1)
         self.assertGreaterEqual(len(clustered[0]["relatedSources"]), 2)
+
+    def test_two_slots_prefer_different_categories(self):
+        crime = breaking_score(item(
+            headline="Halton police close Brant Street after collision",
+            category="PUBLIC SAFETY",
+            sourceType="official",
+            sourceName="Halton Regional Police",
+            verificationStatus="verified",
+            confidenceScore=5,
+            city="Burlington",
+        ), NOW)
+        weaker_crime = breaking_score(item(
+            headline="Halton police investigate a neighbourhood theft",
+            category="PUBLIC SAFETY",
+            sourceType="official",
+            sourceName="Halton Regional Police",
+            verificationStatus="verified",
+            confidenceScore=5,
+            city="Burlington",
+        ), NOW)
+        traffic = breaking_score(item(
+            headline="QEW Toronto-bound closed near Burloak",
+            category="TRAFFIC",
+            sourceType="official",
+            sourceName="Ontario 511",
+            verificationStatus="verified",
+            confidenceScore=5,
+        ), NOW)
+        ranked = sorted([crime, weaker_crime, traffic], key=lambda row: row["breakingScore"], reverse=True)
+        visible = diversify_top(ranked, 2)
+        self.assertEqual(len(visible), 2)
+        self.assertEqual(visible[0]["headline"], ranked[0]["headline"])
+        categories = {row["category"] for row in visible}
+        self.assertEqual(len(categories), 2)
+
+    def test_two_emergencies_can_share_a_category(self):
+        first = breaking_score(item(
+            headline="Halton police close Brant Street after collision",
+            category="PUBLIC SAFETY",
+            sourceType="official",
+            sourceName="Halton Regional Police",
+            verificationStatus="verified",
+            confidenceScore=5,
+            city="Burlington",
+        ), NOW)
+        second = breaking_score(item(
+            headline="Halton police evacuate a Burlington plaza after a fire",
+            category="PUBLIC SAFETY",
+            sourceType="official",
+            sourceName="Halton Regional Police",
+            verificationStatus="verified",
+            confidenceScore=5,
+            city="Burlington",
+        ), NOW)
+        other = breaking_score(item(
+            headline="City posts a routine council agenda reminder",
+            category="CITY HALL",
+            sourceType="official",
+            sourceName="City of Burlington",
+            verificationStatus="verified",
+            confidenceScore=5,
+            city="Burlington",
+        ), NOW)
+        ranked = sorted([first, second, other], key=lambda row: row["breakingScore"], reverse=True)
+        visible = diversify_top(ranked, 2)
+        self.assertEqual(len(visible), 2)
+        self.assertTrue(all("Halton police" in row["headline"] for row in visible))
 
     def test_score_not_just_newest(self):
         fresh_weak = breaking_score(item(

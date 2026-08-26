@@ -38,6 +38,7 @@ POLICE_HIGH = (
 LOW_IMPACT = (
     "press release", "now hiring", "looking for temporary", "subscribe",
     "photo", "congratulations", "lunch special",
+    "celebrity", "red carpet", "box office",
 )
 
 

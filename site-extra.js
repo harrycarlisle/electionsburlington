@@ -64,7 +64,7 @@
     ensureStyle('/site-shell.css?v=20260824z4', 'site-shell');
     ensureStyle('/publication-polish.css?v=20260825t', 'publication-polish');
     ensureStyle('/product-pass.css?v=20260826u', 'product-pass');
-    if (isArticle()) ensureStyle('/article-modern.css?v=20260826t', 'article-modern');
+    if (isArticle()) ensureStyle('/article-modern.css?v=20260826u', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
     ensureStyle('/site-header.css?v=20260826i', 'site-header');
@@ -591,7 +591,7 @@
     ensureScript('/site-search.js?v=20260826f', 'site-search');
     if (!isHome() && !isElectionPage() && !isArticle()) ensureScript('/site-bundle.js?v=20260826w', 'site-bundle');
     ensureScript('/weather-alert.js?v=20260826f', 'weather-alert');
-    if (isArticle()) ensureScript('/article-modern.js?v=20260826c', 'article-modern');
+    if (isArticle()) ensureScript('/article-modern.js?v=20260826d', 'article-modern');
     setTheme(root.dataset.theme || preferredTheme(), false);
     const search = document.querySelector('.header-controls .header-search');
     const ready = () => {

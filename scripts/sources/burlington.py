@@ -10,7 +10,8 @@ from .relevance import extract_location
 HIGH = (
     "tax", "budget", "council approves", "council rejects", "data centre",
     "data center", "evacuat", "emergency", "closure", "boil water",
-    "election", "advance voting", "hospital",
+    "election", "advance voting", "hospital", "fire", "alert", "outage",
+    "hydro", "transit suspend", "service interruption",
 )
 
 
@@ -18,7 +19,14 @@ def collect(now_iso: str, monitor: dict | None = None, **_: Any) -> list[dict[st
     items = []
     for raw in (monitor or {}).get("items") or []:
         source = str(raw.get("source") or "")
-        if "City of Burlington" not in source and "City mayoral" not in source:
+        official = (
+            "City of Burlington" in source
+            or "City mayoral" in source
+            or "Burlington Transit" in source
+            or "Burlington Fire" in source
+            or "municipal alert" in source.lower()
+        )
+        if not official:
             continue
         headline = raw.get("title") or raw.get("headline") or ""
         text = f"{headline} {raw.get('description') or ''}".lower()
