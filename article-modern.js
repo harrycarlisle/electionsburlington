@@ -162,8 +162,8 @@
       'skyway-bridge-story': ['/assets/home/skyway-reader.webp', 'Burlington Bay James N. Allan Skyway', 'Photo credit in source story'],
       'upper-middle-road-construction-2026': ['/assets/explore/burlington-orientation-map.svg', 'Orientation map of Burlington', 'Burlington News map'],
       'burlington-data-centre-not-ai': ['/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp', 'Illustrative concept and site context for the proposed data centre at 3110 South Service Road, Burlington. This is not a rendering of the final building.', 'Illustrative site concept for 3110 South Service Road. This is not a rendering of the final building.'],
-      'burlington-hotspots-0-24': ['/assets/sports/burlington-ultimate-toss-bosses.webp', 'A high-angle photo of an ultimate game on a grass field, with two teams of seven in blue and black and labeled end zones.', ''],
-      'burlington-ultimate-team-0-24': ['/assets/sports/burlington-ultimate-toss-bosses.webp', 'A high-angle photo of an ultimate game on a grass field, with two teams of seven in blue and black and labeled end zones.', ''],
+      'burlington-hotspots-0-24': ['/assets/ultimate-frisbee-burlington.png', 'Burlington ultimate players on a grass field during a recreational game.', ''],
+      'burlington-ultimate-team-0-24': ['/assets/ultimate-frisbee-burlington.png', 'Burlington ultimate players on a grass field during a recreational game.', ''],
       'how-bad-is-burlington-crime': ['/assets/stories/public-safety/halton-police-crime-burlington.webp', 'Illustrative Burlington News visual of a Halton Regional Police vehicle behind crime-scene tape.', 'Burlington News visual'],
       'nostalgia-games-cafe-closure': ['/assets/editorial/nostalgia-cafe-closure.svg', 'Editorial illustration of a closed board-game cafe', 'Burlington News illustration']
     };
