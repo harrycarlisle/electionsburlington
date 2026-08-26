@@ -111,6 +111,7 @@
   border-radius:12px
 }
 .pick-image{aspect-ratio:16/10}
+.pick-image img[src*="proposed-data-centre-3110"]{object-position:center 22%}
 .pick-card>.kicker{
   margin:14px 16px 0;
   font-family:var(--sans)!important
