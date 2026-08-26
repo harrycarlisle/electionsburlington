@@ -9,6 +9,7 @@
     "test:explore-ideas": "node scripts/test-explore-ideas.js",
     "test:explore-events": "node scripts/test-explore-events.js",
     "test:authority": "node scripts/test-authority.js",
+    "test:theme": "node scripts/test-theme-boot.js",
     "build:events": "python3 scripts/build-event-pages.py",
     "dev:contact": "node scripts/dev-contact-server.js"
   }

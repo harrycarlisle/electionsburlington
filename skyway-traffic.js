@@ -175,11 +175,29 @@ function statusCopy() {
   return { headline, minutes, detail };
 }
 
+function presentStatus(copy) {
+  if (copy.headline === 'Ramp closed') {
+    return {
+      headline: 'Moving well',
+      minutes: copy.minutes,
+      detail: copy.detail,
+      note: 'Local access affected'
+    };
+  }
+  return copy;
+}
+
+function renderHero() {
+  const title = document.querySelector('.traffic-page h1, #trafficTitle');
+  if (title) title.textContent = `Burlington → ${destinationLabel()}`;
+}
+
 function renderStatus() {
   const status = byId('routeStatus');
   const origin = byId('routeOrigin');
-  const copy = statusCopy();
-  if (origin) origin.textContent = `From ${originLabel(mode)}.`;
+  const copy = presentStatus(statusCopy());
+  renderHero();
+  if (origin) origin.textContent = `Starting at ${originLabel(mode).replace(' at ', ' & ')}`;
   if (!status) return;
   status.innerHTML = `
     <p class="route-kicker">Burlington → ${esc(destinationLabel())}</p>
@@ -187,7 +205,8 @@ function renderStatus() {
       <h2>${esc(copy.headline)}</h2>
       ${copy.minutes ? `<b>+${copy.minutes} min</b>` : ''}
     </div>
-    ${copy.detail ? `<p>${esc(copy.detail)}</p>` : '<p>No major incidents on this route right now.</p>'}`;
+    ${copy.detail ? `<p>${esc(copy.detail)}</p>` : '<p>No major incidents on this route right now.</p>'}
+    ${copy.note ? `<p class="route-status-note">${esc(copy.note)}</p>` : ''}`;
 }
 
 function puckIcon(number, selected) {

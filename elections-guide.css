@@ -49,6 +49,23 @@
 .section-intro{max-width:34em;margin:0 0 18px;color:#5d7287;font:400 16px/1.4 Inter,Arial,sans-serif}
 #candidates>h1{margin-bottom:10px;font:700 clamp(34px,5vw,48px)/1.05 var(--serif,Georgia,serif)}
 #matters.election-issues-legacy,.profile-summary,.profile-grid{display:none!important}
+.issue-compare{margin:0 0 24px}
+.issue-compare h2{margin:0 0 12px;font:700 22px/1.15 var(--serif,Georgia,serif)}
+.issue-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.issue-tabs button{
+  min-height:36px;padding:0 12px;border:1px solid var(--line,#d8e2ec);border-radius:999px;
+  background:transparent;color:var(--ink,#18344d);font:650 13px/1 Inter,Arial,sans-serif;cursor:pointer
+}
+.issue-tabs button[aria-selected="true"]{background:var(--navy,#0b335f);color:#fff;border-color:var(--navy,#0b335f)}
+.issue-compare-label{margin:0 0 10px;color:var(--muted,#5d7287);font:800 11px/1 Inter,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.issue-compare-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.issue-compare-card{
+  display:block;width:100%;padding:12px;border:1px solid var(--line,#d8e2ec);border-radius:12px;
+  background:var(--card,#fff);text-align:left;cursor:pointer
+}
+.issue-compare-card.is-active{border-color:var(--navy,#0b335f)}
+.issue-compare-card strong{display:block;margin-bottom:6px;color:var(--navy,#0b335f);font:750 13px/1.2 Inter,Arial,sans-serif}
+.issue-compare-card p{margin:0;color:#516b82;font:400 13px/1.35 Inter,Arial,sans-serif}
 
 @media(max-width:720px){
   .election-layout{grid-template-columns:1fr;gap:16px}
@@ -77,3 +94,9 @@ html[data-theme="dark"] .issues-stack h3{color:#edf4f8}
 html[data-theme="dark"] .profile-line,
 html[data-theme="dark"] .issue-row p,
 html[data-theme="dark"] .experience-box ul{color:#c5d0d6}
+html[data-theme="dark"] .issue-compare-card,
+html[data-theme="dark"] .issue-tabs button{background:#15212a;border-color:#30404b;color:#edf4f8}
+html[data-theme="dark"] .issue-tabs button[aria-selected="true"]{background:#edf4f8;color:#101517;border-color:#edf4f8}
+html[data-theme="dark"] .issue-compare-card.is-active{border-color:#edf4f8}
+html[data-theme="dark"] .issue-compare-card strong,
+html[data-theme="dark"] .issue-compare h2{color:#edf4f8}
