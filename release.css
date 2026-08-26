@@ -4,8 +4,7 @@
 .explore-mini-map::before{display:none!important}
 .site-footer a,.footer-bottom,.mini-heading a,.newest-list small,.newest-list time,.latest-puzzles small,.pick-card p{font-size:max(10px,inherit)}
 @media(max-width:680px){
-  .masthead{grid-template-columns:auto minmax(122px,1fr) auto!important;grid-template-areas:"brand search menu"!important;gap:8px!important;padding:7px 0!important}
-  .header-search{height:34px!important}.header-search input{padding-left:11px!important;font-size:10px!important}.header-search>svg{width:16px!important;height:16px!important;margin-right:9px!important}
+  /* Header owned by site-header.css */
 }
 
 .explore-main .event-type{padding:3px 6px!important;font-size:8px!important}

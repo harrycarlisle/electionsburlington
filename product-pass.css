@@ -1,27 +1,6 @@
 /* Product-pass polish that should stay readable and easy to maintain. */
-.home-desktop-nav{display:flex;justify-content:center;align-self:stretch;gap:36px;grid-area:nav}
-.home-desktop-nav a{position:relative;display:flex;align-items:center;color:var(--ink);font-size:15px;text-decoration:none}
-.home-desktop-nav a.active{color:var(--blue)}
-.home-desktop-nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--blue)}
-.menu-button{display:none}
-.primary-nav{display:none}
-@media(min-width:721px){
-  .masthead{
-    grid-template-columns:auto 1fr auto minmax(210px,300px)!important;
-    grid-template-areas:"brand nav weather search"!important;
-    flex-wrap:nowrap!important;
-  }
-  .home-desktop-nav{display:flex!important}
-  .primary-nav,.menu-button{display:none!important}
-  .header-weather{grid-area:weather}
-  .header-search{grid-area:search;width:100%!important;max-width:300px!important}
-}
-@media(max-width:720px){
-  .home-desktop-nav{display:none!important}
-  .menu-button{display:grid!important}
-  .primary-nav.is-open .home-nav-support{display:grid!important;grid-template-columns:1fr 1fr;gap:0 12px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
-  .primary-nav.is-open .home-nav-support a{font-size:12px!important;color:var(--muted)!important;min-height:34px!important}
-}
+/* Legacy homepage masthead/nav owned by site-header.css. */
+.home-desktop-nav,.menu-button,.primary-nav{display:none!important}
 .now-weather-value,.now-utility[data-weather-temperature],.now-weather strong{
   display:inline-flex!important;align-items:center!important;gap:6px!important;font-style:normal
 }
@@ -31,37 +10,6 @@
 .now-event em{font-style:normal;color:var(--muted);font-size:11px}
 @media(prefers-reduced-motion:reduce){
   .live-pulse{animation:none!important;box-shadow:0 0 0 3px rgba(47,168,102,.18)}
-}
-.header-weather{
-  display:inline-flex;align-items:center;gap:5px;flex:0 0 auto;min-width:0;
-  color:var(--navy);white-space:nowrap;line-height:1
-}
-.header-weather .weather-chip-summary{display:inline-flex;align-items:center;gap:5px;min-width:0}
-.header-weather .weather-chip-icon{
-  width:18px;height:18px;flex:0 0 auto;display:grid;place-items:center
-}
-.header-weather .weather-chip-icon svg{
-  width:16px;height:16px;display:block;fill:none;stroke:currentColor;stroke-width:1.7;
-  stroke-linecap:round;stroke-linejoin:round
-}
-.header-weather .weather-chip-clear{color:#d4a017}
-.header-weather .weather-chip-cloud{color:#5d7287}
-.header-weather .weather-chip-rain,.header-weather .weather-chip-storm{color:#0864c7}
-.header-weather .weather-chip-snow{color:#4f8064}
-.header-weather .weather-chip-temp{font:750 14px/1 Arial,sans-serif;color:inherit}
-.header-weather .weather-chip-condition{font:650 12px/1 Arial,sans-serif;color:var(--muted);font-style:normal}
-.header-weather .weather-alert{margin-left:2px}
-.masthead,.publication-shell .header-inner,.publication-shell .header-controls{flex-wrap:nowrap}
-.publication-shell .header-controls .header-weather{order:1}
-.publication-shell .header-controls .header-search{order:2;max-width:280px!important}
-.publication-shell .header-controls .menu-icon-button{order:3}
-.publication-shell .header-search,.header-search{
-  position:relative;display:flex;align-items:center;height:46px;width:min(100%,360px);
-  border:1px solid var(--line);border-radius:12px;background:var(--card,#fff)
-}
-.publication-shell .header-search input{
-  width:100%;height:100%;min-width:0;padding:0 10px 0 16px;border:0;outline:0;
-  border-radius:inherit;background:transparent;color:var(--ink);font:500 12px/1 Arial,sans-serif
 }
 .search-prompt-fade{
   position:absolute;left:16px;right:42px;top:0;bottom:0;z-index:1;
@@ -73,8 +21,6 @@
 .search-prompt-fade.is-hidden{opacity:0}
 .search-prompt-fade[hidden]{display:flex;opacity:0}
 @media(prefers-reduced-motion:reduce){.search-prompt-fade{transition:none}}
-.publication-shell .header-search>svg{width:18px;height:18px;margin-right:13px;fill:none;stroke:currentColor;stroke-width:1.9;flex:0 0 auto}
-.publication-shell .header-controls{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
 .publication-shell .search-popover{position:absolute;z-index:80;top:calc(100% + 8px);left:0;right:0;max-height:65vh;overflow:auto;padding:12px;border:1px solid var(--line);border-radius:13px;background:var(--card,#fff);box-shadow:0 20px 55px rgba(13,36,61,.18)}
 .publication-shell .search-popover[hidden]{display:none}
 .publication-shell .search-suggestions{display:flex;gap:6px;overflow:auto;padding-bottom:9px;border-bottom:1px solid var(--line);margin-bottom:8px}
@@ -91,32 +37,11 @@
 .article-reveal .answer{margin-top:14px;padding:14px 16px;border-radius:12px;background:color-mix(in srgb,currentColor 6%,transparent)}
 .bn-story-page .article-share-end{margin:2.4em 0 0}
 @media(max-width:720px){
-  :root{--news-banner-h:28px!important}
   html,body.publication-shell{overflow-x:hidden}
-  body.menu-is-open{overflow:hidden}
   #candidateStrip{display:none!important;overflow:visible!important;scroll-snap-type:none!important}
   #candidateStrip .candidate-card{flex:none!important;min-width:0!important;max-width:none!important}
   .publication-shell .banner{min-height:28px!important}
   .publication-shell .banner .wrap{min-height:28px!important;padding-block:4px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;font-size:11px!important;line-height:1.2!important}
-  .publication-shell .header{top:var(--news-banner-h,28px)!important}
-  .publication-shell .header .header-inner{
-    min-height:48px!important;height:48px!important;padding:4px 0!important;gap:8px!important;flex-wrap:nowrap!important
-  }
-  .publication-shell .header-controls{flex:1 1 auto!important;min-width:0!important;justify-content:flex-end!important}
-  .publication-shell .header-search,.header-search{
-    flex:1 1 auto!important;width:100%!important;max-width:none!important;height:36px!important;border-radius:10px!important
-  }
-  .publication-shell .header-search input,.header-search input{
-    font-size:13px!important;white-space:nowrap;text-overflow:ellipsis
-  }
-  .publication-shell .menu-icon-button{
-    flex:0 0 40px!important;width:40px!important;height:40px!important;min-width:40px!important;
-    font-size:0!important;overflow:hidden;color:var(--ink)!important
-  }
-  .publication-shell .menu-icon-button .menu-bars{display:grid;gap:5px;width:18px}
-  .publication-shell .menu-icon-button .menu-bars i{display:block;height:2px;background:currentColor}
-  .publication-shell .news-brand-logo{width:32px!important;height:35px!important;max-width:32px!important;flex-basis:32px!important}
-  .publication-shell .brand-mark-only{min-width:32px!important}
   #matters.election-issues-legacy{display:none}
 }
 .camera-card{display:grid}
@@ -134,29 +59,7 @@
 .star-rating{display:flex;gap:4px}
 .star-rating button{border:0;background:transparent;font-size:18px;cursor:pointer;color:#c5ccd1}
 .star-rating button.is-on{color:#d4a017}
-html[data-theme="dark"] .publication-shell .header-search,
 html[data-theme="dark"] .bored-actions button{background:#11191d;color:#edf4f8;border-color:#3a474e}
-
-.menu-panel{position:relative}
-.menu-theme-toggle{
-  position:absolute;top:10px;right:10px;z-index:2;
-  width:40px;height:40px;padding:0;border-radius:50%;
-  display:grid;place-items:center;
-  border:1px solid var(--line);background:var(--card,#fff);
-  color:var(--ink);cursor:pointer
-}
-.menu-theme-toggle svg{width:18px;height:18px;display:block}
-.home-theme-choice{
-  position:absolute!important;top:10px;right:10px;display:grid!important;
-  grid-template-columns:1fr!important;gap:0!important;padding:0!important;border:0!important;width:auto!important
-}
-.home-theme-choice button{
-  width:40px;height:40px;min-height:40px;padding:0;border-radius:50%;
-  display:grid;place-items:center;border:1px solid var(--line);
-  background:var(--paper,#fff);color:var(--ink)
-}
-.home-theme-choice button svg{width:18px;height:18px;display:block}
-.primary-nav{position:relative}
 .simple-page .page-kicker,.page-kicker,.daily-brief-kicker,.about-page .page-kicker{
   color:var(--muted,#5d7287)!important
 }
@@ -173,13 +76,11 @@ html[data-theme="dark"] .bored-actions button{background:#11191d;color:#edf4f8;b
   .site-legal-footer-inner,.site-footer .footer-main{display:grid;justify-items:center;gap:18px}
   .site-footer-columns,.site-legal-links{justify-content:center}
 }
-html[data-theme="dark"] .menu-theme-toggle,
-html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8ef;border-color:#3c4d58}
-
-/* Homepage live utility: one mode card, weather stays in the header. */
+/* Homepage live utility: one mode card; weather is a passive Live Local line. */
 .local-now{margin:2px 0 16px!important;padding:0!important;border:0!important;background:transparent!important}
 .local-now .now-heading,.now-desktop,.now-mobile,.now-strip,.now-utilities,.now-priority{display:none!important}
-.now-kicker{display:flex;align-items:center;gap:8px;margin:0 0 8px;color:var(--navy);font:800 11px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.now-kicker{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 8px;color:var(--navy);font:800 11px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.now-kicker-label{display:inline-flex;align-items:center;gap:8px}
 .now-dot{width:8px;height:8px;border-radius:50%;background:#2fa866;box-shadow:0 0 0 3px rgba(47,168,102,.16)}
 .now-tabs{
   display:flex;align-items:center;gap:8px;margin:0 0 10px;overflow-x:auto;
@@ -251,55 +152,6 @@ html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8
 }
 
 @media(max-width:720px){
-  .masthead{
-    min-height:48px!important;
-    padding:4px 0!important;
-    gap:6px!important;
-    grid-template-columns:auto minmax(0,1fr) 44px!important;
-    grid-template-areas:"brand search menu"!important;
-    align-items:center!important;
-    flex-wrap:nowrap!important
-  }
-  .header-weather{grid-area:weather}
-  .header-weather .weather-chip-condition{display:none}
-  .header-weather .weather-chip-temp{font-size:13px}
-  .header-weather .weather-chip-icon,.header-weather .weather-chip-icon svg{width:15px;height:15px}
-  .brand-mark-only img,.masthead .brand img{width:32px!important;height:35px!important}
-  .publication-shell .header-search,
-  .header-search{
-    height:36px!important;
-    width:100%!important;
-    max-width:none!important;
-    border-radius:10px!important;
-  }
-  .publication-shell .header-controls{flex-wrap:nowrap!important;gap:6px!important}
-  .publication-shell .header-controls .header-weather{flex:0 0 auto}
-  .publication-shell .header-controls .header-search{flex:1 1 auto;min-width:0;max-width:none!important}
-  .publication-shell .header-search input,
-  .header-search input{font-size:13px!important;padding-left:12px!important}
-  .publication-shell .header-search>svg,
-  .header-search>svg{width:16px!important;height:16px!important;margin-right:10px!important}
-  .site-header{position:sticky;top:0;z-index:50}
-  .menu-button{
-    grid-area:menu;
-    display:grid!important;
-    place-content:center;
-    gap:4px;
-    width:40px!important;
-    height:40px!important;
-    min-width:40px!important;
-    border:0;
-    border-radius:8px!important;
-    background:transparent;
-  }
-  .menu-button span{display:block;width:20px;height:2px;background:var(--navy)}
-  .primary-nav{
-    position:absolute;z-index:90;left:0;right:0;top:100%;
-    display:none;min-height:0;padding:7px 16px 13px;
-    background:var(--paper,#fff);border-top:1px solid var(--line);
-    box-shadow:0 18px 38px rgba(4,15,23,.16)
-  }
-  .primary-nav.is-open{display:grid;grid-template-columns:1fr}
   .search-prompt-fade{left:12px;right:36px;font-size:13px}
   .home-main{padding-top:6px!important}
   .local-now{margin:0 0 12px!important}
@@ -327,20 +179,9 @@ html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8
 }
 
 @media(max-width:680px){
-  .masthead{
-    min-height:48px!important;
-    padding:4px 0!important;
-    gap:6px!important;
-    grid-template-columns:auto minmax(0,1fr) 44px!important;
-    grid-template-areas:"brand search menu"!important;
-    flex-wrap:nowrap!important
-  }
   .local-now{margin:0 0 12px!important;padding:0!important;border:0!important}
 }
 
-html[data-theme="dark"] .header-weather{color:#edf4f8}
-html[data-theme="dark"] .header-weather .weather-chip-condition{color:#aebcc6}
-html[data-theme="dark"] .header-weather .weather-chip-clear{color:#e3b01c}
 html[data-theme="dark"] .now-kicker{color:#e7edf0}
 html[data-theme="dark"] .now-tab{
   background:#17232c;color:#edf4f8;border-color:#30404b

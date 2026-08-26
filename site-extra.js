@@ -64,10 +64,10 @@
     ensureStyle('/site-shell.css?v=20260824z4', 'site-shell');
     ensureStyle('/publication-polish.css?v=20260825t', 'publication-polish');
     ensureStyle('/product-pass.css?v=20260826f', 'product-pass');
-    ensureStyle('/site-header.css?v=20260826f', 'site-header');
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826t', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
+    ensureStyle('/site-header.css?v=20260826h', 'site-header');
   }
 
   function ensureUtilityBar() {
@@ -79,8 +79,10 @@
     const header = document.querySelector('.header, .site-header');
     if (!isElectionPage()) {
       banner?.remove();
+      root.style.setProperty('--news-banner-h', '0px');
       return;
     }
+    root.style.setProperty('--news-banner-h', matchMedia('(max-width:720px)').matches ? '32px' : '34px');
     if (!banner && header) {
       banner = document.createElement('div');
       banner.className = 'banner';
@@ -248,6 +250,7 @@
 
   function prepareHeader() {
     const header = document.querySelector('.header, .site-header');
+    if (header?.dataset.bnShell === 'ready') return;
     let inner = document.querySelector('.header-inner');
     if (!inner) {
       const masthead = document.querySelector('.masthead');
@@ -323,13 +326,7 @@
       if (!controls.contains(search)) controls.appendChild(search);
     }
 
-    let weather = controls.querySelector('[data-weather-chip]') || inner.querySelector('[data-weather-chip]');
-    if (!weather) {
-      controls.insertAdjacentHTML('afterbegin', weatherChipMarkup());
-      weather = controls.querySelector('[data-weather-chip]');
-    } else if (!controls.contains(weather)) {
-      controls.insertBefore(weather, search);
-    }
+    syncHeaderWeather(controls, search);
 
     controls.querySelector('.site-search-link')?.remove();
     controls.appendChild(menu);
@@ -337,12 +334,36 @@
 
     buildDrawer(nav);
     const backdrop = ensureBackdrop();
+    let lockY = 0;
+
+    const unlockScroll = () => {
+      document.documentElement.classList.remove('menu-is-open');
+      document.body.classList.remove('menu-is-open');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      window.scrollTo(0, lockY);
+    };
+
+    const lockScroll = () => {
+      lockY = window.scrollY || window.pageYOffset || 0;
+      document.documentElement.classList.add('menu-is-open');
+      document.body.classList.add('menu-is-open');
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${lockY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+    };
 
     const close = (focus = false) => {
       nav.classList.remove('open');
       menu.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('menu-is-open');
+      menu.setAttribute('aria-label', 'Open site menu');
       backdrop.hidden = true;
+      unlockScroll();
       if (focus) menu.focus();
     };
 
@@ -352,10 +373,13 @@
       root.style.setProperty('--mobile-menu-top', `${bottom + 8}px`);
       nav.classList.add('open');
       menu.setAttribute('aria-expanded', 'true');
-      document.body.classList.add('menu-is-open');
+      menu.setAttribute('aria-label', 'Close site menu');
       backdrop.hidden = false;
+      lockScroll();
       requestAnimationFrame(() => nav.querySelector('a,button')?.focus());
     };
+
+    if (header) header.dataset.bnShell = 'ready';
 
     menu.addEventListener('click', event => {
       event.stopPropagation();
@@ -372,7 +396,32 @@
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && nav.classList.contains('open')) close(true);
     });
+    matchMedia('(min-width:721px)').addEventListener?.('change', event => {
+      if (event.matches) close();
+      syncHeaderWeather(controls, search);
+    });
+    window.addEventListener('resize', () => {
+      if (!nav.classList.contains('open')) return;
+      const headerEl = document.querySelector('.header, .site-header');
+      root.style.setProperty('--mobile-menu-top', `${Math.ceil((headerEl?.getBoundingClientRect().bottom || 0) + 8)}px`);
+    });
     setTheme(root.dataset.theme || preferredTheme(), false);
+  }
+
+  function syncHeaderWeather(controls, search) {
+    if (!controls) return;
+    const desktop = matchMedia('(min-width:721px)').matches;
+    let weather = controls.querySelector('[data-weather-chip]') || document.querySelector('.header [data-weather-chip], .site-header [data-weather-chip]');
+    if (!desktop) {
+      weather?.remove();
+      return;
+    }
+    if (!weather) {
+      controls.insertAdjacentHTML('afterbegin', weatherChipMarkup());
+      weather = controls.querySelector('[data-weather-chip]');
+    } else if (!controls.contains(weather)) {
+      controls.insertBefore(weather, search || null);
+    }
   }
 
   function installDesktopNav() {
@@ -473,16 +522,24 @@
   setTheme(preferredTheme(), false);
   fetch('/data/site-timing.json', { cache: 'no-store' })
     .then(response => response.ok ? response.json() : null)
-    .then(applyTiming)
+    .then(data => {
+      applyTiming(data);
+      const nav = document.getElementById('mainNav');
+      if (nav?.classList.contains('menu-panel')) {
+        buildDrawer(nav);
+        installDesktopNav();
+        setTheme(root.dataset.theme || preferredTheme(), false);
+      }
+    })
     .catch(() => {});
 
   document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('publication-shell');
     if (isHome()) document.body.classList.add('home-shell');
-    else document.body.classList.add('publication-shell');
     if (!isHome()) ensureStyles();
     else {
-      ensureStyle('/site-header.css?v=20260826f', 'site-header');
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
+      ensureStyle('/site-header.css?v=20260826h', 'site-header');
     }
     ensureUtilityBar();
     ensureBanner();
