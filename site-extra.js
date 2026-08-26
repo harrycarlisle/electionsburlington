@@ -499,7 +499,7 @@
     ensureFooter();
     applyBrand();
     ensureScript('/site-search.js?v=20260826e', 'site-search');
-    if (!isHome() && !isElectionPage() && !isArticle()) ensureScript('/site-bundle.js?v=20260825p', 'site-bundle');
+    if (!isHome() && !isElectionPage() && !isArticle()) ensureScript('/site-bundle.js?v=20260826w', 'site-bundle');
     ensureScript('/weather-alert.js?v=20260826e', 'weather-alert');
     if (isArticle()) ensureScript('/article-modern.js?v=20260826c', 'article-modern');
     setTheme(root.dataset.theme || preferredTheme(), false);

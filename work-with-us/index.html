@@ -7,14 +7,14 @@
   <meta name="description" content="Partner on useful local reporting, share expertise, or help Burlington News tell a Burlington story.">
   <link rel="canonical" href="https://burlingtonnews.ca/work-with-us/">
   <link rel="stylesheet" href="/site-extra.css?v=20260824z4">
-  <link rel="stylesheet" href="/feedback.css?v=20260826e">
+  <link rel="stylesheet" href="/feedback.css?v=20260826w">
   <link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle">
   <link rel="stylesheet" href="/site-shell.css?v=20260824z4" data-style="site-shell">
   <link rel="stylesheet" href="/site-header.css?v=20260826f">
   <link rel="stylesheet" href="/type-system.css?v=20260826a">
   <script src="/site-search.js?v=20260826e" defer></script>
-  <script src="/site-extra.js?v=20260826t" defer></script>
-  <script src="/feedback.js?v=20260826e" defer></script>
+  <script src="/site-extra.js?v=20260826w" defer></script>
+  <script src="/feedback.js?v=20260826w" defer></script>
 </head>
 <body class="simple-page work-page">
   <a class="skip" href="#main">Skip to content</a>
@@ -39,10 +39,6 @@
           <input id="workEmail" name="email" type="email" autocomplete="email" inputmode="email" required>
         </div>
         <div class="field-group">
-          <label for="workOrg">Organization <span>optional</span></label>
-          <input id="workOrg" name="organization" type="text" autocomplete="organization">
-        </div>
-        <div class="field-group">
           <label for="workType">What are you reaching out about?</label>
           <select id="workType" name="type" required>
             <option value="Sponsorship">Sponsorship</option>
@@ -56,6 +52,10 @@
         <div class="field-group">
           <label for="workMessage">Message</label>
           <textarea id="workMessage" name="message" rows="6" required placeholder="What should we know?"></textarea>
+        </div>
+        <div class="field-group">
+          <label for="workOrg">Organization <span>optional</span></label>
+          <input id="workOrg" name="organization" type="text" autocomplete="organization">
         </div>
         <button class="feedback-submit" type="submit">Send message</button>
         <div class="feedback-status" id="workStatus" role="status" aria-live="polite"></div>
