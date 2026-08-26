@@ -1,0 +1,9 @@
+{
+  "name": "burlington-news",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:contact": "node scripts/test-contact-api.js",
+    "dev:contact": "node scripts/dev-contact-server.js"
+  }
+}
