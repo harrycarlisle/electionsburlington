@@ -87,7 +87,8 @@
     "sameSubject": 0.80,
     "sameSource": 0.90,
     "newestEvergreen": 0.94,
-    "excludeHeroFromNewestAndPicks": true
+    "excludeHeroFromNewestAndPicks": true,
+    "topPicksRespectVisibleNewest": true
   },
   "originalStory": {
     "cadence": "At least one original-story candidate every daily news watch. Publish nothing when reporting is not strong enough.",

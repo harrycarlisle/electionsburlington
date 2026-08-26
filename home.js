@@ -45,7 +45,7 @@
     ['school-policy', /teacher take your phone|school rules|student rights/i],
     ['school-calendar', /school starts|back to school/i],
     ['crime', /crime|police|severity index/i],
-    ['local-food', /cafe|restaurant|board-game|ribfest|food/i],
+    ['local-food', /cafe|restaurant|board-game|food/i],
     ['730-brant', /730 brant/i],
     ['millcroft', /millcroft/i],
     ['skyway', /skyway|tunnels/i],
@@ -86,15 +86,16 @@
     if (subjects.size && selected.some(other => [...subjects].some(key => subjectKeys(other).has(key)))) score *= 0.80;
     return score;
   };
-  const diversify = (items, limit, excludeIds) => {
+  const diversify = (items, limit, excludeIds, prior) => {
     const exclude = new Set(excludeIds || []);
     const remaining = items.filter(item => item?.id && !exclude.has(item.id));
     const selected = [];
+    const context = Array.isArray(prior) ? prior.slice() : [];
     while (remaining.length && selected.length < limit) {
       let bestIndex = 0;
       let bestScore = -1;
       remaining.forEach((item, index) => {
-        const score = adjustedScore(item, selected);
+        const score = adjustedScore(item, context.concat(selected));
         if (score > bestScore) {
           bestScore = score;
           bestIndex = index;
@@ -170,7 +171,7 @@
         : [...(data.feature || []).slice(1), ...(data.rail || [])];
       const picks = Array.isArray(data.picks) && data.picks.length
         ? data.picks.slice(0, 3)
-        : diversify(pickSource, 3, [leadId, ...newestIds].filter(Boolean));
+        : diversify(pickSource, 3, [leadId, ...newestIds].filter(Boolean), newest);
       renderPicks(picks.length ? picks : pickSource);
     }).catch(() => {});
 })();

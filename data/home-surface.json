@@ -192,6 +192,23 @@
       "placementScore": 80
     },
     {
+      "id": "ribfest-2026",
+      "kind": "seasonal",
+      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
+      "label": "Events",
+      "labelEssential": true,
+      "topic": "events",
+      "subjects": [
+        "events",
+        "ribfest"
+      ],
+      "url": "articles/ribfest-2026.html",
+      "image": "assets/home/ribs.webp",
+      "alt": "Barbecue ribs smoking over a pit",
+      "activeFrom": "2026-08-18",
+      "placementScore": 78
+    },
+    {
       "id": "fishway-2025",
       "kind": "evergreen",
       "headline": "What 26,503 fish revealed about a damaged marsh.",
@@ -207,43 +224,9 @@
       "alt": "The Cootes Paradise Fishway across the water",
       "published": "2026-08-23",
       "placementScore": 75
-    },
-    {
-      "id": "730-brant-vacant-building",
-      "kind": "investigation",
-      "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
-      "label": "Development",
-      "labelEssential": true,
-      "topic": "development",
-      "subjects": [
-        "730-brant",
-        "vacant-building"
-      ],
-      "url": "articles/730-brant-vacant-building.html",
-      "image": "assets/editorial/730-brant-share.webp",
-      "alt": "730 Brant Street Burlington News illustration",
-      "published": "2026-08-24",
-      "placementScore": 87
     }
   ],
   "picks": [
-    {
-      "id": "730-brant-vacant-building",
-      "kind": "investigation",
-      "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
-      "label": "Development",
-      "labelEssential": true,
-      "topic": "development",
-      "subjects": [
-        "730-brant",
-        "vacant-building"
-      ],
-      "url": "articles/730-brant-vacant-building.html",
-      "image": "assets/editorial/730-brant-share.webp",
-      "alt": "730 Brant Street Burlington News illustration",
-      "published": "2026-08-24",
-      "placementScore": 87
-    },
     {
       "id": "burlington-hotspots-0-24",
       "kind": "original",
@@ -283,6 +266,23 @@
       "credit": "Dave Lauretti · CC BY 2.0",
       "published": "2026-08-24",
       "placementScore": 82
+    },
+    {
+      "id": "ribfest-2026",
+      "kind": "seasonal",
+      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
+      "label": "Events",
+      "labelEssential": true,
+      "topic": "events",
+      "subjects": [
+        "events",
+        "ribfest"
+      ],
+      "url": "articles/ribfest-2026.html",
+      "image": "assets/home/ribs.webp",
+      "alt": "Barbecue ribs smoking over a pit",
+      "activeFrom": "2026-08-18",
+      "placementScore": 78
     }
   ],
   "audit": [

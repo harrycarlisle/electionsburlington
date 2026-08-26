@@ -60,6 +60,23 @@ class DiversityTests(unittest.TestCase):
         picked = diversify(candidates, 2, {"hero"})
         self.assertEqual([item["id"] for item in picked], ["schools", "food"])
 
+    def test_top_picks_avoid_newest_category_when_alternatives_exist(self):
+        newest = [
+            story("schools", 88, "schools", ["school-policy"]),
+            story("data-centre", 86, "development", ["data-centre"]),
+            story("cafe", 85, "food", ["local-food"]),
+        ]
+        candidates = [
+            story("brant", 87, "development", ["730-brant"]),
+            story("sports", 82, "sports", ["hidden-gem"]),
+            story("skyway", 82, "history", ["skyway"]),
+            story("ribfest", 78, "events", ["events", "ribfest"]),
+        ]
+        picks = diversify(candidates, 3, prior=newest)
+        topics = [category_key(item) for item in picks]
+        self.assertNotIn("development", topics)
+        self.assertEqual(set(topics), {"sports", "history", "events"})
+
 
 if __name__ == "__main__":
     unittest.main()
