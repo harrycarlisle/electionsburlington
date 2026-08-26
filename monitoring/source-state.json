@@ -1,38 +1,38 @@
 {
   "Burlington council records": {
     "bytes": 248495,
-    "checked_at": "2026-08-26T16:18:31.792616+00:00",
-    "sha256": "9ed27ba22ff60f118ee5a4a7ac161c235473bb77d63908072c4ab095c188c05b",
+    "checked_at": "2026-08-26T16:53:00.724338+00:00",
+    "sha256": "475b09a7905c8d37c32bbb035b813c876563afb9fb41730d6b338b0733fc90dc",
     "url": "https://burlingtonpublishing.escribemeetings.com/"
   },
   "Lisa Kearns campaign": {
     "bytes": 330014,
-    "checked_at": "2026-08-26T16:18:31.792616+00:00",
+    "checked_at": "2026-08-26T16:53:00.724338+00:00",
     "sha256": "63642f5bbf7f72c25bf9e774812a8bbb4f795ca4c55d1cb0761e345cfd237036",
     "url": "https://lisakearns.ca/"
   },
   "Meed Ward campaign": {
     "bytes": 166203,
-    "checked_at": "2026-08-26T16:18:31.792616+00:00",
+    "checked_at": "2026-08-26T16:53:00.724338+00:00",
     "sha256": "f426e0ece1d48d93d1e3c32c9eb7e01503d03cb32400f771bacea5e79b23be98",
     "url": "https://votemarianne.ca/"
   },
   "Official candidate list": {
     "bytes": 77688,
-    "checked_at": "2026-08-26T16:18:31.792616+00:00",
-    "sha256": "1979214e44ed22f7d6d9e595ae520c315033c625927e194bb180a4343dd929a4",
+    "checked_at": "2026-08-26T16:53:00.724338+00:00",
+    "sha256": "71c5660dfd1b78bda1d89dc675171f56fe4a206aa381e0b83a8d5f0b240c1f32",
     "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
   },
   "Official voting information": {
     "bytes": 64015,
-    "checked_at": "2026-08-26T16:18:31.792616+00:00",
+    "checked_at": "2026-08-26T16:53:00.724338+00:00",
     "sha256": "43affcdb60e10e77ad8c5a63bfc194920d8f36e6120de76482d335584542b0ac",
     "url": "https://myvote.burlington.ca/for-voters/how-to-vote/"
   },
   "Rory Nisan campaign": {
     "bytes": 50580,
-    "checked_at": "2026-08-26T16:18:31.792616+00:00",
-    "sha256": "5b9e03d5be08c65221d1eb5b284213bef9e7776297049b53016a2a3cbebc885c",
+    "checked_at": "2026-08-26T16:53:00.724338+00:00",
+    "sha256": "38b603052a0787370f3677f1874e154ec4e617c2524d2dbd8f1a856ad844de27",
     "url": "https://rorynisan.ca/"
   }
 }
