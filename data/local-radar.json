@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T19:48:11.033240-04:00",
+  "generatedAt": "2026-08-25T20:01:05.986412-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -103,55 +103,6 @@
       "verificationTier": "reported",
       "radarId": "768b3b04f276c1f0",
       "radarScore": 73,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "burlington-crime-analysis-2026",
-      "kind": "original",
-      "surfaces": [
-        "feature",
-        "rail",
-        "latest"
-      ],
-      "headline": "How bad is Burlington's crime, really?",
-      "deck": "The comparable data mostly supports the safe reputation. One category is moving the other way.",
-      "label": "Public safety",
-      "labelEssential": true,
-      "url": "articles/how-bad-is-burlington-crime.html",
-      "image": "assets/editorial/halton-crime-comparison.svg",
-      "alt": "Chart comparing Halton's Crime Severity Index with selected Ontario police services",
-      "credit": "Burlington News chart · Statistics Canada / Halton Regional Police Service",
-      "published": "2026-08-25",
-      "activeFrom": "2026-08-25",
-      "activeUntil": "2026-09-30",
-      "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "verificationTier": "primary",
-      "signals": {
-        "interest": 3.0999999999999996,
-        "relevance": 5.0,
-        "novelty": 3.3,
-        "familiarity": 3.5,
-        "consequence": 2.8,
-        "freshness": 2.4,
-        "sourceConfidence": 5.0,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 0.08215114296296289
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "lastHomepageLead": "2026-08-25",
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "d184d3ed6b32f418",
-      "radarScore": 72,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
@@ -426,6 +377,40 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": false
+    },
+    {
+      "title": "Pay Online (School Cash Online)",
+      "url": "https://www.hdsb.ca/students-families/pay-online-school-cash-online/",
+      "source": "Halton District School Board",
+      "sourceType": "official",
+      "scope": "schools",
+      "allowImage": true,
+      "pageRank": 12,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington",
+      "kind": "source",
+      "headline": "Pay Online (School Cash Online)",
+      "radarId": "3fadfdc586a70225",
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 5.0,
+        "novelty": 2.5,
+        "familiarity": 3.5,
+        "consequence": 2.8,
+        "freshness": 2.4,
+        "sourceConfidence": 5.0,
+        "originality": 4.6,
+        "visualStrength": 2.2,
+        "rotation": 5.0
+      },
+      "radarScore": 70,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
     }
   ],
   "originalIdeas": [
@@ -527,11 +512,11 @@
         "novelty": 3.3,
         "familiarity": 3.5,
         "consequence": 2.8,
-        "freshness": 2.4,
+        "freshness": 1.5,
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.08215114296296289
+        "rotation": 0.0
       },
       "gates": {
         "evidence": "passed",
@@ -543,10 +528,10 @@
       "source": "Burlington News",
       "sourceType": "official",
       "radarId": "d184d3ed6b32f418",
-      "radarScore": 72,
+      "radarScore": 69,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
-      "eligibleNewest": true,
+      "eligibleNewest": false,
       "eligibleEditorial": true
     },
     {
@@ -616,54 +601,6 @@
         "rotation": 5.0
       },
       "radarScore": 69,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "nostalgia-games-cafe-closure",
-      "kind": "original",
-      "surfaces": [
-        "feature",
-        "rail",
-        "latest"
-      ],
-      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
-      "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
-      "label": "Local business",
-      "labelEssential": true,
-      "url": "articles/nostalgia-games-cafe-closure.html",
-      "image": "assets/editorial/nostalgia-cafe-closure.svg",
-      "alt": "Board-game cafe closure illustration",
-      "credit": "Burlington News illustration",
-      "published": "2026-08-25",
-      "activeFrom": "2026-08-25",
-      "activeUntil": "2026-09-30",
-      "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
-      "verificationTier": "reported",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.3,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 2.4,
-        "sourceConfidence": 4.0,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 5.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "9f20be8672023651",
-      "radarScore": 68,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
@@ -866,6 +803,54 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": true
+    },
+    {
+      "id": "nostalgia-games-cafe-closure",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "rail",
+        "latest"
+      ],
+      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
+      "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
+      "label": "Local business",
+      "labelEssential": true,
+      "url": "articles/nostalgia-games-cafe-closure.html",
+      "image": "assets/editorial/nostalgia-cafe-closure.svg",
+      "alt": "Board-game cafe closure illustration",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "activeUntil": "2026-09-30",
+      "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
+      "verificationTier": "reported",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 4.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "9f20be8672023651",
+      "radarScore": 66,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
     }
   ],
   "items": [
@@ -969,55 +954,6 @@
       "verificationTier": "reported",
       "radarId": "768b3b04f276c1f0",
       "radarScore": 73,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "burlington-crime-analysis-2026",
-      "kind": "original",
-      "surfaces": [
-        "feature",
-        "rail",
-        "latest"
-      ],
-      "headline": "How bad is Burlington's crime, really?",
-      "deck": "The comparable data mostly supports the safe reputation. One category is moving the other way.",
-      "label": "Public safety",
-      "labelEssential": true,
-      "url": "articles/how-bad-is-burlington-crime.html",
-      "image": "assets/editorial/halton-crime-comparison.svg",
-      "alt": "Chart comparing Halton's Crime Severity Index with selected Ontario police services",
-      "credit": "Burlington News chart · Statistics Canada / Halton Regional Police Service",
-      "published": "2026-08-25",
-      "activeFrom": "2026-08-25",
-      "activeUntil": "2026-09-30",
-      "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "verificationTier": "primary",
-      "signals": {
-        "interest": 3.0999999999999996,
-        "relevance": 5.0,
-        "novelty": 3.3,
-        "familiarity": 3.5,
-        "consequence": 2.8,
-        "freshness": 2.4,
-        "sourceConfidence": 5.0,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 0.08215114296296289
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "lastHomepageLead": "2026-08-25",
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "d184d3ed6b32f418",
-      "radarScore": 72,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
@@ -1697,6 +1633,55 @@
       "eligibleEditorial": false
     },
     {
+      "id": "burlington-crime-analysis-2026",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "rail",
+        "latest"
+      ],
+      "headline": "How bad is Burlington's crime, really?",
+      "deck": "The comparable data mostly supports the safe reputation. One category is moving the other way.",
+      "label": "Public safety",
+      "labelEssential": true,
+      "url": "articles/how-bad-is-burlington-crime.html",
+      "image": "assets/editorial/halton-crime-comparison.svg",
+      "alt": "Chart comparing Halton's Crime Severity Index with selected Ontario police services",
+      "credit": "Burlington News chart · Statistics Canada / Halton Regional Police Service",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "activeUntil": "2026-09-30",
+      "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
+      "verificationTier": "primary",
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.8,
+        "freshness": 1.5,
+        "sourceConfidence": 5.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 0.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "lastHomepageLead": "2026-08-25",
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "d184d3ed6b32f418",
+      "radarScore": 69,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
       "id": "skyway-tunnels",
       "kind": "original",
       "surfaces": [
@@ -1805,54 +1790,6 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": false
-    },
-    {
-      "id": "nostalgia-games-cafe-closure",
-      "kind": "original",
-      "surfaces": [
-        "feature",
-        "rail",
-        "latest"
-      ],
-      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
-      "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
-      "label": "Local business",
-      "labelEssential": true,
-      "url": "articles/nostalgia-games-cafe-closure.html",
-      "image": "assets/editorial/nostalgia-cafe-closure.svg",
-      "alt": "Board-game cafe closure illustration",
-      "credit": "Burlington News illustration",
-      "published": "2026-08-25",
-      "activeFrom": "2026-08-25",
-      "activeUntil": "2026-09-30",
-      "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
-      "verificationTier": "reported",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.3,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 2.4,
-        "sourceConfidence": 4.0,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 5.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "9f20be8672023651",
-      "radarScore": 68,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": true
     },
     {
       "id": "salamander-migration",
@@ -2223,6 +2160,54 @@
       "eligibleEditorial": false
     },
     {
+      "id": "nostalgia-games-cafe-closure",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "rail",
+        "latest"
+      ],
+      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
+      "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
+      "label": "Local business",
+      "labelEssential": true,
+      "url": "articles/nostalgia-games-cafe-closure.html",
+      "image": "assets/editorial/nostalgia-cafe-closure.svg",
+      "alt": "Board-game cafe closure illustration",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "activeUntil": "2026-09-30",
+      "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
+      "verificationTier": "reported",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 4.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "9f20be8672023651",
+      "radarScore": 66,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
       "id": "data-centre-not-ai",
       "kind": "original",
       "surfaces": [
@@ -2235,8 +2220,8 @@
       "label": "Development",
       "labelEssential": true,
       "url": "articles/burlington-data-centre-not-ai.html",
-      "image": "assets/explore/burlington-orientation-map.svg",
-      "alt": "Orientation map of Burlington",
+      "image": "assets/editorial/data-centre-site-context.svg",
+      "alt": "Two-panel site-context diagram of the proposed data centre at 3110 South Service Road. This is not a rendering of the future building.",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
       "activeUntil": "2026-09-30",
@@ -2861,48 +2846,6 @@
       "eligibleEditorial": true
     },
     {
-      "id": "fishway-2025",
-      "kind": "original",
-      "surfaces": [
-        "latest"
-      ],
-      "headline": "What 26,503 fish revealed about a damaged marsh.",
-      "label": "Nature",
-      "labelEssential": true,
-      "url": "articles/fishway-26000-fish.html",
-      "image": "assets/home/fishway.webp",
-      "alt": "The Cootes Paradise Fishway across the water",
-      "published": "2026-08-23",
-      "evergreen": true,
-      "signals": {
-        "interest": 2.3,
-        "relevance": 1.2,
-        "novelty": 3.8,
-        "familiarity": 2.5,
-        "consequence": 2.0,
-        "freshness": 1.5,
-        "sourceConfidence": 4.0,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 5.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "source": "Burlington News",
-      "sourceType": "official",
-      "verificationTier": "reported",
-      "radarId": "e37b8b7f2d07fb04",
-      "radarScore": 29,
-      "eligibleRightNow": false,
-      "eligibleHomepage": false,
-      "eligibleNewest": false,
-      "eligibleEditorial": true
-    },
-    {
       "id": "pitch:nostalgia-games-cafe-occupancy",
       "headline": "A 40-person limit is threatening Nostalgia Games Cafe’s next move",
       "description": "The owners say a building that could hold far more people is capped at 40 because it has two washrooms. Their fundraiser for renovations stalled far short of its target.",
@@ -2964,6 +2907,48 @@
       "sourceType": "official",
       "verificationTier": "reported",
       "radarId": "fec869e2439d0bde",
+      "radarScore": 28,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
+      "id": "fishway-2025",
+      "kind": "original",
+      "surfaces": [
+        "latest"
+      ],
+      "headline": "What 26,503 fish revealed about a damaged marsh.",
+      "label": "Nature",
+      "labelEssential": true,
+      "url": "articles/fishway-26000-fish.html",
+      "image": "assets/home/fishway.webp",
+      "alt": "The Cootes Paradise Fishway across the water",
+      "published": "2026-08-23",
+      "evergreen": true,
+      "signals": {
+        "interest": 2.3,
+        "relevance": 1.2,
+        "novelty": 3.8,
+        "familiarity": 2.5,
+        "consequence": 2.0,
+        "freshness": 0.7,
+        "sourceConfidence": 4.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "source": "Burlington News",
+      "sourceType": "official",
+      "verificationTier": "reported",
+      "radarId": "e37b8b7f2d07fb04",
       "radarScore": 28,
       "eligibleRightNow": false,
       "eligibleHomepage": false,
