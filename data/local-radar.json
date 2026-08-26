@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T12:06:55.013190-04:00",
+  "generatedAt": "2026-08-26T12:52:46.594028-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -723,6 +723,56 @@
       "eligibleEditorial": true
     },
     {
+      "id": "burlington-ultimate-team-0-24",
+      "kind": "original",
+      "surfaces": [
+        "sports"
+      ],
+      "headline": "This Burlington team is 0–24. Why do they keep coming back?",
+      "deck": "After an 0–12 season, they changed the name. Twelve games later, they were still waiting for a win.",
+      "label": "Sports",
+      "labelEssential": true,
+      "url": "articles/burlington-ultimate-team-0-24.html",
+      "image": "assets/sports/burlington-ultimate-toss-bosses.webp",
+      "alt": "A high-angle photo of an ultimate game on a grass field, with two teams of seven in blue and black and labeled end zones.",
+      "credit": "",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain how Toss Bosses went 0-24 after a name change from Panic at the Disco, and why the rec team keeps coming back.",
+      "verificationTier": "Burlington News reporting and Burlington Ultimate Club standings",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.8,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 2.4,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "sports",
+      "subjects": [
+        "sports",
+        "hidden-gem"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "7b2f73cc8f0ff2a3",
+      "radarScore": 67,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": true,
+      "eligibleEditorial": true
+    },
+    {
       "id": "pitch:john-moodie-cymric-whisky",
       "headline": "The Burlington whisky shipment a U-boat sent to the bottom of the Atlantic",
       "description": "In 1916, whisky belonging to a Burlington resident who owned Hamilton's first car was aboard the White Star liner Cymric when the same U-boat commander who sank Lusitania attacked it off Ireland. What was in the barrels, who paid for the loss, and what did one local claim reveal about doing business during wartime?",
@@ -832,59 +882,6 @@
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "nostalgia-games-cafe-closure",
-      "kind": "original",
-      "surfaces": [
-        "feature",
-        "rail",
-        "latest"
-      ],
-      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
-      "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
-      "label": "Local business",
-      "labelEssential": true,
-      "url": "articles/nostalgia-games-cafe-closure.html",
-      "image": "assets/editorial/nostalgia-cafe-closure.svg",
-      "alt": "Board-game cafe closure illustration",
-      "credit": "Burlington News illustration",
-      "published": "2026-08-25",
-      "activeFrom": "2026-08-25",
-      "activeUntil": "2026-09-30",
-      "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
-      "verificationTier": "reported",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.3,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 1.5,
-        "sourceConfidence": 4.0,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 5.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "topic": "food",
-      "subjects": [
-        "local-food",
-        "cafe-closure"
-      ],
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "9f20be8672023651",
-      "radarScore": 66,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": false,
       "eligibleEditorial": true
     }
   ],
@@ -1840,6 +1837,56 @@
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
+      "id": "burlington-ultimate-team-0-24",
+      "kind": "original",
+      "surfaces": [
+        "sports"
+      ],
+      "headline": "This Burlington team is 0–24. Why do they keep coming back?",
+      "deck": "After an 0–12 season, they changed the name. Twelve games later, they were still waiting for a win.",
+      "label": "Sports",
+      "labelEssential": true,
+      "url": "articles/burlington-ultimate-team-0-24.html",
+      "image": "assets/sports/burlington-ultimate-toss-bosses.webp",
+      "alt": "A high-angle photo of an ultimate game on a grass field, with two teams of seven in blue and black and labeled end zones.",
+      "credit": "",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain how Toss Bosses went 0-24 after a name change from Panic at the Disco, and why the rec team keeps coming back.",
+      "verificationTier": "Burlington News reporting and Burlington Ultimate Club standings",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.8,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 2.4,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "sports",
+      "subjects": [
+        "sports",
+        "hidden-gem"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "7b2f73cc8f0ff2a3",
+      "radarScore": 67,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": true,
       "eligibleEditorial": true
     },
     {
@@ -2993,56 +3040,6 @@
       "verificationTier": "reported",
       "radarId": "7157189a318894ce",
       "radarScore": 30,
-      "eligibleRightNow": false,
-      "eligibleHomepage": false,
-      "eligibleNewest": false,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "burlington-ultimate-team-0-24",
-      "kind": "original",
-      "surfaces": [
-        "sports"
-      ],
-      "headline": "This Burlington team is 0–24. Why do they keep coming back?",
-      "deck": "After an 0–12 season, they changed the name. Twelve games later, they were still waiting for a win.",
-      "label": "Sports",
-      "labelEssential": true,
-      "url": "articles/burlington-ultimate-team-0-24.html",
-      "image": "assets/sports/burlington-ultimate-toss-bosses.webp",
-      "alt": "A high-angle photo of an ultimate game on a grass field, with two teams of seven in blue and black and labeled end zones.",
-      "credit": "",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Explain how Toss Bosses went 0-24 after a name change from Panic at the Disco, and why the rec team keeps coming back.",
-      "verificationTier": "Burlington News reporting and Burlington Ultimate Club standings",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 1.2,
-        "novelty": 3.8,
-        "familiarity": 2.5,
-        "consequence": 2.0,
-        "freshness": 2.4,
-        "sourceConfidence": 2.8,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 5.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "topic": "sports",
-      "subjects": [
-        "sports",
-        "hidden-gem"
-      ],
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "fb79a86e784ceb9a",
-      "radarScore": 29,
       "eligibleRightNow": false,
       "eligibleHomepage": false,
       "eligibleNewest": false,
