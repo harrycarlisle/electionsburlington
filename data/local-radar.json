@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T22:08:26.425751-04:00",
+  "generatedAt": "2026-08-25T23:15:52.178225-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -98,6 +98,10 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "schools",
+      "subjects": [
+        "school-calendar"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -418,51 +422,6 @@
   ],
   "originalIdeas": [
     {
-      "id": "burlington-hotspots-0-24",
-      "kind": "original",
-      "surfaces": [
-        "sports"
-      ],
-      "headline": "A Burlington team just went 0–24. How does that even happen?",
-      "deck": "Zero wins. Twenty-four losses. The next game is not a chance to repair that record.",
-      "label": "Sports",
-      "labelEssential": true,
-      "url": "articles/burlington-hotspots-0-24.html",
-      "image": "assets/sports/ultimate-waterfront.webp",
-      "alt": "Editorial illustration of a waterfront field sport near the Skyway",
-      "credit": "Burlington News illustration",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Explain an unusually extreme local rec-league record without treating 0-24 as a joke or rewriting it as 24-0.",
-      "verificationTier": "user-verified standings plus club context",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.8,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 4.6,
-        "sourceConfidence": 2.8,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 5.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "fb79a86e784ceb9a",
-      "radarScore": 74,
-      "eligibleRightNow": false,
-      "eligibleHomepage": false,
-      "eligibleNewest": true,
-      "eligibleEditorial": true
-    },
-    {
       "id": "pitch:hamilton-mob-burlington-line",
       "headline": "Where Hamilton’s Mafia story crosses the Burlington line",
       "description": "Organized-crime history is usually told as a Hamilton story. The more interesting question is which events, people or businesses actually reached Burlington,and which local legends do not survive the records.",
@@ -523,6 +482,10 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "schools",
+      "subjects": [
+        "school-calendar"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -530,6 +493,56 @@
       "radarScore": 73,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": true
+    },
+    {
+      "id": "burlington-hotspots-0-24",
+      "kind": "original",
+      "surfaces": [
+        "sports"
+      ],
+      "headline": "A Burlington team just went 0–24. How does that even happen?",
+      "deck": "Zero wins. Twenty-four losses. The next game is not a chance to repair that record.",
+      "label": "Sports",
+      "labelEssential": true,
+      "url": "articles/burlington-hotspots-0-24.html",
+      "image": "assets/sports/ultimate-waterfront.webp",
+      "alt": "Editorial illustration of a waterfront field sport near the Skyway",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain an unusually extreme local rec-league record without treating 0-24 as a joke or rewriting it as 24-0.",
+      "verificationTier": "user-verified standings plus club context",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.8,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 4.0,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "sports",
+      "subjects": [
+        "sports",
+        "hidden-gem"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "fb79a86e784ceb9a",
+      "radarScore": 72,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
       "eligibleNewest": true,
       "eligibleEditorial": true
     },
@@ -542,7 +555,7 @@
         "latest"
       ],
       "headline": "How bad is Burlington's crime, really?",
-      "deck": "The comparable data mostly supports the safe reputation. One category is moving the other way.",
+      "deck": "Halton is unusually safe. One part of the crime data is moving the wrong way.",
       "label": "Public safety",
       "labelEssential": true,
       "url": "articles/how-bad-is-burlington-crime.html",
@@ -564,7 +577,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.0
+        "rotation": 0.030320312754629652
       },
       "gates": {
         "evidence": "passed",
@@ -572,7 +585,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
-      "lastHomepageLead": "2026-08-25",
+      "lastHomepageLead": "2026-08-26",
+      "topic": "public-safety",
+      "subjects": [
+        "crime"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "radarId": "d184d3ed6b32f418",
@@ -616,6 +633,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "history",
+      "subjects": [
+        "skyway",
+        "history"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -687,6 +709,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "nature",
+      "subjects": [
+        "wildlife",
+        "salamander"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -730,6 +757,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "development",
+      "subjects": [
+        "millcroft",
+        "housing"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -889,51 +921,6 @@
       "eligibleEditorial": false
     },
     {
-      "id": "burlington-hotspots-0-24",
-      "kind": "original",
-      "surfaces": [
-        "sports"
-      ],
-      "headline": "A Burlington team just went 0–24. How does that even happen?",
-      "deck": "Zero wins. Twenty-four losses. The next game is not a chance to repair that record.",
-      "label": "Sports",
-      "labelEssential": true,
-      "url": "articles/burlington-hotspots-0-24.html",
-      "image": "assets/sports/ultimate-waterfront.webp",
-      "alt": "Editorial illustration of a waterfront field sport near the Skyway",
-      "credit": "Burlington News illustration",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Explain an unusually extreme local rec-league record without treating 0-24 as a joke or rewriting it as 24-0.",
-      "verificationTier": "user-verified standings plus club context",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.8,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 4.6,
-        "sourceConfidence": 2.8,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 5.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "fb79a86e784ceb9a",
-      "radarScore": 74,
-      "eligibleRightNow": false,
-      "eligibleHomepage": false,
-      "eligibleNewest": true,
-      "eligibleEditorial": true
-    },
-    {
       "id": "pitch:hamilton-mob-burlington-line",
       "headline": "Where Hamilton’s Mafia story crosses the Burlington line",
       "description": "Organized-crime history is usually told as a Hamilton story. The more interesting question is which events, people or businesses actually reached Burlington,and which local legends do not survive the records.",
@@ -994,6 +981,10 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "schools",
+      "subjects": [
+        "school-calendar"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -1001,6 +992,56 @@
       "radarScore": 73,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": true
+    },
+    {
+      "id": "burlington-hotspots-0-24",
+      "kind": "original",
+      "surfaces": [
+        "sports"
+      ],
+      "headline": "A Burlington team just went 0–24. How does that even happen?",
+      "deck": "Zero wins. Twenty-four losses. The next game is not a chance to repair that record.",
+      "label": "Sports",
+      "labelEssential": true,
+      "url": "articles/burlington-hotspots-0-24.html",
+      "image": "assets/sports/ultimate-waterfront.webp",
+      "alt": "Editorial illustration of a waterfront field sport near the Skyway",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain an unusually extreme local rec-league record without treating 0-24 as a joke or rewriting it as 24-0.",
+      "verificationTier": "user-verified standings plus club context",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.8,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 4.0,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "sports",
+      "subjects": [
+        "sports",
+        "hidden-gem"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "fb79a86e784ceb9a",
+      "radarScore": 72,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
       "eligibleNewest": true,
       "eligibleEditorial": true
     },
@@ -1585,68 +1626,6 @@
       "eligibleEditorial": false
     },
     {
-      "id": "511:293256",
-      "detectedAt": "2026-08-25T23:33:38Z",
-      "score": 90,
-      "headline": "Collision on QEW Fort Erie bound HOV at TRAFALGAR ROAD, Oakville. All lanes closed.",
-      "kind": "traffic",
-      "location": "QEW",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "7070cf48dc4802e8",
-      "signals": {
-        "interest": 3.0999999999999996,
-        "relevance": 3.4,
-        "novelty": 2.5,
-        "familiarity": 2.5,
-        "consequence": 2.8,
-        "freshness": 4.6,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 69,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
-    },
-    {
-      "id": "511:293255",
-      "detectedAt": "2026-08-25T23:33:38Z",
-      "score": 75,
-      "headline": "Collision on QEW Fort Erie bound  at TRAFALGAR ROAD, Oakville. Left lane closed.",
-      "kind": "traffic",
-      "location": "QEW",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "9c7d99a457d4668a",
-      "signals": {
-        "interest": 3.0999999999999996,
-        "relevance": 3.4,
-        "novelty": 2.5,
-        "familiarity": 2.5,
-        "consequence": 2.8,
-        "freshness": 4.6,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 69,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
-    },
-    {
       "id": "511:293205",
       "detectedAt": "2026-08-25T21:38:12Z",
       "score": 75,
@@ -1686,7 +1665,7 @@
         "latest"
       ],
       "headline": "How bad is Burlington's crime, really?",
-      "deck": "The comparable data mostly supports the safe reputation. One category is moving the other way.",
+      "deck": "Halton is unusually safe. One part of the crime data is moving the wrong way.",
       "label": "Public safety",
       "labelEssential": true,
       "url": "articles/how-bad-is-burlington-crime.html",
@@ -1708,7 +1687,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.0
+        "rotation": 0.030320312754629652
       },
       "gates": {
         "evidence": "passed",
@@ -1716,7 +1695,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
-      "lastHomepageLead": "2026-08-25",
+      "lastHomepageLead": "2026-08-26",
+      "topic": "public-safety",
+      "subjects": [
+        "crime"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "radarId": "d184d3ed6b32f418",
@@ -1760,6 +1743,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "history",
+      "subjects": [
+        "skyway",
+        "history"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -1869,6 +1857,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "nature",
+      "subjects": [
+        "wildlife",
+        "salamander"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -1878,6 +1871,68 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": true
+    },
+    {
+      "id": "511:293256",
+      "detectedAt": "2026-08-25T23:33:38Z",
+      "score": 90,
+      "headline": "Collision on QEW Fort Erie bound HOV at TRAFALGAR ROAD, Oakville. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "7070cf48dc4802e8",
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.8,
+        "freshness": 4.0,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 67,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "511:293255",
+      "detectedAt": "2026-08-25T23:33:38Z",
+      "score": 75,
+      "headline": "Collision on QEW Fort Erie bound  at TRAFALGAR ROAD, Oakville. Left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "9c7d99a457d4668a",
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.8,
+        "freshness": 4.0,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 67,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
     },
     {
       "id": "millcroft-phase-2-138-homes",
@@ -1912,6 +1967,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "development",
+      "subjects": [
+        "millcroft",
+        "housing"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -2243,6 +2303,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "food",
+      "subjects": [
+        "local-food",
+        "cafe-closure"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "radarId": "9f20be8672023651",
@@ -2288,6 +2353,10 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "development",
+      "subjects": [
+        "data-centre"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -2331,6 +2400,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "election",
+      "subjects": [
+        "election",
+        "mayor"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -2751,6 +2825,10 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "schools",
+      "subjects": [
+        "school-policy"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -2793,6 +2871,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "development",
+      "subjects": [
+        "730-brant",
+        "vacant-building"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -2836,6 +2919,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "election",
+      "subjects": [
+        "election",
+        "wards"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -2880,6 +2968,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "events",
+      "subjects": [
+        "events",
+        "ribfest"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -2948,6 +3041,10 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "sports",
+      "subjects": [
+        "sports"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
@@ -2990,6 +3087,11 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
+      "topic": "nature",
+      "subjects": [
+        "wildlife",
+        "fishway"
+      ],
       "source": "Burlington News",
       "sourceType": "official",
       "verificationTier": "reported",
