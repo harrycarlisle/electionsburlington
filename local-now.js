@@ -1,4 +1,5 @@
 import { buildGoModel } from '/lib/go-times.js';
+import { routeDriveStatus } from '/lib/traffic-route.js';
 
 (() => {
   const host = document.getElementById('localNow');
@@ -188,76 +189,32 @@ import { buildGoModel } from '/lib/go-times.js';
   }
 
   function drivingModel(surface, intel) {
-    const incidents = Array.isArray(surface?.incidents) ? surface.incidents : [];
-    const ready = surface?.homepageTraffic;
-    const local = incidents.find(item => /burlington/i.test(item.municipality || '') && (item.type === 'closure' || item.type === 'collision') && !isRamp(item))
-      || incidents.find(item => (item.type === 'collision') || (item.type === 'closure' && !isRamp(item)));
-    const destHint = commuteDestination();
-    const commute = surface?.routes?.[routeIdFor(destHint)] || surface?.routes?.toronto || surface?.routes?.hamilton || {};
-    const source = local || (ready?.title ? {
-      title: ready.title,
-      context: ready.context || '',
-      impact: ready.impact || '',
-      direction: '',
-      municipality: /burlington/i.test(ready.context || '') ? 'Burlington' : '',
-      nearestRoad: '',
-      type: /clos/i.test(ready.title) ? 'closure' : (/collision|crash/i.test(ready.title) ? 'collision' : ''),
-      roadway: '',
-      rawHeadline: '',
-      facility: /ramp/i.test(ready.title) ? 'on-ramp' : ''
-    } : null);
-
-    if (source || ready?.title) {
-      const item = source || {};
-      const dest = destinationFrom({...item, impact: ready?.impact || item.impact, title: ready?.title || item.title});
-      const road = roadwayFrom({...item, title: ready?.title || item.title});
-      const place = shortPlace(item.nearestRoad || (ready?.context || '').split('·').pop() || '');
-      const type = String(item.type || (/clos/i.test(ready?.title || '') ? 'closure' : (/collision|crash/i.test(ready?.title || '') ? 'collision' : '')));
-      const minutes = delayMinutesFrom(item) || delayMinutesFrom(ready || {});
-      const laneClosed = /lane closed|lanes closed|all lanes/i.test(`${item.rawHeadline || ''} ${item.title || ''} ${ready?.title || ''}`);
-      const intensity = type === 'closure' || laneClosed ? 'Heavy' : (type === 'collision' ? 'Heavy' : looksLabel(commute?.status?.looks || commute?.status?.level));
-      const eventLabel = type === 'closure' ? (isRamp(item) ? 'Ramp closed' : 'Closure') : (type === 'collision' ? 'Collision' : 'Incident');
-      const placeLine = place
-        ? (type === 'collision' || type === 'closure' ? `${eventLabel} near ${place}` : `${intensity || 'Watch'} near ${place}`)
-        : (ready?.context || item.context || '');
-      const metric = minutes
-        ? `+${minutes} min`
-        : (type === 'closure' && isRamp(item) ? 'Ramp closed' : (type === 'collision' || (type === 'closure' && !isRamp(item)) ? 'Delay likely' : (intensity || 'Clear')));
-      const critical = isMainlineClosure(item) && /qew|403|skyway/i.test(`${item.roadway || ''} ${ready?.title || item.title || ''}`);
-      return {
-        alert: Boolean(ready?.alert || type),
-        major: Boolean((type === 'collision' || (type === 'closure' && !isRamp(item))) && /burlington|qew|403|skyway/i.test(`${item.municipality || ''} ${item.roadway || ''} ${ready?.title || item.title || ''}`)),
-        critical,
-        title: `${road} → ${dest}`,
-        metric,
-        detail: intensity && place && !minutes ? `${intensity} near ${place}` : placeLine,
-        extra: minutes && place ? `${eventLabel} near ${place}` : '',
-        url: `/traffic/?destination=${routeIdFor(dest)}`
-      };
-    }
-
-    const top = intel?.topSignal;
-    if (top && Number(top.score) >= 90 && /collision|closure|closed/i.test(`${top.headline || ''}`)) {
-      return {
-        alert:true, major:true, critical:false, title:top.headline, metric:'Delay likely',
-        detail:top.location || '', extra:'', url:top.url || '/traffic/'
-      };
-    }
-
     const dest = commuteDestination();
-    const looks = looksLabel(commute?.status?.looks);
-    if (looks) {
-      return {
-        alert:false, major:false, critical:false, title:`QEW → ${dest}`,
-        metric: looks,
-        detail: looks === 'Light traffic' ? 'No major delay' : 'Live conditions',
-        extra:'', url:`/traffic/?destination=${routeIdFor(dest)}`
-      };
+    const destId = routeIdFor(dest);
+    const commute = surface?.routes?.[destId] || surface?.routes?.toronto || {};
+    const seen = new Set();
+    const incidents = [];
+    for (const item of [...(commute.incidents || []), ...(Array.isArray(surface?.incidents) ? surface.incidents : [])]) {
+      const id = String(item.id || `${item.title}|${item.latitude}`);
+      if (seen.has(id)) continue;
+      seen.add(id);
+      incidents.push(item);
     }
-
+    const status = routeDriveStatus(incidents, destId, {
+      officialStatus: commute.status,
+      source: surface?.source || ''
+    });
+    const through = status.through?.[0];
+    const critical = Boolean(through && isMainlineClosure(through) && /qew|403|skyway/i.test(`${through.roadway || ''} ${through.title || ''}`));
     return {
-      alert:false, major:false, critical:false, title:`QEW → ${dest}`,
-      metric:'Clear', detail:'No major delay', extra:'', url:`/traffic/?destination=${routeIdFor(dest)}`
+      alert: status.level === 'delay',
+      major: status.level === 'delay',
+      critical,
+      title: `QEW → ${dest}`,
+      metric: status.minutes ? `+${status.minutes} min` : status.headline,
+      detail: [status.secondary, status.impact].filter(Boolean).join(' · ') || 'No incidents affecting this trip',
+      extra: '',
+      url: `/traffic/?destination=${destId}`
     };
   }
 
@@ -266,9 +223,6 @@ import { buildGoModel } from '/lib/go-times.js';
     const incidents = (Array.isArray(surface?.incidents) ? surface.incidents : []).filter(item => item.affectsSkyway);
     const major = incidents.find(item => item.type === 'collision' || (item.type === 'closure' && !isRamp(item)));
     const watch = incidents.find(item => item.type === 'construction');
-    const raw = String(skyway.value || '').trim();
-    const looks = looksLabel(raw);
-
     if (major) {
       const niagara = /fort erie|niagara|hamilton/i.test(`${major.direction || ''} ${major.title || ''}`);
       const dest = niagara ? 'Niagara' : 'Toronto';
@@ -278,19 +232,9 @@ import { buildGoModel } from '/lib/go-times.js';
         major:true,
         critical: major.type === 'closure',
         title: `Skyway → ${dest}`,
-        metric: minutes ? `+${minutes} min` : (major.type === 'closure' ? 'Closed' : 'Delay likely'),
+        metric: minutes ? `+${minutes} min` : (major.type === 'closure' ? 'Closed' : 'Some slowing'),
         detail: shortPlace(major.nearestRoad) ? `${major.type === 'closure' ? 'Closure' : 'Collision'} near ${shortPlace(major.nearestRoad)}` : (major.title || ''),
         url:`/traffic/?destination=${niagara ? 'hamilton' : 'toronto'}&focus=skyway`
-      };
-    }
-
-    if (looks) {
-      return {
-        alert: looks === 'Heavy', major: looks === 'Heavy', critical:false,
-        title:'Skyway → Toronto',
-        metric: looks,
-        detail: looks === 'Heavy' ? 'Slow approaching the bridge' : '',
-        url:'/traffic/?destination=toronto&focus=skyway'
       };
     }
 
@@ -307,10 +251,9 @@ import { buildGoModel } from '/lib/go-times.js';
     return {
       alert:false, major:false, critical:false,
       title:'Skyway → Toronto',
-      metric:'Cameras available',
+      metric:'Moving well',
       detail:'',
-      url:'/traffic/?destination=toronto&focus=skyway',
-      lowConfidence:true
+      url:'/traffic/?destination=toronto&focus=skyway'
     };
   }
 

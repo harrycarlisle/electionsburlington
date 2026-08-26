@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-08-26T10:22:13.709775-04:00",
   "source": "none",
-  "note": "No vision API key configured. Homepage and traffic page will not pretend a browser pixel heuristic is authoritative.",
+  "note": "No vision API key configured. Do not infer congestion from still images. Future optional fields per camera: officialState, source, weekday, hourBucket, densityScore, availability. Never store faces, plates, or raw frames unless licensing allows.",
   "cameras": []
 }

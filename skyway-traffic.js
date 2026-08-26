@@ -1,10 +1,14 @@
 import {
   ROUTE_START,
+  cameraTrafficState,
   clipPolyline,
-  incidentMatchesRoute,
+  incidentFeatureLabel,
+  incidentOnRouteMap,
+  impactLabel,
+  incidentRelevance,
+  routeDriveStatus,
   selectRouteCameras,
-  shortCameraPlace,
-  delayFromIncident
+  shortCameraPlace
 } from '/lib/traffic-route.js';
 
 const DESTINATIONS = [
@@ -25,11 +29,13 @@ const SKYWAY_VIEWS = {
 };
 
 const live = new Set();
+const unavailable = new Set();
 let cameras = [];
 let surface = null;
 let routesData = null;
 let estimates = {};
 let selectedIndex = 0;
+let selectedIncidentId = null;
 let routeCameras = [];
 let map = null;
 let routeLine = null;
@@ -82,9 +88,13 @@ function destinationLabel() {
   return DESTINATIONS.find(item => item.id === mode)?.label || selectedRoute()?.destination || 'Toronto';
 }
 
-function looksFor(cam) {
-  const key = String(cam.viewId || cam.cameraId);
-  return estimates[key]?.traffic || cam.looks || '';
+function officialCameraState(cam) {
+  const key = String(cam?.viewId || cam?.cameraId || '');
+  const mapped = cam?.trafficState || estimates[key]?.officialState || '';
+  const source = cam?.trafficStateSource || estimates[key]?.source || surface?.source || '';
+  if (!mapped) return '';
+  if (!/travel[- ]?time|speed data|official congestion|mto speed/i.test(String(source))) return '';
+  return mapped;
 }
 
 function clockLabel(value) {
@@ -121,10 +131,17 @@ function camerasForMode() {
 
 function routeIncidents() {
   const route = selectedRoute();
-  return (route?.incidents || []).filter(item => {
-    if (!Number.isFinite(Number(item.latitude)) || !Number.isFinite(Number(item.longitude))) return false;
-    return incidentMatchesRoute(item, mode);
-  });
+  const seen = new Set();
+  const list = [];
+  for (const item of [...(route?.incidents || []), ...(surface?.incidents || [])]) {
+    const id = String(item.id || `${item.title}|${item.latitude}|${item.longitude}`);
+    if (seen.has(id)) continue;
+    if (!Number.isFinite(Number(item.latitude)) || !Number.isFinite(Number(item.longitude))) continue;
+    if (!incidentOnRouteMap(item, mode)) continue;
+    seen.add(id);
+    list.push(item);
+  }
+  return list.slice(0, 4);
 }
 
 function noteInteraction() {
@@ -158,21 +175,10 @@ function renderChips() {
 }
 
 function statusCopy() {
-  const incidents = routeIncidents();
-  const closure = incidents.find(item => item.type === 'closure' || item.type === 'collision');
-  const minutes = delayFromIncident(closure) || delayFromIncident(selectedRoute()?.status);
-  const looks = String(selectedRoute()?.status?.looks || '').toLowerCase();
-  let headline = 'Live cameras';
-  if (closure) headline = /ramp/i.test(`${closure.facility || ''} ${closure.title || ''}`) ? 'Ramp closed' : 'Delay likely';
-  else if (looks === 'heavy') headline = 'Heavy traffic';
-  else if (looks === 'moderate' || looks === 'slow') headline = 'Moderate traffic';
-  else if (looks === 'light' || looks === 'clear') headline = 'Moving well';
-  const detail = closure
-    ? (/ramp/i.test(`${closure.facility || ''} ${closure.title || ''}`)
-      ? `Ramp closure near ${closure.nearestRoad || 'this route'}`
-      : closure.title)
-    : (selectedRoute()?.status?.detail && !/no current camera estimate/i.test(selectedRoute().status.detail) ? selectedRoute().status.detail : '');
-  return { headline, minutes, detail };
+  return routeDriveStatus(routeIncidents(), mode, {
+    officialStatus: selectedRoute()?.status,
+    source: surface?.source || ''
+  });
 }
 
 function renderStatus() {
@@ -187,25 +193,39 @@ function renderStatus() {
       <h2>${esc(copy.headline)}</h2>
       ${copy.minutes ? `<b>+${copy.minutes} min</b>` : ''}
     </div>
-    ${copy.detail ? `<p>${esc(copy.detail)}</p>` : '<p>No major incidents on this route right now.</p>'}`;
+    ${copy.secondary ? `<p class="route-incident-line">${esc(copy.secondary)}</p>` : ''}
+    ${copy.impact ? `<p class="route-impact">${esc(copy.impact)}</p>` : (!copy.secondary ? '<p class="route-incident-line">No incidents affecting this trip right now.</p>' : '')}`;
 }
 
-function puckIcon(number, selected) {
+function cameraStateFor(cam) {
+  return cameraTrafficState(cam, {
+    unavailable: unavailable.has(String(cam?.viewId || cam?.cameraId || '')),
+    officialState: officialCameraState(cam)
+  });
+}
+
+function puckIcon(number, selected, state) {
+  const extra = state && state !== 'unknown' ? ` is-${state}` : '';
   return window.L.divIcon({
-    className: `route-puck${selected ? ' is-selected' : ''}`,
+    className: `route-puck${selected ? ' is-selected' : ''}${extra}`,
     html: `<span>${number}</span>`,
     iconSize: selected ? [34, 34] : [26, 26],
     iconAnchor: selected ? [17, 17] : [13, 13]
   });
 }
 
-function incidentIcon() {
+function incidentIcon(selected) {
   return window.L.divIcon({
-    className: 'route-incident',
+    className: `route-incident${selected ? ' is-selected' : ''}`,
     html: '<span>!</span>',
-    iconSize: [22, 22],
-    iconAnchor: [11, 11]
+    iconSize: selected ? [26, 26] : [22, 22],
+    iconAnchor: selected ? [13, 13] : [11, 11]
   });
+}
+
+function fitRoute() {
+  if (!map || !routeLine) return;
+  map.fitBounds(routeLine.getBounds(), { padding: [36, 36], maxZoom: 11 });
 }
 
 function ensureMap(line) {
@@ -228,7 +248,7 @@ function ensureMap(line) {
     weight: 5,
     opacity: 0.88
   }).addTo(map);
-  if (line.length) map.fitBounds(routeLine.getBounds(), { padding: [28, 28], maxZoom: 12 });
+  if (line.length) fitRoute();
 }
 
 function renderMarkers() {
@@ -236,8 +256,9 @@ function renderMarkers() {
   puckLayer.clearLayers();
   incidentLayer.clearLayers();
   routeCameras.forEach((cam, index) => {
+    const state = cameraStateFor(cam);
     const marker = window.L.marker([cam.latitude, cam.longitude], {
-      icon: puckIcon(cam.puck || index + 1, index === selectedIndex),
+      icon: puckIcon(cam.puck || index + 1, index === selectedIndex, state.puck),
       keyboard: true,
       title: `Camera ${cam.puck || index + 1}`
     });
@@ -248,14 +269,23 @@ function renderMarkers() {
     puckLayer.addLayer(marker);
   });
   routeIncidents().forEach(item => {
-    const marker = window.L.marker([item.latitude, item.longitude], { icon: incidentIcon(), title: item.nearestRoad || item.title });
+    const selected = selectedIncidentId && String(item.id) === String(selectedIncidentId);
+    const marker = window.L.marker([item.latitude, item.longitude], {
+      icon: incidentIcon(selected),
+      title: incidentFeatureLabel(item) || item.title
+    });
     marker.on('click', () => {
       noteInteraction();
+      selectedIncidentId = item.id || item.title;
+      renderMarkers();
       if (popup) popup.remove();
-      popup = window.L.popup({ className: 'route-incident-popup', closeButton: true })
+      const relevance = incidentRelevance(item, mode);
+      const impact = impactLabel(relevance);
+      popup = window.L.popup({ className: 'route-incident-popup', closeButton: true, autoPan: false })
         .setLatLng([item.latitude, item.longitude])
-        .setContent(`<strong>${esc(item.nearestRoad ? `⚠ ${item.nearestRoad}` : 'Incident')}</strong><p>${esc(item.title)}</p>`)
+        .setContent(`<strong>${esc(incidentFeatureLabel(item))}</strong>${impact ? `<p>${esc(impact)}</p>` : ''}`)
         .openOn(map);
+      fitRoute();
     });
     incidentLayer.addLayer(marker);
   });
@@ -277,10 +307,13 @@ function renderPreview() {
     return;
   }
   const updated = clockLabel(surface?.generatedAt);
-  const looks = looksFor(cam);
+  const state = cameraStateFor(cam);
   host.innerHTML = `
     <div class="camera-preview-head">
-      <p>Camera ${cam.puck || selectedIndex + 1} · ${esc(shortCameraPlace(cam))}</p>
+      <div class="camera-preview-title">
+        <p>Camera ${cam.puck || selectedIndex + 1} · ${esc(shortCameraPlace(cam))}</p>
+        ${state.label ? `<p class="camera-traffic-state">${esc(state.label)}</p>` : ''}
+      </div>
       <span class="live-chip"><i aria-hidden="true"></i> LIVE</span>
     </div>
     <div class="camera-preview-shot" data-camera-swipe>
@@ -290,7 +323,7 @@ function renderPreview() {
       </figure>
       <button type="button" class="camera-nav is-next" data-camera-step="1" aria-label="Next camera">›</button>
     </div>
-    <p class="camera-preview-meta">${esc(cameraCaption(cam))}${updated ? ` · Updated ${esc(updated)}` : ''}${looks ? ` · Traffic looks ${esc(looks)}` : ''}</p>
+    <p class="camera-preview-meta"><span>${esc(cameraCaption(cam))}</span>${updated ? `<span>Updated ${esc(updated)}</span>` : ''}</p>
     <div class="camera-pucks" role="tablist" aria-label="Cameras along this route">
       ${routeCameras.map((item, index) => `<button type="button" role="tab" aria-selected="${index === selectedIndex}" data-camera-index="${index}">${item.puck || index + 1}</button>`).join('')}
     </div>`;
@@ -363,14 +396,19 @@ function paintStatus() {
 function bindImage(image) {
   if (!image || image.dataset.bound) return;
   image.dataset.bound = '1';
+  const id = image.dataset.camera;
   const fail = () => {
-    live.delete(image.dataset.camera);
+    live.delete(id);
+    unavailable.add(id);
     paintStatus();
+    renderMarkers();
   };
   image.addEventListener('load', () => {
     if (!image.naturalWidth || looksUnavailable(image)) return fail();
-    live.add(image.dataset.camera);
+    live.add(id);
+    unavailable.delete(id);
     paintStatus();
+    renderMarkers();
   });
   image.addEventListener('error', fail);
 }
@@ -394,6 +432,7 @@ function renderAll() {
     if (skyIndex >= 0) selectedIndex = skyIndex;
   }
   if (selectedIndex >= routeCameras.length) selectedIndex = 0;
+  selectedIncidentId = null;
   renderChips();
   renderStatus();
   ensureMap(lineCoords(mode));

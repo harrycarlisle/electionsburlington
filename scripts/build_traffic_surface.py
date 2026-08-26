@@ -14,10 +14,12 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from traffic_context import (  # noqa: E402
     cameras_along_route,
-    combine_looks,
+    decorate_incident,
     distance_to_polyline_km,
     haversine_km,
+    incident_relevance,
     normalize_incident,
+    route_drive_status,
 )
 DATA = ROOT / "data"
 CAMERAS = DATA / "traffic-cameras.json"
@@ -55,9 +57,9 @@ def load_json(path: pathlib.Path, default):
 
 
 WESTBOUND_VIA = {
-    # Burlington-side QEW before the Skyway, so OSRM stays on the highway
-    # instead of looping the harbour to snap to a mid-bridge coordinate.
-    "hamilton": [{"lat": 43.31469, "lon": -79.80572}],
+    # Eastport keeps Hamilton on the Skyway → harbour crossing instead of
+    # bouncing back onto the QEW toward Brant Street.
+    "hamilton": [{"lat": 43.2845, "lon": -79.7875}],
     "stoney-creek": [{"lat": 43.31469, "lon": -79.80572}, {"lat": 43.24683, "lon": -79.75679}],
     "niagara-falls": [{"lat": 43.31469, "lon": -79.80572}, {"lat": 43.24683, "lon": -79.75679}],
 }
@@ -131,32 +133,29 @@ def incident_on_route(incident, line):
     return dist <= 2.2
 
 
-def route_status(incidents, looks):
-    serious = [item for item in incidents if item["type"] in {"collision", "closure"}]
-    if serious:
-        lead = serious[0]
-        return {
-            "level": "delay",
-            "headline": "Delay likely" if lead["type"] == "collision" else "Delay likely",
-            "detail": lead["title"],
-            "looks": combine_looks(looks) or "",
-        }
-    looks_label = combine_looks(looks)
-    if looks_label:
-        return {"level": looks_label, "headline": f"Traffic looks {looks_label}", "detail": "", "looks": looks_label}
-    return {"level": "unknown", "headline": "Check cameras", "detail": "No current camera estimate.", "looks": ""}
+def route_incidents_for(dest_id, incidents, line):
+    matched = []
+    for item in incidents:
+        if not incident_on_route(item, line):
+            continue
+        relevance = incident_relevance(item, dest_id)
+        if relevance not in {"through", "local"}:
+            continue
+        matched.append(decorate_incident(item, dest_id))
+    return matched[:3]
 
 
-def skyway_status(incidents, cameras):
-    skyway_incidents = [item for item in incidents if item.get("affectsSkyway") and item["type"] in {"collision", "closure"}]
+def skyway_status(incidents):
+    skyway_incidents = [
+        item for item in incidents
+        if item.get("affectsSkyway")
+        and item["type"] in {"collision", "closure"}
+        and incident_relevance(item, "hamilton" if "fort erie" in f"{item.get('direction', '')} {item.get('title', '')}".lower() else "toronto") == "through"
+    ]
     if skyway_incidents:
         lead = skyway_incidents[0]
         return {"value": "Closure" if lead["type"] == "closure" else "Collision", "alert": True, "detail": lead["title"]}
-    looks = [c.get("looks") for c in cameras if c.get("cameraId") in {4, 219, 220} or "Skyway" in str(c.get("cameraName") or "")]
-    label = combine_looks(looks)
-    if label:
-        return {"value": label.title(), "alert": False, "detail": f"Traffic looks {label}"}
-    return {"value": "Check cameras", "alert": False, "detail": ""}
+    return {"value": "Moving well", "alert": False, "detail": ""}
 
 
 def main() -> int:
@@ -196,9 +195,8 @@ def main() -> int:
         if not line:
             continue
         matched = cameras_along_route(cameras, line)
-        route_incidents = [item for item in incidents if incident_on_route(item, line)]
-        looks = [cam.get("looks") for cam in matched]
-        status = route_status(route_incidents, looks)
+        route_incidents = route_incidents_for(dest_id, incidents, line)
+        status = route_drive_status(route_incidents, dest_id)
         routes_out[dest_id] = {
             "id": dest_id,
             "label": dest["label"],
@@ -207,14 +205,16 @@ def main() -> int:
             "geometrySource": source,
             "metres": metres,
             "status": status,
-            "incidents": route_incidents[:3],
+            "incidents": route_incidents,
             "cameras": [
                 {
                     "cameraId": cam.get("cameraId"),
                     "viewId": cam.get("viewId"),
                     "cameraName": cam.get("cameraName"),
                     "viewName": cam.get("viewName"),
-                    "looks": cam.get("looks") or "",
+                    "looks": "",
+                    "trafficState": None,
+                    "trafficStateSource": None,
                     "routeOrder": cam.get("routeOrder"),
                 }
                 for cam in matched
@@ -224,41 +224,24 @@ def main() -> int:
 
     commute_id = "hamilton" if now.hour >= 15 else "toronto"
     commute = routes_out.get(commute_id) or routes_out.get("toronto", {})
-    homepage_traffic = None
-    homepage_incidents = [
-        item for item in incidents
-        if item["type"] in {"collision", "closure"}
-        and item["municipality"] in {"Burlington", "Oakville", "Hamilton", "Stoney Creek"}
-    ]
-    if homepage_incidents:
-        lead = homepage_incidents[0]
-        homepage_traffic = {
-            "label": "Traffic",
-            "title": lead["title"],
-            "context": " · ".join(part for part in (lead["municipality"], lead["nearestRoad"], lead.get("updatedLabel")) if part),
-            "impact": lead["impact"],
-            "freshness": lead.get("updatedLabel") or "",
-            "url": "/traffic/",
-            "alert": True,
-        }
-    elif commute.get("status", {}).get("looks"):
-        dest_label = commute.get("label") or commute_id.replace("-", " ").title()
-        homepage_traffic = {
-            "label": "Traffic",
-            "title": f"{commute['status']['looks'].title()} toward {dest_label}",
-            "context": f"Downtown Burlington → {dest_label}",
-            "impact": "",
-            "freshness": "",
-            "url": "/traffic/",
-            "alert": False,
-        }
+    dest_label = commute.get("label") or commute_id.replace("-", " ").title()
+    commute_status = commute.get("status") or route_drive_status([], commute_id)
+    homepage_traffic = {
+        "label": "Traffic",
+        "title": commute_status.get("headline") or "Moving well",
+        "context": commute_status.get("detail") or f"Downtown Burlington → {dest_label}",
+        "impact": commute_status.get("impact") or "",
+        "freshness": "",
+        "url": f"/traffic/?destination={commute_id}",
+        "alert": commute_status.get("level") == "delay",
+    }
 
     payload = {
         "generatedAt": now.isoformat(),
         "source": "Ontario 511 events + OSRM geometry + camera inventory",
         "licence": "Open Government Licence - Ontario",
         "incidents": incidents[:12],
-        "skyway": skyway_status(incidents, cameras),
+        "skyway": skyway_status(incidents),
         "homepageTraffic": homepage_traffic,
         "routes": routes_out,
         "attribution": "Map routes from OpenStreetMap via OSRM. Camera and incident data © King's Printer for Ontario.",

@@ -332,3 +332,193 @@ def combine_looks(values):
     if "heavy" in usable or usable.count("moderate") >= 1:
         return "moderate" if usable.count("light") >= usable.count("moderate") and "heavy" not in usable else ("heavy" if "heavy" in usable else "moderate")
     return "light"
+
+
+EASTBOUND_ROUTES = {"toronto", "oakville"}
+WESTBOUND_ROUTES = {"hamilton", "stoney-creek", "niagara-falls"}
+
+
+def travel_direction(route_id):
+    return "west" if route_id in WESTBOUND_ROUTES else "east"
+
+
+def delay_from_incident(item):
+    if not item:
+        return None
+    for key in ("delayMinutes", "delay", "minutes"):
+        try:
+            value = float(item.get(key))
+        except (TypeError, ValueError):
+            continue
+        if value > 0:
+            return int(round(value))
+    status = item.get("status") if isinstance(item.get("status"), dict) else {}
+    try:
+        value = float(status.get("delayMinutes"))
+    except (TypeError, ValueError):
+        return None
+    return int(round(value)) if value > 0 else None
+
+
+def incident_direction_side(incident):
+    hay = f"{incident.get('direction', '')} {incident.get('title', '')} {incident.get('rawHeadline', '')}".lower()
+    east = bool(re.search(r"toronto-bound|toronto bound|eastbound|east bound", hay))
+    west = bool(re.search(r"fort erie|niagara-bound|hamilton.?bound|westbound|west bound", hay))
+    if east and not west:
+        return "east"
+    if west and not east:
+        return "west"
+    if "toronto" in hay and not west:
+        return "east"
+    return "unknown"
+
+
+def incident_facility_kind(incident):
+    named = str(incident.get("facility") or "").lower()
+    if named in {"on-ramp", "off-ramp"}:
+        return named
+    hay = f"{incident.get('title', '')} {incident.get('rawHeadline', '')} {incident.get('facility', '')}".lower()
+    if "off-ramp" in hay or "off ramp" in hay:
+        return "off-ramp"
+    if "on-ramp" in hay or "on ramp" in hay:
+        return "on-ramp"
+    if re.search(r"\bramp\b", hay):
+        return "ramp"
+    return "mainline"
+
+
+def short_incident_place(incident):
+    return re.sub(r"\s+(Drive|Rd|Road|Avenue|Ave|Street|St|Boulevard|Blvd|Line)\.?$", "", str(incident.get("nearestRoad") or ""), flags=re.I).strip()
+
+
+def incident_feature_label(incident):
+    if not incident:
+        return ""
+    facility_name = incident_facility_kind(incident)
+    direction = str(incident.get("direction") or "").strip()
+    place = incident.get("nearestRoad") or ""
+    hay = f"{incident.get('title', '')} {incident.get('rawHeadline', '')}"
+    lane = re.search(r"((?:right|left|centre|center|two|three|\d+)\s+(?:mainline\s+)?lanes?)\s+(closed|blocked)", hay, re.I)
+    if lane:
+        return " ".join(part for part in (direction, f"{lane.group(1).lower()} {lane.group(2).lower()}") if part)
+    if facility_name in {"on-ramp", "off-ramp", "ramp"}:
+        feature = "ramp" if facility_name == "ramp" else facility_name
+        return " ".join(part for part in (direction, f"{feature} closed", f"at {place}" if place else "") if part)
+    kind = incident.get("type")
+    if kind == "collision":
+        return f"Collision near {place}" if place else (incident.get("title") or "Collision")
+    if kind == "closure":
+        return f"Mainline closure near {place}" if place else (incident.get("title") or "Closure")
+    if kind == "construction":
+        return f"Construction near {place}" if place else (incident.get("title") or "Construction")
+    return incident.get("title") or "Incident"
+
+
+def incident_matches_route(incident, route_id):
+    hay = f"{incident.get('direction', '')} {incident.get('title', '')} {incident.get('rawHeadline', '')}".lower()
+    if route_id in EASTBOUND_ROUTES and "fort erie" in hay and "toronto" not in hay:
+        return False
+    if route_id in WESTBOUND_ROUTES and re.search(r"toronto-bound|toronto bound", hay) and not re.search(r"fort erie|niagara|hamilton", hay):
+        return False
+    return True
+
+
+def incident_relevance(incident, route_id):
+    if not incident:
+        return "none"
+    side = incident_direction_side(incident)
+    travel = travel_direction(route_id)
+    if side != "unknown" and side != travel:
+        return "opposite"
+    if not incident_matches_route(incident, route_id):
+        return "none"
+    facility_name = incident_facility_kind(incident)
+    if delay_from_incident(incident):
+        return "through"
+    if facility_name in {"on-ramp", "off-ramp", "ramp"}:
+        return "local"
+    if incident.get("type") in {"collision", "lanes", "closure"}:
+        return "through"
+    return "local"
+
+
+def impact_label(relevance):
+    return {
+        "local": "Local access affected",
+        "opposite": "Opposite direction",
+        "through": "Likely affecting traffic",
+    }.get(relevance, "")
+
+
+def official_congestion_trusted(source):
+    return bool(re.search(r"travel[- ]?time|speed data|official congestion|mto speed", str(source or ""), re.I))
+
+
+def _headline_with_place(incident, kind):
+    place = short_incident_place(incident or {})
+    if not place:
+        return {"major": "Major delay", "heavy": "Heavy traffic", "slow": "Some slowing"}.get(kind, "Moving well")
+    if kind == "major":
+        return f"Major delay near {place}"
+    if kind == "heavy":
+        return f"Heavy near {place}"
+    if kind == "slow":
+        return f"Slower near {place}"
+    return "Moving well"
+
+
+def route_drive_status(incidents, route_id, official_status=None, source=""):
+    items = [item for item in (incidents or []) if item]
+    through = [item for item in items if incident_relevance(item, route_id) == "through"]
+    local = [item for item in items if incident_relevance(item, route_id) == "local"]
+    delays = [delay_from_incident(item) or 0 for item in items]
+    delays.append(delay_from_incident(official_status) or 0)
+    official_delay = max(delays) if delays else 0
+    looks = str((official_status or {}).get("looks") or "").lower()
+    trust_looks = official_congestion_trusted(source) and looks in {"heavy", "moderate", "slow", "light", "clear"}
+
+    headline = "Moving well"
+    level = "clear"
+    evidence = "no-congestion-data"
+    if official_delay >= 20:
+        headline, level, evidence = _headline_with_place(through[0] if through else None, "major"), "delay", "official-delay"
+    elif official_delay >= 10:
+        headline, level, evidence = _headline_with_place(through[0] if through else None, "heavy"), "delay", "official-delay"
+    elif official_delay >= 5:
+        headline, level, evidence = _headline_with_place(through[0] if through else None, "slow"), "watch", "official-delay"
+    elif trust_looks and looks == "heavy":
+        headline, level, evidence = _headline_with_place(through[0] if through else None, "heavy"), "delay", "official-congestion"
+    elif trust_looks and looks in {"moderate", "slow"}:
+        headline, level, evidence = _headline_with_place(through[0] if through else None, "slow"), "watch", "official-congestion"
+    elif through:
+        lead = through[0]
+        place = short_incident_place(lead)
+        if lead.get("type") == "closure" and incident_facility_kind(lead) == "mainline":
+            headline = f"Heavy near {place}" if place else "Heavy traffic"
+            level = "delay"
+        else:
+            headline = f"Some slowing near {place}" if place else "Some slowing"
+            level = "watch"
+        evidence = "official-mainline-incident"
+
+    primary = through[0] if through else (local[0] if local else None)
+    relevance = incident_relevance(primary, route_id) if primary else "none"
+    return {
+        "level": level,
+        "headline": headline,
+        "detail": incident_feature_label(primary) if primary else "",
+        "impact": impact_label(relevance),
+        "looks": "",
+        "evidence": evidence,
+        "minutes": official_delay or None,
+    }
+
+
+def decorate_incident(incident, route_id):
+    item = dict(incident)
+    relevance = incident_relevance(incident, route_id)
+    item["relevance"] = relevance
+    item["throughTraffic"] = relevance == "through"
+    item["impactKind"] = impact_label(relevance)
+    item["featureLabel"] = incident_feature_label(incident)
+    return item
