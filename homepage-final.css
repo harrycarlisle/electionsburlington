@@ -405,6 +405,7 @@ html[data-theme="dark"] .mini-heading{border-color:#30404b}
    reopen sizing/spacing after this pass.
    -------------------------------------------------- */
 html body.home-page .home-main{padding-bottom:8px}
+html body.home-page .site-footer{margin-top:32px!important}
 
 html body.home-page .explore-band{
   display:grid!important;
@@ -561,7 +562,7 @@ html body.home-page .home-work-cta:focus-visible{
 
 @media(min-width:901px){
   html body.home-page .explore-band{
-    grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)!important;
+    grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)!important;
     column-gap:44px!important;
     row-gap:0!important;
     gap:0 44px!important;
@@ -589,11 +590,11 @@ html body.home-page .home-work-cta:focus-visible{
     align-items:center;
     gap:28px;
     margin-top:38px;
-    padding:20px 22px
+    padding:18px 22px
   }
-  html body.home-page .home-work-kicker{margin-bottom:8px;font-size:11px}
-  html body.home-page .home-work-band h2{font-size:23px!important}
-  html body.home-page .home-work-copy{margin-top:8px;font-size:14px;line-height:1.4}
+  html body.home-page .home-work-kicker{margin:0 0 8px!important;font-size:11px}
+  html body.home-page .home-work-band h2{margin:0!important;font-size:23px!important}
+  html body.home-page .home-work-copy{max-width:none;margin:8px 0 0!important;font-size:14px;line-height:1.4}
   html body.home-page .home-work-cta{
     width:auto;
     height:39px;
