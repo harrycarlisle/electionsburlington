@@ -4,15 +4,15 @@
 
   const QA_TWO = [
     {
-      id: 'qa-crime',
-      headline: 'How bad is crime in Burlington, really?',
-      shortHeadline: 'How bad is crime in Burlington, really?',
+      id: 'qa-police',
+      headline: 'Halton police investigate overnight incident in Burlington neighbourhood.',
+      shortHeadline: 'Halton police investigate overnight incident in Burlington neighbourhood.',
       storyUrl: '/stories/how-bad-is-burlington-crime/'
     },
     {
       id: 'qa-data-centre',
-      headline: 'Burlington’s proposed data centre is not what many people think.',
-      shortHeadline: 'Burlington’s proposed data centre is not what many people think.',
+      headline: 'Data centre proposal at 3110 S Service Rd raises neighbourhood questions.',
+      shortHeadline: 'Data centre proposal at 3110 S Service Rd raises neighbourhood questions.',
       storyUrl: '/stories/burlington-data-centre-not-ai/'
     }
   ];
