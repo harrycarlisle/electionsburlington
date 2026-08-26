@@ -73,5 +73,32 @@ const first = pickNext(Object.values(ideas), afternoon, { clear: true }, seen, '
 const second = pickNext(Object.values(ideas), afternoon, { clear: true }, [first.id], first.id, () => 0.99);
 assert(first && second && first.id !== second.id, 'session avoids immediate repeat when others exist');
 
+const market = {
+  id: 'farmers-market',
+  indoorOutdoor: 'outdoor',
+  safety: 'public',
+  nightOk: true,
+  tags: ['market', 'event'],
+  hours: {
+    days: ['Wed', 'Fri', 'Sat'],
+    open: '07:00',
+    close: '14:30',
+    soonMinutes: 90,
+    seasonStart: '2026-05-20',
+    seasonEnd: '2026-10-24',
+    evening: {
+      days: ['Wed'],
+      seasonStart: '2026-06-03',
+      seasonEnd: '2026-09-30',
+      open: '14:30',
+      close: '19:30'
+    }
+  }
+};
+assert(scoreIdea(market, now({ hour: 17, minute: 30, isDaylight: false })) > 0, 'Wed 5:30 p.m. evening market eligible');
+assert(scoreIdea(market, now({ hour: 21, isDaylight: false })) === 0, 'Wed 9 p.m. market ended');
+assert(scoreIdea(market, now({ hour: 15, weekday: 'Fri', weekdayIndex: 5 })) === 0, 'Fri 3 p.m. regular market ended');
+assert(scoreIdea(market, now({ date: '2026-10-25', hour: 10 })) === 0, 'after Oct 24 2026 no market');
+
 if (failed) process.exit(1);
 console.log('PASS after-dark and weather ranking');

@@ -1,6 +1,7 @@
 (() => {
   const qs = selector => document.querySelector(selector);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+  const CLOSE_SVG = '<svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
   const storage = {
     done: 'burlington-news-passport',
     want: 'burlington-news-passport-want',
@@ -214,7 +215,7 @@
 
   function paintSavedEvents() {
     const list = events.filter(event => savedEvents.has(event.id));
-    qs('#savedEvents').innerHTML = list.length ? list.map(event => `<div class="saved-event"><time>${esc(event.dateLabel.split('·')[0])}</time><strong>${esc(event.title)}</strong><button type="button" data-remove-event="${esc(event.id)}" aria-label="Remove ${esc(event.title)}">×</button></div>`).join('') : '<p class="empty-note">Save an event and it will appear here.</p>';
+    qs('#savedEvents').innerHTML = list.length ? list.map(event => `<div class="saved-event"><time>${esc(event.dateLabel.split('·')[0])}</time><strong>${esc(event.title)}</strong><button type="button" class="icon-action" data-remove-event="${esc(event.id)}" aria-label="Remove ${esc(event.title)}">${CLOSE_SVG}</button></div>`).join('') : '<p class="empty-note">Save an event and it will appear here.</p>';
   }
 
   function paintPassport() {
@@ -263,7 +264,9 @@
       const button = event.target.closest('[data-date]');
       if (!button) return;
       selectedDate = button.dataset.date;
+      calendarMode = 'today';
       showAll = false;
+      qs('#calendarTitle').textContent = new Date(`${selectedDate}T12:00:00`).toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'});
       paintMonth();
       paintEvents();
     });
@@ -317,7 +320,14 @@
       if (!eventResponse.ok || !placeResponse.ok) throw new Error('Explore data unavailable');
       const eventData = await eventResponse.json();
       const placeData = await placeResponse.json();
-      events = eventData.events || [];
+      if (!window.BurlingtonExploreRecurrence) {
+        try {
+          window.BurlingtonExploreRecurrence = await import('/lib/explore-recurrence.mjs');
+        } catch (_) {}
+      }
+      events = window.BurlingtonExploreRecurrence
+        ? window.BurlingtonExploreRecurrence.mergeExploreEvents(eventData)
+        : (eventData.events || []);
       ideas = eventData.boredIdeas || [];
       places = placeData.places || [];
       bonus = placeData.bonus;

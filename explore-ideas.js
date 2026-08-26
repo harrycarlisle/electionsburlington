@@ -3,6 +3,7 @@ import {
   pickNext as rankPick,
   afterDarkMode
 } from '/lib/explore-ideas.mjs';
+import { CLOSE_SVG } from '/lib/icons.js';
 
 const STORAGE_PREFS = 'burlington-news-bored-prefs';
 const STORAGE_SEEN = 'burlington-news-bored-seen';
@@ -136,8 +137,8 @@ function ideaMarkup(idea) {
   const image = idea.image
     ? `<div class="bored-visual"><img src="${esc(imageSrc(idea.image))}" alt="${esc(idea.imageAlt || '')}" loading="lazy">${idea.credit && !idea.illustration && !/^Burlington News/i.test(idea.credit) ? `<span class="image-credit">${esc(idea.credit)}</span>` : ''}</div>`
     : '';
-  const maps = `<a class="bored-maps" href="${esc(mapsUrl(idea))}" target="_blank" rel="noopener">Open in Maps ↗</a>`;
-  return `${image}<div class="bored-copy"><strong>${esc(idea.title)}</strong><p>${esc(idea.description || idea.copy || '')}</p><button class="primary-button idea-shuffle" type="button" data-idea-shuffle>Another idea ↻</button><div class="bored-actions"><button type="button" data-bored="like" class="${pref.like ? 'is-on' : ''}" aria-pressed="${pref.like ? 'true' : 'false'}">♡ Like</button><button type="button" data-bored="skip" class="${pref.skip ? 'is-on' : ''}" aria-pressed="${pref.skip ? 'true' : 'false'}">× Not for me</button></div>${maps}</div>`;
+  const maps = `<a class="bored-maps" href="${esc(mapsUrl(idea))}" target="_blank" rel="noopener">Open in Maps</a>`;
+  return `${image}<div class="bored-copy"><strong>${esc(idea.title)}</strong><p>${esc(idea.description || idea.copy || '')}</p><button class="primary-button idea-shuffle" type="button" data-idea-shuffle>Another idea</button><div class="bored-actions"><button type="button" data-bored="like" class="${pref.like ? 'is-on' : ''}" aria-pressed="${pref.like ? 'true' : 'false'}">Like</button><button type="button" data-bored="skip" class="${pref.skip ? 'is-on' : ''}" aria-pressed="${pref.skip ? 'true' : 'false'}">${CLOSE_SVG}<span>Not for me</span></button></div>${maps}</div>`;
 }
 
 function mountExplore(root, extraButton) {

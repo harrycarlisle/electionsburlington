@@ -122,6 +122,10 @@ def municipality_for(lat, lon, hay=""):
         return "Niagara"
     if lat < 43.24 and lon > -79.72:
         return "Grimsby" if lon > -79.62 else "Stoney Creek"
+    if lat >= 43.61 and lon > -79.56:
+        return "Toronto"
+    if lat >= 43.50 and lon > -79.68:
+        return "Mississauga"
     if lon > -79.72 or lat > 43.407:
         return "Oakville"
     if lat < 43.292:

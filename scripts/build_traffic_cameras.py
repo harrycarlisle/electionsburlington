@@ -25,6 +25,8 @@ PRIMARY_IDS = {
 CORRIDOR_IDS = PRIMARY_IDS | {
     211, 212, 213, 214, 215, 216, 223, 236, 237, 238, 239, 240, 241, 242,
     1411, 1227, 1285, 245, 243,
+    # Spaced QEW / Gardiner cameras east of Oakville toward Toronto.
+    247, 1159, 250, 252, 254, 256, 258, 260, 799, 797, 795, 786,
 }
 SKYWAY_VIEW_NAMES = {
     10: "Burlington Skyway — Fort Erie-bound",
@@ -68,17 +70,39 @@ def direction_from_view(description: str, location: str) -> str:
     return str(description or "").strip()
 
 
-def camera_name(location: str, view_id: int, camera_id: int, direction: str) -> str:
+def official_name(location: str, view_id: int, camera_id: int) -> str:
+    if view_id in SKYWAY_VIEW_NAMES:
+        return SKYWAY_VIEW_NAMES[view_id]
+    if camera_id in SKYWAY_CAMERA_NAMES:
+        return SKYWAY_CAMERA_NAMES[camera_id]
+    return str(location or "").strip() or "QEW camera"
+
+
+def display_name(location: str, view_id: int, camera_id: int) -> str:
     if view_id in SKYWAY_VIEW_NAMES:
         return SKYWAY_VIEW_NAMES[view_id]
     if camera_id in SKYWAY_CAMERA_NAMES:
         return SKYWAY_CAMERA_NAMES[camera_id]
     official = str(location or "").strip()
+    match = re.match(
+        r"^(QEW|Gardiner Expressway)\s+(at|east of|west of|south of|near)\s+(.+)$",
+        official,
+        re.I,
+    )
+    if match:
+        road = "QEW" if match.group(1).upper().startswith("QEW") else "Gardiner"
+        place = re.sub(r"\s+\(\d+\)$", "", match.group(3)).strip()
+        rel = match.group(2).lower()
+        if rel in {"at", "near"}:
+            return f"{road} · {place}"
+        return f"{road} {rel} {place}"
     if official.startswith("QEW at ") or official.startswith("QEW East of ") or official.startswith("QEW West of "):
         return official
-    if official:
-        return official
-    return "QEW camera"
+    return official or "QEW camera"
+
+
+def camera_name(location: str, view_id: int, camera_id: int, direction: str) -> str:
+    return official_name(location, view_id, camera_id)
 
 
 def view_name(direction: str, location: str) -> str:
@@ -120,12 +144,16 @@ def main() -> int:
             description = str(view.get("Description") or "").strip()
             direction = direction_from_view(description, location)
             name = camera_name(location, view_id, camera_id, direction)
+            shown = display_name(location, view_id, camera_id)
             if name.lower() == "guelph" or name.lower().endswith(" at guelph"):
                 name = "QEW at Guelph Line"
+                shown = "QEW · Guelph Line"
             rows.append({
                 "cameraId": camera_id,
                 "viewId": view_id,
                 "cameraName": name,
+                "officialName": name,
+                "displayName": shown,
                 "viewName": view_name(direction, name),
                 "roadway": roadway if roadway.upper() != "QEW" else "QEW",
                 "nearestRoad": road if road.lower() != "guelph" else "Guelph Line",

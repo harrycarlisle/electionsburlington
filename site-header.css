@@ -93,8 +93,8 @@ html body .header-controls{
   justify-content:flex-end!important
 }
 html body .header-controls .header-weather{order:1}
-html body .header-controls .header-theme-toggle{order:2}
-html body .header-controls .header-search{order:3}
+html body .header-controls .header-search{order:2}
+html body .header-controls .header-theme-toggle{order:3}
 html body .header-controls .menu-icon-button,
 html body .header-controls .menu{order:4}
 html body .header-theme-toggle{display:none}

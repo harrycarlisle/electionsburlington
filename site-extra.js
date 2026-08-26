@@ -32,7 +32,11 @@
       const mode = theme === 'auto' ? 'auto' : (theme === 'dark' ? 'dark' : 'light');
       const appearance = window.BurlingtonTheme.apply(mode, persist);
       document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+        const target = appearance === 'dark' ? 'light' : 'dark';
+        const label = `Switch to ${target} mode`;
         button.innerHTML = themeIcon(appearance);
+        button.setAttribute('aria-label', label);
+        button.setAttribute('title', label);
       });
       return appearance;
     }
@@ -41,8 +45,10 @@
     root.style.colorScheme = next;
     document.querySelectorAll('[data-theme-toggle]').forEach(button => {
       const target = next === 'dark' ? 'light' : 'dark';
+      const label = `Switch to ${target} mode`;
       button.innerHTML = themeIcon(next);
-      button.setAttribute('aria-label', `Switch to ${target} mode`);
+      button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
     });
     if (persist) try { localStorage.setItem(storageKey, next); } catch (_) {}
     return next;
@@ -79,8 +85,8 @@
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826tb', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826hf', 'site-header');
-    ensureStyle('/desktop-system.css?v=20260826hf', 'desktop-system');
+    ensureStyle('/site-header.css?v=20260826ta', 'site-header');
+    ensureStyle('/desktop-system.css?v=20260826ta', 'desktop-system');
   }
 
   function ensureUtilityBar() {
@@ -106,7 +112,7 @@
 
   const BRAND_ICON = '/assets/brand/favicon-32x32.png';
   const BRAND_TOUCH = '/assets/brand/apple-touch-icon.png';
-  const BRAND_MARK = '/logo-mark.png?v=20260826b';
+  const BRAND_MARK = '/logo-mark.png?v=20260826ta';
 
   function brandMarkup() {
     return `<img class="news-brand-logo" src="${BRAND_MARK}" alt="">`;
@@ -498,12 +504,12 @@
       weather = controls.querySelector('[data-weather-chip]');
       try { window.BurlingtonWeather?.load(); } catch (_) {}
     } else if (!controls.contains(weather)) {
-      controls.insertBefore(weather, search || null);
+      controls.insertBefore(weather, search || controls.firstChild);
     }
+    if (theme && search) search.after(theme);
     if (!theme) {
-      if (weather) weather.insertAdjacentHTML('afterend', themeToggleMarkup());
-      else if (search) search.insertAdjacentHTML('beforebegin', themeToggleMarkup());
-      else controls.insertAdjacentHTML('afterbegin', themeToggleMarkup());
+      if (search) search.insertAdjacentHTML('afterend', themeToggleMarkup());
+      else controls.insertAdjacentHTML('beforeend', themeToggleMarkup());
       theme = controls.querySelector('.header-theme-toggle');
       theme?.addEventListener('click', event => {
         event.preventDefault();
@@ -630,7 +636,7 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826hf', 'site-header');
+      ensureStyle('/site-header.css?v=20260826ta', 'site-header');
       ensureStyle('/desktop-system.css?v=20260826hf', 'desktop-system');
     }
     ensureScript('/theme-boot.js?v=20260826ds', 'theme-boot');

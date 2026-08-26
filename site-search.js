@@ -35,6 +35,7 @@
     {title:'What Ontario students can actually be searched for',url:'/stories/ontario-student-rights-school/',section:'Schools',keywords:'teacher phone detention bag locker search student rights school'},
     {title:'730 Brant sat empty for more than a decade, then caught fire',url:'/stories/730-brant-vacant-building/',section:'Development',keywords:'abandoned vacant building fire Brant Street owner redevelopment'},
     {title:'Explore Burlington',url:'/explore/',section:'Explore',keywords:'this weekend bored passport calendar places free farmers market date night things to do'},
+    {title:'Burlington Farmers Market',url:'/events/burlington-farmers-market/',section:'Events',keywords:'farmers market lions club wednesday friday saturday evening burlington centre'},
     {title:'Burlington food passport',url:'/food-passport/',section:'Food',keywords:'best food tacos burger sandwich banh mi coffee restaurants passport'},
     {title:'Burlington 2026 Election Guide',url:'/elections/',section:'Election',keywords:'vote mayor candidates ward ballot'},
     {title:'This Burlington team is 0–24. Why do they keep coming back?',url:'/stories/burlington-ultimate-team-0-24/',section:'Sports',keywords:'toss bosses panic at the disco ultimate 0-24 burlington ultimate club'},

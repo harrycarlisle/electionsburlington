@@ -29,7 +29,16 @@ OSRM = "https://router.project-osrm.org/route/v1/driving/{coords}?overview=full&
 USER_AGENT = "BurlingtonNews/2.2 (+https://burlingtonnews.ca/)"
 TZ = ZoneInfo("America/Toronto")
 
+# Official Ontario 511 camera 228, Location "QEW at Guelph Line".
+BURLINGTON_ROUTE_ORIGIN = {
+    "label": "QEW at Guelph Line",
+    "lat": 43.350991,
+    "lon": -79.804387,
+    "cameraId": 228,
+    "source": "Ontario 511",
+}
 ORIGINS = {
+    "qew": BURLINGTON_ROUTE_ORIGIN,
     "downtown": {"label": "Downtown Burlington", "lat": 43.3255, "lon": -79.7990},
     "go": {"label": "Burlington GO", "lat": 43.3406, "lon": -79.8093},
 }
@@ -104,12 +113,13 @@ def relevant_incidents(events, cameras):
                 haversine_km((lat, lon), (c["latitude"], c["longitude"])) <= 6
                 for c in cameras if c.get("latitude") is not None
             )
-        corridor = any(word in hay for word in (
+            corridor = any(word in hay for word in (
             "burlington", "skyway", "brant street", "guelph line", "walkers line",
             "appleby", "burloak", "fairview", "plains road", "eastport", "qew",
-            "oakville", "hamilton", "stoney creek", "niagara"
+            "oakville", "hamilton", "stoney creek", "niagara", "mississauga",
+            "etobicoke", "gardiner", "hurontario", "cawthra", "dixie"
         ))
-        in_box = lat is not None and 43.05 <= lat <= 43.55 and -80.00 <= lon <= -79.08
+        in_box = lat is not None and 43.05 <= lat <= 43.66 and -80.00 <= lon <= -79.30
         if not (near_camera or (corridor and in_box)):
             continue
         if lat is not None and lon is not None and lon < -79.93 and "skyway" not in hay and "qew" not in hay:
@@ -182,7 +192,7 @@ def main() -> int:
     routes_out = {}
     route_polylines = {}
     for dest_id, dest in DESTINATIONS.items():
-        origin = ORIGINS["downtown"]
+        origin = ORIGINS["qew"]
         line = None
         source = "osrm"
         try:
@@ -246,7 +256,7 @@ def main() -> int:
         homepage_traffic = {
             "label": "Traffic",
             "title": f"{commute['status']['looks'].title()} toward {dest_label}",
-            "context": f"Downtown Burlington → {dest_label}",
+            "context": f"QEW at Guelph Line → {dest_label}",
             "impact": "",
             "freshness": "",
             "url": "/traffic/",
@@ -266,7 +276,7 @@ def main() -> int:
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     route_store = {
         "updated": now.date().isoformat(),
-        "origin": ORIGINS["downtown"],
+        "origin": ORIGINS["qew"],
         "destinations": DESTINATIONS,
         "routes": route_polylines,
     }

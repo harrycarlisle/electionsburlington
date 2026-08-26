@@ -1,5 +1,7 @@
 import {
+  BURLINGTON_ROUTE_ORIGIN,
   ROUTE_START,
+  cameraDisplayName,
   clipPolyline,
   incidentMatchesRoute,
   selectRouteCameras,
@@ -35,9 +37,11 @@ let map = null;
 let routeLine = null;
 let puckLayer = null;
 let incidentLayer = null;
+let startMarker = null;
 let userTouched = false;
 let rotateTimer = 0;
 let popup = null;
+const unavailable = new Set();
 
 function routeFromLocation() {
   const params = new URLSearchParams(location.search);
@@ -67,15 +71,15 @@ function selectedRoute() {
 
 function polylineFor(routeId) {
   const raw = routesData?.routes?.[routeId]?.polyline || [];
-  return clipPolyline(raw, ROUTE_START[routeId]);
+  return clipPolyline(raw, ROUTE_START[routeId] || BURLINGTON_ROUTE_ORIGIN);
 }
 
 function lineCoords(routeId) {
   return polylineFor(routeId).line || [];
 }
 
-function originLabel(routeId) {
-  return ROUTE_START[routeId]?.label || 'Burlington QEW';
+function originLabel() {
+  return (ROUTE_START[mode] || BURLINGTON_ROUTE_ORIGIN).label;
 }
 
 function destinationLabel() {
@@ -108,7 +112,7 @@ function camerasForMode() {
   const clipped = polylineFor(mode);
   const line = clipped.line || [];
   const picked = selectRouteCameras(mode, route?.cameras || [], cameras, line, {
-    start: ROUTE_START[mode],
+    start: ROUTE_START[mode] || BURLINGTON_ROUTE_ORIGIN,
     fullLine: routesData?.routes?.[mode]?.polyline || line,
     startIndex: clipped.startIndex || 0
   });
@@ -116,7 +120,7 @@ function camerasForMode() {
   const skyId = SKYWAY_VIEWS[mode];
   const sky = cameras.find(item => Number(item.viewId) === skyId);
   if (!sky || picked.some(item => Number(item.viewId) === skyId)) return picked;
-  return [{ ...sky, puck: 1, sourceUrl: sky.sourceUrl }, ...picked.map((item, index) => ({ ...item, puck: index + 2 }))].slice(0, 6);
+  return [{ ...sky, puck: 1, sourceUrl: sky.sourceUrl }, ...picked.map((item, index) => ({ ...item, puck: index + 2 }))].slice(0, 8);
 }
 
 function routeIncidents() {
@@ -162,17 +166,26 @@ function statusCopy() {
   const closure = incidents.find(item => item.type === 'closure' || item.type === 'collision');
   const minutes = delayFromIncident(closure) || delayFromIncident(selectedRoute()?.status);
   const looks = String(selectedRoute()?.status?.looks || '').toLowerCase();
-  let headline = 'Live cameras';
-  if (closure) headline = /ramp/i.test(`${closure.facility || ''} ${closure.title || ''}`) ? 'Ramp closed' : 'Delay likely';
-  else if (looks === 'heavy') headline = 'Heavy traffic';
-  else if (looks === 'moderate' || looks === 'slow') headline = 'Moderate traffic';
-  else if (looks === 'light' || looks === 'clear') headline = 'Moving well';
+  let headline = 'No major incidents reported';
+  let quiet = true;
+  if (closure) {
+    quiet = false;
+    headline = /ramp/i.test(`${closure.facility || ''} ${closure.title || ''}`) ? 'Ramp closed' : 'Delay likely';
+  } else if (looks === 'heavy') {
+    quiet = false;
+    headline = 'Heavy traffic';
+  } else if (looks === 'moderate' || looks === 'slow') {
+    quiet = false;
+    headline = 'Some slowing';
+  } else if (looks === 'light' || looks === 'clear') {
+    headline = 'Moving well';
+  }
   const detail = closure
     ? (/ramp/i.test(`${closure.facility || ''} ${closure.title || ''}`)
-      ? `Ramp closure near ${closure.nearestRoad || 'this route'}`
+      ? (closure.title || `Ramp closure near ${closure.nearestRoad || 'this route'}`)
       : closure.title)
     : (selectedRoute()?.status?.detail && !/no current camera estimate/i.test(selectedRoute().status.detail) ? selectedRoute().status.detail : '');
-  return { headline, minutes, detail };
+  return { headline, minutes, detail, quiet };
 }
 
 function presentStatus(copy) {
@@ -197,24 +210,35 @@ function renderStatus() {
   const origin = byId('routeOrigin');
   const copy = presentStatus(statusCopy());
   renderHero();
-  if (origin) origin.textContent = `Starting at ${originLabel(mode).replace(' at ', ' & ')}`;
+  if (origin) origin.textContent = `Starting at ${originLabel().replace(' at ', ' & ')}`;
   if (!status) return;
+  const quietLine = copy.headline === 'Moving well'
+    ? 'No major incidents reported'
+    : (copy.quiet ? '' : '');
   status.innerHTML = `
-    <p class="route-kicker">Burlington → ${esc(destinationLabel())}</p>
     <div class="route-status-row">
-      <h2>${esc(copy.headline)}</h2>
+      <h2>${copy.quiet && copy.headline === 'No major incidents reported' ? `✓ ${esc(copy.headline)}` : esc(copy.headline)}</h2>
       ${copy.minutes ? `<b>+${copy.minutes} min</b>` : ''}
     </div>
-    ${copy.detail ? `<p>${esc(copy.detail)}</p>` : '<p>No major incidents on this route right now.</p>'}
+    ${copy.detail ? `<p>${esc(copy.detail)}</p>` : (copy.headline === 'Moving well' ? `<p>${quietLine}</p>` : '')}
     ${copy.note ? `<p class="route-status-note">${esc(copy.note)}</p>` : ''}`;
 }
 
-function puckIcon(number, selected) {
+function puckIcon(number, selected, offline) {
   return window.L.divIcon({
-    className: `route-puck${selected ? ' is-selected' : ''}`,
+    className: `route-puck${selected ? ' is-selected' : ''}${offline ? ' is-offline' : ''}`,
     html: `<span>${number}</span>`,
     iconSize: selected ? [34, 34] : [26, 26],
     iconAnchor: selected ? [17, 17] : [13, 13]
+  });
+}
+
+function startIcon() {
+  return window.L.divIcon({
+    className: 'route-start',
+    html: '<span></span>',
+    iconSize: [16, 16],
+    iconAnchor: [8, 8]
   });
 }
 
@@ -240,6 +264,12 @@ function ensureMap(line) {
     window.L.tileLayer(tileUrl(), { maxZoom: 18 }).addTo(map);
     puckLayer = window.L.layerGroup().addTo(map);
     incidentLayer = window.L.layerGroup().addTo(map);
+    startMarker = window.L.marker([BURLINGTON_ROUTE_ORIGIN.lat, BURLINGTON_ROUTE_ORIGIN.lon], {
+      icon: startIcon(),
+      keyboard: true,
+      title: 'Start · QEW & Guelph Line',
+      zIndexOffset: 200
+    }).bindTooltip('Start · QEW & Guelph Line', { direction: 'top', offset: [0, -8] }).addTo(map);
   }
   if (routeLine) map.removeLayer(routeLine);
   routeLine = window.L.polyline(line, {
@@ -255,8 +285,9 @@ function renderMarkers() {
   puckLayer.clearLayers();
   incidentLayer.clearLayers();
   routeCameras.forEach((cam, index) => {
+    const offline = unavailable.has(String(cam.viewId));
     const marker = window.L.marker([cam.latitude, cam.longitude], {
-      icon: puckIcon(cam.puck || index + 1, index === selectedIndex),
+      icon: puckIcon(cam.puck || index + 1, index === selectedIndex, offline),
       keyboard: true,
       title: `Camera ${cam.puck || index + 1}`
     });
@@ -281,10 +312,12 @@ function renderMarkers() {
 }
 
 function cameraCaption(cam) {
-  const road = cam.roadway || 'QEW';
-  const place = shortCameraPlace(cam);
-  const dir = cam.direction || cam.viewName || '';
-  return [road, dir, place && `at ${place}`].filter(Boolean).join(' ');
+  const name = cameraDisplayName(cam);
+  const dir = cam.direction && !/unknown|overhead/i.test(cam.direction) ? cam.direction : '';
+  if (dir && !name.toLowerCase().includes(dir.toLowerCase().replace('-bound', ''))) {
+    return `${name} · ${dir}`;
+  }
+  return name;
 }
 
 function renderPreview() {
@@ -297,19 +330,20 @@ function renderPreview() {
   }
   const updated = clockLabel(surface?.generatedAt);
   const looks = looksFor(cam);
+  const offline = unavailable.has(String(cam.viewId));
   host.innerHTML = `
     <div class="camera-preview-head">
       <p>Camera ${cam.puck || selectedIndex + 1} · ${esc(shortCameraPlace(cam))}</p>
-      <span class="live-chip"><i aria-hidden="true"></i> LIVE</span>
+      <span class="live-chip${offline ? ' is-offline' : ''}"><i aria-hidden="true"></i> ${offline ? 'Offline' : 'LIVE'}</span>
     </div>
     <div class="camera-preview-shot" data-camera-swipe>
       <button type="button" class="camera-nav is-prev" data-camera-step="-1" aria-label="Previous camera">‹</button>
       <figure>
-        <img crossorigin="anonymous" data-camera="${esc(cam.viewId)}" src="https://511on.ca/map/Cctv/${esc(cam.viewId)}" alt="Live Ontario 511 camera: ${esc(cam.cameraName)}">
+        ${offline ? cameraFallbackMarkup(cam, updated) : `<img crossorigin="anonymous" data-camera="${esc(cam.viewId)}" src="https://511on.ca/map/Cctv/${esc(cam.viewId)}" alt="Live Ontario 511 camera: ${esc(cam.officialName || cam.cameraName)}">`}
       </figure>
       <button type="button" class="camera-nav is-next" data-camera-step="1" aria-label="Next camera">›</button>
     </div>
-    <p class="camera-preview-meta">${esc(cameraCaption(cam))}${updated ? ` · Updated ${esc(updated)}` : ''}${looks ? ` · Traffic looks ${esc(looks)}` : ''}</p>
+    <p class="camera-preview-meta">${esc(cameraCaption(cam))}${updated ? ` · Updated ${esc(updated)}` : ''}${looks && !offline ? ` · Traffic looks ${esc(looks)}` : ''}</p>
     <div class="camera-pucks" role="tablist" aria-label="Cameras along this route">
       ${routeCameras.map((item, index) => `<button type="button" role="tab" aria-selected="${index === selectedIndex}" data-camera-index="${index}">${item.puck || index + 1}</button>`).join('')}
     </div>`;
@@ -354,6 +388,14 @@ function bindPreview(host) {
   });
 }
 
+function cameraFallbackMarkup(cam, updated) {
+  return `<div class="camera-fallback" role="status">
+      <strong>Camera temporarily unavailable</strong>
+      <span>${esc(cameraDisplayName(cam))}</span>
+      ${updated ? `<small>Last check ${esc(updated)}</small>` : ''}
+    </div>`;
+}
+
 function looksUnavailable(image) {
   try {
     const canvas = document.createElement('canvas');
@@ -384,11 +426,17 @@ function bindImage(image) {
   image.dataset.bound = '1';
   const fail = () => {
     live.delete(image.dataset.camera);
+    unavailable.add(String(image.dataset.camera));
+    const figure = image.closest('figure');
+    const cam = routeCameras[selectedIndex];
+    if (figure && cam) figure.innerHTML = cameraFallbackMarkup(cam, clockLabel(surface?.generatedAt));
+    renderMarkers();
     paintStatus();
   };
   image.addEventListener('load', () => {
     if (!image.naturalWidth || looksUnavailable(image)) return fail();
     live.add(image.dataset.camera);
+    unavailable.delete(String(image.dataset.camera));
     paintStatus();
   });
   image.addEventListener('error', fail);

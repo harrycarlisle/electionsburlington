@@ -1,91 +1,7 @@
 {
-  "updated": "2026-08-26T13:30:00-04:00",
+  "updated": "2026-08-26T16:00:00-04:00",
   "timezone": "America/Toronto",
   "events": [
-    {
-      "id": "lions-market-2026-08-26",
-      "title": "Burlington Farmers Market",
-      "category": "Market",
-      "start": "2026-08-26T07:00:00-04:00",
-      "end": "2026-08-26T14:30:00-04:00",
-      "dateLabel": "Wed, Aug. 26 · 7 a.m. to 2:30 p.m.",
-      "location": "Burlington Centre, 777 Guelph Line",
-      "summary": "Shop local produce, prepared food and handmade goods at the Lions Club market.",
-      "details": "The Burlington Lions Club lists the market Wednesdays, Fridays and Saturdays from 7 a.m. to 2:30 p.m., May 20 through Oct. 24, 2026. Wednesday evenings also run 2:30 to 7:30 p.m. through Sept. 30.",
-      "bring": [
-        "A reusable bag",
-        "A shopping list",
-        "A way to keep cold items chilled"
-      ],
-      "source": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
-      "sourceName": "Burlington Lions Club",
-      "image": "assets/explore/farmers-market.webp",
-      "imageAlt": "Editorial illustration of a late-summer farmers market",
-      "credit": "Burlington News illustration",
-      "illustration": true,
-      "scope": "Burlington",
-      "city": "Burlington",
-      "venue": "Burlington Centre",
-      "travel": "In Burlington",
-      "weight": 5,
-      "verifiedAt": "2026-08-26T12:00:00-04:00"
-    },
-    {
-      "id": "lions-market-2026-08-28",
-      "title": "Burlington Farmers Market",
-      "category": "Market",
-      "start": "2026-08-28T07:00:00-04:00",
-      "end": "2026-08-28T14:30:00-04:00",
-      "dateLabel": "Fri, Aug. 28 · 7 a.m. to 2:30 p.m.",
-      "location": "Burlington Centre, 777 Guelph Line",
-      "summary": "Shop local produce, prepared food and handmade goods at the Lions Club market.",
-      "details": "The Burlington Lions Club lists the market Wednesdays, Fridays and Saturdays from 7 a.m. to 2:30 p.m. at Burlington Centre, 777 Guelph Line, through Oct. 24, 2026.",
-      "bring": [
-        "A reusable bag",
-        "A shopping list",
-        "A way to keep cold items chilled"
-      ],
-      "source": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
-      "sourceName": "Burlington Lions Club",
-      "image": "assets/explore/farmers-market.webp",
-      "imageAlt": "Editorial illustration of a late-summer farmers market",
-      "credit": "Burlington News illustration",
-      "illustration": true,
-      "scope": "Burlington",
-      "city": "Burlington",
-      "venue": "Burlington Centre",
-      "travel": "In Burlington",
-      "weight": 5,
-      "verifiedAt": "2026-08-26T13:30:00-04:00"
-    },
-    {
-      "id": "lions-market-2026-08-29",
-      "title": "Burlington Farmers Market",
-      "category": "Market",
-      "start": "2026-08-29T07:00:00-04:00",
-      "end": "2026-08-29T14:30:00-04:00",
-      "dateLabel": "Sat, Aug. 29 · 7 a.m. to 2:30 p.m.",
-      "location": "Burlington Centre, 777 Guelph Line",
-      "summary": "Shop local produce, prepared food and handmade goods at the Lions Club market.",
-      "details": "The Burlington Lions Club lists the market Wednesdays, Fridays and Saturdays from 7 a.m. to 2:30 p.m. at Burlington Centre, 777 Guelph Line, through Oct. 24, 2026.",
-      "bring": [
-        "A reusable bag",
-        "A shopping list",
-        "A way to keep cold items chilled"
-      ],
-      "source": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
-      "sourceName": "Burlington Lions Club",
-      "image": "assets/explore/farmers-market.webp",
-      "imageAlt": "Editorial illustration of a late-summer farmers market",
-      "credit": "Burlington News illustration",
-      "illustration": true,
-      "scope": "Burlington",
-      "city": "Burlington",
-      "venue": "Burlington Centre",
-      "travel": "In Burlington",
-      "weight": 5,
-      "verifiedAt": "2026-08-26T13:30:00-04:00"
-    },
     {
       "id": "movies-under-the-stars-2026-08-27",
       "title": "Movies Under the Stars: Ice Princess",
@@ -643,7 +559,10 @@
       "travel": "In Burlington",
       "summary": "The touring circus’s Burlington stop, with multiple daily shows over the Labour Day weekend.",
       "details": "Official tickets list Thursday 7:30 p.m.; Friday 4 and 7:30 p.m.; Saturday and Sunday 12, 4 and 7:30 p.m.; Monday 11 a.m. and 3 p.m. Doors open 30–45 minutes before showtime. Children 3 and under are free on an adult’s lap. Use the mall parking lot.",
-      "bring": ["A ticket", "A parking plan for Burlington Centre"],
+      "bring": [
+        "A ticket",
+        "A parking plan for Burlington Centre"
+      ],
       "price": "From $35",
       "source": "https://tickets.royalcanadiancircus.ca/burlington/",
       "sourceName": "Royal Canadian Circus",
@@ -669,7 +588,10 @@
       "travel": "Beachway waterfront",
       "summary": "The Burlington Beach Catamaran Club’s annual BUMS regatta, including the F18 Canadian Championships.",
       "details": "A City of Burlington events memo lists the regatta and F18 championships at Beachway Park on Sept. 11–13, 2026. Spectator access and parking follow Beachway park rules. Exact start times can change with wind.",
-      "bring": ["Sun protection", "A weather check"],
+      "bring": [
+        "Sun protection",
+        "A weather check"
+      ],
       "source": "https://burlingtonpublishing.escribemeetings.com/filestream.ashx?DocumentId=96607",
       "sourceName": "City of Burlington events memo",
       "image": "assets/explore/brant-street-pier.webp",
@@ -694,7 +616,10 @@
       "travel": "Downtown Burlington",
       "summary": "Raina Telgemeier and Gale Galligan’s only Canadian stop on the Baby-sitters on Board! tour.",
       "details": "BPAC lists the show for ages 8 and up. Ticket-only is $20. Ticket plus book, signed bookplate and tote is $36. There is no book signing. Extra books will be sold in the lobby.",
-      "bring": ["A ticket", "No books from home for signing"],
+      "bring": [
+        "A ticket",
+        "No books from home for signing"
+      ],
       "price": "$20 ticket-only or $36 with book",
       "source": "https://burlingtonpac.ca/event/scholastic-babysitters-on-board/",
       "sourceName": "Burlington Performing Arts Centre",
@@ -720,7 +645,10 @@
       "travel": "North-central Burlington",
       "summary": "Third annual beer fest with craft pours, food trucks and live music. General-admission proceeds go to the Children’s Aid Foundation of Halton.",
       "details": "Eventbrite lists the 2026 date as Friday, Sept. 25, 6 to 11 p.m. Drink tokens are sold on site. A designated-driver ticket is available. This is the same evening as Patrick Watson at RBG.",
-      "bring": ["Photo ID", "A ride home"],
+      "bring": [
+        "Photo ID",
+        "A ride home"
+      ],
       "source": "https://www.eventbrite.ca/e/nickel-brooks-beer-fest-for-cafh-tickets-1992767818188",
       "sourceName": "Eventbrite / Nickel Brook",
       "image": "assets/explore/farmers-market.webp",
@@ -745,7 +673,9 @@
       "travel": "Downtown Burlington",
       "summary": "A free Culture Days walk through BPAC with pop-up performance and installations.",
       "details": "BPAC lists free drop-in admission between 1 and 4 p.m. as part of Culture Days and its 15th-anniversary season. The same Saturday also has the Heritage Fibre Festival at Ireland House.",
-      "bring": ["Comfortable shoes"],
+      "bring": [
+        "Comfortable shoes"
+      ],
       "price": "Free",
       "source": "https://burlingtonpac.ca/event/wander/",
       "sourceName": "Burlington Performing Arts Centre",
@@ -771,7 +701,9 @@
       "travel": "In Burlington",
       "summary": "Nov. 11 is Remembrance Day. The 2026 Burlington ceremony time and site had not been posted when this was checked.",
       "details": "The date is fixed. Do not treat a previous year’s cenotaph time as confirmed for 2026 until the City or the Royal Canadian Legion publishes it.",
-      "bring": ["A weather layer"],
+      "bring": [
+        "A weather layer"
+      ],
       "source": "https://www.burlington.ca/en/news/festivals-and-events/",
       "sourceName": "City of Burlington festivals page",
       "image": "assets/explore/community-cleanup.webp",
@@ -796,7 +728,10 @@
       "travel": "Downtown Burlington",
       "summary": "The City has set Sunday, Dec. 6, 2026 as the parade date. The 2026 start time and route were not posted on the City page at last check.",
       "details": "The 2025 parade ran in the afternoon downtown. Do not assume the same clock time or route for 2026 until the City publishes them. Vendor applications open September 2026.",
-      "bring": ["A curb spot plan", "Weather-ready clothing"],
+      "bring": [
+        "A curb spot plan",
+        "Weather-ready clothing"
+      ],
       "source": "https://www.burlington.ca/en/news/festivals-and-events/santa-claus-parade.aspx",
       "sourceName": "City of Burlington",
       "image": "assets/explore/community-cleanup.webp",
@@ -851,16 +786,30 @@
       "imageAlt": "Produce at a Burlington farmers market",
       "url": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
       "safety": "public",
-      "nightOk": false,
+      "nightOk": true,
       "hours": {
         "days": [
           "Wed",
           "Fri",
           "Sat"
         ],
-        "open": "08:00",
-        "close": "14:00"
-      }
+        "open": "07:00",
+        "close": "14:30",
+        "soonMinutes": 90,
+        "seasonStart": "2026-05-20",
+        "seasonEnd": "2026-10-24",
+        "evening": {
+          "days": [
+            "Wed"
+          ],
+          "seasonStart": "2026-06-03",
+          "seasonEnd": "2026-09-30",
+          "open": "14:30",
+          "close": "19:30"
+        }
+      },
+      "activeFrom": "2026-05-20",
+      "activeUntil": "2026-10-24"
     },
     {
       "id": "rbg-walk",
@@ -1218,6 +1167,41 @@
       "credit": "Burlington News editorial visual",
       "illustration": true,
       "url": "https://www.burlington.ca/en/news/festivals-and-events/movies-under-the-stars.aspx"
+    }
+  ],
+  "recurring": [
+    {
+      "id": "burlington-farmers-market",
+      "title": "Burlington Farmers Market",
+      "category": "Market",
+      "location": "Burlington Centre, 777 Guelph Line",
+      "source": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
+      "sourceName": "Burlington Lions Club",
+      "image": "assets/explore/farmers-market.webp",
+      "imageAlt": "Produce and vendors at the Burlington Farmers Market",
+      "credit": "Burlington News",
+      "scope": "Burlington",
+      "city": "Burlington",
+      "venue": "Burlington Centre",
+      "url": "/events/burlington-farmers-market/",
+      "days": [
+        "Wed",
+        "Fri",
+        "Sat"
+      ],
+      "seasonStart": "2026-05-20",
+      "seasonEnd": "2026-10-24",
+      "open": "07:00",
+      "close": "14:30",
+      "evening": {
+        "days": [
+          "Wed"
+        ],
+        "seasonStart": "2026-06-03",
+        "seasonEnd": "2026-09-30",
+        "open": "14:30",
+        "close": "19:30"
+      }
     }
   ]
 }

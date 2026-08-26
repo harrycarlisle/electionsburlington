@@ -12,15 +12,15 @@
   <link rel="stylesheet" href="/publication-polish.css?v=20260825h" data-style="publication-polish">
   <link rel="stylesheet" href="/product-pass.css?v=20260826t">
   <link rel="stylesheet" href="/type-system.css?v=20260826a">
-  <link rel="stylesheet" href="/site-header.css?v=20260826ds" data-style="site-header">
-  <link rel="stylesheet" href="/desktop-system.css?v=20260826ds" data-style="desktop-system">
+  <link rel="stylesheet" href="/site-header.css?v=20260826ta" data-style="site-header">
+  <link rel="stylesheet" href="/desktop-system.css?v=20260826ta" data-style="desktop-system">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-  <link rel="stylesheet" href="/traffic-map.css?v=20260826ds">
-  <script src="/theme-boot.js?v=20260826ds"></script>
+  <link rel="stylesheet" href="/traffic-map.css?v=20260826ta">
+  <script src="/theme-boot.js?v=20260826ta"></script>
   <script src="/site-search.js?v=20260826ds" defer></script>
-  <script src="/site-extra.js?v=20260826ds" defer></script>
+  <script src="/site-extra.js?v=20260826ta" defer></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
-  <script type="module" src="/skyway-traffic.js?v=20260826ds"></script>
+  <script type="module" src="/skyway-traffic.js?v=20260826ta"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -28,18 +28,12 @@
   <main id="main" class="traffic-shell traffic-page">
     <section class="traffic-hero">
       <div>
-        <span class="traffic-kicker">Live commute</span>
+        <span class="traffic-kicker live-kicker"><i class="live-dot" aria-hidden="true"></i> Live traffic</span>
         <h1 id="trafficTitle">Burlington → Toronto</h1>
-        <p class="traffic-sub">Traffic right now</p>
-        <p>See incidents and live cameras along your route.</p>
       </div>
     </section>
 
     <section class="route-picker" aria-label="Common destinations from Burlington">
-      <div class="route-ask-row">
-        <p class="route-ask">Where are you going?</p>
-        <div class="live-chip"><i aria-hidden="true"></i><span id="cameraStatus">Loading cameras</span></div>
-      </div>
       <div class="route-chips" id="routeChips"></div>
       <p class="route-origin" id="routeOrigin">Starting at QEW &amp; Guelph Line</p>
     </section>
@@ -48,10 +42,10 @@
     <div class="route-stage">
       <section class="route-map-wrap">
         <div id="routeMap" class="route-map" role="img" aria-label="Route map with cameras and incidents"></div>
+        <p class="map-credit">Map data © OpenStreetMap contributors, © CARTO. Camera images © King's Printer for Ontario.</p>
       </section>
       <section class="camera-preview" id="cameraPreview" aria-label="Camera along this route"></section>
     </div>
-    <p class="map-credit">Map data © OpenStreetMap contributors, © CARTO. Camera images © King's Printer for Ontario.</p>
   </main>
 </body>
 </html>
