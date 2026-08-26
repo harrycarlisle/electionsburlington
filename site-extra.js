@@ -253,8 +253,8 @@
         ${navLink('/go/', 'go', 'GO', 'secondary')}
         ${navLink('/development/', 'development', 'Development', 'secondary')}
         ${navLink('/about/', 'about', 'About', 'secondary')}
-        ${navLink('/methodology.html', 'sources', 'Sources', 'secondary')}
-        ${navLink('/help.html', 'help', 'Help & accessibility', 'secondary')}
+        ${navLink('/sources/', 'sources', 'Sources', 'secondary')}
+        ${navLink('/accessibility/', 'help', 'Help & accessibility', 'secondary')}
         ${navLink('/feedback/', 'feedback', 'Feedback', 'secondary')}
         ${navLink('/work-with-us/', 'work', 'Work with us', 'secondary')}
       </div>
@@ -526,7 +526,7 @@
     const hero = document.createElement('section');
     hero.className = 'election-hero';
     hero.setAttribute('aria-labelledby', 'heroTitle');
-    hero.innerHTML = `<div class="hero-copy"><h1 id="heroTitle">Burlington's municipal election, explained.</h1><div class="hero-actions"><a class="hero-button hero-button-primary" href="head-to-head.html">Compare mayoral candidates <span aria-hidden="true">→</span></a><a class="hero-button hero-button-secondary" href="ballot.html">See your ballot</a></div><div class="hero-trust"><span>No endorsements</span><span>Independent</span></div></div><div class="hero-visual" aria-hidden="true"><div class="hero-map-card"><div class="hero-place-dot"></div><div class="hero-candidate-slide" id="heroCandidateSlide"></div><div class="hero-date-card"><span>Election day</span><strong>OCT 26</strong><small>2026</small></div><div class="hero-voting-note"><span>Voting starts</span><strong>Oct. 14</strong></div></div></div>`;
+    hero.innerHTML = `<div class="hero-copy"><h1 id="heroTitle">Burlington's municipal election, explained.</h1><div class="hero-actions"><a class="hero-button hero-button-primary" href="/elections/head-to-head/">Compare mayoral candidates <span aria-hidden="true">→</span></a><a class="hero-button hero-button-secondary" href="/elections/ballot/">See your ballot</a></div><div class="hero-trust"><span>No endorsements</span><span>Independent</span></div></div><div class="hero-visual" aria-hidden="true"><div class="hero-map-card"><div class="hero-place-dot"></div><div class="hero-candidate-slide" id="heroCandidateSlide"></div><div class="hero-date-card"><span>Election day</span><strong>OCT 26</strong><small>2026</small></div><div class="hero-voting-note"><span>Voting starts</span><strong>Oct. 14</strong></div></div></div>`;
     main.insertBefore(hero, candidates);
     const slide = hero.querySelector('#heroCandidateSlide');
     let i = 0;
@@ -563,7 +563,7 @@
       footer.className = 'site-legal-footer';
       document.body.appendChild(footer);
     }
-    footer.innerHTML = '<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news for Burlington, Ontario.</p></div></div><div class="site-footer-columns"><nav aria-label="Explore"><strong>Explore</strong><a href="/news/">News</a><a href="/elections/">Elections</a><a href="/explore/">Explore</a><a href="/traffic/">Traffic</a><a href="/go/">GO</a><a href="/development/">Development</a><a href="/sports/">Sports</a></nav><nav aria-label="About"><strong>About</strong><a href="/about/">About</a><a href="/editorial-standards/">Editorial standards</a><a href="/corrections/">Corrections</a><a href="/methodology.html">Sources</a><a href="/feedback/">Feedback</a><a href="/work-with-us/">Work with us</a></nav></div><p class="preferred-source"><a href="https://www.google.com/preferences/source?q=burlingtonnews.ca">Add Burlington News as a preferred source on Google</a></p></div>';
+    footer.innerHTML = '<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news for Burlington, Ontario.</p></div></div><div class="site-footer-columns"><nav aria-label="Explore"><strong>Explore</strong><a href="/news/">News</a><a href="/elections/">Elections</a><a href="/explore/">Explore</a><a href="/traffic/">Traffic</a><a href="/go/">GO</a><a href="/development/">Development</a><a href="/sports/">Sports</a></nav><nav aria-label="About"><strong>About</strong><a href="/about/">About</a><a href="/editorial-standards/">Editorial standards</a><a href="/corrections/">Corrections</a><a href="/sources/">Sources</a><a href="/feedback/">Feedback</a><a href="/work-with-us/">Work with us</a></nav></div><p class="preferred-source"><a href="https://www.google.com/preferences/source?q=burlingtonnews.ca">Add Burlington News as a preferred source on Google</a></p></div>';
   }
 
   function applyTiming(data) {

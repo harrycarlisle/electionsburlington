@@ -28,7 +28,7 @@
       "id": "skyway",
       "label": "Skyway traffic",
       "value": "Live",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "sourceName": "Ontario 511"
     },
     {
@@ -42,7 +42,7 @@
       "id": "events",
       "label": "This week",
       "value": "Events",
-      "url": "explore.html",
+      "url": "/explore/",
       "sourceName": "Burlington News event watch"
     }
   ]

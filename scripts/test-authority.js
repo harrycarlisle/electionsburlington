@@ -57,7 +57,12 @@ if (!watch.events.every(item => item.status)) fail('watchlist missing status');
   'beach/index.html',
   'editorial-standards/index.html',
   'ai-policy/index.html',
-  'corrections/index.html'
+  'corrections/index.html',
+  'sources/index.html',
+  'accessibility/index.html',
+  'events/index.html',
+  'elections/ballot/index.html',
+  'elections/head-to-head/index.html'
 ].forEach(file => {
   if (!existsSync(join(process.cwd(), file))) fail('missing page ' + file);
 });

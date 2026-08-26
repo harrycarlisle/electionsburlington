@@ -121,7 +121,7 @@
       </div>
       <div class="source-links">
         ${candidate.sources.map(item => `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.label)}</a>`).join('')}
-        <a href="/head-to-head.html">Compare two candidates</a>
+        <a href="/elections/head-to-head/">Compare two candidates</a>
       </div>`;
   }
 

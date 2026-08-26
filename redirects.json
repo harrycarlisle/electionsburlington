@@ -1,0 +1,262 @@
+{
+  "canonicalHost": "https://burlingtonnews.ca/",
+  "trailingSlash": true,
+  "implementation": "GitHub Pages HTML stubs (canonical + refresh + location.replace). Prefer Cloudflare 308s from this map when available.",
+  "keepUntil": "indefinitely; at least one year",
+  "redirects": [
+    {
+      "from": "/explore.html",
+      "to": "/explore/",
+      "file": "explore.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/sports.html",
+      "to": "/sports/",
+      "file": "sports.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/election-guide.html",
+      "to": "/elections/",
+      "file": "election-guide.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/updates.html",
+      "to": "/news/",
+      "file": "updates.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/skyway-traffic.html",
+      "to": "/traffic/",
+      "file": "skyway-traffic.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/puzzles.html",
+      "to": "/games/",
+      "file": "puzzles.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/about.html",
+      "to": "/about/",
+      "file": "about.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/ward.html",
+      "to": "/elections/ward/",
+      "file": "ward.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/food-passport.html",
+      "to": "/food-passport/",
+      "file": "food-passport.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/work-with-us.html",
+      "to": "/work-with-us/",
+      "file": "work-with-us.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/methodology.html",
+      "to": "/sources/",
+      "file": "methodology.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/help.html",
+      "to": "/accessibility/",
+      "file": "help.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/privacy.html",
+      "to": "/privacy/",
+      "file": "privacy.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/terms.html",
+      "to": "/terms/",
+      "file": "terms.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/independent.html",
+      "to": "/independent/",
+      "file": "independent.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/ballot.html",
+      "to": "/elections/ballot/",
+      "file": "ballot.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/head-to-head.html",
+      "to": "/elections/head-to-head/",
+      "file": "head-to-head.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/elections-for-beginners.html",
+      "to": "/elections/beginners/",
+      "file": "elections-for-beginners.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/promises.html",
+      "to": "/elections/promises/",
+      "file": "promises.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/guides/burlington-food-spots.html",
+      "to": "/food-passport/",
+      "file": "guides/burlington-food-spots.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/guides/best-of-burlington.html",
+      "to": "/guides/best-of-burlington/",
+      "file": "guides/best-of-burlington.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/puzzles/",
+      "to": "/games/",
+      "file": "puzzles/index.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/elections/mayor/",
+      "to": "/elections/compare/",
+      "file": "elections/mayor/index.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/stories/2026-08-23-what-26-503-fish-revealed-about-a-damaged-local-marsh/",
+      "to": "/stories/fishway-26000-fish/",
+      "file": "stories/2026-08-23-what-26-503-fish-revealed-about-a-damaged-local-marsh/index.html",
+      "status": "308-or-html-stub"
+    }
+  ],
+  "articleRedirects": [
+    {
+      "from": "/articles/730-brant-vacant-building.html",
+      "to": "/stories/730-brant-vacant-building/",
+      "file": "articles/730-brant-vacant-building.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/auto/2026-08-23-what-26-503-fish-revealed-about-a-damaged-local-marsh.html",
+      "to": "/stories/fishway-26000-fish/",
+      "file": "articles/auto/2026-08-23-what-26-503-fish-revealed-about-a-damaged-local-marsh.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/auto/2026-08-24-burlington-s-ward-map-changed-check-yours-before-voting.html",
+      "to": "/stories/2026-08-24-burlington-s-ward-map-changed-check-yours-before-voting/",
+      "file": "articles/auto/2026-08-24-burlington-s-ward-map-changed-check-yours-before-voting.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/auto/2026-08-24-candidate-nominations-have-closed-here-is-the-registered-field.html",
+      "to": "/stories/2026-08-24-candidate-nominations-have-closed-here-is-the-registered-field/",
+      "file": "articles/auto/2026-08-24-candidate-nominations-have-closed-here-is-the-registered-field.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/back-to-school-2026.html",
+      "to": "/stories/back-to-school-2026/",
+      "file": "articles/back-to-school-2026.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/burlington-data-centre-not-ai.html",
+      "to": "/stories/burlington-data-centre-not-ai/",
+      "file": "articles/burlington-data-centre-not-ai.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/burlington-hotspots-0-24.html",
+      "to": "/stories/burlington-hotspots-0-24/",
+      "file": "articles/burlington-hotspots-0-24.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/burlington-rabies-bat-2026.html",
+      "to": "/stories/burlington-rabies-bat-2026/",
+      "file": "articles/burlington-rabies-bat-2026.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/fishway-26000-fish.html",
+      "to": "/stories/fishway-26000-fish/",
+      "file": "articles/fishway-26000-fish.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/how-bad-is-burlington-crime.html",
+      "to": "/stories/how-bad-is-burlington-crime/",
+      "file": "articles/how-bad-is-burlington-crime.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/millcroft-phase-2-138-homes.html",
+      "to": "/stories/millcroft-phase-2-138-homes/",
+      "file": "articles/millcroft-phase-2-138-homes.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/nelson-quarry-tribunal-decision.html",
+      "to": "/stories/nelson-quarry-tribunal-decision/",
+      "file": "articles/nelson-quarry-tribunal-decision.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/nostalgia-games-cafe-closure.html",
+      "to": "/stories/nostalgia-games-cafe-closure/",
+      "file": "articles/nostalgia-games-cafe-closure.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/ontario-student-rights-school.html",
+      "to": "/stories/ontario-student-rights-school/",
+      "file": "articles/ontario-student-rights-school.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/ribfest-2026.html",
+      "to": "/stories/ribfest-2026/",
+      "file": "articles/ribfest-2026.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/salamander-road-closure.html",
+      "to": "/stories/salamander-road-closure/",
+      "file": "articles/salamander-road-closure.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/skyway-bridge-story.html",
+      "to": "/stories/skyway-bridge-story/",
+      "file": "articles/skyway-bridge-story.html",
+      "status": "308-or-html-stub"
+    },
+    {
+      "from": "/articles/upper-middle-road-construction-2026.html",
+      "to": "/stories/upper-middle-road-construction-2026/",
+      "file": "articles/upper-middle-road-construction-2026.html",
+      "status": "308-or-html-stub"
+    }
+  ]
+}

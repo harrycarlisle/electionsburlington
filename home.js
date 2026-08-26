@@ -15,6 +15,14 @@
     if (raw === 'skyway-traffic.html') return '/traffic/';
     if (raw === 'sports.html') return '/sports/';
     if (raw === 'puzzles.html') return '/games/';
+    if (raw === 'methodology.html') return '/sources/';
+    if (raw === 'help.html') return '/accessibility/';
+    if (raw === 'about.html') return '/about/';
+    if (raw === 'ballot.html') return '/elections/ballot/';
+    if (raw === 'head-to-head.html') return '/elections/head-to-head/';
+    if (raw === 'ward.html') return '/elections/ward/';
+    if (raw === 'promises.html') return '/elections/promises/';
+    if (raw === 'elections-for-beginners.html') return '/elections/beginners/';
     return raw.startsWith('/') ? raw : `/${raw}`;
   };
   const relativeDate = value => {

@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 
+# Public hubs, stories and event leaves are crawlable. CSS and JS are not blocked.
+# Site search is client-side on existing pages; there is no indexable /search/ URL.
+# Contact and private API paths are not published as HTML routes.
+
 Sitemap: https://burlingtonnews.ca/sitemap.xml
 Sitemap: https://burlingtonnews.ca/news-sitemap.xml
+
 

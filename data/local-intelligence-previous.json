@@ -29,7 +29,7 @@
       "longitude": -79.70016,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "636f5e0a1da4b439"
     },
@@ -45,7 +45,7 @@
       "longitude": -80.37695,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "eb1b732ca00e9d75"
     },
@@ -61,7 +61,7 @@
       "longitude": -80.37695,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "804d87a9833ae951"
     },
@@ -77,7 +77,7 @@
       "longitude": -79.6733,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "c5325bcfaaae4858"
     },
@@ -93,7 +93,7 @@
       "longitude": -79.74126,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "5ff543f82c80d221"
     },
@@ -109,7 +109,7 @@
       "longitude": -79.67345,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "ea038a0bccdfe0dd"
     },
@@ -125,7 +125,7 @@
       "longitude": -79.825485,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "f35f80c5a2f13f2c"
     },
@@ -141,7 +141,7 @@
       "longitude": -79.74126,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "1286b0a6916b6324"
     },
@@ -157,7 +157,7 @@
       "longitude": -79.74126,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "1286b0a6916b6324"
     },
@@ -173,7 +173,7 @@
       "longitude": -79.80386,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "767ddc4c2a7c582d"
     },
@@ -189,7 +189,7 @@
       "longitude": -79.80735,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "8db5e92d721e9bcc"
     },
@@ -205,7 +205,7 @@
       "longitude": -79.825485,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "4df054e0c8962d9c"
     },
@@ -221,7 +221,7 @@
       "longitude": -79.82237,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "2ad6c729bb63c330"
     },
@@ -237,7 +237,7 @@
       "longitude": -79.6733,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "c5325bcfaaae4858"
     },
@@ -253,7 +253,7 @@
       "longitude": -79.70898,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "2ffc846e9af0097d"
     },
@@ -269,7 +269,7 @@
       "longitude": -79.74126,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "5ff543f82c80d221"
     },
@@ -285,7 +285,7 @@
       "longitude": -79.825485,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "3eab45607ceb7a3e"
     },
@@ -301,7 +301,7 @@
       "longitude": -79.82237,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "11c151514d0ef376"
     },
@@ -317,7 +317,7 @@
       "longitude": -79.75694,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "809ab94ac8631b1a"
     },
@@ -333,7 +333,7 @@
       "longitude": -79.76535,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "de636b7a2526c641"
     },
@@ -349,7 +349,7 @@
       "longitude": -80.21334,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "7b79af57b68f3f38"
     },
@@ -365,7 +365,7 @@
       "longitude": -80.69792,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "9580997eb0e89faa"
     },
@@ -381,7 +381,7 @@
       "longitude": -79.75694,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "e55d21489d9d731f"
     },
@@ -397,7 +397,7 @@
       "longitude": -79.80735,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "e692613cf394abfa"
     },
@@ -413,7 +413,7 @@
       "longitude": -79.72526,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "b24da3cece4ef540"
     },
@@ -429,7 +429,7 @@
       "longitude": -79.92808,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "b7252b680a22cf68"
     },
@@ -445,7 +445,7 @@
       "longitude": -79.943794,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "0e48fe503f157d65"
     },
@@ -461,7 +461,7 @@
       "longitude": -79.987885,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "61abbaca9b4a3dc0"
     },
@@ -477,7 +477,7 @@
       "longitude": -79.90527,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "81e9ba9b988064d2"
     },
@@ -493,7 +493,7 @@
       "longitude": -79.917725,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
+      "url": "/traffic/",
       "rawType": "roadwork",
       "signature": "df860e3ea8203389"
     }
@@ -510,7 +510,7 @@
     "longitude": -79.70016,
     "source": "Ontario 511",
     "sourceUrl": "https://511on.ca/",
-    "url": "skyway-traffic.html",
+    "url": "/traffic/",
     "rawType": "roadwork",
     "signature": "636f5e0a1da4b439"
   },
@@ -528,7 +528,7 @@
         "longitude": -79.70016,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "636f5e0a1da4b439"
       },
@@ -544,7 +544,7 @@
         "longitude": -79.92808,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "b7252b680a22cf68"
       },
@@ -560,7 +560,7 @@
         "longitude": -79.943794,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "0e48fe503f157d65"
       },
@@ -576,7 +576,7 @@
         "longitude": -79.6733,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "c5325bcfaaae4858"
       },
@@ -592,7 +592,7 @@
         "longitude": -79.74126,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "5ff543f82c80d221"
       },
@@ -608,7 +608,7 @@
         "longitude": -79.917725,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "df860e3ea8203389"
       },
@@ -624,7 +624,7 @@
         "longitude": -79.72526,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "b24da3cece4ef540"
       },
@@ -640,7 +640,7 @@
         "longitude": -79.917725,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "bc29db44c33aa881"
       },
@@ -656,7 +656,7 @@
         "longitude": -79.67345,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "ea038a0bccdfe0dd"
       },
@@ -672,7 +672,7 @@
         "longitude": -79.987885,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "61abbaca9b4a3dc0"
       },
@@ -688,7 +688,7 @@
         "longitude": -79.90527,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "81e9ba9b988064d2"
       },
@@ -704,7 +704,7 @@
         "longitude": -79.825485,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "f35f80c5a2f13f2c"
       },
@@ -720,7 +720,7 @@
         "longitude": -79.74126,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "1286b0a6916b6324"
       },
@@ -736,7 +736,7 @@
         "longitude": -79.74126,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "1286b0a6916b6324"
       },
@@ -752,7 +752,7 @@
         "longitude": -80.37695,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "eb1b732ca00e9d75"
       },
@@ -768,7 +768,7 @@
         "longitude": -80.37695,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "804d87a9833ae951"
       },
@@ -784,7 +784,7 @@
         "longitude": -79.80386,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "767ddc4c2a7c582d"
       },
@@ -800,7 +800,7 @@
         "longitude": -79.80735,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "8db5e92d721e9bcc"
       },
@@ -816,7 +816,7 @@
         "longitude": -79.825485,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "4df054e0c8962d9c"
       },
@@ -832,7 +832,7 @@
         "longitude": -79.82237,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "2ad6c729bb63c330"
       },
@@ -848,7 +848,7 @@
         "longitude": -79.6733,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "c5325bcfaaae4858"
       },
@@ -864,7 +864,7 @@
         "longitude": -79.70898,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "2ffc846e9af0097d"
       },
@@ -880,7 +880,7 @@
         "longitude": -79.74126,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "5ff543f82c80d221"
       },
@@ -896,7 +896,7 @@
         "longitude": -79.825485,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "3eab45607ceb7a3e"
       },
@@ -912,7 +912,7 @@
         "longitude": -79.82237,
         "source": "Ontario 511",
         "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
+        "url": "/traffic/",
         "rawType": "roadwork",
         "signature": "11c151514d0ef376"
       }

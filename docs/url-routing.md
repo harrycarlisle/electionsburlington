@@ -1,26 +1,9 @@
 # Public URL routing
 
-Burlington News is a static GitHub Pages site. Clean directory URLs are published as `index.html` copies of the existing pages.
+Canonical public URLs are trailing-slash directories on `https://burlingtonnews.ca/`.
 
-## Public paths
+See **[url-migration.md](url-migration.md)** for the full old→new map, GitHub Pages redirect limits, and Search Console checklist.
 
-| Public URL | Source file | Old URL still works |
-|---|---|---|
-| `/` | `index.html` | `/index.html` |
-| `/news/` | `updates.html` | `/updates.html` |
-| `/explore/` | `explore.html` | `/explore.html` |
-| `/elections/` | `election-guide.html` | `/election-guide.html` |
-| `/traffic/` | `skyway-traffic.html` | `/skyway-traffic.html` |
-| `/sports/` | `sports.html` | `/sports.html` |
-| `/games/` | `puzzles.html` | `/puzzles.html` |
-| `/stories/<slug>/` | `articles/<slug>.html` | `/articles/<slug>.html` |
+Machine-readable map: [`/redirects.json`](../redirects.json).
 
-Canonical tags point at the clean URLs. Internal navigation uses the clean paths.
-
-Regenerate the public copies with:
-
-```bash
-python scripts/sync_public_urls.py
-```
-
-Fully extensionless URLs such as `/news` without a trailing slash also work on GitHub Pages when a matching `.html` file exists, but the trailing-slash directory form is the documented public URL.
+Do **not** run `scripts/sync_public_urls.py` to copy `.html` files onto story indexes. That script is retired. Directory `index.html` files are the source of truth; leftover `.html` files are long-lived redirect stubs.

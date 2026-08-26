@@ -11,9 +11,9 @@
     const path=location.pathname.replace(/\/$/,'');
     const titles={
       '':'Burlington News | Local news, events and election coverage','/index.html':'Burlington News | Local news, events and election coverage',
-      '/head-to-head.html':'Compare Burlington Mayor Candidates | Burlington News','/ballot.html':'Your Burlington Ballot | Burlington News','/ward.html':'What Ward Am I In? | Burlington News',
-      '/updates.html':'Latest Burlington News | Burlington News','/explore.html':'Explore Burlington | Burlington News','/promises.html':'Promises & Records | Burlington News','/puzzles.html':'Burlington Puzzles | Burlington News','/elections-for-beginners.html':'Elections for Beginners | Burlington News',
-      '/methodology.html':'Sources & Methodology | Burlington News','/help.html':'Help & Feedback | Burlington News','/privacy.html':'Privacy Policy | Burlington News','/terms.html':'Terms of Use | Burlington News','/independent.html':'Independent | Burlington News','/feedback':'Give feedback | Burlington News'
+      '/elections/head-to-head/':'Compare Burlington Mayor Candidates | Burlington News','/elections/ballot/':'Your Burlington Ballot | Burlington News','/elections/ward/':'What Ward Am I In? | Burlington News',
+      '/news/':'Latest Burlington News | Burlington News','/explore/':'Explore Burlington | Burlington News','/elections/promises/':'Promises & Records | Burlington News','/games/':'Burlington Puzzles | Burlington News','/elections/beginners/':'Elections for Beginners | Burlington News',
+      '/sources/':'Sources & Methodology | Burlington News','/accessibility/':'Help & Feedback | Burlington News','/privacy/':'Privacy Policy | Burlington News','/terms/':'Terms of Use | Burlington News','/independent/':'Independent | Burlington News','/feedback':'Give feedback | Burlington News'
     };
     if(titles[path])document.title=titles[path];else if(/Burlington Election Guide/i.test(document.title))document.title=document.title.replace(/Burlington Election Guide/ig,'Burlington News');
   }
@@ -21,7 +21,7 @@
   function restoreFooter(){
     let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}
     if(f.dataset.newsFooter==='3')return;f.dataset.newsFooter='3';
-    f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news for Burlington, Ontario.</p></div></div><div class="site-footer-columns"><nav aria-label="Explore"><strong>Explore</strong><a href="/news/">News</a><a href="/elections/">Elections</a><a href="/explore/">Explore</a><a href="/sports/">Sports</a><a href="/games/">Puzzles</a></nav><nav aria-label="About"><strong>About</strong><a href="/about.html">About</a><a href="/methodology.html">Sources</a><a href="/help.html#accessibility">Accessibility</a><a href="/feedback/">Feedback</a><a href="/work-with-us/">Work with us</a></nav></div></div>';
+    f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news for Burlington, Ontario.</p></div></div><div class="site-footer-columns"><nav aria-label="Explore"><strong>Explore</strong><a href="/news/">News</a><a href="/elections/">Elections</a><a href="/explore/">Explore</a><a href="/sports/">Sports</a><a href="/games/">Puzzles</a></nav><nav aria-label="About"><strong>About</strong><a href="/about/">About</a><a href="/sources/">Sources</a><a href="/accessibility/#accessibility">Accessibility</a><a href="/feedback/">Feedback</a><a href="/work-with-us/">Work with us</a></nav></div></div>';
   }
 
   const isLocalStory=i=>{
@@ -47,7 +47,7 @@
   async function rebuildHomeBrief(){
     if(!home())return;const old=document.querySelector('.daily-brief');if(!old)return;
     const items=(await getLocalStories(6)).slice(0,3);if(!items.length)return;
-    const section=document.createElement('section');section.className='daily-brief news-brief';section.id='daily-brief';section.innerHTML=`<div class="news-brief-head"><div><h2>Latest in Burlington</h2></div><a href="updates.html">All news →</a></div><div class="news-brief-grid">${items.map(storyCard).join('')}</div>`;old.replaceWith(section);
+    const section=document.createElement('section');section.className='daily-brief news-brief';section.id='daily-brief';section.innerHTML=`<div class="news-brief-head"><div><h2>Latest in Burlington</h2></div><a href="/news/">All news →</a></div><div class="news-brief-grid">${items.map(storyCard).join('')}</div>`;old.replaceWith(section);
   }
 
   async function rebuildUpdates(){
@@ -67,7 +67,7 @@
       const a=document.createElement('a');a.className=card.className;a.href=href;a.target='_blank';a.rel='noopener';a.setAttribute('aria-label',`${card.querySelector('h3')?.textContent||'Election date'} — open details`);a.innerHTML=card.innerHTML;card.replaceWith(a);
     });
   }
-  function replacePartner(){const card=document.querySelector('.home-extra-card.partner-card');if(!card)return;card.className='home-extra-card beginner-card';card.href='elections-for-beginners.html';card.innerHTML='<span class="home-extra-icon" aria-hidden="true">?</span><div><small>Start here</small><h2>Elections for beginners</h2><p>What a municipal election is, what each job controls and how a city decision actually gets made.</p></div><span aria-hidden="true">→</span>'}
+  function replacePartner(){const card=document.querySelector('.home-extra-card.partner-card');if(!card)return;card.className='home-extra-card beginner-card';card.href='/elections/beginners/';card.innerHTML='<span class="home-extra-icon" aria-hidden="true">?</span><div><small>Start here</small><h2>Elections for beginners</h2><p>What a municipal election is, what each job controls and how a city decision actually gets made.</p></div><span aria-hidden="true">→</span>'}
   function cleanCandidateLabels(){}
   function watchCandidateLabels(){}
 
@@ -98,8 +98,8 @@
     const main=document.getElementById('main'),items=await stories();if(!main)return;
     const fallback=[
       {tag:'Election',headline:'A clear guide to Burlington’s 2026 election',summary:'Compare candidates, understand the jobs and see the dates that matter.',url:'#election-guide'},
-      {tag:'Your ballot',headline:'See every race on your Burlington ballot',summary:'Choose your ward, then review mayor, councillor and trustee candidates.',url:'ballot.html'},
-      {tag:'Explainer',headline:'Municipal elections, explained from zero',summary:'What council controls, who you elect and how a decision becomes real.',url:'elections-for-beginners.html'}
+      {tag:'Your ballot',headline:'See every race on your Burlington ballot',summary:'Choose your ward, then review mayor, councillor and trustee candidates.',url:'/elections/ballot/'},
+      {tag:'Explainer',headline:'Municipal elections, explained from zero',summary:'What council controls, who you elect and how a decision becomes real.',url:'/elections/beginners/'}
     ];
     const lead=items.find(x=>x.image&&/burlington|burloak|transit/i.test(`${x.tag||''} ${x.headline||''}`))||items.find(x=>x.image)||items[0]||fallback[0];
     const side=[
@@ -112,10 +112,10 @@
       <div class="publication-heading"><h1>Burlington, in one place.</h1><p>Local news, things to do, civic decisions and an election guide that tells you exactly what each choice means.</p></div>
       <div class="publication-lead-grid"><a class="publication-lead" href="${esc(lead.url)}"><div class="publication-lead-media">${media(lead)}</div><span class="publication-tag">${esc(lead.tag||'Burlington')}</span><h2>${esc(lead.headline)}</h2><p>${esc(lead.summary||lead.description||'Open the full update.')}</p></a><div class="publication-side">${side.map(x=>`<a class="publication-side-story" href="${esc(x.url)}" target="_blank" rel="noopener"><div class="publication-side-media">${media(x)}</div><div class="publication-side-copy"><span class="publication-tag">${esc(x.tag||'Burlington')}</span><h3>${esc(x.headline)}</h3><p>${esc(x.summary||x.description||'Open the full update.')}</p></div></a>`).join('')}</div></div>
       <p class="publication-credit">Wildlife images: Jefferson salamander by Jake Scott, CC BY-SA 3.0; Cerulean warbler by Mdf/MPF, CC BY-SA 3.0; Fishway photo via Royal Botanical Gardens.</p>
-      <nav class="publication-shortcuts" aria-label="Popular Burlington sections"><a href="updates.html"><small>Newest</small><strong>Today in Burlington</strong></a><a href="explore.html"><small>Do something</small><strong>Explore Burlington</strong></a><a href="#election-guide"><small>2026 vote</small><strong>Election guide</strong></a><a href="puzzles.html"><small>Play</small><strong>Local puzzles</strong></a></nav>`;
+      <nav class="publication-shortcuts" aria-label="Popular Burlington sections"><a href="/news/"><small>Newest</small><strong>Today in Burlington</strong></a><a href="/explore/"><small>Do something</small><strong>Explore Burlington</strong></a><a href="#election-guide"><small>2026 vote</small><strong>Election guide</strong></a><a href="/games/"><small>Play</small><strong>Local puzzles</strong></a></nav>`;
     main.prepend(section);
     const hero=document.querySelector('.election-hero');if(hero)hero.id='election-guide';
-    const candidates=document.getElementById('candidates');if(candidates&&!document.querySelector('.explore-teaser')){const e=document.createElement('section');e.className='explore-teaser';e.innerHTML='<div><span class="publication-tag">Shuffle your city</span><h2>Find something in Burlington you would never search for.</h2><p>Local oddities, free stops, overlooked history and small challenges. Start with one card and see where it takes you.</p><a href="explore.html">Shuffle the deck →</a></div><div class="explore-stack" aria-hidden="true"><div class="explore-stack-card"></div><div class="explore-stack-card"></div><div class="explore-stack-card"><small>Try this</small><strong>Find the plaque most people walk past.</strong></div></div>';candidates.insertAdjacentElement('beforebegin',e)}
+    const candidates=document.getElementById('candidates');if(candidates&&!document.querySelector('.explore-teaser')){const e=document.createElement('section');e.className='explore-teaser';e.innerHTML='<div><span class="publication-tag">Shuffle your city</span><h2>Find something in Burlington you would never search for.</h2><p>Local oddities, free stops, overlooked history and small challenges. Start with one card and see where it takes you.</p><a href="/explore/">Shuffle the deck →</a></div><div class="explore-stack" aria-hidden="true"><div class="explore-stack-card"></div><div class="explore-stack-card"></div><div class="explore-stack-card"><small>Try this</small><strong>Find the plaque most people walk past.</strong></div></div>';candidates.insertAdjacentElement('beforebegin',e)}
   }
   function fixEvidence(){
     document.querySelectorAll('.community-quote,.ward-community-card').forEach(card=>{const score=card.querySelector('.community-score,.ward-community-score'),status=card.querySelector('.community-status,.ward-community-status');if(!score||score.dataset.fixed)return;const item={status:status?.textContent||'',evidenceScore:Number((score.textContent.match(/\d+/)||[0])[0])},[label,cls]=evidenceLabel(item);score.textContent=label;score.classList.add(cls);score.dataset.fixed='1'});
