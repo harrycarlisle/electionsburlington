@@ -1,2 +1,6 @@
 scripts/__pycache__/
 scripts/sources/__pycache__/
+.env
+.env.local
+node_modules/
+.wrangler/

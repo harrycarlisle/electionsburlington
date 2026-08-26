@@ -105,8 +105,6 @@
     return selected;
   };
 
-  window.BurlingtonIdeas?.mountHome(document.getElementById('homeIdea'));
-
   function tightenDeck(value){
     let text = cleanDash(value).replace(/\s+/g, ' ').trim();
     if (!text) return '';

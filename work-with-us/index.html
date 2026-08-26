@@ -3,61 +3,74 @@
 <head><link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16x16.png"><link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#071b35">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Work with Burlington News</title>
-  <meta name="description" content="Partner on useful local reporting, share expertise, or help Burlington News tell a Burlington story.">
+  <title>Get in touch with Burlington News</title>
+  <meta name="description" content="Share a story, local expertise, partnership idea or business opportunity with Burlington News.">
   <link rel="canonical" href="https://burlingtonnews.ca/work-with-us/">
   <link rel="stylesheet" href="/site-extra.css?v=20260824z4">
-  <link rel="stylesheet" href="/feedback.css?v=20260826w">
+  <link rel="stylesheet" href="/feedback.css?v=20260826ww">
   <link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle">
   <link rel="stylesheet" href="/site-shell.css?v=20260824z4" data-style="site-shell">
   <link rel="stylesheet" href="/site-header.css?v=20260826j">
-  <link rel="stylesheet" href="/type-system.css?v=20260826a">
-  <script src="/site-search.js?v=20260826f" defer></script>
+  <link rel="stylesheet" href="/type-system.css?v=20260826ww">
+  <script src="/site-search.js?v=20260826ww" defer></script>
   <script src="/site-extra.js?v=20260826ac" defer></script>
-  <script src="/feedback.js?v=20260826w" defer></script>
+  <script src="/work-with-us.js?v=20260826ww" defer></script>
 </head>
 <body class="simple-page work-page">
   <a class="skip" href="#main">Skip to content</a>
   <header class="header"><div class="wrap header-inner"><a class="brand" href="/">Burlington News</a><button class="menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
   <main id="main" class="feedback-main work-main">
     <div class="feedback-shell work-shell">
-      <div class="feedback-kicker">Work with us</div>
-      <h1>Work with Burlington News</h1>
-      <p class="feedback-lead">Partner on useful local reporting, share expertise, or help us tell a Burlington story.</p>
-      <ul class="work-paths">
-        <li><strong>Sponsor local work</strong><span>Support useful Burlington reporting, guides, tools or community projects.</span></li>
-        <li><strong>Share expertise</strong><span>Help explain a local issue, industry, neighbourhood or decision.</span></li>
-        <li><strong>Pitch a story or project</strong><span>Send an idea for something Burlington News should investigate, explain or build.</span></li>
-      </ul>
-      <form id="workForm" class="feedback-form">
+      <p class="feedback-kicker">Work with us</p>
+      <h1>Get in touch with Burlington News</h1>
+      <p class="feedback-lead">Have a story, local expertise, partnership idea or business opportunity? Send us a note.</p>
+      <form id="workForm" class="feedback-form" method="post" action="/api/contact">
+        <div class="hp-field" aria-hidden="true">
+          <label for="workWebsite">Website</label>
+          <input id="workWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <input id="workStartedAt" name="startedAt" type="hidden" value="">
         <div class="field-group">
           <label for="workName">Name</label>
-          <input id="workName" name="name" type="text" autocomplete="name" required>
+          <input id="workName" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="workName-error">
+          <p class="field-error" id="workName-error" hidden></p>
         </div>
         <div class="field-group">
           <label for="workEmail">Email</label>
-          <input id="workEmail" name="email" type="email" autocomplete="email" inputmode="email" required>
-        </div>
-        <div class="field-group">
-          <label for="workType">What are you reaching out about?</label>
-          <select id="workType" name="type" required>
-            <option value="Sponsorship">Sponsorship</option>
-            <option value="Expert / source">Expert / source</option>
-            <option value="Story idea">Story idea</option>
-            <option value="Community project">Community project</option>
-            <option value="Photography / media">Photography / media</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-        <div class="field-group">
-          <label for="workMessage">Message</label>
-          <textarea id="workMessage" name="message" rows="6" required placeholder="What should we know?"></textarea>
+          <input id="workEmail" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="workEmail-error">
+          <p class="field-error" id="workEmail-error" hidden></p>
         </div>
         <div class="field-group">
           <label for="workOrg">Organization <span>optional</span></label>
-          <input id="workOrg" name="organization" type="text" autocomplete="organization">
+          <input id="workOrg" name="organization" type="text" autocomplete="organization" maxlength="150">
         </div>
-        <button class="feedback-submit" type="submit">Send message</button>
+        <div class="field-group">
+          <label for="workPhone">Phone <span>optional</span></label>
+          <input id="workPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="50">
+        </div>
+        <div class="field-group">
+          <label for="workPurpose">What is this about?</label>
+          <select id="workPurpose" name="purpose" required aria-describedby="workPurpose-error">
+            <option value="">Choose one</option>
+            <option value="story-tip">Story tip</option>
+            <option value="expert-source">Expert / source</option>
+            <option value="partnership">Partnership</option>
+            <option value="advertising">Advertising</option>
+            <option value="community">Community organization</option>
+            <option value="other">Something else</option>
+          </select>
+          <p class="field-error" id="workPurpose-error" hidden></p>
+        </div>
+        <div class="field-group">
+          <label for="workUrl">Relevant URL <span>optional</span></label>
+          <input id="workUrl" name="url" type="url" autocomplete="url" inputmode="url" maxlength="500" placeholder="https://">
+        </div>
+        <div class="field-group">
+          <label for="workMessage">Message</label>
+          <textarea id="workMessage" name="message" rows="6" maxlength="5000" required aria-describedby="workMessage-error" placeholder="What should we know?"></textarea>
+          <p class="field-error" id="workMessage-error" hidden></p>
+        </div>
+        <button class="feedback-submit" id="workSubmit" type="submit">Send message</button>
         <div class="feedback-status" id="workStatus" role="status" aria-live="polite"></div>
       </form>
     </div>

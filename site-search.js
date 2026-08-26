@@ -29,7 +29,7 @@
     {title:'Burlington sports',url:'/sports/',section:'Sports',keywords:'soccer hockey lacrosse ultimate ringette golf'},
     {title:'Puzzles about Burlington',url:'/games/',section:'Puzzles',keywords:'quiz puzzle trivia swipe games'},
     {title:'Give feedback',url:'/feedback/',section:'About',keywords:'correction error accessibility feedback'},
-    {title:'Work with Burlington News',url:'/work-with-us/',section:'About',keywords:'partner sponsor expertise pitch photography work with us'},
+    {title:'Work with Burlington News',url:'/work-with-us/',section:'About',keywords:'partner sponsor expertise pitch advertising story tip source community work with us'},
     {title:'Live Burlington traffic cameras',url:'/traffic/',section:'Traffic',keywords:'qew skyway traffic camera commute brant guelph walkers appleby burloak'}
   ];
   const homeSuggested = ['I’m bored','Best tacos','This weekend','Things to do'];

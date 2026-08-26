@@ -158,38 +158,21 @@
     return ideas;
   }
 
-  function ideaMarkup(idea, variant = 'explore') {
+  function ideaMarkup(idea) {
     if (!idea) return '';
     const pref = prefs[idea.id] || {};
     const image = idea.image
       ? `<div class="bored-visual"><img src="${esc(imageSrc(idea.image))}" alt="${esc(idea.imageAlt || '')}" loading="lazy">${idea.credit && !idea.illustration && !/^Burlington News/i.test(idea.credit) ? `<span class="image-credit">${esc(idea.credit)}</span>` : ''}</div>`
       : '';
     const maps = `<a class="bored-maps" href="${esc(mapsUrl(idea))}" target="_blank" rel="noopener">Open in Maps →</a>`;
-    if (variant === 'home') {
-      return `<p class="home-idea-kicker">Need an idea?</p><p class="home-idea-title">${esc(idea.title)}</p><div class="home-idea-actions"><button type="button" data-idea-shuffle>Another idea ↻</button></div>`;
-    }
     return `${image}<div class="bored-copy"><strong>${esc(idea.title)}</strong><p>${esc(idea.description || idea.copy || '')}</p><button class="primary-button idea-shuffle" type="button" data-idea-shuffle>Another idea ↻</button><div class="bored-actions"><button type="button" data-bored="like" class="${pref.like ? 'is-on' : ''}" aria-pressed="${pref.like ? 'true' : 'false'}">♡ Like</button><button type="button" data-bored="skip" class="${pref.skip ? 'is-on' : ''}" aria-pressed="${pref.skip ? 'true' : 'false'}">× Not for me</button>${maps}</div></div>`;
-  }
-
-  function mountHome(root) {
-    if (!root) return;
-    const paint = idea => {
-      if (!idea) return;
-      root.hidden = false;
-      root.innerHTML = ideaMarkup(idea, 'home');
-    };
-    load().then(() => paint(pickNext())).catch(() => { root.hidden = false; });
-    root.addEventListener('click', event => {
-      if (!event.target.closest('[data-idea-shuffle]')) return;
-      paint(pickNext(currentId));
-    });
   }
 
   function mountExplore(root, extraButton) {
     if (!root) return;
     const paint = idea => {
       if (!idea) return;
-      root.innerHTML = ideaMarkup(idea, 'explore');
+      root.innerHTML = ideaMarkup(idea);
     };
     const shuffle = () => paint(pickNext(currentId));
     extraButton?.addEventListener('click', shuffle);
@@ -222,5 +205,5 @@
     });
   }
 
-  window.BurlingtonIdeas = { load, pickNext, current, mapsUrl, imageSrc, prefs, setPref, mountHome, mountExplore, eligible };
+  window.BurlingtonIdeas = { load, pickNext, current, mapsUrl, imageSrc, prefs, setPref, mountExplore, eligible };
 })();

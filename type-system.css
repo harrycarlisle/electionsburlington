@@ -185,8 +185,7 @@ button,input,select,textarea{
   margin-bottom:8px;
 }
 
-.latest-puzzles strong,
-.home-idea-title{
+.latest-puzzles strong{
   font-family:var(--font-sans)!important;
   font-weight:var(--weight-bold)!important;
   line-height:var(--lh-card)!important;
@@ -203,6 +202,16 @@ button,input,select,textarea{
   font-family:var(--font-sans)!important;
   font-size:var(--text-base);
   line-height:var(--lh-deck);
+}
+.home-work-band h2{
+  font-family:var(--font-serif)!important;
+  font-weight:var(--weight-bold)!important;
+  line-height:var(--lh-display)!important;
+  letter-spacing:-.03em!important;
+}
+.home-work-copy,
+.home-work-cta{
+  font-family:var(--font-sans)!important;
 }
 
 /* Live Local Update is utility, not editorial */
