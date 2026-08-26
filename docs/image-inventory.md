@@ -6,7 +6,7 @@ Decision values: KEEP · REPLACE · MOVE INSIDE ARTICLE · SOURCE REAL PHOTO · 
 
 | story | current image | type | quality | location accuracy | rights confidence | hero suitability | card suitability | decision |
 |---|---|---|---|---|---|---|---|---|
-| How bad is Burlington’s crime, really? | `/assets/stories/public-safety/halton-police-crime-burlington.webp` | Burlington News visual (forward-facing Halton police SUV, lights, crime-scene tape) | strong, crisp, works on 16:9 crop | suburban Halton/Burlington-plausible; not a named address | high (owned visual; not a documentary crime-scene photo) | strong | strong | KEEP |
+| How bad is Burlington’s crime, really? | `/assets/stories/public-safety/halton-police-crime-burlington.webp` | Photo: Burlington News (forward-facing Halton police SUV, lights, crime-scene tape) | strong, crisp, works on 16:9 crop | suburban Halton/Burlington-plausible; not a named address | high (owned visual; not a documentary crime-scene photo) | strong | strong | KEEP |
 | Toss Bosses went 0–24 | `/assets/sports/ultimate-waterfront.webp` | editorial illustration (waterfront ultimate, Skyway in background) | serviceable; faceted/illustrated, not a real game photo | Burlington-coded via Skyway; not a Toss Bosses field | high (owned illustration) | acceptable | acceptable | KEEP (no rights-safe Toss Bosses photo in repo) |
 | Burlington’s board-game cafe closed | `/assets/editorial/nostalgia-cafe-closure.svg` | flat original illustration with baked-in “FINAL GAME” type | weak / placeholder-like | generic cafe table, not the actual Nostalgia Games Cafe | high (owned) | weak | weak | KEEP for now — SOURCE REAL PHOTO when a rights-safe exterior/interior exists |
 | Burlington’s proposed data centre | `/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp` | approved editorial site concept | strong | 3110 South Service Road context | high if kept labelled as concept, not a final rendering | strong | strong | KEEP |
@@ -28,8 +28,8 @@ Decision values: KEEP · REPLACE · MOVE INSIDE ARTICLE · SOURCE REAL PHOTO · 
 
 ## This pass
 
-- Crime story: canonical path is `/assets/stories/public-safety/halton-police-crime-burlington.webp`. Credit: Burlington News visual. Old dusk SUV is remapped away in `home.js` and `article-modern.js`.
-- Toss Bosses: keep `/assets/sports/ultimate-waterfront.webp`. Caption: Burlington News illustration. Do not imply it depicts Toss Bosses.
+- Crime story: canonical path is `/assets/stories/public-safety/halton-police-crime-burlington.webp`. Credit: Photo: Burlington News. Old dusk SUV is remapped away in `home.js` and `article-modern.js`.
+- Toss Bosses: keep `/assets/sports/ultimate-waterfront.webp`. Caption: Graphic: Burlington News. Do not imply it depicts Toss Bosses.
 - Cafe: no rights-safe real photo of Nostalgia Games Cafe in the repo. The “FINAL GAME” SVG stays until a legal photo exists. Do not generate a fake cafe interior.
 
 ## Keep (do not overwrite)

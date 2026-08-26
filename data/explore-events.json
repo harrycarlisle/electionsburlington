@@ -16,8 +16,8 @@
       "source": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
       "sourceName": "Burlington Lions Club",
       "image": "assets/explore/farmers-market.webp",
-      "imageAlt": "Editorial illustration of Burlington Farmers Market in late summer",
-      "credit": "Burlington News illustration",
+      "imageAlt": "Burlington Farmers Market in late summer",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "scope": "Burlington"
     },
@@ -35,8 +35,8 @@
       "source": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828",
       "sourceName": "Timeanddate.com; checked against NASA",
       "image": "assets/explore/lunar-eclipse.webp",
-      "imageAlt": "Illustration of a partial lunar eclipse above Lake Ontario",
-      "credit": "Burlington News illustration",
+      "imageAlt": "Partial lunar eclipse above Lake Ontario",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "scope": "Burlington"
     },
@@ -106,8 +106,8 @@
       "source": "https://www.burlingtongreen.org/events/green-up-community-tree-planting-event/",
       "sourceName": "BurlingtonGreen",
       "image": "assets/explore/community-cleanup.webp",
-      "imageAlt": "Illustration of neighbours volunteering on a Burlington park path",
-      "credit": "Burlington News illustration",
+      "imageAlt": "Neighbours volunteering on a Burlington park path",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "scope": "Burlington"
     }
@@ -172,8 +172,8 @@
       "neighbourhood": "Aldershot",
       "tags": ["trail", "quick"],
       "image": "assets/editorial/explore-collage.webp",
-      "imageAlt": "Illustrated Burlington landscape collage",
-      "credit": "Burlington News illustration",
+      "imageAlt": "Burlington landscape collage",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/kerncliff-park.aspx"
     },
@@ -190,7 +190,7 @@
       "tags": ["trail", "date"],
       "image": "assets/explore/night-sky-mount-nemo.webp",
       "imageAlt": "Night sky above the Burlington escarpment",
-      "credit": "Burlington News illustration",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "url": "https://www.conservationhalton.ca/parks/mount-nemo/"
     },
@@ -222,8 +222,8 @@
       "neighbourhood": "Downtown",
       "tags": ["rain", "family", "museum"],
       "image": "assets/editorial/explore-collage.webp",
-      "imageAlt": "Illustrated Burlington history collage",
-      "credit": "Burlington News illustration",
+      "imageAlt": "Burlington history collage",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "url": "https://museumsofburlington.ca/joseph-brant-museum/"
     },
@@ -239,8 +239,8 @@
       "neighbourhood": "East Burlington",
       "tags": ["rain", "museum", "family"],
       "image": "assets/editorial/explore-collage.webp",
-      "imageAlt": "Illustrated Burlington history collage",
-      "credit": "Burlington News illustration",
+      "imageAlt": "Burlington history collage",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "url": "https://museumsofburlington.ca/ireland-house-museum/"
     },
@@ -272,8 +272,8 @@
       "neighbourhood": "Downtown",
       "tags": ["quick", "date", "downtown"],
       "image": "assets/editorial/explore-collage.webp",
-      "imageAlt": "Illustrated collage of Burlington landmarks",
-      "credit": "Burlington News illustration",
+      "imageAlt": "Collage of Burlington landmarks",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "url": "https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx"
     },
@@ -306,7 +306,7 @@
       "tags": ["sunset", "date", "quick"],
       "image": "assets/explore/moonlit-lake-ontario.webp",
       "imageAlt": "Moonlight over Lake Ontario",
-      "credit": "Burlington News illustration",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/burloak-waterfront-park.aspx"
     },
@@ -322,8 +322,8 @@
       "neighbourhood": "Central",
       "tags": ["coffee", "food", "rain", "quick"],
       "image": "assets/editorial/explore-collage.webp",
-      "imageAlt": "Illustrated Burlington food collage",
-      "credit": "Burlington News illustration",
+      "imageAlt": "Burlington food collage",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "url": "https://jcshotbagels.com/"
     },
@@ -340,7 +340,7 @@
       "tags": ["night", "date", "sunset"],
       "image": "assets/explore/moonlit-lake-ontario.webp",
       "imageAlt": "Moonlight over Lake Ontario",
-      "credit": "Burlington News illustration",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "url": "https://www.timeanddate.com/moon/canada/burlington"
     },
@@ -357,7 +357,7 @@
       "tags": ["night", "stargazing"],
       "image": "assets/explore/night-sky-mount-nemo.webp",
       "imageAlt": "Starry sky above the escarpment",
-      "credit": "Burlington News illustration",
+      "credit": "Graphic: Burlington News",
       "illustration": true,
       "url": "https://stellarium-web.org/"
     },
@@ -374,7 +374,7 @@
       "tags": ["night", "event"],
       "activeUntil": "2026-08-28",
       "image": "assets/explore/lunar-eclipse.webp",
-      "imageAlt": "Illustration of a partial lunar eclipse",
+      "imageAlt": "Partial lunar eclipse",
       "url": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828"
     }
   ]

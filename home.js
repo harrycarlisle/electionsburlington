@@ -118,7 +118,7 @@
   }
 
   const CRIME_IMAGE = '/assets/stories/public-safety/halton-police-crime-burlington.webp';
-  const CRIME_ALT = 'Illustrative Burlington News visual of a Halton Regional Police vehicle behind crime-scene tape.';
+  const CRIME_ALT = 'Halton Regional Police vehicle behind crime-scene tape';
 
   function storyImage(item, fallback){
     const raw = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : fallback;
@@ -134,7 +134,7 @@
     const image = storyImage(item, '/assets/editorial/home-share.webp');
     const isCrimeHero = /halton-police-crime/.test(image);
     const alt = isCrimeHero ? CRIME_ALT : (item.alt || item.headline);
-    const credit = isCrimeHero ? 'Burlington News visual' : (item.credit || 'Burlington News');
+    const credit = isCrimeHero ? 'Photo: Burlington News' : (item.credit || '');
     const deck = tightenDeck(item.deck || '');
     lead.innerHTML = `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${esc(image)}" alt="${esc(alt)}" fetchpriority="high">${credit ? `<span class="image-credit">${esc(credit)}</span>` : ''}</div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(item.headline)}</h1>${deck ? `<p>${esc(deck)}</p>` : ''}</div></a>`;
   }
