@@ -6,7 +6,7 @@ The purpose of this archive is to build a long-term, source-backed record while 
 
 ## Source changes
 - **Meed Ward campaign:** CHANGED — review — https://votemarianne.ca/
-- **Lisa Kearns campaign:** No detected change — https://lisakearns.ca/
+- **Lisa Kearns campaign:** CHANGED — review — https://lisakearns.ca/
 - **Rory Nisan campaign:** CHANGED — review — https://rorynisan.ca/
 - **Official candidate list:** CHANGED — review — https://myvote.burlington.ca/for-voters/list-of-candidates/
 - **Official voting information:** No detected change — https://myvote.burlington.ca/for-voters/how-to-vote/
@@ -33,6 +33,7 @@ The purpose of this archive is to build a long-term, source-backed record while 
 
 ## Changed sources requiring review
 - Meed Ward campaign
+- Lisa Kearns campaign
 - Rory Nisan campaign
 - Official candidate list
 - Burlington council records
