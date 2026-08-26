@@ -45,7 +45,7 @@
     ['school-policy', /teacher take your phone|school rules|student rights/i],
     ['school-calendar', /school starts|back to school/i],
     ['crime', /crime|police|severity index/i],
-    ['local-food', /cafe|restaurant|board-game|ribfest|food/i],
+    ['local-food', /cafe|restaurant|board-game|food/i],
     ['730-brant', /730 brant/i],
     ['millcroft', /millcroft/i],
     ['skyway', /skyway|tunnels/i],
@@ -76,8 +76,16 @@
     SUBJECT_PATTERNS.forEach(([key, pattern]) => { if (pattern.test(haystack)) keys.add(key); });
     return keys;
   };
+  const appealFactor = (item, selected) => {
+    const haystack = `${item?.id || ''} ${item?.headline || ''}`.toLowerCase();
+    let factor = 1;
+    if (/millcroft|ward-change|ward may have changed|phase-2|phase 2|zoning/.test(haystack)) factor *= 0.88;
+    if (/sports-lockers|\blockers\b/.test(haystack) && !/0-24|hotspots|toss/.test(haystack)) factor *= 0.88;
+    if (categoryKey(item) === 'development' && selected.some(other => categoryKey(other) === 'development')) factor *= 0.92;
+    return factor;
+  };
   const adjustedScore = (item, selected) => {
-    let score = Number(item?.placementScore || 0);
+    let score = Number(item?.placementScore || 0) * appealFactor(item, selected);
     if (!selected.length) return score;
     const category = categoryKey(item);
     const subjects = subjectKeys(item);
@@ -86,11 +94,12 @@
     if (subjects.size && selected.some(other => [...subjects].some(key => subjectKeys(other).has(key)))) score *= 0.80;
     return score;
   };
-  const diversify = (items, limit, excludeIds) => {
+  const diversify = (items, limit, excludeIds, prior) => {
     const exclude = new Set(excludeIds || []);
     const remaining = items.filter(item => item?.id && !exclude.has(item.id));
-    const selected = [];
-    while (remaining.length && selected.length < limit) {
+    const selected = [...(prior || []).filter(item => item?.id)];
+    const result = [];
+    while (remaining.length && result.length < limit) {
       let bestIndex = 0;
       let bestScore = -1;
       remaining.forEach((item, index) => {
@@ -100,9 +109,11 @@
           bestIndex = index;
         }
       });
-      selected.push(remaining.splice(bestIndex, 1)[0]);
+      const next = remaining.splice(bestIndex, 1)[0];
+      result.push(next);
+      selected.push(next);
     }
-    return selected;
+    return result;
   };
 
   function tightenDeck(value){
@@ -118,33 +129,47 @@
   const CRIME_IMAGE = '/assets/stories/public-safety/halton-police-crime-burlington.webp';
   const CRIME_ALT = 'Halton Regional Police vehicle behind crime-scene tape.';
   const CRIME_TITLE = 'How bad is crime in Burlington, really?';
-  const CRIME_DECK = 'Halton is unusually safe, but one category of crime is moving the wrong way.';
+  const CRIME_DECK = 'Halton is unusually safe, but one category is moving the wrong way.';
+  const SPORTS_TITLE = 'This Burlington team has lost 24 straight games.';
   const PICK_HOOKS = {
-    'data-centre-not-ai': 'The real question is what 20 megawatts means beside an established neighbourhood.',
+    'burlington-crime-analysis-2026': CRIME_DECK,
+    'data-centre-not-ai': 'The real debate is what 20 megawatts means beside an established neighbourhood.',
     'nostalgia-games-cafe-closure': 'The community showed up. The building problem was harder to solve.',
-    'skyway-tunnels': 'The plan got surprisingly far before Burlington ended up with the bridge we know.',
-    'burlington-hotspots-0-24': 'The losing streak is only part of why the team keeps coming back.',
-    '730-brant-vacant-building': 'It sat empty for years. Then a fire made the vacancy impossible to ignore.'
+    'skyway-tunnels': 'The tunnel plan got much further than most Burlington residents probably realize.',
+    'burlington-hotspots-0-24': 'Two winless seasons later, they’re still showing up.',
+    '730-brant-vacant-building': 'The building had already been approved for redevelopment years earlier.',
+    'ribfest-2026': 'The smoke lasts four days. The fundraising has lasted three decades.',
+    'fishway-2025': 'The biggest number in the Fishway report is not the most important one.'
   };
 
   function isCrimeItem(item){
     return /crime|burlington-crime/i.test(`${item?.id || ''} ${item?.headline || ''}`);
   }
 
+  function isSportsStreak(item){
+    return /hotspots-0-24|toss bosses/i.test(`${item?.id || ''} ${item?.headline || ''}`);
+  }
+
   function displayHeadline(item){
-    return isCrimeItem(item) ? CRIME_TITLE : cleanDash(item.headline);
+    if (isCrimeItem(item)) return CRIME_TITLE;
+    if (isSportsStreak(item)) return SPORTS_TITLE;
+    return cleanDash(item.headline);
   }
 
   function displayDeck(item){
     if (isCrimeItem(item)) return CRIME_DECK;
+    if (PICK_HOOKS[item.id]) return PICK_HOOKS[item.id];
     return tightenDeck(item.deck || '');
   }
 
   function pickHook(item){
+    if (isCrimeItem(item)) return CRIME_DECK;
     if (PICK_HOOKS[item.id]) return PICK_HOOKS[item.id];
     const deck = tightenDeck(item.deck || '');
     const words = deck.split(/\s+/).filter(Boolean);
-    return words.length >= 8 && words.length <= 18 ? deck : '';
+    if (words.length < 8 || words.length > 18) return '';
+    const title = displayHeadline(item).toLowerCase();
+    return deck.toLowerCase() === title ? '' : deck;
   }
 
   function storyImage(item, fallback){
@@ -196,12 +221,19 @@
       const leadId = hero?.id;
       const newest = Array.isArray(data.latest) && data.latest.length ? renderNewest(data.latest, leadId) : [];
       const newestIds = (newest || []).map(item => item.id);
-      const pickSource = Array.isArray(data.picks) && data.picks.length
-        ? data.picks
-        : [...(data.feature || []).slice(1), ...(data.rail || [])];
-      const picks = Array.isArray(data.picks) && data.picks.length
-        ? data.picks.slice(0, 3)
-        : diversify(pickSource, 3, [leadId, ...newestIds].filter(Boolean));
+      const seen = new Set();
+      const pickSource = [
+        ...(data.picks || []),
+        ...(data.feature || []).slice(1),
+        ...(data.rail || []),
+        ...(data.latest || [])
+      ].filter(item => item?.id && (seen.has(item.id) ? false : seen.add(item.id)));
+      const picks = diversify(
+        pickSource,
+        3,
+        [leadId, ...newestIds].filter(Boolean),
+        [hero, ...(newest || [])].filter(Boolean)
+      );
       renderPicks(picks.length ? picks : pickSource);
     }).catch(() => {});
 })();

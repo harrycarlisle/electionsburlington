@@ -137,7 +137,7 @@ SUBJECT_PATTERNS = (
     ("school-policy", r"teacher take your phone|school rules|student rights"),
     ("school-calendar", r"school starts|back to school|sept\.? 8"),
     ("crime", r"crime|police|csi|severity index"),
-    ("local-food", r"cafe|restaurant|board-game|ribfest|food"),
+    ("local-food", r"cafe|restaurant|board-game|food"),
     ("730-brant", r"730 brant"),
     ("millcroft", r"millcroft"),
     ("skyway", r"skyway|tunnels"),
@@ -179,8 +179,21 @@ def source_key(item: dict) -> str:
     return re.sub(r"[^a-z0-9]+", "", raw)
 
 
+def appeal_factor(item: dict, selected: list[dict]) -> float:
+    """Prefer broader stories when nearby homepage slots are already filling up."""
+    haystack = f"{item.get('id') or ''} {item.get('headline') or ''}".lower()
+    factor = 1.0
+    if re.search(r"millcroft|ward-change|ward may have changed|phase-2|phase 2|zoning", haystack):
+        factor *= 0.88
+    if re.search(r"sports-lockers|\blockers\b", haystack) and not re.search(r"0-24|hotspots|toss", haystack):
+        factor *= 0.88
+    if category_key(item) == "development" and any(category_key(other) == "development" for other in selected):
+        factor *= 0.92
+    return factor
+
+
 def adjusted_score(item: dict, selected: list[dict]) -> float:
-    base = float(item.get("placementScore") or 0)
+    base = float(item.get("placementScore") or 0) * appeal_factor(item, selected)
     if not selected:
         return base
     category = category_key(item)
@@ -205,23 +218,32 @@ def pool_score(item: dict, selected: list[dict], pool: str = "") -> float:
     return value
 
 
-def diversify(candidates: list[dict], limit: int, exclude_ids: set[str] | None = None, pool: str = "") -> list[dict]:
+def diversify(
+    candidates: list[dict],
+    limit: int,
+    exclude_ids: set[str] | None = None,
+    pool: str = "",
+    prior: list[dict] | None = None,
+) -> list[dict]:
     """Rerank a scored list so nearby homepage slots prefer different topics.
 
     Penalties discourage repeats. A much stronger same-topic story can still win
-    so diversity never forces a weak item into a prominent slot.
+    so diversity never forces a weak item into a prominent slot. `prior` seeds
+    already-visible cards (hero, newest) so Top Picks do not repeat them.
     """
     exclude = exclude_ids or set()
     remaining = [item for item in candidates if item.get("id") and item.get("id") not in exclude]
-    selected: list[dict] = []
-    while remaining and len(selected) < limit:
+    selected: list[dict] = [item for item in (prior or []) if item.get("id")]
+    result: list[dict] = []
+    while remaining and len(result) < limit:
         best = max(
             remaining,
             key=lambda item: (pool_score(item, selected, pool), item.get("published", "")),
         )
+        result.append(best)
         selected.append(best)
         remaining = [item for item in remaining if item.get("id") != best.get("id")]
-    return selected
+    return result
 
 
 def public_item(item: dict) -> dict:
@@ -273,9 +295,10 @@ def main() -> int:
 
     pick_pool = [item for item in eligible if item.get("image")]
     pick_pool.sort(key=lambda item: (item["placementScore"], item.get("published", "")), reverse=True)
-    picks_raw = diversify(pick_pool, 3, used_ids)
+    visible_prior = ([hero] if hero else []) + visible_newest
+    picks_raw = diversify(pick_pool, 3, used_ids, prior=visible_prior)
     if len(picks_raw) < 3:
-        picks_raw = diversify(pick_pool, 3, {hero["id"]} if hero else set())
+        picks_raw = diversify(pick_pool, 3, {hero["id"]} if hero else set(), prior=visible_prior)
 
     rail_raw = diversify(rail_candidates, 3, {hero["id"]} if hero else set())
     feature_rest = diversify(feature_candidates[1:], 3, used_ids)

@@ -15,18 +15,18 @@
       ],
       "url": "articles/how-bad-is-burlington-crime.html",
       "image": "assets/stories/public-safety/halton-police-crime-burlington.webp",
-      "alt": "Illustrative Burlington News visual of a Halton Regional Police vehicle behind crime-scene tape.",
-      "credit": "Burlington News visual",
+      "alt": "Halton Regional Police vehicle behind crime-scene tape.",
+      "credit": "Burlington News",
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "placementScore": 88
+      "placementScore": 87
     },
     {
       "id": "skyway-tunnels",
       "kind": "feature",
       "headline": "Ontario nearly replaced the Skyway with three tunnels.",
-      "deck": "The plan got surprisingly far before Burlington ended up with the bridge we know.",
+      "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
       "label": "Feature",
       "labelEssential": true,
       "topic": "history",
@@ -175,21 +175,21 @@
       "placementScore": 85
     },
     {
-      "id": "ward-change-2026",
-      "kind": "service",
-      "headline": "Your ward may have changed. Check before you vote.",
-      "label": "Election",
+      "id": "ribfest-2026",
+      "kind": "seasonal",
+      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
+      "label": "Events",
       "labelEssential": true,
-      "topic": "election",
+      "topic": "events",
       "subjects": [
-        "election",
-        "wards"
+        "events",
+        "ribfest"
       ],
-      "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
-      "image": "assets/editorial/burlington-wards-2026.svg",
-      "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
-      "activeFrom": "2026-08-21",
-      "placementScore": 80
+      "url": "articles/ribfest-2026.html",
+      "image": "assets/home/ribs.webp",
+      "alt": "Barbecue ribs smoking over a pit",
+      "activeFrom": "2026-08-18",
+      "placementScore": 78
     },
     {
       "id": "fishway-2025",
@@ -209,46 +209,29 @@
       "placementScore": 75
     },
     {
-      "id": "730-brant-vacant-building",
-      "kind": "investigation",
-      "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
-      "label": "Development",
+      "id": "ward-change-2026",
+      "kind": "service",
+      "headline": "Your ward may have changed. Check before you vote.",
+      "label": "Election",
       "labelEssential": true,
-      "topic": "development",
+      "topic": "election",
       "subjects": [
-        "730-brant",
-        "vacant-building"
+        "election",
+        "wards"
       ],
-      "url": "articles/730-brant-vacant-building.html",
-      "image": "assets/editorial/730-brant-share.webp",
-      "alt": "730 Brant Street Burlington News illustration",
-      "published": "2026-08-24",
-      "placementScore": 87
+      "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
+      "image": "assets/editorial/burlington-wards-2026.svg",
+      "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
+      "activeFrom": "2026-08-21",
+      "placementScore": 80
     }
   ],
   "picks": [
     {
-      "id": "730-brant-vacant-building",
-      "kind": "investigation",
-      "headline": "730 Brant sat empty for more than a decade. Then it caught fire.",
-      "label": "Development",
-      "labelEssential": true,
-      "topic": "development",
-      "subjects": [
-        "730-brant",
-        "vacant-building"
-      ],
-      "url": "articles/730-brant-vacant-building.html",
-      "image": "assets/editorial/730-brant-share.webp",
-      "alt": "730 Brant Street Burlington News illustration",
-      "published": "2026-08-24",
-      "placementScore": 87
-    },
-    {
       "id": "burlington-hotspots-0-24",
       "kind": "original",
       "headline": "Toss Bosses went 0–24. Why do they keep coming back?",
-      "deck": "The losing streak is only part of why the team keeps coming back.",
+      "deck": "Toss Bosses have lost 24 straight league games, but the record does not explain why they still show up.",
       "label": "Sports",
       "labelEssential": true,
       "topic": "sports",
@@ -269,7 +252,7 @@
       "id": "skyway-tunnels",
       "kind": "feature",
       "headline": "Ontario nearly replaced the Skyway with three tunnels.",
-      "deck": "The plan got surprisingly far before Burlington ended up with the bridge we know.",
+      "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
       "label": "Feature",
       "labelEssential": true,
       "topic": "history",
@@ -283,13 +266,30 @@
       "credit": "Dave Lauretti · CC BY 2.0",
       "published": "2026-08-24",
       "placementScore": 82
+    },
+    {
+      "id": "ribfest-2026",
+      "kind": "seasonal",
+      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
+      "label": "Events",
+      "labelEssential": true,
+      "topic": "events",
+      "subjects": [
+        "events",
+        "ribfest"
+      ],
+      "url": "articles/ribfest-2026.html",
+      "image": "assets/home/ribs.webp",
+      "alt": "Barbecue ribs smoking over a pit",
+      "activeFrom": "2026-08-18",
+      "placementScore": 78
     }
   ],
   "audit": [
     {
       "id": "burlington-crime-analysis-2026",
       "state": "eligible",
-      "placementScore": 88,
+      "placementScore": 87,
       "reason": "all gates passed"
     },
     {

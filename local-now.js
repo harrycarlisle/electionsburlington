@@ -506,7 +506,7 @@ import { buildGoModel } from '/lib/go-times.js';
   function chromeMarkup(initial, includePanel) {
     const indicators = `
       <div class="now-dots" role="tablist" aria-label="Live local update">
-        ${MODES.map(mode => `<button type="button" class="now-dot-btn now-tab-${mode}${mode === initial ? ' is-active' : ''}" role="tab" id="nowTab-${mode}" data-now-dot data-mode="${mode}" aria-label="${MODE_LABEL[mode]}" aria-selected="${mode === initial}" aria-current="${mode === initial ? 'true' : 'false'}" tabindex="${mode === initial ? 0 : -1}">${icons[mode]}</button>`).join('')}
+        ${MODES.map(mode => `<button type="button" class="now-dot-btn now-tab-${mode}${mode === initial ? ' is-active' : ''}" role="tab" id="nowTab-${mode}" data-now-dot data-mode="${mode}" aria-label="${MODE_LABEL[mode]}" aria-selected="${mode === initial}" aria-current="${mode === initial ? 'true' : 'false'}" tabindex="${mode === initial ? 0 : -1}"><span class="now-pager-dot" aria-hidden="true"></span></button>`).join('')}
       </div>`;
     if (!includePanel) return indicators;
     return `

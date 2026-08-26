@@ -20,6 +20,11 @@ def story(item_id: str, score: int, topic: str, subjects: list[str] | None = Non
 
 
 class DiversityTests(unittest.TestCase):
+    def test_ribfest_is_not_lumped_with_cafe(self):
+        cafe = story("nostalgia-games-cafe-closure", 85, "food", ["local-food", "cafe-closure"])
+        ribfest = story("ribfest-2026", 78, "events", ["events", "ribfest"])
+        self.assertFalse(subject_keys(cafe) & subject_keys(ribfest))
+
     def test_category_and_subject_from_explicit_fields(self):
         item = story("data-centre-not-ai", 86, "development", ["data-centre"])
         self.assertEqual(category_key(item), "development")
@@ -59,6 +64,32 @@ class DiversityTests(unittest.TestCase):
         ]
         picked = diversify(candidates, 2, {"hero"})
         self.assertEqual([item["id"] for item in picked], ["schools", "food"])
+
+    def test_picks_see_already_visible_development(self):
+        newest = [story("data-centre", 86, "development", ["data-centre"])]
+        candidates = [
+            story("730-brant-vacant-building", 87, "development", ["730-brant"]),
+            story("burlington-hotspots-0-24", 82, "sports", ["sports"]),
+            story("skyway-tunnels", 82, "history", ["skyway"]),
+            story("ribfest-2026", 78, "events", ["ribfest"]),
+        ]
+        picked = diversify(candidates, 3, {"data-centre"}, prior=newest)
+        topics = [category_key(item) for item in picked]
+        self.assertNotIn("730-brant-vacant-building", [item["id"] for item in picked])
+        self.assertLessEqual(topics.count("development"), 0)
+        self.assertIn("sports", topics)
+        self.assertIn("history", topics)
+        self.assertIn("events", topics)
+
+    def test_technical_municipal_loses_when_events_are_close(self):
+        selected = [
+            story("crime", 88, "public-safety", ["crime"]),
+            story("schools", 88, "schools"),
+            story("data-centre", 86, "development", ["data-centre"]),
+        ]
+        ward = story("ward-change-2026", 80, "election", ["election"])
+        ribfest = story("ribfest-2026", 78, "events", ["ribfest"])
+        self.assertGreater(adjusted_score(ribfest, selected), adjusted_score(ward, selected))
 
 
 if __name__ == "__main__":
