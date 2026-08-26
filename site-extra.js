@@ -11,6 +11,9 @@
   const isElectionPage = () => isElectionGuide() || /(head-to-head|ballot|ward|promises|elections-for-beginners)\.html$/.test(path);
 
   function preferredTheme() {
+    if (window.BurlingtonTheme) {
+      return window.BurlingtonTheme.apply(window.BurlingtonTheme.savedMode(), false);
+    }
     try {
       const saved = localStorage.getItem(storageKey) || localStorage.getItem('burlington-election-theme');
       if (saved === 'light' || saved === 'dark') return saved;
@@ -25,6 +28,14 @@
   }
 
   function setTheme(theme, persist = true) {
+    if (window.BurlingtonTheme) {
+      const mode = theme === 'auto' ? 'auto' : (theme === 'dark' ? 'dark' : 'light');
+      const appearance = window.BurlingtonTheme.apply(mode, persist);
+      document.querySelectorAll('[data-theme-toggle]').forEach(button => {
+        button.innerHTML = themeIcon(appearance);
+      });
+      return appearance;
+    }
     const next = theme === 'dark' ? 'dark' : 'light';
     root.dataset.theme = next;
     root.style.colorScheme = next;
@@ -34,6 +45,7 @@
       button.setAttribute('aria-label', `Switch to ${target} mode`);
     });
     if (persist) try { localStorage.setItem(storageKey, next); } catch (_) {}
+    return next;
   }
 
   function ensureStyle(href, key) {
@@ -67,7 +79,8 @@
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826u', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826gt', 'site-header');
+    ensureStyle('/site-header.css?v=20260826ds', 'site-header');
+    ensureStyle('/desktop-system.css?v=20260826ds', 'desktop-system');
   }
 
   function ensureUtilityBar() {
@@ -236,6 +249,7 @@
         <button class="menu-theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"></button>
         ${drawerSearchMarkup()}
       </div>
+      <button class="menu-theme-auto" type="button" data-theme-auto>Use automatic theme</button>
       <p class="menu-heading">Main</p>
       <div class="menu-primary" role="list">
         ${navLink('/', 'home', 'Home')}
@@ -274,6 +288,10 @@
 
   function weatherChipMarkup() {
     return '<span class="header-weather" data-weather-chip data-weather-alert-host><span class="weather-chip-summary" data-weather-temperature aria-label="Burlington weather"><span class="weather-chip-icon weather-chip-clear" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span><strong class="weather-chip-temp">--</strong></span></span>';
+  }
+
+  function themeToggleMarkup() {
+    return '<button class="header-theme-toggle" type="button" data-theme-toggle title="Switch to dark mode" aria-label="Switch to dark mode"></button>';
   }
 
   function searchMarkup() {
@@ -436,8 +454,14 @@
     });
     nav.addEventListener('click', event => {
       event.stopPropagation();
+      if (event.target.closest('[data-theme-auto]')) {
+        setTheme('auto');
+        return;
+      }
       if (event.target.closest('[data-theme-toggle]')) {
-        setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+        if (window.BurlingtonTheme) window.BurlingtonTheme.toggleManual();
+        else setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+        setTheme(root.dataset.theme, false);
         return;
       }
       const link = event.target.closest('a');
@@ -463,8 +487,10 @@
     if (!controls) return;
     const desktop = matchMedia('(min-width:721px)').matches;
     let weather = controls.querySelector('[data-weather-chip]') || document.querySelector('.header [data-weather-chip], .site-header [data-weather-chip]');
+    let theme = controls.querySelector('.header-theme-toggle');
     if (!desktop) {
       weather?.remove();
+      theme?.remove();
       return;
     }
     if (!weather) {
@@ -473,6 +499,19 @@
     } else if (!controls.contains(weather)) {
       controls.insertBefore(weather, search || null);
     }
+    if (!theme) {
+      if (weather) weather.insertAdjacentHTML('afterend', themeToggleMarkup());
+      else if (search) search.insertAdjacentHTML('beforebegin', themeToggleMarkup());
+      else controls.insertAdjacentHTML('afterbegin', themeToggleMarkup());
+      theme = controls.querySelector('.header-theme-toggle');
+      theme?.addEventListener('click', event => {
+        event.preventDefault();
+        if (window.BurlingtonTheme) window.BurlingtonTheme.toggleManual();
+        else setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+        setTheme(root.dataset.theme, false);
+      });
+    }
+    setTheme(root.dataset.theme || preferredTheme(), false);
   }
 
   function installDesktopNav() {
@@ -590,8 +629,10 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826gt', 'site-header');
+      ensureStyle('/site-header.css?v=20260826ds', 'site-header');
+      ensureStyle('/desktop-system.css?v=20260826ds', 'desktop-system');
     }
+    ensureScript('/theme-boot.js?v=20260826ds', 'theme-boot');
     ensureUtilityBar();
     ensureBanner();
     addSeo();

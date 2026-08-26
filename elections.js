@@ -3,12 +3,14 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const strip = document.getElementById('candidateStrip');
   const profile = document.getElementById('profilePanel');
+  const compare = document.getElementById('issueCompare');
   const selector = document.getElementById('candidateSelect');
   const intro = document.querySelector('#candidates .section-intro');
   if (!strip || !profile) return;
 
   let data = null;
   let activeCandidateId = '';
+  let activeIssue = '';
 
   const byId = id => data.candidates.find(item => item.id === id);
   const bySlug = slug => data.candidates.find(item => item.slug === slug);
@@ -56,6 +58,7 @@
       card.classList.toggle('is-active', on);
     });
     if (selector && selector.value !== id) selector.value = id;
+    renderIssueCompare();
     renderProfile();
     if (hash) {
       const next = hashFor(byId(id));
@@ -77,10 +80,42 @@
     strip.querySelectorAll('.candidate-card').forEach(card => {
       card.addEventListener('click', () => setActive(card.dataset.id));
     });
+    renderIssueCompare();
     if (selector) {
       selector.innerHTML = data.candidates.map(candidate => `<option value="${esc(candidate.id)}">${esc(candidate.name)}</option>`).join('');
       selector.value = activeCandidateId;
     }
+  }
+
+  function renderIssueCompare() {
+    if (!compare || !data) return;
+    const keys = data.issueOrder || [];
+    if (!activeIssue || !data.issues[activeIssue]) activeIssue = keys[0] || '';
+    const meta = data.issues[activeIssue] || {};
+    compare.innerHTML = `
+      <h2>Compare by issue</h2>
+      <div class="issue-tabs" role="tablist" aria-label="Campaign issues">
+        ${keys.map(key => `<button type="button" role="tab" data-issue="${esc(key)}" aria-selected="${key === activeIssue}">${esc(data.issues[key].label)}</button>`).join('')}
+      </div>
+      <p class="issue-compare-label">Issue: ${esc(meta.label || '')}</p>
+      <div class="issue-compare-grid">
+        ${data.candidates.map(candidate => {
+          const row = candidate.issues?.[activeIssue] || {};
+          return `<button type="button" class="issue-compare-card${candidate.id === activeCandidateId ? ' is-active' : ''}" data-id="${esc(candidate.id)}">
+            <strong>${esc(candidate.name)}</strong>
+            <p>${esc(row.summary || 'No detailed public position found yet.')}</p>
+          </button>`;
+        }).join('')}
+      </div>`;
+    compare.querySelectorAll('[data-issue]').forEach(button => {
+      button.addEventListener('click', () => {
+        activeIssue = button.dataset.issue;
+        renderIssueCompare();
+      });
+    });
+    compare.querySelectorAll('.issue-compare-card').forEach(card => {
+      card.addEventListener('click', () => setActive(card.dataset.id));
+    });
   }
 
   function renderProfile() {
@@ -128,7 +163,7 @@
   function bindControls() {
     selector?.addEventListener('change', () => setActive(selector.value));
     window.addEventListener('hashchange', () => setActive(idFromHash(), { hash: false }));
-    if (intro) intro.textContent = 'Who they are, what they want to change, and what their record shows.';
+    if (intro) intro.textContent = 'Who they are, where they differ and what their records show.';
   }
 
   fetch(DATA_URL, { cache: 'no-store' })

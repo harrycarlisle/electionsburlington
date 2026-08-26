@@ -176,7 +176,7 @@
   function eventCard(event) {
     const placeholder = event.image ? '' : ' is-placeholder';
     const nearby = event.scope !== 'Burlington' ? ' nearby' : '';
-    return `<article class="event-card${placeholder}"><button class="event-open" type="button" data-event="${esc(event.id)}" aria-label="Open ${esc(event.title)}">${addToVisual(imageMarkup(event,'event-visual'),`<span class="event-type${nearby}">${esc(event.category)}</span>`)}<div class="event-copy"><span class="event-meta">${esc(event.dateLabel)}</span><h3>${esc(event.title)}</h3><p class="event-place">⌖ ${esc(event.location)}</p></div></button></article>`;
+    return `<article class="event-card${placeholder}"><button class="event-open" type="button" data-event="${esc(event.id)}" aria-label="Open ${esc(event.title)}">${imageMarkup(event,'event-visual')}<div class="event-copy"><span class="event-type${nearby}">${esc(event.category)}</span><span class="event-meta">${esc(event.dateLabel)}</span><h3>${esc(event.title)}</h3><p class="event-place">⌖ ${esc(event.location)}</p></div></button></article>`;
   }
 
   function paintEvents() {
