@@ -11,6 +11,7 @@
     "test:authority": "node scripts/test-authority.js",
     "test:theme": "node scripts/test-theme-boot.js",
     "test:audio": "node scripts/test-article-audio.js",
+    "test:home": "node scripts/test-homepage-ranking.js",
     "audio:generate": "node scripts/generate-article-audio.mjs",
     "build:events": "python3 scripts/build-event-pages.py",
     "dev:contact": "node scripts/dev-contact-server.js"

@@ -74,7 +74,16 @@
   html body .header-search{width:280px!important;flex-basis:280px!important}
 }
 
-.breaking-now[hidden]{display:none!important}
+.breaking-now[hidden],
+.breaking-now:empty,
+.breaking-now.is-empty{
+  display:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  min-height:0!important;
+  height:0!important
+}
 
 html body .event-type{
   position:static!important;
@@ -123,12 +132,12 @@ html[data-theme="dark"] body .leaflet-control-attribution{
 }
 
 @media(min-width:901px){
-  html body.home-page .breaking-now:not([hidden]){
+  html body.home-page .breaking-now:not([hidden]):not(:empty):not(.is-empty){
     display:grid;
     grid-template-columns:auto 1fr;
     align-items:center;
     padding:10px 16px;
-    margin-bottom:20px
+    margin-bottom:16px
   }
   html body.home-page .home-main{padding-top:40px}
   html body.home-page .now-card{
@@ -140,7 +149,7 @@ html[data-theme="dark"] body .leaflet-control-attribution{
   html body.home-page .now-card .now-icon{width:28px;height:28px;flex-basis:28px}
   html body.home-page .now-card-copy strong{font-size:16px;line-height:1.15}
   html body.home-page .now-card-copy em{font-size:13px}
-  html body.home-page .now-dots{margin:6px 0 0;gap:7px}
+  html body.home-page .now-dots{margin:11px 0 16px;gap:20px}
   html body.home-page .lead-grid{
     grid-template-columns:minmax(0,1.35fr) minmax(260px,.58fr);
     gap:36px;

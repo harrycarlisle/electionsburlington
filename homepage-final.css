@@ -39,7 +39,7 @@
 .now-card-go:not(.is-alert) .now-card-metric,
 .now-card-today .now-card-metric,
 .now-card-skyway:not(.is-alert) .now-card-metric{color:var(--navy);background:rgba(15,40,63,.06)}
-.now-dots{display:flex;justify-content:center;align-items:center;gap:8px;margin:8px 0 0}
+.now-dots{display:flex;justify-content:center;align-items:center;gap:20px;margin:11px 0 16px}
 .now-dot-btn{
   display:grid;place-items:center;
   width:28px;height:28px;min-width:28px;min-height:28px;
@@ -68,7 +68,19 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
   background:#fff;
   box-shadow:0 0 0 2px #edf4f8
 }
-.breaking-now{margin:0 0 12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--paper,#fff)}
+.breaking-now[hidden],
+.breaking-now:empty,
+.breaking-now.is-empty{
+  display:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  min-height:0!important;
+  height:0!important;
+  overflow:hidden!important;
+  background:transparent!important
+}
+.breaking-now:not([hidden]):not(:empty):not(.is-empty){margin:0 0 12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--paper,#fff)}
 .breaking-kicker{display:flex;align-items:center;gap:7px;margin:0 0 4px;color:#1f8a4c;font:800 11px/1 Inter,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 .breaking-kicker .now-dot{width:7px;height:7px}
 .breaking-list{display:grid}
@@ -128,19 +140,22 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
   letter-spacing:.06em
 }
 
+.newest[hidden]{display:none!important}
+.newest .mini-heading{margin:0 0 20px;padding:0 0 8px;align-items:baseline}
 .newest-list>a{
   display:block!important;
   grid-template-columns:none!important;
   gap:0;
-  padding:20px 0!important;
+  padding:0 0 18px!important;
   border:0!important;
   border-bottom:1px solid var(--line)!important;
   border-radius:0!important
 }
-.newest-list>a:last-child{border-bottom:0!important}
+.newest-list>a:last-child{border-bottom:0!important;padding-bottom:0!important}
 .newest-thumb,.newest-list img,.newest-list>a::after{display:none!important}
 .newest-list small{
-  margin:0 0 8px;
+  display:block;
+  margin:18px 0 7px;
   color:var(--blue);
   font-family:var(--sans)!important;
   font-size:11px;
@@ -148,18 +163,36 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
   letter-spacing:.08em;
   text-transform:uppercase
 }
+.newest-list>a:first-child small{margin-top:0}
 .newest-list strong{
+  display:block;
+  margin:0 0 7px;
   font-family:var(--sans)!important;
   font-size:20px;
   line-height:1.2;
   letter-spacing:-.015em
 }
+.newest-list .newest-hook{
+  display:block;
+  margin:0 0 8px;
+  overflow:hidden;
+  color:var(--muted,#5d6b78);
+  font:500 13px/1.35 Inter,Arial,sans-serif;
+  font-style:normal;
+  white-space:nowrap;
+  text-overflow:ellipsis
+}
 .newest-list time{
-  margin-top:8px;
+  display:block;
+  margin:0 0 18px;
+  color:#4d5b68;
   font-family:var(--sans)!important;
-  font-size:12px;
+  font-size:13px!important;
+  line-height:1.2;
+  font-weight:600;
   text-transform:none
 }
+.newest-list>a:last-child time{margin-bottom:0}
 
 .lower-grid{margin-top:36px;gap:0;grid-template-columns:1fr}
 .pick-grid{
@@ -293,10 +326,11 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
 
 @media(min-width:901px){
   .home-main{padding-top:18px}
-  .local-now{margin:0 0 14px!important}
+  .local-now{margin:0!important}
   .now-card{min-height:58px;padding:10px 14px}
   .now-card-copy strong{font-size:16px}
-  .breaking-now{display:grid;grid-template-columns:auto 1fr;gap:0 24px;align-items:center;padding:10px 16px}
+  .now-dots{margin:11px 0 16px;gap:20px}
+  .breaking-now:not([hidden]):not(:empty):not(.is-empty){display:grid;grid-template-columns:auto 1fr;gap:0 24px;align-items:center;padding:10px 16px;margin-bottom:16px}
   .breaking-kicker{margin:0}
   .breaking-list{grid-template-columns:1fr 1fr;gap:0 24px}
   .breaking-row{padding:8px 0}
@@ -305,7 +339,9 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
   .top-copy .kicker{margin-bottom:10px!important;font-size:12px}
   .top-copy h1{max-width:none;font-size:clamp(2.4rem,3.2vw,3.1rem);line-height:1.02}
   .top-copy p{margin-top:12px!important;font-size:17px;line-height:1.4}
-  .newest-list>a{padding:18px 0!important}
+  .lead-grid.is-hero-only{grid-template-columns:minmax(0,1fr)}
+  .lead-grid.is-hero-only .top-story{width:min(100%,72%)}
+  .newest-list>a{padding:0 0 18px!important}
   .newest-list strong{font-size:20px}
   .lower-grid{margin-top:40px}
   .pick-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px;margin-top:20px!important}

@@ -1,14 +1,31 @@
+import {
+  canLabelMostRead,
+  effectiveFreshnessTimestamp,
+  popularityScore,
+  relativeTime,
+  selectNewest
+} from '/lib/homepage-ranking.mjs';
+
 (() => {
   const latestList = document.getElementById('latestList');
+  const newestRail = document.querySelector('.newest');
   const pickGrid = document.getElementById('pickGrid');
+  const picksTitle = document.getElementById('picksTitle');
   const lead = document.querySelector('.top-story');
+  const leadGrid = document.querySelector('.lead-grid');
+  const REFRESH_MS = 5 * 60 * 1000;
   const cleanDash = value => String(value || '').replace(/(\d)[—–](\d)/g, '$1-$2').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
   const esc = value => cleanDash(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+  const STORY_ALIASES = {
+    'burlington-hotspots-0-24': 'burlington-ultimate-team-0-24'
+  };
   const publicUrl = value => {
     const raw = String(value || '');
     if (/^https?:\/\//.test(raw)) return raw;
     const story = raw.match(/^articles\/([^/]+)\.html$/);
-    if (story) return `/stories/${story[1]}/`;
+    if (story) return `/stories/${STORY_ALIASES[story[1]] || story[1]}/`;
+    const clean = raw.match(/^\/stories\/([^/]+)\/?$/);
+    if (clean && STORY_ALIASES[clean[1]]) return `/stories/${STORY_ALIASES[clean[1]]}/`;
     if (raw === 'updates.html') return '/news/';
     if (raw === 'explore.html') return '/explore/';
     if (raw === 'election-guide.html' || raw.startsWith('election-guide.html')) return raw.replace('election-guide.html', '/elections/');
@@ -16,15 +33,6 @@
     if (raw === 'sports.html') return '/sports/';
     if (raw === 'puzzles.html') return '/games/';
     return raw.startsWith('/') ? raw : `/${raw}`;
-  };
-  const relativeDate = value => {
-    const date = new Date(value && /^\d{4}-\d{2}-\d{2}$/.test(value) ? `${value}T12:00:00-04:00` : value);
-    if (!Number.isFinite(date.getTime())) return 'Recently added';
-    const hours = Math.max(0, Math.floor((Date.now() - date.getTime()) / 3600000));
-    if (hours < 1) return 'Less than an hour ago';
-    if (hours < 24) return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
-    const days = Math.floor(hours / 24);
-    return days === 1 ? '1 day ago' : `${days} days ago`;
   };
   const TOPIC_LABELS = {
     'public-safety': 'Public safety',
@@ -133,6 +141,7 @@
   const SPORTS_TITLE = 'This Burlington team has lost 24 straight games. Why do they keep coming back?';
   const PICK_HOOKS = {
     'burlington-crime-analysis-2026': CRIME_DECK,
+    'how-bad-is-burlington-crime': CRIME_DECK,
     'data-centre-not-ai': 'The real debate is what 20 megawatts means beside an established neighbourhood.',
     'nostalgia-games-cafe-closure': 'The community showed up. The building problem was harder to solve.',
     'skyway-tunnels': 'The tunnel plan got much further than most Burlington residents probably realize.',
@@ -140,7 +149,8 @@
     'burlington-ultimate-team-0-24': 'After an 0–12 season, they changed the name. Twelve games later, they were still waiting for a win.',
     '730-brant-vacant-building': 'The building had already been approved for redevelopment years earlier.',
     'ribfest-2026': 'The smoke lasts four days. The fundraising has lasted three decades.',
-    'fishway-2025': 'The biggest number in the Fishway report is not the most important one.'
+    'fishway-2025': 'The biggest number in the Fishway report is not the most important one.',
+    'ontario-student-rights-school': 'What schools can take, search and keep are three different questions.'
   };
 
   function isCrimeItem(item){
@@ -164,13 +174,11 @@
   }
 
   function pickHook(item){
-    if (isCrimeItem(item)) return CRIME_DECK;
-    if (PICK_HOOKS[item.id]) return PICK_HOOKS[item.id];
-    const deck = tightenDeck(item.deck || '');
-    const words = deck.split(/\s+/).filter(Boolean);
-    if (words.length < 8 || words.length > 18) return '';
+    const hook = displayDeck(item);
+    const words = hook.split(/\s+/).filter(Boolean);
+    if (words.length < 8 || words.length > 22) return hook && words.length ? hook : '';
     const title = displayHeadline(item).toLowerCase();
-    return deck.toLowerCase() === title ? '' : deck;
+    return hook.toLowerCase() === title ? '' : hook;
   }
 
   function storyImage(item, fallback){
@@ -178,6 +186,14 @@
     return /crime/i.test(`${item.id || ''} ${item.headline || ''}`) && /\.svg$|chart|comparison|halton-police-dusk/i.test(raw)
       ? CRIME_IMAGE
       : raw;
+  }
+
+  function localReadStats(){
+    try {
+      return JSON.parse(localStorage.getItem('bn-article-read-counts') || '{}');
+    } catch (_) {
+      return {};
+    }
   }
 
   function renderLead(item){
@@ -191,20 +207,48 @@
     lead.innerHTML = `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${esc(image)}" alt="${esc(alt)}" fetchpriority="high"></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(displayHeadline(item))}</h1>${deck ? `<p>${esc(deck)}</p>` : ''}</div></a>`;
   }
 
+  function hideNewest(){
+    if (newestRail) {
+      newestRail.hidden = true;
+      newestRail.setAttribute('aria-hidden', 'true');
+    }
+    if (latestList) latestList.innerHTML = '';
+    leadGrid?.classList.add('is-hero-only');
+  }
+
   function renderNewest(items, heroId){
-    if (!latestList || !items.length) return;
-    const rows = items.filter(item => item?.id && item.id !== heroId).slice(0, 3);
-    latestList.innerHTML = rows.map(item => {
+    const picked = selectNewest(items, {heroId, limit: 3});
+    if (!latestList || !newestRail || !picked.items.length) {
+      hideNewest();
+      return [];
+    }
+    newestRail.hidden = false;
+    newestRail.removeAttribute('aria-hidden');
+    leadGrid?.classList.remove('is-hero-only');
+    latestList.innerHTML = picked.items.map(item => {
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
       const category = categoryLabel(item);
-      return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''} data-category="${esc(category)}"><span><small>${esc(category)}</small><strong>${esc(displayHeadline(item))}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
+      const hook = pickHook(item);
+      const stamp = relativeTime(item.lastMeaningfulUpdate || item.publishedAt || item.datePublished || item.published || item.activeFrom);
+      const datetime = new Date(effectiveFreshnessTimestamp(item) || Date.now()).toISOString();
+      return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''} data-category="${esc(category)}"><span><small>${esc(category)}</small><strong>${esc(displayHeadline(item))}</strong>${hook ? `<em class="newest-hook">${esc(hook)}</em>` : ''}${stamp ? `<time datetime="${esc(datetime)}">${esc(stamp)}</time>` : ''}</span></a>`;
     }).join('');
-    return rows;
+    window.BN_NEWEST_AUDIT = picked.items.map((item, index) => ({
+      position: index + 1,
+      headline: displayHeadline(item),
+      category: categoryLabel(item),
+      publishedAt: item.publishedAt || item.datePublished || item.published || item.activeFrom,
+      relative: relativeTime(item.lastMeaningfulUpdate || item.publishedAt || item.published || item.activeFrom),
+      diversityChangedOrder: picked.diversityChangedOrder
+    }));
+    return picked.items;
   }
 
-  function renderPicks(items){
+  function renderPicks(items, readStats){
     if (!pickGrid || !items.length) return;
+    const sample = Object.values(readStats || {}).reduce((sum, row) => sum + (Number(row.opens) || 0), 0);
+    if (picksTitle) picksTitle.textContent = canLabelMostRead(sample) ? 'Popular now' : 'Top picks';
     pickGrid.innerHTML = items.slice(0, 3).map(item => {
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
@@ -214,27 +258,69 @@
     }).join('');
   }
 
-  fetch('/data/home-surface.json', { cache: 'no-store' })
-    .then(response => response.ok ? response.json() : Promise.reject())
-    .then(data => {
-      const hero = data.feature?.[0];
-      if (hero) renderLead(hero);
-      const leadId = hero?.id;
-      const newest = Array.isArray(data.latest) && data.latest.length ? renderNewest(data.latest, leadId) : [];
-      const newestIds = (newest || []).map(item => item.id);
-      const seen = new Set();
-      const pickSource = [
-        ...(data.picks || []),
-        ...(data.feature || []).slice(1),
-        ...(data.rail || []),
-        ...(data.latest || [])
-      ].filter(item => item?.id && (seen.has(item.id) ? false : seen.add(item.id)));
-      const picks = diversify(
-        pickSource,
-        3,
-        [leadId, ...newestIds].filter(Boolean),
-        [hero, ...(newest || [])].filter(Boolean)
-      );
-      renderPicks(picks.length ? picks : pickSource);
-    }).catch(() => {});
+  function applySurface(data){
+    const hero = data.feature?.[0];
+    if (hero) renderLead(hero);
+    const leadId = hero?.id;
+    const pool = [...(data.latest || []), ...(data.rail || []), ...(data.picks || []), ...(data.feature || [])];
+    const seenFresh = new Set();
+    const newestSource = pool.filter(item => item?.id && (seenFresh.has(item.id) ? false : seenFresh.add(item.id)));
+    const newest = renderNewest(newestSource, leadId);
+    const newestIds = (newest || []).map(item => item.id);
+    const seen = new Set();
+    const pickSource = [
+      ...(data.picks || []),
+      ...(data.feature || []).slice(1),
+      ...(data.rail || []),
+      ...(data.latest || [])
+    ].filter(item => item?.id && (seen.has(item.id) ? false : seen.add(item.id)));
+    const reads = localReadStats();
+    const ranked = pickSource.map(item => {
+      const stats = reads[item.id] || {};
+      return {
+        item,
+        score: popularityScore({
+          reads1h: stats.opens || 0,
+          reads6h: stats.opens || 0,
+          reads24h: stats.opens || 0,
+          firstSeen: stats.first || Date.now(),
+          lastSeen: stats.last || Date.now()
+        }, item.placementScore || 0)
+      };
+    }).sort((a, b) => b.score - a.score);
+    const picks = diversify(
+      ranked.map(row => row.item),
+      3,
+      [leadId, ...newestIds].filter(Boolean),
+      [hero, ...(newest || [])].filter(Boolean)
+    );
+    renderPicks(picks.length ? picks : pickSource, reads);
+  }
+
+  function loadSurface(){
+    return fetch('/data/home-surface.json', {cache: 'no-store'})
+      .then(response => response.ok ? response.json() : Promise.reject())
+      .then(applySurface)
+      .catch(() => {});
+  }
+
+  function startRefresh(){
+    let timer = 0;
+    const tick = () => {
+      if (document.hidden) return;
+      loadSurface();
+    };
+    const arm = () => {
+      if (timer) clearInterval(timer);
+      timer = window.setInterval(tick, REFRESH_MS);
+    };
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) loadSurface();
+      arm();
+    });
+    arm();
+  }
+
+  hideNewest();
+  loadSurface().then(startRefresh);
 })();

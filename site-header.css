@@ -477,14 +477,33 @@ html body .header-live{
   html body.home-shell .header-weather{
     display:inline-flex!important;
     align-items:center!important;
-    gap:5px!important;
+    gap:6px!important;
     white-space:nowrap!important;
     color:var(--navy,#071b35)
   }
-  html body .header-weather .weather-chip-icon{width:16px;height:16px;display:grid;place-items:center}
+  html body .header-weather .weather-chip-summary{
+    display:inline-flex!important;
+    align-items:center!important;
+    gap:6px!important;
+    min-width:0
+  }
+  html body .header-weather .weather-chip-icon{width:16px;height:16px;display:grid;place-items:center;flex:0 0 16px}
   html body .header-weather .weather-chip-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7}
   html body .header-weather .weather-chip-temp{font:700 14px/1 Inter,Arial,sans-serif}
+  html body .header-weather .weather-chip-sep{
+    display:block;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:currentColor;
+    opacity:.45;
+    flex:0 0 3px
+  }
   html body .header-weather .weather-chip-condition{font:500 12px/1 Inter,Arial,sans-serif;color:var(--muted,#657083);font-style:normal}
+  @media(max-width:1099px){
+    html body .header-weather .weather-chip-sep,
+    html body .header-weather .weather-chip-condition{display:none!important}
+  }
   html body .menu-icon-button,
   html body.publication-shell .menu-icon-button,
   html body.home-shell .menu-icon-button,

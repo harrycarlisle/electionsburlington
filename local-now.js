@@ -1,4 +1,5 @@
 import { buildGoModel } from '/lib/go-times.js';
+import { uniqueCameraCount } from '/lib/homepage-ranking.mjs';
 
 (() => {
   const host = document.getElementById('localNow');
@@ -7,6 +8,7 @@ import { buildGoModel } from '/lib/go-times.js';
   const VARIANT = 'icon-carousel';
   const MODES = ['driving', 'go', 'skyway', 'today'];
   const MODE_LABEL = {driving:'Driving', go:'GO transit', skyway:'Skyway', today:'Today'};
+  const MODE_SHOW = {driving:'Show Driving', go:'Show GO', skyway:'Show Skyway', today:'Show Today'};
   const MODE_CAT = {driving:'TRAFFIC', go:'GO', skyway:'SKYWAY', today:'TODAY'};
   const SWIPE_PX = 36;
   const AUTO_MS = 7000;
@@ -304,10 +306,17 @@ import { buildGoModel } from '/lib/go-times.js';
       };
     }
 
+    const named = [];
+    Object.values(surface?.routes || {}).forEach(route => {
+      (route?.cameras || []).forEach(cam => {
+        if (/skyway/i.test(`${cam.cameraName || ''} ${cam.viewName || ''}`)) named.push(cam);
+      });
+    });
+    const cameras = uniqueCameraCount(named.length ? named : (surface?.routes?.toronto?.cameras || []));
     return {
       alert:false, major:false, critical:false,
       title:'Skyway → Toronto',
-      metric:'Cameras available',
+      metric: cameras ? `${cameras} camera${cameras === 1 ? '' : 's'} available` : 'Check traffic',
       detail:'',
       url:'/traffic/?destination=toronto&focus=skyway',
       lowConfidence:true
@@ -506,7 +515,7 @@ import { buildGoModel } from '/lib/go-times.js';
   function chromeMarkup(initial, includePanel) {
     const indicators = `
       <div class="now-dots" role="tablist" aria-label="Live local update">
-        ${MODES.map(mode => `<button type="button" class="now-dot-btn now-tab-${mode}${mode === initial ? ' is-active' : ''}" role="tab" id="nowTab-${mode}" data-now-dot data-mode="${mode}" aria-label="${MODE_LABEL[mode]}" aria-selected="${mode === initial}" aria-current="${mode === initial ? 'true' : 'false'}" tabindex="${mode === initial ? 0 : -1}"><span class="now-pager-dot" aria-hidden="true"></span></button>`).join('')}
+        ${MODES.map(mode => `<button type="button" class="now-dot-btn now-tab-${mode}${mode === initial ? ' is-active' : ''}" role="tab" id="nowTab-${mode}" data-now-dot data-mode="${mode}" aria-label="${MODE_SHOW[mode]}" aria-selected="${mode === initial}" aria-current="${mode === initial ? 'true' : 'false'}" tabindex="${mode === initial ? 0 : -1}"><span class="now-pager-dot" aria-hidden="true"></span></button>`).join('')}
       </div>`;
     if (!includePanel) return indicators;
     return `

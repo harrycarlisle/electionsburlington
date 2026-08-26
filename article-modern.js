@@ -107,6 +107,17 @@
       prev.push(event);
       sessionStorage.setItem(key, JSON.stringify(prev.slice(-80)));
     } catch (_) {}
+    if (name === 'page_view' && currentSlug) {
+      try {
+        const counts = JSON.parse(localStorage.getItem('bn-article-read-counts') || '{}');
+        const row = counts[currentSlug] || {opens: 0, first: Date.now(), last: 0};
+        row.opens += 1;
+        row.last = Date.now();
+        if (!row.first) row.first = Date.now();
+        counts[currentSlug] = row;
+        localStorage.setItem('bn-article-read-counts', JSON.stringify(counts));
+      } catch (_) {}
+    }
     window.dispatchEvent(new CustomEvent('bn:article-event', {detail: event}));
     const endpoint = window.BN_ANALYTICS_ENDPOINT;
     if (endpoint && navigator.sendBeacon) {

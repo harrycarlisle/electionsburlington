@@ -2,6 +2,8 @@
 
 This system decides placement. It is not a public popularity score and it never replaces editorial judgment.
 
+Homepage slots now use separate clocks. See [homepage-ranking.md](../docs/homepage-ranking.md): Breaking Now is live, Newest is the last six hours, the hero is editorial, and Top Picks stays editorial until real readership data exists.
+
 ## First: hard gates
 
 A story is ineligible if any of these fail:
