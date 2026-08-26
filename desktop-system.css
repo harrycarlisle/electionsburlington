@@ -134,10 +134,22 @@ html[data-theme="dark"] body .leaflet-control-attribution{
 @media(min-width:901px){
   html body.home-page .breaking-now:not([hidden]):not(:empty):not(.is-empty){
     display:grid;
-    grid-template-columns:auto 1fr;
-    align-items:center;
+    grid-template-columns:minmax(0,1fr);
+    align-items:stretch;
+    gap:6px 0;
     padding:10px 16px;
-    margin-bottom:16px
+    margin-bottom:16px;
+    min-height:72px;
+    max-height:90px;
+    box-sizing:border-box
+  }
+  html body.home-page .breaking-now[data-count="2"] .breaking-list{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:0 20px
+  }
+  html body.home-page .breaking-now[data-count="2"] .breaking-row + .breaking-row{
+    padding-left:20px;
+    border-left:1px solid var(--line)
   }
   html body.home-page .home-main{padding-top:40px}
   html body.home-page .now-card{

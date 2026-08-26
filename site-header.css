@@ -472,15 +472,18 @@ html body .header-live{
 @media(min-width:721px){
   :root{--bn-header-h:64px;--bn-logo:36px;--bn-gutter:20px}
   html body .header-live{display:none!important}
-  html body .header-weather,
-  html body.publication-shell .header-weather,
-  html body.home-shell .header-weather{
+  html body .header-weather:not([hidden]),
+  html body.publication-shell .header-weather:not([hidden]),
+  html body.home-shell .header-weather:not([hidden]){
     display:inline-flex!important;
     align-items:center!important;
     gap:6px!important;
     white-space:nowrap!important;
     color:var(--navy,#071b35)
   }
+  html body .header-weather[hidden],
+  html body.publication-shell .header-weather[hidden],
+  html body.home-shell .header-weather[hidden]{display:none!important}
   html body .header-weather .weather-chip-summary{
     display:inline-flex!important;
     align-items:center!important;

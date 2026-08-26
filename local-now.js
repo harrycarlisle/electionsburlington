@@ -1,5 +1,5 @@
 import { buildGoModel } from '/lib/go-times.js';
-import { uniqueCameraCount } from '/lib/homepage-ranking.mjs';
+import { uniqueCameraCount } from '/lib/homepage-ranking.js';
 
 (() => {
   const host = document.getElementById('localNow');
