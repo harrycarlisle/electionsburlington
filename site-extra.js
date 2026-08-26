@@ -67,7 +67,7 @@
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826u', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826i', 'site-header');
+    ensureStyle('/site-header.css?v=20260826j', 'site-header');
   }
 
   function ensureUtilityBar() {
@@ -226,7 +226,6 @@
     const electionPrimary = electionInPrimaryNav();
     nav.className = 'nav menu-panel';
     nav.innerHTML = `
-      <button class="menu-theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"></button>
       ${drawerSearchMarkup()}
       <p class="menu-heading">Main</p>
       <div class="menu-primary" role="list">
@@ -247,7 +246,10 @@
         ${navLink('/feedback/', 'feedback', 'Feedback', 'secondary')}
         ${navLink('/work-with-us/', 'work', 'Work with us', 'secondary')}
       </div>
-      <p class="menu-drawer-weather"><a class="drawer-weather-line" href="https://weather.gc.ca/city/pages/on-15_metric_e.html" rel="noopener" data-weather-temperature data-weather-drawer>Burlington weather</a></p>`;
+      <div class="menu-drawer-util">
+        <a class="drawer-weather-line" href="https://weather.gc.ca/city/pages/on-15_metric_e.html" rel="noopener" data-weather-temperature data-weather-drawer>Burlington weather</a>
+        <button class="menu-theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"></button>
+      </div>`;
     installDrawerSearch(nav);
     try { window.BurlingtonWeather?.load(); } catch (_) {}
   }
@@ -572,7 +574,7 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826i', 'site-header');
+      ensureStyle('/site-header.css?v=20260826j', 'site-header');
     }
     ensureUtilityBar();
     ensureBanner();
