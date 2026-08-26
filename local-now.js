@@ -192,14 +192,7 @@ import { routeDriveStatus } from '/lib/traffic-route.js';
     const dest = commuteDestination();
     const destId = routeIdFor(dest);
     const commute = surface?.routes?.[destId] || surface?.routes?.toronto || {};
-    const seen = new Set();
-    const incidents = [];
-    for (const item of [...(commute.incidents || []), ...(Array.isArray(surface?.incidents) ? surface.incidents : [])]) {
-      const id = String(item.id || `${item.title}|${item.latitude}`);
-      if (seen.has(id)) continue;
-      seen.add(id);
-      incidents.push(item);
-    }
+    const incidents = commute.incidents || [];
     const status = routeDriveStatus(incidents, destId, {
       officialStatus: commute.status,
       source: surface?.source || ''

@@ -9,6 +9,7 @@ import {
   incidentMatchesRoute,
   incidentOnRouteMap,
   incidentRelevance,
+  incidentsForRoute,
   routeDriveStatus,
   selectRouteCameras,
   ROUTE_START
@@ -60,11 +61,14 @@ assert.equal(torontoStatus.impact, 'Local access affected');
 assert.doesNotMatch(torontoStatus.headline, /ramp closed|delay likely/i);
 
 const christie = {
+  id: '511:christie-test',
   title: 'QEW Fort Erie-bound off-ramp closed at Christie St / Lakeview Ave',
   direction: 'Fort Erie-bound',
   type: 'closure',
   facility: 'off-ramp',
-  nearestRoad: 'Christie St / Lakeview Ave'
+  nearestRoad: 'Christie St / Lakeview Ave',
+  latitude: 43.19871,
+  longitude: -79.56138
 };
 const niagaraStatus = routeDriveStatus([christie], 'niagara-falls');
 assert.equal(niagaraStatus.headline, 'Moving well');
@@ -92,6 +96,11 @@ assert.doesNotMatch(oppositeNeverPrimary.secondary, /Fort Erie/);
 const delayed = routeDriveStatus([{ ...skyway, delayMinutes: 12 }], 'toronto');
 assert.match(delayed.headline, /Heavy near Burlington Skyway/);
 assert.equal(delayed.minutes, 12);
+
+const christieOnHamilton = incidentsForRoute('hamilton', [], [christie], routes.routes.hamilton.polyline);
+assert.equal(christieOnHamilton.length, 0, 'Christie off-ramp is not on the Hamilton downtown route');
+const christieOnNiagara = incidentsForRoute('niagara-falls', [], [christie], routes.routes['niagara-falls'].polyline);
+assert.ok(christieOnNiagara.length, 'Christie off-ramp can appear on Niagara');
 
 assert.equal(cameraTrafficState({}, {}).label, '');
 assert.equal(cameraTrafficState({}, {}).puck, 'unknown');

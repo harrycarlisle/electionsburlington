@@ -3,7 +3,7 @@ import {
   cameraTrafficState,
   clipPolyline,
   incidentFeatureLabel,
-  incidentOnRouteMap,
+  incidentsForRoute,
   impactLabel,
   incidentRelevance,
   routeDriveStatus,
@@ -130,18 +130,7 @@ function camerasForMode() {
 }
 
 function routeIncidents() {
-  const route = selectedRoute();
-  const seen = new Set();
-  const list = [];
-  for (const item of [...(route?.incidents || []), ...(surface?.incidents || [])]) {
-    const id = String(item.id || `${item.title}|${item.latitude}|${item.longitude}`);
-    if (seen.has(id)) continue;
-    if (!Number.isFinite(Number(item.latitude)) || !Number.isFinite(Number(item.longitude))) continue;
-    if (!incidentOnRouteMap(item, mode)) continue;
-    seen.add(id);
-    list.push(item);
-  }
-  return list.slice(0, 4);
+  return incidentsForRoute(mode, selectedRoute()?.incidents, surface?.incidents, lineCoords(mode));
 }
 
 function noteInteraction() {
