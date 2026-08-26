@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T12:11:28.166714-04:00",
+  "generatedAt": "2026-08-26T14:11:03.548733-04:00",
   "source": "Metrolinx GO Transit GTFS",
   "sourceUrl": "https://www.gotransit.com/en/partner-with-us/software-developers",
   "dataKind": "scheduled",
@@ -17,30 +17,30 @@
       },
       "journeys": [
         {
-          "departure": "12:12:00",
-          "arrival": "13:18:00",
+          "departure": "14:12:00",
+          "arrival": "15:18:00",
           "duration": "66 min",
           "line": "LW",
           "type": "Train",
-          "tripNumber": "20260826-LW-1018",
+          "tripNumber": "20260826-LW-1022",
           "scheduled": true
         },
         {
-          "departure": "12:42:00",
-          "arrival": "13:48:00",
-          "duration": "66 min",
+          "departure": "14:37:00",
+          "arrival": "15:30:00",
+          "duration": "53 min",
           "line": "LW",
           "type": "Train",
-          "tripNumber": "20260826-LW-1618",
+          "tripNumber": "20260826-LW-1972",
           "scheduled": true
         },
         {
-          "departure": "13:12:00",
-          "arrival": "14:18:00",
+          "departure": "14:42:00",
+          "arrival": "15:48:00",
           "duration": "66 min",
           "line": "LW",
           "type": "Train",
-          "tripNumber": "20260826-LW-1020",
+          "tripNumber": "20260826-LW-1622",
           "scheduled": true
         }
       ]
@@ -56,30 +56,30 @@
       },
       "journeys": [
         {
-          "departure": "12:49:00",
-          "arrival": "13:09:00",
-          "duration": "20 min",
-          "line": "LW",
-          "type": "Train",
-          "tripNumber": "20260826-LW-1715",
-          "scheduled": true
-        },
-        {
-          "departure": "13:49:00",
-          "arrival": "14:15:00",
-          "duration": "26 min",
-          "line": "LW",
-          "type": "Train",
-          "tripNumber": "20260826-LW-1617",
-          "scheduled": true
-        },
-        {
           "departure": "14:49:00",
           "arrival": "15:15:00",
           "duration": "26 min",
           "line": "LW",
           "type": "Train",
           "tripNumber": "20260826-LW-1619",
+          "scheduled": true
+        },
+        {
+          "departure": "15:49:00",
+          "arrival": "16:15:00",
+          "duration": "26 min",
+          "line": "LW",
+          "type": "Train",
+          "tripNumber": "20260826-LW-1621",
+          "scheduled": true
+        },
+        {
+          "departure": "16:52:00",
+          "arrival": "17:12:00",
+          "duration": "20 min",
+          "line": "LW",
+          "type": "Train",
+          "tripNumber": "20260826-LW-1775",
           "scheduled": true
         }
       ]
@@ -96,30 +96,30 @@
       "direction": "inbound",
       "journeys": [
         {
-          "departure": "12:17:00",
-          "arrival": "13:19:00",
+          "departure": "14:17:00",
+          "arrival": "15:19:00",
           "duration": "62 min",
           "line": "LW",
           "type": "Train",
-          "tripNumber": "20260826-LW-1017",
+          "tripNumber": "20260826-LW-1021",
           "scheduled": true
         },
         {
-          "departure": "12:47:00",
-          "arrival": "13:49:00",
+          "departure": "14:47:00",
+          "arrival": "15:49:00",
           "duration": "62 min",
           "line": "LW",
           "type": "Train",
-          "tripNumber": "20260826-LW-1617",
+          "tripNumber": "20260826-LW-1621",
           "scheduled": true
         },
         {
-          "departure": "13:17:00",
-          "arrival": "14:19:00",
+          "departure": "15:17:00",
+          "arrival": "16:19:00",
           "duration": "62 min",
           "line": "LW",
           "type": "Train",
-          "tripNumber": "20260826-LW-1019",
+          "tripNumber": "20260826-LW-1023",
           "scheduled": true
         }
       ]
