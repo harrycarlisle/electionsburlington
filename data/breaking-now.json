@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T04:21:34.150730-04:00",
+  "generatedAt": "2026-08-26T05:22:13.887478-04:00",
   "method": "breakingScore = localRelevance*0.25 + impact*0.25 + recency*0.20 + confidence*0.15 + breadth*0.10 + novelty*0.05. Ordinary bar is confidence >= 4 and high/strong-medium impact. Community leads stay unpublished until corroborated.",
   "maxItems": 2,
   "liveFetches": false,
