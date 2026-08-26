@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="t">
+  <title id="t">Editorial graphic for Thai noodles and curry</title>
+  <rect width="1600" height="900" fill="#efe8dc"/>
+  <ellipse cx="560" cy="500" rx="260" ry="200" fill="#c23b22"/>
+  <path d="M360 470c80 40 160-20 240 10s140 40 220-10" fill="none" stroke="#f0d27a" stroke-width="18"/>
+  <ellipse cx="1100" cy="500" rx="220" ry="180" fill="#c9a227"/>
+  <circle cx="1040" cy="470" r="28" fill="#2b7a4b"/>
+  <circle cx="1140" cy="520" r="22" fill="#8b2e24"/>
+  <text x="80" y="120" fill="#0b335f" font-family="Georgia,serif" font-size="56" font-weight="700">Bahn Thai</text>
+</svg>

@@ -55,7 +55,6 @@
 .bored-actions .is-on{border-color:#2b7a4b;background:#e7f4eb}
 .bored-copy .idea-shuffle{margin:14px 0 0}
 .bored-maps{color:#0864c7}
-.receipt-shell{margin-top:14px;padding:12px;border:1px dashed var(--line);border-radius:10px;font-size:12px}
 .star-rating{display:flex;gap:4px}
 .star-rating button{border:0;background:transparent;font-size:18px;cursor:pointer;color:#c5ccd1}
 .star-rating button.is-on{color:#d4a017}

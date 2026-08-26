@@ -607,7 +607,9 @@
     ensureFooter();
     applyBrand();
     ensureScript('/site-search.js?v=20260826gt', 'site-search');
-    if (!isHome() && !isElectionPage() && !isArticle()) ensureScript('/site-bundle.js?v=20260826w', 'site-bundle');
+    if (!isHome() && !isElectionPage() && !isArticle() && !document.body.classList.contains('authority-page') && !document.body.classList.contains('food-passport-page')) {
+      ensureScript('/site-bundle.js?v=20260826w', 'site-bundle');
+    }
     ensureScript('/weather-alert.js?v=20260826f', 'weather-alert');
     if (isArticle()) ensureScript('/article-modern.js?v=20260826d', 'article-modern');
     setTheme(root.dataset.theme || preferredTheme(), false);

@@ -35,7 +35,7 @@
     {title:'What Ontario students can actually be searched for',url:'/stories/ontario-student-rights-school/',section:'Schools',keywords:'teacher phone detention bag locker search student rights school'},
     {title:'730 Brant sat empty for more than a decade, then caught fire',url:'/stories/730-brant-vacant-building/',section:'Development',keywords:'abandoned vacant building fire Brant Street owner redevelopment'},
     {title:'Explore Burlington',url:'/explore/',section:'Explore',keywords:'this weekend bored passport calendar places free farmers market date night things to do'},
-    {title:'Burlington food spots worth trying',url:'/guides/burlington-food-spots.html',section:'Food',keywords:'best food tacos burger sandwich banh mi coffee restaurants'},
+    {title:'Burlington food passport',url:'/food-passport/',section:'Food',keywords:'best food tacos burger sandwich banh mi coffee restaurants passport'},
     {title:'Burlington 2026 Election Guide',url:'/elections/',section:'Election',keywords:'vote mayor candidates ward ballot'},
     {title:'Toss Bosses went 0–24. Why do they keep coming back?',url:'/stories/burlington-hotspots-0-24/',section:'Sports',keywords:'toss bosses ultimate 0-24 burlington ultimate club'},
     {title:'Burlington sports',url:'/sports/',section:'Sports',keywords:'soccer hockey lacrosse ultimate ringette golf'},
@@ -67,7 +67,7 @@
     if (!q) return '';
     if (/^(i m bored|im bored|bored)$/.test(q)) return '/explore/#bored';
     if (/^(this weekend|things to do|what s happening|whats happening|date night|free things to do|what to do|next event)$/.test(q)) return '/explore/weekend/';
-    if (/^(best tacos|best food)$/.test(q)) return '/food/';
+    if (/^(best tacos|best food|food passport)$/.test(q)) return '/food-passport/';
     if (/^(election|elections|mayor|compare candidates)$/.test(q)) return '/elections/compare/';
     if (/^(ward|what ward)$/.test(q)) return '/elections/ward/';
     if (/^(go|next train|union)$/.test(q)) return '/go/burlington-to-union/';

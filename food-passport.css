@@ -1,0 +1,62 @@
+.food-passport-page{--navy:#0b335f;--ink:#18344d;--muted:#5d7287;--line:#d8e2ec;--card:#fff;--soft:#f3f8fd;--blue:#0864c7}
+.food-passport-page{color:var(--ink);background:#f6f8fb}
+.food-shell{width:min(720px,calc(100% - 32px));margin:28px auto 72px}
+.food-kicker{display:block;margin:0 0 9px;color:var(--muted);font:800 12px/1.2 inherit;letter-spacing:.1em;text-transform:uppercase}
+.food-shell h1{margin:0 0 14px;color:var(--navy);font:850 clamp(40px,9vw,48px)/1.02 inherit;letter-spacing:-.04em}
+.food-deck{max-width:34em;margin:0 0 26px;color:#3b566f;font-size:18px;line-height:1.4}
+.food-progress{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 10px}
+.food-progress h2{margin:0;color:var(--navy);font:800 15px/1.2 inherit}
+.food-progress strong{color:var(--muted);font:750 13px/1 inherit}
+.food-track{display:flex;gap:8px;margin:0 0 22px}
+.food-track button{flex:1;min-height:36px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);font:800 13px/1 inherit;cursor:pointer}
+.food-track button.is-done{background:var(--blue);border-color:var(--blue);color:#fff}
+.food-track button.is-next{background:var(--soft);border-color:#9dc2e4;color:var(--navy)}
+.food-five{margin:0 0 20px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.food-five h2{margin:0 0 10px;color:var(--muted);font:800 12px/1 inherit;letter-spacing:.08em;text-transform:uppercase}
+.food-five ol{margin:0;padding:0;list-style:none}
+.food-five li+li{margin-top:8px}
+.food-five a{color:var(--navy);font:750 16px/1.3 inherit;text-decoration:none}
+.food-five a:hover{text-decoration:underline}
+.food-five span{color:var(--muted);font-weight:650}
+.food-map{margin:0 0 22px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#edf3ed}
+.food-map svg{display:block;width:100%;height:auto}
+.food-map figcaption{margin:0;padding:8px 12px 10px;color:var(--muted);font-size:12px}
+.food-card{margin:0 0 24px;padding:0 0 4px;border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}
+.food-card small{display:block;margin:16px 16px 0;color:var(--blue);font:800 12px/1 inherit;letter-spacing:.08em;text-transform:uppercase}
+.food-card h2{margin:8px 16px 8px;color:var(--navy);font:850 28px/1.05 inherit;letter-spacing:-.03em}
+.food-card .food-why{margin:0 16px 12px;color:#3c5770;font-size:17px;line-height:1.4}
+.food-card figure{margin:0}
+.food-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#efe8dc}
+.food-card figcaption{margin:6px 16px 0;color:var(--muted);font-size:12px}
+.food-meta{display:grid;gap:6px;margin:12px 16px 0;color:#3c5770;font-size:14px;line-height:1.35}
+.food-meta span{display:block}
+.food-actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 16px 16px}
+.food-actions a,.food-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy);font:750 15px/1 inherit;text-decoration:none;cursor:pointer}
+.food-actions button{border-color:var(--blue);background:var(--blue);color:#fff}
+.food-actions button.is-done{border-color:#2b7a4b;background:#2b7a4b}
+.food-about{margin:28px 0 0;max-width:36em;color:var(--muted);font-size:13px}
+.food-about summary{cursor:pointer;font:750 13px/1.3 inherit;color:var(--navy)}
+.food-about p{margin:8px 0 0;line-height:1.5}
+@media(max-width:430px){
+  .food-shell{width:calc(100% - 28px);margin-top:22px}
+  .food-kicker{margin-bottom:8px;font-size:12px}
+  .food-shell h1{margin-bottom:14px;font-size:42px;line-height:1}
+  .food-deck{margin-bottom:26px;font-size:18px}
+  .food-card h2{font-size:27px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+html[data-theme="dark"] .food-passport-page{background:#10171c;color:#edf4f8}
+html[data-theme="dark"] .food-shell h1,
+html[data-theme="dark"] .food-card h2,
+html[data-theme="dark"] .food-progress h2,
+html[data-theme="dark"] .food-five a,
+html[data-theme="dark"] .food-about summary{color:#edf4f8}
+html[data-theme="dark"] .food-deck,
+html[data-theme="dark"] .food-card .food-why,
+html[data-theme="dark"] .food-meta{color:#c5d3dc}
+html[data-theme="dark"] .food-card,
+html[data-theme="dark"] .food-five,
+html[data-theme="dark"] .food-track button{background:#15212a;border-color:#30404b}
+html[data-theme="dark"] .food-track button.is-next{background:#1c3140;border-color:#3d6f93;color:#edf4f8}
+html[data-theme="dark"] .food-actions a{background:#15212a;color:#edf4f8;border-color:#30404b}
+html[data-theme="dark"] .food-map{background:#15212a;border-color:#30404b}
