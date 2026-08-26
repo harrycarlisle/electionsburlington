@@ -23,7 +23,7 @@
 .lead-grid{margin-top:0}
 .top-story{overflow:hidden}
 .top-copy{
-  padding:26px 24px 26px!important
+  padding:28px 24px 26px!important
 }
 .top-copy .kicker{
   margin:0 0 10px!important;
@@ -248,7 +248,7 @@
   .now-mode-card{min-height:145px;max-height:185px;padding:10px 12px}
   .now-card-go .now-go-line{flex-direction:row;align-items:baseline}
   .lead-grid{gap:28px!important}
-  .top-copy{padding:24px 24px 26px!important}
+  .top-copy{padding:28px 24px 26px!important}
   .top-copy .kicker{margin-bottom:10px!important}
   .top-copy h1{font-size:34px;line-height:1.08;max-width:16ch}
   .top-copy p{margin-top:16px!important;font-size:16px!important;line-height:1.45!important}
