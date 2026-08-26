@@ -1,0 +1,48 @@
+---
+description: Point article and news work at the Burlington News editorial operating system
+alwaysApply: true
+---
+
+# Burlington News editorial work
+
+If the task involves any of the following, do not start writing from memory:
+
+- article ideation
+- story selection
+- news research
+- headline writing
+- article drafting
+- article rewriting
+- fact checking
+- homepage story packaging
+- explainers
+- development coverage
+- election coverage
+- event editorial coverage
+- video-lead conversion
+- evergreen journalism
+- “fix this article” / “rewrite this” / “make this better” / “add this story” / “turn this research into an article”
+
+**First read** `docs/EDITORIAL_OPERATING_SYSTEM.md`.
+
+Treat that file as the canonical Burlington News editorial standard.
+
+Do not create a second editorial guide.
+Do not paste, regenerate, or summarize the operating system in the reply.
+Do not inject it into unrelated coding, CSS, or infrastructure work.
+
+## Precedence
+
+1. Accuracy and sourcing come first. Never invent facts, quotes, sources, dates, or outcomes.
+2. Then apply the operating system for idea quality, FNR, Burlington relevance, broad appeal, “Why Burlington News?” value-add, title promise, immediate delivery, action → consequence, information progression, natural language, repetition checks, no back-to-back listicles, no back-to-back exposition, cognitive load, V1, V2, V3 adversarial edit, final fact check, packaging, and visual choice.
+
+Existing copy is not exempt. Do not keep weak copy merely because it already exists.
+
+## Internal workflow evidence
+
+Where article/research metadata already exists, record:
+
+- `editorialStandard: "docs/EDITORIAL_OPERATING_SYSTEM.md"`
+- workflow state: `idea_gate` → `research` → `v1` → `v2` → `v3` → `fact_check` → `packaging` → `ready`
+
+Do not expose those labels to readers.

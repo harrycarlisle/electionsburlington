@@ -53,4 +53,24 @@
   .authority-shell{width:min(100% - 28px,1040px);margin-top:20px}
   .data-table{font-size:13px}
 }
+.dev-tracker .authority-hook{margin:0 0 16px;max-width:38em}
+.dev-tracker .map-frame{margin:0 0 8px}
+.dev-tracker .map-frame figcaption{
+  margin:0;
+  padding:8px 12px 10px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.35;
+  letter-spacing:0
+}
+.dev-tracker .approval-note{
+  margin:0 0 8px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.4
+}
+.dev-tracker .authority-section{margin:28px 0}
+.dev-tracker .research-backlog{display:grid;gap:14px;max-width:40em}
+.dev-tracker .research-item h3{margin:0 0 4px;font-size:17px}
+.dev-tracker .research-item p{margin:0;color:#3c5770;font-size:15px;line-height:1.45}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}

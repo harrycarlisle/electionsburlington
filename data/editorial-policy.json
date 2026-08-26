@@ -1,6 +1,8 @@
 {
-  "version": 2,
-  "purpose": "Machine-readable editorial policy for ranking, radar, auto-publish and original-story selection. Human writing guidance lives in docs/editorial-style.md.",
+  "version": 3,
+  "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+  "workflowStates": ["idea_gate", "research", "v1", "v2", "v3", "fact_check", "packaging", "ready"],
+  "purpose": "Machine-readable editorial policy for ranking, radar, auto-publish and original-story selection. Canonical writing and story-quality standard: docs/EDITORIAL_OPERATING_SYSTEM.md.",
   "signals": {
     "interest": 0.20,
     "relevance": 0.19,

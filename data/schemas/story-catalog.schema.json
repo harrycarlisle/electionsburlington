@@ -18,6 +18,11 @@
           "category": {"type": "string"},
           "label": {"type": "string"},
           "storyGoal": {"type": "string"},
+          "editorialStandard": {"type": "string"},
+          "editorialWorkflow": {
+            "type": "string",
+            "enum": ["idea_gate", "research", "v1", "v2", "v3", "fact_check", "packaging", "ready"]
+          },
           "hook": {"type": "string"},
           "published": {"type": "string"},
           "publishedAt": {"type": "string"},

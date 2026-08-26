@@ -7,9 +7,9 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
 
   const VARIANT = 'icon-carousel';
   const MODES = ['driving', 'go', 'skyway', 'today'];
-  const MODE_LABEL = {driving:'Driving', go:'GO transit', skyway:'Skyway', today:'Today'};
-  const MODE_SHOW = {driving:'Show Driving', go:'Show GO', skyway:'Show Skyway', today:'Show Today'};
-  const MODE_CAT = {driving:'TRAFFIC', go:'GO', skyway:'SKYWAY', today:'TODAY'};
+  const MODE_LABEL = {driving:'Driving', go:'GO transit', skyway:'Skyway', today:'Event'};
+  const MODE_SHOW = {driving:'Show Driving', go:'Show GO', skyway:'Show Skyway', today:'Show Event'};
+  const MODE_CAT = {driving:'TRAFFIC', go:'GO', skyway:'SKYWAY', today:'EVENT'};
   const SWIPE_PX = 36;
   const AUTO_MS = 7000;
 
@@ -71,13 +71,38 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
     return new Intl.DateTimeFormat('en-CA', {timeZone:'UTC', year:'numeric', month:'2-digit', day:'2-digit'}).format(new Date(Date.UTC(year, month - 1, day + delta, 12)));
   }
 
+  function daysBetween(fromYmd, toYmd) {
+    const [fy, fm, fd] = fromYmd.split('-').map(Number);
+    const [ty, tm, td] = toYmd.split('-').map(Number);
+    return Math.round((Date.UTC(ty, tm - 1, td) - Date.UTC(fy, fm - 1, fd)) / 86400000);
+  }
+
   function relativeDay(start) {
     const day = torontoDay(start);
     const today = torontoDay();
     if (day === today) return torontoHour(start) >= 17 ? 'Tonight' : 'Today';
     if (day === shiftDay(today, 1)) return 'Tomorrow';
-    const weekday = new Intl.DateTimeFormat('en-CA', {timeZone:'America/Toronto', weekday:'short'}).format(new Date(start));
-    return weekday;
+    const ahead = daysBetween(today, day);
+    const weekday = new Intl.DateTimeFormat('en-CA', {timeZone:'America/Toronto', weekday:'long'}).format(new Date(start));
+    if (ahead >= 0 && ahead <= 6 && (weekday === 'Saturday' || weekday === 'Sunday')) return 'This weekend';
+    if (ahead >= 0 && ahead <= 6) return weekday;
+    return prettyDate(start);
+  }
+
+  function eventHook(title) {
+    let text = String(title || '').trim();
+    text = text.replace(/^Watch\s+/i, '');
+    text = text.replace(/^Burlington(?:'s|’s)?\s+/i, '');
+    text = text.replace(/\s+(today|tonight|tomorrow)\.?$/i, '');
+    if (!text) return 'Burlington event';
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  }
+
+  function eventHref(event) {
+    const url = String(event?.url || '');
+    if (url.startsWith('/')) return url;
+    if (event?.id) return `/explore/#event-${encodeURIComponent(event.id)}`;
+    return '/explore/';
   }
 
   function eventQuality(event) {
@@ -104,18 +129,55 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
     const picked = events.find(item => preferTomorrow ? torontoDay(item.start) === tomorrowStamp : torontoDay(item.start) === todayStamp)
       || events[0];
     if (!picked) return null;
+    return eventModel(picked);
+  }
+
+  function eventModel(picked) {
     const start = picked.start ? new Date(picked.start) : null;
-    const end = picked.end ? new Date(picked.end) : null;
-    const hours = start && Number.isFinite(start.getTime())
-      ? (end && Number.isFinite(end.getTime()) ? `${clockLabel(start)}–${clockLabel(end)}` : clockLabel(start))
-      : '';
+    const hours = start && Number.isFinite(start.getTime()) ? clockLabel(start) : '';
     return {
-      title: picked.title || 'Burlington event',
+      title: eventHook(picked.cardTitle || picked.title || 'Burlington event'),
       relative: start ? relativeDay(start) : '',
       dateLabel: start ? prettyDate(start) : (picked.dateLabel || ''),
       hours,
-      url: `/explore/#event-${encodeURIComponent(picked.id || '')}`
+      url: eventHref(picked)
     };
+  }
+
+  function qaEventOverride() {
+    const qa = new URLSearchParams(location.search).get('qa') || '';
+    if (!qa.startsWith('event-')) return null;
+    const today = torontoDay();
+    const at = (ymd, hour, minute = 0) => `${ymd}T${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:00-04:00`;
+    const weekdayNum = ymd => {
+      const [y, m, d] = ymd.split('-').map(Number);
+      return new Date(Date.UTC(y, m - 1, d, 12)).getUTCDay();
+    };
+    let saturday = today;
+    for (let i = 0; i < 8; i += 1) {
+      const day = shiftDay(today, i);
+      if (weekdayNum(day) === 6 && day !== today && day !== shiftDay(today, 1)) {
+        saturday = day;
+        break;
+      }
+    }
+    if (qa === 'event-today') {
+      return eventModel({title:'Burlington Farmers Market', start: at(today, 10), url:'/events/burlington-farmers-market/'});
+    }
+    if (qa === 'event-tonight') {
+      return eventModel({title:'Outdoor movie night', start: at(today, 20), url:'/explore/'});
+    }
+    if (qa === 'event-tomorrow') {
+      return eventModel({
+        title:'Partial lunar eclipse',
+        start: at(shiftDay(today, 1), 22, 33),
+        id:'partial-lunar-eclipse-2026'
+      });
+    }
+    if (qa === 'event-weekend') {
+      return eventModel({title:'Winona Peach Festival', start: at(saturday, 17), url:'/explore/#event-winona-peach-festival-2026'});
+    }
+    return null;
   }
 
   function shortPlace(value) {
@@ -335,7 +397,7 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
     driving: icon('traffic', '<path d="M5 16h14l-1.2-6.2A2 2 0 0 0 15.9 8H8.1a2 2 0 0 0-1.9 1.8L5 16Z"/><path d="M7 16v2M17 16v2M8 11h8"/>'),
     go: icon('go', '<rect x="6" y="4" width="12" height="16" rx="3"/><path d="M9 8h6M9 12h6M10 18h4"/>'),
     skyway: icon('skyway', '<path d="M3 16h18M5 16c2-6 5-9 7-9s5 3 7 9"/><path d="M8 16v-3M16 16v-3"/>'),
-    today: icon('next', '<rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 11h16"/>')
+    today: icon('event', '<rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 11h16"/>')
   };
 
   function nextButton() {
@@ -348,16 +410,16 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
 
   function compactCard(mode, model) {
     if (mode === 'today' && !model) {
-      return wrapCard(`<a class="now-card now-card-today" href="/explore/" data-utility-card="today">${icons.today}<span class="now-card-copy"><small class="now-card-cat">TODAY</small><strong>See Burlington events</strong></span></a>`);
+      return wrapCard(`<a class="now-card now-card-today now-card-event" href="/explore/" data-utility-card="today">${icons.today}<span class="now-card-copy"><small class="now-card-cat">EVENT</small><strong>What’s on in Burlington</strong></span></a>`);
     }
     const title = mode === 'today' ? model.title : model.title || model.headline;
-    const metric = mode === 'go' ? (model.time || '') : (model.metric || '');
+    const metric = mode === 'today' ? (model.relative || '') : (mode === 'go' ? (model.time || '') : (model.metric || ''));
     const detail = mode === 'go'
       ? [model.status, model.cause || (model.unavailable ? model.detail : '')].filter(Boolean).join(' · ')
-      : (mode === 'today' ? [model.relative, model.hours].filter(Boolean).join(' · ') : (model.extra || model.detail || ''));
+      : (mode === 'today' ? (model.hours || '') : (model.extra || model.detail || ''));
     const href = model.url || '#';
     const extra = mode === 'go' && model.url && /gotransit\.com/.test(model.url) ? ' target="_blank" rel="noopener"' : '';
-    return wrapCard(`<a class="now-card now-card-${mode}${model.alert ? ' is-alert' : ''}" href="${esc(href)}" data-utility-card="${mode}"${extra}>
+    return wrapCard(`<a class="now-card now-card-${mode}${mode === 'today' ? ' now-card-event' : ''}${model.alert ? ' is-alert' : ''}" href="${esc(href)}" data-utility-card="${mode}"${extra}>
       ${icons[mode] || ''}
       <span class="now-card-copy">
         <small class="now-card-cat">${MODE_CAT[mode] || ''}</small>
@@ -548,7 +610,7 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
       driving: drivingModel(payload.surface, payload.intel),
       go: goModel(payload.go),
       skyway: skywayModel(payload.surface),
-      today: nextEvent(payload.explore)
+      today: qaEventOverride() || nextEvent(payload.explore)
     };
     lastModels = models;
     lastPayload = payload;
