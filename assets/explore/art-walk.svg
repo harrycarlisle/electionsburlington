@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">Art Walk editorial graphic</title>
+  <rect width="1600" height="900" fill="#3a2148"/>
+  <rect x="180" y="240" width="360" height="460" fill="#f2e6c9"/>
+  <rect x="620" y="240" width="360" height="460" fill="#0864c7"/>
+  <rect x="1060" y="240" width="360" height="460" fill="#d96b4c"/>
+  <circle cx="800" cy="470" r="70" fill="#e7c36a"/>
+  <text x="80" y="120" fill="#f6eefc" font-family="Georgia, serif" font-size="64" font-weight="700">Art Walk</text>
+  <text x="84" y="180" fill="#c9b3d8" font-family="Arial, sans-serif" font-size="28" letter-spacing="3">BURLINGTON NEWS</text>
+</svg>

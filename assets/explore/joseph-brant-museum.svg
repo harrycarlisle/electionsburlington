@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">Joseph Brant Museum editorial graphic</title>
+  <rect width="1600" height="900" fill="#0e2740"/>
+  <rect x="430" y="250" width="740" height="420" fill="#d9c3a1"/>
+  <rect x="470" y="300" width="180" height="140" fill="#7ea4c4"/>
+  <rect x="710" y="300" width="180" height="140" fill="#7ea4c4"/>
+  <rect x="950" y="300" width="180" height="140" fill="#7ea4c4"/>
+  <path d="M400 250h800l-80-90H480z" fill="#8a6a3d"/>
+  <rect x="740" y="520" width="120" height="150" fill="#3a2714"/>
+  <text x="80" y="120" fill="#e8f1f8" font-family="Georgia, serif" font-size="64" font-weight="700">Museum stop</text>
+  <text x="84" y="180" fill="#8fb3c9" font-family="Arial, sans-serif" font-size="28" letter-spacing="3">BURLINGTON NEWS</text>
+</svg>

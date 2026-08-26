@@ -7,7 +7,7 @@ Rights rule: do not reuse Reddit, Facebook or news-publisher photography without
 - `assets/stories/public-safety/halton-police-crime-burlington.webp` — Burlington News visual for the crime story (illustrative, not a specific incident)
 - `assets/editorial/halton-crime-comparison.svg` — Burlington News CSI chart (in-article only)
 - `assets/editorial/nostalgia-cafe-closure.svg` — Burlington News illustration
-- `assets/editorial/730-brant-share.webp` / `.svg` — Burlington News illustration
+- `assets/editorial/730-brant-vacant-building.webp` — owned editorial visual of a vacant mid-century commercial building grounded in 730 Brant; `730-brant-share.webp` is the same file for older share URLs. Old flat SVG retired from live surfaces.
 - `assets/editorial/burlington-wards-2026.svg` — Burlington News diagram
 - `assets/editorial/home-share.webp` — generic share card (overused; avoid as a story hero)
 - `assets/home/skyway-reader.webp` — credited photo

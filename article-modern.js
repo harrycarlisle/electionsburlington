@@ -139,7 +139,7 @@
 
   function heroForPath() {
     const map = {
-      '730-brant-vacant-building': ['/assets/editorial/730-brant-share.webp', '730 Brant Street, Burlington News illustration', 'Burlington News illustration'],
+      '730-brant-vacant-building': ['/assets/editorial/730-brant-vacant-building.webp', 'Editorial visual of a vacant four-storey commercial building, grounded in the 730 Brant Street site. Not a fire-scene photograph.', 'Burlington News editorial visual'],
       'back-to-school-2026': ['/assets/home/school-bus.webp', 'A yellow Ontario school bus', 'Photo credit in source story'],
       'burlington-rabies-bat-2026': ['/assets/explore/night-sky-mount-nemo.webp', 'Night sky over Burlington-area escarpment', 'Burlington News visual'],
       'fishway-26000-fish': ['/assets/home/fishway.webp', 'Cootes Paradise Fishway', 'Photo credit in source story'],
