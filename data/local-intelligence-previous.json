@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T16:03:38Z",
+  "generatedAt": "2026-08-26T16:56:06Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 34,
-    "trafficIncidents": 34,
+    "activeSignals": 35,
+    "trafficIncidents": 35,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -80,6 +80,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "79c7573353a0d5ad"
+    },
+    {
+      "id": "511:293767",
+      "kind": "traffic",
+      "headline": "Continuous Construction on HWY 403 HAMILTON Eastbound On-ramp at Garden Ave, Brantford. ALL LANES CLOSED.",
+      "location": "HWY 403 HAMILTON",
+      "direction": "Eastbound",
+      "score": 90,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.167484,
+      "longitude": -80.21334,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "18f32b7541863775"
     },
     {
       "id": "511:289628",
@@ -480,22 +496,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "b7252b680a22cf68"
-    },
-    {
-      "id": "511:289494",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 6 Southbound  between EAST FLAMBOROUGH TWP CON. 5 EAST and PARKSIDE DRIVE, Hamilton. 1 Alternating Lane(s).",
-      "location": "HWY 6",
-      "direction": "Southbound",
-      "score": 43,
-      "neighbourhood": "Aldershot",
-      "latitude": 43.331116,
-      "longitude": -79.943794,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "0e48fe503f157d65"
     }
   ],
   "topSignal": {
