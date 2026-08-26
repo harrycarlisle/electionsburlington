@@ -68,7 +68,8 @@ def page_html(event: dict) -> str:
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://burlingtonnews.ca/"},
             {"@type": "ListItem", "position": 2, "name": "Explore", "item": "https://burlingtonnews.ca/explore/"},
-            {"@type": "ListItem", "position": 3, "name": title},
+            {"@type": "ListItem", "position": 3, "name": "Events", "item": "https://burlingtonnews.ca/events/"},
+            {"@type": "ListItem", "position": 4, "name": title},
         ],
     }
     nearby = "NEARBY" if event.get("scope") != "Burlington" else "Burlington"
@@ -100,7 +101,7 @@ def page_html(event: dict) -> str:
 <a class="skip" href="#main">Skip to content</a>
 <header class="header"><div class="wrap header-inner"><a class="brand" href="/">Burlington News</a><button class="menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
 <main id="main" class="authority-shell">
-<nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="/">Home</a> /</li><li><a href="/explore/">Explore</a> /</li><li>{escape(title)}</li></ol></nav>
+<nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="/">Home</a> /</li><li><a href="/explore/">Explore</a> /</li><li><a href="/events/">Events</a> /</li><li>{escape(title)}</li></ol></nav>
 <p class="authority-kicker">{escape(event.get("category") or "Event")} · {escape(nearby)}</p>
 <h1>{escape(title)}</h1>
 <p class="authority-hook">{escape(why)}</p>
@@ -124,7 +125,7 @@ def page_html(event: dict) -> str:
 <p><strong>Weather / cancellation:</strong> {escape(weather)}</p>
 </section>
 <div class="map-frame"><iframe title="Map of {escape(venue)}" src="https://maps.google.com/maps?q={escape(address)}&amp;output=embed" loading="lazy"></iframe></div>
-<p class="hub-links"><a href="/explore/">Explore calendar</a><a href="/explore/weekend/">This weekend</a><a href="/parking/">Parking tonight</a></p>
+<p class="hub-links"><a href="/events/">All event pages</a><a href="/explore/">Explore calendar</a><a href="/explore/weekend/">This weekend</a><a href="/parking/">Parking tonight</a></p>
 <p class="updated">Source: {escape(source_name)}. Verified {escape(str(updated))}.</p>
 </main>
 </body>

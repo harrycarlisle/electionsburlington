@@ -13,7 +13,7 @@
       "subjects": [
         "crime"
       ],
-      "url": "articles/how-bad-is-burlington-crime.html",
+      "url": "/stories/how-bad-is-burlington-crime/",
       "image": "assets/stories/public-safety/halton-police-crime-burlington.webp",
       "alt": "Halton Regional Police vehicle behind crime-scene tape.",
       "credit": "Burlington News",
@@ -34,7 +34,7 @@
         "skyway",
         "history"
       ],
-      "url": "articles/skyway-bridge-story.html",
+      "url": "/stories/skyway-bridge-story/",
       "image": "assets/home/skyway-reader.webp",
       "alt": "The Burlington Bay James N. Allan Skyway",
       "credit": "Dave Lauretti · CC BY 2.0",
@@ -52,7 +52,7 @@
         "events",
         "ribfest"
       ],
-      "url": "articles/ribfest-2026.html",
+      "url": "/stories/ribfest-2026/",
       "image": "assets/home/ribs.webp",
       "alt": "Barbecue ribs smoking over a pit",
       "activeFrom": "2026-08-18",
@@ -70,7 +70,7 @@
       "subjects": [
         "school-policy"
       ],
-      "url": "articles/ontario-student-rights-school.html",
+      "url": "/stories/ontario-student-rights-school/",
       "image": "assets/home/school-rights.webp",
       "alt": "A yellow Ontario school bus",
       "published": "2026-08-24",
@@ -88,7 +88,7 @@
       "subjects": [
         "data-centre"
       ],
-      "url": "articles/burlington-data-centre-not-ai.html",
+      "url": "/stories/burlington-data-centre-not-ai/",
       "image": "assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp",
       "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
       "published": "2026-08-24",
@@ -107,7 +107,7 @@
         "local-food",
         "cafe-closure"
       ],
-      "url": "articles/nostalgia-games-cafe-closure.html",
+      "url": "/stories/nostalgia-games-cafe-closure/",
       "image": "assets/editorial/nostalgia-cafe-closure.svg",
       "alt": "Board-game cafe closure illustration",
       "credit": "Burlington News illustration",
@@ -128,7 +128,7 @@
       "subjects": [
         "school-policy"
       ],
-      "url": "articles/ontario-student-rights-school.html",
+      "url": "/stories/ontario-student-rights-school/",
       "image": "assets/home/school-rights.webp",
       "alt": "A yellow Ontario school bus",
       "published": "2026-08-24",
@@ -146,7 +146,7 @@
       "subjects": [
         "data-centre"
       ],
-      "url": "articles/burlington-data-centre-not-ai.html",
+      "url": "/stories/burlington-data-centre-not-ai/",
       "image": "assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp",
       "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
       "published": "2026-08-24",
@@ -165,7 +165,7 @@
         "local-food",
         "cafe-closure"
       ],
-      "url": "articles/nostalgia-games-cafe-closure.html",
+      "url": "/stories/nostalgia-games-cafe-closure/",
       "image": "assets/editorial/nostalgia-cafe-closure.svg",
       "alt": "Board-game cafe closure illustration",
       "credit": "Burlington News illustration",
@@ -185,7 +185,7 @@
         "events",
         "ribfest"
       ],
-      "url": "articles/ribfest-2026.html",
+      "url": "/stories/ribfest-2026/",
       "image": "assets/home/ribs.webp",
       "alt": "Barbecue ribs smoking over a pit",
       "activeFrom": "2026-08-18",
@@ -202,7 +202,7 @@
         "wildlife",
         "fishway"
       ],
-      "url": "articles/fishway-26000-fish.html",
+      "url": "/stories/fishway-26000-fish/",
       "image": "assets/home/fishway.webp",
       "alt": "The Cootes Paradise Fishway across the water",
       "published": "2026-08-23",
@@ -239,7 +239,7 @@
         "sports",
         "hidden-gem"
       ],
-      "url": "articles/burlington-hotspots-0-24.html",
+      "url": "/stories/burlington-hotspots-0-24/",
       "image": "assets/sports/ultimate-waterfront.webp",
       "alt": "Editorial illustration of a waterfront field sport near the Skyway",
       "credit": "Burlington News illustration",
@@ -260,7 +260,7 @@
         "skyway",
         "history"
       ],
-      "url": "articles/skyway-bridge-story.html",
+      "url": "/stories/skyway-bridge-story/",
       "image": "assets/home/skyway-reader.webp",
       "alt": "The Burlington Bay James N. Allan Skyway",
       "credit": "Dave Lauretti · CC BY 2.0",
@@ -278,7 +278,7 @@
         "events",
         "ribfest"
       ],
-      "url": "articles/ribfest-2026.html",
+      "url": "/stories/ribfest-2026/",
       "image": "assets/home/ribs.webp",
       "alt": "Barbecue ribs smoking over a pit",
       "activeFrom": "2026-08-18",

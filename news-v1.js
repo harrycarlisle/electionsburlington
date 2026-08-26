@@ -11,17 +11,17 @@
     const path=location.pathname.replace(/\/$/,'');
     const titles={
       '':'Burlington News | Local news, events and election coverage','/index.html':'Burlington News | Local news, events and election coverage',
-      '/head-to-head.html':'Compare Burlington Mayor Candidates | Burlington News','/ballot.html':'Your Burlington Ballot | Burlington News','/ward.html':'What Ward Am I In? | Burlington News',
-      '/updates.html':'Latest Burlington News | Burlington News','/explore.html':'Explore Burlington | Burlington News','/promises.html':'Promises & Records | Burlington News','/puzzles.html':'Burlington Puzzles | Burlington News','/elections-for-beginners.html':'Elections for Beginners | Burlington News',
-      '/methodology.html':'Sources & Methodology | Burlington News','/help.html':'Help & Feedback | Burlington News','/privacy.html':'Privacy Policy | Burlington News','/terms.html':'Terms of Use | Burlington News','/independent.html':'Independent | Burlington News','/feedback':'Give feedback | Burlington News'
+      '/elections/head-to-head/':'Compare Burlington Mayor Candidates | Burlington News','/elections/ballot/':'Your Burlington Ballot | Burlington News','/elections/ward/':'What Ward Am I In? | Burlington News',
+      '/news/':'Latest Burlington News | Burlington News','/explore/':'Explore Burlington | Burlington News','/elections/promises/':'Promises & Records | Burlington News','/games/':'Burlington Puzzles | Burlington News','/elections/beginners/':'Elections for Beginners | Burlington News',
+      '/sources/':'Sources & Methodology | Burlington News','/accessibility/':'Help & Feedback | Burlington News','/privacy/':'Privacy Policy | Burlington News','/terms/':'Terms of Use | Burlington News','/independent/':'Independent | Burlington News','/feedback':'Give feedback | Burlington News'
     };
     if(titles[path])document.title=titles[path];else if(/Burlington Election Guide/i.test(document.title))document.title=document.title.replace(/Burlington Election Guide/ig,'Burlington News');
   }
-  function restoreBanner(){const election=/(election-guide|head-to-head|ballot|ward|promises|elections-for-beginners)\.html$/.test(location.pathname);let b=document.querySelector('.banner'),h=document.querySelector('.header');if(!election){b?.remove();return}if(!b&&h){b=document.createElement('div');b.className='banner';h.before(b)}if(b)b.innerHTML='<div class="wrap"><strong>2026 election</strong><span class="banner-sep" aria-hidden="true"> · </span><span>Voting starts Oct. 14</span><span class="banner-sep" aria-hidden="true"> · </span><span>Election Day Oct. 26</span></div>'}
+  function restoreBanner(){const election=/elections/.test(location.pathname)||/(election-guide|head-to-head|ballot|ward|promises|elections-for-beginners)\.html$/.test(location.pathname);let b=document.querySelector('.banner'),h=document.querySelector('.header');if(!election){b?.remove();return}if(!b&&h){b=document.createElement('div');b.className='banner';h.before(b)}if(b)b.innerHTML='<div class="wrap"><strong>2026 election</strong><span class="banner-sep" aria-hidden="true"> · </span><span>Voting starts Oct. 14</span><span class="banner-sep" aria-hidden="true"> · </span><span>Election Day Oct. 26</span></div>'}
   function restoreFooter(){
     let f=document.querySelector('.site-legal-footer');if(!f){f=document.createElement('footer');f.className='site-legal-footer';document.body.appendChild(f)}
     if(f.dataset.newsFooter==='2')return;f.dataset.newsFooter='2';
-    f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news and election coverage for Burlington.</p></div></div><nav class="site-legal-links" aria-label="Burlington News sections"><a href="updates.html">News</a><a href="election-guide.html">Elections</a><a href="explore.html">Things to do</a><a href="puzzles.html">Puzzles</a><a href="methodology.html">Sources & methodology</a><a href="independent.html">About</a><a href="/feedback/">Feedback</a><a href="/work-with-us/">Work with us</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></div>';
+    f.innerHTML='<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news and election coverage for Burlington.</p></div></div><nav class="site-legal-links" aria-label="Burlington News sections"><a href="/news/">News</a><a href="/elections/">Elections</a><a href="/explore/">Things to do</a><a href="/games/">Puzzles</a><a href="/sources/">Sources & methodology</a><a href="/independent/">About</a><a href="/feedback/">Feedback</a><a href="/work-with-us/">Work with us</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a></nav></div>';
   }
 
   const isLocalStory=i=>{
@@ -47,7 +47,7 @@
   async function rebuildHomeBrief(){
     if(!home())return;const old=document.querySelector('.daily-brief');if(!old)return;
     const items=(await getLocalStories(6)).slice(0,3);if(!items.length)return;
-    const section=document.createElement('section');section.className='daily-brief news-brief';section.id='daily-brief';section.innerHTML=`<div class="news-brief-head"><div><h2>Latest in Burlington</h2></div><a href="updates.html">All news →</a></div><div class="news-brief-grid">${items.map(storyCard).join('')}</div>`;old.replaceWith(section);
+    const section=document.createElement('section');section.className='daily-brief news-brief';section.id='daily-brief';section.innerHTML=`<div class="news-brief-head"><div><h2>Latest in Burlington</h2></div><a href="/news/">All news →</a></div><div class="news-brief-grid">${items.map(storyCard).join('')}</div>`;old.replaceWith(section);
   }
 
   async function rebuildUpdates(){
@@ -67,7 +67,7 @@
       const a=document.createElement('a');a.className=card.className;a.href=href;a.target='_blank';a.rel='noopener';a.setAttribute('aria-label',`${card.querySelector('h3')?.textContent||'Election date'} — open details`);a.innerHTML=card.innerHTML;card.replaceWith(a);
     });
   }
-  function replacePartner(){const card=document.querySelector('.home-extra-card.partner-card');if(!card)return;card.className='home-extra-card beginner-card';card.href='elections-for-beginners.html';card.innerHTML='<span class="home-extra-icon" aria-hidden="true">?</span><div><small>Start here</small><h2>Elections for beginners</h2><p>What a municipal election is, what each job controls and how a city decision actually gets made.</p></div><span aria-hidden="true">→</span>'}
+  function replacePartner(){const card=document.querySelector('.home-extra-card.partner-card');if(!card)return;card.className='home-extra-card beginner-card';card.href='/elections/beginners/';card.innerHTML='<span class="home-extra-icon" aria-hidden="true">?</span><div><small>Start here</small><h2>Elections for beginners</h2><p>What a municipal election is, what each job controls and how a city decision actually gets made.</p></div><span aria-hidden="true">→</span>'}
   function cleanCandidateLabels(){document.querySelectorAll('#candidateStrip .focus-label').forEach(x=>x.textContent='Overview')}
   function watchCandidateLabels(){const strip=document.getElementById('candidateStrip');if(!strip||strip.dataset.newsLabelWatch)return;strip.dataset.newsLabelWatch='1';new MutationObserver(()=>cleanCandidateLabels()).observe(strip,{childList:true,subtree:true,characterData:true})}
 
