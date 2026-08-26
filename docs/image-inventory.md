@@ -8,7 +8,7 @@ Decision values: KEEP · REPLACE · MOVE INSIDE ARTICLE · SOURCE REAL PHOTO · 
 |---|---|---|---|---|---|---|---|---|
 | How bad is crime in Burlington, really? | `/assets/stories/public-safety/halton-police-crime-burlington.webp` | Burlington News visual (forward-facing Halton police SUV, lights, crime-scene tape) | strong, crisp, works on 16:9 crop | suburban Halton/Burlington-plausible; not a named address | high (owned visual; not a documentary crime-scene photo) | strong | strong | KEEP |
 | This Burlington team is 0–24 | hero/cards/OG: `/assets/ultimate-frisbee-burlington.png`; in-article rules: `/assets/ultimate-frisbee-7v7.png` | unlabeled recreational game photo (hero); labeled 7v7 field graphic (inside article only) | strong | suburban Burlington-area field; not identified as a Toss Bosses game | high (user-uploaded masters preserved; no photographer supplied) | strong | strong | KEEP — do not swap the two roles |
-| Burlington’s board-game cafe closed | `/assets/editorial/nostalgia-cafe-closure.svg` | flat original illustration with baked-in “FINAL GAME” type | weak / placeholder-like | generic cafe table, not the actual Nostalgia Games Cafe | high (owned) | weak | weak | KEEP for now — SOURCE REAL PHOTO when a rights-safe exterior/interior exists |
+| A Burlington gathering place closed | `/assets/local-business/nostalgia-games-cafe.webp` (master: `/assets/nostaliga-games-cafe-image.png` and `/assets/local-business/nostalgia-games-cafe.png`) | real cafe interior photo | strong | interior of Nostalgia Candy Café; no photographer supplied | high (user-uploaded master preserved) | strong | strong | KEEP — do not revert to the FINAL GAME illustration |
 | Burlington’s proposed data centre | `/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp` | approved editorial site concept | strong | 3110 South Service Road context | high if kept labelled as concept, not a final rendering | strong | strong | KEEP |
 | Ontario nearly replaced the Skyway | hero `/assets/home/skyway.webp`; cards/OG `/assets/home/skyway-reader.webp` | real landmark photography | strong | accurate Skyway | high (Dave Lauretti, CC BY 2.0) | strong | strong | KEEP |
 | Ribfest turns 30 | `/assets/home/ribs.webp` | photograph | strong | generic pit, not a named Burlington booth | Wikimedia / credited | strong | strong | KEEP |
@@ -30,7 +30,10 @@ Decision values: KEEP · REPLACE · MOVE INSIDE ARTICLE · SOURCE REAL PHOTO · 
 
 - Crime story: canonical path is `/assets/stories/public-safety/halton-police-crime-burlington.webp`. Credit: Burlington News visual. Old dusk SUV is remapped away in `home.js` and `article-modern.js`.
 - Toss Bosses hero/cards/OG: `/assets/ultimate-frisbee-burlington.png`. In-article rules visual: `/assets/ultimate-frisbee-7v7.png`. No photographer was supplied for either, so do not invent a credit. Credit the labeled 7v7 as a Burlington News graphic. Do not imply either photo depicts Toss Bosses specifically. Do not use the waterfront illustration as the story image.
-- Cafe: no rights-safe real photo of Nostalgia Games Cafe in the repo. The “FINAL GAME” SVG stays until a legal photo exists. Do not generate a fake cafe interior.
+- Cafe: `/assets/local-business/nostalgia-games-cafe.webp`. No photographer was supplied, so do not invent a credit. The old FINAL GAME illustration is retired from primary surfaces.
+- Kerncliff Park (official City spelling): `/assets/explore/kerncliff-park.webp`. Master: `/assets/Kerncliffe-Park.png`.
+- Winona Peach Festival: `/assets/explore/winona-peach-festival.webp`. Master: `/assets/Peaches.jpg`.
+- E-scooter story: original diagram `/assets/editorial/centennial-trail-e-scooter.svg`. Do not invent documentary photography.
 
 ## Keep (do not overwrite)
 

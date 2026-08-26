@@ -80,10 +80,10 @@
       "scope": "Stoney Creek",
       "weight": 7,
       "verifiedAt": "2026-08-26T12:00:00-04:00",
-      "image": "assets/explore/farmers-market.webp",
-      "imageAlt": "Late-summer produce at a local market. Editorial illustration, not a Winona Festival photo.",
-      "credit": "Burlington News illustration",
-      "illustration": true
+      "image": "assets/explore/winona-peach-festival.webp",
+      "imageAlt": "Baskets of ripe peaches on a market table.",
+      "credit": "",
+      "illustration": false
     },
     {
       "id": "elizabeth-gardens-art-walk-2026",
@@ -848,10 +848,10 @@
         "quick",
         "boardwalk"
       ],
-      "image": "assets/editorial/explore-collage.webp",
-      "imageAlt": "Illustrated Burlington landscape collage",
-      "credit": "Burlington News illustration",
-      "illustration": true,
+      "image": "assets/explore/kerncliff-park.webp",
+      "imageAlt": "The Kerncliff Park boardwalk through autumn wetland grasses below a former quarry face.",
+      "credit": "",
+      "illustration": false,
       "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/kerncliff-park.aspx",
       "safety": "isolated",
       "nightOk": false

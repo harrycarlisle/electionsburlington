@@ -134,6 +134,23 @@ html[data-theme="dark"] body .leaflet-control-attribution{
   color:#c5d0d6
 }
 
+@media(max-width:900px){
+  html body.home-page .breaking-now:not([hidden]):not(:empty):not(.is-empty){
+    display:block!important;
+    max-height:none;
+    min-height:0
+  }
+  html body.home-page .breaking-now[data-count="2"] .breaking-list{
+    grid-template-columns:minmax(0,1fr);
+    gap:0
+  }
+  html body.home-page .breaking-now[data-count="2"] .breaking-row + .breaking-row{
+    padding-left:0;
+    border-left:0;
+    border-top:1px solid var(--line)
+  }
+}
+
 @media(min-width:721px) and (max-width:900px){
   html body.home-page .home-main{padding-top:34px!important}
 }

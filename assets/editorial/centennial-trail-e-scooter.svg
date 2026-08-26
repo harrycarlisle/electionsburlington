@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Where Burlington allows e-scooters</title>
+  <desc id="desc">Burlington News diagram of the Centennial Trail e-scooter pilot. Riding is limited to Centennial Trail between Brant Street / Elgin Promenade and Burloak Drive. Other roads, sidewalks, trails and paths are off-limits.</desc>
+  <defs>
+    <style>
+      .bg{fill:#eef4f7}
+      .panel{fill:#fff;stroke:#d4dee4;stroke-width:2}
+      .trail{fill:none;stroke:#2b7a4b;stroke-width:28;stroke-linecap:round}
+      .trailEdge{fill:none;stroke:#d7e8db;stroke-width:52;stroke-linecap:round}
+      .off{fill:none;stroke:#c5d0d6;stroke-width:10;stroke-linecap:round}
+      .label{font-family:Arial,Helvetica,sans-serif;fill:#102b3f}
+      .big{font-size:34px;font-weight:700}
+      .med{font-size:22px;font-weight:700}
+      .small{font-size:18px}
+      .muted{fill:#5b7380}
+      .ok{fill:#1f6b3d}
+      .no{fill:#9a3b2f}
+      .dot{fill:#2b7a4b;stroke:#fff;stroke-width:5}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#fff"/>
+  <text x="56" y="72" class="label big">Where you can ride an e-scooter in Burlington</text>
+  <text x="56" y="108" class="label small muted">Centennial Trail only · Brant Street / Elgin Promenade to Burloak Drive</text>
+  <rect x="48" y="148" width="1504" height="560" rx="22" class="bg"/>
+  <path class="off" d="M140 430 H1460"/>
+  <path class="off" d="M390 250 V640"/>
+  <path class="off" d="M1210 250 V640"/>
+  <text x="400" y="238" class="label small muted">Other roads and sidewalks</text>
+  <path class="trailEdge" d="M220 470 C430 360 790 340 1380 470"/>
+  <path class="trail" d="M220 470 C430 360 790 340 1380 470"/>
+  <circle class="dot" cx="250" cy="462" r="16"/>
+  <circle class="dot" cx="1350" cy="462" r="16"/>
+  <rect x="168" y="500" width="280" height="74" rx="12" fill="#fff" opacity=".96"/>
+  <text x="188" y="532" class="label med">Brant St / Elgin Promenade</text>
+  <text x="188" y="558" class="label small muted">West end of the pilot</text>
+  <rect x="1148" y="500" width="250" height="74" rx="12" fill="#fff" opacity=".96"/>
+  <text x="1168" y="532" class="label med">Burloak Drive</text>
+  <text x="1168" y="558" class="label small muted">East end of the pilot</text>
+  <rect x="620" y="286" width="360" height="54" rx="12" fill="#1f6b3d"/>
+  <text x="800" y="321" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#fff">Centennial Trail · allowed</text>
+  <g transform="translate(80 748)">
+    <rect width="700" height="86" rx="14" class="panel"/>
+    <text x="24" y="36" class="label med ok">Allowed</text>
+    <text x="24" y="64" class="label small">Personal and SCOOTY rental e-scooters on this trail segment only.</text>
+  </g>
+  <g transform="translate(820 748)">
+    <rect width="700" height="86" rx="14" class="panel"/>
+    <text x="24" y="36" class="label med no">Not allowed</text>
+    <text x="24" y="64" class="label small">Other Burlington roads, sidewalks, trails and paths.</text>
+  </g>
+</svg>

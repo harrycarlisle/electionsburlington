@@ -23,7 +23,8 @@
   ];
   const index = [
     {title:'How bad is crime in Burlington, really?',url:'/stories/how-bad-is-burlington-crime/',section:'Public safety',keywords:'crime police safety statistics canada halton'},
-    {title:'Burlington’s board-game cafe closed',url:'/stories/nostalgia-games-cafe-closure/',section:'Local business',keywords:'nostalgia games cafe board game occupancy'},
+    {title:'E-scooter injuries are rising. Burlington’s rules are stricter than you might think.',url:'/stories/e-scooter-burlington-rules/',section:'Transportation',keywords:'e-scooter scooter centennial trail scooty safety helmet'},
+    {title:'A Burlington gathering place closed. The problem wasn’t demand.',url:'/stories/nostalgia-games-cafe-closure/',section:'Local business',keywords:'nostalgia games cafe board game occupancy candy'},
     {title:'Ontario nearly replaced the Skyway with three tunnels',url:'/stories/skyway-bridge-story/',section:'Feature',keywords:'skyway bridge canal qew tunnels'},
     {title:'Burlington’s proposed data centre is not what many people think',url:'/stories/burlington-data-centre-not-ai/',section:'Development',keywords:'data centre ai south service road'},
     {title:'Millcroft Phase 2 proposes 138 homes',url:'/stories/millcroft-phase-2-138-homes/',section:'Development',keywords:'millcroft golf course homes development ward 6'},

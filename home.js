@@ -137,11 +137,13 @@ import {
   const CRIME_IMAGE = '/assets/stories/public-safety/halton-police-crime-burlington.webp';
   const CRIME_ALT = 'Halton Regional Police vehicle behind crime-scene tape.';
   const CRIME_TITLE = 'How bad is crime in Burlington, really?';
-  const CRIME_DECK = 'Halton is unusually safe, but one category is moving the wrong way.';
+  const CRIME_DECK = 'One category of crime is moving the wrong way.';
   const SPORTS_TITLE = 'This Burlington team has lost 24 straight games. Why do they keep coming back?';
+  const CAFE_TITLE = 'A Burlington gathering place closed. The problem wasn’t demand.';
   const PICK_HOOKS = {
     'burlington-crime-analysis-2026': CRIME_DECK,
     'how-bad-is-burlington-crime': CRIME_DECK,
+    'e-scooter-burlington-rules': 'Most public roads and sidewalks in Burlington are still off-limits.',
     'data-centre-not-ai': 'The real debate is what 20 megawatts means beside an established neighbourhood.',
     'nostalgia-games-cafe-closure': 'The community showed up. The building problem was harder to solve.',
     'skyway-tunnels': 'The tunnel plan got much further than most Burlington residents probably realize.',
@@ -164,6 +166,7 @@ import {
   function displayHeadline(item){
     if (isCrimeItem(item)) return CRIME_TITLE;
     if (isSportsStreak(item)) return SPORTS_TITLE;
+    if (/nostalgia-games-cafe/i.test(item?.id || '')) return CAFE_TITLE;
     return cleanDash(item.headline);
   }
 

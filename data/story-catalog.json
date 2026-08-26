@@ -3,6 +3,51 @@
   "scale": "Each placement signal is scored from 0 to 5. Evidence and image rights are gates, not engagement points.",
   "items": [
     {
+      "id": "e-scooter-burlington-rules",
+      "kind": "original",
+      "surfaces": [
+        "latest",
+        "rail"
+      ],
+      "headline": "E-scooter injuries are rising. Burlington’s rules are stricter than you might think.",
+      "deck": "Most public roads and sidewalks in Burlington are still off-limits.",
+      "label": "Transportation",
+      "labelEssential": true,
+      "url": "articles/e-scooter-burlington-rules.html",
+      "image": "assets/editorial/centennial-trail-e-scooter.svg",
+      "alt": "Diagram showing e-scooters are allowed only on Centennial Trail between Brant Street and Burloak Drive.",
+      "credit": "Burlington News diagram",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "activeUntil": "2026-09-30",
+      "publishedAt": "2026-08-26T17:03:00-04:00",
+      "datePublished": "2026-08-26T17:03:00-04:00",
+      "storyGoal": "Connect the national rise in e-scooter injuries to Burlington’s narrow Centennial Trail-only rules.",
+      "verificationTier": "primary",
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 4,
+        "consequence": 4,
+        "interest": 5,
+        "originality": 5,
+        "visualStrength": 4
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "transportation",
+      "subjects": [
+        "e-scooter",
+        "safety",
+        "centennial-trail"
+      ]
+    },
+    {
       "id": "burlington-crime-analysis-2026",
       "kind": "original",
       "surfaces": [
@@ -11,7 +56,7 @@
         "latest"
       ],
       "headline": "How bad is crime in Burlington, really?",
-      "deck": "Halton is unusually safe, but one category of crime is moving the wrong way.",
+      "deck": "One category of crime is moving the wrong way.",
       "label": "Public safety",
       "labelEssential": true,
       "url": "articles/how-bad-is-burlington-crime.html",
@@ -53,14 +98,14 @@
         "rail",
         "latest"
       ],
-      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
+      "headline": "A Burlington gathering place closed. The problem wasn’t demand.",
       "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
       "label": "Local business",
       "labelEssential": true,
       "url": "articles/nostalgia-games-cafe-closure.html",
-      "image": "assets/editorial/nostalgia-cafe-closure.svg",
-      "alt": "Board-game cafe closure illustration",
-      "credit": "Burlington News illustration",
+      "image": "assets/local-business/nostalgia-games-cafe.webp",
+      "alt": "The interior of Nostalgia Candy Café, with a blue counter, wooden tables and a wall logo.",
+      "credit": "",
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "activeUntil": "2026-09-30",
