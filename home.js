@@ -174,11 +174,12 @@ import {
   }
 
   function pickHook(item){
-    const hook = displayDeck(item);
+    const hook = tightenDeck(displayDeck(item));
     const words = hook.split(/\s+/).filter(Boolean);
-    if (words.length < 8 || words.length > 22) return hook && words.length ? hook : '';
+    if (!words.length) return '';
     const title = displayHeadline(item).toLowerCase();
-    return hook.toLowerCase() === title ? '' : hook;
+    if (hook.toLowerCase() === title) return '';
+    return hook;
   }
 
   function storyImage(item, fallback){

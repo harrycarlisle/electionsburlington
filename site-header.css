@@ -503,7 +503,7 @@ html body .header-live{
     flex:0 0 3px
   }
   html body .header-weather .weather-chip-condition{font:500 12px/1 Inter,Arial,sans-serif;color:var(--muted,#657083);font-style:normal}
-  @media(max-width:1099px){
+  @media(max-width:1280px){
     html body .header-weather .weather-chip-sep,
     html body .header-weather .weather-chip-condition{display:none!important}
   }
