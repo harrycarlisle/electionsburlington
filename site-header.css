@@ -427,9 +427,21 @@ html body .header-live{
   }
   html body.home-page .header-live[hidden]{display:none!important}
   html body.home-page .header-live .now-card{
-    min-height:44px!important;
-    padding:6px 8px!important;
-    border-radius:12px!important
+    min-height:0!important;
+    max-height:44px!important;
+    padding:4px 7px!important;
+    gap:6px!important;
+    border-radius:10px!important
+  }
+  html body.home-page .header-live .now-card .now-icon{
+    width:20px!important;height:20px!important;flex-basis:20px!important
+  }
+  html body.home-page .header-live .now-card .now-icon svg{width:11px!important;height:11px!important}
+  html body.home-page .header-live .now-card-copy{gap:0!important}
+  html body.home-page .header-live .now-card-copy strong{font-size:12px!important;line-height:1.1!important}
+  html body.home-page .header-live .now-card-copy em{
+    font-size:10px!important;line-height:1.15!important;
+    display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden
   }
   html body.home-page .header-controls{flex:0 0 auto!important}
   html body .header-weather,
