@@ -423,11 +423,23 @@
     measure();
   }
 
+  function shareImage() {
+    const existing = document.querySelector('meta[property="og:image"]')?.content || '';
+    if (/^https:\/\/burlingtonnews\.ca\/.+\.(?:jpe?g|png|webp)$/i.test(existing)) return existing;
+    const src = document.querySelector('.article-hero img')?.getAttribute('src') || '';
+    if (src.includes('3110-south-service-road-data-centre')) {
+      return 'https://burlingtonnews.ca/assets/stories/data-centre/3110-south-service-road-data-centre.jpg';
+    }
+    if (/^https?:\/\//.test(src)) return src;
+    return src ? `https://burlingtonnews.ca${src.startsWith('/') ? src : `/${src}`}` : 'https://burlingtonnews.ca/assets/editorial/home-share.webp';
+  }
+
   function addSchema() {
     if (document.getElementById('articleStructuredData')) return;
+    if ([...document.querySelectorAll('script[type="application/ld+json"]')].some(node => /"NewsArticle"/.test(node.textContent || ''))) return;
     const title = document.querySelector('.article-head h1')?.textContent?.trim() || document.title;
     const description = document.querySelector('meta[name="description"]')?.content || '';
-    const image = document.querySelector('.article-hero img')?.src || 'https://burlingtonnews.ca/assets/editorial/home-share.webp';
+    const image = shareImage();
     const ld = document.createElement('script');
     ld.id = 'articleStructuredData';
     ld.type = 'application/ld+json';
@@ -447,8 +459,7 @@
   function normalizeArticleMeta() {
     const description = document.querySelector('meta[name="description"]')?.content || '';
     const title = document.querySelector('.article-head h1')?.textContent?.trim() || document.title.replace(/\s*\|\s*Burlington News.*/, '');
-    const hero = document.querySelector('.article-hero img');
-    const image = hero?.src || 'https://burlingtonnews.ca/assets/editorial/home-share.webp';
+    const image = shareImage();
     const canonical = document.querySelector('link[rel="canonical"]');
     const storyPath = currentSlug ? `/stories/${currentSlug}/` : location.pathname;
     if (canonical) canonical.href = `https://burlingtonnews.ca${storyPath}`;
