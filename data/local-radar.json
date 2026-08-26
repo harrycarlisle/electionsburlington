@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T07:49:31.957336-04:00",
+  "generatedAt": "2026-08-26T08:20:52.454902-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -2991,7 +2991,7 @@
         "novelty": 3.8,
         "familiarity": 2.5,
         "consequence": 2.0,
-        "freshness": 3.2,
+        "freshness": 2.4,
         "sourceConfidence": 2.8,
         "originality": 5.0,
         "visualStrength": 5.0,
@@ -3011,7 +3011,7 @@
       "source": "Burlington News",
       "sourceType": "official",
       "radarId": "fb79a86e784ceb9a",
-      "radarScore": 30,
+      "radarScore": 29,
       "eligibleRightNow": false,
       "eligibleHomepage": false,
       "eligibleNewest": false,
