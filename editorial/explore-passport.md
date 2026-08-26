@@ -8,7 +8,7 @@ Explore combines three jobs without turning into a directory: a verified calenda
 - Expired events disappear from the upcoming list automatically.
 - Nearby Hamilton events are allowed when they are broadly useful, but must be labelled Nearby.
 - A monitoring result is a reporting lead, not a published listing.
-- Exact local places use real, rights-cleared photography. Generated visuals are allowed only for generic scenes and are labelled Burlington News illustration.
+- Exact local places use real, rights-cleared photography. Generated visuals are allowed only for generic scenes and are labelled Graphic: Burlington News.
 - Event details open with practical information such as what to bring, access, weather rules and the official source.
 
 ## My Burlington

@@ -139,23 +139,23 @@
 
   function heroForPath() {
     const map = {
-      '730-brant-vacant-building': ['/assets/editorial/730-brant-share.webp', '730 Brant Street, Burlington News illustration', 'Burlington News illustration'],
-      'back-to-school-2026': ['/assets/home/school-bus.webp', 'A yellow Ontario school bus', 'Photo credit in source story'],
-      'burlington-rabies-bat-2026': ['/assets/explore/night-sky-mount-nemo.webp', 'Night sky over Burlington-area escarpment', 'Burlington News visual'],
-      'fishway-26000-fish': ['/assets/home/fishway.webp', 'Cootes Paradise Fishway', 'Photo credit in source story'],
-      'millcroft-phase-2-138-homes': ['/assets/explore/burlington-orientation-map.svg', 'Orientation map of Burlington', 'Burlington News map'],
-      'nelson-quarry-tribunal-decision': ['/assets/explore/night-sky-mount-nemo.webp', 'Mount Nemo and the Burlington escarpment area', 'Burlington News visual'],
-      'ontario-student-rights-school': ['/assets/home/school-rights.webp', 'Students arriving at an Ontario school', 'Burlington News illustration'],
-      'ribfest-2026': ['/assets/home/ribs.webp', 'Barbecue ribs at a festival', 'Photo credit in source story'],
-      'salamander-road-closure': ['/assets/home/salamander.webp', 'Jefferson salamander', 'Photo credit in source story'],
-      'skyway-bridge-story': ['/assets/home/skyway-reader.webp', 'Burlington Bay James N. Allan Skyway', 'Photo credit in source story'],
-      'upper-middle-road-construction-2026': ['/assets/explore/burlington-orientation-map.svg', 'Orientation map of Burlington', 'Burlington News map'],
-      'burlington-data-centre-not-ai': ['/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp', 'Illustrative concept and site context for the proposed data centre at 3110 South Service Road, Burlington. This is not a rendering of the final building.', 'Illustrative site concept for 3110 South Service Road. This is not a rendering of the final building.'],
-      'burlington-hotspots-0-24': ['/assets/sports/ultimate-waterfront.webp', 'Editorial illustration of a waterfront field sport near the Skyway', 'Burlington News illustration'],
-      'how-bad-is-burlington-crime': ['/assets/stories/public-safety/halton-police-crime-burlington.webp', 'Illustrative Burlington News visual of a Halton Regional Police vehicle behind crime-scene tape.', 'Burlington News visual'],
-      'nostalgia-games-cafe-closure': ['/assets/editorial/nostalgia-cafe-closure.svg', 'Editorial illustration of a closed board-game cafe', 'Burlington News illustration']
+      '730-brant-vacant-building': ['/assets/editorial/730-brant-share.webp', '730 Brant Street', 'Graphic: Burlington News'],
+      'back-to-school-2026': ['/assets/home/school-bus.webp', 'A yellow Ontario school bus', 'File photo'],
+      'burlington-rabies-bat-2026': ['/assets/explore/night-sky-mount-nemo.webp', 'Night sky over Burlington-area escarpment', 'File photo'],
+      'fishway-26000-fish': ['/assets/home/fishway.webp', 'Cootes Paradise Fishway', 'File photo'],
+      'millcroft-phase-2-138-homes': ['/assets/explore/burlington-orientation-map.svg', 'Orientation map of Burlington', 'Map: Burlington News'],
+      'nelson-quarry-tribunal-decision': ['/assets/explore/night-sky-mount-nemo.webp', 'Mount Nemo and the Burlington escarpment area', 'File photo'],
+      'ontario-student-rights-school': ['/assets/home/school-rights.webp', 'Students arriving at an Ontario school', 'Graphic: Burlington News'],
+      'ribfest-2026': ['/assets/home/ribs.webp', 'Barbecue ribs at a festival', 'File photo'],
+      'salamander-road-closure': ['/assets/home/salamander.webp', 'Jefferson salamander', 'File photo'],
+      'skyway-bridge-story': ['/assets/home/skyway-reader.webp', 'Burlington Bay James N. Allan Skyway', 'Dave Lauretti · CC BY 2.0'],
+      'upper-middle-road-construction-2026': ['/assets/explore/burlington-orientation-map.svg', 'Orientation map of Burlington', 'Map: Burlington News'],
+      'burlington-data-centre-not-ai': ['/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp', 'Proposed data centre at 3110 South Service Road', 'Graphic representation of the proposed site.'],
+      'burlington-hotspots-0-24': ['/assets/sports/ultimate-waterfront.webp', 'Ultimate players on a waterfront field near the Skyway', 'Graphic: Burlington News'],
+      'how-bad-is-burlington-crime': ['/assets/stories/public-safety/halton-police-crime-burlington.webp', 'Halton Regional Police vehicle behind crime-scene tape', 'Photo: Burlington News'],
+      'nostalgia-games-cafe-closure': ['/assets/editorial/nostalgia-cafe-closure.svg', 'A closed board-game cafe table', 'Graphic: Burlington News']
     };
-    return map[currentSlug] || ['/assets/editorial/home-share.webp', 'Burlington News', 'Burlington News'];
+    return map[currentSlug] || null;
   }
 
   function applyHeroMedia(figure, src, alt, credit) {
@@ -165,32 +165,40 @@
       img.loading = 'eager';
       figure.prepend(img);
     }
-    img.src = src;
-    img.alt = alt;
-    let cap = figure.querySelector('figcaption');
-    if (!cap) {
-      cap = document.createElement('figcaption');
-      figure.appendChild(cap);
+    const currentSrc = img.getAttribute('src') || '';
+    const banned = /illustration|this is not a photo|AI-generat|illustrative|concept image|Burlington News visual/i;
+    if (!currentSrc || currentSlug === 'how-bad-is-burlington-crime' || /halton-crime-comparison|halton-police-dusk/.test(currentSrc)) {
+      img.src = src;
     }
-    cap.textContent = credit;
+    if (!img.alt || banned.test(img.alt)) img.alt = alt;
+    let cap = figure.querySelector('figcaption');
+    const current = (cap?.textContent || '').trim();
+    const shouldReplace = !current || banned.test(current) || current === 'Burlington News';
+    if (credit && shouldReplace) {
+      if (!cap) {
+        cap = document.createElement('figcaption');
+        figure.appendChild(cap);
+      }
+      cap.textContent = credit;
+    } else if (!credit && cap && shouldReplace) {
+      cap.remove();
+    }
   }
 
   function ensureHero() {
     const main = document.querySelector('main.article');
     const head = main?.querySelector('.article-head');
     if (!main || !head) return;
-    const [src, alt, credit] = heroForPath();
+    const mapped = heroForPath();
+    if (!mapped) return;
+    const [src, alt, credit] = mapped;
     let figure = main.querySelector(':scope > .article-hero, .article-hero');
     if (!figure) {
       figure = document.createElement('figure');
       figure.className = 'article-hero article-hero-generated';
       head.insertAdjacentElement('afterend', figure);
     }
-    const img = figure.querySelector('img');
-    const currentSrc = img?.getAttribute('src') || '';
-    if (currentSlug === 'how-bad-is-burlington-crime' || !img || /halton-crime-comparison|halton-police-dusk/.test(currentSrc)) {
-      applyHeroMedia(figure, src, alt, credit);
-    }
+    applyHeroMedia(figure, src, alt, credit);
   }
 
   function ensureLayout() {

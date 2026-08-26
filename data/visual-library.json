@@ -9,10 +9,10 @@
   },
   "slots": [
     {"id": "downtown", "label": "Downtown Burlington", "status": "needed", "current": null},
-    {"id": "waterfront", "label": "Spencer Smith Park / waterfront walk", "status": "reusable", "current": "assets/explore/brant-street-pier.webp", "credit": "Burlington News visual"},
+    {"id": "waterfront", "label": "Spencer Smith Park / waterfront walk", "status": "reusable", "current": "assets/explore/brant-street-pier.webp", "credit": "Photo: Burlington News"},
     {"id": "city-hall", "label": "City Hall", "status": "needed", "current": null},
     {"id": "suburb", "label": "Suburban neighbourhood", "status": "needed", "current": null},
-    {"id": "crime-abstract", "label": "Police / crime visual", "status": "reusable", "current": "assets/stories/public-safety/halton-police-crime-burlington.webp", "credit": "Burlington News visual"},
+    {"id": "crime-abstract", "label": "Police / crime photo", "status": "reusable", "current": "assets/stories/public-safety/halton-police-crime-burlington.webp", "credit": "Photo: Burlington News"},
     {"id": "skyway", "label": "QEW / Skyway", "status": "reusable", "current": "assets/home/skyway-reader.webp", "credit": "Dave Lauretti · CC BY 2.0"},
     {"id": "go-commute", "label": "GO / train commute", "status": "needed", "current": null},
     {"id": "schools", "label": "Schools", "status": "weak-reuse", "current": "assets/home/school-rights.webp"},

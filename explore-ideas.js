@@ -162,7 +162,7 @@
     if (!idea) return '';
     const pref = prefs[idea.id] || {};
     const image = idea.image
-      ? `<div class="bored-visual"><img src="${esc(imageSrc(idea.image))}" alt="${esc(idea.imageAlt || '')}" loading="lazy">${idea.credit && !idea.illustration && !/^Burlington News/i.test(idea.credit) ? `<span class="image-credit">${esc(idea.credit)}</span>` : ''}</div>`
+      ? `<div class="bored-visual"><img src="${esc(imageSrc(idea.image))}" alt="${esc(idea.imageAlt || '')}" loading="lazy">${idea.credit && !idea.illustration && !/Burlington News/i.test(idea.credit) && !/^(Graphic|Map|File photo|Courtesy photo)\b/i.test(idea.credit) ? `<span class="image-credit">${esc(idea.credit)}</span>` : ''}</div>`
       : '';
     const maps = `<a class="bored-maps" href="${esc(mapsUrl(idea))}" target="_blank" rel="noopener">Open in Maps →</a>`;
     if (variant === 'home') {
