@@ -67,7 +67,7 @@
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826t', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826j', 'site-header');
+    ensureStyle('/site-header.css?v=20260826k', 'site-header');
   }
 
   function ensureUtilityBar() {
@@ -572,7 +572,7 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826j', 'site-header');
+      ensureStyle('/site-header.css?v=20260826k', 'site-header');
     }
     ensureUtilityBar();
     ensureBanner();
