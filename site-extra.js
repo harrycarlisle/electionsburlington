@@ -67,7 +67,7 @@
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826u', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826j', 'site-header');
+    ensureStyle('/site-header.css?v=20260826gt', 'site-header');
   }
 
   function ensureUtilityBar() {
@@ -219,14 +219,17 @@
   }
 
   function drawerSearchMarkup() {
-    return `<form class="drawer-search header-search" data-drawer-search role="search" autocomplete="off"><label class="sr-only" for="drawerSearchInput">Search Burlington News</label><input id="drawerSearchInput" type="search" spellcheck="false" aria-autocomplete="list" aria-controls="drawerSearchResults" aria-expanded="false" placeholder="Search Burlington News"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.8"></circle><path d="m15 15 4.2 4.2"></path></svg><div class="search-popover" hidden><div class="search-suggestions"></div><div class="search-results" id="drawerSearchResults" role="listbox" aria-live="polite"></div></div></form>`;
+    return `<form class="drawer-search header-search" data-drawer-search role="search" autocomplete="off"><label class="sr-only" for="drawerSearchInput">Search Burlington News</label><input id="drawerSearchInput" type="search" spellcheck="false" aria-autocomplete="list" aria-controls="drawerSearchResults" aria-expanded="false" placeholder="Search anything..."><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.8"></circle><path d="m15 15 4.2 4.2"></path></svg><div class="search-popover" hidden><div class="search-suggestions" hidden></div><div class="search-results" id="drawerSearchResults" role="listbox" aria-live="polite"></div></div></form>`;
   }
 
   function buildDrawer(nav) {
     const electionPrimary = electionInPrimaryNav();
     nav.className = 'nav menu-panel';
     nav.innerHTML = `
-      ${drawerSearchMarkup()}
+      <div class="menu-drawer-top">
+        <button class="menu-theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"></button>
+        ${drawerSearchMarkup()}
+      </div>
       <p class="menu-heading">Main</p>
       <div class="menu-primary" role="list">
         ${navLink('/', 'home', 'Home')}
@@ -248,7 +251,6 @@
       </div>
       <div class="menu-drawer-util">
         <a class="drawer-weather-line" href="https://weather.gc.ca/city/pages/on-15_metric_e.html" rel="noopener" data-weather-temperature data-weather-drawer>Burlington weather</a>
-        <button class="menu-theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"></button>
       </div>`;
     installDrawerSearch(nav);
     try { window.BurlingtonWeather?.load(); } catch (_) {}
@@ -257,7 +259,7 @@
   function installDrawerSearch(nav) {
     const form = (nav || document).querySelector('[data-drawer-search]');
     if (form && window.BurlingtonSearch) {
-      window.BurlingtonSearch.install(form, {homepage:false, rotate:false, placeholder:'Search Burlington News'});
+      window.BurlingtonSearch.install(form, {homepage:false, drawer:true, rotate:true, prompts:window.BurlingtonSearch.DRAWER_PROMPTS, placeholder:'Search “Best food”'});
     }
   }
 
@@ -347,7 +349,7 @@
       const input = search.querySelector('input');
       const label = search.querySelector('label');
       if (input && !isHome()) {
-        input.placeholder = 'Search Burlington News';
+        input.placeholder = 'Search anything...';
         input.removeAttribute('id');
         input.id = 'siteSearch';
       }
@@ -413,7 +415,7 @@
       menu.setAttribute('aria-label', 'Close site menu');
       backdrop.hidden = false;
       lockScroll();
-      requestAnimationFrame(() => nav.querySelector('[data-drawer-search] input, a, button:not([data-theme-toggle])')?.focus());
+      requestAnimationFrame(() => nav.querySelector('.menu-primary a, a.menu-link')?.focus());
     };
 
     if (header) header.dataset.bnShell = 'ready';
@@ -579,7 +581,7 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826j', 'site-header');
+      ensureStyle('/site-header.css?v=20260826gt', 'site-header');
     }
     ensureUtilityBar();
     ensureBanner();
@@ -595,7 +597,7 @@
     if (electionHeading) electionHeading.textContent = 'Meet the mayoral candidates';
     ensureFooter();
     applyBrand();
-    ensureScript('/site-search.js?v=20260826f', 'site-search');
+    ensureScript('/site-search.js?v=20260826gt', 'site-search');
     if (!isHome() && !isElectionPage() && !isArticle()) ensureScript('/site-bundle.js?v=20260826w', 'site-bundle');
     ensureScript('/weather-alert.js?v=20260826f', 'weather-alert');
     if (isArticle()) ensureScript('/article-modern.js?v=20260826d', 'article-modern');

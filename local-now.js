@@ -1,3 +1,5 @@
+import { buildGoModel } from '/lib/go-times.js';
+
 (() => {
   const host = document.getElementById('localNow');
   if (!host) return;
@@ -5,6 +7,7 @@
   const VARIANT = 'icon-carousel';
   const MODES = ['driving', 'go', 'skyway', 'today'];
   const MODE_LABEL = {driving:'Driving', go:'GO transit', skyway:'Skyway', today:'Today'};
+  const MODE_CAT = {driving:'TRAFFIC', go:'GO', skyway:'SKYWAY', today:'TODAY'};
   const SWIPE_PX = 36;
   const AUTO_MS = 7000;
 
@@ -42,102 +45,8 @@
     }
   }
 
-  function timeOnly(value) {
-    if (!value) return '';
-    const match = String(value).match(/(\d{1,2}):(\d{2})/);
-    if (!match) return String(value);
-    const hour24 = Number(match[1]) % 24;
-    const suffix = hour24 >= 12 ? 'p.m.' : 'a.m.';
-    const hour = hour24 % 12 || 12;
-    return `${hour}:${match[2]} ${suffix}`;
-  }
-
-  function journeyMinutes(journey) {
-    const raw = journey?.computedDeparture || journey?.departure;
-    const match = String(raw || '').match(/(\d{1,2}):(\d{2})/);
-    return match ? Number(match[1]) * 60 + Number(match[2]) : null;
-  }
-
-  function delayFromJourney(journey) {
-    const scheduled = String(journey?.departure || '');
-    const computed = String(journey?.computedDeparture || '');
-    const a = scheduled.match(/(\d{1,2}):(\d{2})/);
-    const b = computed.match(/(\d{1,2}):(\d{2})/);
-    if (!a || !b || !journey?.computedDeparture) return null;
-    const delta = (Number(b[1]) * 60 + Number(b[2])) - (Number(a[1]) * 60 + Number(a[2]));
-    return delta > 0 ? delta : null;
-  }
-
-  function departureStamp(journey) {
-    return timeOnly(journey?.computedDeparture || journey?.departure);
-  }
-
-  function routeJourneys(data, origin, dest, count) {
-    const allRoutes = Array.isArray(data?.routes) ? data.routes : [];
-    const route = allRoutes.find(item =>
-      String(item.destination?.stopCode || '').toUpperCase() === dest
-      && (!origin || String(item.origin?.stopCode || '').toUpperCase() === origin)
-    ) || allRoutes.find(item => String(item.destination?.stopCode || '').toUpperCase() === dest);
-    const all = Array.isArray(route?.journeys) ? route.journeys : [];
-    const fresh = data?.generatedAt && torontoDay(data.generatedAt) === torontoDay();
-    const nowMin = torontoHour() * 60 + torontoMinute();
-    const upcoming = fresh ? all.filter(item => {
-      const minutes = journeyMinutes(item);
-      return minutes == null || minutes >= nowMin - 4;
-    }) : all;
-    return {route, journeys:(upcoming.length ? upcoming : all).slice(0, count)};
-  }
-
-  function officialCause(text) {
-    const hay = String(text || '');
-    if (!hay) return '';
-    if (/police investigation|investigating/i.test(hay)) return 'Police investigation';
-    if (/emergency response|ambulance|hazmat/i.test(hay)) return 'Emergency response';
-    if (/\bpedestrian|trespass/i.test(hay)) return 'Pedestrian incident';
-    if (/track issue|broken rail/i.test(hay)) return 'Track issue';
-    if (/signal (issue|problem)/i.test(hay)) return 'Signal issue';
-    if (/mechanical|train fault|disabled train/i.test(hay)) return 'Mechanical issue';
-    if (/weather|storm|snow|ice/i.test(hay)) return 'Weather';
-    return '';
-  }
-
   function goModel(data) {
-    const alert = Array.isArray(data?.alerts) && data.alerts[0];
-    const alertText = `${alert?.headline || ''} ${alert?.detail || ''} ${alert?.description || ''}`;
-    const inboundPreferred = torontoHour() >= 15;
-    const outbound = routeJourneys(data, 'BU', 'UN', 1);
-    const inbound = routeJourneys(data, 'UN', 'BU', 1);
-    const chosen = inboundPreferred && inbound.journeys.length ? inbound : outbound;
-    const journey = chosen.journeys[0];
-    const scheduledOnly = String(data?.dataKind || '').toLowerCase() === 'scheduled' || (journey && journey.scheduled !== false && !journey.computedDeparture);
-    const critical = Boolean(alert) && /cancel|cancelled|suspend|stopped|stoppage|bus replac/i.test(alertText);
-    const delay = journey ? delayFromJourney(journey) : null;
-    const realtime = Boolean(journey?.computedDeparture) && !scheduledOnly;
-    let status = '';
-    if (critical) status = '';
-    else if (delay) status = `+${delay} min`;
-    else if (realtime && /on time|ontime|arrived/i.test(String(journey.departureStatus || ''))) status = 'On time';
-    else if (realtime) status = String(journey.departureStatus || 'Live');
-    else status = 'Scheduled';
-    const platform = journey?.platform ? `Platform ${journey.platform}` : '';
-    const origin = chosen.route?.origin?.label || (inboundPreferred && inbound.journeys.length ? 'Union' : 'Burlington');
-    const dest = chosen.route?.destination?.label || (inboundPreferred && inbound.journeys.length ? 'Burlington' : 'Union');
-    const destCode = chosen.route?.destination?.stopCode || 'UN';
-    return {
-      alert: Boolean(alert),
-      critical,
-      severe: critical,
-      headline: critical ? (alert.headline || 'Service suspended') : `${origin} → ${dest}`,
-      time: critical ? '' : departureStamp(journey),
-      status,
-      detail: critical
-        ? (alert.detail || alert.description || 'Lakeshore West service update')
-        : [status !== 'Scheduled' && status !== 'On time' ? '' : '', platform, officialCause(alertText)].filter(Boolean).join(' · ') || (scheduledOnly ? 'Next scheduled departure' : ''),
-      scheduled: scheduledOnly,
-      dataKind: data?.dataKind || (scheduledOnly ? 'scheduled' : 'live'),
-      url: critical ? (data?.liveStatusUrl || 'https://www.gotransit.com/en/see-schedules') : goTripUrl(destCode),
-      cause: officialCause(alertText)
-    };
+    return buildGoModel(data);
   }
 
   function prettyDate(value) {
@@ -323,7 +232,7 @@
         metric,
         detail: intensity && place && !minutes ? `${intensity} near ${place}` : placeLine,
         extra: minutes && place ? `${eventLabel} near ${place}` : '',
-        url: `/traffic/?route=${routeIdFor(dest)}`
+        url: `/traffic/?destination=${routeIdFor(dest)}`
       };
     }
 
@@ -342,13 +251,13 @@
         alert:false, major:false, critical:false, title:`QEW → ${dest}`,
         metric: looks,
         detail: looks === 'Light traffic' ? 'No major delay' : 'Live conditions',
-        extra:'', url:`/traffic/?route=${routeIdFor(dest)}`
+        extra:'', url:`/traffic/?destination=${routeIdFor(dest)}`
       };
     }
 
     return {
       alert:false, major:false, critical:false, title:`QEW → ${dest}`,
-      metric:'Clear', detail:'No major delay', extra:'', url:`/traffic/?route=${routeIdFor(dest)}`
+      metric:'Clear', detail:'No major delay', extra:'', url:`/traffic/?destination=${routeIdFor(dest)}`
     };
   }
 
@@ -371,7 +280,7 @@
         title: `Skyway → ${dest}`,
         metric: minutes ? `+${minutes} min` : (major.type === 'closure' ? 'Closed' : 'Delay likely'),
         detail: shortPlace(major.nearestRoad) ? `${major.type === 'closure' ? 'Closure' : 'Collision'} near ${shortPlace(major.nearestRoad)}` : (major.title || ''),
-        url:`/traffic/?route=${niagara ? 'hamilton' : 'toronto'}&focus=skyway`
+        url:`/traffic/?destination=${niagara ? 'hamilton' : 'toronto'}&focus=skyway`
       };
     }
 
@@ -381,7 +290,7 @@
         title:'Skyway → Toronto',
         metric: looks,
         detail: looks === 'Heavy' ? 'Slow approaching the bridge' : '',
-        url:'/traffic/?route=toronto&focus=skyway'
+        url:'/traffic/?destination=toronto&focus=skyway'
       };
     }
 
@@ -391,7 +300,7 @@
         title:'Skyway → Niagara',
         metric:'Watch',
         detail: shortPlace(watch.nearestRoad) ? `Construction near ${shortPlace(watch.nearestRoad)}` : 'Construction on a monitored approach',
-        url:'/traffic/?route=hamilton&focus=skyway'
+        url:'/traffic/?destination=hamilton&focus=skyway'
       };
     }
 
@@ -400,7 +309,7 @@
       title:'Skyway → Toronto',
       metric:'Cameras available',
       detail:'',
-      url:'/traffic/?route=toronto&focus=skyway',
+      url:'/traffic/?destination=toronto&focus=skyway',
       lowConfidence:true
     };
   }
@@ -422,18 +331,19 @@
 
   function compactCard(mode, model) {
     if (mode === 'today' && !model) {
-      return `<a class="now-card now-card-today" href="/explore/" data-utility-card="today">${icons.today}<span class="now-card-copy"><strong>See Burlington events</strong></span></a>`;
+      return `<a class="now-card now-card-today" href="/explore/" data-utility-card="today">${icons.today}<span class="now-card-copy"><small class="now-card-cat">TODAY</small><strong>See Burlington events</strong></span></a>`;
     }
     const title = mode === 'today' ? model.title : model.title || model.headline;
     const metric = mode === 'go' ? (model.time || '') : (model.metric || '');
     const detail = mode === 'go'
-      ? [model.status, model.cause || model.detail].filter(Boolean).join(' · ')
+      ? [model.status, model.cause || (model.unavailable ? model.detail : '')].filter(Boolean).join(' · ')
       : (mode === 'today' ? [model.relative, model.hours].filter(Boolean).join(' · ') : (model.extra || model.detail || ''));
     const href = model.url || '#';
     const extra = mode === 'go' && model.url && /gotransit\.com/.test(model.url) ? ' target="_blank" rel="noopener"' : '';
     return `<a class="now-card now-card-${mode}${model.alert ? ' is-alert' : ''}" href="${esc(href)}" data-utility-card="${mode}"${extra}>
       ${icons[mode] || ''}
       <span class="now-card-copy">
+        <small class="now-card-cat">${MODE_CAT[mode] || ''}</small>
         <strong>${esc(title)}</strong>
         ${detail ? `<em>${esc(detail)}</em>` : ''}
       </span>

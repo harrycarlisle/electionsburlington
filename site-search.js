@@ -1,13 +1,25 @@
 (() => {
   const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const normalize = value => String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
-  const INNER_PLACEHOLDER = 'Search Burlington News';
+  const INNER_PLACEHOLDER = 'Search anything...';
+  const MIN_CHARS = 2;
   const HOME_PROMPTS = [
     'Search “Date night”',
     'Search “This weekend”',
     'Search “Best food”',
     'Search “Best tacos”',
     'Search “I’m bored”'
+  ];
+  const DRAWER_PROMPTS = [
+    'Search “Best food”',
+    'Search “This weekend”',
+    'Search “What to do”',
+    'Search “Next event”',
+    'Search “Election”',
+    'Search “Road closures”',
+    'Search “Schools”',
+    'Search “Crime”',
+    'Search “Things to do”'
   ];
   const index = [
     {title:'How bad is crime in Burlington, really?',url:'/stories/how-bad-is-burlington-crime/',section:'Public safety',keywords:'crime police safety statistics canada halton'},
@@ -44,8 +56,12 @@
     const q = normalize(query);
     if (!q) return '';
     if (/^(i m bored|im bored|bored)$/.test(q)) return '/explore/#bored';
-    if (/^(this weekend|things to do|what s happening|whats happening|date night|free things to do)$/.test(q)) return '/explore/';
+    if (/^(this weekend|things to do|what s happening|whats happening|date night|free things to do|what to do|next event)$/.test(q)) return '/explore/';
     if (/^(best tacos|best food)$/.test(q)) return '/guides/burlington-food-spots.html';
+    if (/^(election|elections)$/.test(q)) return '/elections/';
+    if (/^(road closures|traffic|qew)$/.test(q)) return '/traffic/?destination=toronto';
+    if (/^(schools|school)$/.test(q)) return '/stories/back-to-school-2026/';
+    if (/^(crime)$/.test(q)) return '/stories/how-bad-is-burlington-crime/';
     return '';
   }
 
@@ -55,7 +71,7 @@
 
   function ranked(query) {
     const terms = normalize(query).split(/\s+/).filter(Boolean);
-    if (!terms.length) return index.slice(0,7);
+    if (!terms.length) return [];
     return index.map(item => {
       const title = normalize(item.title);
       const text = normalize(`${item.section} ${item.keywords}`);
@@ -74,20 +90,27 @@
     form.dataset.searchReady = 'true';
 
     const homepage = options.homepage ?? isHomepage();
-    const prompts = options.prompts || HOME_PROMPTS;
+    const drawer = Boolean(options.drawer || form.hasAttribute('data-drawer-search'));
+    const prompts = options.prompts || (drawer ? DRAWER_PROMPTS : HOME_PROMPTS);
     const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const rotating = homepage && options.rotate !== false && !form.hasAttribute('data-drawer-search');
-    const placeholder = options.placeholder || (homepage && rotating ? prompts[0] : INNER_PLACEHOLDER);
-    const chips = homepage ? homeSuggested : innerSuggested;
+    const rotating = options.rotate !== false && !reduceMotion;
+    const placeholder = options.placeholder || (rotating ? prompts[0] : INNER_PLACEHOLDER);
+    const chips = drawer ? [] : (homepage ? homeSuggested : innerSuggested);
     let promptIndex = 0;
     let timer = 0;
     let fading = false;
     let overlay = form.querySelector('.search-prompt-fade');
 
     input.placeholder = placeholder;
-    form.classList.toggle('is-home-search', homepage);
-    form.classList.toggle('is-inner-search', !homepage);
-    if (suggestions) suggestions.innerHTML = chips.map(term => `<button type="button" data-search="${esc(term)}">${esc(term)}</button>`).join('');
+    input.setAttribute('autocomplete', 'off');
+    input.setAttribute('aria-autocomplete', 'list');
+    form.classList.toggle('is-home-search', homepage && !drawer);
+    form.classList.toggle('is-inner-search', !homepage || drawer);
+    form.classList.toggle('is-drawer-search', drawer);
+    if (suggestions) {
+      suggestions.hidden = !chips.length;
+      suggestions.innerHTML = chips.map(term => `<button type="button" data-search="${esc(term)}">${esc(term)}</button>`).join('');
+    }
 
     if (rotating) {
       if (!overlay) {
@@ -164,20 +187,35 @@
       timer = 0;
     }
 
+    function hideResults() {
+      results.innerHTML = '';
+      popover.hidden = true;
+      input.setAttribute('aria-expanded', 'false');
+    }
+
     function render(query) {
-      const matches = ranked(query);
-      const intent = intentHref(query);
+      const q = String(query || '').trim();
+      if (q.length < MIN_CHARS) {
+        hideResults();
+        return;
+      }
+      const matches = ranked(q);
+      const intent = intentHref(q);
       const extra = intent && !matches.some(item => item.url === intent.replace(/#.*$/, ''))
-        ? [{title:'Explore Burlington',url:intent,section:'Explore'}]
+        ? [{title:'Open this search',url:intent,section:'Go'}]
         : [];
       const list = extra.concat(matches);
-      results.innerHTML = list.length ? list.slice(0,7).map(item => `<a role="option" href="${esc(item.url)}"><span>${esc(item.section)}</span><strong>${esc(item.title)}</strong></a>`).join('') : '<p>No exact match. Try “Skyway,” “events” or “food.”</p>';
+      results.innerHTML = list.length
+        ? list.slice(0,7).map(item => `<a role="option" href="${esc(item.url)}"><span>${esc(item.section)}</span><strong>${esc(item.title)}</strong></a>`).join('')
+        : '<p>No exact match. Try “Skyway,” “events” or “food.”</p>';
       popover.hidden = false;
       input.setAttribute('aria-expanded','true');
     }
 
     function goIntentOrFirst(query) {
-      const href = intentHref(query);
+      const q = String(query || '').trim();
+      if (q.length < MIN_CHARS) return false;
+      const href = intentHref(q);
       if (href) {
         location.href = href;
         return true;
@@ -205,18 +243,20 @@
     input.addEventListener('focus', () => {
       stopRotation();
       hideOverlay();
-      if (!input.value && homepage) input.placeholder = queryFromPrompt(currentPrompt()) ? currentPrompt() : INNER_PLACEHOLDER;
-      if (!input.value && !homepage) input.placeholder = INNER_PLACEHOLDER;
-      render(input.value);
+      if (!input.value) input.placeholder = rotating ? currentPrompt() : INNER_PLACEHOLDER;
+      if (input.value.trim().length >= MIN_CHARS) render(input.value);
+      else hideResults();
     });
     input.addEventListener('input', () => {
       stopRotation();
       hideOverlay();
+      if (input.value) input.placeholder = INNER_PLACEHOLDER;
       render(input.value);
     });
     input.addEventListener('blur', () => {
       if (input.value) return;
-      if (homepage && rotating) {
+      hideResults();
+      if (rotating) {
         input.placeholder = '';
         applyPrompt(currentPrompt(), false);
         startRotation();
@@ -226,8 +266,13 @@
     });
     form.addEventListener('submit', event => {
       event.preventDefault();
-      if (goIntentOrFirst(input.value || queryFromPrompt(currentPrompt()))) return;
-      render(input.value);
+      const query = input.value.trim();
+      if (query.length < MIN_CHARS) {
+        hideResults();
+        return;
+      }
+      render(query);
+      if (goIntentOrFirst(query)) return;
     });
     document.addEventListener('click', event => {
       if (!form.contains(event.target)) {
@@ -238,9 +283,9 @@
 
     if (rotating) startRotation();
     if (new URLSearchParams(location.search).get('search') === '1') {
-      requestAnimationFrame(() => { input.focus(); render(''); history.replaceState(null,'',location.pathname); });
+      requestAnimationFrame(() => { input.focus(); });
     }
   }
 
-  window.BurlingtonSearch = { install, ranked, index, intentHref, HOME_PROMPTS, INNER_PLACEHOLDER };
+  window.BurlingtonSearch = { install, ranked, index, intentHref, HOME_PROMPTS, DRAWER_PROMPTS, INNER_PLACEHOLDER, MIN_CHARS };
 })();
