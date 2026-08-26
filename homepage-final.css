@@ -36,6 +36,7 @@
   flex:0 0 auto;min-height:20px;padding:2px 7px;border-radius:999px;
   background:#f8e4e0;color:#c23b22;font:800 11px/1 Inter,Arial,sans-serif;white-space:nowrap
 }
+.now-card-driving:not(.is-alert) .now-card-metric,
 .now-card-go:not(.is-alert) .now-card-metric,
 .now-card-today .now-card-metric,
 .now-card-skyway:not(.is-alert) .now-card-metric{color:var(--navy);background:rgba(15,40,63,.06)}
@@ -385,6 +386,12 @@ html[data-theme="dark"] .breaking-row strong{color:#edf4f8}
 html[data-theme="dark"] .now-card-copy em,
 html[data-theme="dark"] .pick-card>.pick-hook{color:#c9d5de}
 html[data-theme="dark"] .now-card-metric{background:rgba(194,59,34,.22)}
+html[data-theme="dark"] .now-card-driving:not(.is-alert) .now-card-metric,
+html[data-theme="dark"] .now-card-go:not(.is-alert) .now-card-metric,
+html[data-theme="dark"] .now-card-today .now-card-metric,
+html[data-theme="dark"] .now-card-skyway:not(.is-alert) .now-card-metric{
+  color:#edf4f8;background:rgba(237,244,248,.12)
+}
 html[data-theme="dark"] .top-copy h1,
 html[data-theme="dark"] .newest-list strong,
 html[data-theme="dark"] .pick-card h3,
