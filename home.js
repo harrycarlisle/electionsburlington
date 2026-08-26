@@ -4,7 +4,7 @@ import {
   popularityScore,
   relativeTime,
   selectNewest
-} from '/lib/homepage-ranking.js';
+} from '/lib/homepage-ranking.js?v=20260826nv2';
 
 (() => {
   const latestList = document.getElementById('latestList');
@@ -233,10 +233,9 @@ import {
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
       const category = categoryLabel(item);
-      const hook = pickHook(item);
       const stamp = relativeTime(item.lastMeaningfulUpdate || item.publishedAt || item.datePublished || item.published || item.activeFrom);
       const datetime = new Date(effectiveFreshnessTimestamp(item) || Date.now()).toISOString();
-      return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''} data-category="${esc(category)}"><span><small>${esc(category)}</small><strong>${esc(displayHeadline(item))}</strong>${hook ? `<em class="newest-hook">${esc(hook)}</em>` : ''}${stamp ? `<time datetime="${esc(datetime)}">${esc(stamp)}</time>` : ''}</span></a>`;
+      return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''} data-category="${esc(category)}"><span><small>${esc(category)}</small><strong>${esc(displayHeadline(item))}</strong>${stamp ? `<time datetime="${esc(datetime)}">${esc(stamp)}</time>` : ''}</span></a>`;
     }).join('');
     window.BN_NEWEST_AUDIT = picked.items.map((item, index) => ({
       position: index + 1,
