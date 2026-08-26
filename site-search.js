@@ -190,6 +190,7 @@
     function hideResults() {
       results.innerHTML = '';
       popover.hidden = true;
+      popover.setAttribute('hidden', '');
       input.setAttribute('aria-expanded', 'false');
     }
 
@@ -251,7 +252,11 @@
       stopRotation();
       hideOverlay();
       if (input.value) input.placeholder = INNER_PLACEHOLDER;
+      else hideResults();
       render(input.value);
+    });
+    input.addEventListener('search', () => {
+      if (!input.value.trim()) hideResults();
     });
     input.addEventListener('blur', () => {
       if (input.value) return;

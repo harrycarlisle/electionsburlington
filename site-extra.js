@@ -415,6 +415,18 @@
       menu.setAttribute('aria-label', 'Close site menu');
       backdrop.hidden = false;
       lockScroll();
+      const drawerForm = nav.querySelector('[data-drawer-search]');
+      const drawerInput = drawerForm?.querySelector('input');
+      if (drawerInput && !drawerInput.value.trim()) {
+        const pop = drawerForm.querySelector('.search-popover');
+        const box = drawerForm.querySelector('.search-results');
+        if (box) box.innerHTML = '';
+        if (pop) {
+          pop.hidden = true;
+          pop.setAttribute('hidden', '');
+        }
+        drawerInput.setAttribute('aria-expanded', 'false');
+      }
       requestAnimationFrame(() => nav.querySelector('.menu-primary a, a.menu-link')?.focus());
     };
 

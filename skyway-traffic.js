@@ -218,7 +218,7 @@ function ensureMap(line) {
       scrollWheelZoom: false
     });
     window.L.control.zoom({ position: 'topright' }).addTo(map);
-    window.L.tileLayer(tileUrl(), { maxZoom: 18 }).addTo(map);
+    window.L.tileLayer(tileUrl(), { maxZoom: 18, attribution: '' }).addTo(map);
     puckLayer = window.L.layerGroup().addTo(map);
     incidentLayer = window.L.layerGroup().addTo(map);
   }
@@ -262,10 +262,9 @@ function renderMarkers() {
 }
 
 function cameraCaption(cam) {
-  const road = cam.roadway || 'QEW';
   const place = shortCameraPlace(cam);
-  const dir = cam.direction || cam.viewName || '';
-  return [road, dir, place && `at ${place}`].filter(Boolean).join(' ');
+  const dir = /bound|side|overhead/i.test(String(cam.direction || '')) ? cam.direction : '';
+  return [cam.roadway || 'QEW', dir, place].filter(Boolean).join(' · ');
 }
 
 function renderPreview() {
@@ -449,7 +448,7 @@ new MutationObserver(() => {
   map.eachLayer(layer => {
     if (layer instanceof window.L.TileLayer) map.removeLayer(layer);
   });
-  window.L.tileLayer(tileUrl(), { maxZoom: 18 }).addTo(map);
+  window.L.tileLayer(tileUrl(), { maxZoom: 18, attribution: '' }).addTo(map);
   if (routeLine) {
     routeLine.setStyle({ color: isDark() ? '#8ec4ea' : '#1d4f78' });
   }
