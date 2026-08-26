@@ -1,5 +1,5 @@
 {
-  "generatedFor": "2026-08-26",
+  "generatedFor": "2026-08-25",
   "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure, then applies a diversity rerank so nearby homepage slots prefer different categories and subjects.",
   "feature": [
     {
@@ -20,7 +20,7 @@
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "placementScore": 87
+      "placementScore": 91
     },
     {
       "id": "skyway-tunnels",
@@ -75,7 +75,7 @@
       "alt": "A yellow Ontario school bus",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
-      "placementScore": 88
+      "placementScore": 90
     },
     {
       "id": "data-centre-not-ai",
@@ -93,7 +93,7 @@
       "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
-      "placementScore": 86
+      "placementScore": 89
     },
     {
       "id": "nostalgia-games-cafe-closure",
@@ -114,7 +114,7 @@
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
-      "placementScore": 85
+      "placementScore": 88
     }
   ],
   "latest": [
@@ -133,7 +133,7 @@
       "alt": "A yellow Ontario school bus",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
-      "placementScore": 88
+      "placementScore": 90
     },
     {
       "id": "data-centre-not-ai",
@@ -151,7 +151,7 @@
       "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
-      "placementScore": 86
+      "placementScore": 89
     },
     {
       "id": "nostalgia-games-cafe-closure",
@@ -172,7 +172,7 @@
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
-      "placementScore": 85
+      "placementScore": 88
     },
     {
       "id": "ward-change-2026",
@@ -189,7 +189,7 @@
       "image": "assets/editorial/burlington-wards-2026.svg",
       "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
       "activeFrom": "2026-08-21",
-      "placementScore": 80
+      "placementScore": 81
     },
     {
       "id": "fishway-2025",
@@ -245,27 +245,6 @@
       "placementScore": 87
     },
     {
-      "id": "burlington-hotspots-0-24",
-      "kind": "original",
-      "headline": "A Burlington team just went 0–24. How does that even happen?",
-      "deck": "Zero wins. Twenty-four losses. The next game is not a chance to repair that record.",
-      "label": "Sports",
-      "labelEssential": true,
-      "topic": "sports",
-      "subjects": [
-        "sports",
-        "hidden-gem"
-      ],
-      "url": "articles/burlington-hotspots-0-24.html",
-      "image": "assets/sports/ultimate-waterfront.webp",
-      "alt": "Editorial illustration of a waterfront field sport near the Skyway",
-      "credit": "Burlington News illustration",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Explain an unusually extreme local rec-league record without treating 0-24 as a joke or rewriting it as 24-0.",
-      "placementScore": 82
-    },
-    {
       "id": "skyway-tunnels",
       "kind": "feature",
       "headline": "Ontario nearly replaced the Skyway with three tunnels.",
@@ -283,25 +262,42 @@
       "credit": "Dave Lauretti · CC BY 2.0",
       "published": "2026-08-24",
       "placementScore": 82
+    },
+    {
+      "id": "ward-change-2026",
+      "kind": "service",
+      "headline": "Your ward may have changed. Check before you vote.",
+      "label": "Election",
+      "labelEssential": true,
+      "topic": "election",
+      "subjects": [
+        "election",
+        "wards"
+      ],
+      "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
+      "image": "assets/editorial/burlington-wards-2026.svg",
+      "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
+      "activeFrom": "2026-08-21",
+      "placementScore": 81
     }
   ],
   "audit": [
     {
       "id": "burlington-crime-analysis-2026",
       "state": "eligible",
-      "placementScore": 87,
+      "placementScore": 91,
       "reason": "all gates passed"
     },
     {
       "id": "nostalgia-games-cafe-closure",
       "state": "eligible",
-      "placementScore": 85,
+      "placementScore": 88,
       "reason": "all gates passed"
     },
     {
       "id": "data-centre-not-ai",
       "state": "eligible",
-      "placementScore": 86,
+      "placementScore": 89,
       "reason": "all gates passed"
     },
     {
@@ -313,13 +309,13 @@
     {
       "id": "ward-change-2026",
       "state": "eligible",
-      "placementScore": 80,
+      "placementScore": 81,
       "reason": "all gates passed"
     },
     {
       "id": "election-field-2026",
       "state": "eligible",
-      "placementScore": 79,
+      "placementScore": 80,
       "reason": "all gates passed"
     },
     {
@@ -331,7 +327,7 @@
     {
       "id": "ontario-student-rights-school",
       "state": "eligible",
-      "placementScore": 88,
+      "placementScore": 90,
       "reason": "all gates passed"
     },
     {
@@ -343,7 +339,7 @@
     {
       "id": "millcroft-phase-2-138-homes",
       "state": "eligible",
-      "placementScore": 71,
+      "placementScore": 73,
       "reason": "all gates passed"
     },
     {
@@ -372,9 +368,9 @@
     },
     {
       "id": "burlington-hotspots-0-24",
-      "state": "eligible",
+      "state": "scheduled",
       "placementScore": 82,
-      "reason": "all gates passed"
+      "reason": "eligible 2026-08-26"
     }
   ]
 }
