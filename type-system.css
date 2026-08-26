@@ -194,25 +194,30 @@ button,input,select,textarea{
 
 .explore-band-copy h2{
   max-width:none;
-  font-size:clamp(1.75rem,7vw,2.125rem)!important;
+  font-size:32px!important;
   line-height:1.05!important;
   letter-spacing:-.03em!important;
   white-space:nowrap
 }
 .explore-band-copy p{
   font-family:var(--font-sans)!important;
-  font-size:var(--text-base);
-  line-height:var(--lh-deck);
+  font-size:15px;
+  line-height:1.45;
 }
 .home-work-band h2{
   font-family:var(--font-serif)!important;
   font-weight:var(--weight-bold)!important;
-  line-height:var(--lh-display)!important;
-  letter-spacing:-.03em!important;
+  line-height:1.1!important;
+  letter-spacing:-.02em!important;
 }
 .home-work-copy,
 .home-work-cta{
   font-family:var(--font-sans)!important;
+}
+@media(min-width:901px){
+  .explore-band-copy h2{font-size:42px!important}
+  .explore-band-copy p{font-size:16px}
+  .home-work-band h2{font-size:23px!important}
 }
 
 /* Live Local Update is utility, not editorial */
