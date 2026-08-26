@@ -85,8 +85,8 @@
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826tb', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826ht', 'site-header');
-    ensureStyle('/desktop-system.css?v=20260826ht', 'desktop-system');
+    ensureStyle('/site-header.css?v=20260826ht3', 'site-header');
+    ensureStyle('/desktop-system.css?v=20260826ht3', 'desktop-system');
   }
 
   function ensureUtilityBar() {
@@ -629,8 +629,8 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826ht', 'site-header');
-      ensureStyle('/desktop-system.css?v=20260826ht', 'desktop-system');
+      ensureStyle('/site-header.css?v=20260826ht3', 'site-header');
+      ensureStyle('/desktop-system.css?v=20260826ht3', 'desktop-system');
     }
     ensureScript('/theme-boot.js?v=20260826ht', 'theme-boot');
     ensureUtilityBar();

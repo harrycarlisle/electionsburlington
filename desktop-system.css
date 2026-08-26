@@ -158,7 +158,7 @@ html[data-theme="dark"] body .leaflet-control-attribution{
     padding-left:20px;
     border-left:1px solid var(--line)
   }
-  html body.home-page .home-main{padding-top:56px}
+  html body.home-page .home-main{padding-top:36px!important}
   html body.home-page .now-card{
     min-height:64px;
     max-height:76px;
