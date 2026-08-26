@@ -63,39 +63,4 @@
       text
     ].join('\n'), feedbackStatus);
   });
-
-  const workForm = document.getElementById('workForm');
-  const workStatus = document.getElementById('workStatus');
-  workForm?.addEventListener('submit', event => {
-    event.preventDefault();
-    const data = new FormData(workForm);
-    const name = String(data.get('name') || '').trim();
-    const email = String(data.get('email') || '').trim();
-    const organization = String(data.get('organization') || '').trim();
-    const type = String(data.get('type') || 'Other');
-    const text = String(data.get('message') || '').trim();
-    if (!name) {
-      mark(workStatus, 'is-error', 'Please add your name.');
-      document.getElementById('workName')?.focus();
-      return;
-    }
-    if (!email) {
-      mark(workStatus, 'is-error', 'Please add your email.');
-      document.getElementById('workEmail')?.focus();
-      return;
-    }
-    if (!text) {
-      mark(workStatus, 'is-error', 'Please add a short message.');
-      document.getElementById('workMessage')?.focus();
-      return;
-    }
-    openMail(`Burlington News: ${type}`, [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      organization ? `Organization: ${organization}` : 'Organization: not provided',
-      `About: ${type}`,
-      '',
-      text
-    ].join('\n'), workStatus);
-  });
 })();
