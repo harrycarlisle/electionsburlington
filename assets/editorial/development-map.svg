@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t d">
+  <title id="t">Major Burlington development areas</title>
+  <desc id="d">Orientation diagram placing Aldershot, the three GO districts, Millcroft, Old Lakeshore and 730 Brant.</desc>
+  <rect width="960" height="540" fill="#f4f7f4"/>
+  <rect x="40" y="90" width="880" height="360" rx="18" fill="#d7e4dc"/>
+  <text x="40" y="50" fill="#0b335f" font-family="Georgia,serif" font-size="28">Burlingtons biggest growth areas</text>
+  <g font-family="Arial,sans-serif">
+    <circle cx="160" cy="250" r="12" fill="#0b335f"/><text x="180" y="256" font-size="16">Aldershot / 1200 King</text>
+    <circle cx="390" cy="300" r="12" fill="#0b335f"/><text x="410" y="306" font-size="16">Burlington GO</text>
+    <circle cx="390" cy="360" r="12" fill="#2b8bd5"/><text x="410" y="366" font-size="16">Old Lakeshore / 730 Brant</text>
+    <circle cx="700" cy="220" r="12" fill="#0b335f"/><text x="720" y="226" font-size="16">Appleby GO</text>
+    <circle cx="560" cy="160" r="12" fill="#20774b"/><text x="580" y="166" font-size="16">Millcroft</text>
+    <circle cx="280" cy="150" r="12" fill="#8f6109"/><text x="300" y="156" font-size="16">Data centre corridor</text>
+  </g>
+  <text x="40" y="500" fill="#5d7287" font-family="Arial,sans-serif" font-size="14">Editorial orientation only. Pins are approximate.</text>
+</svg>

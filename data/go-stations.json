@@ -1,0 +1,80 @@
+{
+  "updated": "2026-08-26",
+  "line": "Lakeshore West",
+  "stations": [
+    {
+      "id": "AL",
+      "name": "Aldershot GO",
+      "address": "1199 Waterdown Road, Burlington",
+      "staffedWeekdays": "4:50 a.m. to 8:40 p.m.",
+      "staffedWeekends": "6:20 a.m. to 8:40 p.m.",
+      "parking": {
+        "free": true,
+        "lots": [
+          {"name": "Main Lot", "spaces": 934},
+          {"name": "South Lot", "spaces": 705}
+        ],
+        "totalSpaces": 1639,
+        "reserved": true,
+        "carpool": true,
+        "overnight": "GO customers may use an empty non-reserved space for up to 48 hours."
+      },
+      "transit": ["Burlington Transit", "VIA Rail"],
+      "roadAccess": "Waterdown Road, close to Highway 403 and the QEW/403 split.",
+      "bestFor": "West Burlington, Waterdown-bound drivers, and anyone connecting to VIA.",
+      "source": "https://www.gotransit.com/en/find-a-station-or-stop/00180"
+    },
+    {
+      "id": "BU",
+      "name": "Burlington GO",
+      "address": "2101 Fairview Street, Burlington",
+      "staffedWeekdays": "4:50 a.m. to 8:40 p.m.",
+      "staffedWeekends": "6:20 a.m. to 8:40 p.m.",
+      "parking": {
+        "free": true,
+        "lots": [
+          {"name": "Parking Garage", "spaces": 736},
+          {"name": "West Lot", "spaces": 912},
+          {"name": "Main Lot", "spaces": 455}
+        ],
+        "totalSpaces": 2103,
+        "reserved": true,
+        "carpool": true,
+        "bikeRooms": 25,
+        "overnight": "GO customers may use an empty non-reserved space for up to 48 hours."
+      },
+      "transit": ["Burlington Transit"],
+      "roadAccess": "Fairview Street, between Brant Street and Guelph Line, with direct local-road access from central Burlington.",
+      "bestFor": "Central Burlington, downtown, and riders who want a garage and bike rooms.",
+      "source": "https://www.gotransit.com/en/find-a-station-or-stop/00177"
+    },
+    {
+      "id": "AP",
+      "name": "Appleby GO",
+      "address": "5111 Fairview Street, Burlington",
+      "staffedWeekdays": "5:50 a.m. to 8:40 p.m.",
+      "staffedWeekends": "11:20 a.m. to 6:40 p.m.",
+      "parking": {
+        "free": true,
+        "lots": [
+          {"name": "North Lot", "spaces": 1742},
+          {"name": "Main Lot", "spaces": 1072}
+        ],
+        "totalSpaces": 2814,
+        "reserved": true,
+        "carpool": false,
+        "overnight": "GO customers may use an empty non-reserved space for up to 48 hours."
+      },
+      "transit": ["Burlington Transit", "Oakville Transit"],
+      "roadAccess": "Fairview Street at Appleby Line, the eastern Burlington station on the Lakeshore West line.",
+      "bestFor": "East Burlington and riders coming from the Oakville side who want the largest free parking supply.",
+      "source": "https://www.gotransit.com/en/find-a-station-or-stop/00263/station-details"
+    }
+  ],
+  "sources": [
+    {
+      "label": "GO Transit free parking",
+      "url": "https://www.gotransit.com/en/free-parking-at-go-stations"
+    }
+  ]
+}

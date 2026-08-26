@@ -1,0 +1,26 @@
+{
+  "updated": "2026-08-26",
+  "year": 2027,
+  "rule": "Never invent a date. Annual events without a confirmed 2027 date remain ANNUAL · DATE TBA.",
+  "events": [
+    {"id": "chilly-half", "name": "Chilly Half Marathon", "status": "annual_unconfirmed", "date": "", "note": "Runs annually; 2027 date not posted."},
+    {"id": "sakura", "name": "Sakura Festival", "status": "annual_unconfirmed", "date": "", "note": "RBG cherry-blossom programming is seasonal; 2027 dates not posted."},
+    {"id": "touch-a-truck", "name": "Touch-A-Truck", "status": "annual_unconfirmed", "date": "", "note": "City community event; 2027 date not posted."},
+    {"id": "run4lighthouse", "name": "Run4Lighthouse", "status": "annual_unconfirmed", "date": "", "note": "Annual fundraiser; 2027 date not posted."},
+    {"id": "moon-in-june", "name": "Moon in June", "status": "annual_unconfirmed", "date": "", "note": "Waterfront evening event; 2027 date not posted."},
+    {"id": "lakeshore-music", "name": "Lakeshore Music & Arts Festival", "status": "annual_unconfirmed", "date": "", "note": "2027 date not posted."},
+    {"id": "sound-of-music", "name": "Sound of Music Festival", "status": "annual_unconfirmed", "date": "", "note": "Status and 2027 dates are not confirmed here. Do not invent a return date."},
+    {"id": "canada-day", "name": "Canada Day", "status": "annual_unconfirmed", "date": "2027-07-01", "note": "July 1 is fixed. Programming details are not yet posted."},
+    {"id": "canada-day-races", "name": "Canada Day Races", "status": "annual_unconfirmed", "date": "", "note": "2027 race date not posted."},
+    {"id": "concerts-in-the-park", "name": "Concerts in the Park", "status": "annual_unconfirmed", "date": "", "note": "Summer series; 2027 schedule not posted."},
+    {"id": "movies-by-the-lake", "name": "Movies Under the Stars / Movies by the Lake", "status": "annual_unconfirmed", "date": "", "note": "City Thursday series in 2026; 2027 dates not posted."},
+    {"id": "latin-festival", "name": "Latin Festival", "status": "annual_unconfirmed", "date": "", "note": "2027 date not posted."},
+    {"id": "butter-tart-race", "name": "Butter Tart race", "status": "annual_unconfirmed", "date": "", "note": "2027 date not posted."},
+    {"id": "ribfest", "name": "Canada’s Largest Ribfest", "status": "annual_unconfirmed", "date": "", "note": "Labour Day weekend is typical; 2027 dates not posted."},
+    {"id": "appleby-line", "name": "Appleby Line Street Festival", "status": "annual_unconfirmed", "date": "", "note": "2027 date not posted."},
+    {"id": "culture-days", "name": "Culture Days / WANDER", "status": "annual_unconfirmed", "date": "", "note": "National Culture Days weekend is calendar-based; BPAC 2027 listing not posted."},
+    {"id": "great-pumpkin-trail", "name": "Great Pumpkin Trail", "status": "annual_unconfirmed", "date": "", "note": "2027 date not posted."},
+    {"id": "festival-of-lights", "name": "Festival of Lights", "status": "annual_unconfirmed", "date": "", "note": "2026–27 dates were not confirmed on the City page at last check. Do not invent opening night."},
+    {"id": "santa-claus-parade", "name": "Santa Claus Parade", "status": "annual_unconfirmed", "date": "", "note": "2026 date is Sunday, Dec. 6. 2027 date is not posted."}
+  ]
+}

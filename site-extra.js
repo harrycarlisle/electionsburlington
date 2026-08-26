@@ -204,8 +204,14 @@
     if (path.includes('puzzles') || path.includes('/games')) return 'games';
     if (path.includes('work-with-us')) return 'work';
     if (path.includes('feedback')) return 'feedback';
-    if (path.includes('about')) return 'about';
-    if (path.includes('methodology')) return 'sources';
+    if (path.includes('about') || path.includes('editorial-standards') || path.includes('ai-policy') || path.includes('corrections')) return 'about';
+    if (path.includes('methodology') || path.includes('/sources')) return 'sources';
+    if (path.includes('/go')) return 'go';
+    if (path.includes('/traffic') || path.includes('skyway')) return 'traffic';
+    if (path.includes('/development')) return 'development';
+    if (path.includes('/parking') || path.includes('/beach') || path.includes('/taxes')) return 'utility';
+    if (path.includes('/safety') || path.includes('crime')) return 'safety';
+    if (path.includes('/food') || path.includes('food-spots')) return 'food';
     if (path.includes('help')) return 'help';
     if (path.includes('updates') || path.includes('/news') || path.includes('/articles/') || path.includes('/stories/') || path.includes('/guides/')) return 'news';
     return '';
@@ -243,7 +249,10 @@
       <p class="menu-heading">Secondary</p>
       <div class="menu-primary menu-secondary" role="list">
         ${electionPrimary ? '' : navLink('/elections/', 'elections', 'Elections', 'secondary')}
-        ${navLink('/about.html', 'about', 'About', 'secondary')}
+        ${navLink('/traffic/', 'traffic', 'Traffic', 'secondary')}
+        ${navLink('/go/', 'go', 'GO', 'secondary')}
+        ${navLink('/development/', 'development', 'Development', 'secondary')}
+        ${navLink('/about/', 'about', 'About', 'secondary')}
         ${navLink('/methodology.html', 'sources', 'Sources', 'secondary')}
         ${navLink('/help.html', 'help', 'Help & accessibility', 'secondary')}
         ${navLink('/feedback/', 'feedback', 'Feedback', 'secondary')}
@@ -554,7 +563,7 @@
       footer.className = 'site-legal-footer';
       document.body.appendChild(footer);
     }
-    footer.innerHTML = '<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news for Burlington, Ontario.</p></div></div><div class="site-footer-columns"><nav aria-label="Explore"><strong>Explore</strong><a href="/news/">News</a><a href="/elections/">Elections</a><a href="/explore/">Explore</a><a href="/sports/">Sports</a><a href="/games/">Puzzles</a></nav><nav aria-label="About"><strong>About</strong><a href="/about.html">About</a><a href="/methodology.html">Sources</a><a href="/help.html#accessibility">Accessibility</a><a href="/feedback/">Feedback</a><a href="/work-with-us/">Work with us</a></nav></div></div>';
+    footer.innerHTML = '<div class="site-legal-footer-inner"><div class="footer-news-brand"><span class="news-brand-mark" aria-hidden="true"></span><div><strong>Burlington News</strong><p>Independent news for Burlington, Ontario.</p></div></div><div class="site-footer-columns"><nav aria-label="Explore"><strong>Explore</strong><a href="/news/">News</a><a href="/elections/">Elections</a><a href="/explore/">Explore</a><a href="/traffic/">Traffic</a><a href="/go/">GO</a><a href="/development/">Development</a><a href="/sports/">Sports</a></nav><nav aria-label="About"><strong>About</strong><a href="/about/">About</a><a href="/editorial-standards/">Editorial standards</a><a href="/corrections/">Corrections</a><a href="/methodology.html">Sources</a><a href="/feedback/">Feedback</a><a href="/work-with-us/">Work with us</a></nav></div><p class="preferred-source"><a href="https://www.google.com/preferences/source?q=burlingtonnews.ca">Add Burlington News as a preferred source on Google</a></p></div>';
   }
 
   function applyTiming(data) {

@@ -42,7 +42,17 @@
     {title:'Puzzles about Burlington',url:'/games/',section:'Puzzles',keywords:'quiz puzzle trivia swipe games'},
     {title:'Give feedback',url:'/feedback/',section:'About',keywords:'correction error accessibility feedback'},
     {title:'Work with Burlington News',url:'/work-with-us/',section:'About',keywords:'partner sponsor expertise pitch advertising story tip source community work with us'},
-    {title:'Live Burlington traffic cameras',url:'/traffic/',section:'Traffic',keywords:'qew skyway traffic camera commute brant guelph walkers appleby burloak'}
+    {title:'Live Burlington traffic cameras',url:'/traffic/',section:'Traffic',keywords:'qew skyway traffic camera commute brant guelph walkers appleby burloak'},
+    {title:'Compare the 2026 mayoral candidates',url:'/elections/compare/',section:'Election',keywords:'mayor compare taxes housing development traffic meed ward kearns nisan'},
+    {title:'What ward am I in?',url:'/elections/ward/',section:'Election',keywords:'ward map finder councillor trustee ballot'},
+    {title:'Burlington GO to Union',url:'/go/burlington-to-union/',section:'GO',keywords:'go train union lakeshore west next train delay'},
+    {title:'Which GO station should I use?',url:'/go/which-station/',section:'GO',keywords:'aldershot burlington appleby parking transit'},
+    {title:'What is being built in Burlington?',url:'/development/',section:'Development',keywords:'data centre 1200 king millcroft old lakeshore mtsa'},
+    {title:'Why did my Burlington tax bill change?',url:'/taxes/',section:'Taxes',keywords:'property tax city region education 2026'},
+    {title:'Can I park here tonight?',url:'/parking/',section:'Parking',keywords:'overnight downtown snow event exemption'},
+    {title:'Can I swim at Burlington Beach today?',url:'/beach/',section:'Beach',keywords:'beachway brant street swim e coli sample'},
+    {title:'Things to do this weekend',url:'/explore/weekend/',section:'Explore',keywords:'weekend events ribfest market date night'},
+    {title:'Where to eat in Burlington',url:'/food/',section:'Food',keywords:'restaurants food passport dinner tonight'}
   ];
   const homeSuggested = ['I’m bored','Best tacos','This weekend','Things to do'];
   const innerSuggested = ['Skyway','Events','Food','Election'];
@@ -56,10 +66,16 @@
     const q = normalize(query);
     if (!q) return '';
     if (/^(i m bored|im bored|bored)$/.test(q)) return '/explore/#bored';
-    if (/^(this weekend|things to do|what s happening|whats happening|date night|free things to do|what to do|next event)$/.test(q)) return '/explore/';
-    if (/^(best tacos|best food)$/.test(q)) return '/guides/burlington-food-spots.html';
-    if (/^(election|elections)$/.test(q)) return '/elections/';
+    if (/^(this weekend|things to do|what s happening|whats happening|date night|free things to do|what to do|next event)$/.test(q)) return '/explore/weekend/';
+    if (/^(best tacos|best food)$/.test(q)) return '/food/';
+    if (/^(election|elections|mayor|compare candidates)$/.test(q)) return '/elections/compare/';
+    if (/^(ward|what ward)$/.test(q)) return '/elections/ward/';
+    if (/^(go|next train|union)$/.test(q)) return '/go/burlington-to-union/';
     if (/^(road closures|traffic|qew)$/.test(q)) return '/traffic/?destination=toronto';
+    if (/^(parking|overnight parking)$/.test(q)) return '/parking/';
+    if (/^(beach|swim)$/.test(q)) return '/beach/';
+    if (/^(tax|taxes|property tax)$/.test(q)) return '/taxes/';
+    if (/^(development|being built)$/.test(q)) return '/development/';
     if (/^(schools|school)$/.test(q)) return '/stories/back-to-school-2026/';
     if (/^(crime)$/.test(q)) return '/stories/how-bad-is-burlington-crime/';
     return '';

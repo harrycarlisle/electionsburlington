@@ -1,0 +1,56 @@
+{
+  "updated": "2026-08-26",
+  "timezone": "America/Toronto",
+  "overnight": {
+    "banStart": "01:00",
+    "banEnd": "06:00",
+    "rule": "On-street parking is not allowed between 1 a.m. and 6 a.m. unless a sign says otherwise or you have a valid exemption or Citywide On-Street Residential Parking Permit."
+  },
+  "dayLimitHours": 5,
+  "downtown": {
+    "weekdayPaid": "Monday to Friday, 9 a.m. to 6 p.m.",
+    "weekdayFree": "Monday to Friday after 6 p.m. until 9 a.m.",
+    "saturday": "Pay parking is required 9 a.m. to 6 p.m. in Lots 1, 4 and 5 and at on-street meters, with a three-hour maximum on-street. Other municipal lots and the Waterfront Parking Garage at 414 Locust Street are free.",
+    "sundayHoliday": "Downtown on-street spaces, municipal lots and the Waterfront Parking Garage are free on Sundays and holidays.",
+    "waterfrontException": "The waterfront lots at 1286 Lakeshore Road do not provide free holiday parking.",
+    "garage": "414 Locust Street",
+    "saturdayPaidLots": [
+      {"id": "1", "name": "Pearl Street Lot", "address": "431 Elizabeth Street"},
+      {"id": "4", "name": "Elizabeth Street Lot", "address": "421 John Street"},
+      {"id": "5", "name": "Brant Street Lot", "address": "391 Brant Street"}
+    ]
+  },
+  "exemptions": {
+    "daysPerYear": 15,
+    "portal": "https://www.burlington.ca/en/roads-parking-and-traffic/parking-exemptions.aspx",
+    "invalidDuringSnow": true
+  },
+  "permit": {
+    "name": "Citywide On-Street Residential Parking Permit",
+    "url": "https://www.burlington.ca/en/roads-parking-and-traffic/citywide-on-street-residential-parking-permit.aspx",
+    "maxConsecutiveHours": 48,
+    "invalidDuringSnow": true
+  },
+  "snow": {
+    "rule": "During a declared snow event, on-street parking is prohibited until the City declares the event over. Permits and exemptions are not valid. Overnight parking in municipal lots between 1 a.m. and 6 a.m. is not permitted during and after a snow event.",
+    "updates": "https://www.burlington.ca/en/roads-parking-and-traffic/winter-parking.aspx"
+  },
+  "sources": [
+    {
+      "label": "City of Burlington parking",
+      "url": "https://www.burlington.ca/en/roads-parking-and-traffic/parking.aspx"
+    },
+    {
+      "label": "Parking in downtown Burlington",
+      "url": "https://www.burlington.ca/en/roads-parking-and-traffic/parking-in-downtown-burlington.aspx"
+    },
+    {
+      "label": "Parking exemptions",
+      "url": "https://www.burlington.ca/en/roads-parking-and-traffic/parking-exemptions.aspx"
+    },
+    {
+      "label": "Winter parking",
+      "url": "https://www.burlington.ca/en/roads-parking-and-traffic/winter-parking.aspx"
+    }
+  ]
+}
