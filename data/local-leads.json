@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-08-26T01:53:40Z",
+  "generatedAt": "2026-08-26T03:15:05Z",
   "items": [
+    {
+      "id": "511:293299",
+      "detectedAt": "2026-08-26T03:15:05Z",
+      "score": 65,
+      "headline": "Disabled Vehicle on HWY 401 Westbound  at GUELPH LINE, Milton. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "HWY 401",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:293256",
       "detectedAt": "2026-08-25T23:33:38Z",
