@@ -1,0 +1,15 @@
+{
+  "timezone": "America/Toronto",
+  "election": {
+    "year": 2026,
+    "votingStarts": "2026-10-14",
+    "electionDay": "2026-10-26",
+    "primaryNavUntil": "2026-11-09"
+  },
+  "seasons": {
+    "winter": { "fromMonth": 12, "toMonth": 2 },
+    "spring": { "fromMonth": 3, "toMonth": 5 },
+    "summer": { "fromMonth": 6, "toMonth": 8 },
+    "fall": { "fromMonth": 9, "toMonth": 11 }
+  }
+}

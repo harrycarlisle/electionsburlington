@@ -37,9 +37,10 @@
     const detail = String(row?.detail || '').replace(/\s+/g, ' ').trim();
     const summary = String(row?.summary || '').replace(/\s+/g, ' ').trim();
     if (!detail || detail === summary) return '';
-    if (/no detailed|no verified|still needed|still limited|not yet been published|has not yet published/i.test(detail)) return '';
+    if (/no detailed|no verified|still needed|still limited|not yet been published|has not yet published|has not published/i.test(detail)) return '';
+    if (detail.length < summary.length + 40) return '';
     const extra = detail.split(/\s+/).filter(word => !summary.toLowerCase().includes(word.toLowerCase()));
-    return extra.length >= 8 ? detail : '';
+    return extra.length >= 16 ? detail : '';
   }
 
   function setActive(id, { hash = true } = {}) {

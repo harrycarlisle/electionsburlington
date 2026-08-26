@@ -254,8 +254,8 @@ html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8
     min-height:48px!important;
     padding:4px 0!important;
     gap:6px!important;
-    grid-template-columns:auto auto minmax(0,1fr) 40px!important;
-    grid-template-areas:"brand weather search menu"!important;
+    grid-template-columns:auto minmax(0,1fr) 44px!important;
+    grid-template-areas:"brand search menu"!important;
     align-items:center!important;
     flex-wrap:nowrap!important
   }
@@ -330,8 +330,8 @@ html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8
     min-height:48px!important;
     padding:4px 0!important;
     gap:6px!important;
-    grid-template-columns:auto auto minmax(0,1fr) 40px!important;
-    grid-template-areas:"brand weather search menu"!important;
+    grid-template-columns:auto minmax(0,1fr) 44px!important;
+    grid-template-areas:"brand search menu"!important;
     flex-wrap:nowrap!important
   }
   .local-now{margin:0 0 12px!important;padding:0!important;border:0!important}

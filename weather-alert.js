@@ -111,7 +111,7 @@
             chip.classList.add('is-ready');
             chip.setAttribute('aria-label', `${temperature} degrees Celsius in Burlington${condition ? `, ${condition}` : ''}`);
           } else if (host.hasAttribute('data-weather-compact')) {
-            host.innerHTML = condition ? `${temperature}°C · ${esc(condition)}` : `${temperature}°C`;
+            host.innerHTML = condition ? `${temperature}° · ${esc(condition)}` : `${temperature}°`;
           } else {
             host.innerHTML = `${weatherIcon}<strong>${temperature}°C</strong>${condition ? `<em>${condition}</em>` : ''}`;
           }

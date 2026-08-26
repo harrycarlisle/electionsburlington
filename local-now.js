@@ -436,7 +436,7 @@
 
     host.dataset.liveUtilityVariant = VARIANT;
     host.innerHTML = `
-      <p class="now-kicker"><i class="now-dot" aria-hidden="true"></i> Live local update</p>
+      <p class="now-kicker"><span class="now-kicker-label"><i class="now-dot" aria-hidden="true"></i> Live local update</span><span class="now-kicker-weather" data-weather-temperature data-weather-compact></span></p>
       <div class="now-tabs" role="tablist" aria-label="Live local update">
         ${MODES.map(mode => `<button type="button" class="now-tab now-tab-${mode}${mode === initial ? ' is-active' : ''}" role="tab" id="nowTab-${mode}" data-mode="${mode}" aria-selected="${mode === initial}" aria-controls="nowPanel-${initial}" tabindex="${mode === initial ? 0 : -1}">${icons[mode]}<span>${MODE_LABEL[mode]}</span></button>`).join('')}
       </div>

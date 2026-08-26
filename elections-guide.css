@@ -55,8 +55,8 @@
   .candidate-picker select{max-width:none}
   .candidate-strip{display:none}
   .profile{padding:16px}
-  .profile-head{grid-template-columns:72px 1fr;gap:12px}
-  .profile-photo,.photo-placeholder{width:72px;height:72px}
+  .profile-head{grid-template-columns:88px 1fr;gap:12px}
+  .profile-photo,.photo-placeholder{width:88px;height:88px}
   .profile-head h2{font-size:24px}
   html,body{overflow-x:hidden}
   html,body.publication-shell{overflow-x:hidden;overflow-y:auto}

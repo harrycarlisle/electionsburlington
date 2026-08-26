@@ -1,41 +1,101 @@
 (() => {
-  const form = document.getElementById('feedbackForm');
-  const status = document.getElementById('feedbackStatus');
-  if (!form) return;
+  const placeholders = {
+    'Something is inaccurate': 'What is incorrect?',
+    'Something is confusing': 'What was unclear?',
+    'Something is missing': 'What should we add?',
+    'Accessibility issue': 'What made the page difficult to use?',
+    'Site problem': 'What happened?',
+    'General feedback': 'What would you change?'
+  };
 
-  const requestedType = new URLSearchParams(location.search).get('type');
-  const typeSelect = document.getElementById('feedbackType');
-  if (requestedType && typeSelect) {
-    const wanted = requestedType.toLowerCase();
-    const option = [...typeSelect.options].find(o => o.value.toLowerCase() === wanted || o.textContent.toLowerCase() === wanted);
-    if (option) typeSelect.value = option.value;
+  const partnerValues = ['partner', 'partnership', 'sponsor', 'sponsorship'];
+
+  function mark(status, kind, text) {
+    if (!status) return;
+    status.textContent = text;
+    status.className = `feedback-status ${kind}`;
   }
 
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    const email = String(data.get('email') || '').trim();
-    const type = String(data.get('type') || 'General feedback');
-    const message = String(data.get('message') || '').trim();
+  function openMail(subject, body, status) {
+    mark(status, 'is-success', 'Thanks — we got it.');
+    window.location.href = `mailto:feedback@burlingtonnews.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
 
-    if (!message) {
-      status.textContent = 'Please add your feedback before sending.';
-      status.className = 'feedback-status is-error';
-      document.getElementById('feedbackMessage')?.focus();
+  const feedbackForm = document.getElementById('feedbackForm');
+  const feedbackStatus = document.getElementById('feedbackStatus');
+  const typeSelect = document.getElementById('feedbackType');
+  const message = document.getElementById('feedbackMessage');
+
+  if (typeSelect) {
+    const requested = new URLSearchParams(location.search).get('type');
+    if (requested && partnerValues.includes(requested.toLowerCase())) {
+      location.replace('/work-with-us/');
       return;
     }
+    if (requested) {
+      const wanted = requested.toLowerCase();
+      const option = [...typeSelect.options].find(item => item.value.toLowerCase() === wanted || item.textContent.toLowerCase() === wanted);
+      if (option) typeSelect.value = option.value;
+    }
+    const applyPlaceholder = () => {
+      if (message) message.placeholder = placeholders[typeSelect.value] || 'What would you change?';
+    };
+    typeSelect.addEventListener('change', applyPlaceholder);
+    applyPlaceholder();
+  }
 
-    const subject = `Burlington News: ${type}`;
-    const body = [
+  feedbackForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    const data = new FormData(feedbackForm);
+    const email = String(data.get('email') || '').trim();
+    const type = String(data.get('type') || 'General feedback');
+    const text = String(data.get('message') || '').trim();
+    if (!text) {
+      mark(feedbackStatus, 'is-error', 'Please add your feedback before sending.');
+      message?.focus();
+      return;
+    }
+    openMail(`Burlington News: ${type}`, [
       `Feedback type: ${type}`,
       email ? `Reply email: ${email}` : 'Reply email: not provided',
       `Page: ${document.referrer || 'Not provided'}`,
       '',
-      message
-    ].join('\n');
+      text
+    ].join('\n'), feedbackStatus);
+  });
 
-    status.textContent = 'Opening your email app with the feedback filled in…';
-    status.className = 'feedback-status is-success';
-    window.location.href = `mailto:feedback@burlingtonnews.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const workForm = document.getElementById('workForm');
+  const workStatus = document.getElementById('workStatus');
+  workForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    const data = new FormData(workForm);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const organization = String(data.get('organization') || '').trim();
+    const type = String(data.get('type') || 'Other');
+    const text = String(data.get('message') || '').trim();
+    if (!name) {
+      mark(workStatus, 'is-error', 'Please add your name.');
+      document.getElementById('workName')?.focus();
+      return;
+    }
+    if (!email) {
+      mark(workStatus, 'is-error', 'Please add your email.');
+      document.getElementById('workEmail')?.focus();
+      return;
+    }
+    if (!text) {
+      mark(workStatus, 'is-error', 'Please add a short message.');
+      document.getElementById('workMessage')?.focus();
+      return;
+    }
+    openMail(`Burlington News: ${type}`, [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      organization ? `Organization: ${organization}` : 'Organization: not provided',
+      `About: ${type}`,
+      '',
+      text
+    ].join('\n'), workStatus);
   });
 })();

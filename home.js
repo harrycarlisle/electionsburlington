@@ -1,11 +1,7 @@
 (() => {
-  const menu = document.getElementById('menuButton');
-  const nav = document.getElementById('primaryNav');
   const latestList = document.getElementById('latestList');
   const pickGrid = document.getElementById('pickGrid');
   const lead = document.querySelector('.top-story');
-  const root = document.documentElement;
-  const themeKey = 'burlington-news-theme';
   const cleanDash = value => String(value || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
   const esc = value => cleanDash(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
   const publicUrl = value => {
@@ -44,47 +40,7 @@
     if (/canada|tariff|federal/.test(haystack)) return 'Canada';
     return 'Burlington';
   };
-  const themeIcon = theme => theme === 'dark'
-    ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8.7 8.7 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-    : '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
-
-  const setTheme = (theme, persist=true) => {
-    const next = theme === 'dark' ? 'dark' : 'light';
-    root.dataset.theme = next;
-    root.style.colorScheme = next;
-    const toggle = document.querySelector('[data-theme-toggle]');
-    if (toggle) {
-      const target = next === 'dark' ? 'Light mode' : 'Dark mode';
-      toggle.innerHTML = themeIcon(next);
-      toggle.setAttribute('aria-label', `Switch to ${target.toLowerCase()}`);
-    }
-    if (persist) try { localStorage.setItem(themeKey, next); } catch (_) {}
-  };
-  setTheme(root.dataset.theme || 'light', false);
-
-  window.BurlingtonSearch?.install(document.getElementById('headerSearch'), {
-    homepage: true,
-    rotate: true
-  });
   window.BurlingtonIdeas?.mountHome(document.getElementById('homeIdea'));
-
-  menu?.addEventListener('click', () => {
-    const open = nav.classList.toggle('is-open');
-    menu.setAttribute('aria-expanded', String(open));
-    menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    document.body.classList.toggle('menu-is-open', open);
-  });
-  nav?.querySelector('[data-theme-toggle]')?.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
-  nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    nav.classList.remove('is-open');
-    menu?.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('menu-is-open');
-  }));
-  document.addEventListener('keydown', event => {
-    if (event.key !== 'Escape') return;
-    nav?.classList.remove('is-open');
-    document.body.classList.remove('menu-is-open');
-  });
 
   function tightenDeck(value){
     let text = cleanDash(value).replace(/\s+/g, ' ').trim();
