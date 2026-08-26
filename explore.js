@@ -45,7 +45,8 @@
   let places = [];
   let bonus = null;
   let selectedDate = dayKey(new Date());
-  let calendarMode = 'week';
+  let calendarMode = 'next-7';
+  let dayFilter = false;
   let showAll = false;
   const done = readSet(storage.done);
   const wanted = readSet(storage.want);
@@ -65,26 +66,36 @@
     if (!upcoming) paintSavedEvents();
   }
 
-  function weekDates(anchor = new Date()) {
+  function addDays(anchor, count) {
+    const date = new Date(anchor);
+    date.setDate(date.getDate() + count);
+    date.setHours(12,0,0,0);
+    return date;
+  }
+
+  function nextDays(count = 7, anchor = new Date()) {
     const start = new Date(anchor);
     start.setHours(12,0,0,0);
-    const mondayOffset = (start.getDay() + 6) % 7;
-    start.setDate(start.getDate() - mondayOffset);
-    return Array.from({length:7}, (_, index) => {
-      const date = new Date(start);
-      date.setDate(start.getDate() + index);
-      return date;
-    });
+    return Array.from({length:count}, (_, index) => addDays(start, index));
+  }
+
+  function upcomingWeekend(anchor = new Date()) {
+    const start = atStartOfDay(anchor);
+    const day = start.getDay();
+    const toSaturday = day === 6 ? 0 : day === 0 ? -1 : 6 - day;
+    const saturday = addDays(start, toSaturday);
+    const sunday = addDays(saturday, 1);
+    return { start: atStartOfDay(saturday), end: atEndOfDay(sunday) };
   }
 
   function paintWeek() {
-    const days = weekDates();
+    const days = nextDays(7);
     qs('#weekStrip').innerHTML = days.map(date => {
       const key = dayKey(date);
       const hasEvent = events.some(event => dayKey(event.start) === key || (new Date(event.start) <= date && new Date(event.end) >= date));
-      return `<button class="day-button ${selectedDate === key ? 'is-selected' : ''} ${hasEvent ? 'has-event' : ''}" type="button" data-week-date="${key}" aria-label="Show events for ${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}"><span>${date.toLocaleDateString('en-CA',{weekday:'short'})}</span><strong>${date.toLocaleDateString('en-CA',{month:'short',day:'numeric'})}</strong></button>`;
+      return `<button class="day-button ${dayFilter && selectedDate === key ? 'is-selected' : ''} ${hasEvent ? 'has-event' : ''}" type="button" data-week-date="${key}" aria-selected="${dayFilter && selectedDate === key ? 'true' : 'false'}" aria-label="Show events for ${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}"><span>${date.toLocaleDateString('en-CA',{weekday:'short'})}</span><strong>${date.toLocaleDateString('en-CA',{month:'short',day:'numeric'})}</strong></button>`;
     }).join('');
-    qs('#weekStrip').setAttribute('aria-label',`Week of ${days[0].toLocaleDateString('en-CA',{month:'long',day:'numeric',year:'numeric'})}`);
+    qs('#weekStrip').setAttribute('aria-label',`Next 7 days from ${days[0].toLocaleDateString('en-CA',{month:'long',day:'numeric',year:'numeric'})}`);
   }
 
   function paintMonth(offset = calendarMode === 'next-month' ? 1 : 0) {
@@ -100,7 +111,8 @@
       const date = new Date(first.getFullYear(), first.getMonth(), number, 12);
       const key = dayKey(date);
       const hasEvent = events.some(event => dayKey(event.start) === key || (dayKey(event.start) < key && dayKey(event.end) >= key));
-      cells.push(`<button class="month-day ${hasEvent ? 'has-event' : ''} ${selectedDate === key ? 'is-selected' : ''}" type="button" data-date="${key}" aria-label="${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}${hasEvent ? ', has events' : ''}">${number}</button>`);
+      const selected = dayFilter && selectedDate === key;
+      cells.push(`<button class="month-day ${hasEvent ? 'has-event' : ''} ${selected ? 'is-selected' : ''}" type="button" data-date="${key}" aria-selected="${selected ? 'true' : 'false'}" aria-label="${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}${hasEvent ? ', has events' : ''}">${number}</button>`);
     }
     qs('#monthCalendar').innerHTML = `<h3 class="month-label">${first.toLocaleDateString('en-CA',{month:'long',year:'numeric'})}</h3><div class="month-grid">${weekdayLabels}${cells.join('')}</div>`;
   }
@@ -109,35 +121,38 @@
   const atEndOfDay = value => { const date = new Date(value); date.setHours(23,59,59,999); return date; };
   const overlaps = (event, start, end) => new Date(event.end) >= start && new Date(event.start) <= end;
 
+  function rangeForMode(mode) {
+    const today = atStartOfDay(new Date());
+    if (mode === 'all') return { start: today, end: atEndOfDay(addDays(today, 400)) };
+    if (mode === 'next-30') return { start: today, end: atEndOfDay(addDays(today, 29)) };
+    if (mode === 'weekend') return upcomingWeekend(today);
+    return { start: today, end: atEndOfDay(addDays(today, 6)) };
+  }
+
   function visibleEvents() {
     const today = atStartOfDay(new Date());
     const future = events.filter(event => new Date(event.end) >= today).sort((a,b) => new Date(a.start) - new Date(b.start));
     if (showAll) return future;
-    let start = calendarMode === 'today' ? atStartOfDay(new Date(`${selectedDate}T12:00:00`)) : today;
-    let end = atEndOfDay(start);
-    if (calendarMode === 'week') {
-      const days = weekDates(today);
-      start = atStartOfDay(days[0]);
-      end = atEndOfDay(days[6]);
+    let { start, end } = rangeForMode(calendarMode);
+    if (dayFilter && selectedDate) {
+      start = atStartOfDay(new Date(`${selectedDate}T12:00:00`));
+      end = atEndOfDay(start);
     }
-    if (calendarMode === 'month' || calendarMode === 'next-month') {
-      const offset = calendarMode === 'next-month' ? 1 : 0;
-      start = new Date(today.getFullYear(),today.getMonth() + offset,1);
-      end = atEndOfDay(new Date(today.getFullYear(),today.getMonth() + offset + 1,0));
-    }
-    const selected = future.filter(event => overlaps(event,start,end));
-    return selected.slice(0, calendarMode === 'month' ? 6 : 3);
+    const selected = future.filter(event => overlaps(event, start, end));
+    const cap = calendarMode === 'next-30' || calendarMode === 'all' ? 6 : 3;
+    return selected.slice(0, cap);
   }
 
   function setCalendarMode(mode) {
     calendarMode = mode;
     showAll = false;
-    const isMonth = mode === 'month' || mode === 'next-month';
-    qs('#calendarTitle').textContent = mode === 'today' ? 'Today' : mode === 'month' ? 'This month' : mode === 'next-month' ? 'Next month' : 'This week';
+    dayFilter = false;
+    const isMonth = mode === 'next-30' || mode === 'all';
     qs('#weekStrip').hidden = isMonth;
     qs('#monthCalendar').hidden = !isMonth;
-    qs('#calendarView').value = mode;
-    if (isMonth) paintMonth(mode === 'next-month' ? 1 : 0);
+    if (qs('#calendarView')) qs('#calendarView').value = mode;
+    if (isMonth) paintMonth(0);
+    else paintWeek();
     paintEvents();
   }
 
@@ -222,9 +237,8 @@
       const button = event.target.closest('[data-week-date]');
       if (!button) return;
       selectedDate = button.dataset.weekDate;
-      calendarMode = 'today';
-      qs('#calendarView').value = 'today';
-      qs('#calendarTitle').textContent = new Date(`${selectedDate}T12:00:00`).toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'});
+      dayFilter = true;
+      showAll = false;
       paintWeek();
       paintEvents();
     });
@@ -232,6 +246,7 @@
       const button = event.target.closest('[data-date]');
       if (!button) return;
       selectedDate = button.dataset.date;
+      dayFilter = true;
       showAll = false;
       paintMonth();
       paintEvents();
@@ -303,6 +318,7 @@
       paintEvents();
       paintPassport();
       installEvents();
+      window.BurlingtonIdeas?.setEvents?.(events);
       paintIdea();
       const hash = location.hash.replace('#event-','');
       if (hash && events.some(item => item.id === hash)) openEvent(hash);
