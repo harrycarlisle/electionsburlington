@@ -92,7 +92,7 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
   function eventHook(title) {
     let text = String(title || '').trim();
     text = text.replace(/^Watch\s+/i, '');
-    text = text.replace(/^Burlington(?:'s|’s)?\s+/i, '');
+    text = text.replace(/^Burlington(?:'s|’s)\s+/i, '');
     text = text.replace(/\s+(today|tonight|tomorrow)\.?$/i, '');
     if (!text) return 'Burlington event';
     return text.charAt(0).toUpperCase() + text.slice(1);

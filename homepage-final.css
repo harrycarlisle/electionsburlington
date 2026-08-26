@@ -33,6 +33,7 @@
 .now-card-copy{min-width:0;display:grid;gap:1px;flex:1}
 .now-card-cat{color:var(--muted,#5d7287);font:800 9px/1 Inter,ui-sans-serif,sans-serif;letter-spacing:.08em}
 .now-card-copy strong{color:var(--navy);font:750 14px/1.15 Inter,ui-sans-serif,sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.now-card-event .now-card-copy strong{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .now-card-copy em{color:var(--ink,#3a5166);font:500 12px/1.25 Inter,ui-sans-serif,sans-serif;font-style:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .now-card-metric{
   flex:0 0 auto;min-height:22px;padding:3px 8px;border-radius:999px;
