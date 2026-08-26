@@ -338,9 +338,17 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
     today: icon('next', '<rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 11h16"/>')
   };
 
+  function nextButton() {
+    return `<button type="button" class="now-next" data-now-next aria-label="Show next local update"><span class="now-next-disc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></button>`;
+  }
+
+  function wrapCard(inner) {
+    return `<div class="now-card-shell">${inner}${nextButton()}</div>`;
+  }
+
   function compactCard(mode, model) {
     if (mode === 'today' && !model) {
-      return `<a class="now-card now-card-today" href="/explore/" data-utility-card="today">${icons.today}<span class="now-card-copy"><small class="now-card-cat">TODAY</small><strong>See Burlington events</strong></span></a>`;
+      return wrapCard(`<a class="now-card now-card-today" href="/explore/" data-utility-card="today">${icons.today}<span class="now-card-copy"><small class="now-card-cat">TODAY</small><strong>See Burlington events</strong></span></a>`);
     }
     const title = mode === 'today' ? model.title : model.title || model.headline;
     const metric = mode === 'go' ? (model.time || '') : (model.metric || '');
@@ -349,7 +357,7 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
       : (mode === 'today' ? [model.relative, model.hours].filter(Boolean).join(' · ') : (model.extra || model.detail || ''));
     const href = model.url || '#';
     const extra = mode === 'go' && model.url && /gotransit\.com/.test(model.url) ? ' target="_blank" rel="noopener"' : '';
-    return `<a class="now-card now-card-${mode}${model.alert ? ' is-alert' : ''}" href="${esc(href)}" data-utility-card="${mode}"${extra}>
+    return wrapCard(`<a class="now-card now-card-${mode}${model.alert ? ' is-alert' : ''}" href="${esc(href)}" data-utility-card="${mode}"${extra}>
       ${icons[mode] || ''}
       <span class="now-card-copy">
         <small class="now-card-cat">${MODE_CAT[mode] || ''}</small>
@@ -357,7 +365,7 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
         ${detail ? `<em>${esc(detail)}</em>` : ''}
       </span>
       ${metric ? `<b class="now-card-metric">${esc(metric)}</b>` : ''}
-    </a>`;
+    </a>`);
   }
 
   function cardFor(mode, models) {
@@ -426,13 +434,23 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
 
   function bindCard(panel) {
     const card = panel.querySelector('[data-utility-card]');
+    const nextBtn = panel.querySelector('[data-now-next]');
     if (!card) return;
     let startX = 0;
     let startY = 0;
     let swiping = false;
     let tracking = false;
 
+    nextBtn?.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      noteInteraction();
+      stepMode(1);
+    });
+    nextBtn?.addEventListener('pointerdown', event => event.stopPropagation());
+
     const start = event => {
+      if (event.target.closest('[data-now-next]')) return;
       const point = event.touches ? event.touches[0] : event;
       startX = point.clientX;
       startY = point.clientY;
