@@ -2,7 +2,7 @@
   const latestList = document.getElementById('latestList');
   const pickGrid = document.getElementById('pickGrid');
   const lead = document.querySelector('.top-story');
-  const cleanDash = value => String(value || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
+  const cleanDash = value => String(value || '').replace(/(\d)[—–](\d)/g, '$1-$2').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
   const esc = value => cleanDash(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
   const publicUrl = value => {
     const raw = String(value || '');
@@ -137,7 +137,7 @@
 
   function renderNewest(items, heroId){
     if (!latestList || !items.length) return;
-    const rows = diversify(items, 3, heroId ? [heroId] : []);
+    const rows = items.filter(item => item?.id && item.id !== heroId).slice(0, 3);
     latestList.innerHTML = rows.map(item => {
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
