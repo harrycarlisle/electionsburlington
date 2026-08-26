@@ -67,7 +67,7 @@
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826u', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826gt', 'site-header');
+    ensureStyle('/site-header.css?v=20260826gu', 'site-header');
   }
 
   function ensureUtilityBar() {
@@ -593,7 +593,7 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826gt', 'site-header');
+      ensureStyle('/site-header.css?v=20260826gu', 'site-header');
     }
     ensureUtilityBar();
     ensureBanner();
@@ -609,7 +609,7 @@
     if (electionHeading) electionHeading.textContent = 'Meet the mayoral candidates';
     ensureFooter();
     applyBrand();
-    ensureScript('/site-search.js?v=20260826gt', 'site-search');
+    ensureScript('/site-search.js?v=20260826gu', 'site-search');
     if (!isHome() && !isElectionPage() && !isArticle()) ensureScript('/site-bundle.js?v=20260826w', 'site-bundle');
     ensureScript('/weather-alert.js?v=20260826f', 'weather-alert');
     if (isArticle()) ensureScript('/article-modern.js?v=20260826d', 'article-modern');
