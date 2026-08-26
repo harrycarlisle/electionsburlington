@@ -76,7 +76,7 @@ html[data-theme="dark"] .bored-actions button{background:#11191d;color:#edf4f8;b
   .site-footer-columns,.site-legal-links{justify-content:center}
 }
 /* Homepage live utility: one mode card; weather is a passive Live Local line. */
-.local-now{margin:2px 0 16px!important;padding:0!important;border:0!important;background:transparent!important}
+.local-now{margin:0;padding:0;border:0;background:transparent}
 .local-now .now-heading,.now-desktop,.now-mobile,.now-strip,.now-utilities,.now-priority{display:none!important}
 .now-kicker{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 8px;color:var(--navy);font:800 11px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 .now-kicker-label{display:inline-flex;align-items:center;gap:8px}
@@ -137,7 +137,7 @@ html[data-theme="dark"] .bored-actions button{background:#11191d;color:#edf4f8;b
 .now-card-driving.is-alert .now-card-metrics b{color:#c23b22}
 
 @media(min-width:721px){
-  .local-now{margin:4px 0 18px!important}
+  .local-now{margin:0}
   .now-mode-card{
     min-height:96px;max-height:140px;padding:16px 20px;
     grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:24px
@@ -152,8 +152,7 @@ html[data-theme="dark"] .bored-actions button{background:#11191d;color:#edf4f8;b
 
 @media(max-width:720px){
   .search-prompt-fade{left:12px;right:36px;font-size:13px}
-  .home-main{padding-top:6px!important}
-  .local-now{margin:0 0 12px!important}
+  .local-now{margin:0}
   .now-kicker{margin:0 0 6px;font-size:10px}
   .now-tabs{gap:6px;margin:0 0 8px}
   .now-tab{min-height:34px;padding:0 10px 0 6px;font-size:12px}
@@ -178,7 +177,7 @@ html[data-theme="dark"] .bored-actions button{background:#11191d;color:#edf4f8;b
 }
 
 @media(max-width:680px){
-  .local-now{margin:0 0 12px!important;padding:0!important;border:0!important}
+  .local-now{margin:0;padding:0;border:0}
 }
 
 html[data-theme="dark"] .now-kicker{color:#e7edf0}

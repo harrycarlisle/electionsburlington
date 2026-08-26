@@ -18,7 +18,7 @@
       const saved = localStorage.getItem(storageKey) || localStorage.getItem('burlington-election-theme');
       if (saved === 'light' || saved === 'dark') return saved;
     } catch (_) {}
-    return matchMedia('(max-width: 720px)').matches && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'light';
   }
 
   function themeIcon(theme) {
@@ -80,13 +80,13 @@
   function ensureStyles() {
     ensureStyle('/site-bundle.css?v=20260824z4', 'site-bundle');
     ensureStyle('/site-shell.css?v=20260824z4', 'site-shell');
-    ensureStyle('/publication-polish.css?v=20260825t', 'publication-polish');
-    ensureStyle('/product-pass.css?v=20260826u', 'product-pass');
+    ensureStyle('/publication-polish.css?v=20260826hu', 'publication-polish');
+    ensureStyle('/product-pass.css?v=20260826hu', 'product-pass');
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826tb', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826ht', 'site-header');
-    ensureStyle('/desktop-system.css?v=20260826ht', 'desktop-system');
+    ensureStyle('/site-header.css?v=20260826hu', 'site-header');
+    ensureStyle('/desktop-system.css?v=20260826hu', 'desktop-system');
   }
 
   function ensureUtilityBar() {
@@ -629,10 +629,10 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826ht', 'site-header');
-      ensureStyle('/desktop-system.css?v=20260826ht', 'desktop-system');
+      ensureStyle('/site-header.css?v=20260826hu', 'site-header');
+      ensureStyle('/desktop-system.css?v=20260826hu', 'desktop-system');
     }
-    ensureScript('/theme-boot.js?v=20260826ht', 'theme-boot');
+    ensureScript('/theme-boot.js?v=20260826hu', 'theme-boot');
     ensureUtilityBar();
     ensureBanner();
     addSeo();
@@ -674,8 +674,15 @@
   });
 
   matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', () => {
+    if (window.BurlingtonTheme) {
+      if (window.BurlingtonTheme.savedMode() === 'auto') {
+        window.BurlingtonTheme.apply('auto', false);
+        setTheme(root.dataset.theme, false);
+      }
+      return;
+    }
     let saved = '';
     try { saved = localStorage.getItem(storageKey) || localStorage.getItem('burlington-election-theme') || ''; } catch (_) {}
-    if (!saved && matchMedia('(max-width: 720px)').matches) setTheme(preferredTheme(), false);
+    if (!saved) setTheme(preferredTheme(), false);
   });
 })();

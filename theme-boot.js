@@ -69,9 +69,22 @@
     };
   }
 
-  function autoAppearance(date = new Date()) {
+  function isDaytime(date = new Date()) {
     const times = sunTimes(date);
-    return times.nowMinutes >= times.sunriseMinutes && times.nowMinutes < times.sunsetMinutes ? 'light' : 'dark';
+    return times.nowMinutes >= times.sunriseMinutes && times.nowMinutes < times.sunsetMinutes;
+  }
+
+  function systemAppearance() {
+    try {
+      return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    } catch (_) {
+      return 'light';
+    }
+  }
+
+  function autoAppearance(date = new Date(), system) {
+    if (isDaytime(date)) return 'light';
+    return (system || systemAppearance()) === 'dark' ? 'dark' : 'light';
   }
 
   function savedMode() {
@@ -84,9 +97,9 @@
     return 'auto';
   }
 
-  function appearanceFrom(mode, date) {
+  function appearanceFrom(mode, date, system) {
     if (mode === 'light' || mode === 'dark') return mode;
-    return autoAppearance(date);
+    return autoAppearance(date, system);
   }
 
   function paintButtons(appearance, mode) {
@@ -99,8 +112,8 @@
     });
   }
 
-  function apply(mode = savedMode(), persist = false, date) {
-    const appearance = appearanceFrom(mode, date);
+  function apply(mode = savedMode(), persist = false, date, system) {
+    const appearance = appearanceFrom(mode, date, system);
     const root = document.documentElement;
     root.dataset.theme = appearance;
     root.dataset.themeMode = mode;
@@ -129,6 +142,8 @@
     THEME_KEY,
     MODE_KEY,
     sunTimes,
+    isDaytime,
+    systemAppearance,
     autoAppearance,
     savedMode,
     apply,
@@ -143,4 +158,10 @@
   };
 
   apply(savedMode(), false);
+
+  try {
+    matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', () => {
+      if (savedMode() === 'auto') apply('auto', false);
+    });
+  } catch (_) {}
 })();

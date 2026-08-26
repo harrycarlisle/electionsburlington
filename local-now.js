@@ -442,7 +442,7 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
   }
 
   function useHeaderCard() {
-    return Boolean(headerSlot() && matchMedia('(max-width:720px)').matches);
+    return false;
   }
 
   function paintCard(mode) {
