@@ -4,11 +4,16 @@
   const lead = document.querySelector('.top-story');
   const cleanDash = value => String(value || '').replace(/(\d)[—–](\d)/g, '$1-$2').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
   const esc = value => cleanDash(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+  const STORY_ALIASES = {
+    'burlington-hotspots-0-24': 'burlington-ultimate-team-0-24'
+  };
   const publicUrl = value => {
     const raw = String(value || '');
     if (/^https?:\/\//.test(raw)) return raw;
     const story = raw.match(/^articles\/([^/]+)\.html$/);
-    if (story) return `/stories/${story[1]}/`;
+    if (story) return `/stories/${STORY_ALIASES[story[1]] || story[1]}/`;
+    const clean = raw.match(/^\/stories\/([^/]+)\/?$/);
+    if (clean && STORY_ALIASES[clean[1]]) return `/stories/${STORY_ALIASES[clean[1]]}/`;
     if (raw === 'updates.html') return '/news/';
     if (raw === 'explore.html') return '/explore/';
     if (raw === 'election-guide.html' || raw.startsWith('election-guide.html')) return raw.replace('election-guide.html', '/elections/');

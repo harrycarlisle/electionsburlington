@@ -366,7 +366,10 @@
     if (!picks.length) return;
     const section = document.createElement('section');
     section.className = 'article-related';
-    const storyUrl = item => String(item.url || '').replace(/^articles\/(.+)\.html$/, '/stories/$1/').replace(/^(?!https?:|\/)/, '/');
+    const storyUrl = item => {
+      const raw = String(item.url || '').replace(/^articles\/(.+)\.html$/, '/stories/$1/').replace(/^(?!https?:|\/)/, '/');
+      return raw.replace('/stories/burlington-hotspots-0-24/', '/stories/burlington-ultimate-team-0-24/');
+    };
     const relatedImage = item => {
       const raw = item.image || 'assets/editorial/home-share.webp';
       if (/crime/i.test(`${item.id || ''} ${item.headline || ''}`) && /\.svg$|chart|comparison|halton-police-dusk/i.test(raw)) {
