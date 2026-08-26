@@ -12,7 +12,11 @@
       "location": "Burlington Centre, 777 Guelph Line",
       "summary": "Shop local produce, prepared food and handmade goods at the Lions Club market.",
       "details": "The Burlington Lions Club lists the market on Wednesdays, Fridays and Saturdays through October. This card uses the event-specific hours published for August 26.",
-      "bring": ["A reusable bag", "A shopping list", "A way to keep cold items chilled"],
+      "bring": [
+        "A reusable bag",
+        "A shopping list",
+        "A way to keep cold items chilled"
+      ],
       "source": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
       "sourceName": "Burlington Lions Club",
       "image": "assets/explore/farmers-market.webp",
@@ -31,7 +35,11 @@
       "location": "Visible across Burlington with a clear view of the sky",
       "summary": "The partial eclipse begins at 10:33 p.m. and reaches maximum at 12:12 a.m.",
       "details": "The penumbral phase starts at 9:23 p.m. The partial phase starts at 10:33 p.m., reaches maximum at 12:12 a.m. and ends at 1:51 a.m. No eye protection is required for a lunar eclipse.",
-      "bring": ["A warm layer", "Binoculars if you have them", "A low-brightness flashlight"],
+      "bring": [
+        "A warm layer",
+        "Binoculars if you have them",
+        "A low-brightness flashlight"
+      ],
       "source": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828",
       "sourceName": "Timeanddate.com; checked against NASA",
       "image": "assets/explore/lunar-eclipse.webp",
@@ -50,7 +58,11 @@
       "location": "Spencer Smith Park",
       "summary": "Four days of rib teams, music and fundraising on Burlington’s waterfront.",
       "details": "The festival runs 11 a.m. to 11 p.m. Friday through Sunday and 11 a.m. to 7 p.m. Monday. Food and drinks cost extra after admission.",
-      "bring": ["A payment card or cash", "Water", "A plan for transit or parking"],
+      "bring": [
+        "A payment card or cash",
+        "Water",
+        "A plan for transit or parking"
+      ],
       "source": "https://canadaslargestribfest.com/",
       "sourceName": "Canada’s Largest Ribfest",
       "image": "assets/home/ribs.webp",
@@ -68,7 +80,11 @@
       "location": "James Street North, Hamilton",
       "summary": "A free weekend of music, art and street programming about 20 minutes from Burlington.",
       "details": "This is a nearby Hamilton pick, not a Burlington event. Check the official schedule before leaving because set times and road closures can change.",
-      "bring": ["Comfortable shoes", "A transit or parking plan", "A charged phone"],
+      "bring": [
+        "Comfortable shoes",
+        "A transit or parking plan",
+        "A charged phone"
+      ],
       "source": "https://supercrawl.ca/2026/",
       "sourceName": "Supercrawl",
       "visualText": "NEARBY",
@@ -84,7 +100,11 @@
       "location": "Hendrie Park, Royal Botanical Gardens",
       "summary": "An outdoor fall concert in the garden. General admission doors open at 5:30 p.m.",
       "details": "General admission seating is on the turf and chairs are not supplied. The event is outdoors and may be postponed, rescheduled or cancelled for weather.",
-      "bring": ["A lawn chair", "A blanket or cushion", "A warm layer"],
+      "bring": [
+        "A lawn chair",
+        "A blanket or cushion",
+        "A warm layer"
+      ],
       "source": "https://secure.rbg.ca/10191",
       "sourceName": "Royal Botanical Gardens",
       "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rock%20Gardens.JPG?width=1280",
@@ -102,7 +122,11 @@
       "location": "Longmoor Park",
       "summary": "BurlingtonGreen and City forestry staff are planning a community planting morning.",
       "details": "The organizers plan to plant more than 500 native trees. Space is limited and registration was not yet open when this listing was checked.",
-      "bring": ["Closed-toe shoes", "Work gloves", "Water and weather-ready clothing"],
+      "bring": [
+        "Closed-toe shoes",
+        "Work gloves",
+        "Water and weather-ready clothing"
+      ],
       "source": "https://www.burlingtongreen.org/events/green-up-community-tree-planting-event/",
       "sourceName": "BurlingtonGreen",
       "image": "assets/explore/community-cleanup.webp",
@@ -123,11 +147,24 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Downtown",
-      "tags": ["sunset", "date", "quick"],
+      "tags": [
+        "sunset",
+        "date",
+        "quick"
+      ],
       "image": "assets/explore/brant-street-pier.webp",
       "imageAlt": "Brant Street Pier at sunset",
       "credit": "Burlington News",
-      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/brant-street-pier.aspx"
+      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/brant-street-pier.aspx",
+      "nightAppropriate": "dusk",
+      "requiresDaylight": false,
+      "isolated": false,
+      "wellLit": true,
+      "staffed": false,
+      "weatherSensitivity": "high",
+      "season": "warm",
+      "estimatedDuration": "45 min",
+      "quality": 4
     },
     {
       "id": "farmers-market",
@@ -139,10 +176,34 @@
       "indoorOutdoor": "outdoor",
       "cost": "paid",
       "neighbourhood": "Central",
-      "tags": ["market", "event", "weekend", "family"],
+      "tags": [
+        "market",
+        "event",
+        "weekend",
+        "family"
+      ],
       "image": "assets/explore/farmers-market.webp",
       "imageAlt": "Produce at a Burlington farmers market",
-      "url": "https://www.burlingtonlionsclub.ca/burlington-farmers-market"
+      "url": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
+      "requiresDaylight": true,
+      "isolated": false,
+      "staffed": true,
+      "publicEvent": true,
+      "weatherSensitivity": "medium",
+      "season": "warm",
+      "openHours": [
+        {
+          "days": [
+            3,
+            5,
+            6
+          ],
+          "open": "08:00",
+          "close": "14:00"
+        }
+      ],
+      "estimatedDuration": "60 min",
+      "quality": 4
     },
     {
       "id": "rbg-walk",
@@ -154,11 +215,37 @@
       "indoorOutdoor": "outdoor",
       "cost": "paid",
       "neighbourhood": "North Shore",
-      "tags": ["trail", "family", "date"],
+      "tags": [
+        "trail",
+        "family",
+        "date"
+      ],
       "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rock%20Gardens.JPG?width=1280",
       "imageAlt": "Rock Garden at Royal Botanical Gardens",
       "credit": "Nhl4hamilton via Wikimedia Commons · public domain",
-      "url": "https://www.rbg.ca/"
+      "url": "https://www.rbg.ca/",
+      "requiresDaylight": true,
+      "isolated": false,
+      "staffed": true,
+      "weatherSensitivity": "high",
+      "season": "all",
+      "openHours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "10:00",
+          "close": "17:00"
+        }
+      ],
+      "estimatedDuration": "90 min",
+      "quality": 4
     },
     {
       "id": "kerncliff-boardwalk",
@@ -170,12 +257,22 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Aldershot",
-      "tags": ["trail", "quick"],
+      "tags": [
+        "trail",
+        "quick"
+      ],
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated Burlington landscape collage",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/kerncliff-park.aspx"
+      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/kerncliff-park.aspx",
+      "requiresDaylight": true,
+      "isolated": true,
+      "staffed": false,
+      "weatherSensitivity": "high",
+      "season": "all",
+      "estimatedDuration": "45 min",
+      "quality": 3
     },
     {
       "id": "mount-nemo-lookout",
@@ -187,12 +284,37 @@
       "indoorOutdoor": "outdoor",
       "cost": "paid",
       "neighbourhood": "North Burlington",
-      "tags": ["trail", "date"],
+      "tags": [
+        "trail",
+        "date"
+      ],
       "image": "assets/explore/night-sky-mount-nemo.webp",
       "imageAlt": "Night sky above the Burlington escarpment",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://www.conservationhalton.ca/parks/mount-nemo/"
+      "url": "https://www.conservationhalton.ca/parks/mount-nemo/",
+      "requiresDaylight": true,
+      "isolated": true,
+      "staffed": true,
+      "weatherSensitivity": "high",
+      "season": "all",
+      "openHours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "08:30",
+          "close": "19:00"
+        }
+      ],
+      "estimatedDuration": "75 min",
+      "quality": 4
     },
     {
       "id": "beachway-walk",
@@ -204,11 +326,21 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Beachway",
-      "tags": ["quick", "family"],
+      "tags": [
+        "quick",
+        "family"
+      ],
       "image": "assets/home/skyway.webp",
       "imageAlt": "Burlington Skyway and shoreline",
       "credit": "Burlington News file photo",
-      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/beachway-park.aspx"
+      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/beachway-park.aspx",
+      "requiresDaylight": true,
+      "isolated": true,
+      "staffed": false,
+      "weatherSensitivity": "high",
+      "season": "all",
+      "estimatedDuration": "40 min",
+      "quality": 3
     },
     {
       "id": "joseph-brant-museum",
@@ -220,12 +352,37 @@
       "indoorOutdoor": "indoor",
       "cost": "paid",
       "neighbourhood": "Downtown",
-      "tags": ["rain", "family", "museum"],
+      "tags": [
+        "rain",
+        "family",
+        "museum"
+      ],
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated Burlington history collage",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://museumsofburlington.ca/joseph-brant-museum/"
+      "url": "https://museumsofburlington.ca/joseph-brant-museum/",
+      "requiresDaylight": false,
+      "isolated": false,
+      "staffed": true,
+      "weatherSensitivity": "low",
+      "season": "all",
+      "openHours": [
+        {
+          "days": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "12:00",
+          "close": "16:30"
+        }
+      ],
+      "estimatedDuration": "60 min",
+      "quality": 4
     },
     {
       "id": "ireland-house",
@@ -237,12 +394,37 @@
       "indoorOutdoor": "indoor",
       "cost": "paid",
       "neighbourhood": "East Burlington",
-      "tags": ["rain", "museum", "family"],
+      "tags": [
+        "rain",
+        "museum",
+        "family"
+      ],
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated Burlington history collage",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://museumsofburlington.ca/ireland-house-museum/"
+      "url": "https://museumsofburlington.ca/ireland-house-museum/",
+      "requiresDaylight": false,
+      "isolated": false,
+      "staffed": true,
+      "weatherSensitivity": "low",
+      "season": "all",
+      "openHours": [
+        {
+          "days": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "12:00",
+          "close": "16:30"
+        }
+      ],
+      "estimatedDuration": "60 min",
+      "quality": 3
     },
     {
       "id": "canal-lift",
@@ -254,11 +436,22 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Beachway",
-      "tags": ["quick", "family"],
+      "tags": [
+        "quick",
+        "family"
+      ],
       "image": "assets/home/skyway-reader.webp",
       "imageAlt": "The Burlington Skyway across the bay",
       "credit": "Burlington News file photo",
-      "url": "https://tc.canada.ca/en/ontario-region/burlington-canal-lift-bridge"
+      "url": "https://tc.canada.ca/en/ontario-region/burlington-canal-lift-bridge",
+      "requiresDaylight": true,
+      "isolated": false,
+      "wellLit": true,
+      "staffed": false,
+      "weatherSensitivity": "high",
+      "season": "all",
+      "estimatedDuration": "30 min",
+      "quality": 3
     },
     {
       "id": "public-art-three",
@@ -270,12 +463,25 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Downtown",
-      "tags": ["quick", "date", "downtown"],
+      "tags": [
+        "quick",
+        "date",
+        "downtown"
+      ],
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated collage of Burlington landmarks",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx"
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx",
+      "nightAppropriate": true,
+      "requiresDaylight": false,
+      "isolated": false,
+      "wellLit": true,
+      "staffed": false,
+      "weatherSensitivity": "medium",
+      "season": "all",
+      "estimatedDuration": "30 min",
+      "quality": 3
     },
     {
       "id": "fishway-visit",
@@ -287,11 +493,21 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Harbour",
-      "tags": ["trail", "family"],
+      "tags": [
+        "trail",
+        "family"
+      ],
       "image": "assets/home/fishway.webp",
       "imageAlt": "Cootes Paradise Fishway",
       "credit": "Jeff Hitchcock via Wikimedia Commons · CC BY 2.0",
-      "url": "https://www.rbg.ca/gardens-trails/nature-sanctuaries/cootes-paradise/"
+      "url": "https://www.rbg.ca/gardens-trails/nature-sanctuaries/cootes-paradise/",
+      "requiresDaylight": true,
+      "isolated": true,
+      "staffed": true,
+      "weatherSensitivity": "high",
+      "season": "warm",
+      "estimatedDuration": "45 min",
+      "quality": 3
     },
     {
       "id": "burloak-path",
@@ -303,12 +519,23 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "East Burlington",
-      "tags": ["sunset", "date", "quick"],
+      "tags": [
+        "sunset",
+        "date",
+        "quick"
+      ],
       "image": "assets/explore/moonlit-lake-ontario.webp",
       "imageAlt": "Moonlight over Lake Ontario",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/burloak-waterfront-park.aspx"
+      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/burloak-waterfront-park.aspx",
+      "requiresDaylight": true,
+      "isolated": true,
+      "staffed": false,
+      "weatherSensitivity": "high",
+      "season": "all",
+      "estimatedDuration": "40 min",
+      "quality": 3
     },
     {
       "id": "jcs-bagels",
@@ -320,12 +547,39 @@
       "indoorOutdoor": "indoor",
       "cost": "paid",
       "neighbourhood": "Central",
-      "tags": ["coffee", "food", "rain", "quick"],
+      "tags": [
+        "coffee",
+        "food",
+        "rain",
+        "quick"
+      ],
       "image": "assets/editorial/explore-collage.webp",
       "imageAlt": "Illustrated Burlington food collage",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://jcshotbagels.com/"
+      "url": "https://jcshotbagels.com/",
+      "requiresDaylight": false,
+      "isolated": false,
+      "staffed": true,
+      "weatherSensitivity": "low",
+      "season": "all",
+      "openHours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "07:00",
+          "close": "15:00"
+        }
+      ],
+      "estimatedDuration": "25 min",
+      "quality": 4
     },
     {
       "id": "moon-over-lake-ontario",
@@ -337,29 +591,54 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Downtown",
-      "tags": ["night", "date", "sunset"],
+      "tags": [
+        "night",
+        "date",
+        "sunset"
+      ],
       "image": "assets/explore/moonlit-lake-ontario.webp",
       "imageAlt": "Moonlight over Lake Ontario",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://www.timeanddate.com/moon/canada/burlington"
+      "url": "https://www.timeanddate.com/moon/canada/burlington",
+      "nightAppropriate": true,
+      "requiresDaylight": false,
+      "isolated": false,
+      "wellLit": true,
+      "staffed": false,
+      "weatherSensitivity": "high",
+      "season": "all",
+      "estimatedDuration": "20 min",
+      "quality": 3
     },
     {
       "id": "cassiopeia-north-burlington",
-      "title": "Find Cassiopeia above north Burlington",
-      "description": "Look northeast after dark for the tilted W.",
-      "placeName": "Mount Nemo Conservation Area",
-      "mapsQuery": "Mount Nemo Conservation Area, Burlington, Ontario",
+      "title": "Find Cassiopeia after dark",
+      "description": "Look northeast from Spencer Smith Park for the tilted W.",
+      "placeName": "Spencer Smith Park",
+      "mapsQuery": "Spencer Smith Park, Burlington, Ontario",
       "category": "night",
       "indoorOutdoor": "outdoor",
       "cost": "free",
-      "neighbourhood": "North Burlington",
-      "tags": ["night", "stargazing"],
+      "neighbourhood": "Downtown",
+      "tags": [
+        "night",
+        "stargazing"
+      ],
       "image": "assets/explore/night-sky-mount-nemo.webp",
       "imageAlt": "Starry sky above the escarpment",
       "credit": "Burlington News illustration",
       "illustration": true,
-      "url": "https://stellarium-web.org/"
+      "url": "https://www.burlington.ca/en/parks-facilities-and-rentals/spencer-smith-park.aspx",
+      "nightAppropriate": true,
+      "requiresDaylight": false,
+      "isolated": false,
+      "wellLit": true,
+      "staffed": false,
+      "weatherSensitivity": "medium",
+      "season": "all",
+      "estimatedDuration": "20 min",
+      "quality": 3
     },
     {
       "id": "eclipse-tonight",
@@ -371,11 +650,104 @@
       "indoorOutdoor": "outdoor",
       "cost": "free",
       "neighbourhood": "Downtown",
-      "tags": ["night", "event"],
+      "tags": [
+        "night",
+        "event"
+      ],
       "activeUntil": "2026-08-28",
       "image": "assets/explore/lunar-eclipse.webp",
       "imageAlt": "Illustration of a partial lunar eclipse",
-      "url": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828"
+      "url": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828",
+      "nightAppropriate": true,
+      "requiresDaylight": false,
+      "isolated": false,
+      "wellLit": true,
+      "staffed": false,
+      "publicEvent": true,
+      "dateSpecific": true,
+      "eventId": "partial-lunar-eclipse-2026",
+      "weatherSensitivity": "medium",
+      "season": "all",
+      "estimatedDuration": "90 min",
+      "quality": 5
+    },
+    {
+      "id": "cineplex-mapleview",
+      "title": "Catch a movie at Mapleview",
+      "description": "An easy indoor plan if you want to stay out after dark.",
+      "placeName": "Cineplex Cinemas Burlington",
+      "mapsQuery": "Cineplex Cinemas Burlington, Mapleview Centre, Burlington, Ontario",
+      "category": "indoor",
+      "indoorOutdoor": "indoor",
+      "cost": "paid",
+      "costLevel": "paid",
+      "neighbourhood": "South Burlington",
+      "tags": [
+        "night",
+        "date",
+        "indoor"
+      ],
+      "staffed": true,
+      "nightAppropriate": true,
+      "requiresDaylight": false,
+      "isolated": false,
+      "wellLit": true,
+      "weatherSensitivity": "low",
+      "season": "all",
+      "openHours": [
+        {
+          "days": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "open": "11:00",
+          "close": "23:30"
+        }
+      ],
+      "estimatedDuration": "2 hours",
+      "quality": 4,
+      "image": "assets/editorial/explore-collage.webp",
+      "imageAlt": "Burlington indoor night out",
+      "credit": "Graphic: Burlington News",
+      "illustration": true,
+      "url": "https://www.cineplex.com/theatre/cineplex-cinemas-burlington"
+    },
+    {
+      "id": "village-square-evening",
+      "title": "Walk Village Square after dinner",
+      "description": "A short, well-lit downtown loop on Brant and the square.",
+      "placeName": "Village Square",
+      "mapsQuery": "Village Square, Burlington, Ontario",
+      "category": "downtown",
+      "indoorOutdoor": "outdoor",
+      "cost": "free",
+      "costLevel": "free",
+      "neighbourhood": "Downtown",
+      "tags": [
+        "downtown",
+        "quick",
+        "night",
+        "date"
+      ],
+      "staffed": false,
+      "nightAppropriate": true,
+      "requiresDaylight": false,
+      "isolated": false,
+      "wellLit": true,
+      "weatherSensitivity": "medium",
+      "season": "all",
+      "estimatedDuration": "25 min",
+      "quality": 3,
+      "image": "assets/editorial/explore-collage.webp",
+      "imageAlt": "Downtown Burlington public space",
+      "credit": "Graphic: Burlington News",
+      "illustration": true,
+      "url": "https://www.burlington.ca/en/downtown-burlington/village-square.aspx"
     }
   ]
 }
