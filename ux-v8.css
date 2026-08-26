@@ -4,7 +4,7 @@
 .desktop-primary-nav{display:flex;align-items:center;gap:27px;margin-left:auto}.desktop-primary-nav a{color:var(--ink)!important;text-decoration:none!important;font-size:14px;font-weight:650;letter-spacing:-.01em}.desktop-primary-nav a:hover{color:var(--accent)!important}.header-controls{margin-left:0!important}.header .wrap.header-inner{max-width:1180px;margin-inline:auto;width:100%}
 
 /* Keep the real brand mark crisp and consistent on every page. */
-.brand-mark-only{flex:0 0 auto!important;background:url('logo-mark.svg') center/contain no-repeat!important;border-radius:11px!important}.brand-mark-only:hover{filter:brightness(1.05)}
+.brand-mark-only{flex:0 0 auto!important;background:url('/assets/brand/bn-mark.png') center/contain no-repeat!important;border-radius:11px!important}.brand-mark-only:hover{filter:brightness(1.05)}
 
 /* Simple/static pages share one width and a calm editorial rhythm. */
 .content-shell,.simple-page .page-shell,.updates-page,.ward-shell{width:min(100% - 40px,980px)!important;margin-inline:auto!important}.simple-page main,.content-shell{padding-top:48px!important}.simple-page .page-lead,.content-lead{max-width:720px!important;font-size:16px!important;line-height:1.55!important}.simple-page .policy-card{box-shadow:none!important}.simple-page .policy-card h2{font-size:22px!important}.simple-page .policy-card p,.simple-page .policy-card li{font-size:14px!important;line-height:1.55!important}

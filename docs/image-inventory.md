@@ -5,7 +5,7 @@ Audit date: 2026-08-26. Rights notes are editorial, not legal advice.
 | Slug | Hero | Type | Rights | Alt / credit | Card / OG | Status |
 |---|---|---|---|---|---|---|
 | how-bad-is-burlington-crime | `/assets/editorial/halton-police-dusk.webp` | generic public-safety photo | keep; not a specific Burlington crime scene | Halton police cruiser at dusk | homepage hero uses dusk photo, not the CSI chart | strong |
-| burlington-data-centre-not-ai | `/assets/stories/data-centre/3110-south-service-road-data-centre.webp` | AI/illustrative site concept | labelled illustrative; not a final rendering | site context / illustrative concept | OG JPEG in `assets/stories/data-centre/` | strong; old SVG is secondary only |
+| burlington-data-centre-not-ai | `/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp` | AI/illustrative site concept | labelled illustrative; not a final rendering | site context / illustrative concept | OG JPEG in `assets/stories/data-centre/` | strong; old SVG is secondary only |
 | nostalgia-games-cafe-closure | `/assets/editorial/nostalgia-cafe-closure.svg` | original illustration | Burlington News | cafe closure illustration | same | keep as illustration |
 | skyway-bridge-story | `/assets/home/skyway-reader.webp` | photograph | credited in home-surface | Skyway across Burlington Bay | same | strong |
 | ribfest-2026 | `/assets/home/ribs.webp` | photograph | Wikimedia CC BY-SA | ribs from a pit | same | strong; generic food, not a named Burlington pit |

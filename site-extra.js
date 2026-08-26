@@ -91,8 +91,24 @@
     if (banner) banner.innerHTML = '<div class="wrap"><strong>2026 election</strong><span class="banner-sep" aria-hidden="true"> · </span><span>Voting starts Oct. 14</span><span class="banner-sep" aria-hidden="true"> · </span><span>Election Day Oct. 26</span></div>';
   }
 
+  const BRAND_ICON = '/assets/brand/favicon-32x32.png';
+  const BRAND_TOUCH = '/assets/brand/apple-touch-icon.png';
+  const BRAND_MARK = '/logo-mark.png?v=20260826b';
+
   function brandMarkup() {
-    return '<img class="news-brand-logo" src="/logo-mark.png?v=20260825a" alt="">';
+    return `<img class="news-brand-logo" src="${BRAND_MARK}" alt="">`;
+  }
+
+  function ensureHeadLink(rel, href, attrs) {
+    let node = document.querySelector(`link[rel="${rel}"]${attrs?.sizes ? `[sizes="${attrs.sizes}"]` : ''}`);
+    if (!node) {
+      node = document.createElement('link');
+      node.rel = rel;
+      document.head.appendChild(node);
+    }
+    node.href = href;
+    Object.entries(attrs || {}).forEach(([key, value]) => node.setAttribute(key, value));
+    return node;
   }
 
   function applyBrand() {
@@ -102,20 +118,18 @@
       brand.innerHTML = brandMarkup();
       brand.setAttribute('aria-label', 'Burlington News home');
     });
-    let icon = document.querySelector('link[rel="icon"]');
-    if (!icon) {
-      icon = document.createElement('link');
-      icon.rel = 'icon';
-      document.head.appendChild(icon);
+    ensureHeadLink('icon', BRAND_ICON, { type: 'image/png', sizes: '32x32' });
+    ensureHeadLink('icon', '/assets/brand/favicon-16x16.png', { type: 'image/png', sizes: '16x16' });
+    ensureHeadLink('shortcut icon', BRAND_ICON);
+    ensureHeadLink('apple-touch-icon', BRAND_TOUCH);
+    ensureHeadLink('manifest', '/site.webmanifest');
+    let theme = document.querySelector('meta[name="theme-color"]');
+    if (!theme) {
+      theme = document.createElement('meta');
+      theme.name = 'theme-color';
+      document.head.appendChild(theme);
     }
-    icon.href = '/logo-mark.png?v=20260825a';
-    let touch = document.querySelector('link[rel="apple-touch-icon"]');
-    if (!touch) {
-      touch = document.createElement('link');
-      touch.rel = 'apple-touch-icon';
-      document.head.appendChild(touch);
-    }
-    touch.href = '/logo-mark.png?v=20260825a';
+    theme.content = '#071b35';
   }
 
   function addSeo() {
@@ -164,6 +178,7 @@
         '@type': 'NewsMediaOrganization',
         name: 'Burlington News',
         url: 'https://burlingtonnews.ca/',
+        logo: { '@type': 'ImageObject', url: 'https://burlingtonnews.ca/assets/brand/android-chrome-512x512.png' },
         description: 'Independent Burlington, Ontario news, local discoveries and municipal election coverage.',
         inLanguage: 'en-CA',
         areaServed: { '@type': 'City', name: 'Burlington, Ontario, Canada' }

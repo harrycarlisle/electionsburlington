@@ -3,11 +3,11 @@
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const fetchJson=async url=>{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(url);return r.json()};
   const home=()=>location.pathname==='/'||location.pathname==='/index.html';
-  const brandMarkup='<img class="news-brand-logo" src="/logo-mark.png?v=20260824z4" alt="">';
+  const brandMarkup='<img class="news-brand-logo" src="/logo-mark.png?v=20260826b" alt="">';
 
   function restoreBrand(){
     document.querySelectorAll('.header .brand').forEach(b=>{if(!b.classList.contains('brand-mark-only')||!b.querySelector('.news-brand-logo')){b.className='brand news-brand brand-mark-only';b.href='/';b.innerHTML=brandMarkup;b.setAttribute('aria-label','Burlington News home')}});
-    let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='/logo-mark.png?v=20260824z4';
+    let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='/logo-mark.png?v=20260826b';
     const path=location.pathname.replace(/\/$/,'');
     const titles={
       '':'Burlington News | Local news, events and election coverage','/index.html':'Burlington News | Local news, events and election coverage',
