@@ -52,8 +52,9 @@
 .header-weather .weather-chip-condition{font:650 12px/1 Arial,sans-serif;color:var(--muted);font-style:normal}
 .header-weather .weather-alert{margin-left:2px}
 .masthead,.publication-shell .header-inner,.publication-shell .header-controls{flex-wrap:nowrap}
-.publication-shell .header-controls .header-weather{order:0}
-.publication-shell .header-controls .header-search{order:1;max-width:280px!important}
+.publication-shell .header-controls .header-weather{order:1}
+.publication-shell .header-controls .header-search{order:2;max-width:280px!important}
+.publication-shell .header-controls .menu-icon-button{order:3}
 .publication-shell .header-search,.header-search{
   position:relative;display:flex;align-items:center;height:46px;width:min(100%,360px);
   border:1px solid var(--line);border-radius:12px;background:var(--card,#fff)
@@ -375,6 +376,9 @@ html[data-theme="dark"] .publication-shell .card.profile{
 }
 html[data-theme="dark"] .issue-toggle strong,
 html[data-theme="dark"] .questions-toggle,
+#profilePanel .profile-head{display:grid!important;grid-template-columns:96px minmax(0,1fr)!important;gap:14px!important;align-items:center!important}
+#profilePanel .profile-head h2{display:block!important}
+#profilePanel .profile-photo,#profilePanel .photo-placeholder{display:block!important;width:88px!important;height:88px!important;object-fit:cover!important}
 html[data-theme="dark"] .profile-head h2,
 html[data-theme="dark"] .issues-stack>h3,
 html[data-theme="dark"] .experience-box h3{color:#edf4f8}
