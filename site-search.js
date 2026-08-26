@@ -25,7 +25,7 @@
     {title:'Explore Burlington',url:'/explore/',section:'Explore',keywords:'this weekend bored passport calendar places free farmers market date night things to do'},
     {title:'Burlington food spots worth trying',url:'/guides/burlington-food-spots.html',section:'Food',keywords:'best food tacos burger sandwich banh mi coffee restaurants'},
     {title:'Burlington 2026 Election Guide',url:'/elections/',section:'Election',keywords:'vote mayor candidates ward ballot'},
-    {title:'A Burlington team just went 0–24',url:'/stories/burlington-hotspots-0-24/',section:'Sports',keywords:'hotspots ultimate 0-24 burlington ultimate club'},
+    {title:'Toss Bosses went 0–24. Why do they keep coming back?',url:'/stories/burlington-hotspots-0-24/',section:'Sports',keywords:'toss bosses ultimate 0-24 burlington ultimate club'},
     {title:'Burlington sports',url:'/sports/',section:'Sports',keywords:'soccer hockey lacrosse ultimate ringette golf'},
     {title:'Puzzles about Burlington',url:'/games/',section:'Puzzles',keywords:'quiz puzzle trivia swipe games'},
     {title:'Give feedback',url:'/feedback/',section:'About',keywords:'correction error accessibility feedback'},

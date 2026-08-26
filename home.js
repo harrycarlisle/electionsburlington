@@ -50,7 +50,7 @@
     ['millcroft', /millcroft/i],
     ['skyway', /skyway|tunnels/i],
     ['election', /ward|vote|candidate|ballot|mayor/i],
-    ['sports', /sports|0.24|hotspots|lockers/i],
+    ['sports', /sports|0.24|toss bosses|hotspots|lockers/i],
     ['wildlife', /salamander|fishway|marsh|rabies/i]
   ];
   const categoryLabel = item => {

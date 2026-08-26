@@ -151,7 +151,7 @@
       'skyway-bridge-story': ['/assets/home/skyway-reader.webp', 'Burlington Bay James N. Allan Skyway', 'Photo credit in source story'],
       'upper-middle-road-construction-2026': ['/assets/explore/burlington-orientation-map.svg', 'Orientation map of Burlington', 'Burlington News map'],
       'burlington-data-centre-not-ai': ['/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp', 'Illustrative concept and site context for the proposed data centre at 3110 South Service Road, Burlington. This is not a rendering of the final building.', 'Illustrative site concept for 3110 South Service Road. This is not a rendering of the final building.'],
-      'burlington-hotspots-0-24': ['/assets/sports/ultimate-waterfront.webp', 'Editorial illustration of a waterfront field sport near the Skyway', 'Burlington News illustration. This is not a photo of a Hotspots game.'],
+      'burlington-hotspots-0-24': ['/assets/sports/ultimate-waterfront.webp', 'Editorial illustration of a waterfront field sport near the Skyway', 'Burlington News illustration'],
       'how-bad-is-burlington-crime': ['/assets/stories/public-safety/halton-police-crime-burlington.webp', 'Illustrative Burlington News visual of a Halton Regional Police vehicle behind crime-scene tape.', 'Burlington News visual'],
       'nostalgia-games-cafe-closure': ['/assets/editorial/nostalgia-cafe-closure.svg', 'Editorial illustration of a closed board-game cafe', 'Burlington News illustration']
     };
@@ -310,7 +310,14 @@
     const section = document.createElement('section');
     section.className = 'article-related';
     const storyUrl = item => String(item.url || '').replace(/^articles\/(.+)\.html$/, '/stories/$1/').replace(/^(?!https?:|\/)/, '/');
-    section.innerHTML = `<div class="article-related-head"><h2>You might also like</h2><a href="/news/">All stories →</a></div><div class="article-related-grid">${picks.map(item => `<a class="article-related-card" href="${esc(storyUrl(item))}"><img src="/${esc(item.image || 'assets/editorial/home-share.webp')}" alt="${esc(item.alt || item.headline || 'Burlington News')}" loading="lazy"><span>${esc(item.label || 'Burlington')}</span><strong>${esc(item.headline)}</strong></a>`).join('')}</div>`;
+    const relatedImage = item => {
+      const raw = item.image || 'assets/editorial/home-share.webp';
+      if (/crime/i.test(`${item.id || ''} ${item.headline || ''}`) && /\.svg$|chart|comparison|halton-police-dusk/i.test(raw)) {
+        return 'assets/stories/public-safety/halton-police-crime-burlington.webp';
+      }
+      return raw;
+    };
+    section.innerHTML = `<div class="article-related-head"><h2>You might also like</h2><a href="/news/">All stories →</a></div><div class="article-related-grid">${picks.map(item => `<a class="article-related-card" href="${esc(storyUrl(item))}"><img src="/${esc(relatedImage(item))}" alt="${esc(item.alt || item.headline || 'Burlington News')}" loading="lazy"><span>${esc(item.label || 'Burlington')}</span><strong>${esc(item.headline)}</strong></a>`).join('')}</div>`;
     section.addEventListener('click', event => {
       const card = event.target.closest('.article-related-card');
       if (card) track('related_click', {href: card.getAttribute('href') || ''});

@@ -499,8 +499,8 @@
       "surfaces": [
         "sports"
       ],
-      "headline": "A Burlington team just went 0–24. How does that even happen?",
-      "deck": "Zero wins. Twenty-four losses. The next game is not a chance to repair that record.",
+      "headline": "Toss Bosses went 0–24. Why do they keep coming back?",
+      "deck": "Toss Bosses have lost 24 straight league games, but the record does not explain why they still show up.",
       "label": "Sports",
       "labelEssential": true,
       "url": "articles/burlington-hotspots-0-24.html",
@@ -509,7 +509,7 @@
       "credit": "Burlington News illustration",
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
-      "storyGoal": "Explain an unusually extreme local rec-league record without treating 0-24 as a joke or rewriting it as 24-0.",
+      "storyGoal": "Explain how Toss Bosses went 0-24 in Burlington Ultimate Club play and why a rec team still shows up, without inventing scores or mocking the players.",
       "verificationTier": "user-verified standings plus club context",
       "signals": {
         "interest": 2.3,
@@ -1029,8 +1029,8 @@
       "surfaces": [
         "sports"
       ],
-      "headline": "A Burlington team just went 0–24. How does that even happen?",
-      "deck": "Zero wins. Twenty-four losses. The next game is not a chance to repair that record.",
+      "headline": "Toss Bosses went 0–24. Why do they keep coming back?",
+      "deck": "Toss Bosses have lost 24 straight league games, but the record does not explain why they still show up.",
       "label": "Sports",
       "labelEssential": true,
       "url": "articles/burlington-hotspots-0-24.html",
@@ -1039,7 +1039,7 @@
       "credit": "Burlington News illustration",
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
-      "storyGoal": "Explain an unusually extreme local rec-league record without treating 0-24 as a joke or rewriting it as 24-0.",
+      "storyGoal": "Explain how Toss Bosses went 0-24 in Burlington Ultimate Club play and why a rec team still shows up, without inventing scores or mocking the players.",
       "verificationTier": "user-verified standings plus club context",
       "signals": {
         "interest": 2.3,

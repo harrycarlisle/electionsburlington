@@ -46,7 +46,7 @@ Use a broad mix:
 A social post can begin reporting but does not become proof by itself.
 
 ## Example: local sports human story
-A team approaching 0-24 can be a strong Burlington story even if it is not a conventional breaking-news event. It scores because it has:
+A 0–24 sports result (Toss Bosses, two winless regular seasons) can remain a feature even if it is not breaking news. It scores because it has:
 - a simple human goal (can they avoid a winless season?)
 - familiarity (local league/team/community)
 - novelty (0-24 is unusually extreme)

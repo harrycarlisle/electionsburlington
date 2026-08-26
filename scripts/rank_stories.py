@@ -142,7 +142,7 @@ SUBJECT_PATTERNS = (
     ("millcroft", r"millcroft"),
     ("skyway", r"skyway|tunnels"),
     ("election", r"ward|vote|candidate|ballot|mayor"),
-    ("sports", r"sports|0.24|hotspots|lockers"),
+    ("sports", r"sports|0.24|toss bosses|hotspots|lockers"),
     ("wildlife", r"salamander|fishway|marsh|rabies"),
     ("road-construction", r"upper middle|road closure|construction"),
     ("events", r"ribfest|festival"),

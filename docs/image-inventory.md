@@ -2,41 +2,59 @@
 
 Audit date: 2026-08-26. Rights notes are editorial, not legal advice.
 
-| Slug | Hero | Type | Rights | Alt / credit | Card / OG | Status |
-|---|---|---|---|---|---|---|
-| how-bad-is-burlington-crime | `/assets/stories/public-safety/halton-police-crime-burlington.webp` | illustrative public-safety photo | keep; not a photograph of a specific incident | Burlington News visual · Halton police SUV facing camera | homepage, article, archive, OG, schema | strong |
-| burlington-data-centre-not-ai | `/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp` | AI/illustrative site concept | labelled illustrative; not a final rendering | site context / illustrative concept | OG JPEG in `assets/stories/data-centre/` | strong; old SVG is secondary only |
-| nostalgia-games-cafe-closure | `/assets/editorial/nostalgia-cafe-closure.svg` | original illustration | Burlington News | cafe closure illustration | same | keep as illustration |
-| skyway-bridge-story | `/assets/home/skyway-reader.webp` | photograph | credited in home-surface | Skyway across Burlington Bay | same | strong |
-| ribfest-2026 | `/assets/home/ribs.webp` | photograph | Wikimedia CC BY-SA | ribs from a pit | same | strong; generic food, not a named Burlington pit |
-| ontario-student-rights-school | `/assets/home/school-rights.webp` | illustration | Burlington News | students at an Ontario school | same | generic school |
-| 730-brant-vacant-building | `/assets/editorial/730-brant-share.webp` | illustration | Burlington News | 730 Brant Street illustration | same | keep; labelled illustration |
-| back-to-school-2026 | `/assets/home/school-bus.webp` | photograph/illustration | source in story | yellow school bus | same | generic |
-| burlington-rabies-bat-2026 | `/assets/explore/night-sky-mount-nemo.webp` | photograph | reused night sky | not a bat photo | weak reuse | needs a dedicated visual later |
-| millcroft-phase-2-138-homes | orientation map SVG | diagram | Burlington News | not the golf-course site | weak / reused map | keep map until a site photo exists |
-| nelson-quarry-tribunal-decision | night-sky Mount Nemo | photograph | reused | escarpment area | duplicate of rabies card | weak reuse |
-| upper-middle-road-construction-2026 | orientation map SVG | diagram | reused | not the corridor | weak | needs a road/construction visual |
-| fishway-26000-fish | `/assets/home/fishway.webp` | photograph | source in story | Cootes Paradise Fishway | same | keep |
-| salamander-road-closure | `/assets/home/salamander.webp` | photograph | source in story | Jefferson salamander | same | keep |
-| burlington-hotspots-0-24 | `/assets/sports/ultimate-waterfront.webp` | editorial illustration | Burlington News | not a Hotspots game photo | sports lead / OG | keep as illustration |
-| elections candidates | `/assets/candidates/mw.webp`, `lk.webp`, `rn.webp`, `yr.webp` | real event/portrait photos | existing repo assets | named candidate | Keith Demoe has no verified photo | keep; do not invent portraits |
+Decision values: KEEP · REPLACE · MOVE INSIDE ARTICLE · SOURCE REAL PHOTO · CREATE EDITORIAL VISUAL
 
-## Keep
-- Forward-facing Halton police visual (`assets/stories/public-safety/halton-police-crime-burlington.webp`), Skyway reader, Ribfest ribs, data-centre aerial concept, Brant Street Pier (`assets/explore/brant-street-pier.webp`), farmers market, Mount Nemo night sky, sports illustrations clearly labelled as illustrations, candidate photos already in repo. Do not use the older rear-facing dusk SUV as the crime-story hero.
+| story | current image | type | quality | location accuracy | rights confidence | hero suitability | card suitability | decision |
+|---|---|---|---|---|---|---|---|---|
+| How bad is Burlington’s crime, really? | `/assets/stories/public-safety/halton-police-crime-burlington.webp` | Burlington News visual (forward-facing Halton police SUV, lights, crime-scene tape) | strong, crisp, works on 16:9 crop | suburban Halton/Burlington-plausible; not a named address | high (owned visual; not a documentary crime-scene photo) | strong | strong | KEEP |
+| Toss Bosses went 0–24 | `/assets/sports/ultimate-waterfront.webp` | editorial illustration (waterfront ultimate, Skyway in background) | serviceable; faceted/illustrated, not a real game photo | Burlington-coded via Skyway; not a Toss Bosses field | high (owned illustration) | acceptable | acceptable | KEEP (no rights-safe Toss Bosses photo in repo) |
+| Burlington’s board-game cafe closed | `/assets/editorial/nostalgia-cafe-closure.svg` | flat original illustration with baked-in “FINAL GAME” type | weak / placeholder-like | generic cafe table, not the actual Nostalgia Games Cafe | high (owned) | weak | weak | KEEP for now — SOURCE REAL PHOTO when a rights-safe exterior/interior exists |
+| Burlington’s proposed data centre | `/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp` | approved editorial site concept | strong | 3110 South Service Road context | high if kept labelled as concept, not a final rendering | strong | strong | KEEP |
+| Ontario nearly replaced the Skyway | hero `/assets/home/skyway.webp`; cards/OG `/assets/home/skyway-reader.webp` | real landmark photography | strong | accurate Skyway | high (Dave Lauretti, CC BY 2.0) | strong | strong | KEEP |
+| Ribfest turns 30 | `/assets/home/ribs.webp` | photograph | strong | generic pit, not a named Burlington booth | Wikimedia / credited | strong | strong | KEEP |
+| Can a teacher take your phone? | `/assets/home/school-rights.webp` | illustration | generic but clean | Ontario school bus, not a named Burlington school | owned | acceptable | acceptable | KEEP |
+| The dates families need before school starts | `/assets/home/school-bus.webp` | photograph/illustration | generic | generic school bus | source in story | acceptable | acceptable | KEEP |
+| 730 Brant sat empty | `/assets/editorial/730-brant-share.webp` | illustration | acceptable | labelled 730 Brant illustration | owned | acceptable | acceptable | KEEP |
+| A bat in Burlington tested positive for rabies | `/assets/explore/night-sky-mount-nemo.webp` | photograph | strong photo, wrong subject | escarpment night sky, not a bat / not the case site | reused explore asset | weak as story hero | weak reuse vs quarry card | SOURCE REAL PHOTO or CREATE EDITORIAL VISUAL later |
+| Nelson Quarry tribunal decision | `/assets/explore/night-sky-mount-nemo.webp` | photograph | strong photo, reused | Mount Nemo area is relevant; same file as rabies | reused explore asset | weak reuse | weak (twins the rabies card) | SOURCE REAL PHOTO of the quarry / escarpment later |
+| Millcroft Phase 2 | `/assets/explore/burlington-orientation-map.svg` | diagram | flat | city-scale map, not the golf-course site | owned | poor as hero | poor as card | KEEP map inside article if useful; SOURCE REAL PHOTO for hero/cards later |
+| Upper Middle Road construction | `/assets/explore/burlington-orientation-map.svg` | diagram | flat | city-scale map, not the corridor | owned | poor as hero | poor as card | KEEP map inside article if useful; SOURCE REAL PHOTO / CREATE EDITORIAL VISUAL of the road later |
+| What 26,503 fish revealed | `/assets/home/fishway.webp` | photograph | strong | Cootes Paradise Fishway | credited in story | strong | strong | KEEP |
+| Why Burlington closes a road for salamanders | `/assets/home/salamander.webp` | photograph | strong | species-correct | credited in story | strong | strong | KEEP |
+| Ward map changed | `/assets/editorial/burlington-wards-2026.svg` | diagram | clear, text-heavy | Burlington 2026 wards | owned | OK for a map story | weak on small cards | KEEP (map is the hook) |
+| Election field / candidates | `/assets/candidates/mw.webp`, `lk.webp`, `rn.webp`, `yr.webp` | real portraits | strong where present | named candidates | existing repo assets | n/a (guide) | strong | KEEP; do not invent a Keith Demoe portrait |
+| Crime CSI comparison chart | `/assets/editorial/halton-crime-comparison.svg` | chart | clear | Halton regional, not a Burlington street | owned | do not use as hero | do not use as card | MOVE INSIDE ARTICLE (already in-article only) |
+| Older rear-facing police SUV | `/assets/editorial/halton-police-dusk.webp` | older visual | unused as hero | n/a | owned | retired | retired | REPLACE everywhere — file retained but no live hero/card/OG refs |
+
+## This pass
+
+- Crime story: canonical path is `/assets/stories/public-safety/halton-police-crime-burlington.webp`. Credit: Burlington News visual. Old dusk SUV is remapped away in `home.js` and `article-modern.js`.
+- Toss Bosses: keep `/assets/sports/ultimate-waterfront.webp`. Caption: Burlington News illustration. Do not imply it depicts Toss Bosses.
+- Cafe: no rights-safe real photo of Nostalgia Games Cafe in the repo. The “FINAL GAME” SVG stays until a legal photo exists. Do not generate a fake cafe interior.
+
+## Keep (do not overwrite)
+
+- Forward-facing Halton police visual
+- Approved data-centre site concept
+- Skyway photography
+- Ribfest ribs
+- Fishway and salamander photos
+- Candidate photos already in the repo
+- Brant Street Pier / farmers market / Mount Nemo night sky as explore assets
 
 ## Do not use as documentary
+
+- Crime SUV as the scene of a specific incident
 - Data-centre concept as an approved building rendering
-- The crime-story police SUV as documentary photography of a specific incident
-- Ultimate waterfront illustration as a Hotspots game
+- Ultimate waterfront illustration as a Toss Bosses game
 - Orientation map as a stand-in for every development story
-- Fake City Hall / fake pier / invented candidate faces
+- Cafe “FINAL GAME” graphic as a photo of the closed shop
 
-## Rejected / not added this pass
-- No new AI City Hall, downtown clock street, or baseball-hitter images
-- No invented Keith Demoe portrait
-- Did not replace `lk.webp` based on an unverified visual guess
+## Gaps still needing replacement
 
-## Gaps
-- Dedicated visuals for rabies, Millcroft, Upper Middle Road, Nelson quarry
-- More real Burlington streets / Spencer Smith Park / GO / winter assets
-- Local food photography beyond Ribfest
+- Cafe: real exterior/interior, rights-safe
+- Rabies: dedicated public-health / bat visual that is not the night-sky reuse
+- Nelson quarry: site or escarpment photo that is not the rabies twin
+- Millcroft: site / golf-course lands photo
+- Upper Middle Road: construction / corridor photo
+- More owned downtown, GO, winter, and food photography
