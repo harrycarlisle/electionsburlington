@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T01:05:10.667121-04:00",
+  "generatedAt": "2026-08-26T01:23:44.730523-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -494,56 +494,6 @@
       "eligibleEditorial": true
     },
     {
-      "id": "burlington-hotspots-0-24",
-      "kind": "original",
-      "surfaces": [
-        "sports"
-      ],
-      "headline": "Toss Bosses went 0–24. Why do they keep coming back?",
-      "deck": "Toss Bosses have lost 24 straight league games, but the record does not explain why they still show up.",
-      "label": "Sports",
-      "labelEssential": true,
-      "url": "articles/burlington-hotspots-0-24.html",
-      "image": "assets/sports/ultimate-waterfront.webp",
-      "alt": "Editorial illustration of a waterfront field sport near the Skyway",
-      "credit": "Burlington News illustration",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Explain how Toss Bosses went 0-24 in Burlington Ultimate Club play and why a rec team still shows up, without inventing scores or mocking the players.",
-      "verificationTier": "user-verified standings plus club context",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.8,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 4.0,
-        "sourceConfidence": 2.8,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 5.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "topic": "sports",
-      "subjects": [
-        "sports",
-        "hidden-gem"
-      ],
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "fb79a86e784ceb9a",
-      "radarScore": 72,
-      "eligibleRightNow": false,
-      "eligibleHomepage": false,
-      "eligibleNewest": true,
-      "eligibleEditorial": true
-    },
-    {
       "id": "burlington-crime-analysis-2026",
       "kind": "original",
       "surfaces": [
@@ -880,6 +830,59 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": true
+    },
+    {
+      "id": "nostalgia-games-cafe-closure",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "rail",
+        "latest"
+      ],
+      "headline": "Burlington's board-game cafe closed. The problem wasn't a lack of games.",
+      "deck": "A large community and a last fundraising push could not solve an occupancy and renovation problem.",
+      "label": "Local business",
+      "labelEssential": true,
+      "url": "articles/nostalgia-games-cafe-closure.html",
+      "image": "assets/editorial/nostalgia-cafe-closure.svg",
+      "alt": "Board-game cafe closure illustration",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "activeUntil": "2026-09-30",
+      "storyGoal": "Explain why a well-liked local cafe closed without treating a fundraiser page as the whole story.",
+      "verificationTier": "reported",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 4.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "food",
+      "subjects": [
+        "local-food",
+        "cafe-closure"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "9f20be8672023651",
+      "radarScore": 66,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
     }
   ],
   "items": [
@@ -1022,56 +1025,6 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": false
-    },
-    {
-      "id": "burlington-hotspots-0-24",
-      "kind": "original",
-      "surfaces": [
-        "sports"
-      ],
-      "headline": "Toss Bosses went 0–24. Why do they keep coming back?",
-      "deck": "Toss Bosses have lost 24 straight league games, but the record does not explain why they still show up.",
-      "label": "Sports",
-      "labelEssential": true,
-      "url": "articles/burlington-hotspots-0-24.html",
-      "image": "assets/sports/ultimate-waterfront.webp",
-      "alt": "Editorial illustration of a waterfront field sport near the Skyway",
-      "credit": "Burlington News illustration",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Explain how Toss Bosses went 0-24 in Burlington Ultimate Club play and why a rec team still shows up, without inventing scores or mocking the players.",
-      "verificationTier": "user-verified standings plus club context",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.8,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 4.0,
-        "sourceConfidence": 2.8,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 5.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "topic": "sports",
-      "subjects": [
-        "sports",
-        "hidden-gem"
-      ],
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "fb79a86e784ceb9a",
-      "radarScore": 72,
-      "eligibleRightNow": false,
-      "eligibleHomepage": false,
-      "eligibleNewest": true,
-      "eligibleEditorial": true
     },
     {
       "title": "Halton District School Board",
@@ -2262,37 +2215,6 @@
       "eligibleEditorial": false
     },
     {
-      "id": "511:293102",
-      "detectedAt": "2026-08-25T17:09:36Z",
-      "score": 75,
-      "headline": "Collision on HWY 403 HAMILTON Eastbound  at Johnson Road, Brantford. Right lane closed.",
-      "kind": "traffic",
-      "location": "HWY 403 HAMILTON",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "55390d7ab52750d5",
-      "signals": {
-        "interest": 3.0999999999999996,
-        "relevance": 3.4,
-        "novelty": 3.0,
-        "familiarity": 2.5,
-        "consequence": 2.8,
-        "freshness": 3.2,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 66,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
-    },
-    {
       "id": "nostalgia-games-cafe-closure",
       "kind": "original",
       "surfaces": [
@@ -2556,6 +2478,37 @@
       "eligibleEditorial": true
     },
     {
+      "id": "511:293102",
+      "detectedAt": "2026-08-25T17:09:36Z",
+      "score": 75,
+      "headline": "Collision on HWY 403 HAMILTON Eastbound  at Johnson Road, Brantford. Right lane closed.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "55390d7ab52750d5",
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 3.4,
+        "novelty": 3.0,
+        "familiarity": 2.5,
+        "consequence": 2.8,
+        "freshness": 2.4,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 63,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
       "title": "Infrastructure and Growth",
       "url": "https://www.halton.ca/for-residents/infrastructure-and-growth",
       "source": "Halton Region",
@@ -2612,13 +2565,13 @@
         "novelty": 3.0,
         "familiarity": 2.5,
         "consequence": 2.0,
-        "freshness": 3.2,
+        "freshness": 2.4,
         "sourceConfidence": 5.0,
         "originality": 2.6,
         "visualStrength": 4.0,
         "rotation": 5.0
       },
-      "radarScore": 61,
+      "radarScore": 59,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
@@ -2643,13 +2596,13 @@
         "novelty": 3.0,
         "familiarity": 2.5,
         "consequence": 2.0,
-        "freshness": 3.2,
+        "freshness": 2.4,
         "sourceConfidence": 5.0,
         "originality": 2.6,
         "visualStrength": 4.0,
         "rotation": 5.0
       },
-      "radarScore": 61,
+      "radarScore": 59,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
@@ -2674,13 +2627,13 @@
         "novelty": 3.0,
         "familiarity": 2.5,
         "consequence": 2.0,
-        "freshness": 3.2,
+        "freshness": 2.4,
         "sourceConfidence": 5.0,
         "originality": 2.6,
         "visualStrength": 4.0,
         "rotation": 5.0
       },
-      "radarScore": 61,
+      "radarScore": 59,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
@@ -2705,13 +2658,13 @@
         "novelty": 2.5,
         "familiarity": 2.5,
         "consequence": 2.0,
-        "freshness": 3.2,
+        "freshness": 2.4,
         "sourceConfidence": 5.0,
         "originality": 2.6,
         "visualStrength": 4.0,
         "rotation": 5.0
       },
-      "radarScore": 60,
+      "radarScore": 58,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": true,
@@ -2750,6 +2703,56 @@
       "eligibleHomepage": false,
       "eligibleNewest": false,
       "eligibleEditorial": false
+    },
+    {
+      "id": "burlington-hotspots-0-24",
+      "kind": "original",
+      "surfaces": [
+        "sports"
+      ],
+      "headline": "Toss Bosses went 0–24. Why do they keep coming back?",
+      "deck": "Toss Bosses have lost 24 straight league games, but the record does not explain why they still show up.",
+      "label": "Sports",
+      "labelEssential": true,
+      "url": "articles/burlington-hotspots-0-24.html",
+      "image": "assets/sports/ultimate-waterfront.webp",
+      "alt": "Editorial illustration of a waterfront field sport near the Skyway",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain how Toss Bosses went 0-24 in Burlington Ultimate Club play and why a rec team still shows up, without inventing scores or mocking the players.",
+      "verificationTier": "user-verified standings plus club context",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 1.2,
+        "novelty": 3.8,
+        "familiarity": 2.5,
+        "consequence": 2.0,
+        "freshness": 4.0,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "sports",
+      "subjects": [
+        "sports",
+        "hidden-gem"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "fb79a86e784ceb9a",
+      "radarScore": 32,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
     },
     {
       "title": "For Candidates I want to run in the 2026 municipal election.",
