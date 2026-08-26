@@ -20,6 +20,7 @@
   let selectedMode = null;
   let viewed = false;
   let lastModels = null;
+  let lastPayload = null;
   let userTouched = false;
   let autoTimer = 0;
   let rotatedOnce = false;
@@ -421,7 +422,7 @@
 
   function compactCard(mode, model) {
     if (mode === 'today' && !model) {
-      return `<a class="now-card" href="/explore/" data-utility-card="today"><span class="now-card-copy"><strong>See Burlington events</strong></span></a>`;
+      return `<a class="now-card now-card-today" href="/explore/" data-utility-card="today">${icons.today}<span class="now-card-copy"><strong>See Burlington events</strong></span></a>`;
     }
     const title = mode === 'today' ? model.title : model.title || model.headline;
     const metric = mode === 'go' ? (model.time || '') : (model.metric || '');
@@ -431,6 +432,7 @@
     const href = model.url || '#';
     const extra = mode === 'go' && model.url && /gotransit\.com/.test(model.url) ? ' target="_blank" rel="noopener"' : '';
     return `<a class="now-card now-card-${mode}${model.alert ? ' is-alert' : ''}" href="${esc(href)}" data-utility-card="${mode}"${extra}>
+      ${icons[mode] || ''}
       <span class="now-card-copy">
         <strong>${esc(title)}</strong>
         ${detail ? `<em>${esc(detail)}</em>` : ''}
@@ -446,30 +448,52 @@
     return compactCard('driving', models.driving);
   }
 
-  function applyMode(mode, focusTab) {
-    if (!lastModels || !MODES.includes(mode)) return;
-    selectedMode = mode;
-    const tabs = [...host.querySelectorAll('[role="tab"]')];
-    tabs.forEach(tab => {
-      const on = tab.dataset.mode === mode;
-      tab.setAttribute('aria-selected', String(on));
-      tab.tabIndex = on ? 0 : -1;
-      tab.classList.toggle('is-active', on);
-      if (on && focusTab) tab.focus();
-    });
-    host.querySelectorAll('[data-now-dot]').forEach(dot => {
-      const on = dot.dataset.mode === mode;
-      dot.classList.toggle('is-active', on);
-      dot.setAttribute('aria-current', on ? 'true' : 'false');
-    });
+  function headerSlot() {
+    return document.getElementById('headerLive');
+  }
+
+  function useHeaderCard() {
+    return Boolean(headerSlot() && matchMedia('(max-width:720px)').matches);
+  }
+
+  function paintCard(mode) {
+    const html = cardFor(mode, lastModels);
+    if (useHeaderCard()) {
+      const slot = headerSlot();
+      slot.hidden = false;
+      slot.innerHTML = html;
+      bindCard(slot);
+      return;
+    }
+    const slot = headerSlot();
+    if (slot) {
+      slot.hidden = true;
+      slot.innerHTML = '';
+    }
     const panel = host.querySelector('[role="tabpanel"]');
     if (panel) {
       panel.id = `nowPanel-${mode}`;
       panel.setAttribute('aria-labelledby', `nowTab-${mode}`);
-      panel.innerHTML = cardFor(mode, lastModels);
+      panel.innerHTML = html;
       bindCard(panel);
     }
-    tabs.forEach(tab => tab.setAttribute('aria-controls', `nowPanel-${mode}`));
+  }
+
+  function applyMode(mode, focusTab) {
+    if (!lastModels || !MODES.includes(mode)) return;
+    selectedMode = mode;
+    const tabs = [...host.querySelectorAll('[role="tab"], [data-now-dot]')];
+    tabs.forEach(tab => {
+      const on = tab.dataset.mode === mode;
+      if (tab.getAttribute('role') === 'tab') {
+        tab.setAttribute('aria-selected', String(on));
+        tab.tabIndex = on ? 0 : -1;
+      }
+      tab.classList.toggle('is-active', on);
+      tab.setAttribute('aria-current', on ? 'true' : 'false');
+      if (on && focusTab && tab.getAttribute('role') === 'tab') tab.focus();
+    });
+    paintCard(mode);
   }
 
   function stepMode(delta) {
@@ -558,14 +582,6 @@
         applyMode(mode, true);
       });
     });
-    host.querySelectorAll('[data-now-dot]').forEach(dot => {
-      dot.addEventListener('click', () => {
-        noteInteraction();
-        if (dot.dataset.mode === selectedMode) return;
-        applyMode(dot.dataset.mode);
-        track('live_utility_mode_change', dot.dataset.mode);
-      });
-    });
   }
 
   function startAutoAdvance() {
@@ -577,6 +593,19 @@
     }, AUTO_MS);
   }
 
+  function chromeMarkup(initial, includePanel) {
+    const indicators = `
+      <div class="now-dots" role="tablist" aria-label="Live local update">
+        ${MODES.map(mode => `<button type="button" class="now-dot-btn now-tab-${mode}${mode === initial ? ' is-active' : ''}" role="tab" id="nowTab-${mode}" data-now-dot data-mode="${mode}" aria-label="${MODE_LABEL[mode]}" aria-selected="${mode === initial}" aria-current="${mode === initial ? 'true' : 'false'}" tabindex="${mode === initial ? 0 : -1}">${icons[mode]}</button>`).join('')}
+      </div>`;
+    if (!includePanel) return indicators;
+    return `
+      <div class="now-panel" role="tabpanel" id="nowPanel-${initial}" aria-labelledby="nowTab-${initial}">
+        ${cardFor(initial, lastModels)}
+      </div>
+      ${indicators}`;
+  }
+
   function render(payload) {
     const models = {
       driving: drivingModel(payload.surface, payload.intel),
@@ -585,25 +614,16 @@
       today: nextEvent(payload.explore)
     };
     lastModels = models;
+    lastPayload = payload;
     const initial = selectedMode || chooseDefault(models);
     selectedMode = initial;
 
     host.dataset.liveUtilityVariant = VARIANT;
-    host.innerHTML = `
-      <div class="now-selectors">
-        <span class="now-live" aria-hidden="true"><i class="now-dot"></i></span>
-        <div class="now-tabs" role="tablist" aria-label="Live local update">
-          ${MODES.map(mode => `<button type="button" class="now-tab now-tab-${mode}${mode === initial ? ' is-active' : ''}" role="tab" id="nowTab-${mode}" data-mode="${mode}" aria-label="${MODE_LABEL[mode]}" aria-selected="${mode === initial}" aria-controls="nowPanel-${initial}" tabindex="${mode === initial ? 0 : -1}">${icons[mode]}</button>`).join('')}
-        </div>
-      </div>
-      <div class="now-panel" role="tabpanel" id="nowPanel-${initial}" aria-labelledby="nowTab-${initial}">
-        ${cardFor(initial, models)}
-      </div>
-      <div class="now-dots" role="group" aria-label="Utility pages">
-        ${MODES.map(mode => `<button type="button" class="now-dot-btn${mode === initial ? ' is-active' : ''}" data-now-dot data-mode="${mode}" aria-label="${MODE_LABEL[mode]}" aria-current="${mode === initial ? 'true' : 'false'}"></button>`).join('')}
-      </div>`;
+    host.classList.toggle('is-header-card', useHeaderCard());
+    host.innerHTML = chromeMarkup(initial, !useHeaderCard());
+    paintCard(initial);
     bindTabs();
-    bindCard(host.querySelector('[role="tabpanel"]'));
+    if (!useHeaderCard()) bindCard(host.querySelector('[role="tabpanel"]'));
     if (!viewed) {
       viewed = true;
       track('live_utility_view', initial);
@@ -629,4 +649,8 @@
 
   load();
   setInterval(load, 120000);
+  const viewport = matchMedia('(max-width:720px)');
+  viewport.addEventListener('change', () => {
+    if (lastPayload) render(lastPayload);
+  });
 })();

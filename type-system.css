@@ -127,11 +127,11 @@ button,input,select,textarea{
   padding:22px 22px 26px;
 }
 .top-copy h1{
-  max-width:16ch;
-  font-size:var(--text-display)!important;
+  max-width:none;
+  font-size:clamp(2.35rem,10vw,3.1rem)!important;
   font-weight:var(--weight-bold)!important;
-  line-height:var(--lh-display)!important;
-  letter-spacing:-.03em!important;
+  line-height:1!important;
+  letter-spacing:-.035em!important;
 }
 .top-copy p{
   max-width:38em;
@@ -193,10 +193,11 @@ button,input,select,textarea{
 }
 
 .explore-band-copy h2{
-  max-width:14ch;
-  font-size:var(--text-4xl)!important;
-  line-height:var(--lh-display)!important;
+  max-width:none;
+  font-size:clamp(1.75rem,7vw,2.125rem)!important;
+  line-height:1.05!important;
   letter-spacing:-.03em!important;
+  white-space:nowrap
 }
 .explore-band-copy p{
   font-family:var(--font-sans)!important;
@@ -506,8 +507,9 @@ button,input,select,textarea{
     padding:22px 16px 24px!important;
   }
   .top-copy h1{
-    font-size:clamp(1.85rem,8vw,2.35rem)!important;
-    max-width:14ch;
+    font-size:clamp(2.35rem,10vw,3.1rem)!important;
+    max-width:none;
+    line-height:1!important;
   }
   .top-copy p{
     margin-top:14px!important;
@@ -566,7 +568,7 @@ button,input,select,textarea{
    Dark mode contrast
    -------------------------------------------------- */
 html[data-theme="dark"]{
-  --muted:#b7c4ce;
+  --muted:#c9d5de;
 }
 html[data-theme="dark"] .top-copy p,
 html[data-theme="dark"] .article-deck,

@@ -10,7 +10,7 @@
     'Search “I’m bored”'
   ];
   const index = [
-    {title:'How bad is Burlington’s crime, really?',url:'/stories/how-bad-is-burlington-crime/',section:'Public safety',keywords:'crime police safety statistics canada halton'},
+    {title:'How bad is crime in Burlington, really?',url:'/stories/how-bad-is-burlington-crime/',section:'Public safety',keywords:'crime police safety statistics canada halton'},
     {title:'Burlington’s board-game cafe closed',url:'/stories/nostalgia-games-cafe-closure/',section:'Local business',keywords:'nostalgia games cafe board game occupancy'},
     {title:'Ontario nearly replaced the Skyway with three tunnels',url:'/stories/skyway-bridge-story/',section:'Feature',keywords:'skyway bridge canal qew tunnels'},
     {title:'Burlington’s proposed data centre is not what many people think',url:'/stories/burlington-data-centre-not-ai/',section:'Development',keywords:'data centre ai south service road'},

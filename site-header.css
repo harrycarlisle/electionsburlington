@@ -358,8 +358,29 @@ html body.publication-shell main.explore-main{
   scroll-margin-top:calc(var(--bn-header-h) + 8px)
 }
 
+html body .header-live{
+  display:none;
+  min-width:0
+}
+
 @media(max-width:720px){
   :root{--bn-header-h:52px;--bn-logo:32px;--bn-gutter:16px}
+  html body.home-page .header-inner{
+    gap:8px!important
+  }
+  html body.home-page .header-live:not([hidden]){
+    display:block!important;
+    flex:1 1 auto!important;
+    min-width:0!important;
+    margin:0 4px
+  }
+  html body.home-page .header-live[hidden]{display:none!important}
+  html body.home-page .header-live .now-card{
+    min-height:44px!important;
+    padding:6px 8px!important;
+    border-radius:12px!important
+  }
+  html body.home-page .header-controls{flex:0 0 auto!important}
   html body .header-weather,
   html body.publication-shell .header-weather,
   html body.home-shell .header-weather,
@@ -379,11 +400,12 @@ html body.publication-shell main.explore-main{
   html body .work-main,
   html body .explore-main{padding-top:12px!important}
   html body .article-head{margin-top:18px!important}
-  html body .home-main{padding-top:8px!important}
+  html body .home-main{padding-top:4px!important}
 }
 
 @media(min-width:721px){
   :root{--bn-header-h:64px;--bn-logo:36px;--bn-gutter:20px}
+  html body .header-live{display:none!important}
   html body .header-weather,
   html body.publication-shell .header-weather,
   html body.home-shell .header-weather{

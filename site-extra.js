@@ -362,6 +362,11 @@
 
     controls.querySelector('.site-search-link')?.remove();
     controls.appendChild(menu);
+    const live = inner.querySelector('#headerLive');
+    if (live) {
+      const brand = inner.querySelector('.brand');
+      if (brand) brand.after(live);
+    }
     inner.querySelector('#primaryNav')?.remove();
 
     buildDrawer(nav);

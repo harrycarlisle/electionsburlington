@@ -110,13 +110,42 @@
     if (!text) return '';
     const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
     const words = text.split(/\s+/);
-    if (words.length <= 18 && sentences.length <= 2) return text;
+    if (words.length <= 18 && sentences.length <= 1) return text;
     if (sentences[0] && sentences[0].split(/\s+/).length <= 18) return sentences[0];
-    return `${words.slice(0, 18).join(' ').replace(/[.,;:]$/, '')}.`;
+    return `${words.slice(0, 16).join(' ').replace(/[.,;:]$/, '')}.`;
   }
 
   const CRIME_IMAGE = '/assets/stories/public-safety/halton-police-crime-burlington.webp';
-  const CRIME_ALT = 'Illustrative Burlington News visual of a Halton Regional Police vehicle behind crime-scene tape.';
+  const CRIME_ALT = 'Halton Regional Police vehicle behind crime-scene tape.';
+  const CRIME_TITLE = 'How bad is crime in Burlington, really?';
+  const CRIME_DECK = 'Halton is unusually safe, but one category of crime is moving the wrong way.';
+  const PICK_HOOKS = {
+    'data-centre-not-ai': 'The real question is what 20 megawatts means beside an established neighbourhood.',
+    'nostalgia-games-cafe-closure': 'The community showed up. The building problem was harder to solve.',
+    'skyway-tunnels': 'The plan got surprisingly far before Burlington ended up with the bridge we know.',
+    'burlington-hotspots-0-24': 'The losing streak is only part of why the team keeps coming back.',
+    '730-brant-vacant-building': 'It sat empty for years. Then a fire made the vacancy impossible to ignore.'
+  };
+
+  function isCrimeItem(item){
+    return /crime|burlington-crime/i.test(`${item?.id || ''} ${item?.headline || ''}`);
+  }
+
+  function displayHeadline(item){
+    return isCrimeItem(item) ? CRIME_TITLE : cleanDash(item.headline);
+  }
+
+  function displayDeck(item){
+    if (isCrimeItem(item)) return CRIME_DECK;
+    return tightenDeck(item.deck || '');
+  }
+
+  function pickHook(item){
+    if (PICK_HOOKS[item.id]) return PICK_HOOKS[item.id];
+    const deck = tightenDeck(item.deck || '');
+    const words = deck.split(/\s+/).filter(Boolean);
+    return words.length >= 8 && words.length <= 18 ? deck : '';
+  }
 
   function storyImage(item, fallback){
     const raw = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : fallback;
@@ -132,9 +161,8 @@
     const image = storyImage(item, '/assets/editorial/home-share.webp');
     const isCrimeHero = /halton-police-crime/.test(image);
     const alt = isCrimeHero ? CRIME_ALT : (item.alt || item.headline);
-    const credit = isCrimeHero ? 'Burlington News visual' : (item.credit || 'Burlington News');
-    const deck = tightenDeck(item.deck || '');
-    lead.innerHTML = `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${esc(image)}" alt="${esc(alt)}" fetchpriority="high">${credit ? `<span class="image-credit">${esc(credit)}</span>` : ''}</div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(item.headline)}</h1>${deck ? `<p>${esc(deck)}</p>` : ''}</div></a>`;
+    const deck = displayDeck(item);
+    lead.innerHTML = `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${esc(image)}" alt="${esc(alt)}" fetchpriority="high"></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(displayHeadline(item))}</h1>${deck ? `<p>${esc(deck)}</p>` : ''}</div></a>`;
   }
 
   function renderNewest(items, heroId){
@@ -144,7 +172,7 @@
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
       const category = categoryLabel(item);
-      return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''} data-category="${esc(category)}"><span><small>${esc(category)}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
+      return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''} data-category="${esc(category)}"><span><small>${esc(category)}</small><strong>${esc(displayHeadline(item))}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
     }).join('');
     return rows;
   }
@@ -155,7 +183,8 @@
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
       const image = storyImage(item, '/assets/editorial/home-share.webp');
-      return `<a class="pick-card" href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="pick-image"><img src="${esc(image)}" alt="${esc(item.alt || item.headline)}" loading="lazy"></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(item.headline)}</h3></a>`;
+      const hook = pickHook(item);
+      return `<a class="pick-card" href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="pick-image"><img src="${esc(image)}" alt="${esc(item.alt || item.headline)}" loading="lazy"></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(displayHeadline(item))}</h3>${hook ? `<p class="pick-hook">${esc(hook)}</p>` : ''}</a>`;
     }).join('');
   }
 
