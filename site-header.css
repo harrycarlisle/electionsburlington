@@ -1,4 +1,9 @@
 /* Canonical header, search, hamburger and drawer. Loaded last. */
+.sr-only{
+  position:absolute!important;width:1px!important;height:1px!important;
+  padding:0!important;margin:-1px!important;overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important
+}
 .menu-backdrop{
   position:fixed;inset:0;z-index:70;
   background:rgba(10,22,34,.36);
@@ -21,10 +26,14 @@ body.menu-is-open{overflow:hidden!important;touch-action:none}
 .header-controls{
   display:flex!important;
   align-items:center!important;
+  flex-wrap:nowrap!important;
   gap:8px!important;
   min-width:0;
   margin-left:auto!important;
 }
+.header-controls .header-weather{order:1}
+.header-controls .header-search{order:2}
+.header-controls .menu-icon-button{order:3}
 .header-search,
 .publication-shell .header-search,
 .site-header .header-search{
@@ -99,7 +108,15 @@ body.menu-is-open{overflow:hidden!important;touch-action:none}
   border:0!important;border-top:1px solid var(--line,#d8e2ec)!important;
   background:none!important
 }
-.menu-primary,.menu-secondary{display:grid!important;gap:0!important;border:0!important}
+.menu-primary,
+.menu-secondary,
+.publication-shell .menu-primary,
+.publication-shell .menu-secondary{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:0!important;
+  border:0!important
+}
 .menu-link,
 .publication-shell .menu-link{
   display:flex!important;
@@ -151,9 +168,15 @@ body.menu-is-open{overflow:hidden!important;touch-action:none}
 }
 
 @media(min-width:721px){
-  .header-weather{display:inline-flex!important}
-  .menu-icon-button{display:none!important}
+  .header-weather,
+  .publication-shell .header-weather,
+  .site-header .header-weather{display:inline-flex!important}
+  .menu-icon-button,
+  .publication-shell .menu-icon-button,
+  .site-header .menu-icon-button,
+  .header .menu{display:none!important}
   .menu-panel,
+  .publication-shell .menu-panel,
   .menu-backdrop{display:none!important}
   .desktop-primary-nav{
     display:flex!important;

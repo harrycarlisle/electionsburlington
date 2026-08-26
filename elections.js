@@ -101,7 +101,7 @@
     profile.innerHTML = `
       <div class="profile-head">
         ${photo(candidate, 'profile-photo')}
-        <div>
+        <div class="profile-identity">
           <h2>${esc(candidate.name)}</h2>
           <p class="profile-role">${esc(candidate.currentRole)}</p>
           <p class="profile-line">${esc(candidate.cardSummary)}</p>
