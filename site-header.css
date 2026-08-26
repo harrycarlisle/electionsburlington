@@ -326,14 +326,65 @@ html body .menu-panel .menu-theme-toggle svg{
   display:block!important
 }
 
+html body .menu-drawer-top,
+html body .menu-panel .menu-drawer-top{
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  margin:2px 2px 10px!important
+}
+html body .menu-drawer-top .menu-theme-toggle{
+  flex:0 0 44px!important
+}
 html body .drawer-search,
-html body .menu-panel .drawer-search{
+html body .menu-panel .drawer-search,
+html body .menu-drawer-top .drawer-search{
   display:flex!important;
   width:100%!important;
   max-width:none!important;
   height:44px!important;
-  margin:4px 4px 10px!important;
-  flex:0 0 auto!important
+  margin:0!important;
+  flex:1 1 auto!important
+}
+html body .drawer-search .search-prompt-fade,
+html body .header-search .search-prompt-fade{
+  position:absolute;
+  left:16px;
+  right:36px;
+  color:var(--muted,#5d7287);
+  font:500 13px/1 Inter,ui-sans-serif,Arial,sans-serif;
+  pointer-events:none;
+  opacity:1;
+  transition:opacity .28s ease
+}
+html body .drawer-search .search-prompt-fade.is-hidden,
+html body .header-search .search-prompt-fade.is-hidden{opacity:0}
+html body .drawer-search .search-popover,
+html body .menu-panel .drawer-search .search-popover{
+  padding:8px 10px!important
+}
+html body .drawer-search .search-suggestions:empty,
+html body .drawer-search .search-suggestions[hidden]{display:none!important}
+html body .drawer-search .search-results a,
+html body .search-results a{
+  display:block;
+  padding:8px 2px;
+  text-decoration:none;
+  color:inherit
+}
+html body .drawer-search .search-results span,
+html body .search-results span{
+  display:block;
+  font:800 10px/1 Inter,Arial,sans-serif;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  color:var(--muted,#5d7287)
+}
+html body .drawer-search .search-results strong,
+html body .search-results strong{
+  display:block;
+  margin-top:2px;
+  font:650 14px/1.25 Inter,ui-sans-serif,Arial,sans-serif
 }
 html body .drawer-search input{
   font:500 14px/1.2 Inter,ui-sans-serif,Arial,sans-serif!important

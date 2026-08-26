@@ -3,18 +3,22 @@
 <head><link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16x16.png"><link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#071b35">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Traffic cameras | Burlington News</title>
-  <meta name="description" content="Live Ontario 511 cameras and route-aware traffic context for common trips from Burlington.">
+  <title>How does the drive look? | Burlington News</title>
+  <meta name="description" content="Pick a destination to see delays, incidents and live cameras along the route from Burlington.">
   <link rel="canonical" href="https://burlingtonnews.ca/traffic/">
-  <link rel="stylesheet" href="site-extra.css">
+  <link rel="stylesheet" href="/site-extra.css">
   <link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle">
   <link rel="stylesheet" href="/site-shell.css?v=20260824z4" data-style="site-shell">
   <link rel="stylesheet" href="/publication-polish.css?v=20260825h" data-style="publication-polish">
   <link rel="stylesheet" href="/product-pass.css?v=20260826t">
   <link rel="stylesheet" href="/type-system.css?v=20260826a">
-  <script src="/site-search.js?v=20260826f" defer></script>
-  <script src="/site-extra.js?v=20260826ac" defer></script>
-  <script src="/skyway-traffic.js?v=20260825h" defer></script>
+  <link rel="stylesheet" href="/site-header.css?v=20260826gt" data-style="site-header">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="/traffic-map.css?v=20260826gt">
+  <script src="/site-search.js?v=20260826gt" defer></script>
+  <script src="/site-extra.js?v=20260826gt" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script type="module" src="/skyway-traffic.js?v=20260826gt"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -22,9 +26,9 @@
   <main id="main" class="traffic-shell traffic-page">
     <section class="traffic-hero">
       <div>
-        <span class="traffic-kicker">Live local tool</span>
-        <h1>How does the road look?</h1>
-        <p>Choose a destination to see the Burlington cameras and incidents that matter for that trip.</p>
+        <span class="traffic-kicker">Live commute</span>
+        <h1>How does the drive look?</h1>
+        <p>Pick a destination to see delays, incidents and live cameras along the route.</p>
       </div>
       <div class="live-chip"><i aria-hidden="true"></i><span id="cameraStatus">Loading cameras</span></div>
     </section>
@@ -32,24 +36,15 @@
     <section class="route-picker" aria-label="Common destinations from Burlington">
       <p class="route-ask">Where are you going?</p>
       <div class="route-chips" id="routeChips"></div>
-      <p class="route-origin">From Downtown Burlington. Camera membership is based on the driving route, not an average of every camera.</p>
+      <p class="route-origin" id="routeOrigin">From QEW at Guelph Line.</p>
     </section>
 
     <section class="route-status" id="routeStatus" aria-live="polite"></section>
-    <section class="route-based" id="routeBased"></section>
-
-    <section class="camera-live" id="cameraLive" aria-label="Cameras on this route"></section>
+    <section class="route-map-wrap">
+      <div id="routeMap" class="route-map" role="img" aria-label="Route map with cameras and incidents"></div>
+    </section>
+    <section class="camera-preview" id="cameraPreview" aria-label="Camera along this route"></section>
     <p class="map-credit">Map data © OpenStreetMap contributors, © CARTO. Camera images © King's Printer for Ontario.</p>
-
-    <section class="camera-other" id="cameraOtherWrap" hidden>
-      <h2>Other cameras</h2>
-      <ul id="cameraOther"></ul>
-    </section>
-
-    <section class="analysis-note">
-      <strong>How this page works</strong>
-      <p>Incidents come from the official Ontario 511 events feed and are rewritten into a location, direction and nearby interchange. Route cameras are selected by mapping official camera coordinates to an OpenStreetMap driving route. Traffic density is labelled “looks” only when a scheduled estimate exists. It is not an official speed reading. Ontario 511 remains the source of record for closures and collisions.</p>
-    </section>
   </main>
 </body>
 </html>
