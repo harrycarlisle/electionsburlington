@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T14:22:10Z",
+  "generatedAt": "2026-08-26T16:03:38Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 31,
-    "trafficIncidents": 31,
+    "activeSignals": 34,
+    "trafficIncidents": 34,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -64,6 +64,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "804d87a9833ae951"
+    },
+    {
+      "id": "511:293678",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Fort Erie Bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 90,
+      "neighbourhood": "Orchard",
+      "latitude": 43.446465,
+      "longitude": -79.70016,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "79c7573353a0d5ad"
     },
     {
       "id": "511:289628",
@@ -402,6 +418,38 @@
       "signature": "f35f80c5a2f13f2c"
     },
     {
+      "id": "511:293707",
+      "kind": "traffic",
+      "headline": "Nightly Moving Maintenance Closure on QEW Fort Erie Bound  between GARDEN CITY SKYWAY and GARDEN CITY SKYWAY, St. Catharines. 1 Alternating Lane(s).",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 53,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.167168,
+      "longitude": -79.19359,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "f47ea62965205eb0"
+    },
+    {
+      "id": "511:293708",
+      "kind": "traffic",
+      "headline": "Nightly Moving Maintenance Closure on QEW Toronto bound  between GARDEN CITY SKYWAY and GARDEN CITY SKYWAY, St. Catharines. 1 Alternating Lane(s).",
+      "location": "QEW",
+      "direction": "Toronto Bound",
+      "score": 53,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.167168,
+      "longitude": -79.19359,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "c6ae3bf0eae50d41"
+    },
+    {
       "id": "511:290120",
       "kind": "traffic",
       "headline": "Continuous Engineering Investigation on QEW Toronto bound  between THIRD LINE and THIRD LINE, Oakville. 1 Right Lane(s).",
@@ -448,54 +496,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "0e48fe503f157d65"
-    },
-    {
-      "id": "511:290747",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 401 Eastbound  between GUELPH LINE and REGIONAL ROAD 25, Milton. 2 Alternating Lane(s).",
-      "location": "HWY 401",
-      "direction": "Eastbound",
-      "score": 43,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.49118,
-      "longitude": -79.987885,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "61abbaca9b4a3dc0"
-    },
-    {
-      "id": "511:290748",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 401 Westbound  between REGIONAL ROAD 25 and GUELPH LINE, Milton. 2 Alternating Lane(s).",
-      "location": "HWY 401",
-      "direction": "Westbound",
-      "score": 43,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.52803,
-      "longitude": -79.90527,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "81e9ba9b988064d2"
-    },
-    {
-      "id": "511:289996",
-      "kind": "traffic",
-      "headline": "Daily Engineering Investigation on HWY 5 Westbound  between HWY 6 / CLAPPISON CORNER'S and HWY 6 / CLAPPISON CORNER'S, Hamilton. 1 Right Lane(s).",
-      "location": "HWY 5",
-      "direction": "Westbound",
-      "score": 35,
-      "neighbourhood": "Aldershot",
-      "latitude": 43.31215,
-      "longitude": -79.917725,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "df860e3ea8203389"
     }
   ],
   "topSignal": {
