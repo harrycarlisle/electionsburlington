@@ -200,8 +200,6 @@ html[data-theme="dark"] body .leaflet-control-attribution{
   html body.home-page .pick-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px}
   html body.home-page .pick-card .pick-image,
   html body.home-page .pick-image{aspect-ratio:16/10}
-  html body.home-page .explore-band,
-  html body.home-page .home-work-band,
   html body.home-page .lower-grid{margin-top:56px}
 }
 
