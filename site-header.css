@@ -71,7 +71,7 @@ body.menu-is-open{overflow:hidden!important;touch-action:none}
 .header-weather{display:inline-flex;align-items:center;white-space:nowrap}
 .now-kicker{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .now-kicker-weather{
-  font:650 12px/1 Inter,Arial,sans-serif;
+  font:600 12px/1 Inter,Arial,sans-serif;
   color:var(--muted,#5d7287);
   white-space:nowrap
 }
@@ -99,7 +99,7 @@ body.menu-is-open{overflow:hidden!important;touch-action:none}
 .site-header .menu-panel.open{display:flex!important}
 .menu-heading{
   margin:2px 10px 4px;
-  font:800 10px/1 Inter,Arial,sans-serif!important;
+  font:700 10px/1 Inter,Arial,sans-serif!important;
   letter-spacing:.08em;text-transform:uppercase;
   color:var(--muted,#5d7287)
 }
@@ -127,7 +127,7 @@ body.menu-is-open{overflow:hidden!important;touch-action:none}
   border-radius:8px!important;
   background:transparent!important;
   color:var(--ink,#18344d)!important;
-  font:750 17px/1.15 Inter,Arial,sans-serif!important;
+  font:700 17px/1.15 Inter,Arial,sans-serif!important;
   text-decoration:none!important
 }
 .menu-secondary .menu-link,
