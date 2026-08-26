@@ -4,7 +4,7 @@ import {
   popularityScore,
   relativeTime,
   selectNewest
-} from '/lib/homepage-ranking.mjs';
+} from '/lib/homepage-ranking.js';
 
 (() => {
   const latestList = document.getElementById('latestList');

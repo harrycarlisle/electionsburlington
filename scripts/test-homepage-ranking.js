@@ -5,7 +5,7 @@ import {
   relativeTime,
   selectNewest,
   uniqueCameraCount
-} from '../lib/homepage-ranking.mjs';
+} from '../lib/homepage-ranking.js';
 
 let failed = 0;
 function assert(cond, message) {

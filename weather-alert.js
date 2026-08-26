@@ -108,6 +108,7 @@
               : (chip.querySelector('[data-weather-temperature]') || chip);
             summary.innerHTML = `<span class="weather-chip-icon weather-chip-${kind}" aria-hidden="true">${chipIcons[kind] || chipIcons.cloud}</span><strong class="weather-chip-temp">${temperature}°</strong>${condition ? `<span class="weather-chip-sep" aria-hidden="true"></span><em class="weather-chip-condition">${esc(condition)}</em>` : ''}`;
             chip.hidden = false;
+            chip.removeAttribute('hidden');
             chip.classList.add('is-ready');
             chip.setAttribute('aria-label', `${temperature} degrees Celsius in Burlington${condition ? `, ${condition}` : ''}`);
           } else if (host.hasAttribute('data-weather-drawer')) {
@@ -139,7 +140,13 @@
     return '';
   }
   function loadWeather() { loadTemperature(); loadAlerts(); }
+  function loadWeatherWhenReady() {
+    loadWeather();
+    if (!document.querySelector('[data-weather-temperature]')) {
+      window.setTimeout(loadWeather, 240);
+    }
+  }
   window.BurlingtonWeather = { load: loadWeather };
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadWeather);
-  else loadWeather();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadWeatherWhenReady);
+  else loadWeatherWhenReady();
 })();

@@ -246,15 +246,39 @@ def diversify(
     return result
 
 
+def iso_timestamp(value: str | None) -> str | None:
+    if not value:
+        return None
+    raw = str(value).strip()
+    if not raw:
+        return None
+    if len(raw) == 10 and raw[4] == "-":
+        try:
+            noon = dt.datetime.fromisoformat(raw).replace(hour=12, minute=0, second=0, tzinfo=TZ)
+            return noon.isoformat()
+        except ValueError:
+            return raw
+    return raw
+
+
 def public_item(item: dict) -> dict:
     keys = (
         "id", "kind", "headline", "deck", "label", "labelEssential", "topic", "subjects",
         "url", "image", "alt", "credit", "mediaKey", "byline", "published", "activeFrom",
-        "storyGoal",
+        "storyGoal", "publishedAt", "datePublished", "lastMeaningfulUpdate", "status",
     )
     result = {key: item[key] for key in keys if key in item}
     result["placementScore"] = item.get("placementScore")
     result["topic"] = category_key(item)
+    published_iso = iso_timestamp(
+        item.get("publishedAt") or item.get("datePublished") or item.get("published") or item.get("activeFrom")
+    )
+    if published_iso:
+        result.setdefault("publishedAt", published_iso)
+        result.setdefault("datePublished", published_iso)
+    if item.get("lastMeaningfulUpdate"):
+        result["lastMeaningfulUpdate"] = iso_timestamp(item.get("lastMeaningfulUpdate"))
+    result["status"] = item.get("status") or "normal"
     if "subjects" not in result:
         subjects = sorted(subject_keys(item))
         if subjects:
