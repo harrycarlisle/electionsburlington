@@ -18,7 +18,8 @@
 }
 .now-panel{min-width:0}
 .now-card-shell{position:relative;min-width:0}
-.now-next{display:none}
+.now-next,
+html body .now-next{display:none}
 .now-card{
   display:flex;align-items:center;gap:10px;
   min-height:52px;padding:8px 10px;border:1px solid var(--line);border-radius:12px;
@@ -326,6 +327,11 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
   outline-offset:2px
 }
 
+@media(min-width:721px){
+  .now-next,
+  html body .now-next,
+  html body.home-page .now-next{display:none!important}
+}
 @media(min-width:901px){
   .home-main{padding-top:34px}
   .local-now{margin:0!important}
@@ -399,11 +405,13 @@ html[data-theme="dark"] .now-dot-btn[aria-selected="true"] .now-pager-dot{
   .now-card-copy em{font-size:11px}
   .now-card-metric{font-size:11px;padding:2px 7px}
   .now-dots{margin:8px 0 14px}
-  .now-card-shell .now-card{padding-right:42px}
-  .now-next{
-    display:grid;place-items:center;
-    position:absolute;right:0;top:50%;transform:translateY(-50%);
-    z-index:2;width:44px;height:44px;margin:0;padding:0;border:0;
+  .now-card-shell .now-card{padding-right:46px}
+  .now-next,
+  html body .now-next,
+  html body.home-page .now-next{
+    display:grid!important;place-items:center;
+    position:absolute;right:2px;top:50%;transform:translateY(-50%);
+    z-index:3;width:44px;height:44px;margin:0;padding:0;border:0;
     background:transparent;color:var(--navy,#071b35);cursor:pointer
   }
   .now-next-disc{

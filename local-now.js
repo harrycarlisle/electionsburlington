@@ -339,7 +339,7 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
   };
 
   function nextButton() {
-    return `<button type="button" class="now-next" data-now-next aria-label="Show next local update"><span class="now-next-disc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></button>`;
+    return `<button type="button" class="now-next" data-now-next aria-label="Show next local update"><span class="now-next-disc" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span></button>`;
   }
 
   function wrapCard(inner) {
@@ -380,7 +380,7 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
   }
 
   function useHeaderCard() {
-    return Boolean(headerSlot() && matchMedia('(max-width:720px)').matches);
+    return false;
   }
 
   function paintCard(mode) {
