@@ -86,18 +86,56 @@
     document.body.classList.remove('menu-is-open');
   });
 
+  function tightenDeck(value){
+    let text = cleanDash(value).replace(/\s+/g, ' ').trim();
+    if (!text) return '';
+    const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
+    if (sentences.length > 1) {
+      const first = sentences[0].replace(/[.!?]$/, '');
+      const second = sentences[1].replace(/^[A-Z]/, ch => ch.toLowerCase());
+      text = `${first}, ${second}`;
+    }
+    const words = text.split(/\s+/);
+    if (words.length > 30) text = `${words.slice(0, 30).join(' ').replace(/[.,;:]$/, '')}.`;
+    return text;
+  }
+
+  function storyImage(item, fallback){
+    const raw = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : fallback;
+    return /crime/i.test(`${item.id || ''} ${item.headline || ''}`) && /\.svg$|chart|comparison/i.test(raw)
+      ? '/assets/editorial/halton-police-dusk.webp'
+      : raw;
+  }
+
   function renderLead(item){
     if (!lead || !item?.headline || !item?.url) return;
     const url = publicUrl(item.url);
     const external = /^https?:\/\//.test(url);
-    const rawImage = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : '/assets/editorial/home-share.webp';
-    const image = /crime/i.test(`${item.id || ''} ${item.headline || ''}`) && /\.svg$|chart|comparison/i.test(rawImage)
-      ? '/assets/editorial/halton-police-dusk.webp'
-      : rawImage;
+    const image = storyImage(item, '/assets/editorial/home-share.webp');
     const alt = /halton-police-dusk/.test(image) ? 'A Halton Regional Police vehicle at dusk behind police tape' : (item.alt || item.headline);
     const credit = /halton-police-dusk/.test(image) ? '' : (item.credit || 'Burlington News');
-    const deck = item.deck || item.storyGoal || '';
+    const deck = tightenDeck(item.deck || '');
     lead.innerHTML = `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${esc(image)}" alt="${esc(alt)}" fetchpriority="high">${credit ? `<span class="image-credit">${esc(credit)}</span>` : ''}</div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(item.headline)}</h1>${deck ? `<p>${esc(deck)}</p>` : ''}</div></a>`;
+  }
+
+  function renderNewest(items, heroId){
+    if (!latestList || !items.length) return;
+    const seen = new Set(heroId ? [heroId] : []);
+    const rows = items.filter(item => {
+      if (!item?.id || seen.has(item.id)) return false;
+      seen.add(item.id);
+      return true;
+    }).slice(0, 4);
+    latestList.innerHTML = rows.map(item => {
+      const url = publicUrl(item.url);
+      const external = /^https?:\/\//.test(url);
+      const image = storyImage(item, '');
+      const category = categoryLabel(item);
+      const thumb = image
+        ? `<span class="newest-thumb"><img src="${esc(image)}" alt="" width="72" height="64" loading="lazy"></span>`
+        : '';
+      return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''} data-category="${esc(category)}">${thumb}<span><small>${esc(category)}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
+    }).join('');
   }
 
   function renderPicks(items){
@@ -113,15 +151,9 @@
   fetch('/data/home-surface.json', { cache: 'no-store' })
     .then(response => response.ok ? response.json() : Promise.reject())
     .then(data => {
-      if (latestList && Array.isArray(data.latest) && data.latest.length) {
-        latestList.innerHTML = data.latest.slice(0, 4).map(item => {
-          const url = publicUrl(item.url);
-          const external = /^https?:\/\//.test(url);
-          return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><span><small>${esc(categoryLabel(item))}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
-        }).join('');
-      }
       if (Array.isArray(data.feature) && data.feature.length) renderLead(data.feature[0]);
       const leadId = data.feature?.[0]?.id;
+      if (Array.isArray(data.latest) && data.latest.length) renderNewest(data.latest, leadId);
       const picks = [...(data.feature || []).slice(1), ...(data.rail || [])].filter((item, index, list) => item.id !== leadId && list.findIndex(other => other.id === item.id) === index);
       renderPicks(picks);
     }).catch(() => {});

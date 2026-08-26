@@ -3,6 +3,23 @@
   const LOCAL_ALERTS_PAGE = 'https://weather.gc.ca/warnings/report_e.html?onrm70=undefined';
   const alertIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 22 20H2L12 3Z"></path><path d="M12 9v5"></path><circle cx="12" cy="17" r=".8"></circle></svg>';
   const weatherIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 17a4.2 4.2 0 0 1 .8-8.3A5.7 5.7 0 0 1 18 10.2 3.5 3.5 0 0 1 17.2 17h-11Z"></path></svg>';
+  const chipIcons = {
+    clear: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 3v2M12 19v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M3 12h2M19 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>',
+    cloud: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 17a4.2 4.2 0 0 1 .8-8.3A5.7 5.7 0 0 1 18 10.2 3.5 3.5 0 0 1 17.2 17h-11Z"></path></svg>',
+    rain: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 15a4.2 4.2 0 0 1 .8-8.3A5.7 5.7 0 0 1 18 8.2 3.5 3.5 0 0 1 17.2 15h-11Z"></path><path d="M8.5 17.5 7 21M12 17.5 10.5 21M15.5 17.5 14 21"></path></svg>',
+    snow: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 15a4.2 4.2 0 0 1 .8-8.3A5.7 5.7 0 0 1 18 8.2 3.5 3.5 0 0 1 17.2 15h-11Z"></path><path d="M8.5 18h.01M12 18h.01M15.5 18h.01"></path></svg>',
+    storm: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 14a4.2 4.2 0 0 1 .8-8.3A5.7 5.7 0 0 1 18 7.2 3.5 3.5 0 0 1 17.2 14h-11Z"></path><path d="m11 14-2 5h3l-1 4 4-6h-3l1-3Z"></path></svg>'
+  };
+
+  function weatherKind(code) {
+    if (!Number.isFinite(code) || code === 0) return 'clear';
+    if (code <= 3) return 'cloud';
+    if (code <= 48) return 'cloud';
+    if (code <= 67 || (code >= 80 && code <= 82)) return 'rain';
+    if (code <= 77 || (code >= 85 && code <= 86)) return 'snow';
+    if (code <= 99) return 'storm';
+    return 'cloud';
+  }
 
   function clean(value) {
     return String(value || '').replace(/[—–]/g, ',').replace(/\s+/g, ' ').trim();
@@ -80,9 +97,20 @@
       .then(data => {
         const temperature = Math.round(Number(data.current?.temperature_2m));
         if (!Number.isFinite(temperature)) return;
-        const condition = weatherLabel(Number(data.current?.weather_code));
+        const code = Number(data.current?.weather_code);
+        const condition = weatherLabel(code);
+        const kind = weatherKind(code);
         hosts.forEach(host => {
-          if (host.hasAttribute('data-weather-compact')) {
+          const chip = host.hasAttribute('data-weather-chip') ? host : host.closest('[data-weather-chip]');
+          if (chip) {
+            const summary = host.hasAttribute('data-weather-temperature') && host !== chip
+              ? host
+              : (chip.querySelector('[data-weather-temperature]') || chip);
+            summary.innerHTML = `<span class="weather-chip-icon weather-chip-${kind}" aria-hidden="true">${chipIcons[kind] || chipIcons.cloud}</span><strong class="weather-chip-temp">${temperature}°</strong>${condition ? `<em class="weather-chip-condition">${esc(condition)}</em>` : ''}`;
+            chip.hidden = false;
+            chip.classList.add('is-ready');
+            chip.setAttribute('aria-label', `${temperature} degrees Celsius in Burlington${condition ? `, ${condition}` : ''}`);
+          } else if (host.hasAttribute('data-weather-compact')) {
             host.innerHTML = condition ? `${temperature}°C · ${esc(condition)}` : `${temperature}°C`;
           } else {
             host.innerHTML = `${weatherIcon}<strong>${temperature}°C</strong>${condition ? `<em>${condition}</em>` : ''}`;
