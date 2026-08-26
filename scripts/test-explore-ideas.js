@@ -4,7 +4,7 @@ import {
   pickNext,
   isIsolatedOutdoor,
   isNightAppropriate
-} from '../lib/explore-ideas.mjs';
+} from '../lib/explore-ideas.js';
 
 const ideas = {
   pier: { id: 'pier-sunset', indoorOutdoor: 'outdoor', safety: 'public', nightOk: true, tags: ['sunset', 'date'], category: 'waterfront', cost: 'free' },

@@ -2,7 +2,7 @@ import {
   scoreIdea,
   pickNext as rankPick,
   afterDarkMode
-} from '/lib/explore-ideas.mjs';
+} from '/lib/explore-ideas.js';
 
 const STORAGE_PREFS = 'burlington-news-bored-prefs';
 const STORAGE_SEEN = 'burlington-news-bored-seen';
@@ -120,13 +120,11 @@ async function loadWeather() {
 
 async function load() {
   if (ideas.length) return ideas;
-  const [eventResponse] = await Promise.all([
-    fetch('/data/explore-events.json', { cache: 'no-store' }),
-    loadWeather()
-  ]);
+  const eventResponse = await fetch('/data/explore-events.json', { cache: 'no-store' });
   if (!eventResponse.ok) throw new Error('Explore ideas unavailable');
   const data = await eventResponse.json();
   ideas = Array.isArray(data.boredIdeas) ? data.boredIdeas : [];
+  await loadWeather();
   return ideas;
 }
 
