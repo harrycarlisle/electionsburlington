@@ -305,7 +305,7 @@ html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8
   .now-kicker{margin:0 0 6px;font-size:10px}
   .now-tabs{gap:6px;margin:0 0 8px}
   .now-tab{min-height:34px;padding:0 10px 0 6px;font-size:12px}
-  .now-mode-card{min-height:150px;padding:12px 14px;gap:8px}
+  .now-mode-card{min-height:128px;max-height:168px;padding:12px 14px;gap:6px}
   .now-card-go{max-height:none}
   .now-card-head strong{font-size:clamp(22px,6.4vw,28px)}
   .now-go-line{flex-direction:column;gap:2px}
@@ -316,12 +316,10 @@ html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8
   .top-copy h1{font-size:clamp(28px,8vw,36px)!important;line-height:1.02!important}
   .top-copy p{margin-top:8px!important;font-size:14px!important;line-height:1.4!important;max-width:none}
   .newest-list>a{
-    display:grid!important;grid-template-columns:72px minmax(0,1fr)!important;
-    gap:12px!important;align-items:center;padding:12px 0!important;
+    display:block!important;padding:10px 0!important;
     border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important
   }
-  .newest-thumb,.newest-list img{display:block!important}
-  .newest-list img{width:72px;height:64px;border-radius:8px;object-fit:cover}
+  .newest-thumb,.newest-list img{display:none!important}
   .newest-list strong{font-size:17px!important;line-height:1.15!important}
   .newest-list small,.newest-list time{font-size:10px!important}
 }
@@ -443,4 +441,25 @@ html[data-theme="dark"] .traffic-camera-copy strong,.traffic-page .route-status 
   .route-status h2{font-size:24px}
   .route-chips button{min-height:38px;font-size:12px}
   html,body{overflow-x:hidden}
+}
+
+/* Homepage simplification: fewer decks, tighter stacks, no extra homepage modules. */
+.home-main .partner-callout,
+.home-main .community-pulse-home,
+.home-main .home-idea{display:none!important}
+.newest-thumb,.newest-list img{display:none!important}
+.newest-list{display:block!important}
+.newest-list>a{display:block!important;grid-template-columns:1fr!important}
+.pick-card p{display:none!important}
+.lead-grid,.lower-grid{gap:20px!important}
+.lower-grid{margin-top:24px!important}
+.explore-band{margin-top:26px!important;padding:20px 0 0!important;border-bottom:0!important}
+.explore-band-visual{display:block!important;min-height:220px}
+.explore-idea-title:empty{display:none}
+html[data-theme="dark"] .explore-idea-title{color:#edf4f8}
+@media(max-width:720px){
+  .lead-grid{gap:14px!important}
+  .lower-grid{margin-top:20px!important;gap:22px!important}
+  .explore-band{margin-top:22px!important;padding-top:18px!important}
+  .pick-card p{display:none!important}
 }

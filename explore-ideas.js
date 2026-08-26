@@ -166,20 +166,29 @@
       : '';
     const maps = `<a class="bored-maps" href="${esc(mapsUrl(idea))}" target="_blank" rel="noopener">Open in Maps →</a>`;
     if (variant === 'home') {
-      return `<p class="home-idea-title">${esc(idea.title)}</p><div class="home-idea-actions"><button type="button" data-idea-shuffle>Another idea ↻</button><a href="/explore/#bored">More ideas</a></div>`;
+      return `<p class="explore-idea-title">${esc(idea.title)}</p>`;
     }
     return `${image}<div class="bored-copy"><strong>${esc(idea.title)}</strong><p>${esc(idea.description || idea.copy || '')}</p><button class="primary-button idea-shuffle" type="button" data-idea-shuffle>Another idea ↻</button><div class="bored-actions"><button type="button" data-bored="like" class="${pref.like ? 'is-on' : ''}" aria-pressed="${pref.like ? 'true' : 'false'}">♡ Like</button><button type="button" data-bored="skip" class="${pref.skip ? 'is-on' : ''}" aria-pressed="${pref.skip ? 'true' : 'false'}">× Not for me</button>${maps}</div></div>`;
   }
 
   function mountHome(root) {
     if (!root) return;
+    const title = root.querySelector('#exploreIdeaTitle') || root.querySelector('.explore-idea-title');
+    const image = root.querySelector('#exploreIdeaImage') || root.querySelector('.explore-photo img');
     const paint = idea => {
       if (!idea) return;
       root.hidden = false;
-      const body = root.querySelector('.home-idea-body') || root;
-      body.innerHTML = ideaMarkup(idea, 'home');
+      if (title) title.textContent = idea.title;
+      else {
+        const body = root.querySelector('.home-idea-body') || root;
+        body.innerHTML = ideaMarkup(idea, 'home');
+      }
+      if (image && idea.image) {
+        image.src = imageSrc(idea.image);
+        image.alt = idea.imageAlt || idea.title;
+      }
     };
-    load().then(() => paint(pickNext())).catch(() => { root.hidden = true; });
+    load().then(() => paint(pickNext())).catch(() => {});
     root.addEventListener('click', event => {
       if (!event.target.closest('[data-idea-shuffle]')) return;
       paint(pickNext(currentId));

@@ -66,7 +66,7 @@
     homepage: true,
     rotate: true
   });
-  window.BurlingtonIdeas?.mountHome(document.getElementById('homeIdea'));
+  window.BurlingtonIdeas?.mountHome(document.getElementById('exploreBand'));
 
   menu?.addEventListener('click', () => {
     const open = nav.classList.toggle('is-open');
@@ -86,17 +86,16 @@
     document.body.classList.remove('menu-is-open');
   });
 
-  function tightenDeck(value){
-    let text = cleanDash(value).replace(/\s+/g, ' ').trim();
+  function tightenDeck(item){
+    if (/crime/i.test(`${item?.id || ''} ${item?.headline || ''}`)) {
+      return 'Halton is unusually safe. One part of the crime data is moving the wrong way.';
+    }
+    let text = cleanDash(item?.deck || '').replace(/\s+/g, ' ').trim();
     if (!text) return '';
     const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
-    if (sentences.length > 1) {
-      const first = sentences[0].replace(/[.!?]$/, '');
-      const second = sentences[1].replace(/^[A-Z]/, ch => ch.toLowerCase());
-      text = `${first}, ${second}`;
-    }
+    if (sentences.length > 1) text = sentences[0];
     const words = text.split(/\s+/);
-    if (words.length > 30) text = `${words.slice(0, 30).join(' ').replace(/[.,;:]$/, '')}.`;
+    if (words.length > 24) text = `${words.slice(0, 24).join(' ').replace(/[.,;:]$/, '')}.`;
     return text;
   }
 
@@ -114,7 +113,7 @@
     const image = storyImage(item, '/assets/editorial/home-share.webp');
     const alt = /halton-police-dusk/.test(image) ? 'A Halton Regional Police vehicle at dusk behind police tape' : (item.alt || item.headline);
     const credit = /halton-police-dusk/.test(image) ? '' : (item.credit || 'Burlington News');
-    const deck = tightenDeck(item.deck || '');
+    const deck = tightenDeck(item);
     lead.innerHTML = `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="top-image"><img src="${esc(image)}" alt="${esc(alt)}" fetchpriority="high">${credit ? `<span class="image-credit">${esc(credit)}</span>` : ''}</div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(item.headline)}</h1>${deck ? `<p>${esc(deck)}</p>` : ''}</div></a>`;
   }
 
@@ -129,12 +128,8 @@
     latestList.innerHTML = rows.map(item => {
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
-      const image = storyImage(item, '');
       const category = categoryLabel(item);
-      const thumb = image
-        ? `<span class="newest-thumb"><img src="${esc(image)}" alt="" width="72" height="64" loading="lazy"></span>`
-        : '';
-      return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''} data-category="${esc(category)}">${thumb}<span><small>${esc(category)}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
+      return `<a href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''} data-category="${esc(category)}"><span><small>${esc(category)}</small><strong>${esc(item.headline)}</strong><time>${esc(relativeDate(item.published || item.activeFrom))}</time></span></a>`;
     }).join('');
   }
 
@@ -144,7 +139,7 @@
       const url = publicUrl(item.url);
       const external = /^https?:\/\//.test(url);
       const image = item.image ? (item.image.startsWith('/') ? item.image : `/${item.image}`) : '/assets/editorial/home-share.webp';
-      return `<a class="pick-card" href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="pick-image"><img src="${esc(image)}" alt="${esc(item.alt || item.headline)}" loading="lazy"><span class="image-credit">${esc(item.credit || 'Burlington News')}</span></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(item.headline)}</h3>${item.deck ? `<p>${esc(item.deck)}</p>` : ''}</a>`;
+      return `<a class="pick-card" href="${esc(url)}"${external ? ' target="_blank" rel="noopener"' : ''}><div class="pick-image"><img src="${esc(image)}" alt="${esc(item.alt || item.headline)}" loading="lazy"><span class="image-credit">${esc(item.credit || 'Burlington News')}</span></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(item.headline)}</h3></a>`;
     }).join('');
   }
 
