@@ -23,10 +23,25 @@
     try { localStorage.setItem(key, JSON.stringify([...set])); }
     catch (_) {}
   };
+  const rank = window.CalendarRank || {};
+  const torontoDayKey = rank.torontoDayKey || (value => {
+    const date = new Date(value);
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+  });
   const dayKey = value => {
     const date = new Date(value);
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
   };
+  const dateFromKey = key => {
+    const [year, month, day] = String(key || '').split('-').map(Number);
+    return new Date(year, (month || 1) - 1, day || 1, 12, 0, 0, 0);
+  };
+  const todayKey = () => torontoDayKey(new Date());
+  const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionBehavior = () => prefersReducedMotion() ? 'auto' : 'smooth';
+  const eventCoversDay = (event, key) => rank.eventCoversDay
+    ? rank.eventCoversDay(event, key)
+    : dayKey(event.start) === key || (dayKey(event.start) <= key && dayKey(event.end) >= key);
   const categoryIcon = value => {
     const type = String(value || '').toLowerCase();
     if (type.includes('market')) return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16l-1.5-5h-13L4 9Zm2 0v11h12V9M9 20v-6h6v6"/></svg>';
@@ -44,10 +59,11 @@
   let ideas = [];
   let places = [];
   let bonus = null;
-  let selectedDate = dayKey(new Date());
+  let selectedDate = todayKey();
   let calendarMode = 'next-7';
   let dayFilter = false;
   let showAll = false;
+  let paintedRangeKey = '';
   const done = readSet(storage.done);
   const wanted = readSet(storage.want);
   const savedEvents = readSet(storage.events);
@@ -89,32 +105,117 @@
   }
 
   function paintWeek() {
-    const days = nextDays(7);
+    const days = nextDays(7, dateFromKey(todayKey()));
     qs('#weekStrip').innerHTML = days.map(date => {
       const key = dayKey(date);
-      const hasEvent = events.some(event => dayKey(event.start) === key || (new Date(event.start) <= date && new Date(event.end) >= date));
-      return `<button class="day-button ${dayFilter && selectedDate === key ? 'is-selected' : ''} ${hasEvent ? 'has-event' : ''}" type="button" data-week-date="${key}" aria-selected="${dayFilter && selectedDate === key ? 'true' : 'false'}" aria-label="Show events for ${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}"><span>${date.toLocaleDateString('en-CA',{weekday:'short'})}</span><strong>${date.toLocaleDateString('en-CA',{month:'short',day:'numeric'})}</strong></button>`;
+      const hasEvent = events.some(event => eventCoversDay(event, key));
+      const selected = dayFilter && selectedDate === key;
+      return `<button class="day-button week-day ${selected ? 'is-selected' : ''} ${hasEvent ? 'has-event' : ''}" type="button" data-week-date="${key}" aria-selected="${selected ? 'true' : 'false'}" aria-label="Show events for ${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}"><span>${date.toLocaleDateString('en-CA',{weekday:'short'})}</span><strong>${date.toLocaleDateString('en-CA',{month:'short',day:'numeric'})}</strong></button>`;
     }).join('');
     qs('#weekStrip').setAttribute('aria-label',`Next 7 days from ${days[0].toLocaleDateString('en-CA',{month:'long',day:'numeric',year:'numeric'})}`);
   }
 
-  function paintMonth(offset = calendarMode === 'next-month' ? 1 : 0) {
-    const first = new Date();
-    first.setMonth(first.getMonth() + offset);
-    first.setDate(1);
-    first.setHours(12,0,0,0);
-    const weekdayLabels = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(day => `<span class="month-weekday">${day}</span>`).join('');
+  function monthsToPaint() {
+    const { start, end } = rangeForMode(calendarMode);
+    const months = [];
+    const cursor = new Date(start.getFullYear(), start.getMonth(), 1, 12);
+    const last = new Date(end.getFullYear(), end.getMonth(), 1, 12);
+    while (cursor.getTime() <= last.getTime() && months.length < 6) {
+      months.push(new Date(cursor.getFullYear(), cursor.getMonth(), 1, 12));
+      cursor.setMonth(cursor.getMonth() + 1);
+    }
+    if (dayFilter && selectedDate) {
+      const selected = dateFromKey(selectedDate);
+      const stamp = new Date(selected.getFullYear(), selected.getMonth(), 1, 12).getTime();
+      if (!months.some(month => month.getTime() === stamp)) {
+        months.push(new Date(stamp));
+        months.sort((a, b) => a - b);
+      }
+    }
+    return months;
+  }
+
+  function monthBlock(first) {
     const leading = (first.getDay() + 6) % 7;
     const daysInMonth = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate();
+    const today = todayKey();
     const cells = Array.from({length:leading}, () => '<span class="month-blank" aria-hidden="true"></span>');
     for (let number = 1; number <= daysInMonth; number += 1) {
       const date = new Date(first.getFullYear(), first.getMonth(), number, 12);
       const key = dayKey(date);
-      const hasEvent = events.some(event => dayKey(event.start) === key || (dayKey(event.start) < key && dayKey(event.end) >= key));
+      const hasEvent = events.some(event => eventCoversDay(event, key));
       const selected = dayFilter && selectedDate === key;
-      cells.push(`<button class="month-day ${hasEvent ? 'has-event' : ''} ${selected ? 'is-selected' : ''}" type="button" data-date="${key}" aria-selected="${selected ? 'true' : 'false'}" aria-label="${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}${hasEvent ? ', has events' : ''}">${number}</button>`);
+      const past = key < today;
+      cells.push(`<button class="month-day${hasEvent ? ' has-event' : ''}${selected ? ' is-selected' : ''}${past ? ' is-past' : ''}${key === today ? ' is-today' : ''}" type="button" data-date="${key}" aria-selected="${selected ? 'true' : 'false'}" aria-label="${date.toLocaleDateString('en-CA',{weekday:'long',month:'long',day:'numeric'})}${hasEvent ? ', has events' : ''}">${number}</button>`);
     }
-    qs('#monthCalendar').innerHTML = `<h3 class="month-label">${first.toLocaleDateString('en-CA',{month:'long',year:'numeric'})}</h3><div class="month-grid">${weekdayLabels}${cells.join('')}</div>`;
+    const monthKey = `${first.getFullYear()}-${String(first.getMonth() + 1).padStart(2,'0')}`;
+    return `<section class="month-block" data-month="${monthKey}"><h3 class="month-label">${first.toLocaleDateString('en-CA',{month:'long',year:'numeric'})}</h3><div class="month-grid" role="grid">${cells.join('')}</div></section>`;
+  }
+
+  function paintMonth(force = false) {
+    const weekdays = qs('#monthWeekdays');
+    const scroller = qs('#monthScroller') || qs('#monthCalendar');
+    const months = monthsToPaint();
+    const key = months.map(month => `${month.getFullYear()}-${month.getMonth()}`).join('|') + `|${events.length}`;
+    if (weekdays) {
+      weekdays.innerHTML = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(day => `<span class="month-weekday">${day}</span>`).join('');
+    }
+    if (!force && paintedRangeKey === key && scroller.querySelector('.month-day')) {
+      updateSelectedMarks();
+      return;
+    }
+    paintedRangeKey = key;
+    scroller.innerHTML = months.map(monthBlock).join('');
+  }
+
+  function updateSelectedMarks() {
+    document.querySelectorAll('.month-day[data-date]').forEach(button => {
+      const on = dayFilter && button.dataset.date === selectedDate;
+      button.classList.toggle('is-selected', on);
+      button.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    document.querySelectorAll('.day-button[data-week-date]').forEach(button => {
+      const on = dayFilter && button.dataset.weekDate === selectedDate;
+      button.classList.toggle('is-selected', on);
+      button.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
+
+  function scrollSelectedDayIntoCalendar(button) {
+    const scroller = qs('#monthScroller');
+    const calendar = qs('#monthCalendar');
+    if (!button || !scroller || !calendar || calendar.hidden) return;
+    const behavior = motionBehavior();
+    const scrollerRect = scroller.getBoundingClientRect();
+    const buttonRect = button.getBoundingClientRect();
+    const label = button.closest('.month-block')?.querySelector('.month-label');
+    const labelHeight = label ? label.getBoundingClientRect().height + 6 : 28;
+    const target = Math.max(0, scroller.scrollTop + (buttonRect.top - scrollerRect.top) - labelHeight);
+    scroller.scrollTo({ top: target, behavior });
+    const card = qs('.calendar-card');
+    const heading = qs('.explore-heading');
+    if (!card) return;
+    const headingBottom = heading ? heading.getBoundingClientRect().bottom : 8;
+    const cardRect = card.getBoundingClientRect();
+    if (cardRect.bottom < headingBottom + 48 || cardRect.top > window.innerHeight - 48) {
+      card.scrollIntoView({ behavior, block: 'nearest', inline: 'nearest' });
+    }
+  }
+
+  function selectDate(key, { sourceButton } = {}) {
+    if (!key) return;
+    selectedDate = key;
+    dayFilter = true;
+    showAll = false;
+    updateSelectedMarks();
+    paintEvents();
+    const button = sourceButton && document.contains(sourceButton)
+      ? sourceButton
+      : qs(`.month-day[data-date="${CSS.escape(key)}"]`) || qs(`.day-button[data-week-date="${CSS.escape(key)}"]`);
+    if (button) button.focus({ preventScroll: true });
+    if (button && button.classList.contains('month-day')) {
+      requestAnimationFrame(() => scrollSelectedDayIntoCalendar(button));
+    }
   }
 
   const atStartOfDay = value => { const date = new Date(value); date.setHours(0,0,0,0); return date; };
@@ -122,22 +223,26 @@
   const overlaps = (event, start, end) => new Date(event.end) >= start && new Date(event.start) <= end;
 
   function rangeForMode(mode) {
-    const today = atStartOfDay(new Date());
+    const today = atStartOfDay(dateFromKey(todayKey()));
     if (mode === 'all') return { start: today, end: atEndOfDay(addDays(today, 400)) };
     if (mode === 'next-30') return { start: today, end: atEndOfDay(addDays(today, 29)) };
     if (mode === 'weekend') return upcomingWeekend(today);
     return { start: today, end: atEndOfDay(addDays(today, 6)) };
   }
 
+  function rankedForSelectedDate() {
+    if (rank.rankEventsForDate) return rank.rankEventsForDate(events, selectedDate);
+    const onDay = events.filter(event => eventCoversDay(event, selectedDate));
+    const later = events.filter(event => torontoDayKey(event.start) > selectedDate);
+    return { onDay, later, ranked: onDay.concat(later) };
+  }
+
   function visibleEvents() {
-    const today = atStartOfDay(new Date());
-    const future = events.filter(event => new Date(event.end) >= today).sort((a,b) => new Date(a.start) - new Date(b.start));
+    const today = todayKey();
+    const future = events.filter(event => torontoDayKey(event.end || event.start) >= today).sort((a,b) => new Date(a.start) - new Date(b.start));
     if (showAll) return future;
-    let { start, end } = rangeForMode(calendarMode);
-    if (dayFilter && selectedDate) {
-      start = atStartOfDay(new Date(`${selectedDate}T12:00:00`));
-      end = atEndOfDay(start);
-    }
+    if (dayFilter && selectedDate) return rankedForSelectedDate().ranked.slice(0, 6);
+    const { start, end } = rangeForMode(calendarMode);
     const selected = future.filter(event => overlaps(event, start, end));
     const cap = calendarMode === 'next-30' || calendarMode === 'all' ? 6 : 3;
     return selected.slice(0, cap);
@@ -151,7 +256,8 @@
     qs('#weekStrip').hidden = isMonth;
     qs('#monthCalendar').hidden = !isMonth;
     if (qs('#calendarView')) qs('#calendarView').value = mode;
-    if (isMonth) paintMonth(0);
+    paintedRangeKey = '';
+    if (isMonth) paintMonth(true);
     else paintWeek();
     paintEvents();
   }
@@ -165,7 +271,23 @@
   function paintEvents() {
     const list = visibleEvents();
     qs('#eventGrid').innerHTML = list.map(eventCard).join('');
-    qs('#eventEmpty').hidden = list.length > 0;
+    const empty = qs('#eventEmpty');
+    if (dayFilter && selectedDate && !showAll) {
+      const { onDay, later } = rankedForSelectedDate();
+      if (!onDay.length) {
+        const lines = rank.emptyDayMessage
+          ? rank.emptyDayMessage(selectedDate, later[0])
+          : [`No events found for ${selectedDate}.`];
+        empty.hidden = false;
+        empty.innerHTML = lines.map(line => `<p>${esc(line)}</p>`).join('');
+      } else {
+        empty.hidden = true;
+        empty.innerHTML = '';
+      }
+    } else {
+      empty.hidden = list.length > 0;
+      empty.innerHTML = list.length ? '' : '<p>No verified events are listed for this day yet.</p>';
+    }
     qs('#showAllEvents').textContent = showAll ? 'Show the next three' : 'Show all upcoming events';
   }
 
@@ -236,20 +358,19 @@
     qs('#weekStrip').addEventListener('click', event => {
       const button = event.target.closest('[data-week-date]');
       if (!button) return;
-      selectedDate = button.dataset.weekDate;
-      dayFilter = true;
-      showAll = false;
-      paintWeek();
-      paintEvents();
+      selectDate(button.dataset.weekDate, { sourceButton: button });
     });
     qs('#monthCalendar').addEventListener('click', event => {
       const button = event.target.closest('[data-date]');
       if (!button) return;
-      selectedDate = button.dataset.date;
-      dayFilter = true;
-      showAll = false;
-      paintMonth();
-      paintEvents();
+      selectDate(button.dataset.date, { sourceButton: button });
+    });
+    qs('#monthCalendar').addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      const button = event.target.closest('[data-date]');
+      if (!button) return;
+      event.preventDefault();
+      selectDate(button.dataset.date, { sourceButton: button });
     });
     qs('#eventGrid').addEventListener('click', event => {
       const button = event.target.closest('[data-event]');
@@ -314,10 +435,18 @@
       places = placeData.places || [];
       bonus = placeData.bonus;
       paintWeek();
-      paintMonth();
+      paintMonth(true);
       paintEvents();
       paintPassport();
       installEvents();
+      window.ExploreCalendar = {
+        rankEventsForDate: (key, now) => rank.rankEventsForDate?.(events, key, now),
+        eventCoversDay,
+        formatDayLabel: rank.formatDayLabel,
+        selectDate,
+        selectedDate: () => selectedDate,
+        dayFilter: () => dayFilter
+      };
       window.BurlingtonIdeas?.setEvents?.(events);
       paintIdea();
       const hash = location.hash.replace('#event-','');

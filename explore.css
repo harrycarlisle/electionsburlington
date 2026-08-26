@@ -26,3 +26,49 @@ html[data-theme="dark"] .calendar-title-icon,html[data-theme="dark"] .bonus-lock
 @media(max-width:900px){.passport-head{grid-template-columns:1fr minmax(240px,320px)}.passport-layout{grid-template-columns:280px minmax(0,1fr)}}
 @media(max-width:680px){.calendar-title-icon{width:27px;height:27px}.calendar-view select{max-width:128px}.event-type{padding:3px 5px;font-size:5.5px}.category-art-icon{width:42px;height:42px}.category-art-icon svg{width:23px;height:23px}.passport-panel{padding:15px}.passport-head{grid-template-columns:1fr;gap:12px}.passport-title-row h2{font-size:26px}.passport-progress-block{width:100%}.passport-progress-copy span{font-size:7px}.passport-layout{grid-template-columns:1fr}.passport-map{min-height:250px}.passport-rail{grid-auto-columns:84%}.bonus-teaser{min-height:245px}.map-help{text-align:left}}
 @media(max-width:430px){.bored-visual{aspect-ratio:16/7;max-height:148px}.bored-copy p{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.bored-actions{gap:6px}.bored-actions button,.bored-actions a{min-height:38px;padding:0 10px;font-size:11px}.calendar-view select{max-width:136px;font-size:10px}}
+
+/* Selected-date re-anchor: keep the month, pin the chosen day, rank events under it. */
+.month-calendar{display:flex;flex-direction:column;padding:10px 10px 8px}
+.month-weekdays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;flex:0 0 auto;background:var(--soft);z-index:2}
+.month-scroller{max-height:min(38vh,248px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+.month-block + .month-block{margin-top:10px}
+.month-label{position:sticky;top:0;z-index:1;margin:0 0 8px;padding:4px 0 6px;background:var(--soft)}
+.month-day{position:relative;min-height:40px;font-weight:650}
+.month-day.is-past:not(.is-selected){opacity:.48}
+.month-day.is-today:not(.is-selected){box-shadow:inset 0 0 0 1px #86b4e3}
+.month-day.is-selected,.month-day.is-selected:focus{background:#0864c7;color:#fff;font-weight:800;outline:2px solid #04356b;outline-offset:1px;box-shadow:0 0 0 2px #fff;z-index:1}
+.month-day.is-selected.has-event{box-shadow:inset 0 -3px #ffd36a,0 0 0 2px #fff}
+.month-day:focus-visible{outline:2px solid #04356b;outline-offset:2px}
+.month-day.is-selected:focus-visible{outline:3px solid #031e3d;outline-offset:2px}
+.day-button.is-selected{background:#0864c7;color:#fff}
+.day-button.is-selected span,.day-button.is-selected strong{color:#fff}
+.day-button.is-selected.has-event strong::after{background:#ffd36a}
+.day-button:focus-visible{outline:2px solid #04356b;outline-offset:2px}
+.event-empty{margin:10px 0 12px;color:var(--muted);font-size:12px;line-height:1.45}
+.event-empty p{margin:0 0 4px}
+.event-empty p:last-child{margin-bottom:0}
+html[data-theme="dark"] .month-weekdays,html[data-theme="dark"] .month-label{background:var(--soft)}
+html[data-theme="dark"] .month-day.is-selected{box-shadow:0 0 0 2px #15212a}
+html[data-theme="dark"] .month-day.is-selected.has-event{box-shadow:inset 0 -3px #ffd36a,0 0 0 2px #15212a}
+@media(prefers-reduced-motion:reduce){
+  .month-scroller{scroll-behavior:auto}
+}
+@media(max-width:680px){
+  .month-weekdays{gap:2px}
+  .month-scroller{max-height:min(34vh,220px)}
+  .month-day,.month-blank{min-height:36px}
+  .month-day.is-selected{outline-width:2px}
+}
+@media(max-width:430px){
+  .month-scroller{max-height:min(32vh,210px)}
+  .month-day,.month-blank{min-height:34px}
+  .month-day{font-size:10px}
+  .month-label{font-size:16px}
+}
+@media(max-width:390px){
+  .month-scroller{max-height:min(31vh,200px)}
+}
+@media(max-width:375px){
+  .month-scroller{max-height:min(30vh,190px)}
+  .month-day,.month-blank{min-height:32px}
+}
