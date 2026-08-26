@@ -42,7 +42,7 @@
   .work-shell{max-width:860px;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px);gap:28px 48px;align-items:start}
   .work-shell .feedback-kicker,.work-shell h1,.work-shell .feedback-lead{grid-column:1}
   .work-shell .feedback-form{grid-column:2;grid-row:1/span 4}
-  .work-shell h1{max-width:12ch}
+  .work-shell h1{max-width:16ch}
 }
 
 @media(max-width:720px){
