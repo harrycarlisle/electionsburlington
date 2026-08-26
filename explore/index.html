@@ -17,12 +17,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16x16.png"><link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#071b35"><link rel="stylesheet" href="/site-extra.css?v=20260824z4">
   <link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle">
   <link rel="stylesheet" href="/site-shell.css?v=20260824z6" data-style="site-shell">
-  <link rel="stylesheet" href="/explore.css?v=20260826t">
+  <link rel="stylesheet" href="/explore.css?v=20260826cal">
   <link rel="stylesheet" href="/release.css?v=20260824z6">
   <link rel="stylesheet" href="/publication-polish.css?v=20260825f">
   <link rel="stylesheet" href="/product-pass.css?v=20260826t">
   <link rel="stylesheet" href="/type-system.css?v=20260826a">
-  <script src="/explore-ideas.js?v=20260825n" defer></script>
+  <script src="/explore-ideas.js?v=20260826bored" defer></script>
   <script src="/site-search.js?v=20260826f" defer></script>
   <script src="/site-extra.js?v=20260826ac" defer></script>
 </head>
@@ -44,12 +44,15 @@
         <section class="calendar-card" aria-labelledby="calendarTitle">
           <div class="section-row">
             <div class="calendar-title"><span class="calendar-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v3M18 3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"/></svg></span><h2 id="calendarTitle">This week</h2></div>
-            <label class="calendar-view" for="calendarView"><span class="sr-only">Calendar view</span><select id="calendarView"><option value="today">Today</option><option value="week" selected>This week</option><option value="month">This month</option><option value="next-month">Next month</option></select><span aria-hidden="true">⌄</span></label>
+            <label class="calendar-view" for="calendarView"><span class="sr-only">Date range</span><select id="calendarView"><option value="all">All dates</option><option value="next-7" selected>Next 7 days</option><option value="weekend">This weekend</option><option value="next-30">Next 30 days</option></select><span aria-hidden="true">⌄</span></label>
           </div>
           <div class="week-strip" id="weekStrip" aria-label="Week of August 24, 2026"></div>
-          <div class="month-calendar" id="monthCalendar" hidden></div>
+          <div class="month-calendar" id="monthCalendar" hidden>
+            <div class="month-weekdays" id="monthWeekdays" aria-hidden="true"></div>
+            <div class="month-scroller" id="monthScroller"></div>
+          </div>
+          <div class="event-empty empty-note" id="eventEmpty" hidden role="status"></div>
           <div class="event-grid" id="eventGrid" aria-live="polite"></div>
-          <p class="empty-note" id="eventEmpty" hidden>No verified events are listed for this day yet.</p>
           <button class="text-button" id="showAllEvents" type="button">Show all upcoming events</button>
         </section>
 
@@ -95,6 +98,7 @@
     <p>Save places you want to visit and mark them explored when you go. Complete all twelve to reveal one extra stop. Everything stays in this browser.</p>
   </dialog>
 
-  <script src="/explore.js?v=20260825n" defer></script>
+  <script src="/calendar-rank.js?v=20260826cal" defer></script>
+  <script src="/explore.js?v=20260826cal" defer></script>
 </body>
 </html>
