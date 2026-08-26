@@ -1,0 +1,74 @@
+name: Article audio
+
+on:
+  workflow_dispatch:
+    inputs:
+      slugs:
+        description: Space-separated article slugs. Leave empty for the priority set.
+        required: false
+        default: ''
+      force:
+        description: Regenerate even when the narration hash is unchanged
+        type: boolean
+        default: false
+      sample:
+        description: Generate only the short voice sample
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - 'stories/**/index.html'
+      - 'lib/article-audio.mjs'
+      - 'scripts/generate-article-audio.mjs'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: burlington-news-article-audio
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Generate article narration
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
+          ELEVENLABS_MODEL: ${{ secrets.ELEVENLABS_MODEL }}
+          ELEVENLABS_PRONUNCIATION_DICT_ID: ${{ secrets.ELEVENLABS_PRONUNCIATION_DICT_ID }}
+          ELEVENLABS_PRONUNCIATION_DICT_VERSION: ${{ secrets.ELEVENLABS_PRONUNCIATION_DICT_VERSION }}
+        run: |
+          if [ -z "$ELEVENLABS_API_KEY" ]; then
+            echo "ELEVENLABS_API_KEY is not configured. Skipping audio generation."
+            exit 0
+          fi
+          if [ "${{ github.event.inputs.sample }}" = "true" ]; then
+            node scripts/generate-article-audio.mjs --sample
+            exit 0
+          fi
+          FLAGS=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            FLAGS="--force"
+          fi
+          SLUGS="${{ github.event.inputs.slugs }}"
+          if [ -n "$SLUGS" ]; then
+            node scripts/generate-article-audio.mjs $FLAGS $SLUGS
+          else
+            node scripts/generate-article-audio.mjs $FLAGS --priority
+          fi
+      - name: Commit generated audio
+        run: >-
+          python scripts/safe_bot_commit.py
+          --name "burlington-news-bot"
+          --message "Update article narration audio"
+          data/article-audio.json
+          assets/audio

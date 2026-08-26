@@ -151,7 +151,8 @@
       'skyway-bridge-story': ['/assets/home/skyway-reader.webp', 'Burlington Bay James N. Allan Skyway', 'Photo credit in source story'],
       'upper-middle-road-construction-2026': ['/assets/explore/burlington-orientation-map.svg', 'Orientation map of Burlington', 'Burlington News map'],
       'burlington-data-centre-not-ai': ['/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp', 'Illustrative concept and site context for the proposed data centre at 3110 South Service Road, Burlington. This is not a rendering of the final building.', 'Illustrative site concept for 3110 South Service Road. This is not a rendering of the final building.'],
-      'burlington-hotspots-0-24': ['/assets/sports/ultimate-waterfront.webp', 'Editorial illustration of a waterfront field sport near the Skyway', 'Burlington News illustration'],
+      'burlington-hotspots-0-24': ['/assets/sports/burlington-ultimate-toss-bosses.webp', 'A high-angle photo of an ultimate game on a grass field, with two teams of seven in blue and black and labeled end zones.', ''],
+      'burlington-ultimate-team-0-24': ['/assets/sports/burlington-ultimate-toss-bosses.webp', 'A high-angle photo of an ultimate game on a grass field, with two teams of seven in blue and black and labeled end zones.', ''],
       'how-bad-is-burlington-crime': ['/assets/stories/public-safety/halton-police-crime-burlington.webp', 'Illustrative Burlington News visual of a Halton Regional Police vehicle behind crime-scene tape.', 'Burlington News visual'],
       'nostalgia-games-cafe-closure': ['/assets/editorial/nostalgia-cafe-closure.svg', 'Editorial illustration of a closed board-game cafe', 'Burlington News illustration']
     };
@@ -172,7 +173,13 @@
       cap = document.createElement('figcaption');
       figure.appendChild(cap);
     }
-    cap.textContent = credit;
+    if (credit) {
+      cap.hidden = false;
+      cap.textContent = credit;
+    } else {
+      cap.textContent = '';
+      cap.hidden = true;
+    }
   }
 
   function ensureHero() {
@@ -219,63 +226,113 @@
     return clone.textContent.replace(/\s+/g, ' ').trim();
   }
 
-  function addListen() {
-    const head = document.querySelector('.article-head');
-    if (!head || head.querySelector('.article-listen')) return;
-    if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') return;
-    const text = articleText();
-    if (!text) return;
-    const words = text.split(/\s+/).length;
-    const minutes = Math.max(1, Math.round(words / 180));
+  function formatListenClock(seconds) {
+    const total = Math.max(0, Math.round(Number(seconds) || 0));
+    const minutes = Math.floor(total / 60);
+    return `${minutes}:${String(total % 60).padStart(2, '0')}`;
+  }
+
+  function mountListenPlayer(head, item) {
+    if (head.querySelector('.article-listen')) return;
+    const audioUrl = String(item.audioUrl || '');
+    if (!audioUrl) return;
     const wrap = document.createElement('div');
     wrap.className = 'article-listen';
-    wrap.innerHTML = `<button type="button" class="article-listen-main" data-listen-toggle aria-pressed="false"><span aria-hidden="true">▶</span><strong>Listen to this story</strong><small>${minutes} min</small></button><div class="article-listen-more" hidden><button type="button" data-listen-restart>Restart</button><label>Speed <select data-listen-rate><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label></div>`;
+    const initialMinutes = Math.max(1, Math.round((Number(item.duration) || 180) / 60));
+    wrap.innerHTML = `<button type="button" class="article-listen-main" data-listen-toggle aria-pressed="false" aria-describedby="article-listen-note"><span aria-hidden="true">▶</span><strong>Listen to this story</strong><small data-listen-mins>${initialMinutes} min</small></button><div class="article-listen-panel" hidden><label class="article-listen-progress"><span class="visually-hidden">Story progress</span><input type="range" data-listen-seek min="0" max="${Number(item.duration) || 1}" value="0" step="1" aria-valuemin="0" aria-valuemax="${Number(item.duration) || 1}" aria-valuenow="0"></label><div class="article-listen-times"><span data-listen-elapsed>0:00</span><span data-listen-remain>${formatListenClock(item.duration || 0)}</span></div><div class="article-listen-rates" role="group" aria-label="Playback speed"><button type="button" data-listen-rate="1" aria-pressed="true">1×</button><button type="button" data-listen-rate="1.25" aria-pressed="false">1.25×</button><button type="button" data-listen-rate="1.5" aria-pressed="false">1.5×</button></div></div><p class="article-listen-note" id="article-listen-note">AI-generated audio narration</p><audio preload="metadata" src="${esc(audioUrl)}"></audio>`;
     const byline = head.querySelector('.article-byline, .byline');
     (byline || head.lastElementChild)?.insertAdjacentElement('afterend', wrap);
+    const audio = wrap.querySelector('audio');
     const toggle = wrap.querySelector('[data-listen-toggle]');
-    const restart = wrap.querySelector('[data-listen-restart]');
-    const rate = wrap.querySelector('[data-listen-rate]');
-    const more = wrap.querySelector('.article-listen-more');
+    const panel = wrap.querySelector('.article-listen-panel');
+    const seek = wrap.querySelector('[data-listen-seek]');
+    const elapsed = wrap.querySelector('[data-listen-elapsed]');
+    const remain = wrap.querySelector('[data-listen-remain]');
+    const mins = wrap.querySelector('[data-listen-mins]');
     let started = false;
+    let completed = false;
+    const duration = () => {
+      const live = Number(audio.duration);
+      if (Number.isFinite(live) && live > 0) return live;
+      return Number(item.duration) || 0;
+    };
     const setPlaying = playing => {
       toggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
       toggle.querySelector('span').textContent = playing ? 'Ⅱ' : '▶';
       toggle.querySelector('strong').textContent = playing ? 'Pause' : (started ? 'Resume' : 'Listen to this story');
     };
-    const makeUtterance = () => {
-      const u = new SpeechSynthesisUtterance(text);
-      u.rate = Number(rate.value) || 1;
-      u.onend = () => { started = false; setPlaying(false); toggle.querySelector('strong').textContent = 'Listen to this story'; };
-      u.onerror = u.onend;
-      return u;
+    const paintTimes = () => {
+      const total = duration();
+      const current = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+      elapsed.textContent = formatListenClock(current);
+      remain.textContent = formatListenClock(Math.max(0, total - current));
+      seek.max = String(Math.max(1, Math.round(total)));
+      seek.value = String(Math.round(current));
+      seek.setAttribute('aria-valuemax', seek.max);
+      seek.setAttribute('aria-valuenow', seek.value);
+      if (total) mins.textContent = `${Math.max(1, Math.round(total / 60))} min`;
     };
+    const openPanel = () => { panel.hidden = false; };
     toggle.addEventListener('click', () => {
-      more.hidden = false;
-      track('listen_click', {state: speechSynthesis.speaking && !speechSynthesis.paused ? 'pause' : 'play'});
-      if (speechSynthesis.speaking && !speechSynthesis.paused) { speechSynthesis.pause(); setPlaying(false); return; }
-      if (speechSynthesis.paused) { speechSynthesis.resume(); setPlaying(true); return; }
-      speechSynthesis.cancel();
-      speechSynthesis.speak(makeUtterance());
-      started = true;
-      setPlaying(true);
-    });
-    restart.addEventListener('click', () => {
-      track('listen_click', {state: 'restart'});
-      speechSynthesis.cancel();
-      speechSynthesis.speak(makeUtterance());
-      started = true;
-      more.hidden = false;
-      setPlaying(true);
-    });
-    rate.addEventListener('change', () => {
-      if (started || speechSynthesis.speaking || speechSynthesis.paused) {
-        speechSynthesis.cancel();
-        speechSynthesis.speak(makeUtterance());
-        started = true;
-        setPlaying(true);
+      openPanel();
+      if (!audio.paused) {
+        audio.pause();
+        return;
       }
+      const play = audio.play();
+      if (play && typeof play.catch === 'function') play.catch(() => setPlaying(false));
     });
-    addEventListener('beforeunload', () => speechSynthesis.cancel(), {once: true});
+    wrap.querySelectorAll('[data-listen-rate]').forEach(button => {
+      button.addEventListener('click', () => {
+        const next = Number(button.getAttribute('data-listen-rate')) || 1;
+        audio.playbackRate = next;
+        wrap.querySelectorAll('[data-listen-rate]').forEach(node => {
+          node.setAttribute('aria-pressed', node === button ? 'true' : 'false');
+        });
+        track('listen_speed_change', {rate: next});
+      });
+    });
+    seek.addEventListener('input', () => {
+      audio.currentTime = Number(seek.value) || 0;
+      paintTimes();
+    });
+    audio.addEventListener('play', () => {
+      openPanel();
+      if (!started) {
+        started = true;
+        track('listen_start', {src: audioUrl});
+      }
+      completed = false;
+      setPlaying(true);
+    });
+    audio.addEventListener('pause', () => {
+      setPlaying(false);
+      if (!audio.ended) track('listen_pause', {t: Math.round(audio.currentTime || 0)});
+    });
+    audio.addEventListener('ended', () => {
+      started = false;
+      completed = true;
+      setPlaying(false);
+      toggle.querySelector('strong').textContent = 'Listen to this story';
+      track('listen_complete', {src: audioUrl});
+    });
+    audio.addEventListener('loadedmetadata', paintTimes);
+    audio.addEventListener('timeupdate', paintTimes);
+    paintTimes();
+    return completed;
+  }
+
+  function addListen() {
+    const head = document.querySelector('.article-head');
+    if (!head || head.querySelector('.article-listen')) return;
+    fetch('/data/article-audio.json', {cache: 'no-store'})
+      .then(response => response.ok ? response.json() : null)
+      .then(manifest => {
+        const item = (manifest?.items || []).find(row => row.slug === currentSlug);
+        if (!item?.audioUrl) return;
+        mountListenPlayer(head, item);
+      })
+      .catch(() => {});
   }
 
   function storyTokens(item) {

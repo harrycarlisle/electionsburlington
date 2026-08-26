@@ -108,3 +108,6 @@ ARTICLE ENDING CHECK — before publishing, ask:
 5. What should a Burlington reader understand differently now?
 
 The final paragraph must answer at least one of questions 2–5. Reject generic endings.
+
+## Article slugs
+Headlines may chase curiosity. URLs should name the durable subject. See [article-slugs.md](article-slugs.md).

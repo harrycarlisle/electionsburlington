@@ -17,6 +17,10 @@ Burlington News is a static GitHub Pages site. Clean directory URLs are publishe
 
 Canonical tags point at the clean URLs. Internal navigation uses the clean paths.
 
+Article slugs should stay descriptive and stable even when the headline is curiosity-driven. See [article-slugs.md](article-slugs.md). If a slug changes, redirect the old `/stories/<old-slug>/` and legacy `/articles/<old-slug>.html` paths directly to the new canonical URL in one hop.
+
+Article listen audio is generated separately. See [article-audio.md](article-audio.md).
+
 Regenerate the public copies with:
 
 ```bash

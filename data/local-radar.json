@@ -2999,23 +2999,23 @@
       "eligibleEditorial": true
     },
     {
-      "id": "burlington-hotspots-0-24",
+      "id": "burlington-ultimate-team-0-24",
       "kind": "original",
       "surfaces": [
         "sports"
       ],
-      "headline": "Toss Bosses went 0–24. Why do they keep coming back?",
-      "deck": "Toss Bosses have lost 24 straight league games, but the record does not explain why they still show up.",
+      "headline": "This Burlington team is 0–24. Why do they keep coming back?",
+      "deck": "After an 0–12 season, they changed the name. Twelve games later, they were still waiting for a win.",
       "label": "Sports",
       "labelEssential": true,
-      "url": "articles/burlington-hotspots-0-24.html",
-      "image": "assets/sports/ultimate-waterfront.webp",
-      "alt": "Editorial illustration of a waterfront field sport near the Skyway",
-      "credit": "Burlington News illustration",
+      "url": "articles/burlington-ultimate-team-0-24.html",
+      "image": "assets/sports/burlington-ultimate-toss-bosses.webp",
+      "alt": "A high-angle photo of an ultimate game on a grass field, with two teams of seven in blue and black and labeled end zones.",
+      "credit": "",
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
-      "storyGoal": "Explain how Toss Bosses went 0-24 in Burlington Ultimate Club play and why a rec team still shows up, without inventing scores or mocking the players.",
-      "verificationTier": "user-verified standings plus club context",
+      "storyGoal": "Explain how Toss Bosses went 0-24 after a name change from Panic at the Disco, and why the rec team keeps coming back.",
+      "verificationTier": "Burlington News reporting and Burlington Ultimate Club standings",
       "signals": {
         "interest": 2.3,
         "relevance": 1.2,

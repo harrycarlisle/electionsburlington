@@ -130,13 +130,14 @@
   const CRIME_ALT = 'Halton Regional Police vehicle behind crime-scene tape.';
   const CRIME_TITLE = 'How bad is crime in Burlington, really?';
   const CRIME_DECK = 'Halton is unusually safe, but one category is moving the wrong way.';
-  const SPORTS_TITLE = 'This Burlington team has lost 24 straight games.';
+  const SPORTS_TITLE = 'This Burlington team has lost 24 straight games. Why do they keep coming back?';
   const PICK_HOOKS = {
     'burlington-crime-analysis-2026': CRIME_DECK,
     'data-centre-not-ai': 'The real debate is what 20 megawatts means beside an established neighbourhood.',
     'nostalgia-games-cafe-closure': 'The community showed up. The building problem was harder to solve.',
     'skyway-tunnels': 'The tunnel plan got much further than most Burlington residents probably realize.',
-    'burlington-hotspots-0-24': 'Two winless seasons later, they’re still showing up.',
+    'burlington-hotspots-0-24': 'After an 0–12 season, they changed the name. Twelve games later, they were still waiting for a win.',
+    'burlington-ultimate-team-0-24': 'After an 0–12 season, they changed the name. Twelve games later, they were still waiting for a win.',
     '730-brant-vacant-building': 'The building had already been approved for redevelopment years earlier.',
     'ribfest-2026': 'The smoke lasts four days. The fundraising has lasted three decades.',
     'fishway-2025': 'The biggest number in the Fishway report is not the most important one.'
@@ -147,7 +148,7 @@
   }
 
   function isSportsStreak(item){
-    return /hotspots-0-24|toss bosses/i.test(`${item?.id || ''} ${item?.headline || ''}`);
+    return /hotspots-0-24|ultimate-team-0-24|toss bosses|0–24|0-24/i.test(`${item?.id || ''} ${item?.headline || ''}`);
   }
 
   function displayHeadline(item){

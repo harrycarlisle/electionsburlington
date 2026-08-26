@@ -1,0 +1,18 @@
+{
+  "provider": "elevenlabs",
+  "model": "eleven_multilingual_v2",
+  "voiceId": "nPczCjzI2devNBz1zQrb",
+  "voiceName": "Brian",
+  "settings": {
+    "provider": "elevenlabs",
+    "model": "eleven_multilingual_v2",
+    "voiceId": "nPczCjzI2devNBz1zQrb",
+    "voiceName": "Brian",
+    "stability": 0.52,
+    "similarityBoost": 0.75,
+    "style": 0,
+    "speed": 0.98,
+    "speakerBoost": true
+  },
+  "items": []
+}

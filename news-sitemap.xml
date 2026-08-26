@@ -23,4 +23,15 @@
       <news:title>Burlington's board-game cafe closed. The problem wasn't a lack of games.</news:title>
     </news:news>
   </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/burlington-ultimate-team-0-24/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Burlington News</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-26</news:publication_date>
+      <news:title>This Burlington team is 0–24. Why do they keep coming back?</news:title>
+    </news:news>
+  </url>
 </urlset>

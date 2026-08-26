@@ -62,9 +62,10 @@
 
 .bn-story-page .article-listen{
   display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:8px 12px;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:8px;
+  max-width:22rem;
   margin:14px 0 0;
   font-family:Arial,Helvetica,sans-serif;
 }
@@ -83,25 +84,61 @@
 .bn-story-page .article-listen-main>span{font-size:.72rem}
 .bn-story-page .article-listen-main strong{font:750 .8rem/1 Arial,Helvetica,sans-serif}
 .bn-story-page .article-listen-main small{font:600 .7rem/1 Arial,Helvetica,sans-serif;opacity:.55}
-.bn-story-page .article-listen-more{
-  display:flex;
-  flex-direction:row;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:8px 10px;
+.bn-story-page .article-listen-panel{
+  display:grid;
+  gap:7px;
+  width:100%;
+}
+.bn-story-page .article-listen-panel[hidden]{display:none}
+.bn-story-page .article-listen-progress{
+  display:block;
   margin:0;
-  font:600 .72rem/1 Arial,Helvetica,sans-serif;
+}
+.bn-story-page .article-listen-progress input[type="range"]{
+  width:100%;
+  margin:0;
+  accent-color:var(--accent,#0864c7);
+  cursor:pointer;
+}
+.bn-story-page .article-listen-times{
+  display:flex;
+  justify-content:space-between;
+  font:600 .68rem/1 Arial,Helvetica,sans-serif;
   color:var(--muted,#68737b);
 }
-.bn-story-page .article-listen-more[hidden]{display:none}
-.bn-story-page .article-listen-more button,
-.bn-story-page .article-listen-more select{
+.bn-story-page .article-listen-rates{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.bn-story-page .article-listen-rates button{
   font:700 .72rem Arial,Helvetica,sans-serif;
   border:1px solid color-mix(in srgb,currentColor 16%,transparent);
   border-radius:999px;
   background:transparent;
   color:inherit;
-  padding:6px 10px;
+  padding:5px 9px;
+  cursor:pointer;
+}
+.bn-story-page .article-listen-rates button[aria-pressed="true"]{
+  border-color:color-mix(in srgb,currentColor 42%,transparent);
+}
+.bn-story-page .article-listen-note{
+  margin:0;
+  font:500 .64rem/1.35 Arial,Helvetica,sans-serif;
+  color:var(--muted,#68737b);
+}
+.bn-story-page .article-listen audio{display:none}
+.bn-story-page .visually-hidden{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
 }
 
 .bn-story-page .article-glance{
