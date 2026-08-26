@@ -7,7 +7,7 @@
 
   function restoreBrand(){
     document.querySelectorAll('.header .brand').forEach(b=>{if(!b.classList.contains('brand-mark-only')||!b.querySelector('.news-brand-logo')){b.className='brand news-brand brand-mark-only';b.href='/';b.innerHTML=brandMarkup;b.setAttribute('aria-label','Burlington News home')}});
-    let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='/logo-mark.png?v=20260826b';
+    let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='/assets/brand/favicon-32x32.png';
     const path=location.pathname.replace(/\/$/,'');
     const titles={
       '':'Burlington News | Local news, events and election coverage','/index.html':'Burlington News | Local news, events and election coverage',
