@@ -207,11 +207,21 @@
       hideOverlay();
       if (!input.value && homepage) input.placeholder = queryFromPrompt(currentPrompt()) ? currentPrompt() : INNER_PLACEHOLDER;
       if (!input.value && !homepage) input.placeholder = INNER_PLACEHOLDER;
+      if (form.hasAttribute('data-drawer-search') && !input.value) {
+        popover.hidden = true;
+        input.setAttribute('aria-expanded', 'false');
+        return;
+      }
       render(input.value);
     });
     input.addEventListener('input', () => {
       stopRotation();
       hideOverlay();
+      if (form.hasAttribute('data-drawer-search') && !input.value.trim()) {
+        popover.hidden = true;
+        input.setAttribute('aria-expanded', 'false');
+        return;
+      }
       render(input.value);
     });
     input.addEventListener('blur', () => {

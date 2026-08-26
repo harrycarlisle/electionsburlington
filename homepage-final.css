@@ -22,7 +22,7 @@
   padding:0;border:1px solid transparent;border-radius:10px;
   background:transparent;cursor:pointer;position:relative
 }
-.now-tab .now-icon{width:28px;height:28px;border-radius:8px;display:grid;place-items:center}
+.now-tab .now-icon{width:28px!important;height:28px!important;border-radius:8px!important;display:grid;place-items:center}
 .now-tab .now-icon svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .now-icon-traffic{background:#e25b3a}
 .now-icon-go{background:#2b7a4b}

@@ -187,7 +187,7 @@ html body .header .nav{
   top:var(--mobile-menu-top,64px)!important;
   width:auto!important;
   max-width:none!important;
-  max-height:min(72vh,560px)!important;
+  max-height:min(80vh,640px)!important;
   height:auto!important;
   min-height:0!important;
   padding:10px 8px 8px!important;
@@ -309,6 +309,10 @@ html body .menu-panel .drawer-search{
 }
 html body .drawer-search input{
   font:500 14px/1.2 Inter,ui-sans-serif,Arial,sans-serif!important
+}
+html body .menu-panel .search-popover{
+  max-height:min(36vh,280px)!important;
+  z-index:3
 }
 html body .menu-drawer-weather{
   margin:10px 10px 4px!important;
