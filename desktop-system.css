@@ -434,6 +434,12 @@ html[data-theme="dark"] body .leaflet-control-attribution{
 }
 
 html[data-theme="dark"] body .header-theme-toggle{color:#edf4f8}
+html[data-theme="dark"] body .news-mast h1,
+html[data-theme="dark"] body .original-card strong,
+html[data-theme="dark"] body .latest-card strong,
+html[data-theme="dark"] body .explore-heading h1,
+html[data-theme="dark"] body #candidates>h1{color:#edf4f8}
+html[data-theme="dark"] body .route-status h2{color:#edf4f8!important}
 html[data-theme="dark"] body .issue-compare-card,
 html[data-theme="dark"] body .issue-tabs button{background:#15212a;border-color:#30404b;color:#edf4f8}
 html[data-theme="dark"] body .issue-tabs button[aria-pressed="true"],
