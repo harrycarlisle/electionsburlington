@@ -93,7 +93,7 @@
     if (sentences.length > 1) {
       const first = sentences[0].replace(/[.!?]$/, '');
       const second = sentences[1].replace(/^[A-Z]/, ch => ch.toLowerCase());
-      text = `${first}, ${second}`;
+      text = /^(but|and|though)\b/i.test(second) ? `${first}, ${second}` : `${first}, but ${second}`;
     }
     const words = text.split(/\s+/);
     if (words.length > 30) text = `${words.slice(0, 30).join(' ').replace(/[.,;:]$/, '')}.`;

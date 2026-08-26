@@ -33,7 +33,7 @@
   .live-pulse{animation:none!important;box-shadow:0 0 0 3px rgba(47,168,102,.18)}
 }
 .header-weather{
-  display:inline-flex;align-items:center;gap:5px;flex:0 0 auto;min-width:0;
+  display:inline-flex;align-items:center;align-self:center;gap:5px;flex:0 0 auto;min-width:0;
   color:var(--navy);white-space:nowrap;line-height:1
 }
 .header-weather .weather-chip-summary{display:inline-flex;align-items:center;gap:5px;min-width:0}
@@ -231,7 +231,8 @@ html[data-theme="dark"] .home-theme-choice button{background:#17232c;color:#dce8
 .now-go-times{display:flex;align-items:baseline;gap:10px;white-space:nowrap}
 .now-go-times b{color:var(--navy);font:800 18px/1 Arial,sans-serif}
 .now-go-times em{color:var(--muted);font:650 14px/1 Arial,sans-serif;font-style:normal}
-.now-card-today .now-card-metrics b{color:var(--navy);font:750 15px/1.3 Arial,sans-serif}
+.now-card-today .now-card-metrics b,.now-card-when{color:var(--navy);font:750 15px/1.3 Arial,sans-serif}
+.now-subtle{color:var(--muted);font:650 11px/1 Arial,sans-serif}
 .now-card-skyway:not(.is-alert) .now-card-metrics b{color:var(--navy)}
 .now-card-driving.is-alert .now-card-metrics b{color:#c23b22}
 
@@ -358,7 +359,9 @@ html[data-theme="dark"] .now-card-head strong,
 html[data-theme="dark"] .now-go-route,
 html[data-theme="dark"] .now-go-times b,
 html[data-theme="dark"] .now-card-today .now-card-metrics b,
+html[data-theme="dark"] .now-card-when,
 html[data-theme="dark"] .now-card-skyway:not(.is-alert) .now-card-metrics b{color:#edf4f8}
+html[data-theme="dark"] .now-subtle{color:#aebcc6}
 html[data-theme="dark"] .now-card-driving.is-alert .now-card-metrics b{color:#ff8a80}
 
 .candidate-picker{display:flex;align-items:center;gap:10px;margin:0 0 14px}

@@ -313,7 +313,7 @@
 
   const icon = (name, path) => `<span class="now-icon now-icon-${name}" aria-hidden="true"><svg viewBox="0 0 24 24">${path}</svg></span>`;
   const icons = {
-    driving: icon('traffic', '<circle cx="12" cy="12" r="7"/><path d="M7 16h10M8.5 16l.8-3h5.4l.8 3M9 10h6M10 7h4"/>'),
+    driving: icon('traffic', '<path d="M5 15.5v-2c0-.5.3-1 .7-1.3l1.6-1.1 1.1-2c.3-.5.8-.8 1.4-.8h4.4c.6 0 1.1.3 1.4.8l1.1 2 1.6 1.1c.4.3.7.8.7 1.3v2"/><circle cx="8" cy="16.2" r="1.3"/><circle cx="16" cy="16.2" r="1.3"/><path d="M8.6 11.2h6.8"/>'),
     go: icon('go', '<path d="M4 12h16M7 8l-3 4 3 4M17 8l3 4-3 4"/>'),
     skyway: icon('skyway', '<path d="M3 16h18M5 16c2-6 5-9 7-9s5 3 7 9"/><path d="M8 16v-3M16 16v-3"/>'),
     today: icon('next', '<rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 11h16"/>')
@@ -342,7 +342,8 @@
       return `<span class="now-go-line"><span class="now-go-route">${esc(line.label)}</span><span class="now-go-times"><b>${esc(next || 'See schedule')}</b>${follow ? `<em>${esc(follow)}</em>` : ''}</span></span>`;
     }).join('');
     return `<a class="now-mode-card now-card-go" href="${esc(model.url)}" data-utility-card="go" target="_blank" rel="noopener">
-      <small>GO${model.scheduled ? ' · Scheduled' : ''}</small>
+      <small>GO</small>
+      ${model.scheduled ? '<span class="now-subtle">Scheduled</span>' : ''}
       <span class="now-go-lines">${lines}</span>
     </a>`;
   }
@@ -365,8 +366,9 @@
     const when = [model.relative, model.dateLabel].filter(Boolean).join(' · ');
     return `<a class="now-mode-card now-card-today" href="${esc(model.url)}" data-utility-card="today">
       <small>Next</small>
+      ${when ? `<span class="now-card-when">${esc(when)}</span>` : ''}
       <span class="now-card-head">${icons.today}<strong>${esc(model.title)}</strong></span>
-      <span class="now-card-metrics">${when ? `<b>${esc(when)}</b>` : ''}${model.hours ? `<em>${esc(model.hours)}</em>` : ''}</span>
+      ${model.hours ? `<span class="now-card-metrics"><em>${esc(model.hours)}</em></span>` : ''}
     </a>`;
   }
 
