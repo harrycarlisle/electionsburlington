@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T16:15:46.602165-04:00",
+  "generatedAt": "2026-08-26T17:06:37.867610-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -497,6 +497,61 @@
       "eligibleEditorial": true
     },
     {
+      "id": "e-scooter-burlington-rules",
+      "kind": "original",
+      "surfaces": [
+        "latest",
+        "rail"
+      ],
+      "headline": "E-scooter injuries are rising. Burlington’s rules are stricter than you might think.",
+      "deck": "Most public roads and sidewalks in Burlington are still off-limits.",
+      "label": "Transportation",
+      "labelEssential": true,
+      "url": "articles/e-scooter-burlington-rules.html",
+      "image": "assets/editorial/centennial-trail-e-scooter.svg",
+      "alt": "Diagram showing e-scooters are allowed only on Centennial Trail between Brant Street and Burloak Drive.",
+      "credit": "Burlington News diagram",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "activeUntil": "2026-09-30",
+      "publishedAt": "2026-08-26T17:03:00-04:00",
+      "datePublished": "2026-08-26T17:03:00-04:00",
+      "storyGoal": "Connect the national rise in e-scooter injuries to Burlington’s narrow Centennial Trail-only rules.",
+      "verificationTier": "primary",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 2.4,
+        "sourceConfidence": 5.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "transportation",
+      "subjects": [
+        "e-scooter",
+        "safety",
+        "centennial-trail"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "14ef80435628c18d",
+      "radarScore": 70,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": true
+    },
+    {
       "id": "burlington-crime-analysis-2026",
       "kind": "original",
       "surfaces": [
@@ -505,7 +560,7 @@
         "latest"
       ],
       "headline": "How bad is crime in Burlington, really?",
-      "deck": "One category of crime is moving the wrong way."
+      "deck": "One category of crime is moving the wrong way.",
       "label": "Public safety",
       "labelEssential": true,
       "url": "articles/how-bad-is-burlington-crime.html",
@@ -838,34 +893,6 @@
       "url": "docs/editorial-style.md",
       "verificationTier": "reported",
       "radarId": "b2e7a49cdfe9810f",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.8,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 2.4,
-        "sourceConfidence": 4.0,
-        "originality": 5.0,
-        "visualStrength": 2.2,
-        "rotation": 5.0
-      },
-      "radarScore": 67,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "pitch:forgotten-1970s-event",
-      "headline": "The Burlington story everybody remembered,until they did not",
-      "description": "Search 1970-1979 front pages, council minutes, photo archives and oral histories for one event that changed local behaviour, infrastructure or identity but has nearly disappeared from public memory.",
-      "source": "Burlington News",
-      "sourceType": "official",
-      "kind": "original",
-      "url": "docs/editorial-style.md",
-      "verificationTier": "reported",
-      "radarId": "4473231292c71e2b",
       "signals": {
         "interest": 2.3,
         "relevance": 5.0,
@@ -1576,6 +1603,61 @@
       "eligibleEditorial": false
     },
     {
+      "id": "e-scooter-burlington-rules",
+      "kind": "original",
+      "surfaces": [
+        "latest",
+        "rail"
+      ],
+      "headline": "E-scooter injuries are rising. Burlington’s rules are stricter than you might think.",
+      "deck": "Most public roads and sidewalks in Burlington are still off-limits.",
+      "label": "Transportation",
+      "labelEssential": true,
+      "url": "articles/e-scooter-burlington-rules.html",
+      "image": "assets/editorial/centennial-trail-e-scooter.svg",
+      "alt": "Diagram showing e-scooters are allowed only on Centennial Trail between Brant Street and Burloak Drive.",
+      "credit": "Burlington News diagram",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "activeUntil": "2026-09-30",
+      "publishedAt": "2026-08-26T17:03:00-04:00",
+      "datePublished": "2026-08-26T17:03:00-04:00",
+      "storyGoal": "Connect the national rise in e-scooter injuries to Burlington’s narrow Centennial Trail-only rules.",
+      "verificationTier": "primary",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 2.4,
+        "sourceConfidence": 5.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "transportation",
+      "subjects": [
+        "e-scooter",
+        "safety",
+        "centennial-trail"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "14ef80435628c18d",
+      "radarScore": 70,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": true
+    },
+    {
       "id": "burlington-crime-analysis-2026",
       "kind": "original",
       "surfaces": [
@@ -1584,7 +1666,7 @@
         "latest"
       ],
       "headline": "How bad is crime in Burlington, really?",
-      "deck": "One category of crime is moving the wrong way."
+      "deck": "One category of crime is moving the wrong way.",
       "label": "Public safety",
       "labelEssential": true,
       "url": "articles/how-bad-is-burlington-crime.html",
