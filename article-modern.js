@@ -151,6 +151,7 @@
       'skyway-bridge-story': ['/assets/home/skyway-reader.webp', 'Burlington Bay James N. Allan Skyway', 'Photo credit in source story'],
       'upper-middle-road-construction-2026': ['/assets/explore/burlington-orientation-map.svg', 'Orientation map of Burlington', 'Burlington News map'],
       'burlington-data-centre-not-ai': ['/assets/stories/data-centre/3110-south-service-road-data-centre.webp', 'Illustrative concept and site context for the proposed data centre at 3110 South Service Road, Burlington. This is not a rendering of the final building.', 'Site context and illustrative concept for the proposed 3110 South Service Road data-centre location. This is not a rendering of the final building.'],
+      'burlington-hotspots-0-24': ['/assets/sports/ultimate-waterfront.webp', 'Editorial illustration of a waterfront field sport near the Skyway', 'Burlington News illustration. This is not a photo of a Hotspots game.'],
       'how-bad-is-burlington-crime': ['/assets/editorial/halton-police-dusk.webp', 'A Halton police cruiser at dusk', 'Burlington News visual'],
       'nostalgia-games-cafe-closure': ['/assets/editorial/nostalgia-cafe-closure.svg', 'Editorial illustration of a closed board-game cafe', 'Burlington News illustration']
     };

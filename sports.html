@@ -1,57 +1,108 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Local Sports | Burlington News</title>
+  <title>Sports | Burlington News</title>
   <meta name="description" content="Burlington teams, athletes, recreation and the local sports stories worth following.">
   <link rel="canonical" href="https://burlingtonnews.ca/sports/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Burlington Sports">
   <meta property="og:description" content="Local teams, athletes, recreation and the Burlington sports stories worth following.">
-  <meta property="og:url" content="https://burlingtonnews.ca/sports.html">
+  <meta property="og:url" content="https://burlingtonnews.ca/sports/">
   <meta property="og:image" content="https://burlingtonnews.ca/assets/sports/soccer-rain.webp">
-  <meta property="og:image:width" content="836">
-  <meta property="og:image:height" content="470">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="site-extra.css">
+  <link rel="stylesheet" href="/site-extra.css?v=20260824z6">
   <link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle">
   <link rel="stylesheet" href="/site-shell.css?v=20260824z6" data-style="site-shell">
-  <link rel="stylesheet" href="/release.css?v=20260824z6">
-  <script src="/site-search.js?v=20260825n" defer></script>
-  <script src="/site-extra.js?v=20260825n" defer></script>
-  <style>
-    .sports-shell{width:min(calc(100% - 40px),1120px);margin:35px auto 74px}.sports-heading{padding:22px 0 15px}.sports-heading h1{font-family:var(--publication-serif);font-size:clamp(44px,7vw,72px);line-height:.94;letter-spacing:-.05em;margin:0;color:var(--navy)}
-    .sports-hero{position:relative;display:block;min-height:510px;margin-top:16px;overflow:hidden;border-radius:2px;background:var(--navy);color:#fff;text-decoration:none}.sports-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.sports-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,16,24,.9),rgba(5,16,24,.03) 70%)}.sports-hero-copy{position:absolute;z-index:1;left:30px;right:30px;bottom:27px;max-width:760px}.sports-hero-copy span,.story-card span{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:#9bd4f5}.sports-hero-copy h2{font-family:var(--publication-serif);font-size:clamp(34px,5vw,56px);line-height:.98;letter-spacing:-.04em;margin:7px 0}.sports-hero-copy p{margin:0;color:#d9e2e7;font-size:14px}.illustration-credit{position:absolute;z-index:1;right:10px;top:10px;padding:5px 7px;background:rgba(5,15,22,.65);font-size:9px;color:#dbe8ed}
-    .story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:26px}.story-card{display:flex;flex-direction:column;text-decoration:none;padding-bottom:20px;color:var(--ink)}.story-visual{height:180px;overflow:hidden;margin-bottom:13px;background:var(--soft)}.story-visual img{width:100%;height:100%;object-fit:cover}.story-card span{color:var(--blue)}.story-card h2{font-family:var(--publication-serif);font-size:24px;line-height:1.06;letter-spacing:-.03em;margin:7px 0;color:var(--navy)}.story-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.46}.story-card small{display:block;margin-top:9px;color:var(--muted);font-size:9px}.story-card:hover h2{text-decoration:underline;text-underline-offset:4px}
-    .play-strip{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;margin-top:46px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.play-mark{font-family:var(--publication-serif);font-size:48px;color:var(--blue)}.play-strip h2{font-family:var(--publication-serif);font-size:28px;margin:0 0 4px;color:var(--navy)}.play-strip p{margin:0;color:var(--muted);font-size:13px}.play-strip a{padding:10px 13px;background:var(--navy);color:var(--paper);text-decoration:none;font-size:12px;font-weight:850}
-    .sports-history{margin-top:54px}.sports-history-head{display:flex;align-items:end;justify-content:space-between;gap:20px;padding:12px 0 14px;border-top:1px solid var(--line)}.sports-history-head h2{margin:0!important;font-family:var(--publication-serif);font-size:32px!important;color:var(--navy)}.sports-history-head span{color:var(--muted);font-size:11px}.legacy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.legacy-card{display:grid;grid-template-columns:112px 1fr;min-height:164px;background:var(--paper);text-decoration:none}.legacy-mark{display:grid;place-items:center;background:#173b33;color:#dff0e7;font:800 42px/1 var(--publication-serif);letter-spacing:-.05em}.legacy-card:nth-child(2) .legacy-mark{background:#163b57;color:#a9dbf6}.legacy-card:nth-child(3) .legacy-mark{background:#e7df35;color:#142c3f}.legacy-card:nth-child(4) .legacy-mark{background:#9e4b3e;color:#fff}.legacy-copy{align-self:center;padding:20px}.legacy-copy small{display:block;color:var(--blue);font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.08em}.legacy-copy strong{display:block;margin-top:7px;font:700 22px/1.08 var(--publication-serif);color:var(--navy)}.legacy-copy span{display:block;margin-top:7px;color:var(--muted);font-size:11px;line-height:1.4}.legacy-card:hover strong{text-decoration:underline;text-underline-offset:4px}
-    @media(max-width:850px){.sports-hero{min-height:470px}.story-grid{grid-template-columns:1fr 1fr}.story-grid .story-card:last-child{grid-column:1/-1}.story-grid .story-card:last-child .story-visual{height:240px}}
-    @media(max-width:720px){.legacy-grid{grid-template-columns:1fr}.legacy-card{grid-template-columns:86px 1fr;min-height:140px}.legacy-copy strong{font-size:20px}}
-    @media(max-width:590px){.sports-shell{width:calc(100% - 30px);margin-top:20px}.sports-heading h1{font-size:50px}.sports-hero{min-height:420px}.sports-hero-copy{left:20px;right:20px;bottom:20px}.sports-hero-copy h2{font-size:36px}.story-grid{grid-template-columns:1fr}.story-grid .story-card:last-child{grid-column:auto}.story-visual,.story-grid .story-card:last-child .story-visual{height:190px}.play-strip{grid-template-columns:1fr}.play-mark{display:none}.play-strip a{justify-self:start}.sports-history-head{display:block}.sports-history-head span{display:block;margin-top:6px}}
-  </style>
+  <link rel="stylesheet" href="/publication-polish.css?v=20260825t">
+  <link rel="stylesheet" href="/product-pass.css?v=20260826d">
+  <link rel="stylesheet" href="/sports-page.css?v=20260826d">
+  <script src="/site-search.js?v=20260826c" defer></script>
+  <script src="/site-extra.js?v=20260826d" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="header"><div class="wrap header-inner"><a class="brand" href="/">Burlington News</a><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
   <main id="main" class="sports-shell">
-    <section class="sports-heading"><h1>Burlington sports</h1></section>
-    <a class="sports-hero" href="https://www.burlingtontoday.com/local-sports/burlington-u16-boys-crowned-ontario-summer-games-champions-12636112" target="_blank" rel="noopener"><img src="assets/sports/soccer-rain.webp" width="1440" height="960" alt="Editorial illustration of a youth soccer final in heavy rain"><span class="illustration-credit">Burlington News illustration</span><div class="sports-hero-copy"><span>Soccer · Aug. 6</span><h2>The Bayhawks conceded one goal all tournament. Then they won gold in the rain.</h2><p>Burlington’s U16 boys scored 11 times on their way through the Ontario Summer Games.</p></div></a>
-    <section class="story-grid" aria-label="More Burlington sports">
-      <a class="story-card" href="https://www.burlingtontoday.com/local-sports/burlington-bayhawks-u17-u20-women-both-win-premier-league-finals-12661938" target="_blank" rel="noopener"><div class="story-visual"><img src="assets/sports/ringette.webp" alt="Editorial illustration of local sport" loading="lazy"></div><span>Soccer · Aug. 13</span><h2>Two teams. Two 2-1 finals. Two late winners.</h2><p>The Bayhawks U17 and U20 women won provincial titles days apart.</p><small>BurlingtonToday</small></a>
-      <a class="story-card" href="https://www.burlingtontoday.com/local-news/burlington-blast-becomes-first-local-aa-ringette-team-to-represent-ontario-12054186" target="_blank" rel="noopener"><div class="story-visual"><img src="assets/sports/ringette.webp" alt="Editorial illustration of a youth ringette game" loading="lazy"></div><span>Ringette</span><h2>The Burlington Blast made local AA history.</h2><p>The team became Burlington’s first AA ringette side to represent Ontario.</p><small>BurlingtonToday</small></a>
-      <a class="story-card" href="https://www.burlington.ca/en/news/game-on-free-sports-equipment-lockers-coming-to-burlington-parks.aspx" target="_blank" rel="noopener"><div class="story-visual"><img src="assets/sports/equipment-locker.webp" alt="Editorial illustration of a free sports-equipment locker in a Burlington park" loading="lazy"></div><span>Recreation · Aug. 4</span><h2>Twenty parks are getting sports gear you can borrow for free.</h2><p>The lockers will hold basketballs, soccer balls and other equipment.</p><small>City of Burlington</small></a>
-      <a class="story-card" href="https://www.burlingtontoday.com/local-news/bayhawks-earn-six-points-in-three-matches-sit-three-back-of-north-toronto-12665060" target="_blank" rel="noopener"><div class="story-visual"><img src="assets/sports/ultimate-waterfront.webp" alt="Editorial illustration of a waterfront field sport near the Skyway" loading="lazy"></div><span>League table · Aug. 15</span><h2>Six points moved Burlington within three of North Toronto.</h2><p>The Bayhawks took two wins from three matches during a busy stretch.</p><small>BurlingtonToday</small></a>
-      <a class="story-card" href="https://www.burlington.ca/en/news/burlington-s-central-arena-vying-for-the-2026-kraft-hockeyville-selection.aspx" target="_blank" rel="noopener"><div class="story-visual"><img src="assets/sports/hockey-history.webp" alt="Editorial illustration of hockey in a community arena" loading="lazy"></div><span>Central Arena</span><h2>Gretzky skated here at nine. The Ramones played here too.</h2><p>The 1968 rink’s Hockeyville bid opened a much stranger local history.</p><small>City of Burlington</small></a>
-      <a class="story-card" href="https://www.burlington.ca/en/recreation/registering-for-a-program.aspx" target="_blank" rel="noopener"><div class="story-visual"><img src="assets/sports/fall-recreation.webp" alt="Editorial illustration of fall recreation in a Burlington park" loading="lazy"></div><span>Play this fall</span><h2>Registration is open for fall and winter recreation.</h2><p>Browse youth, adult, swimming and aquatics programs.</p><small>City of Burlington</small></a>
+    <section class="sports-heading">
+      <span class="kicker">Sports</span>
+      <h1>Burlington sports</h1>
     </section>
-    <section class="sports-history" aria-labelledby="sportsHistoryTitle"><div class="sports-history-head"><h2 id="sportsHistoryTitle">Burlington, beyond the scoreboard</h2><span>Four stories worth a deeper look</span></div><div class="legacy-grid">
-      <a class="legacy-card" href="https://www.burlingtonblazejra.com/about" target="_blank" rel="noopener"><span class="legacy-mark" aria-hidden="true">’23</span><span class="legacy-copy"><small>Lacrosse</small><strong>The year the Blaze brought home Burlington’s first Minto Cup.</strong><span>In 2023, the Junior A club won the national title.</span></span></a>
-      <a class="legacy-card" href="https://olympic.ca/team-canada/brady-reardon/" target="_blank" rel="noopener"><span class="legacy-mark" aria-hidden="true">36</span><span class="legacy-copy"><small>Olympic family</small><strong>Father and son raced the same Olympic kayak event 36 years apart.</strong><span>Jim Reardon went in 1972. Brady Reardon followed in 2008.</span></span></a>
-      <a class="legacy-card" href="https://olympic.ca/team-canada/sarah-nurse/" target="_blank" rel="noopener"><span class="legacy-mark" aria-hidden="true">18</span><span class="legacy-copy"><small>Women’s hockey</small><strong>Sarah Nurse’s 18 points rewrote an Olympic record.</strong><span>The Burlington-born forward set the single-tournament mark at Beijing 2022.</span></span></a>
-      <a class="legacy-card" href="https://olympic.ca/team-canada/Sarah-Douglas/" target="_blank" rel="noopener"><span class="legacy-mark" aria-hidden="true">6th</span><span class="legacy-copy"><small>Sailing</small><strong>A Burlington-born sailor delivered a Canadian Olympic first.</strong><span>Sarah Douglas’s sixth-place finish was Canada’s best in women’s individual sailing.</span></span></a>
-    </div></section>
-    <section class="play-strip"><span class="play-mark" aria-hidden="true">20</span><div><h2>Don’t just read about sport.</h2><p>Find a free equipment locker in one of 20 Burlington parks.</p></div><a href="https://www.burlington.ca/en/news/game-on-free-sports-equipment-lockers-coming-to-burlington-parks.aspx" target="_blank" rel="noopener">Find a locker →</a></section>
+
+    <a class="sports-hero" href="/stories/burlington-hotspots-0-24/">
+      <img src="/assets/sports/ultimate-waterfront.webp" width="1440" height="900" alt="Editorial illustration of a waterfront field sport near the Skyway">
+      <span class="illustration-credit">Burlington News illustration</span>
+      <div class="sports-hero-copy">
+        <span>Original · Aug. 26</span>
+        <h2>A Burlington team just went 0–24. How does that even happen?</h2>
+        <p>Zero wins. Twenty-four losses. The next game is not a chance to repair that record.</p>
+      </div>
+    </a>
+
+    <section class="sports-block" aria-labelledby="latestSports">
+      <div class="sports-block-head"><h2 id="latestSports">Latest</h2><span>Time-sensitive local sports</span></div>
+      <div class="story-grid">
+        <a class="story-card" href="https://www.burlingtontoday.com/local-sports/burlington-u16-boys-crowned-ontario-summer-games-champions-12636112" target="_blank" rel="noopener">
+          <div class="story-visual"><img src="/assets/sports/soccer-rain.webp" alt="Editorial illustration of a youth soccer final in heavy rain" loading="lazy"></div>
+          <span>Soccer · Aug. 6</span>
+          <h3>The Bayhawks conceded one goal all tournament. Then they won gold in the rain.</h3>
+          <p>Burlington’s U16 boys scored 11 times on their way through the Ontario Summer Games.</p>
+          <small>BurlingtonToday</small>
+        </a>
+        <a class="story-card" href="https://www.burlingtontoday.com/local-sports/burlington-bayhawks-u17-u20-women-both-win-premier-league-finals-12661938" target="_blank" rel="noopener">
+          <div class="story-visual"><img src="/assets/sports/ringette.webp" alt="Editorial illustration of local sport" loading="lazy"></div>
+          <span>Soccer · Aug. 13</span>
+          <h3>Two teams. Two 2-1 finals. Two late winners.</h3>
+          <p>The Bayhawks U17 and U20 women won provincial titles days apart.</p>
+          <small>BurlingtonToday</small>
+        </a>
+        <a class="story-card" href="https://www.burlingtontoday.com/local-news/bayhawks-earn-six-points-in-three-matches-sit-three-back-of-north-toronto-12665060" target="_blank" rel="noopener">
+          <div class="story-visual"><img src="/assets/sports/soccer-rain.webp" alt="Editorial illustration of local soccer" loading="lazy"></div>
+          <span>League table · Aug. 15</span>
+          <h3>Six points moved Burlington within three of North Toronto.</h3>
+          <p>The Bayhawks took two wins from three matches during a busy stretch.</p>
+          <small>BurlingtonToday</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="sports-block" aria-labelledby="communitySports">
+      <div class="sports-block-head"><h2 id="communitySports">Teams &amp; leagues</h2><span>Community sport in Burlington</span></div>
+      <div class="story-grid">
+        <a class="story-card" href="https://www.burlingtontoday.com/local-news/burlington-blast-becomes-first-local-aa-ringette-team-to-represent-ontario-12054186" target="_blank" rel="noopener">
+          <div class="story-visual"><img src="/assets/sports/ringette.webp" alt="Editorial illustration of a youth ringette game" loading="lazy"></div>
+          <span>Ringette</span>
+          <h3>The Burlington Blast made local AA history.</h3>
+          <p>The team became Burlington’s first AA ringette side to represent Ontario.</p>
+          <small>BurlingtonToday</small>
+        </a>
+        <a class="story-card" href="https://www.burlington.ca/en/news/game-on-free-sports-equipment-lockers-coming-to-burlington-parks.aspx" target="_blank" rel="noopener">
+          <div class="story-visual"><img src="/assets/sports/equipment-locker.webp" alt="Editorial illustration of a free sports-equipment locker" loading="lazy"></div>
+          <span>Recreation · Aug. 4</span>
+          <h3>Twenty parks are getting sports gear you can borrow for free.</h3>
+          <p>The lockers will hold basketballs, soccer balls and other equipment.</p>
+          <small>City of Burlington</small>
+        </a>
+        <a class="story-card" href="https://www.burlington.ca/en/recreation/registering-for-a-program.aspx" target="_blank" rel="noopener">
+          <div class="story-visual"><img src="/assets/sports/fall-recreation.webp" alt="Editorial illustration of fall recreation" loading="lazy"></div>
+          <span>Play this fall</span>
+          <h3>Registration is open for fall and winter recreation.</h3>
+          <p>Browse youth, adult, swimming and aquatics programs.</p>
+          <small>City of Burlington</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="sports-history" aria-labelledby="sportsHistoryTitle">
+      <div class="sports-block-head"><h2 id="sportsHistoryTitle">Evergreen</h2><span>Guides, history and local sports memory</span></div>
+      <div class="legacy-grid">
+        <a class="legacy-card" href="https://www.burlington.ca/en/news/burlington-s-central-arena-vying-for-the-2026-kraft-hockeyville-selection.aspx" target="_blank" rel="noopener"><span class="legacy-mark" aria-hidden="true">’68</span><span class="legacy-copy"><small>Central Arena</small><strong>Gretzky skated here at nine. The Ramones played here too.</strong><span>The 1968 rink’s Hockeyville bid opened a much stranger local history.</span></span></a>
+        <a class="legacy-card" href="https://www.burlingtonblazejra.com/about" target="_blank" rel="noopener"><span class="legacy-mark" aria-hidden="true">’23</span><span class="legacy-copy"><small>Lacrosse</small><strong>The year the Blaze brought home Burlington’s first Minto Cup.</strong><span>In 2023, the Junior A club won the national title.</span></span></a>
+        <a class="legacy-card" href="https://olympic.ca/team-canada/brady-reardon/" target="_blank" rel="noopener"><span class="legacy-mark" aria-hidden="true">36</span><span class="legacy-copy"><small>Olympic family</small><strong>Father and son raced the same Olympic kayak event 36 years apart.</strong><span>Jim Reardon went in 1972. Brady Reardon followed in 2008.</span></span></a>
+        <a class="legacy-card" href="https://olympic.ca/team-canada/sarah-nurse/" target="_blank" rel="noopener"><span class="legacy-mark" aria-hidden="true">18</span><span class="legacy-copy"><small>Women’s hockey</small><strong>Sarah Nurse’s 18 points rewrote an Olympic record.</strong><span>The Burlington-born forward set the single-tournament mark at Beijing 2022.</span></span></a>
+      </div>
+    </section>
   </main>
 </body>
 </html>

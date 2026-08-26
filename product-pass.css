@@ -93,8 +93,8 @@
   :root{--news-banner-h:28px!important}
   html,body.publication-shell{overflow-x:hidden}
   body.menu-is-open{overflow:hidden}
-  #candidateStrip{display:flex!important;overflow-x:auto!important;gap:10px!important;padding:0 18px 12px 0!important;scroll-snap-type:x mandatory;scroll-padding-inline:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  #candidateStrip .candidate-card{flex:0 0 86%!important;min-width:86%!important;max-width:86%!important;scroll-snap-align:center}
+  #candidateStrip{display:none!important;overflow:visible!important;scroll-snap-type:none!important}
+  #candidateStrip .candidate-card{flex:none!important;min-width:0!important;max-width:none!important}
   .publication-shell .banner{min-height:28px!important}
   .publication-shell .banner .wrap{min-height:28px!important;padding-block:4px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;font-size:11px!important;line-height:1.2!important}
   .publication-shell .header{top:var(--news-banner-h,28px)!important}

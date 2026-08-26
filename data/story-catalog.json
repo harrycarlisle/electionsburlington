@@ -17,7 +17,7 @@
       "url": "articles/how-bad-is-burlington-crime.html",
       "image": "assets/editorial/halton-crime-comparison.svg",
       "alt": "Chart comparing Halton's Crime Severity Index with selected Ontario police services",
-      "credit": "Burlington News chart · Statistics Canada / Halton Regional Police Service",
+      "credit": "Burlington News chart \u00b7 Statistics Canada / Halton Regional Police Service",
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "activeUntil": "2026-09-30",
@@ -126,7 +126,7 @@
       "url": "articles/skyway-bridge-story.html",
       "image": "assets/home/skyway-reader.webp",
       "alt": "The Burlington Bay James N. Allan Skyway",
-      "credit": "Dave Lauretti · CC BY 2.0",
+      "credit": "Dave Lauretti \u00b7 CC BY 2.0",
       "published": "2026-08-24",
       "evergreen": true,
       "signals": {
@@ -422,6 +422,40 @@
         "novelty": 5,
         "familiarity": 3,
         "consequence": 3
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      }
+    },
+    {
+      "id": "burlington-hotspots-0-24",
+      "kind": "original",
+      "surfaces": [
+        "sports"
+      ],
+      "headline": "A Burlington team just went 0\u201324. How does that even happen?",
+      "deck": "Zero wins. Twenty-four losses. The next game is not a chance to repair that record.",
+      "label": "Sports",
+      "labelEssential": true,
+      "url": "articles/burlington-hotspots-0-24.html",
+      "image": "assets/sports/ultimate-waterfront.webp",
+      "alt": "Editorial illustration of a waterfront field sport near the Skyway",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain an unusually extreme local rec-league record without treating 0-24 as a joke or rewriting it as 24-0.",
+      "verificationTier": "user-verified standings plus club context",
+      "signals": {
+        "relevance": 4,
+        "breadth": 3,
+        "novelty": 5,
+        "familiarity": 4,
+        "consequence": 2,
+        "interest": 5,
+        "originality": 5
       },
       "gates": {
         "evidence": "passed",
