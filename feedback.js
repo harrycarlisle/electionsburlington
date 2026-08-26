@@ -17,7 +17,7 @@
   }
 
   function openMail(subject, body, status) {
-    mark(status, 'is-success', 'Thanks — we got it.');
+    mark(status, 'is-success', 'Thanks — we got it.\nWe’ll review it.');
     window.location.href = `mailto:feedback@burlingtonnews.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 

@@ -33,7 +33,7 @@
   font:750 15px/1 Inter,Arial,sans-serif;cursor:pointer
 }
 .feedback-status{min-height:22px;font:400 14px/1.4 Inter,Arial,sans-serif;color:var(--muted,#5d7287)}
-.feedback-status.is-success{color:#2e6c4f;font-weight:650}
+.feedback-status.is-success{color:#2e6c4f;font-weight:650;white-space:pre-line}
 .feedback-status.is-error{color:#9f3030;font-weight:650}
 
 @media(min-width:900px){
