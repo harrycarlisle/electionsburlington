@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T08:20:52.454902-04:00",
+  "generatedAt": "2026-08-26T08:55:33.335571-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -510,8 +510,8 @@
       "labelEssential": true,
       "url": "articles/how-bad-is-burlington-crime.html",
       "image": "assets/stories/public-safety/halton-police-crime-burlington.webp",
-      "alt": "Illustrative Burlington News visual of a Halton Regional Police vehicle behind crime-scene tape.",
-      "credit": "Burlington News visual",
+      "alt": "Halton Regional Police vehicle behind crime-scene tape.",
+      "credit": "Burlington News",
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "activeUntil": "2026-09-30",
@@ -1592,8 +1592,8 @@
       "labelEssential": true,
       "url": "articles/how-bad-is-burlington-crime.html",
       "image": "assets/stories/public-safety/halton-police-crime-burlington.webp",
-      "alt": "Illustrative Burlington News visual of a Halton Regional Police vehicle behind crime-scene tape.",
-      "credit": "Burlington News visual",
+      "alt": "Halton Regional Police vehicle behind crime-scene tape.",
+      "credit": "Burlington News",
       "published": "2026-08-25",
       "activeFrom": "2026-08-25",
       "activeUntil": "2026-09-30",
