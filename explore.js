@@ -320,11 +320,6 @@
       if (!eventResponse.ok || !placeResponse.ok) throw new Error('Explore data unavailable');
       const eventData = await eventResponse.json();
       const placeData = await placeResponse.json();
-      if (!window.BurlingtonExploreRecurrence) {
-        try {
-          window.BurlingtonExploreRecurrence = await import('/lib/explore-recurrence.mjs');
-        } catch (_) {}
-      }
       events = window.BurlingtonExploreRecurrence
         ? window.BurlingtonExploreRecurrence.mergeExploreEvents(eventData)
         : (eventData.events || []);
