@@ -22,20 +22,20 @@
 
 .lead-grid{margin-top:0}
 .top-story{overflow:hidden}
-.top-copy{
-  padding:28px 24px 26px!important
+.home-main .top-copy{
+  padding:26px 24px 26px!important
 }
-.top-copy .kicker{
+.home-main .top-copy .kicker{
   margin:0 0 10px!important;
   font-family:var(--sans)!important;
   font-size:11px
 }
-.top-copy h1{
+.home-main .top-copy h1{
   margin:0;
   max-width:18ch;
   font-family:var(--serif)!important
 }
-.top-copy p{
+.home-main .top-copy p{
   max-width:34em;
   margin:16px 0 0!important;
   font-family:var(--sans)!important;
@@ -62,7 +62,7 @@
   text-transform:uppercase
 }
 
-.newest-list>a{
+.home-main .newest-list>a{
   display:block!important;
   grid-template-columns:none!important;
   gap:0;
@@ -71,7 +71,7 @@
   border-bottom:1px solid var(--line)!important;
   border-radius:0!important
 }
-.newest-list>a:last-child{border-bottom:0!important}
+.home-main .newest-list>a:last-child{border-bottom:0!important}
 .newest-thumb,.newest-list img,.newest-list>a::after{display:none!important}
 .newest-list small{
   margin:0 0 8px;
@@ -220,11 +220,11 @@
   .now-mode-card{min-height:96px;max-height:140px;padding:14px 18px}
   .now-card-go{max-height:none}
   .lead-grid{gap:40px}
-  .top-copy{padding:28px 32px 32px!important}
-  .top-copy .kicker{margin-bottom:12px!important;font-size:12px}
-  .top-copy h1{max-width:20ch;font-size:clamp(42px,3.4vw,52px)}
-  .top-copy p{margin-top:16px!important;font-size:18px;line-height:1.45}
-  .newest-list>a{padding:22px 0!important}
+  .home-main .top-copy{padding:28px 32px 32px!important}
+  .home-main .top-copy .kicker{margin-bottom:12px!important;font-size:12px}
+  .home-main .top-copy h1{max-width:20ch;font-size:clamp(42px,3.4vw,52px)}
+  .home-main .top-copy p{margin-top:16px!important;font-size:18px;line-height:1.45}
+  .home-main .newest-list>a{padding:22px 0!important}
   .newest-list strong{font-size:24px}
   .lower-grid{margin-top:48px}
   .pick-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px;margin-top:20px!important}
@@ -259,11 +259,11 @@
   .now-mode-card{min-height:145px;max-height:185px;padding:10px 12px}
   .now-card-go .now-go-line{flex-direction:row;align-items:baseline}
   .lead-grid{gap:28px!important}
-  .top-copy{padding:28px 24px 26px!important}
-  .top-copy .kicker{margin-bottom:10px!important}
-  .top-copy h1{font-size:34px;line-height:1.08;max-width:16ch}
-  .top-copy p{margin-top:16px!important;font-size:16px!important;line-height:1.45!important}
-  .newest-list>a{padding:20px 0!important}
+  .home-main .top-copy{padding:26px 24px 26px!important}
+  .home-main .top-copy .kicker{margin-bottom:10px!important}
+  .home-main .top-copy h1{font-size:34px;line-height:1.08;max-width:16ch}
+  .home-main .top-copy p{margin-top:16px!important;font-size:16px!important;line-height:1.45!important}
+  .home-main .newest-list>a{padding:20px 0!important}
   .newest-list small{margin-bottom:8px;font-size:11px}
   .newest-list strong{font-size:21px!important;line-height:1.2!important}
   .newest-list time{margin-top:8px;font-size:12px}
