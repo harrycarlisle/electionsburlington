@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-26T09:52:53Z",
+  "generatedAt": "2026-08-26T10:47:18Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 32,
-    "trafficIncidents": 32,
+    "activeSignals": 31,
+    "trafficIncidents": 31,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -64,22 +64,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "804d87a9833ae951"
-    },
-    {
-      "id": "511:293090",
-      "kind": "traffic",
-      "headline": "Continuous Construction on HWY 403 HAMILTON Eastbound On-ramp at Garden Ave, Brantford. ALL LANES CLOSED.",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Eastbound",
-      "score": 90,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.167484,
-      "longitude": -80.21334,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "18f32b7541863775"
     },
     {
       "id": "511:289628",
@@ -496,6 +480,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "81e9ba9b988064d2"
+    },
+    {
+      "id": "511:289996",
+      "kind": "traffic",
+      "headline": "Daily Engineering Investigation on HWY 5 Westbound  between HWY 6 / CLAPPISON CORNER'S and HWY 6 / CLAPPISON CORNER'S, Hamilton. 1 Right Lane(s).",
+      "location": "HWY 5",
+      "direction": "Westbound",
+      "score": 35,
+      "neighbourhood": "Aldershot",
+      "latitude": 43.31215,
+      "longitude": -79.917725,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "df860e3ea8203389"
     }
   ],
   "topSignal": {
