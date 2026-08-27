@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Two Burlington road closures continuing into September 2026</title>
+<desc id="desc">Simplified Burlington orientation graphic showing Spruce Avenue in southeast Burlington and Britannia Road in north Burlington, with labels for their closure segments and expected end dates.</desc>
+<rect width="1600" height="900" fill="#f5f7f3"/>
+<text x="90" y="100" font-family="Georgia,serif" font-size="54" fill="#082b50">Two full road closures still active heading into September</text>
+<text x="90" y="150" font-family="Arial,sans-serif" font-size="24" fill="#5c6d7a">Orientation only. Use official detour signs on the road.</text>
+<path d="M120 680C310 590 440 610 590 520S890 350 1110 360s270-55 390-120" fill="none" stroke="#c5d2c4" stroke-width="95" stroke-linecap="round"/>
+<path d="M300 180v560M620 170v590M980 160v600M1310 170v560" stroke="#d7deda" stroke-width="26" stroke-linecap="round"/>
+<g font-family="Arial,sans-serif" fill="#536777" font-size="20">
+<text x="240" y="790">Guelph Line</text><text x="545" y="790">Walkers Line</text><text x="920" y="790">Appleby Line</text><text x="1250" y="790">Burloak</text>
+</g>
+<path d="M385 590H650" stroke="#d8472f" stroke-width="22" stroke-linecap="round"/>
+<circle cx="385" cy="590" r="16" fill="#d8472f"/><circle cx="650" cy="590" r="16" fill="#d8472f"/>
+<rect x="280" y="440" width="500" height="118" rx="16" fill="#fff" stroke="#d3dce2" stroke-width="3"/>
+<text x="315" y="480" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#082b50">Spruce Avenue</text>
+<text x="315" y="516" font-family="Arial,sans-serif" font-size="21" fill="#536777">Shoreacres Road → Goodram Drive</text>
+<text x="315" y="545" font-family="Arial,sans-serif" font-size="20" fill="#b33b29">Full closure through Sept. 4</text>
+
+<path d="M320 275H620" stroke="#d8472f" stroke-width="22" stroke-linecap="round"/>
+<circle cx="320" cy="275" r="16" fill="#d8472f"/><circle cx="620" cy="275" r="16" fill="#d8472f"/>
+<rect x="700" y="210" width="560" height="126" rx="16" fill="#fff" stroke="#d3dce2" stroke-width="3"/>
+<text x="735" y="250" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#082b50">Britannia Road</text>
+<text x="735" y="286" font-family="Arial,sans-serif" font-size="21" fill="#536777">Walkers Line ↔ Guelph Line</text>
+<text x="735" y="318" font-family="Arial,sans-serif" font-size="20" fill="#b33b29">No through traffic through end of September</text>
+
+<text x="90" y="850" font-family="Arial,sans-serif" font-size="18" fill="#657582">Editorial orientation graphic: Burlington News. Locations are simplified, not survey coordinates.</text>
+</svg>
