@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://burlingtonnews.ca/stories/burlington-road-closures-september-2026/</loc>
+    <news:news><news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication><news:publication_date>2026-08-26</news:publication_date><news:title>Two Burlington roads will stay fully closed into September. Here is where</news:title></news:news>
+  </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/costco-burloak-wyecroft/</loc>
+    <news:news><news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication><news:publication_date>2026-08-26</news:publication_date><news:title>Oakville approved a 1,000-space Costco near Burloak. Here is how drivers will get in</news:title></news:news>
+  </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/sekisui-burlington-modular-factory/</loc>
+    <news:news><news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication><news:publication_date>2026-08-26</news:publication_date><news:title>Up to 90% of a building can now be made inside this Burlington factory</news:title></news:news>
+  </url>
+  <url>
     <loc>https://burlingtonnews.ca/stories/evan-budz-isef-2026/</loc>
     <news:news>
       <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
