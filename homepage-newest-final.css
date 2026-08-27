@@ -23,11 +23,16 @@
   margin-top:30px!important
 }
 @media(max-width:720px){
+  /* Give the editorial feed Morning Tee-like breathing room without shrinking the site header. */
+  .home-main.shell{width:calc(100% - 48px)!important}
   .newest .mini-heading{margin-bottom:0!important;padding-bottom:10px!important}
   .newest-list>a,
   .newest-list>a:last-child{padding:24px 0 22px!important}
   .newest-list strong{font-size:18px!important;line-height:1.22!important}
   .newest-list time{margin-top:14px!important;font-size:12px!important}
   .lower-grid{margin-top:30px!important}
+}
+@media(max-width:360px){
+  .home-main.shell{width:calc(100% - 40px)!important}
 }
 html[data-theme="dark"] .newest-list>a{border-color:#30404b!important}
