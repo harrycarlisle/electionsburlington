@@ -1,4 +1,8 @@
 {
+  "burlington-flood-protection-90-million": {
+    "headline": "Burlington spent more than $90 million on stormwater upgrades. Did it work?",
+    "deck": "Tuck Creek shows what the money changed, what is still unfinished and why the answer is more complicated than yes or no."
+  },
   "burlington-road-closures-september-2026": {
     "headline": "Two Burlington roads will stay fully closed into September.",
     "image": "assets/road-closure.png",
@@ -6,7 +10,8 @@
     "credit": "Burlington News visual"
   },
   "costco-burloak-wyecroft": {
-    "headline": "Oakville approved a 1,000-space Costco near Burloak. The plan has four access points.",
+    "headline": "Oakville approved a new Costco near Burloak. How will drivers get in?",
+    "deck": "The plan includes 1,000 parking spaces, a gas bar and four access points near the Burlington border.",
     "image": "assets/costco.png",
     "alt": "Costco storefront and entrance in a suburban shopping area.",
     "credit": "Burlington News visual"
@@ -27,8 +32,8 @@
     "credit": "Burlington News visual"
   },
   "ribfest-2026": {
-    "image": "assets/rib-fest.png",
-    "alt": "Barbecue ribs being glazed on a grill at an outdoor festival.",
+    "image": "assets/home/ribs.webp",
+    "alt": "Ribs cooking over a barbecue pit at Burlington Ribfest.",
     "credit": "Burlington News visual"
   },
   "back-to-school-2026": {
