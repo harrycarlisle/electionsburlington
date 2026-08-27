@@ -30,8 +30,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Build breaking now from cached official and community feeds
-        run: python scripts/build_breaking_now.py --offline
+      - name: Build breaking now from official feeds and cached surfaces
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+        run: python scripts/build_breaking_now.py --live
       - name: Commit breaking surface
         run: >-
           python scripts/safe_bot_commit.py
