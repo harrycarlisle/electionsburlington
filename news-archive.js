@@ -10,6 +10,10 @@
   const INITIAL_MOBILE = 6;
   let expanded = false;
 
+  const params = new URLSearchParams(location.search);
+  const requestedTopic = params.get('topic');
+  if (select && requestedTopic && [...select.options].some(option => option.value === requestedTopic)) select.value = requestedTopic;
+
   const isMobile = () => matchMedia('(max-width:760px)').matches;
   const hay = card => `${card.dataset.topic || ''} ${card.textContent || ''}`.toLowerCase();
 
@@ -51,7 +55,14 @@
   }
 
   search?.addEventListener('input', () => { expanded = false; paint(); });
-  select?.addEventListener('change', () => { expanded = false; paint(); });
+  select?.addEventListener('change', () => {
+    expanded = false;
+    const value = select.value;
+    const url = new URL(location.href);
+    if (value === 'all') url.searchParams.delete('topic'); else url.searchParams.set('topic', value);
+    history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+    paint();
+  });
   more?.addEventListener('click', () => { expanded = !expanded; paint(); });
   addEventListener('resize', paint, {passive:true});
   paint();
