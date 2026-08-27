@@ -11,7 +11,6 @@
   }
 
   const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-  const MAX_AGE_MS = 18 * 60 * 60 * 1000;
 
   function hide() {
     host.hidden = true;
@@ -27,13 +26,6 @@
     return Number.isFinite(parsed) ? parsed : 0;
   }
 
-  function isCurrent(item, now = Date.now()) {
-    const stamp = timestamp(item);
-    if (!stamp || now - stamp > MAX_AGE_MS) return false;
-    const priority = String(item?.priority || item?.severity || item?.type || '').toLowerCase();
-    return item?.breaking === true || item?.urgent === true || /breaking|urgent|emergency|critical|closure|incident|warning|alert/.test(priority);
-  }
-
   function updateLabel(value) {
     const parsed = value ? new Date(value) : null;
     if (!parsed || Number.isNaN(parsed.getTime())) return 'UPDATED NOW';
@@ -44,9 +36,11 @@
   }
 
   function render(doc) {
-    const now = Date.now();
+    // breaking-now.json is the source of truth for editorial/automated eligibility.
+    // The browser only validates renderability and ordering; it does not impose a
+    // second urgency or age threshold that can accidentally suppress an approved alert.
     const visible = (Array.isArray(doc?.items) ? doc.items : [])
-      .filter(item => item?.headline && item?.storyUrl && isCurrent(item, now))
+      .filter(item => item?.headline && item?.storyUrl)
       .sort((a,b) => timestamp(b) - timestamp(a))
       .slice(0, 2);
     if (!visible.length) return hide();
@@ -57,13 +51,14 @@
     host.removeAttribute('aria-hidden');
     host.dataset.state = 'ready';
     host.dataset.count = String(visible.length);
+    host.dataset.selectionReason = 'backend breaking-news eligibility; newest eligible updates first; maximum two';
     host.innerHTML = `
       <div class="breaking-heading">
         <strong>Breaking News</strong>
         <span class="breaking-status"><i aria-hidden="true"></i> ${updateLabel(latest || doc?.generatedAt)}</span>
       </div>
       <div class="breaking-list" data-count="${visible.length}">
-        ${visible.map(item => `<a class="breaking-row" href="${esc(item.storyUrl)}"${/^https?:\/\//.test(item.storyUrl) ? ' target="_blank" rel="noopener"' : ''}><strong>${esc(item.shortHeadline || item.headline)}</strong><span class="breaking-chevron" aria-hidden="true">›</span></a>`).join('')}
+        ${visible.map(item => `<a class="breaking-row" href="${esc(item.storyUrl)}" data-breaking-score="${esc(item.breakingScore ?? item.score ?? '')}"${/^https?:\/\//.test(item.storyUrl) ? ' target="_blank" rel="noopener"' : ''}><strong>${esc(item.shortHeadline || item.headline)}</strong><span class="breaking-chevron" aria-hidden="true">›</span></a>`).join('')}
       </div>`;
   }
 
