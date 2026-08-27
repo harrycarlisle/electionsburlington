@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T22:38:17.528475-04:00",
+  "updatedAt": "2026-08-26T23:22:27.136785-04:00",
   "items": {
     "81a263fb84a5d3ef": {
       "firstSeenAt": "2026-08-25T14:06:50.332498-04:00",
@@ -411,7 +411,9 @@
     "e51a7f4a6fa434d3": {
       "firstSeenAt": "2026-08-26T22:38:17.528475-04:00",
       "lastSeenAt": "2026-08-26T22:38:17.528475-04:00",
-      "headline": "Burlington has spent more than $90 million on stormwater since 2015. What changed?"
+      "headline": "Burlington has spent more than $90 million on stormwater since 2015. What changed?",
+      "homepageShows": 1,
+      "lastHomepageAt": "2026-08-26T23:22:27.136785-04:00"
     },
     "7191e542f0cca14a": {
       "firstSeenAt": "2026-08-26T22:38:17.528475-04:00",

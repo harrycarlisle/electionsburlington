@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-27T02:30:03Z",
+  "checkedAt": "2026-08-27T03:21:37Z",
   "method": "Verified, rule-based Burlington civic monitor. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "sources": [
     {
@@ -79,8 +79,8 @@
     },
     {
       "source": "Conservation Halton",
-      "ok": true,
-      "found": 35
+      "ok": false,
+      "error": "<urlopen error timed out>"
     },
     {
       "source": "Halton District School Board",
@@ -89,24 +89,6 @@
     }
   ],
   "items": [
-    {
-      "title": "Low Water Normal Normal Normal Normal",
-      "url": "https://www.conservationhalton.ca/low-water-status/",
-      "source": "Conservation Halton",
-      "sourceType": "official",
-      "scope": "local-life",
-      "allowImage": true,
-      "pageRank": 12,
-      "description": "Current Low Water Status: Normal Conservation Halton Low Water Terminology Conservation Halton, in partnership with the Ministry of Northern Development, Mines, Natural Resources and Forestry, assists in the co-ordination and...",
-      "image": "https://www.conservationhalton.ca/wp-content/uploads/2022/05/Genericbanner2_1920x240.jpg",
-      "imageSource": "Conservation Halton",
-      "imageSourceUrl": "https://www.conservationhalton.ca/low-water-status/",
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 3,
-      "why": "It can affect where, how and how quickly Burlington grows.",
-      "tag": "Burlington"
-    },
     {
       "title": "Infrastructure and Growth",
       "url": "https://www.halton.ca/for-residents/infrastructure-and-growth",
@@ -124,20 +106,6 @@
       "importance": 3,
       "why": "",
       "tag": "Halton Region"
-    },
-    {
-      "title": "Conservation Halton Parks",
-      "url": "https://www.conservationhalton.ca/parks/",
-      "source": "Conservation Halton",
-      "sourceType": "official",
-      "scope": "local-life",
-      "allowImage": true,
-      "pageRank": 17,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 3,
-      "why": "",
-      "tag": "Burlington"
     },
     {
       "title": "Festivals & Events",
@@ -648,6 +616,52 @@
       "scope": "election",
       "allowImage": true,
       "pageRank": 18,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington"
+    },
+    {
+      "title": "Technology & You",
+      "url": "https://www.hdsb.ca/students-families/technology-you/",
+      "source": "Halton District School Board",
+      "sourceType": "official",
+      "scope": "schools",
+      "allowImage": true,
+      "pageRank": 18,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington"
+    },
+    {
+      "title": "Active5 Pass",
+      "url": "https://www.burlington.ca/en/recreation/active5-pass.aspx",
+      "source": "City of Burlington News",
+      "sourceType": "official",
+      "scope": "city",
+      "allowImage": true,
+      "pageRank": 19,
+      "description": "Sign up your Grade 5 child for the City of Burlington’s Active5 Pass so they can access free recreation activities year-round and win prizes.",
+      "image": "https://www.burlington.ca/en/images/structure/news_avatar.jpg",
+      "imageSource": "City of Burlington News",
+      "imageSourceUrl": "https://www.burlington.ca/en/recreation/active5-pass.aspx",
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington"
+    },
+    {
+      "title": "Subscribe to News and Updates",
+      "url": "https://myvote.burlington.ca/subscribe/",
+      "source": "City of Burlington Election",
+      "sourceType": "official",
+      "scope": "election",
+      "allowImage": true,
+      "pageRank": 19,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,

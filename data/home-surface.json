@@ -3,6 +3,32 @@
   "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure, then applies a diversity rerank so nearby homepage slots prefer different categories and subjects.",
   "feature": [
     {
+      "id": "burlington-flood-protection-90-million",
+      "kind": "original",
+      "headline": "Burlington has spent more than $90 million on stormwater since 2015. What changed?",
+      "deck": "Tuck Creek shows what the money has changed, and why some major flood work is still unfinished.",
+      "label": "Infrastructure",
+      "labelEssential": true,
+      "topic": "development",
+      "subjects": [
+        "flooding",
+        "stormwater",
+        "tuck-creek",
+        "infrastructure"
+      ],
+      "url": "articles/burlington-flood-protection-90-million.html",
+      "image": "assets/editorial/burlington-flood-investment-timeline.svg",
+      "alt": "Timeline showing Burlington flood protection work from the 2014 storm through 2028.",
+      "credit": "Burlington News graphic",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
+      "publishedAt": "2026-08-26T22:35:00-04:00",
+      "datePublished": "2026-08-26T22:35:00-04:00",
+      "placementScore": 95,
+      "status": "normal"
+    },
+    {
       "id": "costco-burloak-wyecroft",
       "kind": "original",
       "headline": "Oakville approved a 1,000-space Costco near Burloak. Here is how drivers will get in.",
@@ -24,9 +50,9 @@
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
       "storyGoal": "Explain the recently approved Costco site plan near Burloak through the practical questions Burlington drivers care about: status, parking, access and what is still unconfirmed.",
-      "publishedAt": "2026-08-26T22:14:00-04:00",
-      "datePublished": "2026-08-26T22:14:00-04:00",
-      "placementScore": 93,
+      "publishedAt": "2026-08-26T22:23:00-04:00",
+      "datePublished": "2026-08-26T22:23:00-04:00",
+      "placementScore": 89,
       "status": "normal"
     },
     {
@@ -50,27 +76,6 @@
       "placementScore": 87,
       "publishedAt": "2026-08-25T12:00:00-04:00",
       "datePublished": "2026-08-25T12:00:00-04:00",
-      "status": "normal"
-    },
-    {
-      "id": "data-centre-not-ai",
-      "kind": "explainer",
-      "headline": "Burlington's proposed data centre is not what many people think.",
-      "deck": "The City says it is not an AI hyperscale campus. The bigger question is what 20 megawatts means for the neighbourhood beside it.",
-      "label": "Development",
-      "labelEssential": true,
-      "topic": "development",
-      "subjects": [
-        "data-centre"
-      ],
-      "url": "articles/burlington-data-centre-not-ai.html",
-      "image": "assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp",
-      "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
-      "published": "2026-08-24",
-      "activeFrom": "2026-08-24",
-      "placementScore": 86,
-      "publishedAt": "2026-08-24T12:00:00-04:00",
-      "datePublished": "2026-08-24T12:00:00-04:00",
       "status": "normal"
     },
     {
@@ -120,8 +125,8 @@
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
       "storyGoal": "Turn a new investment announcement into an understandable Made in Burlington story about what the factory makes, how much work can happen indoors and the scale SEKISUI says it is targeting.",
-      "publishedAt": "2026-08-26T22:10:00-04:00",
-      "datePublished": "2026-08-26T22:10:00-04:00",
+      "publishedAt": "2026-08-26T22:22:00-04:00",
+      "datePublished": "2026-08-26T22:22:00-04:00",
       "placementScore": 92,
       "status": "normal"
     },
@@ -146,8 +151,8 @@
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
       "storyGoal": "Give Burlington residents a concise, verified list of significant full municipal road closures that continue into September, while separating them from ordinary lane restrictions.",
-      "publishedAt": "2026-08-26T22:18:00-04:00",
-      "datePublished": "2026-08-26T22:18:00-04:00",
+      "publishedAt": "2026-08-26T22:24:00-04:00",
+      "datePublished": "2026-08-26T22:24:00-04:00",
       "placementScore": 91,
       "status": "normal"
     },
@@ -199,8 +204,8 @@
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
       "storyGoal": "Turn a new investment announcement into an understandable Made in Burlington story about what the factory makes, how much work can happen indoors and the scale SEKISUI says it is targeting.",
-      "publishedAt": "2026-08-26T22:10:00-04:00",
-      "datePublished": "2026-08-26T22:10:00-04:00",
+      "publishedAt": "2026-08-26T22:22:00-04:00",
+      "datePublished": "2026-08-26T22:22:00-04:00",
       "placementScore": 92,
       "status": "normal"
     },
@@ -225,8 +230,8 @@
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
       "storyGoal": "Give Burlington residents a concise, verified list of significant full municipal road closures that continue into September, while separating them from ordinary lane restrictions.",
-      "publishedAt": "2026-08-26T22:18:00-04:00",
-      "datePublished": "2026-08-26T22:18:00-04:00",
+      "publishedAt": "2026-08-26T22:24:00-04:00",
+      "datePublished": "2026-08-26T22:24:00-04:00",
       "placementScore": 91,
       "status": "normal"
     },
@@ -253,6 +258,33 @@
       "publishedAt": "2026-08-26T17:03:00-04:00",
       "datePublished": "2026-08-26T17:03:00-04:00",
       "placementScore": 91,
+      "status": "normal"
+    },
+    {
+      "id": "costco-burloak-wyecroft",
+      "kind": "original",
+      "headline": "Oakville approved a 1,000-space Costco near Burloak. Here is how drivers will get in.",
+      "deck": "The site plan shows a gas bar, surface and underground parking, and four proposed access points.",
+      "label": "Development",
+      "labelEssential": true,
+      "topic": "development",
+      "subjects": [
+        "costco",
+        "burloak",
+        "wyecroft",
+        "traffic",
+        "retail-development"
+      ],
+      "url": "articles/costco-burloak-wyecroft.html",
+      "image": "assets/editorial/costco-burloak-access.svg",
+      "alt": "Simplified diagram showing the proposed Costco site and its four access points.",
+      "credit": "Burlington News schematic",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain the recently approved Costco site plan near Burloak through the practical questions Burlington drivers care about: status, parking, access and what is still unconfirmed.",
+      "publishedAt": "2026-08-26T22:23:00-04:00",
+      "datePublished": "2026-08-26T22:23:00-04:00",
+      "placementScore": 89,
       "status": "normal"
     },
     {
@@ -296,27 +328,6 @@
       "placementScore": 87,
       "publishedAt": "2026-08-25T12:00:00-04:00",
       "datePublished": "2026-08-25T12:00:00-04:00",
-      "status": "normal"
-    },
-    {
-      "id": "data-centre-not-ai",
-      "kind": "explainer",
-      "headline": "Burlington's proposed data centre is not what many people think.",
-      "deck": "The City says it is not an AI hyperscale campus. The bigger question is what 20 megawatts means for the neighbourhood beside it.",
-      "label": "Development",
-      "labelEssential": true,
-      "topic": "development",
-      "subjects": [
-        "data-centre"
-      ],
-      "url": "articles/burlington-data-centre-not-ai.html",
-      "image": "assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp",
-      "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
-      "published": "2026-08-24",
-      "activeFrom": "2026-08-24",
-      "placementScore": 86,
-      "publishedAt": "2026-08-24T12:00:00-04:00",
-      "datePublished": "2026-08-24T12:00:00-04:00",
       "status": "normal"
     }
   ],
@@ -391,6 +402,12 @@
   ],
   "audit": [
     {
+      "id": "burlington-flood-protection-90-million",
+      "state": "eligible",
+      "placementScore": 95,
+      "reason": "all gates passed"
+    },
+    {
       "id": "burlington-road-closures-september-2026",
       "state": "eligible",
       "placementScore": 91,
@@ -399,7 +416,7 @@
     {
       "id": "costco-burloak-wyecroft",
       "state": "eligible",
-      "placementScore": 93,
+      "placementScore": 89,
       "reason": "all gates passed"
     },
     {
