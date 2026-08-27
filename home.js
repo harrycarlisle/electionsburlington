@@ -9,12 +9,19 @@ import {
   const latestList=document.getElementById('latestList'),newestRail=document.getElementById('newestRail'),pickGrid=document.getElementById('pickGrid'),picksTitle=document.getElementById('picksTitle'),lead=document.querySelector('.top-story');
   const REFRESH_MS=5*60*1000,NEWEST_HOME_WINDOW_MS=7*24*60*60*1000;
   const cleanDash=value=>String(value||'').replace(/(\d)[—–](\d)/g,'$1-$2').replace(/[—–]/g,',').replace(/\s+,/g,',');
-  const esc=value=>cleanDash(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const esc=value=>cleanDash(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
   const STORY_ALIASES={'burlington-hotspots-0-24':'burlington-ultimate-team-0-24'};
   const publicUrl=value=>{const raw=String(value||'');if(/^https?:\/\//.test(raw))return raw;const story=raw.match(/^articles\/([^/]+)\.html$/);if(story)return `/stories/${STORY_ALIASES[story[1]]||story[1]}/`;return raw.startsWith('/')?raw:`/${raw}`};
   const TOPIC_LABELS={'public-safety':'Public safety',food:'Food',development:'Development',history:'History',election:'Election',schools:'Schools',events:'Events',sports:'Sports',nature:'Nature',traffic:'Traffic',transportation:'Transportation',canada:'Canada',burlington:'Burlington'};
-  const categoryLabel=item=>item?.topic&&TOPIC_LABELS[item.topic]?TOPIC_LABELS[item.topic]:(item?.label||'Burlington');
+  const categoryLabel=item=>item?.topic&&TOPIC_LABELS[item.topic]?TOPIC_LABELS[item.topic]:(item?.label||item?.category||'Burlington');
   const CRIME_IMAGE='/assets/stories/public-safety/halton-police-crime-burlington.webp';
+  const BREAKING_HERO_OVERRIDES={
+    'burlington-maple-richmond-fatal-hit-and-run':{
+      image:'assets/IMG_4780.jpeg',
+      alt:'Image related to the fatal hit-and-run investigation near Maple Avenue and Richmond Road in Burlington.',
+      deck:'The collision happened around 3:45 p.m. Thursday near Maple Avenue and Richmond Road.'
+    }
+  };
   const IMAGE_OVERRIDES={
     'e-scooter-burlington-rules':'assets/e-scooter.png',
     'burlington-rabies-bat-2026':'assets/bat.png',
@@ -25,7 +32,8 @@ import {
     'back-to-school-2026':'assets/back-to-school.png',
     'millcroft-phase-2-138-homes':'assets/condo-construction.png',
     'costco-burloak-wyecroft':'assets/costco.png',
-    'nelson-quarry-tribunal-decision':'assets/nelson-quarry.png'
+    'nelson-quarry-tribunal-decision':'assets/nelson-quarry.png',
+    'burlington-maple-richmond-fatal-hit-and-run':'assets/IMG_4780.jpeg'
   };
   const ALT_OVERRIDES={
     'e-scooter-burlington-rules':'A person riding an e-scooter along the right side of a suburban Burlington-area street.',
@@ -37,7 +45,8 @@ import {
     'back-to-school-2026':'Students walking toward a school entrance beside a yellow school bus.',
     'millcroft-phase-2-138-homes':'A mid-rise residential building under construction with a tower crane.',
     'costco-burloak-wyecroft':'Costco storefront and entrance in a suburban shopping area.',
-    'nelson-quarry-tribunal-decision':'Nelson Quarry and the Mount Nemo area in north Burlington.'
+    'nelson-quarry-tribunal-decision':'Nelson Quarry and the Mount Nemo area in north Burlington.',
+    'burlington-maple-richmond-fatal-hit-and-run':'Image related to the fatal hit-and-run investigation near Maple Avenue and Richmond Road in Burlington.'
   };
   const imageFor=item=>IMAGE_OVERRIDES[item?.id]||item?.image||'';
   const altFor=item=>ALT_OVERRIDES[item?.id]||item?.alt||item?.headline||'Burlington News';
@@ -48,6 +57,7 @@ import {
   const naturalHeadline=value=>cleanDash(value).replace(/\.\s+Here is where\.?$/i,'.').replace(/\.\s+Here is how\.?$/i,'.').replace(/\.\s+Here is why\.?$/i,'.');
   const displayHeadline=item=>/crime|burlington-crime/i.test(`${item?.id||''} ${item?.headline||''}`)?'How bad is crime in Burlington, really?':(/hotspots-0-24|ultimate-team-0-24|toss bosses|0–24|0-24/i.test(`${item?.id||''} ${item?.headline||''}`)?'This Burlington team has lost 24 straight games. Why do they keep coming back?':naturalHeadline(item.headline));
   const displayDeck=item=>{
+    if(BREAKING_HERO_OVERRIDES[item?.id]?.deck)return BREAKING_HERO_OVERRIDES[item.id].deck;
     if(/crime|burlington-crime/i.test(`${item?.id||''} ${item?.headline||''}`))return 'Burlington remains one of the safer large communities in Canada, but the latest comparable data shows one category moving in the wrong direction.';
     return cleanDash(item?.deck||item?.summary||item?.description||'').replace(/\s+/g,' ').trim();
   };
@@ -63,6 +73,13 @@ import {
   const totalBehaviourSample=statsMap=>Object.values(statsMap||{}).reduce((sum,row)=>sum+(Number(row?.reads24h)||Number(row?.opens)||0),0);
   const liveKeys=doc=>{const keys=new Set();for(const item of doc?.items||[]){if(item?.id)keys.add(String(item.id));if(item?.storyUrl)keys.add(publicUrl(item.storyUrl));}return keys};
   const isLiveStory=(item,keys)=>keys.has(String(item?.id||''))||keys.has(publicUrl(item?.url||''));
+  const breakingHeroFrom=doc=>{
+    if(doc?.mode!=='breaking')return null;
+    const item=(doc.items||[]).find(row=>row?.storyUrl&&row?.id&&!/road-closure$/.test(row.id));
+    if(!item)return null;
+    const override=BREAKING_HERO_OVERRIDES[item.id]||{};
+    return {...item,url:item.storyUrl,label:item.category||'Breaking News',topic:'public-safety',image:override.image||IMAGE_OVERRIDES[item.id]||'',alt:override.alt||ALT_OVERRIDES[item.id]||item.headline,deck:override.deck||'',placementScore:100};
+  };
   function renderLead(item,score){
     if(!lead||!item?.headline||!item?.url||isEditorialGraphic(item))return;
     const url=publicUrl(item.url),external=/^https?:\/\//.test(url),raw=imageFor(item),image=/crime/i.test(`${item.id||''} ${item.headline||''}`)?CRIME_IMAGE:(raw.startsWith('/')?raw:`/${raw}`),deck=displayDeck(item);
@@ -87,7 +104,7 @@ import {
   function localReadStats(){try{return JSON.parse(localStorage.getItem('bn-article-read-counts')||'{}')}catch(_){return{}}}
   async function refresh(){
     try{
-      const [homeResponse,liveResponse]=await Promise.all([fetch('/data/home-surface.json',{cache:'no-store'}),fetch('/data/breaking-now.json',{cache:'no-store'}).catch(()=>null)]);if(!homeResponse.ok)return;const data=await homeResponse.json(),liveDoc=liveResponse?.ok?await liveResponse.json():{},activeLive=liveKeys(liveDoc),all=uniqueById([...(data.feature||[]),...(data.latest||[]),...(data.rail||[])]),heroCandidates=uniqueById([...(data.feature||[]),...all]).filter(item=>hasPhoto(item)&&!isLiveStory(item,activeLive)).map(item=>({item,score:heroScore(item)})).sort((a,b)=>b.score-a.score),heroPick=heroCandidates[0];
+      const [homeResponse,liveResponse]=await Promise.all([fetch('/data/home-surface.json',{cache:'no-store'}),fetch('/data/breaking-now.json',{cache:'no-store'}).catch(()=>null)]);if(!homeResponse.ok)return;const data=await homeResponse.json(),liveDoc=liveResponse?.ok?await liveResponse.json():{},activeLive=liveKeys(liveDoc),breakingHero=breakingHeroFrom(liveDoc),all=uniqueById([...(data.feature||[]),...(data.latest||[]),...(data.rail||[])]),heroCandidates=uniqueById([...(data.feature||[]),...all]).filter(item=>hasPhoto(item)&&!isLiveStory(item,activeLive)).map(item=>({item,score:heroScore(item)})).sort((a,b)=>b.score-a.score),heroPick=breakingHero?{item:breakingHero,score:100}:heroCandidates[0];
       if(heroPick)renderLead(heroPick.item,heroPick.score);
       const feature=heroPick?.item,items=uniqueById([...(data.latest||[]),...(data.rail||[]),...(data.feature||[])]),newest=renderNewest(items,feature?.id,activeLive),exclude=new Set([feature?.id,...newest.map(x=>x.id)].filter(Boolean)),readStats=localReadStats();
       const candidates=uniqueById([...(data.popular||all),...SAFE_PICK_FALLBACKS]).filter(x=>!exclude.has(x.id)&&!isLiveStory(x,activeLive));renderPicks(candidates,readStats)
