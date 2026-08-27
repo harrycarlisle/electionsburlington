@@ -1,8 +1,8 @@
 import {
   canLabelMostRead,
+  effectiveFreshnessTimestamp,
   popularityScore,
-  relativeTime,
-  selectNewest
+  relativeTime
 } from '/lib/homepage-ranking.js?v=20260826nv2';
 
 (() => {
@@ -16,8 +16,8 @@ import {
   const categoryLabel=item=>item?.topic&&TOPIC_LABELS[item.topic]?TOPIC_LABELS[item.topic]:(item?.label||'Burlington');
   const CRIME_IMAGE='/assets/stories/public-safety/halton-police-crime-burlington.webp';
   const SAFE_PICK_FALLBACKS=[
-    {id:'burlington-ultimate-team-0-24',headline:'This Burlington team has lost 24 straight games. Why do they keep coming back?',deck:'After an 0-12 season, they changed the name. Twelve games later, they were still waiting for a win.',label:'Sports',topic:'sports',url:'articles/burlington-ultimate-team-0-24.html',image:'assets/ultimate-frisbee-burlington.png',alt:'Burlington ultimate players on a grass field during a recreational game.'},
-    {id:'skyway-bridge-story',headline:'Ontario nearly replaced the Skyway with three tunnels.',deck:'The tunnel plan got much further than most Burlington residents probably realize.',label:'History',topic:'history',url:'articles/skyway-bridge-story.html',image:'assets/home/skyway-reader.webp',alt:'The Burlington Bay James N. Allan Skyway across Burlington Bay.'}
+    {id:'burlington-ultimate-team-0-24',headline:'This Burlington team has lost 24 straight games. Why do they keep coming back?',deck:'After an 0-12 season, they changed the name. Twelve games later, they were still waiting for a win.',label:'Sports',topic:'sports',url:'articles/burlington-ultimate-team-0-24.html',image:'assets/ultimate-frisbee-burlington.png',alt:'Burlington ultimate players on a grass field during a recreational game.',placementScore:70},
+    {id:'skyway-bridge-story',headline:'Ontario nearly replaced the Skyway with three tunnels.',deck:'The tunnel plan got much further than most Burlington residents probably realize.',label:'History',topic:'history',url:'articles/skyway-bridge-story.html',image:'assets/home/skyway-reader.webp',alt:'The Burlington Bay James N. Allan Skyway across Burlington Bay.',placementScore:68}
   ];
   const displayHeadline=item=>/crime|burlington-crime/i.test(`${item?.id||''} ${item?.headline||''}`)?'How bad is crime in Burlington, really?':(/hotspots-0-24|ultimate-team-0-24|toss bosses|0–24|0-24/i.test(`${item?.id||''} ${item?.headline||''}`)?'This Burlington team has lost 24 straight games. Why do they keep coming back?':cleanDash(item.headline));
   const displayDeck=item=>{
@@ -27,31 +27,45 @@ import {
   const isEditorialGraphic=item=>{const descriptor=`${item?.image||''} ${item?.alt||''} ${item?.credit||''}`;return /\.svg(?:\?|$)/i.test(String(item?.image||''))||/timeline|chart|map|diagram|comparison|infographic|schematic|orientation graphic/i.test(descriptor)};
   const hasPhoto=item=>Boolean(item?.image)&&!isEditorialGraphic(item);
   const uniqueById=items=>{const seen=new Set();return items.filter(item=>{const key=item?.id||item?.url||item?.headline;if(!key||seen.has(key))return false;seen.add(key);return true})};
-  function renderLead(item){
+  const storyAgeMs=(item,now=Date.now())=>{const ts=effectiveFreshnessTimestamp(item);return ts?Math.max(0,now-ts):Infinity};
+  const freshnessScore=(item,now=Date.now())=>{const age=storyAgeMs(item,now);if(age<=6*3600000)return 100;if(age<=24*3600000)return 85;if(age<=72*3600000)return 65;if(age<=NEWEST_HOME_WINDOW_MS)return 40;return 20};
+  const heroScore=(item,now=Date.now())=>hasPhoto(item)?((Number(item?.placementScore)||0)*0.9+freshnessScore(item,now)*0.1):-Infinity;
+  const heroReason=(item,score)=>`final=${score.toFixed(1)}; placement=${Number(item?.placementScore)||0} (90%); freshness=${freshnessScore(item)} (10%); real-photo gate=pass`;
+  const statsFor=(item,statsMap)=>{
+    const candidates=[item?.id,item?.url,publicUrl(item?.url),item?.headline].filter(Boolean);
+    for(const key of candidates){const row=statsMap?.[key];if(row&&typeof row==='object')return row}
+    return {};
+  };
+  const topPickScore=(item,statsMap)=>popularityScore(statsFor(item,statsMap),Number(item?.placementScore)||0);
+  const totalBehaviourSample=statsMap=>Object.values(statsMap||{}).reduce((sum,row)=>sum+(Number(row?.reads24h)||Number(row?.opens)||0),0);
+  function renderLead(item,score){
     if(!lead||!item?.headline||!item?.url||isEditorialGraphic(item))return;
     const url=publicUrl(item.url),external=/^https?:\/\//.test(url),raw=item.image?(item.image.startsWith('/')?item.image:`/${item.image}`):CRIME_IMAGE,image=/crime/i.test(`${item.id||''} ${item.headline||''}`)?CRIME_IMAGE:raw,deck=displayDeck(item);
+    lead.dataset.selectionScore=score.toFixed(1);lead.dataset.selectionReason=heroReason(item,score);lead.dataset.storyId=item.id||'';
     lead.innerHTML=`<a href="${esc(url)}"${external?' target="_blank" rel="noopener"':''}><div class="top-image"><img src="${esc(image)}" alt="${esc(item.alt||item.headline)}" fetchpriority="high"></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(displayHeadline(item))}</h1>${deck?`<p>${esc(deck)}</p>`:''}</div></a>`;
   }
   function hideNewest(){if(newestRail){newestRail.hidden=true;newestRail.setAttribute('aria-hidden','true')}if(latestList)latestList.innerHTML=''}
   function renderNewest(items,heroId){
-    const picked=selectNewest(items,{heroId,limit:4,windowMs:NEWEST_HOME_WINDOW_MS});
-    if(!latestList||!newestRail||!picked.items.length){hideNewest();return[]}
-    newestRail.hidden=false;newestRail.removeAttribute('aria-hidden');
-    latestList.innerHTML=picked.items.map(item=>{const url=publicUrl(item.url),stamp=relativeTime(item.lastMeaningfulUpdate||item.publishedAt||item.datePublished||item.published||item.activeFrom);return `<a href="${esc(url)}"><span><small>${esc(categoryLabel(item))}</small><strong>${esc(displayHeadline(item))}</strong>${stamp?`<time>${esc(stamp)}</time>`:''}</span></a>`}).join('');return picked.items
+    const now=Date.now();
+    const picked=uniqueById(items).filter(item=>item?.id&&item.id!==heroId&&item.status!=='expired').map(item=>({item,ts:effectiveFreshnessTimestamp(item)})).filter(row=>row.ts&&now-row.ts>=0&&now-row.ts<=NEWEST_HOME_WINDOW_MS).sort((a,b)=>b.ts-a.ts).slice(0,4).map(row=>row.item);
+    if(!latestList||!newestRail||!picked.length){hideNewest();return[]}
+    newestRail.hidden=false;newestRail.removeAttribute('aria-hidden');newestRail.dataset.selectionReason='strict chronology; hero excluded; 7-day fallback window';
+    latestList.innerHTML=picked.map(item=>{const url=publicUrl(item.url),stamp=relativeTime(item.lastMeaningfulUpdate||item.publishedAt||item.datePublished||item.published||item.activeFrom);return `<a href="${esc(url)}" data-story-id="${esc(item.id||'')}"><span><small>${esc(categoryLabel(item))}</small><strong>${esc(displayHeadline(item))}</strong>${stamp?`<time>${esc(stamp)}</time>`:''}</span></a>`}).join('');return picked
   }
   function renderPicks(items,readStats){
     if(!pickGrid||!items.length)return;
-    const sample=Object.values(readStats||{}).reduce((sum,row)=>sum+(Number(row.opens)||0),0);if(picksTitle)picksTitle.textContent=canLabelMostRead(sample)?'Popular now':'Top picks';
-    const visible=uniqueById([...items.filter(hasPhoto),...SAFE_PICK_FALLBACKS]).filter(hasPhoto).slice(0,3);if(!visible.length)return;
-    pickGrid.innerHTML=visible.map(item=>{const url=publicUrl(item.url),raw=item.image?(item.image.startsWith('/')?item.image:`/${item.image}`):CRIME_IMAGE,hook=displayDeck(item);return `<a class="pick-card" href="${esc(url)}"><div class="pick-image"><img src="${esc(raw)}" alt="${esc(item.alt||item.headline)}" loading="lazy"></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(displayHeadline(item))}</h3>${hook?`<p class="pick-hook">${esc(hook)}</p>`:''}</a>`}).join('')
+    const sample=totalBehaviourSample(readStats);if(picksTitle)picksTitle.textContent=canLabelMostRead(sample)?'Popular now':'Top picks';
+    const visible=uniqueById([...items.filter(hasPhoto),...SAFE_PICK_FALLBACKS]).filter(hasPhoto).map(item=>({item,score:topPickScore(item,readStats)})).sort((a,b)=>b.score-a.score).slice(0,3);if(!visible.length)return;
+    pickGrid.dataset.selectionReason='per-story popularity score: behaviour when available, editorial placement as low-sample fallback; real-photo gate';
+    pickGrid.innerHTML=visible.map(({item,score})=>{const url=publicUrl(item.url),raw=item.image?(item.image.startsWith('/')?item.image:`/${item.image}`):CRIME_IMAGE,hook=displayDeck(item),stats=statsFor(item,readStats);return `<a class="pick-card" href="${esc(url)}" data-story-id="${esc(item.id||'')}" data-selection-score="${score.toFixed(2)}" data-reads-24h="${Number(stats.reads24h)||0}"><div class="pick-image"><img src="${esc(raw)}" alt="${esc(item.alt||item.headline)}" loading="lazy"></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(displayHeadline(item))}</h3>${hook?`<p class="pick-hook">${esc(hook)}</p>`:''}</a>`}).join('')
   }
   function localReadStats(){try{return JSON.parse(localStorage.getItem('bn-article-read-counts')||'{}')}catch(_){return{}}}
   async function refresh(){
     try{
-      const r=await fetch('/data/home-surface.json',{cache:'no-store'});if(!r.ok)return;const data=await r.json(),all=uniqueById([...(data.feature||[]),...(data.latest||[]),...(data.rail||[])]),feature=(data.feature||[]).find(hasPhoto)||all.find(hasPhoto);
-      if(feature)renderLead(feature);
-      const items=uniqueById([...(data.latest||[]),...(data.rail||[]),...(data.feature||[])]),newest=renderNewest(items,feature?.id),exclude=new Set([feature?.id,...newest.map(x=>x.id)].filter(Boolean));
-      const ranked=uniqueById([...(data.popular||all),...SAFE_PICK_FALLBACKS]).filter(x=>!exclude.has(x.id)).sort((a,b)=>popularityScore(b,localReadStats())-popularityScore(a,localReadStats()));renderPicks(ranked,localReadStats())
+      const r=await fetch('/data/home-surface.json',{cache:'no-store'});if(!r.ok)return;const data=await r.json(),all=uniqueById([...(data.feature||[]),...(data.latest||[]),...(data.rail||[])]),heroCandidates=uniqueById([...(data.feature||[]),...all]).filter(hasPhoto).map(item=>({item,score:heroScore(item)})).sort((a,b)=>b.score-a.score),heroPick=heroCandidates[0];
+      if(heroPick)renderLead(heroPick.item,heroPick.score);
+      const feature=heroPick?.item,items=uniqueById([...(data.latest||[]),...(data.rail||[]),...(data.feature||[])]),newest=renderNewest(items,feature?.id),exclude=new Set([feature?.id,...newest.map(x=>x.id)].filter(Boolean)),readStats=localReadStats();
+      const candidates=uniqueById([...(data.popular||all),...SAFE_PICK_FALLBACKS]).filter(x=>!exclude.has(x.id));renderPicks(candidates,readStats)
     }catch(_){}
   }
   refresh();setInterval(refresh,REFRESH_MS);
