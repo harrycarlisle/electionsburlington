@@ -1,0 +1,56 @@
+{
+  "burlington-road-closures-september-2026": {
+    "headline": "Two Burlington roads will stay fully closed into September.",
+    "image": "assets/road-closure.png",
+    "alt": "Road construction and lane restrictions on a Burlington arterial road.",
+    "credit": "Burlington News visual"
+  },
+  "costco-burloak-wyecroft": {
+    "headline": "Oakville approved a 1,000-space Costco near Burloak. The plan has four access points.",
+    "image": "assets/costco.png",
+    "alt": "Costco storefront and entrance in a suburban shopping area.",
+    "credit": "Burlington News visual"
+  },
+  "e-scooter-burlington-rules": {
+    "image": "assets/e-scooter.png",
+    "alt": "A person riding an e-scooter along the right side of a suburban street.",
+    "credit": "Burlington News visual"
+  },
+  "burlington-rabies-bat-2026": {
+    "image": "assets/bat.png",
+    "alt": "A bat hanging beneath the eaves of a suburban home at dusk.",
+    "credit": "Burlington News visual"
+  },
+  "upper-middle-road-construction-2026": {
+    "image": "assets/upper-middle-construction.png",
+    "alt": "Road construction on a wide Burlington arterial road.",
+    "credit": "Burlington News visual"
+  },
+  "ribfest-2026": {
+    "image": "assets/rib-fest.png",
+    "alt": "Barbecue ribs being glazed on a grill at an outdoor festival.",
+    "credit": "Burlington News visual"
+  },
+  "back-to-school-2026": {
+    "image": "assets/back-to-school.png",
+    "alt": "Students walking toward a school entrance beside a yellow school bus.",
+    "credit": "Burlington News visual"
+  },
+  "ontario-student-rights-school": {
+    "image": "assets/back-to-school.png",
+    "alt": "Students walking toward a school entrance beside a yellow school bus.",
+    "credit": "Burlington News visual"
+  },
+  "millcroft-phase-2-138-homes": {
+    "headline": "The mayor's Millcroft update is about 138 proposed homes.",
+    "image": "assets/condo-construction.png",
+    "alt": "A mid-rise residential building under construction with a tower crane.",
+    "credit": "Burlington News visual"
+  },
+  "nelson-quarry-tribunal-decision": {
+    "headline": "Nelson Quarry won at the tribunal. What happens now?",
+    "image": "assets/nelson-quarry.png",
+    "alt": "Nelson Quarry and the Mount Nemo area in north Burlington.",
+    "credit": "Burlington News visual"
+  }
+}
