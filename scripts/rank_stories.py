@@ -20,6 +20,7 @@ from editorial_policy import load_policy, signal_weights
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "data" / "story-catalog.json"
+OVERRIDES = ROOT / "data" / "story-overrides.json"
 RADAR = ROOT / "data" / "local-radar.json"
 SEEN = ROOT / "data" / "radar-seen.json"
 LEAD_HISTORY = ROOT / "data" / "lead-history.json"
@@ -35,6 +36,19 @@ def parse_date(value: str | None) -> dt.date | None:
         return dt.date.fromisoformat(str(value)[:10])
     except ValueError:
         return None
+
+
+def load_overrides() -> dict[str, dict]:
+    try:
+        payload = json.loads(OVERRIDES.read_text(encoding="utf-8"))
+        return payload if isinstance(payload, dict) else {}
+    except Exception:
+        return {}
+
+
+def apply_overrides(item: dict, overrides: dict[str, dict]) -> dict:
+    patch = overrides.get(str(item.get("id") or "")) or {}
+    return {**item, **patch} if patch else item
 
 
 def gate_state(item: dict, today: dt.date) -> tuple[str, str]:
@@ -292,12 +306,14 @@ def main() -> int:
     args = parser.parse_args()
     today = parse_date(args.date) if args.date else dt.datetime.now(TZ).date()
     payload = json.loads(CATALOG.read_text(encoding="utf-8"))
+    overrides = load_overrides()
     try:
         radar_rows = json.loads(RADAR.read_text(encoding="utf-8")).get("homepage", [])
     except Exception:
         radar_rows = []
     audited = []
-    for item in payload.get("items", []):
+    for raw_item in payload.get("items", []):
+        item = apply_overrides(raw_item, overrides)
         state, reason = gate_state(item, today)
         audited.append({**item, "state": state, "reason": reason, "placementScore": score(item, today, radar_rows)})
 
@@ -329,7 +345,7 @@ def main() -> int:
 
     result = {
         "generatedFor": today.isoformat(),
-        "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure, then applies a diversity rerank so nearby homepage slots prefer different categories and subjects.",
+        "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure, then applies a diversity rerank so nearby homepage slots prefer different categories and subjects. Editorial story-overrides are applied before ranking so approved headlines and imagery persist across generated homepage surfaces.",
         "feature": [public_item(item) for item in ([hero] if hero else []) + feature_rest],
         "rail": [public_item(item) for item in rail_raw],
         "latest": [public_item(item) for item in latest_raw],
