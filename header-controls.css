@@ -1,2 +1,24 @@
 .header-controls{display:flex;align-items:center;gap:9px;margin-left:auto;position:relative;z-index:82}
-.theme-icon-button{display:inline-grid;place-items:center;width:42px;height:42px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--navy);cursor:pointer;box-shadow:0 4px 12px rgba(15,52,88,.05);transition:transform .16s ease,border-color .16s ease,background .16s ease}.theme-icon-button svg{width:18px;height:18px;display:block}.theme-icon-button:hover{transform:translateY(-1px);border-color:#adc8db;background:var(--soft)}.theme-icon-button:focus-visible{outline:3px solid #176ac4;outline-offset:3px}.menu-icon-button{border-radius:50%!important;box-shadow:0 4px 12px rgba(15,52,88,.05)}.menu-panel{top:var(--menu-top,84px)!important}html[data-theme="dark"] .theme-icon-button{background:#132531;color:#e4f2fd;border-color:#385064}html[data-theme="dark"] .theme-icon-button:hover{background:#1b3040;border-color:#58748a}@media(max-width:720px){.header-controls{margin-left:auto}.theme-icon-button,.menu-icon-button{width:40px;height:40px}.menu-panel{top:var(--mobile-menu-top,var(--menu-top,78px))!important}}@media(prefers-reduced-motion:reduce){.theme-icon-button{transition:none}.theme-icon-button:hover{transform:none}}
+.theme-icon-button{display:inline-grid;place-items:center;width:42px;height:42px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--card);color:var(--navy);cursor:pointer;box-shadow:0 4px 12px rgba(15,52,88,.05);transition:transform .16s ease,border-color .16s ease,background .16s ease}.theme-icon-button svg{width:18px;height:18px;display:block}.theme-icon-button:hover{transform:translateY(-1px);border-color:#adc8db;background:var(--soft)}.theme-icon-button:focus-visible{outline:3px solid #176ac4;outline-offset:3px}.menu-icon-button{border-radius:50%!important;box-shadow:0 4px 12px rgba(15,52,88,.05)}.menu-panel{top:var(--menu-top,84px)!important}
+
+/* Final header polish: one continuous search field and a quieter publication mark. */
+html body .site-header .news-brand-logo,
+html body .header .news-brand-logo,
+html body .site-header .brand-mark-only img,
+html body .header .brand-mark-only img{width:28px!important;height:31px!important;max-width:28px!important;flex-basis:28px!important}
+html body .header-controls .header-search,
+html body .site-header .header-controls .header-search,
+html body .header .header-controls .header-search{overflow:hidden!important;background:var(--card,#fff)!important;border:1px solid var(--line,#d8e2ec)!important;border-radius:9px!important;box-shadow:none!important}
+html body .header-controls .header-search input,
+html body .header-controls .header-search button,
+html body .header-controls .header-search .search-submit,
+html body .header-controls .header-search .search-icon,
+html body .header-controls .header-search>svg{background:transparent!important;border:0!important;box-shadow:none!important;color:inherit!important}
+html body .header-controls .header-search button,
+html body .header-controls .header-search .search-submit{align-self:stretch!important;border-left:0!important;border-radius:0!important}
+html[data-theme="dark"] body .header-controls .header-search,
+html[data-theme="dark"] body .site-header .header-controls .header-search{background:#11191d!important;border-color:#3a474e!important}
+
+html[data-theme="dark"] .theme-icon-button{background:#132531;color:#e4f2fd;border-color:#385064}html[data-theme="dark"] .theme-icon-button:hover{background:#1b3040;border-color:#58748a}
+@media(max-width:720px){.header-controls{margin-left:auto}.theme-icon-button,.menu-icon-button{width:40px;height:40px}.menu-panel{top:var(--mobile-menu-top,var(--menu-top,78px))!important}html body .site-header .news-brand-logo,html body .header .news-brand-logo,html body .site-header .brand-mark-only img,html body .header .brand-mark-only img{width:27px!important;height:30px!important;max-width:27px!important;flex-basis:27px!important}}
+@media(prefers-reduced-motion:reduce){.theme-icon-button{transition:none}.theme-icon-button:hover{transform:none}}
