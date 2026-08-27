@@ -2,24 +2,7 @@
   const host = document.getElementById('breakingNow');
   if (!host) return;
 
-  if (!document.querySelector('link[data-style="breaking-morningtee"]')) {
-    const style = document.createElement('link');
-    style.rel = 'stylesheet';
-    style.href = '/breaking-morningtee.css?v=20260827live1';
-    style.dataset.style = 'breaking-morningtee';
-    document.head.appendChild(style);
-  }
-
-  const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-
-  function hide() {
-    host.hidden = true;
-    host.classList.add('is-empty');
-    host.setAttribute('aria-hidden', 'true');
-    host.dataset.state = 'empty';
-    host.dataset.count = '0';
-    host.innerHTML = '';
-  }
+  const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[ch]));
 
   function timestamp(item) {
     const parsed = new Date(item?.lastMeaningfulUpdate || item?.updatedAt || item?.publishedAt || 0).getTime();
@@ -28,7 +11,7 @@
 
   function updateLabel(value) {
     const parsed = value ? new Date(value) : null;
-    if (!parsed || Number.isNaN(parsed.getTime())) return 'UPDATED NOW';
+    if (!parsed || Number.isNaN(parsed.getTime())) return 'UPDATED RECENTLY';
     const time = new Intl.DateTimeFormat('en-CA', {
       hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/Toronto'
     }).format(parsed).replace(/\s/g, ' ').toUpperCase();
@@ -39,7 +22,7 @@
     const visible = (Array.isArray(doc?.items) ? doc.items : [])
       .filter(item => item?.headline && item?.storyUrl)
       .slice(0, 2);
-    if (!visible.length) return hide();
+    if (!visible.length) return;
 
     const isBreaking = doc?.mode === 'breaking';
     const label = isBreaking ? 'Breaking News' : 'Local Update';
@@ -61,17 +44,26 @@
       </div>`;
   }
 
-  async function load() {
+  async function fetchJson(url, timeoutMs = 2200) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
     try {
-      const response = await fetch('/data/breaking-now.json', {cache:'no-store'});
+      const response = await fetch(url, {cache:'no-store', signal:controller.signal});
       if (!response.ok) throw new Error(`live-news ${response.status}`);
-      render(await response.json());
-    } catch (_) {
-      hide();
+      return await response.json();
+    } finally {
+      clearTimeout(timer);
     }
   }
 
-  hide();
+  async function load() {
+    try {
+      render(await fetchJson('/data/breaking-now.json'));
+    } catch (_) {
+      // Keep the useful server-rendered Local Update already in the page.
+    }
+  }
+
   load();
   setInterval(load, 60 * 1000);
 })();
