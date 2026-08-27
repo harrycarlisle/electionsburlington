@@ -2,6 +2,14 @@
   const host = document.getElementById('breakingNow');
   if (!host) return;
 
+  if (!document.querySelector('link[data-style="breaking-morningtee"]')) {
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = '/breaking-morningtee.css?v=20260827a';
+    style.dataset.style = 'breaking-morningtee';
+    document.head.appendChild(style);
+  }
+
   // Temporary homepage fixtures for the focused Breaking News design pass.
   // Keep these local to the component so the rest of the homepage/data pipeline is untouched.
   const FEATURED_TWO = [
