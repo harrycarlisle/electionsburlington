@@ -45,6 +45,4 @@
   requestAnimationFrame(sync);
   setTimeout(sync, 0);
   setTimeout(sync, 250);
-
-  import('/traffic-card-live.js?v=20260827a').catch(() => {});
 })();
