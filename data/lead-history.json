@@ -1,7 +1,12 @@
 {
-  "currentLead": "burlington-crime-analysis-2026",
+  "currentLead": "costco-burloak-wyecroft",
   "updated": "2026-08-26",
   "history": [
+    {
+      "id": "costco-burloak-wyecroft",
+      "headline": "Oakville approved a 1,000-space Costco near Burloak. Here is how drivers will get in.",
+      "date": "2026-08-26"
+    },
     {
       "id": "burlington-crime-analysis-2026",
       "headline": "How bad is crime in Burlington, really?",

@@ -3,6 +3,33 @@
   "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure, then applies a diversity rerank so nearby homepage slots prefer different categories and subjects.",
   "feature": [
     {
+      "id": "costco-burloak-wyecroft",
+      "kind": "original",
+      "headline": "Oakville approved a 1,000-space Costco near Burloak. Here is how drivers will get in.",
+      "deck": "The site plan shows a gas bar, surface and underground parking, and four proposed access points.",
+      "label": "Development",
+      "labelEssential": true,
+      "topic": "development",
+      "subjects": [
+        "costco",
+        "burloak",
+        "wyecroft",
+        "traffic",
+        "retail-development"
+      ],
+      "url": "articles/costco-burloak-wyecroft.html",
+      "image": "assets/editorial/costco-burloak-access.svg",
+      "alt": "Simplified diagram showing the proposed Costco site and its four access points.",
+      "credit": "Burlington News schematic",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain the recently approved Costco site plan near Burloak through the practical questions Burlington drivers care about: status, parking, access and what is still unconfirmed.",
+      "publishedAt": "2026-08-26T22:14:00-04:00",
+      "datePublished": "2026-08-26T22:14:00-04:00",
+      "placementScore": 93,
+      "status": "normal"
+    },
+    {
       "id": "burlington-crime-analysis-2026",
       "kind": "original",
       "headline": "How bad is crime in Burlington, really?",
@@ -26,70 +53,6 @@
       "status": "normal"
     },
     {
-      "id": "skyway-tunnels",
-      "kind": "feature",
-      "headline": "Ontario nearly replaced the Skyway with three tunnels.",
-      "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
-      "label": "Feature",
-      "labelEssential": true,
-      "topic": "history",
-      "subjects": [
-        "skyway",
-        "history"
-      ],
-      "url": "articles/skyway-bridge-story.html",
-      "image": "assets/home/skyway-reader.webp",
-      "alt": "The Burlington Bay James N. Allan Skyway",
-      "credit": "Dave Lauretti · CC BY 2.0",
-      "published": "2026-08-24",
-      "placementScore": 82,
-      "publishedAt": "2026-08-24T12:00:00-04:00",
-      "datePublished": "2026-08-24T12:00:00-04:00",
-      "status": "normal"
-    },
-    {
-      "id": "ribfest-2026",
-      "kind": "seasonal",
-      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
-      "label": "Events",
-      "labelEssential": true,
-      "topic": "events",
-      "subjects": [
-        "events",
-        "ribfest"
-      ],
-      "url": "articles/ribfest-2026.html",
-      "image": "assets/home/ribs.webp",
-      "alt": "Barbecue ribs smoking over a pit",
-      "activeFrom": "2026-08-18",
-      "placementScore": 78,
-      "publishedAt": "2026-08-18T12:00:00-04:00",
-      "datePublished": "2026-08-18T12:00:00-04:00",
-      "status": "normal"
-    }
-  ],
-  "rail": [
-    {
-      "id": "ontario-student-rights-school",
-      "kind": "service",
-      "headline": "Can a teacher take your phone? Seven school rules students should know.",
-      "label": "Schools",
-      "labelEssential": true,
-      "topic": "schools",
-      "subjects": [
-        "school-policy"
-      ],
-      "url": "articles/ontario-student-rights-school.html",
-      "image": "assets/home/school-rights.webp",
-      "alt": "A yellow Ontario school bus",
-      "published": "2026-08-24",
-      "activeFrom": "2026-08-24",
-      "placementScore": 88,
-      "publishedAt": "2026-08-24T12:00:00-04:00",
-      "datePublished": "2026-08-24T12:00:00-04:00",
-      "status": "normal"
-    },
-    {
       "id": "data-centre-not-ai",
       "kind": "explainer",
       "headline": "Burlington's proposed data centre is not what many people think.",
@@ -135,7 +98,59 @@
       "status": "normal"
     }
   ],
-  "latest": [
+  "rail": [
+    {
+      "id": "sekisui-burlington-modular-factory",
+      "kind": "original",
+      "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
+      "deck": "SEKISUI's $15-million Canadian hub is targeting schools, housing and care buildings.",
+      "label": "Made in Burlington",
+      "labelEssential": true,
+      "topic": "burlington",
+      "subjects": [
+        "made-in-burlington",
+        "manufacturing",
+        "modular-construction",
+        "housing"
+      ],
+      "url": "articles/sekisui-burlington-modular-factory.html",
+      "image": "assets/editorial/sekisui-modular-burlington.svg",
+      "alt": "Diagram showing building modules made in a factory and assembled into a mid-rise building.",
+      "credit": "Burlington News diagram",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Turn a new investment announcement into an understandable Made in Burlington story about what the factory makes, how much work can happen indoors and the scale SEKISUI says it is targeting.",
+      "publishedAt": "2026-08-26T22:10:00-04:00",
+      "datePublished": "2026-08-26T22:10:00-04:00",
+      "placementScore": 92,
+      "status": "normal"
+    },
+    {
+      "id": "burlington-road-closures-september-2026",
+      "kind": "service",
+      "headline": "Two Burlington roads will stay fully closed into September. Here is where.",
+      "deck": "Spruce Avenue is closed through Sept. 4. Britannia Road has no through traffic through the end of September.",
+      "label": "Roads",
+      "labelEssential": true,
+      "topic": "traffic",
+      "subjects": [
+        "road-construction",
+        "closures",
+        "spruce-avenue",
+        "britannia-road"
+      ],
+      "url": "articles/burlington-road-closures-september-2026.html",
+      "image": "assets/editorial/burlington-road-closures-aug-sept-2026.svg",
+      "alt": "Orientation graphic showing the Spruce Avenue and Britannia Road closure segments in Burlington.",
+      "credit": "Burlington News graphic",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Give Burlington residents a concise, verified list of significant full municipal road closures that continue into September, while separating them from ordinary lane restrictions.",
+      "publishedAt": "2026-08-26T22:18:00-04:00",
+      "datePublished": "2026-08-26T22:18:00-04:00",
+      "placementScore": 91,
+      "status": "normal"
+    },
     {
       "id": "e-scooter-burlington-rules",
       "kind": "original",
@@ -146,7 +161,8 @@
       "topic": "transportation",
       "subjects": [
         "e-scooter",
-        "safety"
+        "safety",
+        "centennial-trail"
       ],
       "url": "articles/e-scooter-burlington-rules.html",
       "image": "assets/editorial/centennial-trail-e-scooter.webp",
@@ -155,9 +171,88 @@
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
       "storyGoal": "Connect the national rise in e-scooter injuries to Burlington’s narrow Centennial Trail-only rules.",
-      "placementScore": 84,
       "publishedAt": "2026-08-26T17:03:00-04:00",
       "datePublished": "2026-08-26T17:03:00-04:00",
+      "placementScore": 91,
+      "status": "normal"
+    }
+  ],
+  "latest": [
+    {
+      "id": "sekisui-burlington-modular-factory",
+      "kind": "original",
+      "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
+      "deck": "SEKISUI's $15-million Canadian hub is targeting schools, housing and care buildings.",
+      "label": "Made in Burlington",
+      "labelEssential": true,
+      "topic": "burlington",
+      "subjects": [
+        "made-in-burlington",
+        "manufacturing",
+        "modular-construction",
+        "housing"
+      ],
+      "url": "articles/sekisui-burlington-modular-factory.html",
+      "image": "assets/editorial/sekisui-modular-burlington.svg",
+      "alt": "Diagram showing building modules made in a factory and assembled into a mid-rise building.",
+      "credit": "Burlington News diagram",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Turn a new investment announcement into an understandable Made in Burlington story about what the factory makes, how much work can happen indoors and the scale SEKISUI says it is targeting.",
+      "publishedAt": "2026-08-26T22:10:00-04:00",
+      "datePublished": "2026-08-26T22:10:00-04:00",
+      "placementScore": 92,
+      "status": "normal"
+    },
+    {
+      "id": "burlington-road-closures-september-2026",
+      "kind": "service",
+      "headline": "Two Burlington roads will stay fully closed into September. Here is where.",
+      "deck": "Spruce Avenue is closed through Sept. 4. Britannia Road has no through traffic through the end of September.",
+      "label": "Roads",
+      "labelEssential": true,
+      "topic": "traffic",
+      "subjects": [
+        "road-construction",
+        "closures",
+        "spruce-avenue",
+        "britannia-road"
+      ],
+      "url": "articles/burlington-road-closures-september-2026.html",
+      "image": "assets/editorial/burlington-road-closures-aug-sept-2026.svg",
+      "alt": "Orientation graphic showing the Spruce Avenue and Britannia Road closure segments in Burlington.",
+      "credit": "Burlington News graphic",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Give Burlington residents a concise, verified list of significant full municipal road closures that continue into September, while separating them from ordinary lane restrictions.",
+      "publishedAt": "2026-08-26T22:18:00-04:00",
+      "datePublished": "2026-08-26T22:18:00-04:00",
+      "placementScore": 91,
+      "status": "normal"
+    },
+    {
+      "id": "e-scooter-burlington-rules",
+      "kind": "original",
+      "headline": "E-scooter injuries are rising. Burlington’s rules are stricter than you might think.",
+      "deck": "Most public roads and sidewalks in Burlington are still off-limits.",
+      "label": "Transportation",
+      "labelEssential": true,
+      "topic": "transportation",
+      "subjects": [
+        "e-scooter",
+        "safety",
+        "centennial-trail"
+      ],
+      "url": "articles/e-scooter-burlington-rules.html",
+      "image": "assets/editorial/centennial-trail-e-scooter.webp",
+      "alt": "Diagram showing e-scooters are allowed only on Centennial Trail between Brant Street and Burloak Drive.",
+      "credit": "Burlington News diagram",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Connect the national rise in e-scooter injuries to Burlington’s narrow Centennial Trail-only rules.",
+      "publishedAt": "2026-08-26T17:03:00-04:00",
+      "datePublished": "2026-08-26T17:03:00-04:00",
+      "placementScore": 91,
       "status": "normal"
     },
     {
@@ -181,6 +276,29 @@
       "status": "normal"
     },
     {
+      "id": "burlington-crime-analysis-2026",
+      "kind": "original",
+      "headline": "How bad is crime in Burlington, really?",
+      "deck": "One category of crime is moving the wrong way.",
+      "label": "Public safety",
+      "labelEssential": true,
+      "topic": "public-safety",
+      "subjects": [
+        "crime"
+      ],
+      "url": "articles/how-bad-is-burlington-crime.html",
+      "image": "assets/stories/public-safety/halton-police-crime-burlington.webp",
+      "alt": "Halton Regional Police vehicle behind crime-scene tape.",
+      "credit": "Burlington News",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
+      "placementScore": 87,
+      "publishedAt": "2026-08-25T12:00:00-04:00",
+      "datePublished": "2026-08-25T12:00:00-04:00",
+      "status": "normal"
+    },
+    {
       "id": "data-centre-not-ai",
       "kind": "explainer",
       "headline": "Burlington's proposed data centre is not what many people think.",
@@ -199,6 +317,51 @@
       "placementScore": 86,
       "publishedAt": "2026-08-24T12:00:00-04:00",
       "datePublished": "2026-08-24T12:00:00-04:00",
+      "status": "normal"
+    }
+  ],
+  "picks": [
+    {
+      "id": "ontario-student-rights-school",
+      "kind": "service",
+      "headline": "Can a teacher take your phone? Seven school rules students should know.",
+      "label": "Schools",
+      "labelEssential": true,
+      "topic": "schools",
+      "subjects": [
+        "school-policy"
+      ],
+      "url": "articles/ontario-student-rights-school.html",
+      "image": "assets/home/school-rights.webp",
+      "alt": "A yellow Ontario school bus",
+      "published": "2026-08-24",
+      "activeFrom": "2026-08-24",
+      "placementScore": 88,
+      "publishedAt": "2026-08-24T12:00:00-04:00",
+      "datePublished": "2026-08-24T12:00:00-04:00",
+      "status": "normal"
+    },
+    {
+      "id": "burlington-crime-analysis-2026",
+      "kind": "original",
+      "headline": "How bad is crime in Burlington, really?",
+      "deck": "One category of crime is moving the wrong way.",
+      "label": "Public safety",
+      "labelEssential": true,
+      "topic": "public-safety",
+      "subjects": [
+        "crime"
+      ],
+      "url": "articles/how-bad-is-burlington-crime.html",
+      "image": "assets/stories/public-safety/halton-police-crime-burlington.webp",
+      "alt": "Halton Regional Police vehicle behind crime-scene tape.",
+      "credit": "Burlington News",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
+      "placementScore": 87,
+      "publishedAt": "2026-08-25T12:00:00-04:00",
+      "datePublished": "2026-08-25T12:00:00-04:00",
       "status": "normal"
     },
     {
@@ -224,141 +387,31 @@
       "publishedAt": "2026-08-25T12:00:00-04:00",
       "datePublished": "2026-08-25T12:00:00-04:00",
       "status": "normal"
-    },
-    {
-      "id": "ribfest-2026",
-      "kind": "seasonal",
-      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
-      "label": "Events",
-      "labelEssential": true,
-      "topic": "events",
-      "subjects": [
-        "events",
-        "ribfest"
-      ],
-      "url": "articles/ribfest-2026.html",
-      "image": "assets/home/ribs.webp",
-      "alt": "Barbecue ribs smoking over a pit",
-      "activeFrom": "2026-08-18",
-      "placementScore": 78,
-      "publishedAt": "2026-08-18T12:00:00-04:00",
-      "datePublished": "2026-08-18T12:00:00-04:00",
-      "status": "normal"
-    },
-    {
-      "id": "fishway-2025",
-      "kind": "evergreen",
-      "headline": "What 26,503 fish revealed about a damaged marsh.",
-      "label": "Nature",
-      "labelEssential": true,
-      "topic": "nature",
-      "subjects": [
-        "wildlife",
-        "fishway"
-      ],
-      "url": "articles/fishway-26000-fish.html",
-      "image": "assets/home/fishway.webp",
-      "alt": "The Cootes Paradise Fishway across the water",
-      "published": "2026-08-23",
-      "placementScore": 75,
-      "publishedAt": "2026-08-23T12:00:00-04:00",
-      "datePublished": "2026-08-23T12:00:00-04:00",
-      "status": "normal"
-    },
-    {
-      "id": "ward-change-2026",
-      "kind": "service",
-      "headline": "Your ward may have changed. Check before you vote.",
-      "label": "Election",
-      "labelEssential": true,
-      "topic": "election",
-      "subjects": [
-        "election",
-        "wards"
-      ],
-      "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
-      "image": "assets/editorial/burlington-wards-2026.svg",
-      "alt": "Simplified orientation diagram of Burlington's six 2026 voting wards",
-      "activeFrom": "2026-08-21",
-      "placementScore": 80,
-      "publishedAt": "2026-08-21T12:00:00-04:00",
-      "datePublished": "2026-08-21T12:00:00-04:00",
-      "status": "normal"
-    }
-  ],
-  "picks": [
-    {
-      "id": "burlington-ultimate-team-0-24",
-      "kind": "original",
-      "headline": "This Burlington team is 0–24. Why do they keep coming back?",
-      "deck": "After an 0–12 season, they changed the name. Twelve games later, they were still waiting for a win.",
-      "label": "Sports",
-      "labelEssential": true,
-      "topic": "sports",
-      "subjects": [
-        "sports",
-        "hidden-gem"
-      ],
-      "url": "articles/burlington-ultimate-team-0-24.html",
-      "image": "assets/ultimate-frisbee-burlington.png",
-      "alt": "Burlington ultimate players on a grass field during a recreational game.",
-      "credit": "",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Explain how Toss Bosses went 0-24 after a name change from Panic at the Disco, and why the rec team keeps coming back.",
-      "placementScore": 82,
-      "publishedAt": "2026-08-26T12:00:00-04:00",
-      "datePublished": "2026-08-26T12:00:00-04:00",
-      "status": "normal"
-    },
-    {
-      "id": "skyway-tunnels",
-      "kind": "feature",
-      "headline": "Ontario nearly replaced the Skyway with three tunnels.",
-      "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
-      "label": "Feature",
-      "labelEssential": true,
-      "topic": "history",
-      "subjects": [
-        "skyway",
-        "history"
-      ],
-      "url": "articles/skyway-bridge-story.html",
-      "image": "assets/home/skyway-reader.webp",
-      "alt": "The Burlington Bay James N. Allan Skyway",
-      "credit": "Dave Lauretti · CC BY 2.0",
-      "published": "2026-08-24",
-      "placementScore": 82,
-      "publishedAt": "2026-08-24T12:00:00-04:00",
-      "datePublished": "2026-08-24T12:00:00-04:00",
-      "status": "normal"
-    },
-    {
-      "id": "ribfest-2026",
-      "kind": "seasonal",
-      "headline": "Ribfest turns 30, with nearly $6 million behind the smoke.",
-      "label": "Events",
-      "labelEssential": true,
-      "topic": "events",
-      "subjects": [
-        "events",
-        "ribfest"
-      ],
-      "url": "articles/ribfest-2026.html",
-      "image": "assets/home/ribs.webp",
-      "alt": "Barbecue ribs smoking over a pit",
-      "activeFrom": "2026-08-18",
-      "placementScore": 78,
-      "publishedAt": "2026-08-18T12:00:00-04:00",
-      "datePublished": "2026-08-18T12:00:00-04:00",
-      "status": "normal"
     }
   ],
   "audit": [
     {
+      "id": "burlington-road-closures-september-2026",
+      "state": "eligible",
+      "placementScore": 91,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "costco-burloak-wyecroft",
+      "state": "eligible",
+      "placementScore": 93,
+      "reason": "all gates passed"
+    },
+    {
+      "id": "sekisui-burlington-modular-factory",
+      "state": "eligible",
+      "placementScore": 92,
+      "reason": "all gates passed"
+    },
+    {
       "id": "e-scooter-burlington-rules",
       "state": "eligible",
-      "placementScore": 84,
+      "placementScore": 91,
       "reason": "all gates passed"
     },
     {
