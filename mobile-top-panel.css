@@ -1,0 +1,158 @@
+/* Final mobile homepage top stack: logo + live utility + menu, dots, Breaking Now, hero. */
+@media(max-width:720px){
+  :root{--bn-header-h:76px!important}
+
+  html body.home-page .site-header .header-inner{
+    min-height:76px!important;
+    height:76px!important;
+    gap:10px!important
+  }
+
+  html body.home-page .news-brand,
+  html body.home-page .brand-mark-only{
+    flex:0 0 38px!important;
+    min-width:38px!important
+  }
+  html body.home-page .news-brand-logo,
+  html body.home-page .brand-mark-only img{
+    width:38px!important;
+    height:42px!important;
+    max-width:38px!important;
+    flex-basis:38px!important
+  }
+
+  html body.home-page .header-live:not([hidden]){
+    display:block!important;
+    flex:1 1 auto!important;
+    min-width:0!important;
+    margin:0!important
+  }
+  html body.home-page .header-live .now-panel,
+  html body.home-page .header-live .now-card-shell{
+    width:100%!important;
+    min-width:0!important
+  }
+  html body.home-page .header-live .now-card{
+    min-height:52px!important;
+    height:52px!important;
+    padding:7px 44px 7px 10px!important;
+    gap:9px!important;
+    border:1px solid var(--line,#d8e2ec)!important;
+    border-radius:14px!important;
+    background:var(--card,#fff)!important;
+    box-shadow:0 1px 2px rgba(15,40,63,.04)!important
+  }
+  html body.home-page .header-live .now-card .now-icon{
+    width:32px!important;
+    height:32px!important;
+    flex-basis:32px!important
+  }
+  html body.home-page .header-live .now-card-copy{gap:2px!important}
+  html body.home-page .header-live .now-card-cat{
+    font-size:9px!important;
+    line-height:1!important
+  }
+  html body.home-page .header-live .now-card-copy strong{
+    font-size:14px!important;
+    line-height:1.1!important
+  }
+  html body.home-page .header-live .now-card-copy em{
+    margin-top:2px!important;
+    font-size:11px!important;
+    line-height:1.15!important
+  }
+  html body.home-page .header-live .now-card-metric{
+    font-size:11px!important;
+    padding:4px 8px!important
+  }
+  html body.home-page .header-live .now-next{
+    display:grid!important;
+    position:absolute!important;
+    right:4px!important;
+    top:50%!important;
+    transform:translateY(-50%)!important;
+    width:40px!important;
+    height:40px!important;
+    z-index:4!important
+  }
+  html body.home-page .header-live .now-next-disc{
+    width:30px!important;
+    height:30px!important;
+    background:var(--card,#fff)!important
+  }
+  html body.home-page .header-controls{
+    flex:0 0 44px!important;
+    width:44px!important;
+    margin-left:0!important
+  }
+
+  html body.home-page .home-main{
+    padding-top:0!important
+  }
+  html body.home-page #localNow{
+    margin:0!important;
+    padding:0!important;
+    min-height:0!important
+  }
+  html body.home-page #localNow.is-header-card .now-panel{
+    display:none!important
+  }
+  html body.home-page #localNow .now-dots{
+    margin:10px 0 14px!important;
+    min-height:28px!important
+  }
+
+  html body.home-page #breakingNow:not([hidden]):not(:empty):not(.is-empty){
+    display:block!important;
+    margin:0 0 14px!important;
+    padding:14px 16px!important;
+    border:1px solid var(--line,#d8e2ec)!important;
+    border-radius:14px!important;
+    background:var(--card,#fff)!important;
+    box-shadow:none!important
+  }
+  html body.home-page #breakingNow .breaking-kicker{
+    margin:0 0 8px!important;
+    font-size:10px!important
+  }
+  html body.home-page #breakingNow .breaking-row{
+    grid-template-columns:minmax(0,1fr) 18px!important;
+    min-height:0!important;
+    padding:12px 0!important
+  }
+  html body.home-page #breakingNow .breaking-row:first-child{padding-top:8px!important}
+  html body.home-page #breakingNow .breaking-row:last-child{padding-bottom:4px!important}
+  html body.home-page #breakingNow .breaking-row strong{
+    font-size:16px!important;
+    line-height:1.28!important;
+    -webkit-line-clamp:2!important
+  }
+  html body.home-page #breakingNow .breaking-row span{
+    font-size:28px!important;
+    line-height:1!important;
+    text-align:right!important
+  }
+
+  html body.home-page #breakingNow[hidden],
+  html body.home-page #breakingNow.is-empty,
+  html body.home-page #breakingNow:empty{
+    display:none!important;
+    margin:0!important;
+    padding:0!important;
+    height:0!important;
+    min-height:0!important
+  }
+
+  html body.home-page .lead-grid{
+    margin-top:0!important
+  }
+}
+
+html[data-theme="dark"] body.home-page .header-live .now-card{
+  background:#15212a!important;
+  border-color:#30404b!important
+}
+html[data-theme="dark"] body.home-page #breakingNow:not([hidden]):not(:empty):not(.is-empty){
+  background:#15212a!important;
+  border-color:#30404b!important
+}
