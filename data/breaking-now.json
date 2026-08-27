@@ -1,11 +1,46 @@
 {
-  "generatedAt": "2026-08-26T23:31:44.726236-04:00",
-  "method": "breakingScore = localRelevance*0.25 + impact*0.25 + recency*0.20 + confidence*0.15 + breadth*0.10 + novelty*0.05. Ordinary bar is confidence >= 4 and high/strong-medium impact. Community leads stay unpublished until corroborated.",
+  "generatedAt": "2026-08-27T11:26:00-04:00",
+  "mode": "local_update",
+  "label": "Local Update",
+  "method": "No item cleared Breaking News. Local Update = Burlington relevance*.30 + freshness*.25 + practical impact/usefulness*.20 + source confidence*.15 + reader interest*.10.",
   "maxItems": 2,
   "liveFetches": false,
-  "items": [],
+  "items": [
+    {
+      "id": "burlington-road-closures-september-2026",
+      "headline": "Two Burlington roads will stay fully closed into September.",
+      "shortHeadline": "Two Burlington roads stay fully closed into September.",
+      "storyUrl": "/stories/burlington-road-closures-september-2026/",
+      "category": "Traffic",
+      "publishedAt": "2026-08-26T22:24:00-04:00",
+      "localRelevance": 5.0,
+      "impactScore": 4.9,
+      "recencyScore": 0.4,
+      "confidenceScore": 4.5,
+      "localUpdateScore": 3.71,
+      "sourceName": "Burlington News",
+      "sourceType": "reporting",
+      "verificationStatus": "reported"
+    },
+    {
+      "id": "burlington-flood-protection-90-million",
+      "headline": "Burlington has spent more than $90 million on stormwater since 2015. What changed?",
+      "shortHeadline": "What changed after Burlington spent $90 million on stormwater?",
+      "storyUrl": "/stories/burlington-flood-protection-90-million/",
+      "category": "Development",
+      "publishedAt": "2026-08-26T22:35:00-04:00",
+      "localRelevance": 5.0,
+      "impactScore": 4.4,
+      "recencyScore": 0.4,
+      "confidenceScore": 4.5,
+      "localUpdateScore": 3.63,
+      "sourceName": "Burlington News",
+      "sourceType": "reporting",
+      "verificationStatus": "reported"
+    }
+  ],
   "sourceNotes": {
-    "xTwitter": "skipped; no unofficial scrape",
+    "xTwitter": "official HaltonPolice/HamiltonPolice discovery via X API v2 when X_BEARER_TOKEN is configured; otherwise skipped",
     "facebook": "skipped; no private or login-walled collection",
     "reddit": "discovery only until an official or newsroom source corroborates"
   }
