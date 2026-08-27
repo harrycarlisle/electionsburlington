@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Costco Oakville access near Burloak</title>
+<desc id="desc">Simplified editorial schematic showing Wyecroft Road south of the Costco site, RioCan Boulevard to the north and east, four proposed site access points, parking and a gas bar.</desc>
+<rect width="1600" height="900" fill="#f5f6f2"/>
+<text x="90" y="100" font-family="Georgia,serif" font-size="54" fill="#082b50">How drivers would enter the Costco near Burloak</text>
+<text x="90" y="150" font-family="Arial,sans-serif" font-size="24" fill="#5a6c7b">Simplified from the Town of Oakville site-plan application. Not to scale.</text>
+<rect x="160" y="240" width="1160" height="450" rx="24" fill="#e3eadf" stroke="#a7b7a3" stroke-width="3"/>
+<rect x="465" y="360" width="500" height="210" rx="12" fill="#173f62"/>
+<text x="715" y="450" text-anchor="middle" font-family="Arial,sans-serif" font-size="38" font-weight="700" fill="#fff">COSTCO</text>
+<text x="715" y="494" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" fill="#d8e6ef">15,662.6 m² proposed warehouse</text>
+<g fill="#fff" stroke="#9aa8b1" stroke-width="2">
+  <rect x="210" y="335" width="190" height="250" rx="10"/>
+  <rect x="1030" y="335" width="220" height="250" rx="10"/>
+</g>
+<text x="305" y="435" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#082b50">Parking</text>
+<text x="305" y="474" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" fill="#596b79">surface + underground</text>
+<text x="1140" y="435" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#082b50">Gas bar</text>
+<text x="1140" y="474" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" fill="#596b79">northwest of site</text>
+<path d="M110 735H1370" stroke="#596b79" stroke-width="42" stroke-linecap="round"/>
+<text x="740" y="748" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" fill="#fff">WYECROFT ROAD</text>
+<path d="M160 215H1350M1360 215V700" stroke="#7f8f9c" stroke-width="32" stroke-linecap="round"/>
+<text x="730" y="225" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" fill="#fff">RIOCAN BOULEVARD</text>
+<text x="1382" y="460" transform="rotate(90 1382 460)" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" fill="#fff">RIOCAN BOULEVARD</text>
+<g fill="#2b7ab8">
+  <circle cx="520" cy="700" r="18"/><circle cx="880" cy="700" r="18"/>
+  <circle cx="650" cy="240" r="18"/><circle cx="1320" cy="500" r="18"/>
+</g>
+<g font-family="Arial,sans-serif" font-size="20" fill="#082b50" font-weight="700">
+  <text x="465" y="665">Wyecroft access</text>
+  <text x="825" y="665">Wyecroft access</text>
+  <text x="610" y="295">RioCan access</text>
+  <text x="1155" y="530">RioCan access</text>
+</g>
+<text x="90" y="835" font-family="Arial,sans-serif" font-size="20" fill="#657582">Oakville lists the site plan as recently approved. The application page describes 1,000 vehicle spaces and four access points.</text>
+<text x="90" y="867" font-family="Arial,sans-serif" font-size="18" fill="#657582">Editorial schematic: Burlington News. Road positions and access arrangement are simplified from Town of Oakville planning documents.</text>
+</svg>
