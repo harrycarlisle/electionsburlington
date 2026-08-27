@@ -428,7 +428,7 @@ html body .header-live{
 }
 
 @media(max-width:720px){
-  :root{--bn-header-h:52px;--bn-logo:32px;--bn-gutter:16px}
+  :root{--bn-header-h:52px;--bn-logo:28px;--bn-gutter:16px}
   html body.home-page .header-inner{
     gap:8px!important
   }
