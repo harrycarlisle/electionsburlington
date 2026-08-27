@@ -19,10 +19,14 @@ import {
     {id:'burlington-ultimate-team-0-24',headline:'This Burlington team has lost 24 straight games. Why do they keep coming back?',deck:'After an 0-12 season, they changed the name. Twelve games later, they were still waiting for a win.',label:'Sports',topic:'sports',url:'articles/burlington-ultimate-team-0-24.html',image:'assets/ultimate-frisbee-burlington.png',alt:'Burlington ultimate players on a grass field during a recreational game.',placementScore:70},
     {id:'skyway-bridge-story',headline:'Ontario nearly replaced the Skyway with three tunnels.',deck:'The tunnel plan got much further than most Burlington residents probably realize.',label:'History',topic:'history',url:'articles/skyway-bridge-story.html',image:'assets/home/skyway-reader.webp',alt:'The Burlington Bay James N. Allan Skyway across Burlington Bay.',placementScore:68}
   ];
-  const displayHeadline=item=>/crime|burlington-crime/i.test(`${item?.id||''} ${item?.headline||''}`)?'How bad is crime in Burlington, really?':(/hotspots-0-24|ultimate-team-0-24|toss bosses|0–24|0-24/i.test(`${item?.id||''} ${item?.headline||''}`)?'This Burlington team has lost 24 straight games. Why do they keep coming back?':cleanDash(item.headline));
+  const naturalHeadline=value=>cleanDash(value).replace(/\.\s+Here is where\.?$/i,'. The closures affect two different parts of the city.').replace(/\.\s+Here is how\.?$/i,'. The details matter.').replace(/\.\s+Here is why\.?$/i,'. There is more behind it.');
+  const displayHeadline=item=>/crime|burlington-crime/i.test(`${item?.id||''} ${item?.headline||''}`)?'How bad is crime in Burlington, really?':(/hotspots-0-24|ultimate-team-0-24|toss bosses|0–24|0-24/i.test(`${item?.id||''} ${item?.headline||''}`)?'This Burlington team has lost 24 straight games. Why do they keep coming back?':naturalHeadline(item.headline));
   const displayDeck=item=>{
     if(/crime|burlington-crime/i.test(`${item?.id||''} ${item?.headline||''}`))return 'Burlington remains one of the safer large communities in Canada, but the latest comparable data shows one category moving in the wrong direction.';
-    return cleanDash(item?.deck||'').replace(/\s+/g,' ').trim();
+    const authored=cleanDash(item?.deck||item?.summary||item?.description||'').replace(/\s+/g,' ').trim();
+    if(authored)return authored;
+    const label=categoryLabel(item).toLowerCase();
+    return `The latest ${label} story from Burlington News, with the local details and what they mean for people in Burlington.`;
   };
   const isEditorialGraphic=item=>{const descriptor=`${item?.image||''} ${item?.alt||''} ${item?.credit||''}`;return /\.svg(?:\?|$)/i.test(String(item?.image||''))||/timeline|chart|map|diagram|comparison|infographic|schematic|orientation graphic/i.test(descriptor)};
   const hasPhoto=item=>Boolean(item?.image)&&!isEditorialGraphic(item);
@@ -31,25 +35,21 @@ import {
   const freshnessScore=(item,now=Date.now())=>{const age=storyAgeMs(item,now);if(age<=6*3600000)return 100;if(age<=24*3600000)return 85;if(age<=72*3600000)return 65;if(age<=NEWEST_HOME_WINDOW_MS)return 40;return 20};
   const heroScore=(item,now=Date.now())=>hasPhoto(item)?((Number(item?.placementScore)||0)*0.9+freshnessScore(item,now)*0.1):-Infinity;
   const heroReason=(item,score)=>`final=${score.toFixed(1)}; placement=${Number(item?.placementScore)||0} (90%); freshness=${freshnessScore(item)} (10%); real-photo gate=pass`;
-  const statsFor=(item,statsMap)=>{
-    const candidates=[item?.id,item?.url,publicUrl(item?.url),item?.headline].filter(Boolean);
-    for(const key of candidates){const row=statsMap?.[key];if(row&&typeof row==='object')return row}
-    return {};
-  };
+  const statsFor=(item,statsMap)=>{const candidates=[item?.id,item?.url,publicUrl(item?.url),item?.headline].filter(Boolean);for(const key of candidates){const row=statsMap?.[key];if(row&&typeof row==='object')return row}return{}};
   const topPickScore=(item,statsMap)=>popularityScore(statsFor(item,statsMap),Number(item?.placementScore)||0);
   const totalBehaviourSample=statsMap=>Object.values(statsMap||{}).reduce((sum,row)=>sum+(Number(row?.reads24h)||Number(row?.opens)||0),0);
   function renderLead(item,score){
     if(!lead||!item?.headline||!item?.url||isEditorialGraphic(item))return;
     const url=publicUrl(item.url),external=/^https?:\/\//.test(url),raw=item.image?(item.image.startsWith('/')?item.image:`/${item.image}`):CRIME_IMAGE,image=/crime/i.test(`${item.id||''} ${item.headline||''}`)?CRIME_IMAGE:raw,deck=displayDeck(item);
     lead.dataset.selectionScore=score.toFixed(1);lead.dataset.selectionReason=heroReason(item,score);lead.dataset.storyId=item.id||'';
-    lead.innerHTML=`<a href="${esc(url)}"${external?' target="_blank" rel="noopener"':''}><div class="top-image"><img src="${esc(image)}" alt="${esc(item.alt||item.headline)}" fetchpriority="high"></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(displayHeadline(item))}</h1>${deck?`<p>${esc(deck)}</p>`:''}</div></a>`;
+    lead.innerHTML=`<a href="${esc(url)}"${external?' target="_blank" rel="noopener"':''}><div class="top-image"><img src="${esc(image)}" alt="${esc(item.alt||item.headline)}" fetchpriority="high"></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(displayHeadline(item))}</h1><p>${esc(deck)}</p></div></a>`;
   }
   function hideNewest(){if(newestRail){newestRail.hidden=true;newestRail.setAttribute('aria-hidden','true')}if(latestList)latestList.innerHTML=''}
   function renderNewest(items,heroId){
     const now=Date.now();
-    const picked=uniqueById(items).filter(item=>item?.id&&item.id!==heroId&&item.status!=='expired').map(item=>({item,ts:effectiveFreshnessTimestamp(item)})).filter(row=>row.ts&&now-row.ts>=0&&now-row.ts<=NEWEST_HOME_WINDOW_MS).sort((a,b)=>b.ts-a.ts).slice(0,4).map(row=>row.item);
+    const picked=uniqueById(items).filter(item=>item?.id&&item.id!==heroId&&item.status!=='expired').map(item=>({item,ts:effectiveFreshnessTimestamp(item)})).filter(row=>row.ts&&now-row.ts>=0&&now-row.ts<=NEWEST_HOME_WINDOW_MS).sort((a,b)=>b.ts-a.ts).slice(0,3).map(row=>row.item);
     if(!latestList||!newestRail||!picked.length){hideNewest();return[]}
-    newestRail.hidden=false;newestRail.removeAttribute('aria-hidden');newestRail.dataset.selectionReason='strict chronology; hero excluded; 7-day fallback window';
+    newestRail.hidden=false;newestRail.removeAttribute('aria-hidden');newestRail.dataset.selectionReason='strict chronology; hero excluded; 3 stories; no forced category diversity';
     latestList.innerHTML=picked.map(item=>{const url=publicUrl(item.url),stamp=relativeTime(item.lastMeaningfulUpdate||item.publishedAt||item.datePublished||item.published||item.activeFrom);return `<a href="${esc(url)}" data-story-id="${esc(item.id||'')}"><span><small>${esc(categoryLabel(item))}</small><strong>${esc(displayHeadline(item))}</strong>${stamp?`<time>${esc(stamp)}</time>`:''}</span></a>`}).join('');return picked
   }
   function renderPicks(items,readStats){
