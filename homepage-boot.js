@@ -9,8 +9,14 @@
     document.head.appendChild(s);
   });
 
+  let started = false;
   const start = () => {
-    const kick = () => {
+    if (started) return;
+    started = true;
+
+    // Do not wait for window.load. A slow image or stylesheet should never
+    // prevent the live homepage controls from starting.
+    setTimeout(() => {
       loadScript('/site-search.js?v=20260827perf1');
       loadScript('/site-extra.js?v=20260827perf1');
       loadScript('/homepage-refinements.js?v=20260827perf1');
@@ -19,11 +25,16 @@
       loadScript('/breaking-now.js?v=20260827perf1');
       loadScript('/home.js?v=20260827perf1', { module: true });
       loadScript('/local-now.js?v=20260827perf1', { module: true });
-    };
-    if ('requestIdleCallback' in window) requestIdleCallback(kick, { timeout: 1200 });
-    else setTimeout(kick, 250);
+    }, 40);
   };
 
-  if (document.readyState === 'complete') start();
-  else window.addEventListener('load', start, { once: true });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else {
+    start();
+  }
+
+  // Last-resort safety in case a browser extension or malformed resource
+  // interferes with DOMContentLoaded in an unusual environment.
+  setTimeout(start, 1500);
 })();
