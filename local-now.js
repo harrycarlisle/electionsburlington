@@ -28,6 +28,33 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
   function bindCard(target){const card=target?.querySelector('[data-utility-card]');if(!card)return;let sx=0,sy=0,swiping=false;card.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY;swiping=false},{passive:true});card.addEventListener('touchmove',e=>{const dx=e.touches[0].clientX-sx,dy=e.touches[0].clientY-sy;if(Math.abs(dx)>10&&Math.abs(dx)>Math.abs(dy)){swiping=true;if(e.cancelable)e.preventDefault()}},{passive:false});card.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(swiping&&Math.abs(dx)>=SWIPE_PX)stepMode(dx<0?1:-1)});card.addEventListener('click',e=>{if(swiping){e.preventDefault();return}track('live_utility_card_click',selectedMode)});}
   function restartTrafficRotation(){clearInterval(trafficTimer);trafficTimer=null;if(selectedMode!=='driving'||!lastModels?.driving||lastModels.driving.length<2)return;trafficTimer=setInterval(()=>{if(selectedMode!=='driving')return;trafficIndex=(trafficIndex+1)%lastModels.driving.length;const target=panel();if(target){target.innerHTML=cardFor('driving');bindCard(target);bindDots(target)}},TRAFFIC_ROTATE_MS)}
   function render(payload){lastModels={driving:drivingModels(payload.surface),go:goModel(payload.go),skyway:skywayModel(payload.surface),today:todayModel(payload.explore)};selectedMode=selectedMode||'driving';host.innerHTML=`<div class="now-panel" role="tabpanel">${cardFor(selectedMode)}</div><div class="now-dots" role="tablist" aria-label="Live local update">${MODES.map(mode=>`<button type="button" class="now-dot-btn${mode===selectedMode?' is-active':''}" role="tab" data-now-dot data-mode="${mode}" aria-label="${MODE_SHOW[mode]}" aria-selected="${mode===selectedMode}" aria-current="${mode===selectedMode?'true':'false'}"><span class="now-pager-dot" aria-hidden="true"></span></button>`).join('')}</div>`;bindDots(host);bindCard(host.querySelector('[role="tabpanel"]'));restartTrafficRotation();if(!viewed){viewed=true;track('live_utility_view',selectedMode)}}
-  function load(){Promise.allSettled([fetch('/data/traffic-surface.json',{cache:'no-store'}).then(r=>r.ok?r.json():null),fetch('/data/go-status.json',{cache:'no-store'}).then(r=>r.ok?r.json():null),fetch('/data/local-intelligence.json',{cache:'no-store'}).then(r=>r.ok?r.json():null),fetch('/data/explore-events.json',{cache:'no-store'}).then(r=>r.ok?r.json():null)]).then(r=>render({surface:r[0].value,go:r[1].value,intel:r[2].value,explore:r[3].value})).catch(()=>{host.hidden=true})}
-  load();setInterval(load,120000);
+
+  async function fetchJson(url, timeoutMs=2200){
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),timeoutMs);
+    try{
+      const response=await fetch(url,{cache:'no-store',signal:controller.signal});
+      if(!response.ok) return null;
+      return await response.json();
+    }catch(_){
+      return null;
+    }finally{
+      clearTimeout(timer);
+    }
+  }
+
+  async function load(){
+    const [surface,go,intel,explore]=await Promise.all([
+      fetchJson('/data/traffic-surface.json'),
+      fetchJson('/data/go-status.json'),
+      fetchJson('/data/local-intelligence.json'),
+      fetchJson('/data/explore-events.json')
+    ]);
+    // The page already contains a static traffic fallback. Only replace it
+    // when at least one live source answered in time.
+    if(surface||go||intel||explore) render({surface,go,intel,explore});
+  }
+
+  load();
+  setInterval(load,120000);
 })();
