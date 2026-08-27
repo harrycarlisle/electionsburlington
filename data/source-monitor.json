@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-27T03:21:37Z",
+  "checkedAt": "2026-08-27T18:25:11Z",
   "method": "Verified, rule-based Burlington civic monitor. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "sources": [
     {
@@ -79,8 +79,8 @@
     },
     {
       "source": "Conservation Halton",
-      "ok": false,
-      "error": "<urlopen error timed out>"
+      "ok": true,
+      "found": 30
     },
     {
       "source": "Halton District School Board",
@@ -89,6 +89,24 @@
     }
   ],
   "items": [
+    {
+      "title": "Low Water Normal Normal Normal Normal",
+      "url": "https://www.conservationhalton.ca/low-water-status/",
+      "source": "Conservation Halton",
+      "sourceType": "official",
+      "scope": "local-life",
+      "allowImage": true,
+      "pageRank": 12,
+      "description": "Current Low Water Status: Normal Conservation Halton Low Water Terminology Conservation Halton, in partnership with the Ministry of Northern Development, Mines, Natural Resources and Forestry, assists in the co-ordination and...",
+      "image": "https://www.conservationhalton.ca/wp-content/uploads/2022/05/Genericbanner2_1920x240.jpg",
+      "imageSource": "Conservation Halton",
+      "imageSourceUrl": "https://www.conservationhalton.ca/low-water-status/",
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 3,
+      "why": "It can affect where, how and how quickly Burlington grows.",
+      "tag": "Burlington"
+    },
     {
       "title": "Infrastructure and Growth",
       "url": "https://www.halton.ca/for-residents/infrastructure-and-growth",
@@ -106,6 +124,20 @@
       "importance": 3,
       "why": "",
       "tag": "Halton Region"
+    },
+    {
+      "title": "Conservation Halton Parks",
+      "url": "https://www.conservationhalton.ca/parks/",
+      "source": "Conservation Halton",
+      "sourceType": "official",
+      "scope": "local-life",
+      "allowImage": true,
+      "pageRank": 17,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 3,
+      "why": "",
+      "tag": "Burlington"
     },
     {
       "title": "Festivals & Events",
@@ -137,6 +169,21 @@
       "tag": "Burlington"
     },
     {
+      "title": "hdsb.ca/students-families/register-for-school/",
+      "url": "http://hdsb.ca/students-families/register-for-school/",
+      "source": "Halton District School Board",
+      "sourceType": "official",
+      "scope": "schools",
+      "allowImage": true,
+      "pageRank": 0,
+      "description": "Register your child with HDSB. Find your local school, complete forms, and learn requirements for Kindergarten and grade-level registration.",
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington"
+    },
+    {
       "title": "Now hiring: Burlington is looking for temporary election officials to help run the 2026 municipal election. All positions are paid and include in-person training. Apply today.",
       "url": "https://myvote.burlington.ca/work-the-election/",
       "source": "City of Burlington Election",
@@ -157,7 +204,7 @@
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
-      "pageRank": 2,
+      "pageRank": 3,
       "description": "The Halton District School Board serves public school students across Halton Region, including Burlington, Halton Hills, Milton, and Oakville.",
       "verified": true,
       "verificationTier": "primary",
@@ -172,7 +219,7 @@
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
-      "pageRank": 3,
+      "pageRank": 4,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -186,7 +233,7 @@
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
-      "pageRank": 4,
+      "pageRank": 5,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -200,7 +247,7 @@
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
-      "pageRank": 5,
+      "pageRank": 6,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -214,26 +261,12 @@
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
-      "pageRank": 6,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington"
-    },
-    {
-      "title": "Bus Cancellations & School Closures",
-      "url": "https://www.hdsb.ca/students-families/bus-cancellations-school-closures/",
-      "source": "Halton District School Board",
-      "sourceType": "official",
-      "scope": "schools",
-      "allowImage": true,
       "pageRank": 7,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
       "why": "",
-      "tag": "Traffic"
+      "tag": "Burlington"
     },
     {
       "title": "Public Engagement",
@@ -268,8 +301,8 @@
       "tag": "Your ward"
     },
     {
-      "title": "Get Involved",
-      "url": "https://www.hdsb.ca/students-families/get-involved/",
+      "title": "Bus Cancellations & School Closures",
+      "url": "https://www.hdsb.ca/students-families/bus-cancellations-school-closures/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -279,7 +312,7 @@
       "verificationTier": "primary",
       "importance": 2,
       "why": "",
-      "tag": "Burlington"
+      "tag": "Traffic"
     },
     {
       "title": "Service Burlington",
@@ -314,8 +347,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Health & Well-Being",
-      "url": "https://www.hdsb.ca/students-families/health-well-being/",
+      "title": "Get Involved",
+      "url": "https://www.hdsb.ca/students-families/get-involved/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -342,8 +375,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Indigenous Rights & Education",
-      "url": "https://www.hdsb.ca/students-families/indigenous-rights-education/",
+      "title": "Health & Well-Being",
+      "url": "https://www.hdsb.ca/students-families/health-well-being/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -374,8 +407,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "New to Canada & Halton Region",
-      "url": "https://www.hdsb.ca/students-families/new-to-canada-halton-region/",
+      "title": "Indigenous Rights & Education",
+      "url": "https://www.hdsb.ca/students-families/indigenous-rights-education/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -406,8 +439,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Pay Online (School Cash Online)",
-      "url": "https://www.hdsb.ca/students-families/pay-online-school-cash-online/",
+      "title": "New to Canada & Halton Region",
+      "url": "https://www.hdsb.ca/students-families/new-to-canada-halton-region/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -452,14 +485,13 @@
       "tag": "Burlington"
     },
     {
-      "title": "Register for School",
-      "url": "https://www.hdsb.ca/students-families/register-for-school/",
+      "title": "Pay Online (School Cash Online)",
+      "url": "https://www.hdsb.ca/students-families/pay-online-school-cash-online/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
       "pageRank": 13,
-      "description": "Register your child with HDSB. Find your local school, complete forms, and learn requirements for Kindergarten and grade-level registration.",
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -485,13 +517,14 @@
       "tag": "Burlington"
     },
     {
-      "title": "Report Cards",
-      "url": "https://www.hdsb.ca/students-families/report-cards/",
+      "title": "Register for School",
+      "url": "https://www.hdsb.ca/students-families/register-for-school/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
       "pageRank": 14,
+      "description": "Register your child with HDSB. Find your local school, complete forms, and learn requirements for Kindergarten and grade-level registration.",
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -499,8 +532,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Request a Transcript",
-      "url": "https://www.hdsb.ca/students-families/request-a-transcript/",
+      "title": "Report Cards",
+      "url": "https://www.hdsb.ca/students-families/report-cards/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -545,8 +578,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Safe Schools",
-      "url": "https://www.hdsb.ca/students-families/safe-schools/",
+      "title": "Request a Transcript",
+      "url": "https://www.hdsb.ca/students-families/request-a-transcript/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -577,8 +610,8 @@
       "tag": "Burlington"
     },
     {
-      "title": "Student Life & Engagement",
-      "url": "https://www.hdsb.ca/students-families/student-life-engagement/",
+      "title": "Safe Schools",
+      "url": "https://www.hdsb.ca/students-families/safe-schools/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -616,52 +649,6 @@
       "scope": "election",
       "allowImage": true,
       "pageRank": 18,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington"
-    },
-    {
-      "title": "Technology & You",
-      "url": "https://www.hdsb.ca/students-families/technology-you/",
-      "source": "Halton District School Board",
-      "sourceType": "official",
-      "scope": "schools",
-      "allowImage": true,
-      "pageRank": 18,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington"
-    },
-    {
-      "title": "Active5 Pass",
-      "url": "https://www.burlington.ca/en/recreation/active5-pass.aspx",
-      "source": "City of Burlington News",
-      "sourceType": "official",
-      "scope": "city",
-      "allowImage": true,
-      "pageRank": 19,
-      "description": "Sign up your Grade 5 child for the City of Burlington’s Active5 Pass so they can access free recreation activities year-round and win prizes.",
-      "image": "https://www.burlington.ca/en/images/structure/news_avatar.jpg",
-      "imageSource": "City of Burlington News",
-      "imageSourceUrl": "https://www.burlington.ca/en/recreation/active5-pass.aspx",
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington"
-    },
-    {
-      "title": "Subscribe to News and Updates",
-      "url": "https://myvote.burlington.ca/subscribe/",
-      "source": "City of Burlington Election",
-      "sourceType": "official",
-      "scope": "election",
-      "allowImage": true,
-      "pageRank": 19,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,

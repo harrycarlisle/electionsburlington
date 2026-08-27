@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-27T12:35:08.504694-04:00",
+  "updatedAt": "2026-08-27T14:25:44.380902-04:00",
   "items": {
     "81a263fb84a5d3ef": {
       "firstSeenAt": "2026-08-25T14:06:50.332498-04:00",
@@ -423,7 +423,9 @@
     "9b12a4d688a11d16": {
       "firstSeenAt": "2026-08-26T22:38:17.528475-04:00",
       "lastSeenAt": "2026-08-27T12:35:08.504694-04:00",
-      "headline": "Up to 90% of a building can now be made inside this Burlington factory."
+      "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
+      "homepageShows": 1,
+      "lastHomepageAt": "2026-08-27T14:25:44.380902-04:00"
     },
     "e3692582bf8bab02": {
       "firstSeenAt": "2026-08-26T22:38:17.528475-04:00",

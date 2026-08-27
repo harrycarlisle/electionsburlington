@@ -1,7 +1,12 @@
 {
-  "currentLead": "burlington-flood-protection-90-million",
-  "updated": "2026-08-26",
+  "currentLead": "sekisui-burlington-modular-factory",
+  "updated": "2026-08-27",
   "history": [
+    {
+      "id": "sekisui-burlington-modular-factory",
+      "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
+      "date": "2026-08-27"
+    },
     {
       "id": "burlington-flood-protection-90-million",
       "headline": "Burlington has spent more than $90 million on stormwater since 2015. What changed?",
