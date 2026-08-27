@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T14:35:41Z",
+  "generatedAt": "2026-08-27T23:57:44Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 36,
-    "trafficIncidents": 36,
+    "activeSignals": 37,
+    "trafficIncidents": 37,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -96,6 +96,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "18f32b7541863775"
+    },
+    {
+      "id": "511:294437",
+      "kind": "traffic",
+      "headline": "Disabled Vehicle on QEW Toronto bound RAMP at DORVAL DRIVE, Oakville. Left lane closed.",
+      "location": "QEW",
+      "direction": "Toronto Bound",
+      "score": 75,
+      "neighbourhood": "Orchard",
+      "latitude": 43.44497685,
+      "longitude": -79.70096075,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "accidentsAndIncidents",
+      "signature": "8a56e6a77510738c"
     },
     {
       "id": "511:289628",
@@ -336,22 +352,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "de636b7a2526c641"
-    },
-    {
-      "id": "511:293088",
-      "kind": "traffic",
-      "headline": "Continuous Construction on HWY 403 HAMILTON Westbound  between Garden Ave and Garden Ave, Brantford. 1 Left Lane(s).",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Westbound",
-      "score": 53,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.167484,
-      "longitude": -80.21334,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "7b79af57b68f3f38"
     },
     {
       "id": "511:293092",

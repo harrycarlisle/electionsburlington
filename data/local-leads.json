@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-08-27T14:35:41Z",
+  "generatedAt": "2026-08-27T23:57:44Z",
   "items": [
+    {
+      "id": "511:294437",
+      "detectedAt": "2026-08-27T23:57:44Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Toronto bound RAMP at DORVAL DRIVE, Oakville. Left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:293767",
       "detectedAt": "2026-08-26T16:56:06Z",
