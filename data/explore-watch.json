@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-27T00:03:46+00:00",
+  "checkedAt": "2026-08-27T21:18:30+00:00",
   "publicationGate": "Candidates only. Verify dates, location, access and image rights before adding to explore-events.json.",
   "sources": [
     {
@@ -25,8 +25,7 @@
     {
       "name": "Love My Neighbourhood",
       "url": "https://www.burlington.ca/en/community-supports/love-my-neighbourhood.aspx",
-      "ok": false,
-      "error": "HTTP Error 403: Forbidden"
+      "ok": true
     },
     {
       "name": "BurlingtonGreen",
@@ -367,6 +366,156 @@
       "title": "Festival Map",
       "url": "https://canadaslargestribfest.com/festival-map",
       "source": "Canada's Largest Ribfest",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Skip to Content",
+      "url": "https://www.burlington.ca/en/community-supports/love-my-neighbourhood.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Festival and Event Applications",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/festival-and-event-applications.aspx?_mid_=10033",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Tree Permit Application",
+      "url": "https://www.burlington.ca/en/home-property-and-environment/tree-permit-application.aspx?_mid_=10918",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Arts, Culture and Events",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/arts-culture-and-events.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Arts and Culture in Burlington",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/arts-and-culture-in-burlington.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Arts and Culture Grant",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/arts-and-culture-grant.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Calendar of Events",
+      "url": "https://events.burlington.ca/",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Cultural Partners",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/cultural-partners.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Downtown Burlington",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/downtown-burlington.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Downtown Waterfront",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/downtown-waterfront.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Brant Street Pier",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/brant-street-pier.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "History and Heritage",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/history-and-heritage.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Indigenous Projects and Partnerships in Burlington",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/indigenous-projects-and-partnerships-in-burlington.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Local Farms, Community Gardens and Markets",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/local-farms-community-gardens-and-markets.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Public Art",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/public-art.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Story Maps",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/story-maps.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Theatres",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/theatres.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Twin Cities Apeldoorn and Itabashi",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/twin-cities-apeldoorn-and-itabashi.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Home Flood Prevention",
+      "url": "https://www.burlington.ca/en/building-and-renovating/home-flood-prevention.aspx?_mid_=10083",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Pier Lighting",
+      "url": "https://www.burlington.ca/en/arts-culture-and-events/brant-street-pier.aspx?_mid_=10975",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Cogeco Neighbourhood Rink Program",
+      "url": "https://www.burlington.ca/en/community-supports/neighbourhood-rinks.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Neighbourhood Connectors",
+      "url": "https://www.burlington.ca/en/community-supports/neighbourhood-connectors.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Citywide and Ward News, Meetings and Events",
+      "url": "https://www.burlington.ca/Modules/News/en/CityWideandWardUpdates",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Young Tree Pilot Study",
+      "url": "https://www.burlington.ca/en/council-and-city-administration/young-tree-pilot-study.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington"
+    },
+    {
+      "title": "Construction in Your Neighbourhood",
+      "url": "https://www.burlington.ca/en/home-property-and-environment/construction-in-your-neighbourhood.aspx",
+      "source": "Love My Neighbourhood",
       "scope": "Burlington"
     },
     {
