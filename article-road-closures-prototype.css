@@ -1,0 +1,118 @@
+/* Desktop-only article prototype for the Burlington road-closures story.
+   Morning Tee is the structural reference: wider editorial head/hero,
+   narrow reading measure, and a generous three-card related row. */
+
+@media (min-width: 901px) {
+  body.bn-story-page.road-closures-prototype .article {
+    max-width: 1120px !important;
+    padding-top: 46px !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-head {
+    max-width: 960px !important;
+    margin: 0 auto 24px !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-head h1 {
+    max-width: none !important;
+    margin: .25em 0 .2em !important;
+    font-size: clamp(48px, 3.6vw, 58px) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.035em !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-deck {
+    max-width: 780px !important;
+    margin-bottom: 0 !important;
+    font-size: 20px !important;
+    line-height: 1.42 !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-hero {
+    max-width: 960px !important;
+    margin: 28px auto 0 !important;
+    border-radius: 10px !important;
+    overflow: visible !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-hero img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border-radius: 10px !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-hero figcaption {
+    margin-top: 8px !important;
+    font: italic 11px/1.35 Arial, Helvetica, sans-serif !important;
+    opacity: .62 !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-post-hero-meta {
+    max-width: 720px;
+    margin: 24px auto 34px;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-post-hero-meta .article-byline {
+    margin: 0 !important;
+    gap: 5px 12px !important;
+    align-items: baseline !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-post-hero-meta .article-byline strong {
+    font-size: 14px !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-post-hero-meta .article-byline span {
+    font-size: 11px !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-layout {
+    max-width: 700px !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-body {
+    max-width: 700px !important;
+    font-size: 19px !important;
+    line-height: 1.66 !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-related {
+    max-width: 960px !important;
+    margin-top: 64px !important;
+    padding-top: 28px !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-related-head {
+    margin-bottom: 20px !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-related-head h2 {
+    font-size: 34px !important;
+    line-height: 1.05 !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-related-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 22px !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-related-card img {
+    aspect-ratio: 16 / 9 !important;
+    margin-bottom: 11px !important;
+    border-radius: 8px !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-related-card span {
+    margin-bottom: 6px !important;
+    font-size: 10px !important;
+    opacity: 1 !important;
+    color: var(--accent, #0864c7) !important;
+  }
+
+  body.bn-story-page.road-closures-prototype .article-related-card strong {
+    font-size: 18px !important;
+    line-height: 1.22 !important;
+  }
+}
