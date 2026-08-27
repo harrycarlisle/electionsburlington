@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T01:08:55.062789-04:00",
+  "generatedAt": "2026-08-27T12:35:08.504694-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -527,7 +527,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.0
+        "rotation": 0.866348996782407
       },
       "gates": {
         "evidence": "passed",
@@ -543,7 +543,7 @@
       "source": "Burlington News",
       "sourceType": "official",
       "radarId": "d184d3ed6b32f418",
-      "radarScore": 69,
+      "radarScore": 70,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": false,
@@ -742,6 +742,64 @@
       "eligibleEditorial": true
     },
     {
+      "id": "burlington-flood-protection-90-million",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Burlington has spent more than $90 million on stormwater since 2015. What changed?",
+      "deck": "Tuck Creek shows what the money has changed, and why some major flood work is still unfinished.",
+      "label": "Infrastructure",
+      "labelEssential": true,
+      "url": "articles/burlington-flood-protection-90-million.html",
+      "image": "assets/editorial/burlington-flood-investment-timeline.svg",
+      "alt": "Timeline showing Burlington flood protection work from the 2014 storm through 2028.",
+      "credit": "Burlington News graphic",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "activeUntil": "2026-10-31",
+      "publishedAt": "2026-08-26T22:35:00-04:00",
+      "datePublished": "2026-08-26T22:35:00-04:00",
+      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
+      "verificationTier": "primary",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.8,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 5.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 1.8509575904861109
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "development",
+      "subjects": [
+        "flooding",
+        "stormwater",
+        "tuck-creek",
+        "infrastructure"
+      ],
+      "lastHomepageLead": "2026-08-26",
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "e51a7f4a6fa434d3",
+      "radarScore": 67,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
       "id": "burlington-road-closures-september-2026",
       "kind": "original",
       "surfaces": [
@@ -890,34 +948,6 @@
       "url": "docs/editorial-style.md",
       "verificationTier": "reported",
       "radarId": "5adc5b793709d2f0",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.8,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 2.4,
-        "sourceConfidence": 4.0,
-        "originality": 5.0,
-        "visualStrength": 2.2,
-        "rotation": 5.0
-      },
-      "radarScore": 67,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "pitch:salmon-under-the-city",
-      "headline": "The fish migration happening beside Burlington traffic",
-      "description": "More than 100 salmon were observed spawning upstream in one season, but they were excluded from the headline Fishway count. Follow the route they took.",
-      "source": "Burlington News",
-      "sourceType": "official",
-      "kind": "original",
-      "url": "docs/editorial-style.md",
-      "verificationTier": "reported",
-      "radarId": "b2e7a49cdfe9810f",
       "signals": {
         "interest": 2.3,
         "relevance": 5.0,
@@ -1560,6 +1590,59 @@
       "eligibleEditorial": false
     },
     {
+      "id": "burlington-crime-analysis-2026",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "rail",
+        "latest"
+      ],
+      "headline": "How bad is crime in Burlington, really?",
+      "deck": "One category of crime is moving the wrong way.",
+      "label": "Public safety",
+      "labelEssential": true,
+      "url": "articles/how-bad-is-burlington-crime.html",
+      "image": "assets/stories/public-safety/halton-police-crime-burlington.webp",
+      "alt": "Halton Regional Police vehicle behind crime-scene tape.",
+      "credit": "Burlington News",
+      "published": "2026-08-25",
+      "activeFrom": "2026-08-25",
+      "activeUntil": "2026-09-30",
+      "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
+      "verificationTier": "primary",
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.8,
+        "freshness": 1.5,
+        "sourceConfidence": 5.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 0.866348996782407
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "lastHomepageLead": "2026-08-26",
+      "topic": "public-safety",
+      "subjects": [
+        "crime"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "d184d3ed6b32f418",
+      "radarScore": 70,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
       "title": "Adult and Adult 55+ Programs",
       "url": "https://www.burlington.ca/en/recreation/adult-19-and-55-programs.aspx",
       "source": "City of Burlington News",
@@ -1596,59 +1679,6 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": false
-    },
-    {
-      "id": "burlington-crime-analysis-2026",
-      "kind": "original",
-      "surfaces": [
-        "feature",
-        "rail",
-        "latest"
-      ],
-      "headline": "How bad is crime in Burlington, really?",
-      "deck": "One category of crime is moving the wrong way.",
-      "label": "Public safety",
-      "labelEssential": true,
-      "url": "articles/how-bad-is-burlington-crime.html",
-      "image": "assets/stories/public-safety/halton-police-crime-burlington.webp",
-      "alt": "Halton Regional Police vehicle behind crime-scene tape.",
-      "credit": "Burlington News",
-      "published": "2026-08-25",
-      "activeFrom": "2026-08-25",
-      "activeUntil": "2026-09-30",
-      "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "verificationTier": "primary",
-      "signals": {
-        "interest": 3.0999999999999996,
-        "relevance": 5.0,
-        "novelty": 3.3,
-        "familiarity": 3.5,
-        "consequence": 2.8,
-        "freshness": 1.5,
-        "sourceConfidence": 5.0,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 0.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "lastHomepageLead": "2026-08-26",
-      "topic": "public-safety",
-      "subjects": [
-        "crime"
-      ],
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "d184d3ed6b32f418",
-      "radarScore": 69,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": false,
-      "eligibleEditorial": true
     },
     {
       "id": "pitch:corned-beef-hut-origin",
@@ -1919,6 +1949,64 @@
       "eligibleEditorial": true
     },
     {
+      "id": "burlington-flood-protection-90-million",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Burlington has spent more than $90 million on stormwater since 2015. What changed?",
+      "deck": "Tuck Creek shows what the money has changed, and why some major flood work is still unfinished.",
+      "label": "Infrastructure",
+      "labelEssential": true,
+      "url": "articles/burlington-flood-protection-90-million.html",
+      "image": "assets/editorial/burlington-flood-investment-timeline.svg",
+      "alt": "Timeline showing Burlington flood protection work from the 2014 storm through 2028.",
+      "credit": "Burlington News graphic",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "activeUntil": "2026-10-31",
+      "publishedAt": "2026-08-26T22:35:00-04:00",
+      "datePublished": "2026-08-26T22:35:00-04:00",
+      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
+      "verificationTier": "primary",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.8,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 5.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 1.8509575904861109
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "development",
+      "subjects": [
+        "flooding",
+        "stormwater",
+        "tuck-creek",
+        "infrastructure"
+      ],
+      "lastHomepageLead": "2026-08-26",
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "e51a7f4a6fa434d3",
+      "radarScore": 67,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
       "id": "burlington-road-closures-september-2026",
       "kind": "original",
       "surfaces": [
@@ -2175,64 +2263,6 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": false
-    },
-    {
-      "id": "burlington-flood-protection-90-million",
-      "kind": "original",
-      "surfaces": [
-        "feature",
-        "latest",
-        "rail"
-      ],
-      "headline": "Burlington has spent more than $90 million on stormwater since 2015. What changed?",
-      "deck": "Tuck Creek shows what the money has changed, and why some major flood work is still unfinished.",
-      "label": "Infrastructure",
-      "labelEssential": true,
-      "url": "articles/burlington-flood-protection-90-million.html",
-      "image": "assets/editorial/burlington-flood-investment-timeline.svg",
-      "alt": "Timeline showing Burlington flood protection work from the 2014 storm through 2028.",
-      "credit": "Burlington News graphic",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "activeUntil": "2026-10-31",
-      "publishedAt": "2026-08-26T22:35:00-04:00",
-      "datePublished": "2026-08-26T22:35:00-04:00",
-      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
-      "verificationTier": "primary",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.8,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 1.5,
-        "sourceConfidence": 5.0,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 0.8978686575000001
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "topic": "development",
-      "subjects": [
-        "flooding",
-        "stormwater",
-        "tuck-creek",
-        "infrastructure"
-      ],
-      "lastHomepageLead": "2026-08-26",
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "e51a7f4a6fa434d3",
-      "radarScore": 66,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": false,
-      "eligibleEditorial": true
     },
     {
       "id": "nostalgia-games-cafe-closure",
@@ -2869,37 +2899,6 @@
       "eligibleEditorial": false
     },
     {
-      "id": "511:293678",
-      "detectedAt": "2026-08-26T16:03:38Z",
-      "score": 90,
-      "headline": "Nightly Construction on QEW Fort Erie Bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
-      "kind": "traffic",
-      "location": "QEW",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "d77ff4fb9bf040bc",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 3.4,
-        "novelty": 2.5,
-        "familiarity": 2.5,
-        "consequence": 2.0,
-        "freshness": 2.4,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 58,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
-    },
-    {
       "id": "511:291512",
       "detectedAt": "2026-08-25T17:09:36Z",
       "score": 90,
@@ -2956,6 +2955,37 @@
         "rotation": 5.0
       },
       "radarScore": 56,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": false,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "511:293678",
+      "detectedAt": "2026-08-26T16:03:38Z",
+      "score": 90,
+      "headline": "Nightly Construction on QEW Fort Erie Bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "d77ff4fb9bf040bc",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 55,
       "eligibleRightNow": false,
       "eligibleHomepage": false,
       "eligibleNewest": false,
