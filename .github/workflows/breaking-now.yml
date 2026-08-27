@@ -10,6 +10,7 @@ on:
     paths:
       - 'scripts/build_breaking_now.py'
       - 'scripts/sources/**'
+      - 'data/story-overrides.json'
       - '.github/workflows/breaking-now.yml'
 
 permissions:
