@@ -20,20 +20,24 @@ import {
     'burlington-rabies-bat-2026':'assets/bat.png',
     'upper-middle-road-construction-2026':'assets/upper-middle-construction.png',
     'burlington-road-closures-september-2026':'assets/road-closure.png',
-    'ribfest-2026':'assets/rib-fest.png',
+    'ribfest-2026':'assets/home/ribs.webp',
     'ontario-student-rights-school':'assets/back-to-school.png',
     'back-to-school-2026':'assets/back-to-school.png',
-    'millcroft-phase-2-138-homes':'assets/condo-construction.png'
+    'millcroft-phase-2-138-homes':'assets/condo-construction.png',
+    'costco-burloak-wyecroft':'assets/costco.png',
+    'nelson-quarry-tribunal-decision':'assets/nelson-quarry.png'
   };
   const ALT_OVERRIDES={
     'e-scooter-burlington-rules':'A person riding an e-scooter along the right side of a suburban Burlington-area street.',
     'burlington-rabies-bat-2026':'A bat hanging beneath the eaves of a suburban home at dusk.',
     'upper-middle-road-construction-2026':'Road construction on a wide Burlington arterial road.',
     'burlington-road-closures-september-2026':'Road construction and lane restrictions on a Burlington arterial road.',
-    'ribfest-2026':'Barbecue ribs being glazed on a grill at an outdoor festival.',
+    'ribfest-2026':'Ribs cooking over a barbecue pit at Burlington Ribfest.',
     'ontario-student-rights-school':'Students walking toward a school entrance beside a yellow school bus.',
     'back-to-school-2026':'Students walking toward a school entrance beside a yellow school bus.',
-    'millcroft-phase-2-138-homes':'A mid-rise residential building under construction with a tower crane.'
+    'millcroft-phase-2-138-homes':'A mid-rise residential building under construction with a tower crane.',
+    'costco-burloak-wyecroft':'Costco storefront and entrance in a suburban shopping area.',
+    'nelson-quarry-tribunal-decision':'Nelson Quarry and the Mount Nemo area in north Burlington.'
   };
   const imageFor=item=>IMAGE_OVERRIDES[item?.id]||item?.image||'';
   const altFor=item=>ALT_OVERRIDES[item?.id]||item?.alt||item?.headline||'Burlington News';
@@ -41,14 +45,11 @@ import {
     {id:'burlington-ultimate-team-0-24',headline:'This Burlington team has lost 24 straight games. Why do they keep coming back?',deck:'After an 0-12 season, they changed the name. Twelve games later, they were still waiting for a win.',label:'Sports',topic:'sports',url:'articles/burlington-ultimate-team-0-24.html',image:'assets/ultimate-frisbee-burlington.png',alt:'Burlington ultimate players on a grass field during a recreational game.',placementScore:70},
     {id:'skyway-bridge-story',headline:'Ontario nearly replaced the Skyway with three tunnels.',deck:'The tunnel plan got much further than most Burlington residents probably realize.',label:'History',topic:'history',url:'articles/skyway-bridge-story.html',image:'assets/home/skyway-reader.webp',alt:'The Burlington Bay James N. Allan Skyway across Burlington Bay.',placementScore:68}
   ];
-  const naturalHeadline=value=>cleanDash(value).replace(/\.\s+Here is where\.?$/i,'. The closures affect two different parts of the city.').replace(/\.\s+Here is how\.?$/i,'. The details matter.').replace(/\.\s+Here is why\.?$/i,'. There is more behind it.');
+  const naturalHeadline=value=>cleanDash(value).replace(/\.\s+Here is where\.?$/i,'.').replace(/\.\s+Here is how\.?$/i,'.').replace(/\.\s+Here is why\.?$/i,'.');
   const displayHeadline=item=>/crime|burlington-crime/i.test(`${item?.id||''} ${item?.headline||''}`)?'How bad is crime in Burlington, really?':(/hotspots-0-24|ultimate-team-0-24|toss bosses|0–24|0-24/i.test(`${item?.id||''} ${item?.headline||''}`)?'This Burlington team has lost 24 straight games. Why do they keep coming back?':naturalHeadline(item.headline));
   const displayDeck=item=>{
     if(/crime|burlington-crime/i.test(`${item?.id||''} ${item?.headline||''}`))return 'Burlington remains one of the safer large communities in Canada, but the latest comparable data shows one category moving in the wrong direction.';
-    const authored=cleanDash(item?.deck||item?.summary||item?.description||'').replace(/\s+/g,' ').trim();
-    if(authored)return authored;
-    const label=categoryLabel(item).toLowerCase();
-    return `The latest ${label} story from Burlington News, with the local details and what they mean for people in Burlington.`;
+    return cleanDash(item?.deck||item?.summary||item?.description||'').replace(/\s+/g,' ').trim();
   };
   const isEditorialGraphic=item=>{const image=imageFor(item),descriptor=`${image} ${altFor(item)} ${item?.credit||''}`;return /\.svg(?:\?|$)/i.test(String(image||''))||/timeline|chart|map|diagram|comparison|infographic|schematic|orientation graphic/i.test(descriptor)};
   const hasPhoto=item=>Boolean(imageFor(item))&&!isEditorialGraphic(item);
@@ -60,34 +61,36 @@ import {
   const statsFor=(item,statsMap)=>{const candidates=[item?.id,item?.url,publicUrl(item?.url),item?.headline].filter(Boolean);for(const key of candidates){const row=statsMap?.[key];if(row&&typeof row==='object')return row}return{}};
   const topPickScore=(item,statsMap)=>popularityScore(statsFor(item,statsMap),Number(item?.placementScore)||0);
   const totalBehaviourSample=statsMap=>Object.values(statsMap||{}).reduce((sum,row)=>sum+(Number(row?.reads24h)||Number(row?.opens)||0),0);
+  const liveKeys=doc=>{const keys=new Set();for(const item of doc?.items||[]){if(item?.id)keys.add(String(item.id));if(item?.storyUrl)keys.add(publicUrl(item.storyUrl));}return keys};
+  const isLiveStory=(item,keys)=>keys.has(String(item?.id||''))||keys.has(publicUrl(item?.url||''));
   function renderLead(item,score){
     if(!lead||!item?.headline||!item?.url||isEditorialGraphic(item))return;
     const url=publicUrl(item.url),external=/^https?:\/\//.test(url),raw=imageFor(item),image=/crime/i.test(`${item.id||''} ${item.headline||''}`)?CRIME_IMAGE:(raw.startsWith('/')?raw:`/${raw}`),deck=displayDeck(item);
     lead.dataset.selectionScore=score.toFixed(1);lead.dataset.selectionReason=heroReason(item,score);lead.dataset.storyId=item.id||'';
-    lead.innerHTML=`<a href="${esc(url)}"${external?' target="_blank" rel="noopener"':''}><div class="top-image"><img src="${esc(image)}" alt="${esc(altFor(item))}" fetchpriority="high"></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(displayHeadline(item))}</h1><p>${esc(deck)}</p></div></a>`;
+    lead.innerHTML=`<a href="${esc(url)}"${external?' target="_blank" rel="noopener"':''}><div class="top-image"><img src="${esc(image)}" alt="${esc(altFor(item))}" fetchpriority="high"></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(displayHeadline(item))}</h1>${deck?`<p>${esc(deck)}</p>`:''}</div></a>`;
   }
   function hideNewest(){if(newestRail){newestRail.hidden=true;newestRail.setAttribute('aria-hidden','true')}if(latestList)latestList.innerHTML=''}
-  function renderNewest(items,heroId){
+  function renderNewest(items,heroId,liveSet){
     const now=Date.now();
-    const picked=uniqueById(items).filter(item=>item?.id&&item.id!==heroId&&item.status!=='expired').map(item=>({item,ts:effectiveFreshnessTimestamp(item)})).filter(row=>row.ts&&now-row.ts>=0&&now-row.ts<=NEWEST_HOME_WINDOW_MS).sort((a,b)=>b.ts-a.ts).slice(0,3).map(row=>row.item);
+    const picked=uniqueById(items).filter(item=>item?.id&&item.id!==heroId&&!isLiveStory(item,liveSet)&&item.status!=='expired').map(item=>({item,ts:effectiveFreshnessTimestamp(item)})).filter(row=>row.ts&&now-row.ts>=0&&now-row.ts<=NEWEST_HOME_WINDOW_MS).sort((a,b)=>b.ts-a.ts).slice(0,3).map(row=>row.item);
     if(!latestList||!newestRail||!picked.length){hideNewest();return[]}
-    newestRail.hidden=false;newestRail.removeAttribute('aria-hidden');newestRail.dataset.selectionReason='strict chronology; hero excluded; 3 stories; no forced category diversity';
+    newestRail.hidden=false;newestRail.removeAttribute('aria-hidden');newestRail.dataset.selectionReason='strict chronology; hero and active live-update stories excluded; 3 stories';
     latestList.innerHTML=picked.map(item=>{const url=publicUrl(item.url),stamp=relativeTime(item.lastMeaningfulUpdate||item.publishedAt||item.datePublished||item.published||item.activeFrom);return `<a href="${esc(url)}" data-story-id="${esc(item.id||'')}"><span><small>${esc(categoryLabel(item))}</small><strong>${esc(displayHeadline(item))}</strong>${stamp?`<time>${esc(stamp)}</time>`:''}</span></a>`}).join('');return picked
   }
   function renderPicks(items,readStats){
     if(!pickGrid||!items.length)return;
     const sample=totalBehaviourSample(readStats);if(picksTitle)picksTitle.textContent=canLabelMostRead(sample)?'Popular now':'Top picks';
-    const visible=uniqueById([...items.filter(hasPhoto),...SAFE_PICK_FALLBACKS]).filter(hasPhoto).map(item=>({item,score:topPickScore(item,readStats)})).sort((a,b)=>b.score-a.score).slice(0,3);if(!visible.length)return;
-    pickGrid.dataset.selectionReason='per-story popularity score: behaviour when available, editorial placement as low-sample fallback; real-photo gate';
+    const visible=uniqueById([...items.filter(hasPhoto),...SAFE_PICK_FALLBACKS]).filter(hasPhoto).map(item=>({item,score:topPickScore(item,readStats)})).sort((a,b)=>b.score-a.score).slice(0,2);if(!visible.length)return;
+    pickGrid.dataset.selectionReason='per-story popularity score; active live-update stories excluded; two cards maximum';
     pickGrid.innerHTML=visible.map(({item,score})=>{const url=publicUrl(item.url),raw=imageFor(item),image=raw.startsWith('/')?raw:`/${raw}`,hook=displayDeck(item),stats=statsFor(item,readStats);return `<a class="pick-card" href="${esc(url)}" data-story-id="${esc(item.id||'')}" data-selection-score="${score.toFixed(2)}" data-reads-24h="${Number(stats.reads24h)||0}"><div class="pick-image"><img src="${esc(image)}" alt="${esc(altFor(item))}" loading="lazy"></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(displayHeadline(item))}</h3>${hook?`<p class="pick-hook">${esc(hook)}</p>`:''}</a>`}).join('')
   }
   function localReadStats(){try{return JSON.parse(localStorage.getItem('bn-article-read-counts')||'{}')}catch(_){return{}}}
   async function refresh(){
     try{
-      const r=await fetch('/data/home-surface.json',{cache:'no-store'});if(!r.ok)return;const data=await r.json(),all=uniqueById([...(data.feature||[]),...(data.latest||[]),...(data.rail||[])]),heroCandidates=uniqueById([...(data.feature||[]),...all]).filter(hasPhoto).map(item=>({item,score:heroScore(item)})).sort((a,b)=>b.score-a.score),heroPick=heroCandidates[0];
+      const [homeResponse,liveResponse]=await Promise.all([fetch('/data/home-surface.json',{cache:'no-store'}),fetch('/data/breaking-now.json',{cache:'no-store'}).catch(()=>null)]);if(!homeResponse.ok)return;const data=await homeResponse.json(),liveDoc=liveResponse?.ok?await liveResponse.json():{},activeLive=liveKeys(liveDoc),all=uniqueById([...(data.feature||[]),...(data.latest||[]),...(data.rail||[])]),heroCandidates=uniqueById([...(data.feature||[]),...all]).filter(item=>hasPhoto(item)&&!isLiveStory(item,activeLive)).map(item=>({item,score:heroScore(item)})).sort((a,b)=>b.score-a.score),heroPick=heroCandidates[0];
       if(heroPick)renderLead(heroPick.item,heroPick.score);
-      const feature=heroPick?.item,items=uniqueById([...(data.latest||[]),...(data.rail||[]),...(data.feature||[])]),newest=renderNewest(items,feature?.id),exclude=new Set([feature?.id,...newest.map(x=>x.id)].filter(Boolean)),readStats=localReadStats();
-      const candidates=uniqueById([...(data.popular||all),...SAFE_PICK_FALLBACKS]).filter(x=>!exclude.has(x.id));renderPicks(candidates,readStats)
+      const feature=heroPick?.item,items=uniqueById([...(data.latest||[]),...(data.rail||[]),...(data.feature||[])]),newest=renderNewest(items,feature?.id,activeLive),exclude=new Set([feature?.id,...newest.map(x=>x.id)].filter(Boolean)),readStats=localReadStats();
+      const candidates=uniqueById([...(data.popular||all),...SAFE_PICK_FALLBACKS]).filter(x=>!exclude.has(x.id)&&!isLiveStory(x,activeLive));renderPicks(candidates,readStats)
     }catch(_){}
   }
   refresh();setInterval(refresh,REFRESH_MS);
