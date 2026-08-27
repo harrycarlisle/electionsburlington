@@ -22,6 +22,9 @@
     'Search “Things to do”'
   ];
   const index = [
+    {title:'Two Burlington roads will stay fully closed into September. Here is where',url:'/stories/burlington-road-closures-september-2026/',section:'Roads',keywords:'road closures spruce avenue shoreacres goodram britannia walkers guelph line detour construction september'},
+    {title:'Oakville approved a 1,000-space Costco near Burloak. Here is how drivers will get in',url:'/stories/costco-burloak-wyecroft/',section:'Development',keywords:'costco oakville burloak wyecroft riocan parking gas bar traffic warehouse'},
+    {title:'Up to 90% of a building can now be made inside this Burlington factory',url:'/stories/sekisui-burlington-modular-factory/',section:'Made in Burlington',keywords:'sekisui modular factory manufacturing housing schools maple avenue building construction'},
     {title:'How bad is crime in Burlington, really?',url:'/stories/how-bad-is-burlington-crime/',section:'Public safety',keywords:'crime police safety statistics canada halton'},
     {title:'E-scooter injuries are rising. Burlington’s rules are stricter than you might think.',url:'/stories/e-scooter-burlington-rules/',section:'Transportation',keywords:'e-scooter scooter centennial trail scooty safety helmet'},
     {title:'A Burlington gathering place closed. The problem wasn’t demand.',url:'/stories/nostalgia-games-cafe-closure/',section:'Local business',keywords:'nostalgia games cafe board game occupancy candy'},
