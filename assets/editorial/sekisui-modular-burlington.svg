@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">How modular construction moves work into a factory</title>
+<desc id="desc">Editorial diagram showing a factory, completed three-dimensional building modules, transport to a site, and modules assembled into a mid-rise building.</desc>
+<rect width="1600" height="900" fill="#f4f6f3"/>
+<text x="90" y="105" font-family="Georgia,serif" font-size="54" fill="#082b50">A building, before it reaches the building site</text>
+<text x="90" y="158" font-family="Arial,sans-serif" font-size="26" fill="#53677a">SEKISUI says up to 90% of construction can happen in a controlled factory.</text>
+<g font-family="Arial,sans-serif">
+  <rect x="90" y="260" width="390" height="330" rx="18" fill="#dce8ef" stroke="#9db2c1" stroke-width="3"/>
+  <path d="M125 480V350h80v-55l85 55v-55l85 55v130z" fill="#173f62"/>
+  <rect x="165" y="410" width="60" height="70" fill="#f4f6f3"/>
+  <rect x="270" y="405" width="65" height="38" fill="#f4f6f3"/>
+  <text x="125" y="645" font-size="25" font-weight="700" fill="#082b50">1. Factory</text>
+  <text x="125" y="683" font-size="21" fill="#53677a">Structure, finishes and building systems</text>
+  <text x="125" y="714" font-size="21" fill="#53677a">can be completed indoors.</text>
+
+  <rect x="610" y="310" width="255" height="135" rx="10" fill="#fff" stroke="#173f62" stroke-width="4"/>
+  <rect x="635" y="338" width="70" height="62" fill="#b6d8ec"/>
+  <rect x="735" y="338" width="100" height="62" fill="#e8ddbd"/>
+  <path d="M520 378H595" stroke="#2a7ab9" stroke-width="8" stroke-linecap="round"/>
+  <path d="M580 357l28 21-28 21" fill="none" stroke="#2a7ab9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="610" y="505" font-size="25" font-weight="700" fill="#082b50">2. Module</text>
+  <text x="610" y="543" font-size="21" fill="#53677a">A three-dimensional section leaves</text>
+  <text x="610" y="574" font-size="21" fill="#53677a">the factory ready for site assembly.</text>
+
+  <path d="M895 378h120" stroke="#2a7ab9" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1000 357l28 21-28 21" fill="none" stroke="#2a7ab9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(1055 235)">
+    <rect x="0" y="190" width="390" height="250" rx="8" fill="#173f62"/>
+    <g fill="#b6d8ec">
+      <rect x="30" y="220" width="75" height="58"/><rect x="125" y="220" width="75" height="58"/><rect x="220" y="220" width="75" height="58"/><rect x="315" y="220" width="45" height="58"/>
+      <rect x="30" y="300" width="75" height="58"/><rect x="125" y="300" width="75" height="58"/><rect x="220" y="300" width="75" height="58"/><rect x="315" y="300" width="45" height="58"/>
+    </g>
+    <rect x="170" y="370" width="55" height="70" fill="#e8ddbd"/>
+    <path d="M-30 440h450" stroke="#6f806f" stroke-width="12"/>
+  </g>
+  <text x="1055" y="735" font-size="25" font-weight="700" fill="#082b50">3. Site assembly</text>
+  <text x="1055" y="773" font-size="21" fill="#53677a">Modules are connected into the final</text>
+  <text x="1055" y="804" font-size="21" fill="#53677a">school, housing or care building.</text>
+</g>
+<text x="90" y="855" font-family="Arial,sans-serif" font-size="18" fill="#6b7986">Editorial diagram: Burlington News. This is an explainer, not a rendering of a specific SEKISUI project.</text>
+</svg>
