@@ -15,6 +15,28 @@ import {
   const TOPIC_LABELS={'public-safety':'Public safety',food:'Food',development:'Development',history:'History',election:'Election',schools:'Schools',events:'Events',sports:'Sports',nature:'Nature',traffic:'Traffic',transportation:'Transportation',canada:'Canada',burlington:'Burlington'};
   const categoryLabel=item=>item?.topic&&TOPIC_LABELS[item.topic]?TOPIC_LABELS[item.topic]:(item?.label||'Burlington');
   const CRIME_IMAGE='/assets/stories/public-safety/halton-police-crime-burlington.webp';
+  const IMAGE_OVERRIDES={
+    'e-scooter-burlington-rules':'assets/e-scooter.png',
+    'burlington-rabies-bat-2026':'assets/bat.png',
+    'upper-middle-road-construction-2026':'assets/upper-middle-construction.png',
+    'burlington-road-closures-september-2026':'assets/road-closure.png',
+    'ribfest-2026':'assets/rib-fest.png',
+    'ontario-student-rights-school':'assets/back-to-school.png',
+    'back-to-school-2026':'assets/back-to-school.png',
+    'millcroft-phase-2-138-homes':'assets/condo-construction.png'
+  };
+  const ALT_OVERRIDES={
+    'e-scooter-burlington-rules':'A person riding an e-scooter along the right side of a suburban Burlington-area street.',
+    'burlington-rabies-bat-2026':'A bat hanging beneath the eaves of a suburban home at dusk.',
+    'upper-middle-road-construction-2026':'Road construction on a wide Burlington arterial road.',
+    'burlington-road-closures-september-2026':'Road construction and lane restrictions on a Burlington arterial road.',
+    'ribfest-2026':'Barbecue ribs being glazed on a grill at an outdoor festival.',
+    'ontario-student-rights-school':'Students walking toward a school entrance beside a yellow school bus.',
+    'back-to-school-2026':'Students walking toward a school entrance beside a yellow school bus.',
+    'millcroft-phase-2-138-homes':'A mid-rise residential building under construction with a tower crane.'
+  };
+  const imageFor=item=>IMAGE_OVERRIDES[item?.id]||item?.image||'';
+  const altFor=item=>ALT_OVERRIDES[item?.id]||item?.alt||item?.headline||'Burlington News';
   const SAFE_PICK_FALLBACKS=[
     {id:'burlington-ultimate-team-0-24',headline:'This Burlington team has lost 24 straight games. Why do they keep coming back?',deck:'After an 0-12 season, they changed the name. Twelve games later, they were still waiting for a win.',label:'Sports',topic:'sports',url:'articles/burlington-ultimate-team-0-24.html',image:'assets/ultimate-frisbee-burlington.png',alt:'Burlington ultimate players on a grass field during a recreational game.',placementScore:70},
     {id:'skyway-bridge-story',headline:'Ontario nearly replaced the Skyway with three tunnels.',deck:'The tunnel plan got much further than most Burlington residents probably realize.',label:'History',topic:'history',url:'articles/skyway-bridge-story.html',image:'assets/home/skyway-reader.webp',alt:'The Burlington Bay James N. Allan Skyway across Burlington Bay.',placementScore:68}
@@ -28,8 +50,8 @@ import {
     const label=categoryLabel(item).toLowerCase();
     return `The latest ${label} story from Burlington News, with the local details and what they mean for people in Burlington.`;
   };
-  const isEditorialGraphic=item=>{const descriptor=`${item?.image||''} ${item?.alt||''} ${item?.credit||''}`;return /\.svg(?:\?|$)/i.test(String(item?.image||''))||/timeline|chart|map|diagram|comparison|infographic|schematic|orientation graphic/i.test(descriptor)};
-  const hasPhoto=item=>Boolean(item?.image)&&!isEditorialGraphic(item);
+  const isEditorialGraphic=item=>{const image=imageFor(item),descriptor=`${image} ${altFor(item)} ${item?.credit||''}`;return /\.svg(?:\?|$)/i.test(String(image||''))||/timeline|chart|map|diagram|comparison|infographic|schematic|orientation graphic/i.test(descriptor)};
+  const hasPhoto=item=>Boolean(imageFor(item))&&!isEditorialGraphic(item);
   const uniqueById=items=>{const seen=new Set();return items.filter(item=>{const key=item?.id||item?.url||item?.headline;if(!key||seen.has(key))return false;seen.add(key);return true})};
   const storyAgeMs=(item,now=Date.now())=>{const ts=effectiveFreshnessTimestamp(item);return ts?Math.max(0,now-ts):Infinity};
   const freshnessScore=(item,now=Date.now())=>{const age=storyAgeMs(item,now);if(age<=6*3600000)return 100;if(age<=24*3600000)return 85;if(age<=72*3600000)return 65;if(age<=NEWEST_HOME_WINDOW_MS)return 40;return 20};
@@ -40,9 +62,9 @@ import {
   const totalBehaviourSample=statsMap=>Object.values(statsMap||{}).reduce((sum,row)=>sum+(Number(row?.reads24h)||Number(row?.opens)||0),0);
   function renderLead(item,score){
     if(!lead||!item?.headline||!item?.url||isEditorialGraphic(item))return;
-    const url=publicUrl(item.url),external=/^https?:\/\//.test(url),raw=item.image?(item.image.startsWith('/')?item.image:`/${item.image}`):CRIME_IMAGE,image=/crime/i.test(`${item.id||''} ${item.headline||''}`)?CRIME_IMAGE:raw,deck=displayDeck(item);
+    const url=publicUrl(item.url),external=/^https?:\/\//.test(url),raw=imageFor(item),image=/crime/i.test(`${item.id||''} ${item.headline||''}`)?CRIME_IMAGE:(raw.startsWith('/')?raw:`/${raw}`),deck=displayDeck(item);
     lead.dataset.selectionScore=score.toFixed(1);lead.dataset.selectionReason=heroReason(item,score);lead.dataset.storyId=item.id||'';
-    lead.innerHTML=`<a href="${esc(url)}"${external?' target="_blank" rel="noopener"':''}><div class="top-image"><img src="${esc(image)}" alt="${esc(item.alt||item.headline)}" fetchpriority="high"></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(displayHeadline(item))}</h1><p>${esc(deck)}</p></div></a>`;
+    lead.innerHTML=`<a href="${esc(url)}"${external?' target="_blank" rel="noopener"':''}><div class="top-image"><img src="${esc(image)}" alt="${esc(altFor(item))}" fetchpriority="high"></div><div class="top-copy"><span class="kicker">${esc(categoryLabel(item))}</span><h1>${esc(displayHeadline(item))}</h1><p>${esc(deck)}</p></div></a>`;
   }
   function hideNewest(){if(newestRail){newestRail.hidden=true;newestRail.setAttribute('aria-hidden','true')}if(latestList)latestList.innerHTML=''}
   function renderNewest(items,heroId){
@@ -57,7 +79,7 @@ import {
     const sample=totalBehaviourSample(readStats);if(picksTitle)picksTitle.textContent=canLabelMostRead(sample)?'Popular now':'Top picks';
     const visible=uniqueById([...items.filter(hasPhoto),...SAFE_PICK_FALLBACKS]).filter(hasPhoto).map(item=>({item,score:topPickScore(item,readStats)})).sort((a,b)=>b.score-a.score).slice(0,3);if(!visible.length)return;
     pickGrid.dataset.selectionReason='per-story popularity score: behaviour when available, editorial placement as low-sample fallback; real-photo gate';
-    pickGrid.innerHTML=visible.map(({item,score})=>{const url=publicUrl(item.url),raw=item.image?(item.image.startsWith('/')?item.image:`/${item.image}`):CRIME_IMAGE,hook=displayDeck(item),stats=statsFor(item,readStats);return `<a class="pick-card" href="${esc(url)}" data-story-id="${esc(item.id||'')}" data-selection-score="${score.toFixed(2)}" data-reads-24h="${Number(stats.reads24h)||0}"><div class="pick-image"><img src="${esc(raw)}" alt="${esc(item.alt||item.headline)}" loading="lazy"></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(displayHeadline(item))}</h3>${hook?`<p class="pick-hook">${esc(hook)}</p>`:''}</a>`}).join('')
+    pickGrid.innerHTML=visible.map(({item,score})=>{const url=publicUrl(item.url),raw=imageFor(item),image=raw.startsWith('/')?raw:`/${raw}`,hook=displayDeck(item),stats=statsFor(item,readStats);return `<a class="pick-card" href="${esc(url)}" data-story-id="${esc(item.id||'')}" data-selection-score="${score.toFixed(2)}" data-reads-24h="${Number(stats.reads24h)||0}"><div class="pick-image"><img src="${esc(image)}" alt="${esc(altFor(item))}" loading="lazy"></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(displayHeadline(item))}</h3>${hook?`<p class="pick-hook">${esc(hook)}</p>`:''}</a>`}).join('')
   }
   function localReadStats(){try{return JSON.parse(localStorage.getItem('bn-article-read-counts')||'{}')}catch(_){return{}}}
   async function refresh(){
