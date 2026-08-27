@@ -3,7 +3,7 @@
 
 Uses cached official JSON first so the homepage never waits on live fetches.
 Optional --live tries public RSS/HTML endpoints and skips them on failure.
-X/Facebook adapters intentionally return nothing.
+Official X discovery is optional and activates only with X_BEARER_TOKEN.
 """
 
 from __future__ import annotations
@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import sys
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -130,9 +131,6 @@ def diversify_top(items: list[dict], limit: int = 2) -> list[dict]:
             break
     if second is None:
         second = items[1]
-    # Prefer a different category. Impact outranks that only when the
-    # diverse alternative is weak filler, or the same-category item is a
-    # genuine emergency and at least as strong.
     same = items[1]
     if str(same.get("category") or "") == str(first.get("category") or "") and second is not None:
         same_impact = float(same.get("impactScore") or 0)
@@ -180,7 +178,7 @@ def main() -> int:
         "liveFetches": live,
         "items": visible,
         "sourceNotes": {
-            "xTwitter": "skipped; no unofficial scrape",
+            "xTwitter": "official HaltonPolice/HamiltonPolice urgent-post discovery via X API v2 when X_BEARER_TOKEN is configured; otherwise skipped",
             "facebook": "skipped; no private or login-walled collection",
             "reddit": "discovery only until an official or newsroom source corroborates",
         },
