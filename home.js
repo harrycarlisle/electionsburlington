@@ -7,7 +7,7 @@ import {
 
 (() => {
   const latestList=document.getElementById('latestList'),newestRail=document.getElementById('newestRail'),pickGrid=document.getElementById('pickGrid'),picksTitle=document.getElementById('picksTitle'),lead=document.querySelector('.top-story');
-  const REFRESH_MS=5*60*1000;
+  const REFRESH_MS=5*60*1000,NEWEST_HOME_WINDOW_MS=7*24*60*60*1000;
   const cleanDash=value=>String(value||'').replace(/(\d)[—–](\d)/g,'$1-$2').replace(/[—–]/g,',').replace(/\s+,/g,',');
   const esc=value=>cleanDash(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const STORY_ALIASES={'burlington-hotspots-0-24':'burlington-ultimate-team-0-24'};
@@ -24,10 +24,7 @@ import {
     if(/crime|burlington-crime/i.test(`${item?.id||''} ${item?.headline||''}`))return 'Burlington remains one of the safer large communities in Canada, but the latest comparable data shows one category moving in the wrong direction.';
     return cleanDash(item?.deck||'').replace(/\s+/g,' ').trim();
   };
-  const isEditorialGraphic=item=>{
-    const descriptor=`${item?.image||''} ${item?.alt||''} ${item?.credit||''}`;
-    return /\.svg(?:\?|$)/i.test(String(item?.image||''))||/timeline|chart|map|diagram|comparison|infographic|schematic|orientation graphic/i.test(descriptor);
-  };
+  const isEditorialGraphic=item=>{const descriptor=`${item?.image||''} ${item?.alt||''} ${item?.credit||''}`;return /\.svg(?:\?|$)/i.test(String(item?.image||''))||/timeline|chart|map|diagram|comparison|infographic|schematic|orientation graphic/i.test(descriptor)};
   const hasPhoto=item=>Boolean(item?.image)&&!isEditorialGraphic(item);
   const uniqueById=items=>{const seen=new Set();return items.filter(item=>{const key=item?.id||item?.url||item?.headline;if(!key||seen.has(key))return false;seen.add(key);return true})};
   function renderLead(item){
@@ -37,7 +34,7 @@ import {
   }
   function hideNewest(){if(newestRail){newestRail.hidden=true;newestRail.setAttribute('aria-hidden','true')}if(latestList)latestList.innerHTML=''}
   function renderNewest(items,heroId){
-    const picked=selectNewest(items,{heroId,limit:4});
+    const picked=selectNewest(items,{heroId,limit:4,windowMs:NEWEST_HOME_WINDOW_MS});
     if(!latestList||!newestRail||!picked.items.length){hideNewest();return[]}
     newestRail.hidden=false;newestRail.removeAttribute('aria-hidden');
     latestList.innerHTML=picked.items.map(item=>{const url=publicUrl(item.url),stamp=relativeTime(item.lastMeaningfulUpdate||item.publishedAt||item.datePublished||item.published||item.activeFrom);return `<a href="${esc(url)}"><span><small>${esc(categoryLabel(item))}</small><strong>${esc(displayHeadline(item))}</strong>${stamp?`<time>${esc(stamp)}</time>`:''}</span></a>`}).join('');return picked.items
@@ -45,8 +42,7 @@ import {
   function renderPicks(items,readStats){
     if(!pickGrid||!items.length)return;
     const sample=Object.values(readStats||{}).reduce((sum,row)=>sum+(Number(row.opens)||0),0);if(picksTitle)picksTitle.textContent=canLabelMostRead(sample)?'Popular now':'Top picks';
-    const visible=uniqueById([...items.filter(hasPhoto),...SAFE_PICK_FALLBACKS]).filter(hasPhoto).slice(0,3);
-    if(!visible.length)return;
+    const visible=uniqueById([...items.filter(hasPhoto),...SAFE_PICK_FALLBACKS]).filter(hasPhoto).slice(0,3);if(!visible.length)return;
     pickGrid.innerHTML=visible.map(item=>{const url=publicUrl(item.url),raw=item.image?(item.image.startsWith('/')?item.image:`/${item.image}`):CRIME_IMAGE,hook=displayDeck(item);return `<a class="pick-card" href="${esc(url)}"><div class="pick-image"><img src="${esc(raw)}" alt="${esc(item.alt||item.headline)}" loading="lazy"></div><span class="kicker">${esc(categoryLabel(item))}</span><h3>${esc(displayHeadline(item))}</h3>${hook?`<p class="pick-hook">${esc(hook)}</p>`:''}</a>`}).join('')
   }
   function localReadStats(){try{return JSON.parse(localStorage.getItem('bn-article-read-counts')||'{}')}catch(_){return{}}}
@@ -54,9 +50,8 @@ import {
     try{
       const r=await fetch('/data/home-surface.json',{cache:'no-store'});if(!r.ok)return;const data=await r.json(),all=uniqueById([...(data.feature||[]),...(data.latest||[]),...(data.rail||[])]),feature=(data.feature||[]).find(hasPhoto)||all.find(hasPhoto);
       if(feature)renderLead(feature);
-      const items=data.latest||data.items||all,newest=renderNewest(items,feature?.id),exclude=new Set([feature?.id,...newest.map(x=>x.id)].filter(Boolean));
-      const ranked=uniqueById([...(data.popular||all),...SAFE_PICK_FALLBACKS]).filter(x=>!exclude.has(x.id)).sort((a,b)=>popularityScore(b,localReadStats())-popularityScore(a,localReadStats()));
-      renderPicks(ranked,localReadStats())
+      const items=uniqueById([...(data.latest||[]),...(data.rail||[]),...(data.feature||[])]),newest=renderNewest(items,feature?.id),exclude=new Set([feature?.id,...newest.map(x=>x.id)].filter(Boolean));
+      const ranked=uniqueById([...(data.popular||all),...SAFE_PICK_FALLBACKS]).filter(x=>!exclude.has(x.id)).sort((a,b)=>popularityScore(b,localReadStats())-popularityScore(a,localReadStats()));renderPicks(ranked,localReadStats())
     }catch(_){}
   }
   refresh();setInterval(refresh,REFRESH_MS);
