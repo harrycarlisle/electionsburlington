@@ -1,0 +1,32 @@
+/* Aug. 27 homepage refinements: tighter live update, smaller section scale, two-card picks. */
+.breaking-now:not([hidden]):not(:empty):not(.is-empty){
+  padding:9px 12px 10px!important;
+  border-radius:12px!important;
+  margin-bottom:14px!important;
+}
+.breaking-heading{gap:4px 6px!important;margin-bottom:1px!important}
+.breaking-heading>strong{font-size:14px!important;line-height:1.1!important}
+.breaking-status{font-size:8px!important;color:#4d8745!important;gap:4px!important}
+.breaking-status i{width:6px!important;height:6px!important;background:#d92d20!important}
+.breaking-row{grid-template-columns:minmax(0,1fr) 9px!important;gap:8px!important;padding:6px 0!important}
+.breaking-row strong{font-size:13px!important;line-height:1.2!important;font-weight:550!important}
+.breaking-row .breaking-chevron{font-size:14px!important}
+
+.newest .mini-heading h2,.top-picks .mini-heading h2{font-size:24px!important;letter-spacing:-.025em!important}
+.newest-list>a,.newest-list>a:last-child{padding:19px 0 18px!important}
+.newest-list strong{font-size:17px!important;line-height:1.19!important}
+.newest-list time{margin-top:11px!important;font-size:10px!important}
+.pick-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}
+.pick-card h3{font-size:18px!important}
+.pick-card>.pick-hook{font-size:13px!important}
+
+@media(max-width:720px){
+  .home-main>.breaking-now{margin-left:28px!important;margin-right:28px!important}
+  .breaking-now:not([hidden]):not(:empty):not(.is-empty){padding:8px 11px 9px!important}
+  .newest .mini-heading h2,.top-picks .mini-heading h2{font-size:23px!important}
+  .newest-list>a,.newest-list>a:last-child{padding:18px 0 17px!important}
+  .newest-list strong{font-size:16px!important;line-height:1.18!important}
+  .pick-grid{grid-template-columns:1fr!important}
+}
+@media(max-width:420px){.home-main>.breaking-now{margin-left:24px!important;margin-right:24px!important}}
+html[data-theme="dark"] .breaking-status{color:#69bd62!important}
