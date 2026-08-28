@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-28T15:27:01Z",
+  "checkedAt": "2026-08-28T17:46:30Z",
   "method": "Verified, rule-based Burlington civic monitor. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "sources": [
     {
@@ -20,7 +20,7 @@
     {
       "source": "City of Burlington Election",
       "ok": true,
-      "found": 23
+      "found": 24
     },
     {
       "source": "Halton Region",
@@ -89,6 +89,20 @@
     }
   ],
   "items": [
+    {
+      "title": "Election Sign Rules for Candidates",
+      "url": "https://myvote.burlington.ca/for-candidates/election-sign-rules-for-candidates/",
+      "source": "City of Burlington Election",
+      "sourceType": "official",
+      "scope": "election",
+      "allowImage": true,
+      "pageRank": 13,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 4,
+      "why": "It adds information voters can use to compare candidates.",
+      "tag": "Candidates"
+    },
     {
       "title": "Low Water Normal Normal Normal Normal",
       "url": "https://www.conservationhalton.ca/low-water-status/",
@@ -471,20 +485,6 @@
       "tag": "Burlington"
     },
     {
-      "title": "Third-Party Advertisers",
-      "url": "https://myvote.burlington.ca/third-party-advertisers/",
-      "source": "City of Burlington Election",
-      "sourceType": "official",
-      "scope": "election",
-      "allowImage": true,
-      "pageRank": 13,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington"
-    },
-    {
       "title": "Pay Online (School Cash Online)",
       "url": "https://www.hdsb.ca/students-families/pay-online-school-cash-online/",
       "source": "Halton District School Board",
@@ -510,6 +510,20 @@
       "image": "https://www.burlington.ca/en/images/structure/news_avatar.jpg",
       "imageSource": "City of Burlington News",
       "imageSourceUrl": "https://www.burlington.ca/en/recreation/family-programs.aspx",
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington"
+    },
+    {
+      "title": "Third-Party Advertisers",
+      "url": "https://myvote.burlington.ca/third-party-advertisers/",
+      "source": "City of Burlington Election",
+      "sourceType": "official",
+      "scope": "election",
+      "allowImage": true,
+      "pageRank": 14,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -564,20 +578,6 @@
       "tag": "Burlington"
     },
     {
-      "title": "News and Updates",
-      "url": "https://myvote.burlington.ca/news-and-updates/",
-      "source": "City of Burlington Election",
-      "sourceType": "official",
-      "scope": "election",
-      "allowImage": true,
-      "pageRank": 16,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington"
-    },
-    {
       "title": "Request a Transcript",
       "url": "https://www.hdsb.ca/students-families/request-a-transcript/",
       "source": "Halton District School Board",
@@ -610,6 +610,20 @@
       "tag": "Burlington"
     },
     {
+      "title": "News and Updates",
+      "url": "https://myvote.burlington.ca/news-and-updates/",
+      "source": "City of Burlington Election",
+      "sourceType": "official",
+      "scope": "election",
+      "allowImage": true,
+      "pageRank": 17,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington"
+    },
+    {
       "title": "Safe Schools",
       "url": "https://www.hdsb.ca/students-families/safe-schools/",
       "source": "Halton District School Board",
@@ -635,20 +649,6 @@
       "image": "https://www.burlington.ca/en/images/structure/news_avatar.jpg",
       "imageSource": "City of Burlington News",
       "imageSourceUrl": "https://www.burlington.ca/en/recreation/passes-memberships-and-gift-cards.aspx",
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington"
-    },
-    {
-      "title": "Voter News and Updates",
-      "url": "https://myvote.burlington.ca/news/voter-news-and-updates/",
-      "source": "City of Burlington Election",
-      "sourceType": "official",
-      "scope": "election",
-      "allowImage": true,
-      "pageRank": 18,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
