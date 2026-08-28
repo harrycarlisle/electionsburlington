@@ -8,7 +8,8 @@ The public card has two modes:
 
 Uses cached official JSON first so the homepage never waits on live fetches.
 Optional --live tries public RSS/HTML endpoints and skips them on failure.
-Official X discovery is optional and activates only with X_BEARER_TOKEN.
+Primary breaking discovery comes from official police/newsroom feeds, Ontario 511,
+Metrolinx, municipal/regional sources, weather, and established local newsrooms.
 """
 
 from __future__ import annotations
@@ -39,7 +40,6 @@ from sources.score import breaking_score, passes_breaking_threshold
 from sources.toronto_police import collect as tps_collect
 from sources.verify import cluster_updates, corroborate, rewrite_verified_headline, similar
 from sources.weather import collect as weather_collect
-from sources.x_twitter import collect as x_collect
 
 TZ = ZoneInfo("America/Toronto")
 OUT = DATA / "breaking-now.json"
@@ -102,7 +102,6 @@ def collect_all(now_iso: str, live: bool) -> tuple[list[dict], list[dict]]:
     officials += region_collect(now_iso, monitor=monitor)
     officials += news_collect(now_iso, monitor=monitor)
     officials += weather_collect(now_iso, live=live)
-    officials += x_collect()
     officials += facebook_collect()
 
     for row in radar.get("rightNow") or []:
@@ -269,7 +268,9 @@ def main() -> int:
         "liveFetches": live,
         "items": visible,
         "sourceNotes": {
-            "xTwitter": "official HaltonPolice/HamiltonPolice discovery via X API v2 when X_BEARER_TOKEN is configured; otherwise skipped",
+            "officialPolice": "Halton Police, Hamilton Police, OPP and Toronto Police official newsroom/RSS/HTML feeds are checked directly when live mode is enabled.",
+            "regionalNews": "CHCH, CP24 and other established local/regional newsrooms are used as corroboration and fallback reporting sources.",
+            "xTwitter": "not required; paid X API access is intentionally not part of the breaking-news dependency chain",
             "facebook": "skipped; no private or login-walled collection",
             "reddit": "discovery only until an official or newsroom source corroborates",
         },
