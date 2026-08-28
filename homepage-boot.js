@@ -14,7 +14,9 @@
     const nav = document.getElementById('mainNav');
     if (!btn || !nav) return;
 
-    nav.classList.add('menu-panel');
+    nav.className = 'nav menu-panel';
+    nav.innerHTML = '<div class="menu-primary" role="list"><a class="menu-link is-active" role="listitem" href="/" aria-current="page"><span>Home</span></a><a class="menu-link" role="listitem" href="/news/"><span>News</span></a><a class="menu-link" role="listitem" href="/elections/"><span>Elections</span></a><a class="menu-link" role="listitem" href="/explore/"><span>Explore</span></a><a class="menu-link" role="listitem" href="/sports/"><span>Sports</span></a><a class="menu-link" role="listitem" href="/games/"><span>Puzzles</span></a></div><div class="menu-primary menu-secondary" role="list"><a class="menu-link menu-secondary-link" role="listitem" href="/traffic/"><span>Traffic</span></a><a class="menu-link menu-secondary-link" role="listitem" href="/go/"><span>GO</span></a><a class="menu-link menu-secondary-link" role="listitem" href="/development/"><span>Development</span></a><a class="menu-link menu-secondary-link" role="listitem" href="/about/"><span>About</span></a></div>';
+
     const close = () => {
       btn.setAttribute('aria-expanded', 'false');
       btn.setAttribute('aria-label', 'Open site menu');
