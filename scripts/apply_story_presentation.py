@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Apply durable editorial presentation overrides to published story HTML.
+"""Apply durable Burlington News article presentation rules.
 
-The catalogue remains the source of story eligibility/scoring. story-overrides.json is
-where editors can replace weak/generated hero art and clean up display headlines/decks.
-This pass applies those overrides to both source article files and public /stories/ URLs
-so an hourly sync cannot put an SVG/diagram back into the primary hero slot.
+This pass keeps editorial scoring in story-catalog.json, applies explicit headline/image
+overrides, then normalizes every published article to the publication layout:
+category -> headline -> deck -> hero -> byline/date/read time -> topics -> body.
+Supporting diagrams are preserved only as supporting media and moved to the section
+where they actually help the reader instead of appearing immediately after the hero.
 """
 from __future__ import annotations
 
@@ -12,10 +13,21 @@ import html
 import json
 import re
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "data" / "story-catalog.json"
 OVERRIDES = ROOT / "data" / "story-overrides.json"
+PUBLICATION_CSS = "/article-publication-layout.css?v=20260828article1"
+
+# A graphic should appear after the paragraph that makes it useful, not after the
+# first paragraph simply because it used to be the hero image.
+SUPPORTING_AFTER = {
+    "burlington-flood-protection-90-million": "That is why “$90 million spent” does not mean Burlington's flood work is finished.",
+    "costco-burloak-wyecroft": "Two more access points are proposed from RioCan Boulevard",
+    "sekisui-burlington-modular-factory": "The modules are then transported to a construction site and connected into the final building.",
+    "burlington-road-closures-september-2026": "Spruce Avenue is closed between Shoreacres Road and Goodram Drive through Sept. 4.",
+}
 
 
 def load_json(path: Path, fallback):
@@ -38,20 +50,39 @@ def absolute_asset(value: str) -> str:
     return value if value.startswith("http") else f"https://burlingtonnews.ca{value}"
 
 
+def slug_from_path(path: Path) -> str:
+    if path.parent.name == "auto":
+        return path.stem
+    if path.name == "index.html" and path.parent.parent.name == "stories":
+        return path.parent.name
+    return path.stem
+
+
 def source_paths(item: dict) -> list[Path]:
     url = str(item.get("url") or "")
-    match = re.search(r"articles/([^/]+)\.html$", url)
+    match = re.search(r"articles/(?:auto/)?([^/]+)\.html$", url)
     if not match:
         return []
     slug = match.group(1)
-    paths = [ROOT / "articles" / f"{slug}.html", ROOT / "stories" / slug / "index.html"]
-    return [path for path in paths if path.exists()]
+    candidates = [
+        ROOT / "articles" / f"{slug}.html",
+        ROOT / "articles" / "auto" / f"{slug}.html",
+        ROOT / "stories" / slug / "index.html",
+    ]
+    return [path for path in candidates if path.exists()]
 
 
 def replace_meta(content: str, key: str, value: str) -> str:
     escaped = html.escape(value, quote=True)
     pattern = rf'(<meta\s+(?:property|name)="{re.escape(key)}"\s+content=")[^"]*(")'
     return re.sub(pattern, rf'\g<1>{escaped}\2', content, count=1, flags=re.I)
+
+
+def ensure_stylesheet(content: str, href: str) -> str:
+    base = href.split("?")[0]
+    if base in content:
+        return content
+    return content.replace("</head>", f'<link rel="stylesheet" href="{href}">\n</head>', 1)
 
 
 def supporting_graphic(old_figure: str, old_src: str, old_alt: str) -> str:
@@ -75,6 +106,34 @@ def insert_supporting_graphic(content: str, figure: str) -> str:
     first_para = re.search(r"</p>", tail, re.I)
     insert_at = start + (first_para.end() if first_para else 0)
     return content[:insert_at] + figure + content[insert_at:]
+
+
+def move_supporting_graphic(content: str, story_id: str) -> str:
+    needle = SUPPORTING_AFTER.get(story_id)
+    if not needle:
+        return content
+    figure_match = re.search(
+        r'<figure\s+class="[^"]*article-supporting-graphic[^"]*"[^>]*data-supporting-graphic="original-hero"[^>]*>.*?</figure>',
+        content,
+        re.I | re.S,
+    )
+    if not figure_match:
+        return content
+    figure = figure_match.group(0)
+    without = content[:figure_match.start()] + content[figure_match.end():]
+    # Match the paragraph by a stable text fragment while tolerating inline markup.
+    paras = list(re.finditer(r'<p\b[^>]*>.*?</p>', without, re.I | re.S))
+    target = None
+    needle_plain = re.sub(r"\s+", " ", needle).strip().lower()
+    for para in paras:
+        plain = re.sub(r"<[^>]+>", "", para.group(0))
+        plain = html.unescape(re.sub(r"\s+", " ", plain)).strip().lower()
+        if needle_plain in plain:
+            target = para
+            break
+    if not target:
+        return content
+    return without[:target.end()] + "\n" + figure + without[target.end():]
 
 
 def apply_patch(content: str, patch: dict) -> tuple[str, bool]:
@@ -124,23 +183,122 @@ def apply_patch(content: str, patch: dict) -> tuple[str, bool]:
     return content, content != before
 
 
+def nice_topic(value: str) -> str:
+    value = re.sub(r"[-_]+", " ", str(value or "").strip())
+    special = {"go": "GO", "qew": "QEW", "ai": "AI", "hdsb": "HDSB"}
+    words = [special.get(word.lower(), word.capitalize()) for word in value.split()]
+    return " ".join(words)
+
+
+def topic_values(item: dict, content: str) -> list[str]:
+    values: list[str] = []
+    for raw in [item.get("topic"), *(item.get("subjects") or [])]:
+        label = nice_topic(str(raw or ""))
+        if label and label.lower() not in {x.lower() for x in values}:
+            values.append(label)
+        if len(values) >= 4:
+            break
+    if not values:
+        kicker = re.search(r'<div\s+class="article-kicker"[^>]*>(.*?)</div>', content, re.I | re.S)
+        if kicker:
+            label = nice_topic(re.sub(r"<[^>]+>", "", kicker.group(1)))
+            if label:
+                values.append(label)
+    return values[:4]
+
+
+def topics_markup(item: dict, content: str) -> str:
+    values = topic_values(item, content)
+    if not values:
+        return ""
+    links = []
+    for label in values:
+        slug = quote(label.lower().replace(" ", "-"), safe="-")
+        links.append(f'<a href="/news/?topic={slug}">{html.escape(label)}</a>')
+    return '<div class="article-topics"><span>Topics:</span>' + '<span class="article-topic-sep">/</span>'.join(links) + '</div>'
+
+
+def normalize_article_structure(content: str, item: dict) -> str:
+    content = ensure_stylesheet(content, PUBLICATION_CSS)
+    hero = re.search(r'<figure\s+class="article-hero[^"]*"[^>]*>.*?</figure>', content, re.I | re.S)
+    if not hero:
+        return content
+
+    byline_match = re.search(r'<div\s+class="article-byline"[^>]*>.*?</div>', content, re.I | re.S)
+    byline = byline_match.group(0) if byline_match else ""
+
+    # Remove any existing normalized metadata wrapper first, then remove the old
+    # byline wherever a legacy template placed it (usually above the hero).
+    content = re.sub(
+        r'<div\s+class="article-post-hero-meta"[^>]*>\s*(?:<div\s+class="article-byline"[^>]*>.*?</div>)?\s*(?:<div\s+class="article-topics"[^>]*>.*?</div>)?\s*</div>',
+        '',
+        content,
+        flags=re.I | re.S,
+    )
+    content = re.sub(r'<div\s+class="article-byline"[^>]*>.*?</div>', '', content, flags=re.I | re.S)
+
+    # Re-find the hero after the removals so indices are correct.
+    hero = re.search(r'<figure\s+class="article-hero[^"]*"[^>]*>.*?</figure>', content, re.I | re.S)
+    if not hero:
+        return content
+    topics = topics_markup(item, content)
+    if byline or topics:
+        meta = '<div class="article-post-hero-meta">' + byline + topics + '</div>'
+        content = content[:hero.end()] + "\n" + meta + content[hero.end():]
+    return content
+
+
+def item_for_slug(items: list[dict], slug: str) -> dict:
+    for item in items:
+        url = str(item.get("url") or "")
+        if item.get("id") == slug or re.search(rf'/{re.escape(slug)}\.html$', url):
+            return item
+    return {}
+
+
+def all_article_paths() -> list[Path]:
+    paths = list((ROOT / "articles").glob("*.html"))
+    paths += list((ROOT / "articles" / "auto").glob("*.html"))
+    for story in (ROOT / "stories").glob("*/index.html"):
+        paths.append(story)
+    return sorted(set(paths))
+
+
 def main() -> int:
     catalogue = load_json(CATALOG, {"items": []})
+    items = catalogue.get("items", [])
     overrides = load_json(OVERRIDES, {})
-    by_id = {str(item.get("id") or ""): item for item in catalogue.get("items", [])}
-    changed = 0
+    by_id = {str(item.get("id") or ""): item for item in items}
+    changed_paths: set[Path] = set()
+
+    # First apply explicit editorial headline/image choices.
     for story_id, patch in overrides.items():
         item = by_id.get(story_id)
         if not item:
             continue
         for path in source_paths(item):
             original = path.read_text(encoding="utf-8")
-            updated, did_change = apply_patch(original, patch)
-            if did_change:
+            updated, _ = apply_patch(original, patch)
+            updated = move_supporting_graphic(updated, story_id)
+            updated = normalize_article_structure(updated, item)
+            if updated != original:
                 path.write_text(updated, encoding="utf-8")
-                changed += 1
-                print(f"updated {path.relative_to(ROOT)}")
-    print(f"Applied presentation overrides to {changed} file(s)")
+                changed_paths.add(path)
+
+    # Then normalize every other published article, including short breaking briefs.
+    for path in all_article_paths():
+        original = path.read_text(encoding="utf-8")
+        slug = slug_from_path(path)
+        item = item_for_slug(items, slug)
+        updated = move_supporting_graphic(original, slug)
+        updated = normalize_article_structure(updated, item)
+        if updated != original:
+            path.write_text(updated, encoding="utf-8")
+            changed_paths.add(path)
+
+    for path in sorted(changed_paths):
+        print(f"updated {path.relative_to(ROOT)}")
+    print(f"Applied article presentation rules to {len(changed_paths)} file(s)")
     return 0
 
 
