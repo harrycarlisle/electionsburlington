@@ -8,6 +8,7 @@
   },
   "burlington-road-closures-september-2026": {
     "headline": "Two Burlington roads will stay fully closed into September.",
+    "deck": "Spruce Avenue is closed through Sept. 4. Britannia Road has no through traffic through the end of September.",
     "image": "assets/road-closure.png",
     "alt": "Road construction and lane restrictions on a Burlington arterial road.",
     "credit": "Burlington News visual"
@@ -20,6 +21,8 @@
     "credit": "Burlington News visual"
   },
   "sekisui-burlington-modular-factory": {
+    "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
+    "deck": "SEKISUI's $15-million Canadian hub is targeting schools, housing and care buildings.",
     "image": "assets/0B3CAFA4-0C73-4954-8FEE-842AC0C5CC98.png",
     "alt": "A building under construction in an industrial factory setting.",
     "credit": "Burlington News visual"
@@ -53,13 +56,15 @@
     "credit": "Burlington News visual"
   },
   "ontario-student-rights-school": {
+    "headline": "Can a teacher take your phone? Seven Ontario school rules students should know.",
+    "deck": "What Ontario rules actually allow inside a school, and where the limits are.",
     "image": "assets/back-to-school.png",
     "alt": "Students walking toward a school entrance beside a yellow school bus.",
     "credit": "Burlington News visual"
   },
   "millcroft-phase-2-138-homes": {
     "headline": "Millcroft Phase 2 proposes 138 homes. What happens next?",
-    "deck": "The application is still proposed, not approved. Here is what residents should watch next.",
+    "deck": "The application is still proposed, not approved. The next decisions will determine whether it can move forward.",
     "image": "assets/condo-construction.png",
     "alt": "A mid-rise residential building under construction with a tower crane.",
     "credit": "Burlington News visual"
@@ -69,5 +74,9 @@
     "image": "assets/nelson-quarry.png",
     "alt": "Nelson Quarry and the Mount Nemo area in north Burlington.",
     "credit": "Burlington News visual"
+  },
+  "burlington-ultimate-team-0-24": {
+    "headline": "This Burlington team is 0–24. Why do they keep coming back?",
+    "deck": "After an 0–12 season, they changed the name. Twelve games later, they were still waiting for a win."
   }
 }
