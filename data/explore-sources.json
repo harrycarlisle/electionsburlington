@@ -1,17 +1,26 @@
 {
-  "updated": "2026-08-24",
-  "purpose": "Official and primary sources monitored for event candidates. A listing is not published until its date, place and source are checked.",
+  "updated": "2026-08-28",
+  "purpose": "Official and primary sources monitored for Burlington and useful nearby event candidates. A listing is not published until its date, place, access details and source are checked.",
+  "regionPolicy": {
+    "primary": ["Burlington"],
+    "nearby": ["Oakville", "Hamilton", "Stoney Creek"],
+    "discoveryOnly": ["Grimsby", "Caledonia", "West Lincoln", "Toronto"]
+  },
   "sources": [
-    {"name":"City of Burlington calendar","url":"https://calendar.burlington.ca/default/Month","scope":"Burlington","topics":["events","movies","community","cleanup"]},
-    {"name":"Royal Botanical Gardens","url":"https://www.rbg.ca/events-experiences/events/","scope":"Burlington and Hamilton","topics":["concerts","fall","winter","nature"]},
-    {"name":"Burlington Lions Club Farmers Market","url":"https://www.burlingtonlionsclub.ca/burlington-farmers-market","scope":"Burlington","topics":["market"]},
-    {"name":"Canada's Largest Ribfest","url":"https://canadaslargestribfest.com/","scope":"Burlington","topics":["festival"]},
-    {"name":"Love My Neighbourhood","url":"https://www.burlington.ca/en/community-supports/love-my-neighbourhood.aspx","scope":"Burlington","topics":["neighbourhood","community grant"]},
-    {"name":"BurlingtonGreen","url":"https://www.burlingtongreen.org/events/","scope":"Burlington","topics":["tree planting","cleanup","volunteer"]},
-    {"name":"Supercrawl","url":"https://supercrawl.ca/2026/","scope":"Nearby Hamilton","topics":["festival","music","art"]},
-    {"name":"Pokémon GO live events","url":"https://pokemongo.com/en/events","scope":"Toronto and nearby","topics":["Pokémon GO","game event"]},
-    {"name":"NASA skywatching","url":"https://science.nasa.gov/solar-system/skywatching/","scope":"Visible from Burlington","topics":["eclipse","meteor shower","constellation"]},
-    {"name":"NOAA Space Weather Prediction Center","url":"https://services.swpc.noaa.gov/text/3-day-forecast.txt","scope":"Visible from Burlington","topics":["aurora","space weather"]},
-    {"name":"Burlington Ultimate Club","url":"https://www.burlingtonultimate.com/","scope":"Burlington","topics":["ultimate","standings","finals"],"status":"monitor only; publish scores only from an official result page"}
+    {"name":"City of Burlington calendar","url":"https://calendar.burlington.ca/default/Month","scope":"Burlington","priority":5,"topics":["events","movies","community","cleanup"]},
+    {"name":"Royal Botanical Gardens","url":"https://www.rbg.ca/events-experiences/events/","scope":"Burlington and Hamilton","priority":5,"topics":["concerts","movies","family","fall","winter","nature"]},
+    {"name":"Burlington Lions Club Farmers Market","url":"https://www.burlingtonlionsclub.ca/burlington-farmers-market","scope":"Burlington","priority":5,"topics":["market"]},
+    {"name":"Canada's Largest Ribfest","url":"https://canadaslargestribfest.com/","scope":"Burlington","priority":5,"topics":["festival"]},
+    {"name":"Love My Neighbourhood","url":"https://www.burlington.ca/en/community-supports/love-my-neighbourhood.aspx","scope":"Burlington","priority":4,"topics":["neighbourhood","community grant"]},
+    {"name":"BurlingtonGreen","url":"https://www.burlingtongreen.org/events/","scope":"Burlington","priority":4,"topics":["tree planting","cleanup","volunteer"]},
+    {"name":"Town of Oakville events","url":"https://www.oakville.ca/community-events/events/","scope":"Nearby Oakville","priority":4,"topics":["events","festival","movie","market","family","culture"]},
+    {"name":"Visit Oakville events","url":"https://visitoakville.com/events/","scope":"Nearby Oakville","priority":4,"topics":["festival","movie","market","family","arts","food"]},
+    {"name":"City of Hamilton events calendar","url":"https://www.hamilton.ca/things-do/festivals-events/events-calendar","scope":"Nearby Hamilton","priority":4,"topics":["festival","movie","music","market","family","outdoor"]},
+    {"name":"Supercrawl","url":"https://supercrawl.ca/2026/","scope":"Nearby Hamilton","priority":4,"topics":["festival","music","art"]},
+    {"name":"Active Parents regional calendar","url":"https://activeparents.ca/calendar/","scope":"Burlington, Oakville, Hamilton and nearby","priority":2,"topics":["movies","family","festival","Oakville","Hamilton","Burlington","Stoney Creek"],"status":"discovery only; verify every listing against the organizer, municipality or venue before publication"},
+    {"name":"Pokémon GO live events","url":"https://pokemongo.com/en/events","scope":"Toronto and nearby","priority":1,"topics":["Pokémon GO","game event"],"status":"discovery only unless a Burlington-area activation is confirmed"},
+    {"name":"NASA skywatching","url":"https://science.nasa.gov/solar-system/skywatching/","scope":"Visible from Burlington","priority":3,"topics":["eclipse","meteor shower","constellation"]},
+    {"name":"NOAA Space Weather Prediction Center","url":"https://services.swpc.noaa.gov/text/3-day-forecast.txt","scope":"Visible from Burlington","priority":3,"topics":["aurora","space weather"]},
+    {"name":"Burlington Ultimate Club","url":"https://www.burlingtonultimate.com/","scope":"Burlington","priority":4,"topics":["ultimate","standings","finals"],"status":"monitor only; publish scores only from an official result page"}
   ]
 }
