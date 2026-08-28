@@ -2,8 +2,7 @@ name: Burlington breaking now
 
 on:
   schedule:
-    # 15 minutes, offset from GO / 511 / Reddit jobs. GitHub cron is the
-    # closest sustainable cadence; do not poll official pages more often.
+    # Check official police/newsroom feeds every 15 minutes, offset from GO / 511 jobs.
     - cron: '4,19,34,49 * * * *'
   workflow_dispatch:
   push:
@@ -32,8 +31,6 @@ jobs:
         with:
           python-version: '3.12'
       - name: Build breaking now from official feeds and cached surfaces
-        env:
-          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: python scripts/build_breaking_now.py --live
       - name: Commit breaking surface
         run: >-
