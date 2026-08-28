@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T11:00:51.131671-04:00",
+  "generatedAt": "2026-08-28T11:18:25.525982-04:00",
   "mode": "breaking",
   "label": "Breaking News",
   "method": "Breaking threshold passed. breakingScore = localRelevance*.25 + impact*.25 + recency*.20 + confidence*.15 + breadth*.10 + novelty*.05.",
@@ -15,9 +15,9 @@
       "location": "",
       "nearestIntersection": "",
       "affectedArea": null,
-      "publishedAt": "2026-08-28T11:00:51.131671-04:00",
+      "publishedAt": "2026-08-28T11:18:25.525982-04:00",
       "updatedAt": null,
-      "discoveredAt": "2026-08-28T11:00:51.131671-04:00",
+      "discoveredAt": "2026-08-28T11:18:25.525982-04:00",
       "severity": null,
       "impactScore": 4.4,
       "confidenceScore": 5.0,
