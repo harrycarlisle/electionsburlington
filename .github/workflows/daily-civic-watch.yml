@@ -10,12 +10,14 @@ on:
       - 'data/community-discussion.json'
       - 'data/story-catalog.json'
       - 'data/story-overrides.json'
+      - 'data/manual-stories.json'
       - 'data/editorial-policy.json'
       - 'scripts/update_candidate_assets.py'
       - 'scripts/update_civic_watch.py'
       - 'scripts/update_civic_watch_local.py'
       - 'scripts/build_editorial_queue.py'
       - 'scripts/auto_publish_briefs.py'
+      - 'scripts/merge_manual_stories.py'
       - 'scripts/rank_stories.py'
       - 'scripts/render_homepage.py'
       - 'scripts/apply_story_presentation.py'
@@ -49,6 +51,8 @@ jobs:
         run: python scripts/build_editorial_queue.py
       - name: Publish verified low-risk stories
         run: python scripts/auto_publish_briefs.py
+      - name: Merge manually published stories
+        run: python scripts/merge_manual_stories.py
       - name: Rotate homepage stories
         run: python scripts/rank_stories.py
       - name: Render stable homepage first paint
