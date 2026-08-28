@@ -1,0 +1,87 @@
+{
+  "updated": "2026-08-28T12:20:00-04:00",
+  "purpose": "Verified Burlington-area events that supplement the main Explore calendar. Burlington remains the priority; nearby Oakville and Hamilton listings are included when practical for Burlington readers.",
+  "events": [
+    {
+      "id": "oak-park-fall-fair-2026",
+      "title": "Oak Park Fall Fair",
+      "category": "Nearby fair",
+      "start": "2026-09-12T11:00:00-04:00",
+      "end": "2026-09-12T22:00:00-04:00",
+      "dateLabel": "Sat, Sept. 12 · 11 a.m. to 10 p.m.",
+      "location": "Oak Park Neighbourhood Centre, 2200 Sawgrass Drive, Oakville",
+      "city": "Oakville",
+      "venue": "Oak Park Neighbourhood Centre",
+      "travel": "About 20 minutes east of central Burlington",
+      "summary": "A free community fair with inflatables, entertainers, exhibitors, an auction and an evening outdoor movie.",
+      "details": "The Oak Park Neighbourhood Centre lists its 29th annual fall fair for September 12. Daytime programming includes family activities, exhibitors and entertainment, followed by an outdoor movie in the evening.",
+      "bring": [
+        "A transit or parking plan",
+        "A payment card for food or the auction",
+        "A chair or blanket if staying for the movie"
+      ],
+      "source": "https://www.opnc.ca/general-6",
+      "sourceName": "Oak Park Neighbourhood Centre; checked against Visit Oakville",
+      "image": "assets/explore/community-cleanup.webp",
+      "imageAlt": "A community gathering in a neighbourhood park.",
+      "credit": "Burlington News editorial visual",
+      "illustration": true,
+      "scope": "Oakville",
+      "weight": 8,
+      "verifiedAt": "2026-08-28T12:00:00-04:00"
+    },
+    {
+      "id": "rbg-green-angels-movie-night-2026",
+      "title": "Movie Night in Hendrie Park",
+      "category": "Movie",
+      "start": "2026-09-19T17:30:00-04:00",
+      "end": "2026-09-19T22:30:00-04:00",
+      "dateLabel": "Sat, Sept. 19 · gates at 5:30 p.m.",
+      "location": "Hendrie Park, Royal Botanical Gardens, 680 Plains Road West",
+      "city": "Burlington",
+      "venue": "Hendrie Park",
+      "travel": "West Burlington, beside the RBG Centre",
+      "summary": "A Green Angels fundraiser with Hoppers, family activities, lawn games and complimentary popcorn.",
+      "details": "Royal Botanical Gardens lists admission from 5:30 p.m. and the film at approximately 7:20 p.m., once light levels allow. The event is rain or shine and can move indoors in bad weather.",
+      "bring": [
+        "A lawn chair or blanket",
+        "A warm layer",
+        "Your ticket confirmation"
+      ],
+      "source": "https://www.rbg.ca/events/movie-night-in-hendrie-park-a-green-angels-fundraiser/",
+      "sourceName": "Royal Botanical Gardens",
+      "image": "assets/explore/movies-under-the-stars.webp",
+      "imageAlt": "An outdoor movie screen set up in a community park.",
+      "credit": "Burlington News editorial visual",
+      "illustration": true,
+      "scope": "Burlington",
+      "weight": 9,
+      "verifiedAt": "2026-08-28T12:00:00-04:00"
+    },
+    {
+      "id": "hamilton-salsa-saturday-2026-09-19",
+      "title": "Salsa Saturday on the Waterfront",
+      "category": "Nearby music",
+      "start": "2026-09-19T19:00:00-04:00",
+      "end": "2026-09-19T22:30:00-04:00",
+      "dateLabel": "Sat, Sept. 19 · 7 to 10:30 p.m.",
+      "location": "Pier 8 Outdoor Skating Rink, 47 Discovery Drive, Hamilton",
+      "city": "Hamilton",
+      "venue": "Pier 8 Outdoor Skating Rink",
+      "travel": "About 20 minutes from Burlington outside peak traffic",
+      "summary": "A free beginner lesson followed by outdoor waterfront dancing. No partner or experience is required.",
+      "details": "The City of Hamilton lists a beginner Latin dance lesson from 7 to 7:30 p.m., followed by dancing at the Pier 8 roller rink until 10:30 p.m.",
+      "bring": [
+        "Comfortable shoes",
+        "Water",
+        "A transit or parking plan"
+      ],
+      "source": "https://www.hamilton.ca/things-do/festivals-events/events-calendar/salsa-saturdays-waterfront-2026-2",
+      "sourceName": "City of Hamilton",
+      "visualText": "NEARBY",
+      "scope": "Hamilton",
+      "weight": 6,
+      "verifiedAt": "2026-08-28T12:00:00-04:00"
+    }
+  ]
+}
