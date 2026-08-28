@@ -14,7 +14,8 @@
   <meta property="og:image:width" content="1600">
   <meta property="og:image:height" content="900">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16x16.png"><link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#071b35"><link rel="stylesheet" href="/site-extra.css?v=20260824z4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16x16.png"><link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#071b35">
+  <link rel="stylesheet" href="/site-extra.css?v=20260824z4">
   <link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle">
   <link rel="stylesheet" href="/site-shell.css?v=20260824z6" data-style="site-shell">
   <link rel="stylesheet" href="/explore.css?v=20260826ta">
@@ -22,9 +23,10 @@
   <link rel="stylesheet" href="/publication-polish.css?v=20260825f">
   <link rel="stylesheet" href="/product-pass.css?v=20260826t">
   <link rel="stylesheet" href="/type-system.css?v=20260826a">
+  <link rel="stylesheet" href="/precision-pass.css?v=20260828precision1">
   <script type="module" src="/explore-recurrence.js?v=20260826ta"></script>
   <script type="module" src="/explore-ideas.js?v=20260826ta"></script>
-  <script src="/site-search.js?v=20260826f" defer></script>
+  <script src="/site-search.js?v=20260828precision1" defer></script>
   <link rel="stylesheet" href="/desktop-system.css?v=20260826ds" data-style="desktop-system"><script src="/theme-boot.js?v=20260826ds"></script><script src="/site-extra.js?v=20260826ac" defer></script>
 </head>
 <body>
@@ -77,26 +79,14 @@
       </div>
       <div class="passport-layout">
         <div class="passport-map-wrap"><div class="passport-map" id="passportMap" aria-label="Orientation map of Burlington passport stops"></div><span class="map-help">Tap a number to jump to a stop</span></div>
-        <div class="passport-rail-wrap">
-          <div class="passport-rail" id="passportRail"></div>
-          <button class="rail-next" id="passportNext" type="button" aria-label="Show more passport stops">›</button>
-        </div>
+        <div class="passport-rail-wrap"><div class="passport-rail" id="passportRail"></div><button class="rail-next" id="passportNext" type="button" aria-label="Show more passport stops">›</button></div>
       </div>
     </section>
     <section class="food-passport-callout" aria-labelledby="foodPassportTitle"><div><span class="eyebrow">Burlington food passport</span><h2 id="foodPassportTitle">Five local meals to start with.</h2><p>Mark the ones you’ve tried. Your progress stays on this device.</p></div><a class="primary-button" href="/food-passport/">Open food passport</a></section>
   </main>
 
-  <dialog class="explore-dialog" id="detailDialog">
-    <button class="dialog-close" id="dialogClose" type="button" aria-label="Close"><svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-    <div id="dialogContent"></div>
-  </dialog>
-
-  <dialog class="explore-dialog passport-dialog" id="passportDialog">
-    <button class="dialog-close" id="passportDialogClose" type="button" aria-label="Close"><svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-    <h2>Your Burlington list</h2>
-    <p>Save places you want to visit and mark them explored when you go. Complete all twelve to reveal one extra stop. Everything stays in this browser.</p>
-  </dialog>
-
+  <dialog class="explore-dialog" id="detailDialog"><button class="dialog-close" id="dialogClose" type="button" aria-label="Close"><svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div id="dialogContent"></div></dialog>
+  <dialog class="explore-dialog passport-dialog" id="passportDialog"><button class="dialog-close" id="passportDialogClose" type="button" aria-label="Close"><svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><h2>Your Burlington list</h2><p>Save places you want to visit and mark them explored when you go. Complete all twelve to reveal one extra stop. Everything stays in this browser.</p></dialog>
   <script src="/explore.js?v=20260826ta" defer></script>
 </body>
 </html>
