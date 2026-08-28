@@ -21,17 +21,72 @@
 .pick-card h3{font-size:18px!important}
 .pick-card>.pick-hook{font-size:13px!important}
 
-.explore-band{margin-top:28px!important;padding-top:20px!important}
-.explore-intro{margin:10px 0 14px!important;max-width:540px!important;font-size:14px!important;line-height:1.4!important}
-.explore-home-grid{gap:14px!important}
-.explore-home-card>span{padding:12px 14px 14px!important}
-.explore-home-card small{margin-bottom:6px!important}
-.explore-home-card em{margin-top:6px!important}
-.home-work-band{max-width:760px!important;margin-top:26px!important;padding:18px 20px 19px!important;border:1px solid var(--line)!important;border-radius:14px!important;background:var(--paper,#fff)!important}
-.home-work-kicker{margin:0 0 8px!important}
-.home-work-band h2{margin:0!important;font-size:25px!important;line-height:1.08!important;letter-spacing:-.03em!important}
-.home-work-copy{max-width:620px;margin:10px 0 14px!important;color:var(--muted)!important;font-size:14px!important;line-height:1.42!important}
-.home-work-cta{font-size:14px!important;font-weight:650!important}
+/* Explore should read like a compact editorial section, not a second hero area. */
+.explore-band{
+  display:block!important;
+  margin-top:30px!important;
+  padding:20px 0 0!important;
+  border-top:1px solid var(--line)!important;
+  border-bottom:0!important;
+}
+.explore-band .mini-heading{margin:0!important;padding-bottom:9px!important}
+.explore-band .mini-heading h2{font-size:28px!important;letter-spacing:-.03em!important}
+.explore-intro{
+  margin:12px 0 16px!important;
+  max-width:520px!important;
+  color:var(--muted)!important;
+  font-size:14px!important;
+  line-height:1.4!important;
+}
+.explore-home-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+.explore-home-card{
+  display:block!important;
+  overflow:hidden!important;
+  border:1px solid var(--line)!important;
+  border-radius:12px!important;
+  background:var(--paper,#fff)!important;
+  text-decoration:none!important;
+}
+.explore-home-card>img{
+  width:100%!important;
+  aspect-ratio:16/9!important;
+  height:auto!important;
+  object-fit:cover!important;
+}
+.explore-home-card>span{display:block!important;padding:12px 14px 14px!important}
+.explore-home-card small{display:block!important;margin:0 0 6px!important;color:var(--blue)!important;font-size:9px!important;font-weight:800!important;letter-spacing:.1em!important;text-transform:uppercase!important}
+.explore-home-card strong{display:block!important;color:var(--navy)!important;font-size:18px!important;line-height:1.15!important;letter-spacing:-.015em!important}
+.explore-home-card em{display:block!important;margin-top:7px!important;color:var(--muted)!important;font-size:12px!important;font-style:normal!important;line-height:1.4!important}
+
+/* Partner block mirrors Morning Tee's compact callout instead of becoming another article card. */
+.home-work-band{
+  max-width:760px!important;
+  margin:24px auto 28px!important;
+  padding:18px 20px 19px!important;
+  border:1px solid var(--line)!important;
+  border-radius:13px!important;
+  background:var(--paper,#fff)!important;
+}
+.home-work-kicker{margin:0 0 7px!important;font-size:9px!important}
+.home-work-band h2{
+  margin:0!important;
+  color:var(--navy)!important;
+  font-family:var(--sans)!important;
+  font-size:24px!important;
+  font-weight:750!important;
+  line-height:1.08!important;
+  letter-spacing:-.025em!important;
+}
+.home-work-copy{max-width:620px;margin:9px 0 14px!important;color:var(--muted)!important;font-size:13px!important;line-height:1.42!important}
+.home-work-cta{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:6px!important;
+  color:var(--navy)!important;
+  font-size:13px!important;
+  font-weight:700!important;
+  text-decoration:none!important;
+}
 
 @media(max-width:720px){
   .home-main>.breaking-now{margin-left:46px!important;margin-right:46px!important}
@@ -54,16 +109,44 @@
   .newest-list>a,.newest-list>a:last-child{padding:18px 0 17px!important}
   .newest-list strong{font-size:16px!important;line-height:1.18!important}
   .pick-grid{grid-template-columns:1fr!important}
-  .explore-band{margin-top:26px!important;padding-top:18px!important}
-  .explore-intro{margin:9px 0 13px!important;font-size:13.5px!important}
-  .explore-home-grid{gap:13px!important}
-  .home-work-band{margin-left:46px!important;margin-right:46px!important;padding:16px 17px 17px!important}
-  .home-work-band h2{font-size:22px!important}
-  .home-work-copy{font-size:13.5px!important;margin:9px 0 13px!important}
+
+  .explore-band{
+    margin:24px 46px 0!important;
+    padding-top:16px!important;
+  }
+  .explore-band .mini-heading{padding-bottom:8px!important}
+  .explore-band .mini-heading h2{font-size:27px!important;line-height:1.08!important}
+  .explore-band .mini-heading a{font-size:9px!important}
+  .explore-intro{
+    margin:11px 0 14px!important;
+    max-width:none!important;
+    font-size:13.5px!important;
+    line-height:1.42!important;
+  }
+  .explore-home-grid{grid-template-columns:1fr!important;gap:12px!important}
+  .explore-home-card{border-radius:11px!important}
+  .explore-home-card>img{aspect-ratio:16/8.6!important}
+  .explore-home-card>span{padding:11px 13px 13px!important}
+  .explore-home-card small{margin-bottom:5px!important;font-size:8.5px!important}
+  .explore-home-card strong{font-size:17px!important;line-height:1.15!important}
+  .explore-home-card em{margin-top:6px!important;font-size:12px!important;line-height:1.35!important}
+
+  .home-work-band{
+    max-width:none!important;
+    margin:18px 46px 26px!important;
+    padding:15px 16px 16px!important;
+    border-radius:11px!important;
+  }
+  .home-work-kicker{margin-bottom:6px!important;font-size:8.5px!important}
+  .home-work-band h2{font-size:20px!important;line-height:1.1!important}
+  .home-work-copy{margin:8px 0 12px!important;font-size:12.5px!important;line-height:1.4!important}
+  .home-work-cta{font-size:12.5px!important}
+
+  .home-main{padding-bottom:30px!important}
 }
 @media(max-width:420px){
   .home-main>.breaking-now{margin-left:42px!important;margin-right:42px!important}
-  .home-work-band{margin-left:42px!important;margin-right:42px!important}
+  .explore-band,.home-work-band{margin-left:42px!important;margin-right:42px!important}
 }
 html[data-theme="dark"] .breaking-status{color:#69bd62!important}
-html[data-theme="dark"] .home-work-band{background:#101820!important}
+html[data-theme="dark"] .home-work-band,html[data-theme="dark"] .explore-home-card{background:#101820!important}
