@@ -1,0 +1,48 @@
+/* Keep the Burlington News desktop nav visually centred between brand and controls. */
+@media (min-width:901px){
+  body.home-page .site-header .header-inner,
+  body.home-page .header .header-inner{
+    display:grid!important;
+    grid-template-columns:minmax(210px,1fr) auto minmax(210px,1fr)!important;
+    align-items:center!important;
+    gap:18px!important;
+  }
+  body.home-page .news-brand,
+  body.home-page .brand-mark-only{
+    grid-column:1!important;
+    justify-self:start!important;
+    margin-right:0!important;
+  }
+  body.home-page .desktop-primary-nav,
+  body.home-page .publication-nav{
+    grid-column:2!important;
+    justify-self:center!important;
+    display:flex!important;
+    flex:0 0 auto!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:24px!important;
+    margin:0!important;
+  }
+  body.home-page .header-controls{
+    grid-column:3!important;
+    justify-self:end!important;
+    display:flex!important;
+    flex:0 0 auto!important;
+    margin-left:0!important;
+  }
+  body.home-page #mainNav{
+    grid-column:auto!important;
+  }
+}
+
+@media (min-width:901px) and (max-width:1120px){
+  body.home-page .site-header .header-inner,
+  body.home-page .header .header-inner{
+    grid-template-columns:minmax(150px,1fr) auto minmax(150px,1fr)!important;
+    gap:12px!important;
+  }
+  body.home-page .desktop-primary-nav,
+  body.home-page .publication-nav{gap:18px!important}
+  body.home-page .header-search{width:210px!important;flex-basis:210px!important}
+}
