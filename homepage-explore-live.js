@@ -8,11 +8,30 @@
     return Number.isFinite(parsed) ? parsed : NaN;
   };
   const eventEnd = event => Number.isFinite(parse(event.end)) ? parse(event.end) : parse(event.start) + (3 * 60 * 60 * 1000);
-  const imageSrc = value => {
-    const raw = String(value || '');
+  const torontoMonth = () => Number(new Intl.DateTimeFormat('en-CA',{month:'numeric',timeZone:'America/Toronto'}).format(new Date()));
+
+  const curatedImage = event => {
+    const key = `${event?.id || ''} ${event?.title || ''}`.toLowerCase();
+    if (/elizabeth-gardens-art-walk|art walk/.test(key)) return '/assets/art-walk.png';
+    if (/farmers.?market/.test(key)) return torontoMonth() >= 9 ? '/assets/farmers-market-fall.png' : '/assets/farmers-market-summer.png';
+    if (/bbcc|bums regatta|f18 championship|sail/.test(key)) return '/assets/Four%20Sailboats%20on%20a%20Choppy%20Lake%20-bbc-bums.png';
+    if (/asian night|asian market|night market/.test(key)) return '/assets/asian-food-night.png';
+    return '';
+  };
+
+  const imageSrc = event => {
+    const raw = curatedImage(event) || String(event?.image || '');
     if (!raw) return '/assets/editorial/explore-collage.webp';
     if (/^https?:\/\//i.test(raw) || raw.startsWith('/')) return raw;
     return `/${raw}`;
+  };
+  const imageAlt = event => {
+    const key = `${event?.id || ''} ${event?.title || ''}`.toLowerCase();
+    if (/art walk/.test(key)) return 'Visitors walking through an outdoor community art event.';
+    if (/farmers.?market/.test(key)) return 'Fresh produce at an outdoor farmers market.';
+    if (/bbcc|bums regatta|f18 championship|sail/.test(key)) return 'Sailboats racing on Lake Ontario.';
+    if (/asian night|night market/.test(key)) return 'Food stalls and visitors at an evening Asian food market.';
+    return event?.imageAlt || event?.title || 'Explore Burlington event';
   };
   const city = event => String(event.city || event.scope || 'Burlington');
   const isBurlington = event => /burlington/i.test(`${event.scope || ''} ${event.city || ''}`);
@@ -60,7 +79,7 @@
     for (const event of rest) {
       if (picks.length >= 2) break;
       if (picks.some(item => item.id === event.id)) continue;
-      if (picks.some(item => imageSrc(item.image) === imageSrc(event.image))) continue;
+      if (picks.some(item => imageSrc(item) === imageSrc(event))) continue;
       picks.push(event);
     }
     return picks.slice(0,2);
@@ -71,7 +90,7 @@
     if (!picks.length) return;
     grid.innerHTML = picks.map(event => {
       const href = `/explore/?event=${encodeURIComponent(event.id)}`;
-      return `<a class="explore-home-card" href="${href}"><img src="${esc(imageSrc(event.image))}" alt="${esc(event.imageAlt || event.title)}" loading="lazy" decoding="async"><span><small>${esc(labelFor(event))}</small><strong>${esc(event.title)}</strong><em>${esc(event.summary || event.details || event.location)}</em></span></a>`;
+      return `<a class="explore-home-card" href="${href}"><img src="${esc(imageSrc(event))}" alt="${esc(imageAlt(event))}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/assets/editorial/explore-collage.webp'"><span><small>${esc(labelFor(event))}</small><strong>${esc(event.title)}</strong><em>${esc(event.summary || event.details || event.location)}</em></span></a>`;
     }).join('');
   }
 
