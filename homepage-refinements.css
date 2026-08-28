@@ -29,8 +29,9 @@
   border-top:1px solid var(--line)!important;
   border-bottom:0!important;
 }
-.explore-band .mini-heading{margin:0!important;padding-bottom:9px!important}
+.explore-band .mini-heading{margin:0!important;padding-bottom:3px!important;border-bottom:0!important}
 .explore-band .mini-heading h2{font-size:28px!important;letter-spacing:-.03em!important}
+.explore-band .mini-heading a{display:inline-flex!important;align-items:center!important;gap:4px!important;white-space:nowrap!important}
 .explore-intro{
   margin:12px 0 16px!important;
   max-width:520px!important;
@@ -114,9 +115,9 @@
     margin:24px 46px 0!important;
     padding-top:16px!important;
   }
-  .explore-band .mini-heading{padding-bottom:8px!important}
+  .explore-band .mini-heading{padding-bottom:2px!important;border-bottom:0!important}
   .explore-band .mini-heading h2{font-size:27px!important;line-height:1.08!important}
-  .explore-band .mini-heading a{font-size:9px!important}
+  .explore-band .mini-heading a{font-size:9px!important;white-space:nowrap!important}
   .explore-intro{
     margin:11px 0 14px!important;
     max-width:none!important;
