@@ -1,0 +1,97 @@
+/* Consistent Burlington News story hierarchy inspired by strong publication patterns:
+   headline/deck -> hero -> author/date/read time -> topics -> story. */
+.bn-story-page .article-head .article-byline,
+.bn-story-page .article-head .byline{
+  display:none!important;
+}
+
+.bn-story-page .article-post-hero-meta{
+  width:min(100%,720px);
+  margin:0 auto 30px;
+  padding:0 0 18px;
+  border-bottom:1px solid color-mix(in srgb,currentColor 16%,transparent);
+  font-family:var(--font-sans,Inter,ui-sans-serif,Arial,sans-serif);
+}
+.bn-story-page .article-post-hero-meta .article-byline{
+  display:flex!important;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:5px 12px;
+  margin:0 0 15px!important;
+}
+.bn-story-page .article-post-hero-meta .article-byline strong{
+  color:var(--ink);
+  font-size:.86rem;
+  font-weight:750;
+}
+.bn-story-page .article-post-hero-meta .article-byline span{
+  color:var(--muted,#68737b);
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.bn-story-page .article-topics{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:5px 8px;
+  color:var(--muted,#68737b);
+  font:650 .72rem/1.35 var(--font-sans,Inter,ui-sans-serif,Arial,sans-serif);
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+.bn-story-page .article-topics>span:first-child{
+  margin-right:2px;
+  color:var(--muted,#68737b);
+}
+.bn-story-page .article-topics a{
+  color:inherit;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+.bn-story-page .article-topic-sep{
+  opacity:.48;
+}
+
+/* Supporting diagrams are secondary editorial media, not a second hero. */
+.bn-story-page .article-supporting-graphic{
+  width:100%;
+  margin:1.7em 0 2em!important;
+}
+.bn-story-page .article-supporting-graphic img{
+  width:100%;
+  height:auto;
+  max-height:none;
+  object-fit:contain;
+  border-radius:8px;
+  background:#f5f6f3;
+}
+.bn-story-page .article-supporting-graphic figcaption{
+  margin:.55rem 0 0;
+  color:var(--muted,#68737b);
+  font:600 .7rem/1.4 var(--font-sans,Inter,ui-sans-serif,Arial,sans-serif);
+}
+
+@media(max-width:720px){
+  .bn-story-page .article-post-hero-meta{
+    width:100%;
+    margin:0 0 24px;
+    padding-bottom:15px;
+  }
+  .bn-story-page .article-post-hero-meta .article-byline{
+    gap:4px 9px;
+    margin-bottom:13px!important;
+  }
+  .bn-story-page .article-post-hero-meta .article-byline strong{font-size:.8rem}
+  .bn-story-page .article-post-hero-meta .article-byline span,
+  .bn-story-page .article-topics{font-size:.66rem}
+}
+
+html[data-theme="dark"] .bn-story-page .article-post-hero-meta{
+  border-color:var(--line,#30404b);
+}
+html[data-theme="dark"] .bn-story-page .article-supporting-graphic img{
+  background:#f5f6f3;
+}
