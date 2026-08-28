@@ -17,6 +17,20 @@
     document.head.appendChild(link);
   };
 
+  const setupDesktopNav = () => {
+    const inner = document.querySelector('.header-inner');
+    const controls = document.querySelector('.header-controls');
+    if (!inner || !controls) return;
+    let desktop = inner.querySelector('.desktop-primary-nav');
+    if (!desktop) {
+      desktop = document.createElement('nav');
+      desktop.className = 'desktop-primary-nav publication-nav';
+      desktop.setAttribute('aria-label', 'Sections');
+      desktop.innerHTML = '<a href="/" class="active" aria-current="page">Home</a><a href="/news/">News</a><a href="/elections/">Elections</a><a href="/explore/">Explore</a><a href="/sports/">Sports</a><a href="/games/">Puzzles</a>';
+      inner.insertBefore(desktop, controls);
+    }
+  };
+
   const setupMenu = () => {
     const btn = document.getElementById('menuBtn');
     const nav = document.getElementById('mainNav');
@@ -75,6 +89,7 @@
     if (started) return;
     started = true;
     ensurePrecisionStyle();
+    setupDesktopNav();
     setupMenu();
     setupLazySearch();
 
