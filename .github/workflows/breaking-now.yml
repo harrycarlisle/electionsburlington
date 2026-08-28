@@ -8,6 +8,7 @@ on:
   push:
     paths:
       - 'scripts/build_breaking_now.py'
+      - 'scripts/publish_breaking_briefs.py'
       - 'scripts/sources/**'
       - 'data/story-overrides.json'
       - '.github/workflows/breaking-now.yml'
@@ -32,9 +33,11 @@ jobs:
           python-version: '3.12'
       - name: Build breaking now from official feeds and cached surfaces
         run: python scripts/build_breaking_now.py --live
-      - name: Commit breaking surface
+      - name: Publish durable breaking briefs
+        run: python scripts/publish_breaking_briefs.py
+      - name: Commit breaking surface and articles
         run: >-
           python scripts/safe_bot_commit.py
           --name "burlington-news-breaking"
           --message "Update Burlington breaking now"
-          data/breaking-now.json data/discovery-queue.json
+          data/breaking-now.json data/breaking-archive.json data/discovery-queue.json stories
