@@ -9,10 +9,10 @@
     document.head.appendChild(s);
   });
   const ensurePrecisionStyle = () => {
-    if (document.querySelector('link[data-style="precision-pass"]')) return;
+    if (document.querySelector('link[data-style="precision-pass"], link[href*="/precision-pass.css"]')) return;
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/precision-pass.css?v=20260828precision1';
+    link.href = '/precision-pass.css?v=20260828precision3';
     link.dataset.style = 'precision-pass';
     document.head.appendChild(link);
   };
@@ -78,7 +78,7 @@
     const load = () => {
       if (loaded) return;
       loaded = true;
-      loadScript('/site-search.js?v=20260828precision1');
+      loadScript('/site-search.js?v=20260828fresh3');
     };
     input.addEventListener('focus', load, { once: true });
     input.addEventListener('pointerdown', load, { once: true });
@@ -94,13 +94,13 @@
     setupLazySearch();
 
     setTimeout(() => {
-      loadScript('/mobile-top-panel.js?v=20260828precision1');
-      loadScript('/local-now.js?v=20260828precision1', { module: true });
-      loadScript('/breaking-now.js?v=20260828precision1');
+      loadScript('/mobile-top-panel.js?v=20260828fresh3');
+      loadScript('/local-now.js?v=20260828fresh3', { module: true });
+      loadScript('/breaking-now.js?v=20260828fresh3');
     }, 700);
 
     setTimeout(() => {
-      loadScript('/home.js?v=20260828precision1', { module: true });
+      loadScript('/home.js?v=20260828fresh3', { module: true });
     }, 1200);
   };
 
