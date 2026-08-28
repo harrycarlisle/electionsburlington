@@ -3,28 +3,55 @@
   "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure, then applies a diversity rerank so nearby homepage slots prefer different categories and subjects. Editorial story-overrides are applied before ranking so approved headlines and imagery persist across generated homepage surfaces.",
   "feature": [
     {
-      "id": "burlington-flood-protection-90-million",
+      "id": "which-burlington-intersection-is-worst",
       "kind": "original",
-      "headline": "Burlington spent more than $90 million on stormwater upgrades. Did it work?",
-      "deck": "Tuck Creek is one place to see what changed after 2014, and what remains unfinished.",
-      "label": "Infrastructure",
+      "headline": "Which Burlington intersection is actually the worst?",
+      "deck": "The corner with the most crashes is not the one with the most red-light tickets. The public records point to a larger problem along one of Burlington's busiest roads.",
+      "label": "Road safety",
+      "labelEssential": true,
+      "topic": "traffic",
+      "subjects": [
+        "intersections",
+        "road-safety",
+        "guelph-line",
+        "traffic-data"
+      ],
+      "url": "articles/which-burlington-intersection-is-worst.html",
+      "image": "assets/burling-car-crash.png",
+      "alt": "Illustration of a damaged car and motorcycle at an intersection; not a photograph of a collision discussed in this article.",
+      "credit": "Burlington News illustration",
+      "published": "2026-08-28",
+      "activeFrom": "2026-08-28",
+      "storyGoal": "Use collision counts, red-light camera totals and engineering records to explain why Burlington's worst intersection changes by the measure used, and why different problems keep appearing along Guelph Line.",
+      "publishedAt": "2026-08-28T17:55:00-04:00",
+      "datePublished": "2026-08-28T17:55:00-04:00",
+      "placementScore": 94,
+      "status": "normal"
+    },
+    {
+      "id": "costco-burloak-wyecroft",
+      "kind": "original",
+      "headline": "Oakville approved a new Costco near Burloak. How will drivers get in?",
+      "deck": "The site sits close to the Burlington border, with a large parking plan and several proposed access points.",
+      "label": "Development",
       "labelEssential": true,
       "topic": "development",
       "subjects": [
-        "flooding",
-        "stormwater",
-        "tuck-creek",
-        "infrastructure"
+        "costco",
+        "burloak",
+        "wyecroft",
+        "traffic",
+        "retail-development"
       ],
-      "url": "articles/burlington-flood-protection-90-million.html",
-      "image": "assets/D141A9BF-BA83-4191-BD57-C2051798D457.png",
-      "alt": "Flooding in Burlington during a major rain event.",
+      "url": "articles/costco-burloak-wyecroft.html",
+      "image": "assets/costco.png",
+      "alt": "Costco storefront and entrance in a suburban shopping area.",
       "credit": "Burlington News visual",
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
-      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
-      "publishedAt": "2026-08-26T22:35:00-04:00",
-      "datePublished": "2026-08-26T22:35:00-04:00",
+      "storyGoal": "Explain the recently approved Costco site plan near Burloak through the practical questions Burlington drivers care about: status, parking, access and what is still unconfirmed.",
+      "publishedAt": "2026-08-26T22:23:00-04:00",
+      "datePublished": "2026-08-26T22:23:00-04:00",
       "placementScore": 85,
       "status": "normal"
     },
@@ -76,30 +103,35 @@
       "datePublished": "2026-08-26T22:22:00-04:00",
       "placementScore": 83,
       "status": "normal"
-    },
-    {
-      "id": "data-centre-not-ai",
-      "kind": "explainer",
-      "headline": "Burlington's proposed data centre is not what many people think.",
-      "deck": "The City says it is not an AI hyperscale campus. The bigger question is what 20 megawatts means for the neighbourhood beside it.",
-      "label": "Development",
-      "labelEssential": true,
-      "topic": "development",
-      "subjects": [
-        "data-centre"
-      ],
-      "url": "articles/burlington-data-centre-not-ai.html",
-      "image": "assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp",
-      "alt": "Illustrative concept and site context for the proposed data centre at 3110 South Service Road. This is not a rendering of the final building.",
-      "published": "2026-08-24",
-      "activeFrom": "2026-08-24",
-      "placementScore": 83,
-      "publishedAt": "2026-08-24T12:00:00-04:00",
-      "datePublished": "2026-08-24T12:00:00-04:00",
-      "status": "normal"
     }
   ],
   "rail": [
+    {
+      "id": "burlington-flood-protection-90-million",
+      "kind": "original",
+      "headline": "Burlington spent more than $90 million on stormwater upgrades. Did it work?",
+      "deck": "Tuck Creek is one place to see what changed after 2014, and what remains unfinished.",
+      "label": "Infrastructure",
+      "labelEssential": true,
+      "topic": "development",
+      "subjects": [
+        "flooding",
+        "stormwater",
+        "tuck-creek",
+        "infrastructure"
+      ],
+      "url": "articles/burlington-flood-protection-90-million.html",
+      "image": "assets/D141A9BF-BA83-4191-BD57-C2051798D457.png",
+      "alt": "Flooding in Burlington during a major rain event.",
+      "credit": "Burlington News visual",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
+      "publishedAt": "2026-08-26T22:35:00-04:00",
+      "datePublished": "2026-08-26T22:35:00-04:00",
+      "placementScore": 85,
+      "status": "normal"
+    },
     {
       "id": "burlington-road-closures-september-2026",
       "kind": "service",
@@ -123,33 +155,6 @@
       "storyGoal": "Give Burlington residents a concise, verified list of significant full municipal road closures that continue into September, while separating them from ordinary lane restrictions.",
       "publishedAt": "2026-08-26T22:24:00-04:00",
       "datePublished": "2026-08-26T22:24:00-04:00",
-      "placementScore": 85,
-      "status": "normal"
-    },
-    {
-      "id": "costco-burloak-wyecroft",
-      "kind": "original",
-      "headline": "Oakville approved a new Costco near Burloak. How will drivers get in?",
-      "deck": "The site sits close to the Burlington border, with a large parking plan and several proposed access points.",
-      "label": "Development",
-      "labelEssential": true,
-      "topic": "development",
-      "subjects": [
-        "costco",
-        "burloak",
-        "wyecroft",
-        "traffic",
-        "retail-development"
-      ],
-      "url": "articles/costco-burloak-wyecroft.html",
-      "image": "assets/costco.png",
-      "alt": "Costco storefront and entrance in a suburban shopping area.",
-      "credit": "Burlington News visual",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Explain the recently approved Costco site plan near Burloak through the practical questions Burlington drivers care about: status, parking, access and what is still unconfirmed.",
-      "publishedAt": "2026-08-26T22:23:00-04:00",
-      "datePublished": "2026-08-26T22:23:00-04:00",
       "placementScore": 85,
       "status": "normal"
     },
@@ -181,6 +186,32 @@
   ],
   "latest": [
     {
+      "id": "burlington-flood-protection-90-million",
+      "kind": "original",
+      "headline": "Burlington spent more than $90 million on stormwater upgrades. Did it work?",
+      "deck": "Tuck Creek is one place to see what changed after 2014, and what remains unfinished.",
+      "label": "Infrastructure",
+      "labelEssential": true,
+      "topic": "development",
+      "subjects": [
+        "flooding",
+        "stormwater",
+        "tuck-creek",
+        "infrastructure"
+      ],
+      "url": "articles/burlington-flood-protection-90-million.html",
+      "image": "assets/D141A9BF-BA83-4191-BD57-C2051798D457.png",
+      "alt": "Flooding in Burlington during a major rain event.",
+      "credit": "Burlington News visual",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
+      "publishedAt": "2026-08-26T22:35:00-04:00",
+      "datePublished": "2026-08-26T22:35:00-04:00",
+      "placementScore": 85,
+      "status": "normal"
+    },
+    {
       "id": "burlington-road-closures-september-2026",
       "kind": "service",
       "headline": "Two Burlington roads will stay fully closed into September.",
@@ -203,33 +234,6 @@
       "storyGoal": "Give Burlington residents a concise, verified list of significant full municipal road closures that continue into September, while separating them from ordinary lane restrictions.",
       "publishedAt": "2026-08-26T22:24:00-04:00",
       "datePublished": "2026-08-26T22:24:00-04:00",
-      "placementScore": 85,
-      "status": "normal"
-    },
-    {
-      "id": "costco-burloak-wyecroft",
-      "kind": "original",
-      "headline": "Oakville approved a new Costco near Burloak. How will drivers get in?",
-      "deck": "The site sits close to the Burlington border, with a large parking plan and several proposed access points.",
-      "label": "Development",
-      "labelEssential": true,
-      "topic": "development",
-      "subjects": [
-        "costco",
-        "burloak",
-        "wyecroft",
-        "traffic",
-        "retail-development"
-      ],
-      "url": "articles/costco-burloak-wyecroft.html",
-      "image": "assets/costco.png",
-      "alt": "Costco storefront and entrance in a suburban shopping area.",
-      "credit": "Burlington News visual",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Explain the recently approved Costco site plan near Burloak through the practical questions Burlington drivers care about: status, parking, access and what is still unconfirmed.",
-      "publishedAt": "2026-08-26T22:23:00-04:00",
-      "datePublished": "2026-08-26T22:23:00-04:00",
       "placementScore": 85,
       "status": "normal"
     },
@@ -404,6 +408,12 @@
     }
   ],
   "audit": [
+    {
+      "id": "which-burlington-intersection-is-worst",
+      "state": "eligible",
+      "placementScore": 94,
+      "reason": "all gates passed"
+    },
     {
       "id": "burlington-flood-protection-90-million",
       "state": "eligible",

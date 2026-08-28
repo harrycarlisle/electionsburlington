@@ -1,7 +1,12 @@
 {
-  "currentLead": "burlington-flood-protection-90-million",
+  "currentLead": "which-burlington-intersection-is-worst",
   "updated": "2026-08-28",
   "history": [
+    {
+      "id": "which-burlington-intersection-is-worst",
+      "headline": "Which Burlington intersection is actually the worst?",
+      "date": "2026-08-28"
+    },
     {
       "id": "burlington-flood-protection-90-million",
       "headline": "Burlington spent more than $90 million on stormwater upgrades. Did it work?",
