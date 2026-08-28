@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T21:10:53.346013-04:00",
+  "generatedAt": "2026-08-28T08:58:16.328969-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -615,7 +615,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 1.5826647680555557
+        "rotation": 2.2
       },
       "gates": {
         "evidence": "passed",
@@ -735,6 +735,64 @@
       "source": "Burlington News",
       "sourceType": "official",
       "radarId": "e3692582bf8bab02",
+      "radarScore": 67,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
+      "id": "sekisui-burlington-modular-factory",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
+      "deck": "SEKISUI's $15-million Canadian hub is targeting schools, housing and care buildings.",
+      "label": "Made in Burlington",
+      "labelEssential": true,
+      "url": "articles/sekisui-burlington-modular-factory.html",
+      "image": "assets/editorial/sekisui-modular-burlington.svg",
+      "alt": "Diagram showing building modules made in a factory and assembled into a mid-rise building.",
+      "credit": "Burlington News diagram",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "activeUntil": "2026-10-31",
+      "publishedAt": "2026-08-26T22:22:00-04:00",
+      "datePublished": "2026-08-26T22:22:00-04:00",
+      "storyGoal": "Turn a new investment announcement into an understandable Made in Burlington story about what the factory makes, how much work can happen indoors and the scale SEKISUI says it is targeting.",
+      "verificationTier": "primary",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.8,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 5.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 2.2951839830324072
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "burlington",
+      "subjects": [
+        "made-in-burlington",
+        "manufacturing",
+        "modular-construction",
+        "housing"
+      ],
+      "lastHomepageLead": "2026-08-27",
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "9b12a4d688a11d16",
       "radarScore": 67,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
@@ -862,34 +920,6 @@
       "url": "docs/editorial-style.md",
       "verificationTier": "reported",
       "radarId": "b2e7a49cdfe9810f",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.8,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 2.4,
-        "sourceConfidence": 4.0,
-        "originality": 5.0,
-        "visualStrength": 2.2,
-        "rotation": 5.0
-      },
-      "radarScore": 67,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "pitch:forgotten-1970s-event",
-      "headline": "The Burlington story everybody remembered,until they did not",
-      "description": "Search 1970-1979 front pages, council minutes, photo archives and oral histories for one event that changed local behaviour, infrastructure or identity but has nearly disappeared from public memory.",
-      "source": "Burlington News",
-      "sourceType": "official",
-      "kind": "original",
-      "url": "docs/editorial-style.md",
-      "verificationTier": "reported",
-      "radarId": "4473231292c71e2b",
       "signals": {
         "interest": 2.3,
         "relevance": 5.0,
@@ -1768,7 +1798,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 1.5826647680555557
+        "rotation": 2.2
       },
       "gates": {
         "evidence": "passed",
@@ -1888,6 +1918,64 @@
       "source": "Burlington News",
       "sourceType": "official",
       "radarId": "e3692582bf8bab02",
+      "radarScore": 67,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
+      "id": "sekisui-burlington-modular-factory",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
+      "deck": "SEKISUI's $15-million Canadian hub is targeting schools, housing and care buildings.",
+      "label": "Made in Burlington",
+      "labelEssential": true,
+      "url": "articles/sekisui-burlington-modular-factory.html",
+      "image": "assets/editorial/sekisui-modular-burlington.svg",
+      "alt": "Diagram showing building modules made in a factory and assembled into a mid-rise building.",
+      "credit": "Burlington News diagram",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "activeUntil": "2026-10-31",
+      "publishedAt": "2026-08-26T22:22:00-04:00",
+      "datePublished": "2026-08-26T22:22:00-04:00",
+      "storyGoal": "Turn a new investment announcement into an understandable Made in Burlington story about what the factory makes, how much work can happen indoors and the scale SEKISUI says it is targeting.",
+      "verificationTier": "primary",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.8,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 5.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 2.2951839830324072
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "burlington",
+      "subjects": [
+        "made-in-burlington",
+        "manufacturing",
+        "modular-construction",
+        "housing"
+      ],
+      "lastHomepageLead": "2026-08-27",
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "9b12a4d688a11d16",
       "radarScore": 67,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
@@ -2163,7 +2251,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.8827349605324073
+        "rotation": 1.101467642453704
       },
       "gates": {
         "evidence": "passed",
@@ -2182,64 +2270,6 @@
       "source": "Burlington News",
       "sourceType": "official",
       "radarId": "e51a7f4a6fa434d3",
-      "radarScore": 66,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": false,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "sekisui-burlington-modular-factory",
-      "kind": "original",
-      "surfaces": [
-        "feature",
-        "latest",
-        "rail"
-      ],
-      "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
-      "deck": "SEKISUI's $15-million Canadian hub is targeting schools, housing and care buildings.",
-      "label": "Made in Burlington",
-      "labelEssential": true,
-      "url": "articles/sekisui-burlington-modular-factory.html",
-      "image": "assets/editorial/sekisui-modular-burlington.svg",
-      "alt": "Diagram showing building modules made in a factory and assembled into a mid-rise building.",
-      "credit": "Burlington News diagram",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "activeUntil": "2026-10-31",
-      "publishedAt": "2026-08-26T22:22:00-04:00",
-      "datePublished": "2026-08-26T22:22:00-04:00",
-      "storyGoal": "Turn a new investment announcement into an understandable Made in Burlington story about what the factory makes, how much work can happen indoors and the scale SEKISUI says it is targeting.",
-      "verificationTier": "primary",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.8,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 1.5,
-        "sourceConfidence": 5.0,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 1.3127075257175926
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "topic": "burlington",
-      "subjects": [
-        "made-in-burlington",
-        "manufacturing",
-        "modular-construction",
-        "housing"
-      ],
-      "lastHomepageLead": "2026-08-27",
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "9b12a4d688a11d16",
       "radarScore": 66,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
@@ -2554,37 +2584,6 @@
       "eligibleEditorial": true
     },
     {
-      "id": "511:294437",
-      "detectedAt": "2026-08-27T23:57:44Z",
-      "score": 75,
-      "headline": "Disabled Vehicle on QEW Toronto bound RAMP at DORVAL DRIVE, Oakville. Left lane closed.",
-      "kind": "traffic",
-      "location": "QEW",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "58b22978891823a4",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 3.4,
-        "novelty": 2.5,
-        "familiarity": 2.5,
-        "consequence": 2.0,
-        "freshness": 4.6,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 64,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
-    },
-    {
       "id": "nostalgia-games-cafe-closure",
       "kind": "original",
       "surfaces": [
@@ -2878,6 +2877,37 @@
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": false,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "511:294437",
+      "detectedAt": "2026-08-27T23:57:44Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Toronto bound RAMP at DORVAL DRIVE, Oakville. Left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "58b22978891823a4",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.0,
+        "freshness": 2.4,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 58,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
       "eligibleEditorial": false
     },
     {
