@@ -5,8 +5,9 @@
   const more = document.getElementById('showMore');
   if (!grid) return;
 
-  const INITIAL_DESKTOP = 9;
+  const INITIAL_DESKTOP = 6;
   const INITIAL_MOBILE = 6;
+  const DISTINCT_MEDIA_WINDOW = 6;
   const TORONTO_TZ = 'America/Toronto';
   let expanded = false;
   let cards = [];
@@ -14,10 +15,17 @@
   const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const normalizeImage = value => {
     const raw = String(value || '').trim();
-    if (!raw) return '/assets/editorial/home-share.webp';
+    if (!raw) return '';
     if (/^https?:\/\//.test(raw) || raw.startsWith('/')) return raw;
     return `/${raw}`;
   };
+  const mediaKey = value => {
+    const raw = String(value || '').trim();
+    if (!raw) return '';
+    try { return new URL(raw, location.origin).pathname.toLowerCase(); }
+    catch (_) { return raw.toLowerCase(); }
+  };
+  const unique = values => [...new Set(values.filter(Boolean))];
   const publicPath = value => {
     let raw = String(value || '').trim();
     if (!raw) return '';
@@ -42,6 +50,7 @@
     if (/food|event|restaurant|ribfest|festival|business|cafe/.test(topic)) return 'food';
     if (/sport|ultimate|hockey|lacrosse|ringette/.test(topic)) return 'sports';
     if (/history|explainer|skyway|heritage/.test(topic)) return 'history';
+    if (/election|candidate|ward|vote|ballot/.test(topic)) return 'election';
     if (/development|burlington|city|infrastructure|housing|quarry|factory|costco|stormwater/.test(topic)) return 'city';
     return 'city';
   };
@@ -55,6 +64,7 @@
     if (/school|education|student/.test(subjectText)) tokens.add('schools');
     if (/food|restaurant|event|festival|business/.test(subjectText)) tokens.add('food');
     if (/sport/.test(subjectText)) tokens.add('sports');
+    if (/candidate|election|ward|vote|ballot/.test(subjectText)) tokens.add('election');
     return [...tokens].join(' ');
   };
   const timestamp = item => item?.publishedAt || item?.datePublished || item?.published || item?.activeFrom || item?.date || '';
@@ -92,6 +102,52 @@
   };
   const mergedItem = (item, overrides) => ({...item,...(overrides?.[String(item?.id || '')] || {})});
 
+  const TOPIC_MEDIA = {
+    'public-safety': ['/assets/editorial/halton-police-dusk.webp','/assets/stories/public-safety/halton-police-crime-burlington.webp','/assets/cops-2.png'],
+    roads: ['/assets/road-closure.png','/assets/upper-middle-construction.png','/assets/e-scooter.png'],
+    schools: ['/assets/back-to-school.png','/assets/home/school-rights.webp'],
+    food: ['/assets/local-business/nostalgia-games-cafe.webp','/assets/rib-fest.png','/assets/home/ribs.webp'],
+    sports: ['/assets/ultimate-frisbee-burlington.png','/assets/sports/burlington-ultimate-toss-bosses.webp','/assets/editorial/sports-collage.webp'],
+    history: ['/assets/home/skyway-reader.webp','/assets/editorial/skyway-then-now.webp','/assets/editorial/skyway-alternatives-v2.webp'],
+    election: ['/assets/editorial/burlington-wards-2026.svg'],
+    city: ['/assets/condo-construction.png','/assets/0B3CAFA4-0C73-4954-8FEE-842AC0C5CC98.png','/assets/stories/data-centre/proposed-data-centre-3110-south-service-road.webp'],
+    burlington: ['/assets/editorial/explore-collage.webp','/assets/explore/brant-street-pier.webp']
+  };
+
+  const candidateCollage = () => `
+    <div class="news-card-media candidate-collage" data-card-media data-media-key="candidate-field-2026" role="img" aria-label="Available Burlington mayoral candidate portraits and a note that five candidates are registered.">
+      <img src="/assets/candidates/mw.webp" alt="" loading="lazy" decoding="async">
+      <img src="/assets/candidates/lk.webp" alt="" loading="lazy" decoding="async">
+      <img src="/assets/candidates/rn.webp" alt="" loading="lazy" decoding="async">
+      <img src="/assets/candidates/yr.webp" alt="" loading="lazy" decoding="async">
+      <span class="candidate-count-tile"><strong>5</strong><span>registered candidates</span></span>
+    </div>`;
+
+  function resolveMedia(item, path) {
+    const descriptor = `${path} ${item?.id || ''} ${item?.headline || ''}`.toLowerCase();
+    if (/candidate-nominations|registered-field|registered candidate/.test(descriptor)) {
+      return {type:'collage',key:'candidate-field-2026',html:candidateCollage(),candidates:[]};
+    }
+    let image = normalizeImage(item?.image);
+    let className = 'news-card-media';
+    if (/ward-map|ward map changed|check yours before voting/.test(descriptor)) {
+      image = '/assets/editorial/burlington-wards-2026.svg';
+      className += ' ward-map-media';
+    } else if (/26-503-fish|fish revealed|fishway/.test(descriptor) && !image) {
+      image = '/assets/home/fishway.webp';
+    }
+    const topic = topicFor(item);
+    const candidates = unique([image,...(TOPIC_MEDIA[topic] || TOPIC_MEDIA.burlington)]);
+    const primary = candidates[0] || '/assets/editorial/home-share.webp';
+    return {
+      type:'image',
+      key:mediaKey(primary),
+      primary,
+      candidates,
+      html:`<div class="${className}" data-card-media><img data-card-image src="${esc(primary)}" alt="${esc(item?.alt || item?.headline || 'Burlington News')}" loading="lazy" decoding="async"></div>`
+    };
+  }
+
   function renderStory(item) {
     const path = publicPath(item.url || item.path);
     if (!path) return null;
@@ -103,13 +159,23 @@
     card.dataset.topic = topicTokens(item);
     card.dataset.published = timestamp(item);
     const label = item.label || item.tag || (topicFor(item) === 'public-safety' ? 'Public safety' : 'Burlington');
-    const image = normalizeImage(item.image);
-    card.innerHTML = `<img src="${esc(image)}" alt="${esc(item.alt || item.headline)}" loading="lazy" decoding="async"><div class="news-card-copy"><small>${esc(label)} · ${esc(dateLabel(timestamp(item)))}</small><strong>${esc(item.headline)}</strong>${item.deck ? `<p>${esc(item.deck)}</p>` : ''}</div>`;
-    card.querySelector('img')?.addEventListener('error', event => {
+    const media = resolveMedia(item,path);
+    card.dataset.mediaKey = media.key;
+    if (media.primary) card.dataset.primaryImage = media.primary;
+    if (media.candidates.length) card.dataset.mediaCandidates = media.candidates.join('|');
+    card.innerHTML = `${media.html}<div class="news-card-copy"><small>${esc(label)} · ${esc(dateLabel(timestamp(item)))}</small><strong>${esc(item.headline)}</strong>${item.deck ? `<p>${esc(item.deck)}</p>` : ''}</div>`;
+    card.querySelector('img[data-card-image]')?.addEventListener('error', event => {
       const img = event.currentTarget;
-      if (img.dataset.fallback) return;
-      img.dataset.fallback = '1';
-      img.src = '/assets/editorial/home-share.webp';
+      const candidates = (card.dataset.mediaCandidates || '').split('|').filter(Boolean);
+      const next = candidates.find(src => mediaKey(src) !== mediaKey(img.src) && !img.dataset.failed?.includes(mediaKey(src)));
+      img.dataset.failed = `${img.dataset.failed || ''}|${mediaKey(img.src)}`;
+      if (next) {
+        img.src = next;
+        card.dataset.mediaKey = mediaKey(next);
+      } else {
+        card.classList.add('news-card-text-only');
+        card.dataset.mediaKey = `text:${card.dataset.storyId || path}`;
+      }
     });
     return card;
   }
@@ -152,6 +218,7 @@
           label: item.tag || 'Local update',
           publishedAt: item.date ? `${item.date}T12:00:00-04:00` : '',
           topic: item.tag || 'city',
+          subjects: [item.tag || 'city',item.visual || ''],
           kind: 'brief'
         });
       });
@@ -174,7 +241,7 @@
         expanded = false;
       }
     } catch (_) {
-      // The server-rendered cards remain a complete, useful fallback.
+      // The server-rendered six cards remain a complete, useful fallback.
     }
   }
 
@@ -184,6 +251,61 @@
 
   const isMobile = () => matchMedia('(max-width:760px)').matches;
   const hay = card => `${card.dataset.topic || ''} ${card.textContent || ''}`.toLowerCase();
+  const cardImage = card => card.querySelector('img[data-card-image]') || card.querySelector(':scope > img');
+
+  function prepareExistingMedia(card) {
+    if (card.dataset.mediaKey) return;
+    const image = cardImage(card);
+    const special = card.querySelector('[data-media-key]');
+    if (special) {
+      card.dataset.mediaKey = special.dataset.mediaKey;
+      return;
+    }
+    if (!image) {
+      card.dataset.mediaKey = `text:${card.dataset.storyId || card.href}`;
+      return;
+    }
+    image.dataset.cardImage = '1';
+    const primary = normalizeImage(image.getAttribute('src'));
+    const topic = (card.dataset.topic || 'burlington').split(/\s+/)[0];
+    card.dataset.primaryImage = primary;
+    card.dataset.mediaKey = mediaKey(primary);
+    card.dataset.mediaCandidates = unique([primary,...(TOPIC_MEDIA[topic] || TOPIC_MEDIA.burlington)]).join('|');
+  }
+
+  function resetMedia(card) {
+    card.classList.remove('news-card-text-only');
+    const image = cardImage(card);
+    if (image && card.dataset.primaryImage) image.src = card.dataset.primaryImage;
+    const special = card.querySelector('[data-media-key]');
+    card.dataset.mediaKey = special?.dataset.mediaKey || mediaKey(card.dataset.primaryImage) || `text:${card.dataset.storyId || card.href}`;
+  }
+
+  function ensureDistinctMedia(visible) {
+    visible.forEach(resetMedia);
+    const used = new Set();
+    visible.forEach((card,index) => {
+      let key = card.dataset.mediaKey || `text:${index}`;
+      if (!used.has(key)) {
+        used.add(key);
+        return;
+      }
+      const image = cardImage(card);
+      const candidates = (card.dataset.mediaCandidates || '').split('|').filter(Boolean);
+      const replacement = candidates.find(src => !used.has(mediaKey(src)));
+      if (image && replacement) {
+        image.src = replacement;
+        key = mediaKey(replacement);
+        card.dataset.mediaKey = key;
+        used.add(key);
+        return;
+      }
+      card.classList.add('news-card-text-only');
+      key = `text:${card.dataset.storyId || index}`;
+      card.dataset.mediaKey = key;
+      used.add(key);
+    });
+  }
 
   function filteredCards() {
     const query = (search?.value || '').trim().toLowerCase();
@@ -197,12 +319,15 @@
 
   function paint() {
     cards = [...grid.querySelectorAll('.news-card')];
+    cards.forEach(prepareExistingMedia);
     cards.sort((a,b) => Date.parse(b.dataset.published || 0) - Date.parse(a.dataset.published || 0));
     cards.forEach(card => grid.appendChild(card));
     const matches = filteredCards();
-    const limit = expanded ? Infinity : (isMobile() ? INITIAL_MOBILE : INITIAL_DESKTOP);
+    const baseLimit = isMobile() ? INITIAL_MOBILE : INITIAL_DESKTOP;
+    const limit = expanded ? Infinity : baseLimit;
     const allowed = new Set(matches.slice(0, limit));
     cards.forEach(card => { card.hidden = !allowed.has(card); });
+    ensureDistinctMedia(matches.slice(0,DISTINCT_MEDIA_WINDOW));
 
     let empty = grid.querySelector('.news-empty');
     if (!matches.length) {
@@ -216,7 +341,6 @@
     } else if (empty) empty.hidden = true;
 
     if (more) {
-      const baseLimit = isMobile() ? INITIAL_MOBILE : INITIAL_DESKTOP;
       const needsMore = matches.length > baseLimit;
       more.hidden = !needsMore;
       more.textContent = expanded ? 'Show less' : 'Show more';
