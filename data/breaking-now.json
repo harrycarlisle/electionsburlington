@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T14:12:17.318578-04:00",
+  "generatedAt": "2026-08-28T14:14:00.395501-04:00",
   "mode": "local_update",
   "label": "Local Update",
   "method": "No item cleared Breaking News. Local Update = Burlington relevance*.30 + freshness*.25 + practical impact/usefulness*.20 + source confidence*.15 + reader interest*.10.",
@@ -15,9 +15,9 @@
       "location": "",
       "nearestIntersection": "",
       "affectedArea": null,
-      "publishedAt": "2026-08-28T14:12:17.318578-04:00",
+      "publishedAt": "2026-08-28T14:14:00.395501-04:00",
       "updatedAt": null,
-      "discoveredAt": "2026-08-28T14:12:17.318578-04:00",
+      "discoveredAt": "2026-08-28T14:14:00.395501-04:00",
       "severity": null,
       "impactScore": 3.1,
       "confidenceScore": 5.0,
