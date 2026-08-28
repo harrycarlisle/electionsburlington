@@ -15,7 +15,7 @@
     if (!btn || !nav) return;
 
     nav.className = 'nav menu-panel';
-    nav.innerHTML = '<div class="menu-primary" role="list"><a class="menu-link is-active" role="listitem" href="/" aria-current="page"><span>Home</span></a><a class="menu-link" role="listitem" href="/news/"><span>News</span></a><a class="menu-link" role="listitem" href="/elections/"><span>Elections</span></a><a class="menu-link" role="listitem" href="/explore/"><span>Explore</span></a><a class="menu-link" role="listitem" href="/sports/"><span>Sports</span></a><a class="menu-link" role="listitem" href="/games/"><span>Puzzles</span></a></div><div class="menu-primary menu-secondary" role="list"><a class="menu-link menu-secondary-link" role="listitem" href="/traffic/"><span>Traffic</span></a><a class="menu-link menu-secondary-link" role="listitem" href="/development/"><span>Development</span></a></div><div class="menu-primary menu-secondary" role="list"><a class="menu-link menu-secondary-link" role="listitem" href="/feedback/"><span>Give feedback</span></a><a class="menu-link menu-secondary-link" role="listitem" href="/about/"><span>About</span></a><a class="menu-link menu-secondary-link" role="listitem" href="/work-with-us/"><span>Work with us</span></a></div>';
+    nav.innerHTML = '<div class="menu-primary" role="list"><a class="menu-link is-active" role="listitem" href="/" aria-current="page"><span>Home</span></a><a class="menu-link" role="listitem" href="/news/"><span>News</span></a><a class="menu-link" role="listitem" href="/elections/"><span>Elections</span></a><a class="menu-link" role="listitem" href="/explore/"><span>Explore</span></a><a class="menu-link" role="listitem" href="/sports/"><span>Sports</span></a><a class="menu-link" role="listitem" href="/games/"><span>Puzzles</span></a></div><div class="menu-section-divider" aria-hidden="true"></div><div class="menu-primary menu-secondary" role="list"><a class="menu-link menu-secondary-link" role="listitem" href="/traffic/"><span>Traffic</span></a><a class="menu-link menu-secondary-link" role="listitem" href="/development/"><span>Development</span></a></div><div class="menu-section-divider" aria-hidden="true"></div><div class="menu-primary menu-secondary" role="list"><a class="menu-link menu-secondary-link" role="listitem" href="/feedback/"><span>Give feedback</span></a><a class="menu-link menu-secondary-link" role="listitem" href="/about/"><span>About</span></a><a class="menu-link menu-secondary-link" role="listitem" href="/work-with-us/"><span>Work with us</span></a></div>';
 
     const close = () => {
       btn.setAttribute('aria-expanded', 'false');
@@ -56,7 +56,7 @@
     const load = () => {
       if (loaded) return;
       loaded = true;
-      loadScript('/site-search.js?v=20260827perf2');
+      loadScript('/site-search.js?v=20260828precision1');
     };
     input.addEventListener('focus', load, { once: true });
     input.addEventListener('pointerdown', load, { once: true });
@@ -70,14 +70,14 @@
     setupLazySearch();
 
     setTimeout(() => {
-      loadScript('/mobile-top-panel.js?v=20260827perf2');
-      loadScript('/local-now.js?v=20260827perf2', { module: true });
-      loadScript('/breaking-now.js?v=20260827perf2');
+      loadScript('/mobile-top-panel.js?v=20260828precision1');
+      loadScript('/local-now.js?v=20260828precision1', { module: true });
+      loadScript('/breaking-now.js?v=20260828precision1');
     }, 700);
 
     setTimeout(() => {
-      loadScript('/home.js?v=20260828breaking1', { module: true });
-    }, 1800);
+      loadScript('/home.js?v=20260828precision1', { module: true });
+    }, 1200);
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
