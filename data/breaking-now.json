@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T07:31:24.825235-04:00",
+  "generatedAt": "2026-08-28T11:00:51.131671-04:00",
   "mode": "breaking",
   "label": "Breaking News",
   "method": "Breaking threshold passed. breakingScore = localRelevance*.25 + impact*.25 + recency*.20 + confidence*.15 + breadth*.10 + novelty*.05.",
@@ -8,16 +8,16 @@
   "items": [
     {
       "id": "57a3ede36411e1b6",
-      "headline": "Hamilton police seize five firearms after Mud Street shooting call",
-      "shortHeadline": "Hamilton police seize five firearms after Mud Street shooting call",
+      "headline": "Police Seize Five Firearms Following Shooting Call on Mud Street",
+      "shortHeadline": "Police Seize Five Firearms Following Shooting Call on Mud Street",
       "category": "PUBLIC SAFETY",
-      "summary": "Hamilton Police say officers seized five firearms after responding to reports of gunfire on Mud Street East.",
-      "location": "Mud Street East",
+      "summary": "",
+      "location": "",
       "nearestIntersection": "",
       "affectedArea": null,
-      "publishedAt": "2026-08-28T07:31:24.825235-04:00",
+      "publishedAt": "2026-08-28T11:00:51.131671-04:00",
       "updatedAt": null,
-      "discoveredAt": "2026-08-28T07:31:24.825235-04:00",
+      "discoveredAt": "2026-08-28T11:00:51.131671-04:00",
       "severity": null,
       "impactScore": 4.4,
       "confidenceScore": 5.0,
@@ -33,11 +33,9 @@
       "verificationStatus": "verified",
       "relatedUtility": null,
       "cause": null,
-      "status": "breaking",
+      "status": null,
       "expiresAt": null,
       "storyUrl": "/stories/police-seize-five-firearms-mud-street/",
-      "image": "/assets/cops-2.png",
-      "alt": "Police vehicles and emergency lights at a nighttime police scene.",
       "eventType": "police",
       "city": "Hamilton",
       "region": null,
@@ -50,7 +48,9 @@
         }
       ],
       "label": null,
-      "rejectReason": null
+      "rejectReason": null,
+      "image": "/assets/cops-2.png",
+      "alt": "Police vehicles and emergency lights at a nighttime police scene."
     }
   ],
   "sourceNotes": {
