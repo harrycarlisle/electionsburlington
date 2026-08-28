@@ -8,6 +8,14 @@
     s.onerror = resolve;
     document.head.appendChild(s);
   });
+  const ensurePrecisionStyle = () => {
+    if (document.querySelector('link[data-style="precision-pass"]')) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/precision-pass.css?v=20260828precision1';
+    link.dataset.style = 'precision-pass';
+    document.head.appendChild(link);
+  };
 
   const setupMenu = () => {
     const btn = document.getElementById('menuBtn');
@@ -66,6 +74,7 @@
   const start = () => {
     if (started) return;
     started = true;
+    ensurePrecisionStyle();
     setupMenu();
     setupLazySearch();
 
