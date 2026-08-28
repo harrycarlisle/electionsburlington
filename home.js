@@ -78,7 +78,7 @@ import {
     const item=(doc.items||[]).find(row=>row?.storyUrl&&row?.id&&!/road-closure$/.test(row.id));
     if(!item)return null;
     const override=BREAKING_HERO_OVERRIDES[item.id]||{};
-    return {...item,url:item.storyUrl,label:item.category||'Breaking News',topic:'public-safety',image:override.image||IMAGE_OVERRIDES[item.id]||'',alt:override.alt||ALT_OVERRIDES[item.id]||item.headline,deck:override.deck||'',placementScore:100};
+    return {...item,url:item.storyUrl,label:item.category||'Breaking News',topic:'public-safety',image:override.image||IMAGE_OVERRIDES[item.id]||item.image||'',alt:override.alt||ALT_OVERRIDES[item.id]||item.alt||item.headline,deck:override.deck||item.deck||item.summary||'',placementScore:100};
   };
   function renderLead(item,score){
     if(!lead||!item?.headline||!item?.url||isEditorialGraphic(item))return;
@@ -91,7 +91,7 @@ import {
     const now=Date.now();
     const picked=uniqueById(items).filter(item=>item?.id&&item.id!==heroId&&!isLiveStory(item,liveSet)&&item.status!=='expired').map(item=>({item,ts:effectiveFreshnessTimestamp(item)})).filter(row=>row.ts&&now-row.ts>=0&&now-row.ts<=NEWEST_HOME_WINDOW_MS).sort((a,b)=>b.ts-a.ts).slice(0,3).map(row=>row.item);
     if(!latestList||!newestRail||!picked.length){hideNewest();return[]}
-    newestRail.hidden=false;newestRail.removeAttribute('aria-hidden');newestRail.dataset.selectionReason='strict chronology; hero and active live-update stories excluded; 3 stories';
+    newestRail.hidden=false;newestRail.removeAttribute('aria-hidden');newestRail.dataset.selectionReason='strict chronology; current breaking/hero excluded; past breaking stories stay eligible; 3 stories';
     latestList.innerHTML=picked.map(item=>{const url=publicUrl(item.url),stamp=relativeTime(item.lastMeaningfulUpdate||item.publishedAt||item.datePublished||item.published||item.activeFrom);return `<a href="${esc(url)}" data-story-id="${esc(item.id||'')}"><span><small>${esc(categoryLabel(item))}</small><strong>${esc(displayHeadline(item))}</strong>${stamp?`<time>${esc(stamp)}</time>`:''}</span></a>`}).join('');return picked
   }
   function renderPicks(items,readStats){
@@ -104,9 +104,9 @@ import {
   function localReadStats(){try{return JSON.parse(localStorage.getItem('bn-article-read-counts')||'{}')}catch(_){return{}}}
   async function refresh(){
     try{
-      const [homeResponse,liveResponse]=await Promise.all([fetch('/data/home-surface.json',{cache:'no-store'}),fetch('/data/breaking-now.json',{cache:'no-store'}).catch(()=>null)]);if(!homeResponse.ok)return;const data=await homeResponse.json(),liveDoc=liveResponse?.ok?await liveResponse.json():{},activeLive=liveKeys(liveDoc),breakingHero=breakingHeroFrom(liveDoc),all=uniqueById([...(data.feature||[]),...(data.latest||[]),...(data.rail||[])]),heroCandidates=uniqueById([...(data.feature||[]),...all]).filter(item=>hasPhoto(item)&&!isLiveStory(item,activeLive)).map(item=>({item,score:heroScore(item)})).sort((a,b)=>b.score-a.score),heroPick=breakingHero?{item:breakingHero,score:100}:heroCandidates[0];
+      const [homeResponse,liveResponse,archiveResponse]=await Promise.all([fetch('/data/home-surface.json',{cache:'no-store'}),fetch('/data/breaking-now.json',{cache:'no-store'}).catch(()=>null),fetch('/data/breaking-archive.json',{cache:'no-store'}).catch(()=>null)]);if(!homeResponse.ok)return;const data=await homeResponse.json(),liveDoc=liveResponse?.ok?await liveResponse.json():{},archiveDoc=archiveResponse?.ok?await archiveResponse.json():{},archiveItems=archiveDoc?.items||[],activeLive=liveKeys(liveDoc),breakingHero=breakingHeroFrom(liveDoc),all=uniqueById([...(data.feature||[]),...(data.latest||[]),...(data.rail||[]),...archiveItems]),heroCandidates=uniqueById([...(data.feature||[]),...all]).filter(item=>hasPhoto(item)&&!isLiveStory(item,activeLive)).map(item=>({item,score:heroScore(item)})).sort((a,b)=>b.score-a.score),heroPick=breakingHero?{item:breakingHero,score:100}:heroCandidates[0];
       if(heroPick)renderLead(heroPick.item,heroPick.score);
-      const feature=heroPick?.item,items=uniqueById([...(data.latest||[]),...(data.rail||[]),...(data.feature||[])]),newest=renderNewest(items,feature?.id,activeLive),exclude=new Set([feature?.id,...newest.map(x=>x.id)].filter(Boolean)),readStats=localReadStats();
+      const feature=heroPick?.item,items=uniqueById([...archiveItems,...(data.latest||[]),...(data.rail||[]),...(data.feature||[])]),newest=renderNewest(items,feature?.id,activeLive),exclude=new Set([feature?.id,...newest.map(x=>x.id)].filter(Boolean)),readStats=localReadStats();
       const candidates=uniqueById([...(data.popular||all),...SAFE_PICK_FALLBACKS]).filter(x=>!exclude.has(x.id)&&!isLiveStory(x,activeLive));renderPicks(candidates,readStats)
     }catch(_){}
   }
