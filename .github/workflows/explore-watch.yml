@@ -2,12 +2,14 @@ name: Explore Burlington event watch
 
 on:
   schedule:
-    - cron: '45 11,20 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
   push:
     paths:
       - 'data/explore-sources.json'
+      - 'data/explore-events-nearby.json'
       - 'scripts/update_explore_watch.py'
+      - 'scripts/prune_explore_events.py'
       - 'scripts/safe_bot_commit.py'
       - '.github/workflows/explore-watch.yml'
 
@@ -28,11 +30,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check official event sources
+      - name: Remove finished events from the live feed
+        run: python scripts/prune_explore_events.py
+      - name: Check Burlington, Oakville and Hamilton event sources
         run: python scripts/update_explore_watch.py
-      - name: Commit review candidates
+      - name: Commit Explore freshness and review candidates
         run: >-
           python scripts/safe_bot_commit.py
           --name "burlington-explore-watch"
-          --message "Update Explore event watch"
-          data/explore-watch.json
+          --message "Refresh Explore Burlington events"
+          data/explore-events.json data/explore-events-archive.json data/explore-watch.json
