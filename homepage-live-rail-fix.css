@@ -1,0 +1,71 @@
+/* Final homepage live-rail polish: one clean accent, no trailing tab, neutral timestamps. */
+body.home-page .breaking-status{
+  color:#8e99a4!important;
+}
+body.home-page .breaking-status i{
+  background:#c94c43!important;
+}
+
+@media (min-width:901px){
+  body.home-page .local-now .now-panel,
+  body.home-page .breaking-now:not([hidden]):not(:empty):not(.is-empty){
+    position:relative!important;
+    overflow:hidden!important;
+    box-shadow:none!important;
+  }
+
+  body.home-page .local-now .now-panel::before,
+  body.home-page .local-now .now-panel::after,
+  body.home-page .local-now .now-card-shell::before,
+  body.home-page .local-now .now-card-shell::after,
+  body.home-page .local-now .now-card::before,
+  body.home-page .local-now .now-card::after,
+  body.home-page .breaking-now::before,
+  body.home-page .breaking-now::after,
+  body.home-page .breaking-list::before,
+  body.home-page .breaking-list::after{
+    content:none!important;
+    display:none!important;
+  }
+
+  body.home-page .local-now .now-card-shell,
+  body.home-page .local-now .now-card{
+    border:0!important;
+    border-left:0!important;
+    border-right:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+  }
+
+  body.home-page .local-now .now-panel{
+    border:1px solid var(--line,#dfe4ea)!important;
+    border-left:3px solid #df6848!important;
+    border-right:1px solid var(--line,#dfe4ea)!important;
+    border-radius:10px!important;
+  }
+
+  body.home-page .breaking-now[data-state="breaking"]{
+    border:1px solid color-mix(in srgb,#c94c43 38%,var(--line,#dfe4ea))!important;
+    border-left:3px solid #c94c43!important;
+    border-right:1px solid color-mix(in srgb,#c94c43 24%,var(--line,#dfe4ea))!important;
+    border-radius:10px!important;
+  }
+
+  body.home-page .breaking-now[data-state="breaking"] .breaking-heading>strong{
+    color:#d46860!important;
+  }
+  body.home-page .breaking-now[data-state="breaking"] .breaking-status{
+    color:#929ca6!important;
+  }
+  body.home-page .breaking-now[data-state="breaking"] .breaking-row strong{
+    color:var(--ink,#15253a)!important;
+  }
+}
+
+html[data-theme="dark"] body.home-page .breaking-status,
+html[data-theme="dark"] body.home-page .breaking-now[data-state="breaking"] .breaking-status{
+  color:#9aa6b1!important;
+}
+html[data-theme="dark"] body.home-page .breaking-now[data-state="breaking"] .breaking-row strong{
+  color:#f2f5f7!important;
+}
