@@ -59,10 +59,18 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
   function routeModel(route, key) {
     if (!route) return null;
     const west = key === 'hamilton';
+    const cameras = uniqueCameraCount(route?.cameras || []);
+    const status = route?.status || {};
+    const rawDetail = status.summary || status.detail || '';
+    const estimateMissing = /no current (camera|travel|route) estimate|estimate unavailable|unavailable/i.test(rawDetail);
+    const metric = status.looks || (cameras ? `${cameras} cameras` : 'Live');
+    const detail = estimateMissing
+      ? (cameras ? 'Open live QEW cameras' : 'Check live incidents and road status')
+      : (rawDetail || (cameras ? 'Open live QEW cameras' : 'Live incidents and road status'));
     return {
       title: west ? 'QEW → Hamilton' : 'QEW → Toronto',
-      metric: route?.status?.looks || 'Live',
-      detail: route?.status?.summary || route?.status?.detail || 'Live cameras and incidents',
+      metric,
+      detail,
       url: `/traffic/?destination=${west ? 'hamilton' : 'toronto'}`
     };
   }
@@ -85,20 +93,21 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
     if (west) rows.push(west);
     return rows.length ? rows : [{
       title: 'QEW → Toronto',
-      metric: 'Live',
-      detail: 'Live cameras and incidents',
+      metric: 'Traffic',
+      detail: 'Check live incidents and QEW cameras',
       url: '/traffic/?destination=toronto'
     }];
   }
 
   function goModel(data) {
     const model = buildGoModel(data || {}, new Date());
+    const unavailable = Boolean(model?.unavailable);
     return {
-      title: 'Burlington → Union',
+      title: model?.headline || 'Burlington → Union',
       time: model?.time || '',
-      status: model?.status || '',
-      detail: model?.detail || '',
-      url: '/go/burlington-to-union/',
+      status: unavailable ? 'Timetable' : (model?.status || ''),
+      detail: unavailable ? 'Open the official GO schedule' : (model?.detail || ''),
+      url: model?.url || '/go/burlington-to-union/',
       alert: Boolean(model?.alert)
     };
   }
@@ -109,7 +118,7 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
     return {
       title: 'Burlington Skyway',
       metric: cameras ? `${cameras} cameras` : 'Live',
-      detail: 'Check current bridge traffic',
+      detail: cameras ? 'Open live bridge cameras' : 'Check current bridge traffic',
       url: '/traffic/?focus=skyway'
     };
   }
@@ -131,9 +140,9 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
   function compactCard(mode, model) {
     if (mode === 'today' && !model) model = { title: 'What’s on in Burlington', url: '/explore/' };
     const title = model.title || model.headline;
-    const metric = mode === 'go' ? (model.time || '') : (mode === 'today' ? '' : (model.metric || ''));
+    const metric = mode === 'go' ? (model.time || model.status || '') : (mode === 'today' ? '' : (model.metric || ''));
     const detail = mode === 'go'
-      ? [model.status, model.detail].filter(Boolean).join(' · ')
+      ? [model.time ? model.status : '', model.detail].filter(Boolean).join(' · ')
       : (mode === 'today'
           ? [model.relative, model.hours].filter(Boolean).join(' · ')
           : (model.extra || model.detail || ''));
