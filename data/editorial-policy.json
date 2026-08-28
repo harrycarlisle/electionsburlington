@@ -122,6 +122,9 @@
     "communityMinConfidence": 2.0,
     "communityRequiresLabel": true,
     "hideWhenEmpty": true,
+    "maxBreakingAgeHours": 3,
+    "maxLocalUpdateAgeHours": 24,
+    "timeRule": "Use the source publication time or a verified substantive update time. Never present crawler, build, discovery or generation time as the news event/update time.",
     "weights": {
       "localRelevance": 0.25,
       "impact": 0.25,
@@ -147,7 +150,7 @@
   "writing": {
     "singleGoal": true,
     "title": "clear + curiosity-driven",
-    "deck": "one sentence by default, 12-22 words, hard maximum 30; two very short sentences only if needed; add one curiosity/value beat; do not summarize the article or repeat the headline",
+    "deck": "one sentence by default, 12-22 words, hard maximum 30; two very short sentences only if needed; add one verified fact, tension or reason to continue; do not summarize the article, repeat the headline, or resolve the headline's central question/conflict",
     "structure": ["title promise", "deck curiosity", "action", "consequence", "next implication", "concrete ending"],
     "answerReaderQuestions": ["where", "why", "how", "what changed", "why it matters", "what the reader should understand differently now"],
     "endingTypes": [
