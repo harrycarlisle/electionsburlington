@@ -561,3 +561,12 @@ html[data-theme="dark"] body .menu-link.is-active span{color:#7eb6ea!important}
 html[data-theme="dark"] body .menu-drawer-util{border-color:#30404b!important}
 html[data-theme="dark"] body .drawer-weather-line{color:#aebcc6!important}
 html[data-theme="dark"] body .news-brand-logo{filter:brightness(0) invert(1)}
+
+/* Header navigation hover/focus uses the Burlington News blue, never the
+   inherited green accent used by some older page systems. */
+html body .desktop-primary-nav a:hover,
+html body .desktop-primary-nav a:focus-visible,
+html body .menu-link:hover,
+html body .menu-link:focus-visible{
+  color:#0864c7!important;
+}

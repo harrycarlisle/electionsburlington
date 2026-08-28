@@ -11,8 +11,9 @@
       "sourceUrl": "https://hamiltonpolice.on.ca/news/police-seize-five-firearms-following-shooting-call-on-mud-street/",
       "image": "/assets/cops-2.png",
       "alt": "Police vehicles and emergency lights at a nighttime police scene.",
-      "publishedAt": "2026-08-25T07:13:00-04:00",
-      "datePublished": "2026-08-25T07:13:00-04:00",
+      "publishedAt": "2026-08-28T10:52:00-04:00",
+      "datePublished": "2026-08-28T10:52:00-04:00",
+      "sourcePublishedAt": "2026-08-25T07:13:00-04:00",
       "status": "normal"
     },
     {
@@ -27,6 +28,7 @@
       "alt": "Image related to the fatal hit-and-run investigation near Maple Avenue and Richmond Road in Burlington.",
       "publishedAt": "2026-08-27T19:16:00-04:00",
       "datePublished": "2026-08-27T19:16:00-04:00",
+      "sourcePublishedAt": "2026-08-27T19:16:00-04:00",
       "status": "normal"
     }
   ]

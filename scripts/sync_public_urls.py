@@ -18,8 +18,9 @@ def write_copy(src: Path, dest: Path) -> None:
 
 
 def main() -> int:
+    # /news/ has its own live archive layout. Do not overwrite it with the
+    # legacy updates.html page when the hourly publishing job syncs clean URLs.
     pairs = [
-        (ROOT / "updates.html", ROOT / "news" / "index.html"),
         (ROOT / "explore.html", ROOT / "explore" / "index.html"),
         (ROOT / "election-guide.html", ROOT / "elections" / "index.html"),
         (ROOT / "skyway-traffic.html", ROOT / "traffic" / "index.html"),

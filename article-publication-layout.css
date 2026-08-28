@@ -55,6 +55,13 @@
   opacity:.48;
 }
 
+/* Story templates that predate the bn-story-page body class still use the
+   same post-hero metadata block. Give those pages the same breathing room
+   between the byline row and the topic row. */
+body:not(.bn-story-page) .article-post-hero-meta .article-byline{
+  margin-bottom:12px!important;
+}
+
 /* Supporting diagrams are secondary editorial media, not a second hero. */
 .bn-story-page .article-supporting-graphic{
   width:100%;
@@ -83,6 +90,9 @@
   .bn-story-page .article-post-hero-meta .article-byline{
     gap:4px 9px;
     margin-bottom:13px!important;
+  }
+  body:not(.bn-story-page) .article-post-hero-meta .article-byline{
+    margin-bottom:10px!important;
   }
   .bn-story-page .article-post-hero-meta .article-byline strong{font-size:.8rem}
   .bn-story-page .article-post-hero-meta .article-byline span,
