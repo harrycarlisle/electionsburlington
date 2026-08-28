@@ -1,21 +1,8 @@
-/* Final homepage live-rail polish: one accent per rail, truthful timestamps, and controls that never collide. */
-body.home-page .breaking-status{
-  color:#8e99a4!important;
-}
-body.home-page .breaking-status i{
-  display:none!important;
-}
+/* Homepage live-rail polish: one accent per rail, truthful status, no colliding controls. */
+body.home-page .breaking-status{color:#8e99a4!important}
+body.home-page .breaking-status i{display:none!important}
 
-/* Never let legacy rail shells add a second coloured edge. */
-body.home-page .local-now,
-body.home-page .local-now .now-card-shell,
-body.home-page .local-now .now-card,
-body.home-page .breaking-now .breaking-list{
-  border-left:0!important;
-  border-right:0!important;
-  outline:0!important;
-  box-shadow:none!important;
-}
+/* Kill every legacy pseudo-tab/edge. The explicit border below is the only accent. */
 body.home-page .local-now::before,
 body.home-page .local-now::after,
 body.home-page .local-now .now-panel::before,
@@ -24,6 +11,14 @@ body.home-page .local-now .now-card-shell::before,
 body.home-page .local-now .now-card-shell::after,
 body.home-page .local-now .now-card::before,
 body.home-page .local-now .now-card::after,
+body.home-page .header-live::before,
+body.home-page .header-live::after,
+body.home-page .header-live .now-panel::before,
+body.home-page .header-live .now-panel::after,
+body.home-page .header-live .now-card-shell::before,
+body.home-page .header-live .now-card-shell::after,
+body.home-page .header-live .now-card::before,
+body.home-page .header-live .now-card::after,
 body.home-page .breaking-now::before,
 body.home-page .breaking-now::after,
 body.home-page .breaking-list::before,
@@ -32,64 +27,33 @@ body.home-page .breaking-list::after{
   display:none!important;
 }
 
+body.home-page .local-now,
+body.home-page .local-now .now-card-shell,
+body.home-page .local-now .now-card,
+body.home-page .header-live,
+body.home-page .header-live .now-panel,
+body.home-page .header-live .now-card-shell,
+body.home-page .breaking-now .breaking-list{
+  outline:0!important;
+  box-shadow:none!important;
+}
+
 @media (min-width:901px){
-  body.home-page .local-now .now-panel,
-  body.home-page .breaking-now:not([hidden]):not(:empty):not(.is-empty){
+  body.home-page .local-now .now-panel{
     position:relative!important;
     overflow:hidden!important;
-    box-shadow:none!important;
-  }
-
-  body.home-page .local-now .now-card-shell,
-  body.home-page .local-now .now-card{
-    background:transparent!important;
-  }
-
-  /* The outer panel owns the single transport accent. The card itself never does. */
-  body.home-page .local-now .now-panel{
     border:1px solid var(--line,#dfe4ea)!important;
     border-left:3px solid #df6848!important;
     border-radius:10px!important;
+    background:var(--card,#fff)!important;
   }
-  body.home-page .local-now .now-card,
-  body.home-page .local-now .now-card-driving,
-  body.home-page .local-now .now-card-go,
-  body.home-page .local-now .now-card-skyway,
-  body.home-page .local-now .now-card-today,
-  body.home-page .local-now .now-card.is-alert{
+  body.home-page .local-now .now-card-shell,
+  body.home-page .local-now .now-card{
+    background:transparent!important;
     border:0!important;
     border-left:0!important;
     border-radius:0!important;
-    box-shadow:none!important;
   }
-
-  /* Breaking is red only while it is genuinely fresh. Local Update is neutral. */
-  body.home-page .breaking-now[data-state="breaking"]{
-    border:1px solid color-mix(in srgb,#c94c43 30%,var(--line,#dfe4ea))!important;
-    border-left:3px solid #c94c43!important;
-    border-radius:10px!important;
-    background:color-mix(in srgb,#c94c43 6%,var(--paper,#fff))!important;
-  }
-  body.home-page .breaking-now[data-state="breaking"] .breaking-heading>strong{
-    color:#b63e36!important;
-  }
-  body.home-page .breaking-now[data-state="breaking"] .breaking-status{
-    color:#929ca6!important;
-  }
-  body.home-page .breaking-now[data-state="breaking"] .breaking-row strong{
-    color:var(--ink,#15253a)!important;
-  }
-  body.home-page .breaking-now[data-state="local-update"]{
-    border:1px solid var(--line,#dfe4ea)!important;
-    border-left:3px solid #8b9baa!important;
-    border-radius:10px!important;
-    background:#f7f9fb!important;
-  }
-  body.home-page .breaking-now[data-state="local-update"] .breaking-heading>strong{
-    color:var(--navy,#071b35)!important;
-  }
-
-  /* Reserve independent lanes for metric, pager dots and next arrow. */
   body.home-page .local-now .now-card-shell{
     position:relative!important;
     min-height:48px!important;
@@ -124,6 +88,7 @@ body.home-page .breaking-list::after{
     place-items:center!important;
     width:9px!important;
     height:18px!important;
+    min-width:9px!important;
     padding:0!important;
     border:0!important;
     background:transparent!important;
@@ -145,12 +110,12 @@ body.home-page .breaking-list::after{
   body.home-page .local-now .now-next-button{
     position:absolute!important;
     top:50%!important;
-    right:9px!important;
+    right:8px!important;
     z-index:5!important;
     display:grid!important;
     place-items:center!important;
-    width:28px!important;
-    height:28px!important;
+    width:30px!important;
+    height:30px!important;
     padding:0!important;
     margin:0!important;
     transform:translateY(-50%)!important;
@@ -160,22 +125,29 @@ body.home-page .breaking-list::after{
     color:var(--muted,#657083)!important;
     cursor:pointer!important;
   }
-  body.home-page .local-now .now-next-button:hover{
-    background:color-mix(in srgb,currentColor 7%,transparent)!important;
-    color:var(--navy,#071b35)!important;
+  body.home-page .local-now .now-next-button:hover{background:rgba(7,27,53,.06)!important;color:var(--navy,#071b35)!important}
+  body.home-page .local-now .now-next-button svg{width:17px!important;height:17px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.9!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+  body.home-page .local-now>.now-dots{display:none!important}
+
+  body.home-page .breaking-now:not([hidden]):not(:empty):not(.is-empty){
+    position:relative!important;
+    overflow:hidden!important;
+    border-radius:10px!important;
+    box-shadow:none!important;
   }
-  body.home-page .local-now .now-next-button svg{
-    width:17px!important;
-    height:17px!important;
-    fill:none!important;
-    stroke:currentColor!important;
-    stroke-width:1.9!important;
-    stroke-linecap:round!important;
-    stroke-linejoin:round!important;
+  body.home-page .breaking-now[data-state="breaking"]{
+    border:1px solid #efc9c5!important;
+    border-left:3px solid #c94c43!important;
+    background:#fff7f6!important;
   }
-  body.home-page .local-now>.now-dots{
-    display:none!important;
+  body.home-page .breaking-now[data-state="breaking"] .breaking-heading>strong{color:#b63e36!important}
+  body.home-page .breaking-now[data-state="breaking"] .breaking-row strong{color:var(--ink,#15253a)!important}
+  body.home-page .breaking-now[data-state="local-update"]{
+    border:1px solid var(--line,#dfe4ea)!important;
+    border-left:3px solid #8b9baa!important;
+    background:#f7f9fb!important;
   }
+  body.home-page .breaking-now[data-state="local-update"] .breaking-heading>strong{color:var(--navy,#071b35)!important}
 }
 
 @media (min-width:901px) and (max-width:1100px){
@@ -185,25 +157,122 @@ body.home-page .breaking-list::after{
 }
 
 @media (max-width:900px){
-  body.home-page .local-now .now-next-button{display:none!important}
+  /* Header rail is the only mobile utility surface. Remove every detached shell/artifact. */
+  html body.home-page #localNow.is-header-card,
+  html body.home-page #localNow.is-header-card::before,
+  html body.home-page #localNow.is-header-card::after{
+    display:block!important;
+    width:0!important;
+    height:0!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    background:transparent!important;
+    overflow:hidden!important;
+  }
+  html body.home-page #localNow.is-header-card>*{display:none!important}
+
+  html body.home-page .header-live:not([hidden]){
+    display:block!important;
+    flex:1 1 auto!important;
+    min-width:0!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    background:transparent!important;
+  }
+  html body.home-page .header-live .now-panel,
+  html body.home-page .header-live .now-card-shell{
+    position:relative!important;
+    width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    background:transparent!important;
+    overflow:visible!important;
+  }
+  html body.home-page .header-live .now-card{
+    display:flex!important;
+    align-items:center!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:48px!important;
+    height:48px!important;
+    margin:0!important;
+    padding:5px 78px 5px 8px!important;
+    gap:7px!important;
+    border:1px solid var(--line,#d8e2ec)!important;
+    border-left:3px solid #df6848!important;
+    border-radius:12px!important;
+    background:var(--card,#fff)!important;
+    box-shadow:0 1px 2px rgba(15,40,63,.04)!important;
+    overflow:hidden!important;
+  }
+  html body.home-page .header-live .now-card .now-icon{width:30px!important;height:30px!important;min-width:30px!important;flex:0 0 30px!important}
+  html body.home-page .header-live .now-card-copy{display:flex!important;flex-direction:column!important;min-width:0!important;gap:0!important}
+  html body.home-page .header-live .now-card-cat{font-size:7.5px!important;line-height:1!important}
+  html body.home-page .header-live .now-card-copy strong{font-size:13px!important;line-height:1.06!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+  html body.home-page .header-live .now-card-copy em{margin-top:2px!important;font-size:9.5px!important;line-height:1.08!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+  html body.home-page .header-live .now-card-metric{
+    position:absolute!important;
+    right:8px!important;
+    bottom:5px!important;
+    z-index:6!important;
+    max-width:64px!important;
+    margin:0!important;
+    padding:3px 7px!important;
+    font-size:9px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+    transform:none!important;
+  }
+  html body.home-page .header-live .now-card-dots{
+    position:absolute!important;
+    right:10px!important;
+    top:6px!important;
+    z-index:7!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:4px!important;
+    margin:0!important;
+    transform:none!important;
+  }
+  html body.home-page .header-live .now-card-dot-btn{display:grid!important;place-items:center!important;width:7px!important;height:7px!important;min-width:7px!important;padding:0!important;border:0!important;background:transparent!important}
+  html body.home-page .header-live .now-card-dot-btn>span{display:block!important;width:3px!important;height:3px!important;border-radius:50%!important;background:#c6ccd2!important}
+  html body.home-page .header-live .now-card-dot-btn.is-active>span,
+  html body.home-page .header-live .now-card-dot-btn[aria-current="true"]>span{width:4px!important;height:4px!important;background:var(--navy,#071b35)!important}
+  html body.home-page .header-live .now-next-button{display:none!important}
+
+  html body.home-page #breakingNow:not([hidden]):not(:empty):not(.is-empty){
+    display:block!important;
+    width:auto!important;
+    max-width:536px!important;
+    margin:10px auto 12px!important;
+    padding:9px 12px 8px!important;
+    border-radius:13px!important;
+    box-shadow:none!important;
+  }
+  html body.home-page #breakingNow[data-state="breaking"]{border:1px solid #efc9c5!important;border-left:3px solid #c94c43!important;background:#fff7f6!important}
+  html body.home-page #breakingNow[data-state="local-update"]{border:1px solid var(--line,#d8e2ec)!important;border-left:3px solid #8b9baa!important;background:#f7f9fb!important}
+  html body.home-page #breakingNow .breaking-heading{margin-bottom:0!important;gap:4px 6px!important}
+  html body.home-page #breakingNow .breaking-heading>strong{font-size:13.5px!important;line-height:1.08!important}
+  html body.home-page #breakingNow .breaking-status{font-size:7.5px!important;letter-spacing:.04em!important;color:#8e99a4!important}
+  html body.home-page #breakingNow .breaking-row{grid-template-columns:minmax(0,1fr) 10px!important;min-height:0!important;padding:7px 0!important;gap:7px!important}
+  html body.home-page #breakingNow .breaking-row strong{font-size:13px!important;line-height:1.2!important;font-weight:500!important;-webkit-line-clamp:2!important}
 }
 
-html[data-theme="dark"] body.home-page .breaking-status,
-html[data-theme="dark"] body.home-page .breaking-now[data-state="breaking"] .breaking-status{
-  color:#9aa6b1!important;
+@media (max-width:500px){
+  html body.home-page #breakingNow:not([hidden]):not(:empty):not(.is-empty){max-width:none!important;margin-left:28px!important;margin-right:28px!important}
 }
-html[data-theme="dark"] body.home-page .breaking-now[data-state="breaking"] .breaking-row strong{
-  color:#f2f5f7!important;
-}
-html[data-theme="dark"] body.home-page .breaking-now[data-state="local-update"]{
-  background:#121b23!important;
-  border-color:#34424e!important;
-  border-left-color:#73899a!important;
-}
-html[data-theme="dark"] body.home-page .breaking-now[data-state="local-update"] .breaking-heading>strong{
-  color:#edf4f8!important;
-}
-html[data-theme="dark"] body.home-page .local-now .now-card-dot-btn.is-active>span,
-html[data-theme="dark"] body.home-page .local-now .now-card-dot-btn[aria-current="true"]>span{
-  background:#f2f5f7!important;
-}
+
+html[data-theme="dark"] body.home-page .breaking-status{color:#9aa6b1!important}
+html[data-theme="dark"] body.home-page .breaking-now[data-state="breaking"]{background:#241817!important;border-color:#6f403d!important;border-left-color:#d7665e!important}
+html[data-theme="dark"] body.home-page .breaking-now[data-state="breaking"] .breaking-row strong{color:#f2f5f7!important}
+html[data-theme="dark"] body.home-page .breaking-now[data-state="local-update"]{background:#121b23!important;border-color:#34424e!important;border-left-color:#73899a!important}
+html[data-theme="dark"] body.home-page .breaking-now[data-state="local-update"] .breaking-heading>strong{color:#edf4f8!important}
+html[data-theme="dark"] body.home-page .header-live .now-card{background:#15212a!important;border-color:#30404b!important;border-left-color:#df6848!important}
+html[data-theme="dark"] body.home-page .header-live .now-card-dot-btn>span{background:#6c7881!important}
+html[data-theme="dark"] body.home-page .header-live .now-card-dot-btn.is-active>span,
+html[data-theme="dark"] body.home-page .header-live .now-card-dot-btn[aria-current="true"]>span{background:#eef4f7!important}
