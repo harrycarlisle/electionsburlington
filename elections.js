@@ -143,18 +143,19 @@
         </div>
       </div>
       <div class="issues-stack">
-        <h3>What they want to do</h3>
+        <h3>Where they stand</h3>
         ${issues}
       </div>
       <div class="profile-box experience-box">
-        <h3>Experience &amp; record</h3>
+        <h3>Experience and record</h3>
         <ul>${candidate.experience.map(item => `<li>${esc(item)}</li>`).join('')}</ul>
       </div>
       <div class="questions-box">
-        <h3>Questions to ask</h3>
+        <h3>Questions still to answer</h3>
         <ul>${questions.map(item => `<li>${esc(item)}</li>`).join('')}</ul>
       </div>
       <div class="source-links">
+        <strong class="source-links-label">Sources and links</strong>
         ${candidate.sources.map(item => `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.label)}</a>`).join('')}
         <a href="/head-to-head.html">Compare two candidates</a>
       </div>`;
@@ -163,7 +164,7 @@
   function bindControls() {
     selector?.addEventListener('change', () => setActive(selector.value));
     window.addEventListener('hashchange', () => setActive(idFromHash(), { hash: false }));
-    if (intro) intro.textContent = 'Who they are, where they differ and what their records show.';
+    if (intro) intro.textContent = 'Who they are, where they differ, what they have done and what they are promising next.';
   }
 
   fetch(DATA_URL, { cache: 'no-store' })
