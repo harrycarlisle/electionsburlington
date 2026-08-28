@@ -2,7 +2,7 @@ name: Daily Burlington news watch
 
 on:
   schedule:
-    - cron: '20 10,16,22 * * *'
+    - cron: '20 * * * *'
   workflow_dispatch:
   push:
     paths:
