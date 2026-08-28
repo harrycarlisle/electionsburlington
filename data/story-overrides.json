@@ -1,30 +1,30 @@
 {
   "burlington-flood-protection-90-million": {
     "headline": "Burlington spent more than $90 million on stormwater upgrades. Did it work?",
-    "deck": "Tuck Creek shows what the money changed, what is still unfinished and why the answer is more complicated than yes or no.",
-    "image": "assets/D141A9BF-BA83-4191-BD57-C2051798D457.png",
-    "alt": "Flooding in Burlington during a major rain event.",
+    "deck": "Tuck Creek is one place to see what changed after 2014, and what remains unfinished.",
+    "image": "assets/upper-middle-construction.png",
+    "alt": "Infrastructure construction along a Burlington roadway.",
     "credit": "Burlington News visual"
   },
   "burlington-road-closures-september-2026": {
     "headline": "Two Burlington roads will stay fully closed into September.",
-    "deck": "Spruce Avenue is closed through Sept. 4. Britannia Road has no through traffic through the end of September.",
+    "deck": "The closures affect different parts of Burlington and have very different reopening timelines.",
     "image": "assets/road-closure.png",
     "alt": "Road construction and lane restrictions on a Burlington arterial road.",
     "credit": "Burlington News visual"
   },
   "costco-burloak-wyecroft": {
     "headline": "Oakville approved a new Costco near Burloak. How will drivers get in?",
-    "deck": "The plan includes 1,000 parking spaces, a gas bar and four access points near the Burlington border.",
+    "deck": "The site sits close to the Burlington border, with a large parking plan and several proposed access points.",
     "image": "assets/costco.png",
     "alt": "Costco storefront and entrance in a suburban shopping area.",
     "credit": "Burlington News visual"
   },
   "sekisui-burlington-modular-factory": {
     "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
-    "deck": "SEKISUI's $15-million Canadian hub is targeting schools, housing and care buildings.",
-    "image": "assets/0B3CAFA4-0C73-4954-8FEE-842AC0C5CC98.png",
-    "alt": "A building under construction in an industrial factory setting.",
+    "deck": "A $15-million Canadian hub is changing how some schools, homes and care buildings could be assembled.",
+    "image": "assets/condo-construction.png",
+    "alt": "Residential construction underway in the Burlington area.",
     "credit": "Burlington News visual"
   },
   "e-scooter-burlington-rules": {
@@ -45,7 +45,7 @@
   },
   "ribfest-2026": {
     "headline": "Ribfest turns 30. Where does the money actually go?",
-    "deck": "Nearly $6 million has been raised over three decades. This Labour Day weekend, the fundraiser returns to Spencer Smith Park.",
+    "deck": "Nearly $6 million has been raised over three decades, but the festival's impact goes beyond the food at Spencer Smith Park.",
     "image": "assets/rib-fest.png",
     "alt": "Ribs cooking on a grill at Burlington Ribfest.",
     "credit": "Burlington News visual"
@@ -57,26 +57,27 @@
   },
   "ontario-student-rights-school": {
     "headline": "Can a teacher take your phone? Seven Ontario school rules students should know.",
-    "deck": "What Ontario rules actually allow inside a school, and where the limits are.",
+    "deck": "Ontario schools have broad authority in some situations, but there are limits students and parents should know.",
     "image": "assets/back-to-school.png",
     "alt": "Students walking toward a school entrance beside a yellow school bus.",
     "credit": "Burlington News visual"
   },
   "millcroft-phase-2-138-homes": {
     "headline": "Millcroft Phase 2 proposes 138 homes. What happens next?",
-    "deck": "The application is still proposed, not approved. The next decisions will determine whether it can move forward.",
+    "deck": "The proposal is still moving through the process, with several decisions still standing between the plan and construction.",
     "image": "assets/condo-construction.png",
     "alt": "A mid-rise residential building under construction with a tower crane.",
     "credit": "Burlington News visual"
   },
   "nelson-quarry-tribunal-decision": {
     "headline": "Nelson Quarry won at the tribunal. What happens now?",
+    "deck": "The ruling answered one major question about the Mount Nemo expansion, but it did not end every dispute around the site.",
     "image": "assets/nelson-quarry.png",
     "alt": "Nelson Quarry and the Mount Nemo area in north Burlington.",
     "credit": "Burlington News visual"
   },
   "burlington-ultimate-team-0-24": {
     "headline": "This Burlington team is 0–24. Why do they keep coming back?",
-    "deck": "After an 0–12 season, they changed the name. Twelve games later, they were still waiting for a win."
+    "deck": "Two seasons have ended without a win, but the team finishing this summer did not look like the one that started it."
   }
 }
