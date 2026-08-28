@@ -13,10 +13,37 @@
     const btn = document.getElementById('menuBtn');
     const nav = document.getElementById('mainNav');
     if (!btn || !nav) return;
-    btn.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      nav.classList.toggle('is-open', !open);
+
+    nav.classList.add('menu-panel');
+    const close = () => {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open site menu');
+      nav.classList.remove('open');
+      document.documentElement.classList.remove('menu-is-open');
+      document.body.classList.remove('menu-is-open');
+    };
+    const open = () => {
+      const header = document.querySelector('.header, .site-header');
+      const bottom = Math.ceil(header?.getBoundingClientRect().bottom || 0);
+      document.documentElement.style.setProperty('--mobile-menu-top', `${bottom + 8}px`);
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Close site menu');
+      nav.classList.add('open');
+      document.documentElement.classList.add('menu-is-open');
+      document.body.classList.add('menu-is-open');
+    };
+
+    btn.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (btn.getAttribute('aria-expanded') === 'true') close();
+      else open();
+    });
+    nav.addEventListener('click', event => {
+      if (event.target.closest('a')) close();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') close();
     });
   };
 
@@ -40,8 +67,6 @@
     setupMenu();
     setupLazySearch();
 
-    // Keep the first paint quiet. The HTML already contains complete static
-    // fallbacks, so live data can enhance the page after it is usable.
     setTimeout(() => {
       loadScript('/mobile-top-panel.js?v=20260827perf2');
       loadScript('/local-now.js?v=20260827perf2', { module: true });
