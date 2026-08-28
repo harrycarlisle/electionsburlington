@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import re
 import sys
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -44,6 +45,11 @@ from sources.weather import collect as weather_collect
 TZ = ZoneInfo("America/Toronto")
 OUT = DATA / "breaking-now.json"
 QUEUE = DATA / "discovery-queue.json"
+LOCATION_SUFFIXES = {
+    "street", "road", "avenue", "drive", "line", "park", "creek", "trail",
+    "highway", "boulevard", "lane", "court", "place", "way", "bay", "bridge",
+    "centre", "center", "square", "falls", "mountain", "harbour", "harbor",
+}
 
 
 def load(name: str, fallback):
@@ -52,6 +58,144 @@ def load(name: str, fallback):
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return fallback
+
+
+def clean_text(value) -> str:
+    return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def agency_prefix(item: dict) -> str:
+    """Return an accurate reader-facing police-service prefix.
+
+    Burlington and Oakville are policed by Halton Regional Police, so we avoid
+    inventing a municipal police service and use "Halton police in Burlington"
+    or "Halton police in Oakville" when the city is known.
+    """
+    source = clean_text(item.get("sourceName")).lower()
+    city = clean_text(item.get("city"))
+    if "hamilton police" in source:
+        return "Hamilton police"
+    if "halton regional police" in source or "halton police" in source:
+        if city and city.lower() not in {"halton", "halton region"}:
+            return f"Halton police in {city}"
+        return "Halton police"
+    if "toronto police" in source:
+        return "Toronto police"
+    if "ontario provincial police" in source or re.search(r"\bopp\b", source):
+        return "OPP"
+    return ""
+
+
+def scope_label(item: dict) -> str:
+    city = clean_text(item.get("city"))
+    if city:
+        return city
+    region = clean_text(item.get("region"))
+    if region:
+        return region
+    source = clean_text(item.get("sourceName"))
+    if "Hamilton Police" in source:
+        return "Hamilton"
+    if "Halton" in source:
+        return "Halton"
+    if "Toronto Police" in source:
+        return "Toronto"
+    return ""
+
+
+def sentence_fragment(value: str, item: dict) -> str:
+    """Convert a newsroom title-case fragment to readable sentence case.
+
+    Acronyms and likely place names (the word before Street/Road/etc.) are
+    preserved so QEW and Mud Street do not become qew or mud street.
+    """
+    words = clean_text(value).split()
+    if not words:
+        return ""
+
+    preserve: set[int] = set()
+    known = set()
+    for field in ("city", "region", "location", "nearestIntersection", "affectedArea"):
+        known.update(re.findall(r"[A-Za-z0-9]+", clean_text(item.get(field)).lower()))
+
+    bare_words: list[str] = []
+    for index, word in enumerate(words):
+        bare = re.sub(r"^[^A-Za-z0-9]+|[^A-Za-z0-9]+$", "", word)
+        bare_words.append(bare)
+        if not bare:
+            preserve.add(index)
+            continue
+        if (bare.isupper() and len(bare) > 1) or bare.lower() in known:
+            preserve.add(index)
+        if bare.lower() in LOCATION_SUFFIXES:
+            preserve.add(index)
+            if index:
+                preserve.add(index - 1)
+
+    output = []
+    for index, word in enumerate(words):
+        bare = bare_words[index]
+        if not bare or index in preserve or any(char.isdigit() for char in bare):
+            output.append(word)
+            continue
+        output.append(word.replace(bare, bare.lower(), 1))
+    return " ".join(output)
+
+
+def reader_headline(item: dict) -> str:
+    """Make jurisdiction obvious without misnaming a police service."""
+    raw = clean_text(item.get("headline") or item.get("shortHeadline"))
+    if not raw:
+        return raw
+
+    agency = agency_prefix(item)
+    city = clean_text(item.get("city"))
+    starts_with_police = re.match(
+        r"^(?:(?:Hamilton|Halton(?: Regional)?|Toronto|Ontario Provincial)\s+)?Police(?: Service)?\b",
+        raw,
+        flags=re.IGNORECASE,
+    )
+
+    if agency and starts_with_police:
+        fragment = re.sub(
+            r"^(?:(?:Hamilton|Halton(?: Regional)?|Toronto|Ontario Provincial)\s+)?Police(?: Service)?\s*[:\-–—]?\s*",
+            "",
+            raw,
+            flags=re.IGNORECASE,
+        )
+        fragment = sentence_fragment(fragment, item)
+        fragment = re.sub(
+            r"\bfollowing (?:a )?shooting call on\b",
+            "after a shooting call on",
+            fragment,
+            flags=re.IGNORECASE,
+        )
+        fragment = re.sub(r"\bfollowing\b", "after", fragment, flags=re.IGNORECASE)
+        public = f"{agency} {fragment}".strip()
+    elif agency and city and city.lower() not in raw.lower():
+        public = f"{agency}: {raw}"
+    elif city and city.lower() != "burlington" and city.lower() not in raw.lower():
+        public = f"{city}: {raw}"
+    else:
+        public = raw
+
+    return public.rstrip(" .") + "."
+
+
+def prepare_public_items(items: list[dict]) -> None:
+    for item in items:
+        original = clean_text(item.get("headline") or item.get("shortHeadline"))
+        if original:
+            item.setdefault("rawHeadline", original)
+            public = reader_headline(item)
+            item["headline"] = public
+            item["shortHeadline"] = public
+        scope = scope_label(item)
+        if scope:
+            item["scopeLabel"] = scope
+        agency = agency_prefix(item)
+        if agency:
+            item["agencyLabel"] = agency[0].upper() + agency[1:]
 
 
 def public_story_url(value: str) -> str:
@@ -258,6 +402,8 @@ def main() -> int:
         label = "Local Update"
         visible = diversify_top(ranked, 2, "localUpdateScore")
         method = "No item cleared Breaking News. Local Update = Burlington relevance*.30 + freshness*.25 + practical impact/usefulness*.20 + source confidence*.15 + reader interest*.10."
+
+    prepare_public_items(visible)
 
     payload = {
         "generatedAt": now_iso,
