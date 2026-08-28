@@ -1,48 +1,76 @@
-/* Keep the Burlington News desktop nav visually centred between brand and controls. */
+/* Homepage desktop header: brand left, navigation truly centred, utilities/search right. */
 @media (min-width:901px){
   body.home-page .site-header .header-inner,
   body.home-page .header .header-inner{
-    display:grid!important;
-    grid-template-columns:minmax(210px,1fr) auto minmax(210px,1fr)!important;
+    position:relative!important;
+    display:flex!important;
     align-items:center!important;
-    gap:18px!important;
+    min-height:56px!important;
+    height:56px!important;
+    gap:16px!important;
   }
+
   body.home-page .news-brand,
   body.home-page .brand-mark-only{
-    grid-column:1!important;
-    justify-self:start!important;
-    margin-right:0!important;
-  }
-  body.home-page .desktop-primary-nav,
-  body.home-page .publication-nav{
-    grid-column:2!important;
-    justify-self:center!important;
-    display:flex!important;
+    position:relative!important;
+    z-index:2!important;
     flex:0 0 auto!important;
-    justify-content:center!important;
-    align-items:center!important;
-    gap:24px!important;
     margin:0!important;
   }
-  body.home-page .header-controls{
-    grid-column:3!important;
-    justify-self:end!important;
+
+  /* Centre the section nav against the page, not against the leftover space. */
+  body.home-page .desktop-primary-nav,
+  body.home-page .publication-nav{
+    position:absolute!important;
+    left:50%!important;
+    top:50%!important;
+    z-index:2!important;
     display:flex!important;
-    flex:0 0 auto!important;
-    margin-left:0!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:24px!important;
+    margin:0!important;
+    transform:translate(-50%,-50%)!important;
+    white-space:nowrap!important;
   }
+
+  body.home-page .header-controls{
+    position:relative!important;
+    z-index:3!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:8px!important;
+    flex:0 0 auto!important;
+    margin-left:auto!important;
+    width:auto!important;
+  }
+
+  body.home-page .header-search{
+    width:220px!important;
+    flex:0 0 220px!important;
+  }
+
   body.home-page #mainNav{
     grid-column:auto!important;
   }
 }
 
 @media (min-width:901px) and (max-width:1120px){
-  body.home-page .site-header .header-inner,
-  body.home-page .header .header-inner{
-    grid-template-columns:minmax(150px,1fr) auto minmax(150px,1fr)!important;
-    gap:12px!important;
-  }
   body.home-page .desktop-primary-nav,
-  body.home-page .publication-nav{gap:18px!important}
-  body.home-page .header-search{width:210px!important;flex-basis:210px!important}
+  body.home-page .publication-nav{
+    gap:16px!important;
+    font-size:12px!important;
+  }
+  body.home-page .header-search{
+    width:190px!important;
+    flex-basis:190px!important;
+  }
+}
+
+/* At narrow desktop widths, keep all three zones readable rather than allowing overlap. */
+@media (min-width:901px) and (max-width:980px){
+  body.home-page .desktop-primary-nav,
+  body.home-page .publication-nav{gap:12px!important}
+  body.home-page .header-search{width:170px!important;flex-basis:170px!important}
 }
