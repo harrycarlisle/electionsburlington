@@ -1,9 +1,35 @@
-/* Final homepage live-rail polish: one clean accent, no trailing tab, neutral timestamps. */
+/* Final homepage live-rail polish: one accent per rail, neutral timestamps, and a clear next control. */
 body.home-page .breaking-status{
   color:#8e99a4!important;
 }
 body.home-page .breaking-status i{
-  background:#c94c43!important;
+  display:none!important;
+}
+
+/* Never let legacy rail shells add a second coloured edge. */
+body.home-page .local-now,
+body.home-page .local-now .now-card-shell,
+body.home-page .local-now .now-card,
+body.home-page .breaking-now .breaking-list{
+  border-left:0!important;
+  border-right:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+body.home-page .local-now::before,
+body.home-page .local-now::after,
+body.home-page .local-now .now-panel::before,
+body.home-page .local-now .now-panel::after,
+body.home-page .local-now .now-card-shell::before,
+body.home-page .local-now .now-card-shell::after,
+body.home-page .local-now .now-card::before,
+body.home-page .local-now .now-card::after,
+body.home-page .breaking-now::before,
+body.home-page .breaking-now::after,
+body.home-page .breaking-list::before,
+body.home-page .breaking-list::after{
+  content:none!important;
+  display:none!important;
 }
 
 @media (min-width:901px){
@@ -14,45 +40,26 @@ body.home-page .breaking-status i{
     box-shadow:none!important;
   }
 
-  body.home-page .local-now .now-panel::before,
-  body.home-page .local-now .now-panel::after,
-  body.home-page .local-now .now-card-shell::before,
-  body.home-page .local-now .now-card-shell::after,
-  body.home-page .local-now .now-card::before,
-  body.home-page .local-now .now-card::after,
-  body.home-page .breaking-now::before,
-  body.home-page .breaking-now::after,
-  body.home-page .breaking-list::before,
-  body.home-page .breaking-list::after{
-    content:none!important;
-    display:none!important;
-  }
-
   body.home-page .local-now .now-card-shell,
   body.home-page .local-now .now-card{
-    border:0!important;
-    border-left:0!important;
-    border-right:0!important;
     background:transparent!important;
-    box-shadow:none!important;
   }
 
+  /* Traffic/transport owns the single orange edge. */
   body.home-page .local-now .now-panel{
     border:1px solid var(--line,#dfe4ea)!important;
     border-left:3px solid #df6848!important;
-    border-right:1px solid var(--line,#dfe4ea)!important;
     border-radius:10px!important;
   }
 
+  /* Breaking owns the single red edge. */
   body.home-page .breaking-now[data-state="breaking"]{
-    border:1px solid color-mix(in srgb,#c94c43 38%,var(--line,#dfe4ea))!important;
+    border:1px solid color-mix(in srgb,#c94c43 30%,var(--line,#dfe4ea))!important;
     border-left:3px solid #c94c43!important;
-    border-right:1px solid color-mix(in srgb,#c94c43 24%,var(--line,#dfe4ea))!important;
     border-radius:10px!important;
   }
-
   body.home-page .breaking-now[data-state="breaking"] .breaking-heading>strong{
-    color:#d46860!important;
+    color:#c94c43!important;
   }
   body.home-page .breaking-now[data-state="breaking"] .breaking-status{
     color:#929ca6!important;
@@ -60,6 +67,84 @@ body.home-page .breaking-status i{
   body.home-page .breaking-now[data-state="breaking"] .breaking-row strong{
     color:var(--ink,#15253a)!important;
   }
+
+  /* Put the mode dots and a real next arrow inside the utility rail. */
+  body.home-page .local-now .now-card-shell{
+    position:relative!important;
+  }
+  body.home-page .local-now .now-card{
+    padding-right:132px!important;
+  }
+  body.home-page .local-now .now-card-dots{
+    position:absolute!important;
+    top:50%!important;
+    right:48px!important;
+    z-index:4!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:6px!important;
+    transform:translateY(-50%)!important;
+  }
+  body.home-page .local-now .now-card-dot-btn{
+    display:grid!important;
+    place-items:center!important;
+    width:10px!important;
+    height:18px!important;
+    padding:0!important;
+    border:0!important;
+    background:transparent!important;
+    cursor:pointer!important;
+  }
+  body.home-page .local-now .now-card-dot-btn>span{
+    display:block!important;
+    width:4px!important;
+    height:4px!important;
+    border-radius:50%!important;
+    background:#a4adb6!important;
+  }
+  body.home-page .local-now .now-card-dot-btn.is-active>span,
+  body.home-page .local-now .now-card-dot-btn[aria-current="true"]>span{
+    width:5px!important;
+    height:5px!important;
+    background:var(--navy,#071b35)!important;
+  }
+  body.home-page .local-now .now-next-button{
+    position:absolute!important;
+    top:50%!important;
+    right:10px!important;
+    z-index:5!important;
+    display:grid!important;
+    place-items:center!important;
+    width:28px!important;
+    height:28px!important;
+    padding:0!important;
+    transform:translateY(-50%)!important;
+    border:0!important;
+    border-radius:50%!important;
+    background:transparent!important;
+    color:var(--muted,#657083)!important;
+    cursor:pointer!important;
+  }
+  body.home-page .local-now .now-next-button:hover{
+    background:color-mix(in srgb,currentColor 7%,transparent)!important;
+    color:var(--navy,#071b35)!important;
+  }
+  body.home-page .local-now .now-next-button svg{
+    width:17px!important;
+    height:17px!important;
+    fill:none!important;
+    stroke:currentColor!important;
+    stroke-width:1.9!important;
+    stroke-linecap:round!important;
+    stroke-linejoin:round!important;
+  }
+  body.home-page .local-now>.now-dots{
+    display:none!important;
+  }
+}
+
+@media (max-width:900px){
+  body.home-page .local-now .now-next-button{display:none!important}
 }
 
 html[data-theme="dark"] body.home-page .breaking-status,
@@ -68,4 +153,8 @@ html[data-theme="dark"] body.home-page .breaking-now[data-state="breaking"] .bre
 }
 html[data-theme="dark"] body.home-page .breaking-now[data-state="breaking"] .breaking-row strong{
   color:#f2f5f7!important;
+}
+html[data-theme="dark"] body.home-page .local-now .now-card-dot-btn.is-active>span,
+html[data-theme="dark"] body.home-page .local-now .now-card-dot-btn[aria-current="true"]>span{
+  background:#f2f5f7!important;
 }
