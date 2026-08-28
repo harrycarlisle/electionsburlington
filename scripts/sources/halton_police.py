@@ -15,6 +15,12 @@ FEEDS = [
     "https://www.haltonpolice.ca/news-releases/media-releases/",
     "https://www.haltonpolice.ca/news-releases/",
 ]
+GENERIC_TITLES = {
+    "halton regional police service",
+    "halton regional police",
+    "news releases",
+    "media releases",
+}
 
 
 def collect(now_iso: str, *, live: bool = False, cached: list[dict] | None = None) -> list[dict[str, Any]]:
@@ -25,7 +31,7 @@ def collect(now_iso: str, *, live: bool = False, cached: list[dict] | None = Non
     for raw in rows:
         headline = raw.get("title") or raw.get("headline") or ""
         url = raw.get("url") or raw.get("sourceUrl") or ""
-        if not headline:
+        if not headline or headline.strip().lower() in GENERIC_TITLES:
             continue
         location = extract_location(f"{headline} {raw.get('summary') or ''}")
         item = quick_update(
@@ -36,7 +42,9 @@ def collect(now_iso: str, *, live: bool = False, cached: list[dict] | None = Non
             sourceType="official",
             sourceName=SOURCE,
             sourceUrl=url,
-            publishedAt=raw.get("publishedAt") or raw.get("published") or now_iso,
+            # A crawler seeing a link now does not make the underlying release new.
+            # Unknown source publication time stays unknown and cannot earn breaking freshness.
+            publishedAt=raw.get("publishedAt") or raw.get("published") or "",
             discoveredAt=now_iso,
             verificationStatus="verified",
             confidenceScore=5.0,
