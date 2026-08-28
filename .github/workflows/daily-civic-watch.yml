@@ -9,6 +9,7 @@ on:
       - 'data/councillor-profiles.json'
       - 'data/community-discussion.json'
       - 'data/story-catalog.json'
+      - 'data/story-overrides.json'
       - 'data/editorial-policy.json'
       - 'scripts/update_candidate_assets.py'
       - 'scripts/update_civic_watch.py'
@@ -16,6 +17,7 @@ on:
       - 'scripts/build_editorial_queue.py'
       - 'scripts/auto_publish_briefs.py'
       - 'scripts/rank_stories.py'
+      - 'scripts/apply_story_presentation.py'
       - 'scripts/safe_bot_commit.py'
       - '.github/workflows/daily-civic-watch.yml'
 
@@ -50,6 +52,8 @@ jobs:
         run: python scripts/rank_stories.py
       - name: Publish clean public URLs
         run: python scripts/sync_public_urls.py
+      - name: Apply editorial presentation overrides
+        run: python scripts/apply_story_presentation.py
       - name: Commit verified updates and stories
         run: >-
           python scripts/safe_bot_commit.py
@@ -59,4 +63,4 @@ jobs:
           data/image-history.json data/ballot.json data/editorial-queue.json
           data/home-surface.json data/auto-published.json data/original-candidates.json
           data/lead-history.json data/story-catalog.json data/radar-seen.json
-          articles/auto news explore elections traffic sports games stories
+          articles news explore elections traffic sports games stories
