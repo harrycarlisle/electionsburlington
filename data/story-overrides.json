@@ -1,7 +1,10 @@
 {
   "burlington-flood-protection-90-million": {
     "headline": "Burlington spent more than $90 million on stormwater upgrades. Did it work?",
-    "deck": "Tuck Creek shows what the money changed, what is still unfinished and why the answer is more complicated than yes or no."
+    "deck": "Tuck Creek shows what the money changed, what is still unfinished and why the answer is more complicated than yes or no.",
+    "image": "assets/D141A9BF-BA83-4191-BD57-C2051798D457.png",
+    "alt": "Flooding in Burlington during a major rain event.",
+    "credit": "Burlington News visual"
   },
   "burlington-road-closures-september-2026": {
     "headline": "Two Burlington roads will stay fully closed into September.",
@@ -16,6 +19,11 @@
     "alt": "Costco storefront and entrance in a suburban shopping area.",
     "credit": "Burlington News visual"
   },
+  "sekisui-burlington-modular-factory": {
+    "image": "assets/0B3CAFA4-0C73-4954-8FEE-842AC0C5CC98.png",
+    "alt": "A building under construction in an industrial factory setting.",
+    "credit": "Burlington News visual"
+  },
   "e-scooter-burlington-rules": {
     "image": "assets/e-scooter.png",
     "alt": "A person riding an e-scooter along the right side of a suburban street.",
@@ -27,13 +35,16 @@
     "credit": "Burlington News visual"
   },
   "upper-middle-road-construction-2026": {
+    "headline": "Upper Middle Road construction: what changes next?",
     "image": "assets/upper-middle-construction.png",
     "alt": "Road construction on a wide Burlington arterial road.",
     "credit": "Burlington News visual"
   },
   "ribfest-2026": {
-    "image": "assets/home/ribs.webp",
-    "alt": "Ribs cooking over a barbecue pit at Burlington Ribfest.",
+    "headline": "Ribfest turns 30. Where does the money actually go?",
+    "deck": "Nearly $6 million has been raised over three decades. This Labour Day weekend, the fundraiser returns to Spencer Smith Park.",
+    "image": "assets/rib-fest.png",
+    "alt": "Ribs cooking on a grill at Burlington Ribfest.",
     "credit": "Burlington News visual"
   },
   "back-to-school-2026": {
@@ -47,7 +58,8 @@
     "credit": "Burlington News visual"
   },
   "millcroft-phase-2-138-homes": {
-    "headline": "The mayor's Millcroft update is about 138 proposed homes.",
+    "headline": "Millcroft Phase 2 proposes 138 homes. What happens next?",
+    "deck": "The application is still proposed, not approved. Here is what residents should watch next.",
     "image": "assets/condo-construction.png",
     "alt": "A mid-rise residential building under construction with a tower crane.",
     "credit": "Burlington News visual"
