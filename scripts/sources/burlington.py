@@ -41,7 +41,8 @@ def collect(now_iso: str, monitor: dict | None = None, **_: Any) -> list[dict[st
             sourceType="official",
             sourceName=source or "City of Burlington",
             sourceUrl=raw.get("url") or "",
-            publishedAt=raw.get("published") or raw.get("checkedAt") or now_iso,
+            # checkedAt is crawler time, not newsroom publication time.
+            publishedAt=raw.get("published") or raw.get("publishedAt") or "",
             discoveredAt=now_iso,
             verificationStatus="verified" if raw.get("verified") else "reported",
             confidenceScore=5.0 if raw.get("verified") else 4.0,
