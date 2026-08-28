@@ -2,6 +2,11 @@ name: GO status
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/update_go_status.py'
+      - 'lib/go-times.js'
+      - '.github/workflows/go-status.yml'
   schedule:
     # Roughly 5 a.m.-midnight Toronto during daylight time; enough for early and late trains.
     - cron: '*/30 9-23 * * *'
