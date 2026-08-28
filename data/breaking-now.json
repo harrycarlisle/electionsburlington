@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T11:18:25.525982-04:00",
+  "generatedAt": "2026-08-28T12:58:14.073478-04:00",
   "mode": "breaking",
   "label": "Breaking News",
   "method": "Breaking threshold passed. breakingScore = localRelevance*.25 + impact*.25 + recency*.20 + confidence*.15 + breadth*.10 + novelty*.05.",
@@ -8,16 +8,16 @@
   "items": [
     {
       "id": "57a3ede36411e1b6",
-      "headline": "Police Seize Five Firearms Following Shooting Call on Mud Street",
-      "shortHeadline": "Police Seize Five Firearms Following Shooting Call on Mud Street",
+      "headline": "Hamilton police seize five firearms after a shooting call on Mud Street.",
+      "shortHeadline": "Hamilton police seize five firearms after a shooting call on Mud Street.",
       "category": "PUBLIC SAFETY",
       "summary": "",
       "location": "",
       "nearestIntersection": "",
       "affectedArea": null,
-      "publishedAt": "2026-08-28T11:18:25.525982-04:00",
+      "publishedAt": "2026-08-28T12:58:14.073478-04:00",
       "updatedAt": null,
-      "discoveredAt": "2026-08-28T11:18:25.525982-04:00",
+      "discoveredAt": "2026-08-28T12:58:14.073478-04:00",
       "severity": null,
       "impactScore": 4.4,
       "confidenceScore": 5.0,
@@ -49,6 +49,9 @@
       ],
       "label": null,
       "rejectReason": null,
+      "rawHeadline": "Police Seize Five Firearms Following Shooting Call on Mud Street",
+      "scopeLabel": "Hamilton",
+      "agencyLabel": "Hamilton police",
       "image": "/assets/cops-2.png",
       "alt": "Police vehicles and emergency lights at a nighttime police scene."
     }
