@@ -249,6 +249,7 @@
 
   function buildDrawer(nav) {
     const electionPrimary = electionInPrimaryNav();
+    const divider = '<div class="menu-section-divider" aria-hidden="true" style="height:1px!important;margin:10px 6px!important;padding:0!important;border:0!important;background:var(--line,#d8e2ec)!important;overflow:visible!important"></div>';
     nav.className = 'nav menu-panel';
     nav.innerHTML = `
       <div class="menu-drawer-top">
@@ -263,16 +264,16 @@
         ${navLink('/sports/', 'sports', 'Sports')}
         ${navLink('/games/', 'games', 'Puzzles')}
       </div>
-      <div class="menu-separator" aria-hidden="true"></div>
-      <div class="menu-primary menu-secondary" role="list">
+      ${divider}
+      <div class="menu-primary menu-utility-links" role="list">
         ${electionPrimary ? '' : navLink('/elections/', 'elections', 'Elections', 'secondary')}
         ${navLink('/traffic/', 'traffic', 'Traffic', 'secondary')}
-        ${navLink('/go/', 'go', 'GO', 'secondary')}
         ${navLink('/development/', 'development', 'Development', 'secondary')}
+      </div>
+      ${divider}
+      <div class="menu-primary menu-publication-links" role="list">
+        ${navLink('/feedback/', 'feedback', 'Give feedback', 'secondary')}
         ${navLink('/about/', 'about', 'About', 'secondary')}
-        ${navLink('/methodology.html', 'sources', 'Sources', 'secondary')}
-        ${navLink('/help.html', 'help', 'Help & accessibility', 'secondary')}
-        ${navLink('/feedback/', 'feedback', 'Feedback', 'secondary')}
         ${navLink('/work-with-us/', 'work', 'Work with us', 'secondary')}
       </div>
       <div class="menu-drawer-util">
