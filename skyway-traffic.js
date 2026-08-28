@@ -212,15 +212,23 @@ function renderStatus() {
   renderHero();
   if (origin) origin.textContent = `Starting at ${originLabel().replace(' at ', ' & ')}`;
   if (!status) return;
-  const quietLine = copy.headline === 'Moving well'
-    ? 'No major incidents reported'
-    : (copy.quiet ? '' : '');
+
+  const delayed = Boolean(copy.minutes) || copy.headline === 'Delay likely' || copy.headline === 'Heavy traffic';
+  const warning = !delayed && (copy.headline === 'Some slowing' || Boolean(copy.note));
+  const clear = !delayed && !warning;
+  status.className = `route-status ${delayed ? 'is-delay' : (warning ? 'is-warning' : 'is-clear')}`;
+
+  let headline = copy.headline;
+  if (clear && headline === 'No major incidents reported') headline = 'No major delay reported';
+  const icon = delayed || warning ? '!' : '✓';
+  const quietLine = headline === 'Moving well' ? 'No major incidents reported' : '';
+
   status.innerHTML = `
     <div class="route-status-row">
-      <h2>${copy.quiet && copy.headline === 'No major incidents reported' ? `✓ ${esc(copy.headline)}` : esc(copy.headline)}</h2>
+      <h2><span class="route-status-icon" aria-hidden="true">${icon}</span><span>${esc(headline)}</span></h2>
       ${copy.minutes ? `<b>+${copy.minutes} min</b>` : ''}
     </div>
-    ${copy.detail ? `<p>${esc(copy.detail)}</p>` : (copy.headline === 'Moving well' ? `<p>${quietLine}</p>` : '')}
+    ${copy.detail ? `<p>${esc(copy.detail)}</p>` : (quietLine ? `<p>${esc(quietLine)}</p>` : '')}
     ${copy.note ? `<p class="route-status-note">${esc(copy.note)}</p>` : ''}`;
 }
 
