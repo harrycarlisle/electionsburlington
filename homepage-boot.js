@@ -98,7 +98,7 @@
     // a second client-side ranking pass from swapping the page after first paint.
     // Only genuinely live utility rails refresh in the browser.
     loadScript('/mobile-top-panel.js?v=20260828fresh4');
-    loadScript('/local-now.js?v=20260828fresh4', { module: true });
+    loadScript('/local-now.js?v=20260828fresh5', { module: true });
     loadScript('/breaking-now.js?v=20260828fresh4');
   };
 
