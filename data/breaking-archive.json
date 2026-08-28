@@ -1,0 +1,31 @@
+{
+  "updatedAt": "2026-08-28T10:52:00-04:00",
+  "items": [
+    {
+      "id": "57a3ede36411e1b6",
+      "headline": "Hamilton police seize five firearms after Mud Street shooting call",
+      "deck": "Hamilton Police say officers seized five firearms after responding to reports of gunfire on Mud Street East.",
+      "label": "Public safety",
+      "topic": "public-safety",
+      "url": "/stories/police-seize-five-firearms-mud-street/",
+      "image": "/assets/cops-2.png",
+      "alt": "Police vehicles and emergency lights at a nighttime police scene.",
+      "publishedAt": "2026-08-28T07:31:24-04:00",
+      "datePublished": "2026-08-28T07:31:24-04:00",
+      "status": "breaking"
+    },
+    {
+      "id": "burlington-maple-richmond-fatal-hit-and-run",
+      "headline": "Woman killed in Burlington hit-and-run; police searching for dark sedan",
+      "deck": "The collision happened around 3:45 p.m. Thursday near Maple Avenue and Richmond Road.",
+      "label": "Public safety",
+      "topic": "public-safety",
+      "url": "/stories/burlington-maple-richmond-fatal-hit-and-run/",
+      "image": "/assets/IMG_4780.jpeg",
+      "alt": "Image related to the fatal hit-and-run investigation near Maple Avenue and Richmond Road in Burlington.",
+      "publishedAt": "2026-08-27T19:16:00-04:00",
+      "datePublished": "2026-08-27T19:16:00-04:00",
+      "status": "normal"
+    }
+  ]
+}
