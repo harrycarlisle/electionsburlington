@@ -78,7 +78,7 @@
     const load = () => {
       if (loaded) return;
       loaded = true;
-      loadScript('/site-search.js?v=20260828fresh3');
+      loadScript('/site-search.js?v=20260828fresh4');
     };
     input.addEventListener('focus', load, { once: true });
     input.addEventListener('pointerdown', load, { once: true });
@@ -94,14 +94,14 @@
     setupLazySearch();
 
     setTimeout(() => {
-      loadScript('/mobile-top-panel.js?v=20260828fresh3');
-      loadScript('/local-now.js?v=20260828fresh3', { module: true });
-      loadScript('/breaking-now.js?v=20260828fresh3');
-    }, 700);
+      loadScript('/mobile-top-panel.js?v=20260828fresh4');
+      loadScript('/local-now.js?v=20260828fresh4', { module: true });
+      loadScript('/breaking-now.js?v=20260828fresh4');
+    }, 350);
 
     setTimeout(() => {
-      loadScript('/home.js?v=20260828fresh3', { module: true });
-    }, 1200);
+      loadScript('/home.js?v=20260828fresh4', { module: true });
+    }, 650);
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
