@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-27T21:18:30+00:00",
+  "checkedAt": "2026-08-28T16:28:13+00:00",
   "publicationGate": "Candidates only. Verify dates, location, access and image rights before adding to explore-events.json.",
   "sources": [
     {
@@ -34,8 +34,28 @@
       "error": "HTTP Error 403: Forbidden"
     },
     {
+      "name": "Town of Oakville events",
+      "url": "https://www.oakville.ca/community-events/events/",
+      "ok": true
+    },
+    {
+      "name": "Visit Oakville events",
+      "url": "https://visitoakville.com/events/",
+      "ok": true
+    },
+    {
+      "name": "City of Hamilton events calendar",
+      "url": "https://www.hamilton.ca/things-do/festivals-events/events-calendar",
+      "ok": true
+    },
+    {
       "name": "Supercrawl",
       "url": "https://supercrawl.ca/2026/",
+      "ok": true
+    },
+    {
+      "name": "Active Parents regional calendar",
+      "url": "https://activeparents.ca/calendar/",
       "ok": true
     },
     {
@@ -285,6 +305,12 @@
       "scope": "Burlington and Hamilton"
     },
     {
+      "title": "Child & Family Programs",
+      "url": "https://www.rbg.ca/learning/individuals-and-families/child-and-family-programs/",
+      "source": "Royal Botanical Gardens",
+      "scope": "Burlington and Hamilton"
+    },
+    {
       "title": "Register",
       "url": "https://secure.rbg.ca/events?kid=46,20",
       "source": "Royal Botanical Gardens",
@@ -519,6 +545,210 @@
       "scope": "Burlington"
     },
     {
+      "title": "Skip to Content",
+      "url": "https://www.oakville.ca/community-events/events/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville"
+    },
+    {
+      "title": "Parks, Recreation & Culture",
+      "url": "https://www.oakville.ca/parks-recreation-culture/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville"
+    },
+    {
+      "title": "Community & Events",
+      "url": "https://www.oakville.ca/community-events/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville"
+    },
+    {
+      "title": "Event Planning Plan your event at one of our recreation facilities, parks or open spaces. Municipal spaces can be great venues for community events of all sizes.",
+      "url": "https://www.oakville.ca/community-events/events/event-planning/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville"
+    },
+    {
+      "title": "Event Sponsorship and Partnerships Increase your brand presence by sponsoring Town-run events.",
+      "url": "https://www.oakville.ca/community-events/events/event-sponsorship-partnership/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville"
+    },
+    {
+      "title": "Town of Oakville Events Discover a wide range of events and activities organized or supported by the Town of Oakville.",
+      "url": "https://www.oakville.ca/community-events/events/town-of-oakville-events/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville"
+    },
+    {
+      "title": "Oakville Special Events Plan The Special Events Plan will provide a roadmap to guide future planning and decisions relating to special events in the community. Go to the Oakville S",
+      "url": "https://www.oakville.ca/town-hall/plans-strategies/oakville-special-events-plan/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville"
+    },
+    {
+      "title": "Event Planning Guidelines",
+      "url": "https://www.oakville.ca/community-events/events/event-planning/event-planning-guidelines/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville"
+    },
+    {
+      "title": "Facility Rentals",
+      "url": "https://www.oakville.ca/parks-recreation-culture/facilities-rentals/facility-rentals/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville"
+    },
+    {
+      "title": "Skip to main content",
+      "url": "https://www.hamilton.ca/things-do/festivals-events/events-calendar",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Vacant Unit Declaration",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/vacant-unit-tax",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Property Tax eBilling",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/property-tax-billing",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Administrative Penalty Notice",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/tickets-fines-penalties/administrative-penalty-notice",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Cat Registration",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/animals-pets/cats/register-your-cat",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Dog Licence",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/animals-pets/dogs/dog-licence",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Parking Penalty Notice",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/tickets-fines-penalties/parking-penalty-notice",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Property Tax",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/property-tax-billing/pay-your-property-tax",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Provincial Offences Notice",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/tickets-fines-penalties/provincial-offences-notice",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Event Planning & Rentals",
+      "url": "https://www.hamilton.ca/index%2ephp/things-do/venues-facilities-bookings",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Paramedic & Ambulance",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/emergency-services/paramedics/about-hamilton-paramedic-service",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "HSR Schedules & Detours",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/hsr/schedule-route-tools/schedules-detours",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Lane Restrictions & Road Closures",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/getting-around/driving-traffic/lane-restrictions-and-road-closures",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Waste Collection Schedule",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/garbage-recycling/waste-collection-schedule",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Market Rent Housing",
+      "url": "https://www.hamilton.ca/people-programs/cityhousing-hamilton/applicants/market-rent-housing",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "500 MacNab Street North",
+      "url": "https://www.hamilton.ca/people-programs/cityhousing-hamilton/development-revitalization/development-projects/500-macnab",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "257 King William Street",
+      "url": "https://www.hamilton.ca/people-programs/cityhousing-hamilton/development-revitalization/development-projects/257-king",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Red Hill Family Centre",
+      "url": "https://www.hamilton.ca/people-programs/early-years-child-care/child-care-services/red-hill-family-centre",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "EarlyON Child and Family Centres Locations",
+      "url": "https://www.hamilton.ca/people-programs/early-years-child-care/early-years-services/earlyon-child-and-family-centres",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Family & Pet Burial",
+      "url": "https://www.hamilton.ca/people-programs/hamilton-municipal-cemeteries/cremation-burial/family-pet-burial",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Historical Family Search",
+      "url": "https://www.hamilton.ca/people-programs/hamilton-municipal-cemeteries/products-services/historical-family-search",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Cemetery Events",
+      "url": "https://www.hamilton.ca/people-programs/hamilton-municipal-cemeteries/our-cemeteries/cemetery-events",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Eviction Prevention",
+      "url": "https://www.hamilton.ca/people-programs/housing-shelter/housing-supports/eviction-prevention",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Preventing & Ending Homelessness",
+      "url": "https://www.hamilton.ca/people-programs/housing-shelter/preventing-ending-homelessness",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "Emergency & Violence Against Women Shelters & Drop-in Programs",
+      "url": "https://www.hamilton.ca/people-programs/housing-shelter/preventing-ending-homelessness/emergency-and-violence-against-women",
+      "source": "City of Hamilton events calendar",
+      "scope": "Nearby Hamilton"
+    },
+    {
       "title": "Partners",
       "url": "https://supercrawl.ca/partners/",
       "source": "Supercrawl",
@@ -541,6 +771,156 @@
       "url": "https://supercrawl.ca/2026/05/all-ages-day-party/",
       "source": "Supercrawl",
       "scope": "Nearby Hamilton"
+    },
+    {
+      "title": "CALENDAR",
+      "url": "https://activeparents.ca/events-in-the-burlington-and-hamilton-area/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Submit Your Event",
+      "url": "https://activeparents.ca/event-submission/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Free Upcoming Events",
+      "url": "https://activeparents.ca/free-things-to-do-with-kids-this-month/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Sensory-Safe Events",
+      "url": "https://activeparents.ca/sensory-friendly-events/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Outdoor Activities",
+      "url": "https://activeparents.ca/outdoor-activities-in-burlington-oakville-and-hamilton/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Toddlers + Babies",
+      "url": "https://activeparents.ca/things-to-do-with-babies-and-toddlers-in-burlington-oakville-milton-and-hamilton/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Oakville",
+      "url": "https://activeparents.ca/oakville/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Burlington",
+      "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Hamilton",
+      "url": "https://activeparents.ca/hamilton/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Movies in the Park Grimsby",
+      "url": "https://activeparents.ca/calendar/movies-in-the-park-grimsby/2026-08-28/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Movies in the Park Grimsby",
+      "url": "https://activeparents.ca/series/movies-in-the-park-grimsby/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Free Open House & Trial Class – Ultimate Coders Burlington / Triple Stone Learning",
+      "url": "https://activeparents.ca/calendar/free-open-house-trial-class-ultimate-coders-burlington-triple-stone-learning/2026-08-28/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Free Open House & Trial Class – Ultimate Coders Burlington / Triple Stone Learning",
+      "url": "https://activeparents.ca/series/free-open-house-trial-class-ultimate-coders-burlington-triple-stone-learning/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Winona Peach Festival",
+      "url": "https://activeparents.ca/calendar/winona-peach-festival/2026-08-28/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Winona Peach Festival",
+      "url": "https://activeparents.ca/series/winona-peach-festival/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Outdoor Movie Night",
+      "url": "https://activeparents.ca/calendar/outdoor-movie-night/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Harry Potter – all 8 movies at Film.ca",
+      "url": "https://activeparents.ca/calendar/harry-potter-all-8-movies-at-film-ca/2026-08-28/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Harry Potter – all 8 movies at Film.ca",
+      "url": "https://activeparents.ca/series/harry-potter-all-8-movies-at-film-ca/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Hamilton Cardinals Home Game",
+      "url": "https://activeparents.ca/calendar/hamilton-cardinals-home-game/2026-08-28/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Hamilton Cardinals Home Game",
+      "url": "https://activeparents.ca/series/hamilton-cardinals-home-game/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Movie Night in the Park Lincoln",
+      "url": "https://activeparents.ca/calendar/movie-night-in-the-park-lincoln/2026-08-28/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Movie Night in the Park Lincoln",
+      "url": "https://activeparents.ca/series/movie-night-in-the-park-lincoln/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Join BurlingtonGreen for a Back to School Beach Clean Up!",
+      "url": "https://activeparents.ca/calendar/join-burlingtongreen-for-a-back-to-school-beach-clean-up/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Previous Events",
+      "url": "https://activeparents.ca/calendar/list/?eventDisplay=past",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
+    },
+    {
+      "title": "Next Events",
+      "url": "https://activeparents.ca/calendar/list/page/2/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby"
     }
   ]
 }
