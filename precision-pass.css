@@ -1,0 +1,110 @@
+/* Burlington News precision pass — shared desktop polish and responsive fallbacks. */
+
+/* Header search: one continuous control, same surface and border everywhere. */
+html body .header-search,
+html body .site-header .header-search,
+html body.publication-shell .header-search,
+html body.home-shell .header-search{
+  box-sizing:border-box!important;
+  display:flex!important;
+  align-items:center!important;
+  height:40px!important;
+  border:1px solid var(--line,#d8e2ec)!important;
+  border-radius:10px!important;
+  background:var(--card,#fff)!important;
+  box-shadow:none!important;
+  color:var(--ink,#18344d)!important;
+}
+html body .header-search input{
+  box-sizing:border-box!important;
+  flex:1 1 auto!important;
+  width:auto!important;
+  min-width:0!important;
+  height:38px!important;
+  margin:0!important;
+  padding:0 10px 0 13px!important;
+  border:0!important;
+  border-radius:10px 0 0 10px!important;
+  outline:0!important;
+  background:transparent!important;
+  color:inherit!important;
+  box-shadow:none!important;
+  appearance:none!important;
+}
+html body .header-search>svg{
+  box-sizing:border-box!important;
+  flex:0 0 40px!important;
+  width:40px!important;
+  height:38px!important;
+  margin:0!important;
+  padding:11px!important;
+  border:0!important;
+  background:transparent!important;
+  color:inherit!important;
+}
+html[data-theme="dark"] body .header-search{background:#111d27!important;border-color:#31414e!important;color:#edf3f7!important}
+html[data-theme="dark"] body .header-search input{background:transparent!important;color:#edf3f7!important}
+
+/* Homepage live layer: visually related, but traffic and breaking remain distinct. */
+@media(min-width:721px){
+  body.home-page .local-now{margin-bottom:8px!important}
+  body.home-page .local-now .now-card-shell{position:relative!important}
+  body.home-page .local-now .now-card{
+    position:relative!important;
+    min-height:58px!important;
+    padding:10px 84px 10px 14px!important;
+    border:1px solid #cad9e5!important;
+    border-left:4px solid #e5623d!important;
+    border-radius:12px!important;
+    background:#f5f8fb!important;
+  }
+  body.home-page .now-dots{display:none!important}
+  body.home-page .now-card-dots{
+    position:absolute!important;
+    z-index:4!important;
+    right:18px!important;
+    top:11px!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:5px!important;
+  }
+  body.home-page .now-card-dot-btn{display:grid!important;place-items:center!important;width:8px!important;height:8px!important;padding:0!important;border:0!important;background:transparent!important}
+  body.home-page .now-card-dot-btn>span{display:block!important;width:4px!important;height:4px!important;border-radius:50%!important;background:#a8b4bf!important}
+  body.home-page .now-card-dot-btn.is-active>span,
+  body.home-page .now-card-dot-btn[aria-current="true"]>span{width:5px!important;height:5px!important;background:#173753!important}
+  body.home-page .breaking-now[data-state="breaking"]{
+    border:1px solid #e3c4c0!important;
+    border-left:4px solid #c9483f!important;
+    background:#fff5f3!important;
+  }
+  body.home-page .breaking-now[data-state="breaking"] .breaking-heading>strong{color:#9f2f29!important}
+  body.home-page .breaking-now:not([data-state="breaking"]){border-left:4px solid #4d8745!important;background:#f5faf4!important}
+  body.home-page .pick-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important}
+  body.home-page .pick-card{min-width:0!important}
+}
+html[data-theme="dark"] body.home-page .local-now .now-card{background:#12202a!important;border-color:#344955!important;border-left-color:#e56b46!important}
+html[data-theme="dark"] body.home-page .breaking-now[data-state="breaking"]{background:#241716!important;border-color:#5d3733!important;border-left-color:#e06055!important}
+html[data-theme="dark"] body.home-page .breaking-now[data-state="breaking"] .breaking-heading>strong{color:#ffb0aa!important}
+html[data-theme="dark"] body.home-page .breaking-now:not([data-state="breaking"]){background:#142116!important;border-left-color:#68a95e!important}
+html[data-theme="dark"] body.home-page .now-card-dot-btn>span{background:#677785!important}
+html[data-theme="dark"] body.home-page .now-card-dot-btn.is-active>span,
+html[data-theme="dark"] body.home-page .now-card-dot-btn[aria-current="true"]>span{background:#f3f7fa!important}
+
+/* The third Top Pick is a desktop density improvement; mobile keeps the shorter two-card stack. */
+@media(max-width:720px){
+  body.home-page .pick-card:nth-child(n+3){display:none!important}
+}
+
+/* Article supporting graphics should read as secondary evidence, not another hero. */
+.article-supporting-graphic{
+  margin:28px auto!important;
+  max-width:760px!important;
+}
+.article-supporting-graphic img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  border-radius:10px!important;
+  background:#f5f7f6!important;
+}
+.article-supporting-graphic figcaption{margin-top:7px!important;color:var(--muted,#667585)!important;font-size:11px!important;line-height:1.35!important}
