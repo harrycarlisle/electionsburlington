@@ -3,8 +3,8 @@
 
 With GO_API_KEY, use the documented GO API for schedule + predictions.
 Without a key, fall back to Metrolinx's public GO GTFS schedule feed and keep the
-UI explicitly labelled Scheduled. This keeps Burlington -> Union and Burlington ->
-West Harbour useful before API registration is complete.
+UI explicitly labelled Scheduled. The payload deliberately keeps enough of the
+service day that an older successful refresh is still useful later that day.
 """
 from __future__ import annotations
 
@@ -28,6 +28,8 @@ UNION = "UN"
 WEST_HARBOUR = "WR"
 LINE = "LW"
 TARGETS = (("Union", UNION), ("West Harbour", WEST_HARBOUR))
+API_JOURNEY_LIMIT = 32
+GTFS_JOURNEY_LIMIT = 64
 
 
 def request(url: str) -> bytes:
@@ -77,7 +79,7 @@ def normalize_journeys(payload: dict) -> list[dict]:
             "tripNumber": first_trip_number(service),
             "scheduled": True,
         })
-    return output[:3]
+    return output[:API_JOURNEY_LIMIT]
 
 
 def next_service_rows(payload: dict) -> list[dict]:
@@ -135,12 +137,12 @@ def build_api(key: str, now: dt.datetime) -> dict:
     predicted = False
     routes = []
     for label, code in TARGETS:
-        journeys = normalize_journeys(get_json(f"Schedule/Journey/{date}/{BURLINGTON}/{code}/{start}/3", key))
+        journeys = normalize_journeys(get_json(f"Schedule/Journey/{date}/{BURLINGTON}/{code}/{start}/{API_JOURNEY_LIMIT}", key))
         if len(journeys) < 2:
-            extra = normalize_journeys(get_json(f"Schedule/Journey/{tomorrow}/{BURLINGTON}/{code}/0000/3", key))
+            extra = normalize_journeys(get_json(f"Schedule/Journey/{tomorrow}/{BURLINGTON}/{code}/0000/8", key))
             for item in extra:
                 item["nextServiceDay"] = True
-            journeys = (journeys + extra)[:3]
+            journeys = (journeys + extra)[:API_JOURNEY_LIMIT]
         predicted = attach_predictions(journeys, rows) or predicted
         routes.append({
             "origin": {"label": "Burlington", "stopCode": BURLINGTON},
@@ -148,12 +150,12 @@ def build_api(key: str, now: dt.datetime) -> dict:
             "journeys": journeys,
         })
     try:
-        inbound = normalize_journeys(get_json(f"Schedule/Journey/{date}/{UNION}/{BURLINGTON}/{start}/3", key))
+        inbound = normalize_journeys(get_json(f"Schedule/Journey/{date}/{UNION}/{BURLINGTON}/{start}/{API_JOURNEY_LIMIT}", key))
         if len(inbound) < 2:
-            extra = normalize_journeys(get_json(f"Schedule/Journey/{tomorrow}/{UNION}/{BURLINGTON}/0000/3", key))
+            extra = normalize_journeys(get_json(f"Schedule/Journey/{tomorrow}/{UNION}/{BURLINGTON}/0000/8", key))
             for item in extra:
                 item["nextServiceDay"] = True
-            inbound = (inbound + extra)[:3]
+            inbound = (inbound + extra)[:API_JOURNEY_LIMIT]
         inbound_pred = attach_predictions(inbound, rows)
         predicted = inbound_pred or predicted
         routes.append({
@@ -251,7 +253,7 @@ def collect_gtfs_journeys(stop_ids: dict[str, str], eligible_trips: dict, groupe
         route_payloads.append({
             "origin": {"label": "Burlington", "stopCode": BURLINGTON},
             "destination": {"label": label, "stopCode": code},
-            "journeys": candidates[:3],
+            "journeys": candidates[:GTFS_JOURNEY_LIMIT],
         })
     inbound = []
     origin_id = stop_ids.get("Union")
@@ -284,7 +286,7 @@ def collect_gtfs_journeys(stop_ids: dict[str, str], eligible_trips: dict, groupe
             "origin": {"label": "Union", "stopCode": UNION},
             "destination": {"label": "Burlington", "stopCode": BURLINGTON},
             "direction": "inbound",
-            "journeys": inbound[:3],
+            "journeys": inbound[:GTFS_JOURNEY_LIMIT],
         })
     return route_payloads
 
@@ -330,10 +332,9 @@ def build_gtfs(now: dt.datetime) -> dict:
     now_sec = now.hour * 3600 + now.minute * 60 + now.second
     route_payloads = collect_gtfs_journeys(stop_ids, eligible_trips, grouped, now_sec)
 
-    # Official GTFS only covers the current service date. Late evening can
-    # leave fewer than two remaining trips, so also search the next service
-    # date rather than inventing a cadence.
-    if any(len(route.get("journeys") or []) < 2 for route in route_payloads):
+    # Late evening can leave few current-day trips. Add verified next-service-day
+    # rows rather than inventing a cadence.
+    if any(len(route.get("journeys") or []) < 4 for route in route_payloads):
         next_day = now.date() + dt.timedelta(days=1)
         next_active = active_services(calendar, exceptions, next_day) if calendar or exceptions else {row["service_id"] for row in trips}
         next_trips = {row["trip_id"]: row for row in trips if row.get("service_id") in next_active and row.get("route_id") in lw_route_ids}
@@ -353,7 +354,7 @@ def build_gtfs(now: dt.datetime) -> dict:
                 item["nextServiceDay"] = True
                 current.setdefault("journeys", []).append(item)
                 seen.add(key)
-            current["journeys"] = current.get("journeys", [])[:3]
+            current["journeys"] = current.get("journeys", [])[:GTFS_JOURNEY_LIMIT]
 
     return {
         "generatedAt": now.isoformat(),
