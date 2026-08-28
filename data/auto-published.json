@@ -7,6 +7,8 @@
       "tag": "Environment",
       "path": "/articles/auto/2026-08-23-what-26-503-fish-revealed-about-a-damaged-local-marsh.html",
       "sourceUrl": "articles/fishway-26000-fish.html",
+      "image": "/assets/home/fishway.webp",
+      "alt": "The Burlington Canal Fishway and surrounding marsh habitat.",
       "editorialScore": 62
     },
     {
@@ -16,6 +18,8 @@
       "tag": "Candidates",
       "path": "/articles/auto/2026-08-24-candidate-nominations-have-closed-here-is-the-registered-field.html",
       "sourceUrl": "https://myvote.burlington.ca/for-voters/list-of-candidates/",
+      "visual": "candidate-collage",
+      "alt": "Available Burlington mayoral candidate portraits with a note that five candidates are registered.",
       "editorialScore": 81
     },
     {
@@ -25,6 +29,8 @@
       "tag": "Your ward",
       "path": "/articles/auto/2026-08-24-burlington-s-ward-map-changed-check-yours-before-voting.html",
       "sourceUrl": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/",
+      "image": "/assets/editorial/burlington-wards-2026.svg",
+      "alt": "Simplified orientation map of Burlington’s six 2026 voting wards.",
       "editorialScore": 81
     }
   ]
