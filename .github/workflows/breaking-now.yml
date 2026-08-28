@@ -16,8 +16,10 @@ on:
 permissions:
   contents: write
 
+# All bots that write generated data to main use the same queue. This prevents
+# a breaking-news commit from rebasing against a simultaneous GO/traffic update.
 concurrency:
-  group: burlington-news-breaking
+  group: burlington-news-main-writers
   cancel-in-progress: false
 
 jobs:
