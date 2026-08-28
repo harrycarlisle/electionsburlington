@@ -54,6 +54,24 @@ def parse_time(value: Any) -> dt.datetime | None:
         return None
 
 
+def effective_source_time(item: dict[str, Any]) -> dt.datetime | None:
+    """Time readers can legitimately interpret as publication/update time.
+
+    Discovery/build timestamps are deliberately excluded. A collector that does
+    not know the source time must leave the item undated rather than make it look new.
+    """
+    return parse_time(item.get("lastMeaningfulUpdate") or item.get("updatedAt") or item.get("publishedAt"))
+
+
+def source_age_hours(item: dict[str, Any], now: dt.datetime | None = None) -> float | None:
+    now = now or dt.datetime.now(TZ)
+    parsed = effective_source_time(item)
+    if not parsed:
+        return None
+    local_now = now if now.tzinfo else now.replace(tzinfo=TZ)
+    return max(0.0, (local_now - parsed.astimezone(local_now.tzinfo or TZ)).total_seconds() / 3600)
+
+
 def recency_score(published_at: Any, now: dt.datetime | None = None, ongoing: bool = False) -> float:
     """Suggested bands: <30m very high; 6–12h rarely Breaking Now."""
     now = now or dt.datetime.now(TZ)
@@ -135,7 +153,7 @@ def _weights() -> dict[str, float]:
 def breaking_score(item: dict[str, Any], now: dt.datetime | None = None) -> dict[str, Any]:
     now = now or dt.datetime.now(TZ)
     ongoing = str(item.get("status") or "").lower() in {"ongoing", "active"}
-    recency = recency_score(item.get("updatedAt") or item.get("publishedAt"), now, ongoing)
+    recency = recency_score(item.get("lastMeaningfulUpdate") or item.get("updatedAt") or item.get("publishedAt"), now, ongoing)
     local = float(item.get("localRelevance") or burlington_relevance(item))
     impact = impact_score(item)
     confidence = confidence_score(item)
@@ -163,24 +181,31 @@ def breaking_score(item: dict[str, Any], now: dt.datetime | None = None) -> dict
 
 
 def passes_breaking_threshold(item: dict[str, Any], now: dt.datetime | None = None) -> tuple[bool, str]:
-    """Ordinary bar: confidence >= 4 and strong impact. Community leads stay out unless labelled and exceptional."""
+    """Ordinary bar: confidence >= 4, strong impact, verified source time, and real freshness."""
+    now = now or dt.datetime.now(TZ)
     scored = breaking_score(dict(item), now)
     policy = load_policy().get("breakingNow") or {}
     min_score = float(policy.get("minScore") or 3.45)
     min_conf = float(policy.get("minConfidence") or 4.0)
     community_min = float(policy.get("communityMinConfidence") or 2.0)
+    max_breaking_age = float(policy.get("maxBreakingAgeHours") or 3.0)
     confidence = float(scored.get("confidenceScore") or 0)
     impact = float(scored.get("impactScore") or 0)
     recency = float(scored.get("recencyScore") or 0)
     local = float(scored.get("localRelevance") or 0)
     status = str(scored.get("verificationStatus") or "").lower()
     label = str(scored.get("label") or "").upper()
+    age = source_age_hours(scored, now)
 
+    if age is None:
+        return False, "source-time-unknown"
+    if age > max_breaking_age:
+        return False, "breaking-window-expired"
     if impact < 2.8:
         return False, "low-impact"
     if local < 2.4 and impact < 4.7:
         return False, "not-burlington-enough"
-    if recency < 1.2 and str(scored.get("status") or "").lower() not in {"ongoing", "active"}:
+    if recency < 1.2:
         return False, "stale"
     if confidence >= min_conf and scored["breakingScore"] >= min_score and impact >= 3.4:
         return True, "verified-high"
