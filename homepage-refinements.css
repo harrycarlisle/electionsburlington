@@ -89,6 +89,39 @@
   text-decoration:none!important;
 }
 
+/* Desktop live layer: traffic is orange, urgent breaking is red, ordinary updates stay neutral/green. */
+@media(min-width:901px){
+  body.home-page .home-main>.local-now{margin-bottom:14px!important}
+  body.home-page .local-now .now-panel{
+    position:relative!important;
+    border:1px solid var(--line,#dfe4ea)!important;
+    border-left:3px solid #df6848!important;
+    background:color-mix(in srgb,#df6848 4%,var(--paper,#fff))!important;
+    box-shadow:none!important
+  }
+  body.home-page .local-now .now-card{min-height:40px!important;padding:7px 0!important}
+  body.home-page .breaking-now:not([hidden]):not(:empty):not(.is-empty){
+    margin-bottom:24px!important;
+    padding:10px 14px!important;
+    border:1px solid var(--line,#dfe4ea)!important;
+    border-radius:10px!important;
+    box-shadow:none!important
+  }
+  body.home-page .breaking-now[data-state="breaking"]{
+    border-left:3px solid #c94c43!important;
+    border-color:color-mix(in srgb,#c94c43 40%,var(--line,#dfe4ea))!important;
+    background:color-mix(in srgb,#c94c43 6%,var(--paper,#fff))!important
+  }
+  body.home-page .breaking-now[data-state="breaking"] .breaking-heading>strong{color:#c94c43!important}
+  body.home-page .breaking-now[data-state="breaking"] .breaking-status i{background:#c94c43!important}
+  body.home-page .breaking-now:not([data-state="breaking"]){
+    border-left:3px solid #5d9457!important;
+    background:color-mix(in srgb,#5d9457 4%,var(--paper,#fff))!important
+  }
+  body.home-page .breaking-row{min-height:32px!important;padding:3px 0!important}
+  body.home-page .breaking-row strong{font-size:13.5px!important;line-height:1.18!important}
+}
+
 @media(max-width:720px){
   .home-main>.breaking-now{margin-left:46px!important;margin-right:46px!important}
   .breaking-now:not([hidden]):not(:empty):not(.is-empty){padding:8px 10px 9px!important;border-radius:11px!important}
@@ -151,3 +184,5 @@
 }
 html[data-theme="dark"] .breaking-status{color:#69bd62!important}
 html[data-theme="dark"] .home-work-band,html[data-theme="dark"] .explore-home-card{background:#101820!important}
+html[data-theme="dark"] body.home-page .local-now .now-panel{background:color-mix(in srgb,#df6848 7%,#101820)!important}
+html[data-theme="dark"] body.home-page .breaking-now[data-state="breaking"]{background:color-mix(in srgb,#c94c43 9%,#101820)!important}
