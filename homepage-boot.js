@@ -93,15 +93,13 @@
     setupMenu();
     setupLazySearch();
 
-    setTimeout(() => {
-      loadScript('/mobile-top-panel.js?v=20260828fresh4');
-      loadScript('/local-now.js?v=20260828fresh4', { module: true });
-      loadScript('/breaking-now.js?v=20260828fresh4');
-    }, 350);
-
-    setTimeout(() => {
-      loadScript('/home.js?v=20260828fresh4', { module: true });
-    }, 650);
+    // The hero, Newest list and editorial picks are rendered into index.html by
+    // scripts/render_homepage.py. Keeping those blocks server-rendered prevents
+    // a second client-side ranking pass from swapping the page after first paint.
+    // Only genuinely live utility rails refresh in the browser.
+    loadScript('/mobile-top-panel.js?v=20260828fresh4');
+    loadScript('/local-now.js?v=20260828fresh4', { module: true });
+    loadScript('/breaking-now.js?v=20260828fresh4');
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
