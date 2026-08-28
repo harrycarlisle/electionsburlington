@@ -30,7 +30,7 @@ def collect(now_iso: str, *, live: bool = False, cached: list[dict] | None = Non
             sourceType="official",
             sourceName=SOURCE,
             sourceUrl=raw.get("url") or raw.get("sourceUrl") or "",
-            publishedAt=raw.get("publishedAt") or now_iso,
+            publishedAt=raw.get("publishedAt") or raw.get("published") or "",
             discoveredAt=now_iso,
             verificationStatus="verified",
             confidenceScore=5.0,
