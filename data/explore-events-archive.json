@@ -1,0 +1,61 @@
+{
+  "updated": "2026-08-28T12:30:03-04:00",
+  "events": [
+    {
+      "id": "partial-lunar-eclipse-2026",
+      "title": "Watch Burlington’s partial lunar eclipse",
+      "category": "Night sky",
+      "start": "2026-08-27T21:23:00-04:00",
+      "end": "2026-08-28T03:01:00-04:00",
+      "dateLabel": "Thu, Aug. 27 · partial phase at 10:33 p.m.",
+      "location": "Visible across Burlington with a clear view of the sky",
+      "summary": "The partial eclipse begins at 10:33 p.m. and reaches maximum at 12:12 a.m.",
+      "details": "The penumbral phase starts at 9:23 p.m. The partial phase starts at 10:33 p.m., reaches maximum at 12:12 a.m. and ends at 1:51 a.m. No eye protection is required for a lunar eclipse.",
+      "bring": [
+        "A warm layer",
+        "Binoculars if you have them",
+        "A low-brightness flashlight"
+      ],
+      "source": "https://www.timeanddate.com/eclipse/in/canada/burlington?iso=20260828",
+      "sourceName": "Timeanddate.com; checked against NASA",
+      "image": "assets/explore/night-sky-mount-nemo.webp",
+      "imageAlt": "Night-sky illustration above the Niagara Escarpment. Not a Burlington photograph of this eclipse.",
+      "credit": "Burlington News illustration",
+      "illustration": true,
+      "scope": "Burlington",
+      "city": "Burlington",
+      "venue": "Anywhere with a clear view of the sky",
+      "travel": "Visible across Burlington",
+      "weight": 8,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "archivedAt": "2026-08-28T12:30:03-04:00"
+    },
+    {
+      "id": "movies-under-the-stars-2026-08-27",
+      "title": "Movies Under the Stars: Ice Princess",
+      "category": "Movie",
+      "start": "2026-08-27T20:00:00-04:00",
+      "end": "2026-08-27T23:00:00-04:00",
+      "dateLabel": "Thu, Aug. 27 · 8 p.m. at Kilbride Park",
+      "location": "Kilbride Park, Burlington",
+      "city": "Burlington",
+      "venue": "Kilbride Park",
+      "summary": "The City’s free outdoor movie series ends Thursday with Ice Princess.",
+      "details": "Access Storage Movies Under the Stars is a Thursday series. The official City schedule lists Ice Princess at Kilbride Park on August 27. Bring a chair or blanket. Weather can cancel the show; the City posts cancellations by 3 p.m. There is no verified Friday, August 28 movie night.",
+      "bring": [
+        "A lawn chair or blanket",
+        "Bug spray",
+        "A weather check before you leave"
+      ],
+      "source": "https://www.burlington.ca/en/news/festivals-and-events/movies-under-the-stars.aspx",
+      "sourceName": "City of Burlington",
+      "image": "assets/explore/movies-under-the-stars.webp",
+      "imageAlt": "Editorial reconstruction of a community outdoor movie night in a park. Not a photograph of Kilbride Park.",
+      "credit": "Burlington News editorial visual",
+      "illustration": true,
+      "scope": "Burlington",
+      "verifiedAt": "2026-08-26",
+      "archivedAt": "2026-08-28T12:30:03-04:00"
+    }
+  ]
+}
