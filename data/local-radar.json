@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T11:40:17.538140-04:00",
+  "generatedAt": "2026-08-29T14:55:47.995537-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -2430,7 +2430,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.6762273686111111
+        "rotation": 0.9477657342824075
       },
       "gates": {
         "evidence": "passed",
@@ -2720,7 +2720,7 @@
         "sourceConfidence": 2.8,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.15037544543981474
+        "rotation": 0.0
       },
       "gates": {
         "evidence": "passed",
@@ -2870,37 +2870,6 @@
       "eligibleEditorial": false
     },
     {
-      "id": "511:293767",
-      "detectedAt": "2026-08-26T16:56:06Z",
-      "score": 90,
-      "headline": "Continuous Construction on HWY 403 HAMILTON Eastbound On-ramp at Garden Ave, Brantford. ALL LANES CLOSED.",
-      "kind": "traffic",
-      "location": "HWY 403 HAMILTON",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "ba39dab0e5f44098",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 3.4,
-        "novelty": 3.0,
-        "familiarity": 2.5,
-        "consequence": 2.0,
-        "freshness": 1.5,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 56,
-      "eligibleRightNow": false,
-      "eligibleHomepage": false,
-      "eligibleNewest": false,
-      "eligibleEditorial": false
-    },
-    {
       "id": "511:294437",
       "detectedAt": "2026-08-27T23:57:44Z",
       "score": 75,
@@ -2932,31 +2901,31 @@
       "eligibleEditorial": false
     },
     {
-      "id": "511:293678",
-      "detectedAt": "2026-08-26T16:03:38Z",
+      "id": "511:293767",
+      "detectedAt": "2026-08-26T16:56:06Z",
       "score": 90,
-      "headline": "Nightly Construction on QEW Fort Erie Bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+      "headline": "Continuous Construction on HWY 403 HAMILTON Eastbound On-ramp at Garden Ave, Brantford. ALL LANES CLOSED.",
       "kind": "traffic",
-      "location": "QEW",
+      "location": "HWY 403 HAMILTON",
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "status": "review",
       "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
       "url": "https://511on.ca/",
-      "radarId": "d77ff4fb9bf040bc",
+      "radarId": "ba39dab0e5f44098",
       "signals": {
         "interest": 2.3,
         "relevance": 3.4,
-        "novelty": 2.5,
+        "novelty": 3.0,
         "familiarity": 2.5,
         "consequence": 2.0,
-        "freshness": 1.5,
+        "freshness": 0.7,
         "sourceConfidence": 5.0,
         "originality": 2.6,
         "visualStrength": 4.0,
         "rotation": 5.0
       },
-      "radarScore": 55,
+      "radarScore": 54,
       "eligibleRightNow": false,
       "eligibleHomepage": false,
       "eligibleNewest": false,
@@ -3019,6 +2988,37 @@
         "rotation": 5.0
       },
       "radarScore": 54,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": false,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "511:293678",
+      "detectedAt": "2026-08-26T16:03:38Z",
+      "score": 90,
+      "headline": "Nightly Construction on QEW Fort Erie Bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "d77ff4fb9bf040bc",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.0,
+        "freshness": 0.7,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 53,
       "eligibleRightNow": false,
       "eligibleHomepage": false,
       "eligibleNewest": false,
