@@ -3,6 +3,28 @@
   const MODE_KEY = 'burlington-news-theme-mode';
   const LAT = 43.3255;
   const LON = -79.7990;
+  const BRAND_TAB_ICON = '/logo-mark.png?v=20260829nb1';
+
+  function syncBrandIcons() {
+    const head = document.head;
+    if (!head) return;
+    const iconLinks = [...head.querySelectorAll('link[rel="icon"],link[rel="shortcut icon"]')];
+    if (!iconLinks.length) {
+      const icon = document.createElement('link');
+      icon.rel = 'icon';
+      icon.type = 'image/png';
+      icon.href = BRAND_TAB_ICON;
+      head.appendChild(icon);
+    } else {
+      iconLinks.forEach(icon => {
+        if (icon.getAttribute('href') !== BRAND_TAB_ICON) icon.setAttribute('href', BRAND_TAB_ICON);
+        icon.setAttribute('type', 'image/png');
+      });
+    }
+    head.querySelectorAll('link[rel="apple-touch-icon"]').forEach(icon => {
+      if (icon.getAttribute('href') !== BRAND_TAB_ICON) icon.setAttribute('href', BRAND_TAB_ICON);
+    });
+  }
 
   function pad(value) {
     return String(value).padStart(2, '0');
@@ -156,6 +178,10 @@
       return `${hour % 12 || 12}:${pad(minute)} ${suffix}`;
     }
   };
+
+  syncBrandIcons();
+  const brandIconObserver = new MutationObserver(syncBrandIcons);
+  brandIconObserver.observe(document.head, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
 
   apply(savedMode(), false);
 
