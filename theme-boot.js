@@ -4,6 +4,26 @@
   const LAT = 43.3255;
   const LON = -79.7990;
   const BRAND_TAB_ICON = '/logo-mark.png?v=20260829nb1';
+  const NAV_STYLE = '/site-nav-traffic-fixes.css?v=20260829nav4';
+
+  function syncNavStyle() {
+    const head = document.head;
+    if (!head) return;
+    const links = [...head.querySelectorAll('link[rel="stylesheet"]')]
+      .filter(link => (link.getAttribute('href') || '').includes('/site-nav-traffic-fixes.css'));
+    if (!links.length) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = NAV_STYLE;
+      link.dataset.style = 'site-nav-traffic-fixes';
+      head.appendChild(link);
+      return;
+    }
+    links.forEach(link => {
+      if (link.getAttribute('href') !== NAV_STYLE) link.setAttribute('href', NAV_STYLE);
+      link.dataset.style = 'site-nav-traffic-fixes';
+    });
+  }
 
   function syncBrandIcons() {
     const head = document.head;
@@ -179,9 +199,13 @@
     }
   };
 
+  syncNavStyle();
   syncBrandIcons();
-  const brandIconObserver = new MutationObserver(syncBrandIcons);
-  brandIconObserver.observe(document.head, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
+  const headAssetObserver = new MutationObserver(() => {
+    syncNavStyle();
+    syncBrandIcons();
+  });
+  headAssetObserver.observe(document.head, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
 
   apply(savedMode(), false);
 
