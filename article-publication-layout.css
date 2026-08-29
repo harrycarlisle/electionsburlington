@@ -96,8 +96,27 @@ body:not(.bn-story-page) .article-post-hero-meta .article-byline{
 .bn-story-page .article-related-card[href="/stories/sekisui-burlington-modular-factory/"] img{
   content:url('/assets/0B3CAFA4-0C73-4954-8FEE-842AC0C5CC98.png');
 }
+.bn-story-page .article-related-card[href="/stories/e-scooter-burlington-rules/"] img{
+  content:url('/assets/e-scooter.png');
+}
+.bn-story-page .article-related-card[href="/stories/burlington-rabies-bat-2026/"] img{
+  content:url('/assets/bat.png');
+}
+.bn-story-page .article-related-card[href="/stories/upper-middle-road-construction-2026/"] img{
+  content:url('/assets/upper-middle-construction.png');
+}
+.bn-story-page .article-related-card[href="/stories/ribfest-2026/"] img{
+  content:url('/assets/rib-fest.png');
+}
+.bn-story-page .article-related-card[href="/stories/back-to-school-2026/"] img,
+.bn-story-page .article-related-card[href="/stories/ontario-student-rights-school/"] img{
+  content:url('/assets/back-to-school.png');
+}
 .bn-story-page .article-related-card[href="/stories/millcroft-phase-2-138-homes/"] img{
   content:url('/assets/condo-construction.png');
+}
+.bn-story-page .article-related-card[href="/stories/nelson-quarry-tribunal-decision/"] img{
+  content:url('/assets/nelson-quarry.png');
 }
 
 @media(max-width:720px){
