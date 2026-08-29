@@ -20,6 +20,7 @@ import render_homepage as base
 FRESH_LOCAL_MAX_AGE = dt.timedelta(hours=18)
 UTILITY_CATEGORIES = {"traffic", "transit", "weather", "roads"}
 GENERIC_IMAGES = {"/assets/editorial/home-share.webp", "assets/editorial/home-share.webp"}
+ORIGINAL_CHOOSE_HERO = base.choose_hero
 
 
 def selected_breaking_visible(live: dict, archive: dict, now: dt.datetime) -> list[dict]:
@@ -61,7 +62,7 @@ def editorial_hero(home: dict, live: dict, archive: dict, now: dt.datetime):
     # but prevent the utility Breaking mode from taking over the hero.
     safe_live = dict(live)
     safe_live["mode"] = "local_update"
-    return base.choose_hero(home, safe_live, archive, now)
+    return ORIGINAL_CHOOSE_HERO(home, safe_live, archive, now)
 
 
 def main() -> int:
