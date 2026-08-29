@@ -1,5 +1,5 @@
 {
-  "generatedFor": "2026-08-28",
+  "generatedFor": "2026-08-29",
   "method": "Evidence/rights gates first. Placement blends interest, relevance, novelty, familiarity, consequence, source confidence, originality, visual strength, freshness, radar context and rotation pressure, then applies a diversity rerank so nearby homepage slots prefer different categories and subjects. Editorial story-overrides are applied before ranking so approved headlines and imagery persist across generated homepage surfaces.",
   "feature": [
     {
@@ -25,9 +25,85 @@
       "storyGoal": "Use collision counts, red-light camera totals and engineering records to explain why Burlington's worst intersection changes by the measure used, and why different problems keep appearing along Guelph Line.",
       "publishedAt": "2026-08-28T17:55:00-04:00",
       "datePublished": "2026-08-28T17:55:00-04:00",
-      "placementScore": 94,
+      "placementScore": 90,
       "status": "normal"
     },
+    {
+      "id": "burlington-flood-protection-90-million",
+      "kind": "original",
+      "headline": "Burlington spent more than $90 million on stormwater upgrades. Did it work?",
+      "deck": "Tuck Creek is one place to see what changed after 2014, and what remains unfinished.",
+      "label": "Infrastructure",
+      "labelEssential": true,
+      "topic": "development",
+      "subjects": [
+        "flooding",
+        "stormwater",
+        "tuck-creek",
+        "infrastructure"
+      ],
+      "url": "articles/burlington-flood-protection-90-million.html",
+      "image": "assets/D141A9BF-BA83-4191-BD57-C2051798D457.png",
+      "alt": "Flooding in Burlington during a major rain event.",
+      "credit": "Burlington News visual",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
+      "publishedAt": "2026-08-26T22:35:00-04:00",
+      "datePublished": "2026-08-26T22:35:00-04:00",
+      "placementScore": 84,
+      "status": "normal"
+    },
+    {
+      "id": "sekisui-burlington-modular-factory",
+      "kind": "original",
+      "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
+      "deck": "A $15-million Canadian hub is changing how some schools, homes and care buildings could be assembled.",
+      "label": "Made in Burlington",
+      "labelEssential": true,
+      "topic": "burlington",
+      "subjects": [
+        "made-in-burlington",
+        "manufacturing",
+        "modular-construction",
+        "housing"
+      ],
+      "url": "articles/sekisui-burlington-modular-factory.html",
+      "image": "assets/0B3CAFA4-0C73-4954-8FEE-842AC0C5CC98.png",
+      "alt": "A building under construction in an industrial factory setting.",
+      "credit": "Burlington News visual",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Turn a new investment announcement into an understandable Made in Burlington story about what the factory makes, how much work can happen indoors and the scale SEKISUI says it is targeting.",
+      "publishedAt": "2026-08-26T22:22:00-04:00",
+      "datePublished": "2026-08-26T22:22:00-04:00",
+      "placementScore": 83,
+      "status": "normal"
+    },
+    {
+      "id": "skyway-tunnels",
+      "kind": "feature",
+      "headline": "Ontario nearly replaced the Skyway with three tunnels.",
+      "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
+      "label": "Feature",
+      "labelEssential": true,
+      "topic": "history",
+      "subjects": [
+        "skyway",
+        "history"
+      ],
+      "url": "articles/skyway-bridge-story.html",
+      "image": "assets/home/skyway-reader.webp",
+      "alt": "The Burlington Bay James N. Allan Skyway",
+      "credit": "Dave Lauretti · CC BY 2.0",
+      "published": "2026-08-24",
+      "placementScore": 82,
+      "publishedAt": "2026-08-24T12:00:00-04:00",
+      "datePublished": "2026-08-24T12:00:00-04:00",
+      "status": "normal"
+    }
+  ],
+  "rail": [
     {
       "id": "costco-burloak-wyecroft",
       "kind": "original",
@@ -79,186 +155,53 @@
       "status": "normal"
     },
     {
-      "id": "sekisui-burlington-modular-factory",
-      "kind": "original",
-      "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
-      "deck": "A $15-million Canadian hub is changing how some schools, homes and care buildings could be assembled.",
-      "label": "Made in Burlington",
-      "labelEssential": true,
-      "topic": "burlington",
-      "subjects": [
-        "made-in-burlington",
-        "manufacturing",
-        "modular-construction",
-        "housing"
-      ],
-      "url": "articles/sekisui-burlington-modular-factory.html",
-      "image": "assets/0B3CAFA4-0C73-4954-8FEE-842AC0C5CC98.png",
-      "alt": "A building under construction in an industrial factory setting.",
-      "credit": "Burlington News visual",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Turn a new investment announcement into an understandable Made in Burlington story about what the factory makes, how much work can happen indoors and the scale SEKISUI says it is targeting.",
-      "publishedAt": "2026-08-26T22:22:00-04:00",
-      "datePublished": "2026-08-26T22:22:00-04:00",
-      "placementScore": 83,
-      "status": "normal"
-    }
-  ],
-  "rail": [
-    {
-      "id": "burlington-flood-protection-90-million",
-      "kind": "original",
-      "headline": "Burlington spent more than $90 million on stormwater upgrades. Did it work?",
-      "deck": "Tuck Creek is one place to see what changed after 2014, and what remains unfinished.",
-      "label": "Infrastructure",
-      "labelEssential": true,
-      "topic": "development",
-      "subjects": [
-        "flooding",
-        "stormwater",
-        "tuck-creek",
-        "infrastructure"
-      ],
-      "url": "articles/burlington-flood-protection-90-million.html",
-      "image": "assets/D141A9BF-BA83-4191-BD57-C2051798D457.png",
-      "alt": "Flooding in Burlington during a major rain event.",
-      "credit": "Burlington News visual",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
-      "publishedAt": "2026-08-26T22:35:00-04:00",
-      "datePublished": "2026-08-26T22:35:00-04:00",
-      "placementScore": 85,
-      "status": "normal"
-    },
-    {
-      "id": "burlington-road-closures-september-2026",
+      "id": "ontario-student-rights-school",
       "kind": "service",
-      "headline": "Two Burlington roads will stay fully closed into September.",
-      "deck": "The closures affect different parts of Burlington and have very different reopening timelines.",
-      "label": "Roads",
+      "headline": "Can a teacher take your phone? Seven Ontario school rules students should know.",
+      "deck": "Ontario schools have broad authority in some situations, but there are limits students and parents should know.",
+      "label": "Schools",
       "labelEssential": true,
-      "topic": "traffic",
+      "topic": "schools",
       "subjects": [
-        "road-construction",
-        "closures",
-        "spruce-avenue",
-        "britannia-road"
+        "school-policy"
       ],
-      "url": "articles/burlington-road-closures-september-2026.html",
-      "image": "assets/road-closure.png",
-      "alt": "Road construction and lane restrictions on a Burlington arterial road.",
+      "url": "articles/ontario-student-rights-school.html",
+      "image": "assets/back-to-school.png",
+      "alt": "Students walking toward a school entrance beside a yellow school bus.",
       "credit": "Burlington News visual",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Give Burlington residents a concise, verified list of significant full municipal road closures that continue into September, while separating them from ordinary lane restrictions.",
-      "publishedAt": "2026-08-26T22:24:00-04:00",
-      "datePublished": "2026-08-26T22:24:00-04:00",
-      "placementScore": 85,
-      "status": "normal"
-    },
-    {
-      "id": "e-scooter-burlington-rules",
-      "kind": "original",
-      "headline": "E-scooter injuries are rising. Burlington’s rules are stricter than you might think.",
-      "deck": "Most public roads and sidewalks in Burlington are still off-limits.",
-      "label": "Transportation",
-      "labelEssential": true,
-      "topic": "transportation",
-      "subjects": [
-        "e-scooter",
-        "safety",
-        "centennial-trail"
-      ],
-      "url": "articles/e-scooter-burlington-rules.html",
-      "image": "assets/e-scooter.png",
-      "alt": "A person riding an e-scooter along the right side of a suburban street.",
-      "credit": "Burlington News visual",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Connect the national rise in e-scooter injuries to Burlington’s narrow Centennial Trail-only rules.",
-      "publishedAt": "2026-08-26T17:03:00-04:00",
-      "datePublished": "2026-08-26T17:03:00-04:00",
-      "placementScore": 85,
+      "published": "2026-08-24",
+      "activeFrom": "2026-08-24",
+      "placementScore": 84,
+      "publishedAt": "2026-08-24T12:00:00-04:00",
+      "datePublished": "2026-08-24T12:00:00-04:00",
       "status": "normal"
     }
   ],
   "latest": [
     {
-      "id": "burlington-flood-protection-90-million",
+      "id": "costco-burloak-wyecroft",
       "kind": "original",
-      "headline": "Burlington spent more than $90 million on stormwater upgrades. Did it work?",
-      "deck": "Tuck Creek is one place to see what changed after 2014, and what remains unfinished.",
-      "label": "Infrastructure",
+      "headline": "Oakville approved a new Costco near Burloak. How will drivers get in?",
+      "deck": "The site sits close to the Burlington border, with a large parking plan and several proposed access points.",
+      "label": "Development",
       "labelEssential": true,
       "topic": "development",
       "subjects": [
-        "flooding",
-        "stormwater",
-        "tuck-creek",
-        "infrastructure"
+        "costco",
+        "burloak",
+        "wyecroft",
+        "traffic",
+        "retail-development"
       ],
-      "url": "articles/burlington-flood-protection-90-million.html",
-      "image": "assets/D141A9BF-BA83-4191-BD57-C2051798D457.png",
-      "alt": "Flooding in Burlington during a major rain event.",
+      "url": "articles/costco-burloak-wyecroft.html",
+      "image": "assets/costco.png",
+      "alt": "Costco storefront and entrance in a suburban shopping area.",
       "credit": "Burlington News visual",
       "published": "2026-08-26",
       "activeFrom": "2026-08-26",
-      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
-      "publishedAt": "2026-08-26T22:35:00-04:00",
-      "datePublished": "2026-08-26T22:35:00-04:00",
-      "placementScore": 85,
-      "status": "normal"
-    },
-    {
-      "id": "burlington-road-closures-september-2026",
-      "kind": "service",
-      "headline": "Two Burlington roads will stay fully closed into September.",
-      "deck": "The closures affect different parts of Burlington and have very different reopening timelines.",
-      "label": "Roads",
-      "labelEssential": true,
-      "topic": "traffic",
-      "subjects": [
-        "road-construction",
-        "closures",
-        "spruce-avenue",
-        "britannia-road"
-      ],
-      "url": "articles/burlington-road-closures-september-2026.html",
-      "image": "assets/road-closure.png",
-      "alt": "Road construction and lane restrictions on a Burlington arterial road.",
-      "credit": "Burlington News visual",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Give Burlington residents a concise, verified list of significant full municipal road closures that continue into September, while separating them from ordinary lane restrictions.",
-      "publishedAt": "2026-08-26T22:24:00-04:00",
-      "datePublished": "2026-08-26T22:24:00-04:00",
-      "placementScore": 85,
-      "status": "normal"
-    },
-    {
-      "id": "e-scooter-burlington-rules",
-      "kind": "original",
-      "headline": "E-scooter injuries are rising. Burlington’s rules are stricter than you might think.",
-      "deck": "Most public roads and sidewalks in Burlington are still off-limits.",
-      "label": "Transportation",
-      "labelEssential": true,
-      "topic": "transportation",
-      "subjects": [
-        "e-scooter",
-        "safety",
-        "centennial-trail"
-      ],
-      "url": "articles/e-scooter-burlington-rules.html",
-      "image": "assets/e-scooter.png",
-      "alt": "A person riding an e-scooter along the right side of a suburban street.",
-      "credit": "Burlington News visual",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "storyGoal": "Connect the national rise in e-scooter injuries to Burlington’s narrow Centennial Trail-only rules.",
-      "publishedAt": "2026-08-26T17:03:00-04:00",
-      "datePublished": "2026-08-26T17:03:00-04:00",
+      "storyGoal": "Explain the recently approved Costco site plan near Burloak through the practical questions Burlington drivers care about: status, parking, access and what is still unconfirmed.",
+      "publishedAt": "2026-08-26T22:23:00-04:00",
+      "datePublished": "2026-08-26T22:23:00-04:00",
       "placementScore": 85,
       "status": "normal"
     },
@@ -302,9 +245,35 @@
       "credit": "Burlington News visual",
       "published": "2026-08-24",
       "activeFrom": "2026-08-24",
-      "placementScore": 85,
+      "placementScore": 84,
       "publishedAt": "2026-08-24T12:00:00-04:00",
       "datePublished": "2026-08-24T12:00:00-04:00",
+      "status": "normal"
+    },
+    {
+      "id": "burlington-road-closures-september-2026",
+      "kind": "service",
+      "headline": "Two Burlington roads will stay fully closed into September.",
+      "deck": "The closures affect different parts of Burlington and have very different reopening timelines.",
+      "label": "Roads",
+      "labelEssential": true,
+      "topic": "traffic",
+      "subjects": [
+        "road-construction",
+        "closures",
+        "spruce-avenue",
+        "britannia-road"
+      ],
+      "url": "articles/burlington-road-closures-september-2026.html",
+      "image": "assets/road-closure.png",
+      "alt": "Road construction and lane restrictions on a Burlington arterial road.",
+      "credit": "Burlington News visual",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Give Burlington residents a concise, verified list of significant full municipal road closures that continue into September, while separating them from ordinary lane restrictions.",
+      "publishedAt": "2026-08-26T22:24:00-04:00",
+      "datePublished": "2026-08-26T22:24:00-04:00",
+      "placementScore": 83,
       "status": "normal"
     },
     {
@@ -330,57 +299,37 @@
       "storyGoal": "Turn a new investment announcement into an understandable Made in Burlington story about what the factory makes, how much work can happen indoors and the scale SEKISUI says it is targeting.",
       "publishedAt": "2026-08-26T22:22:00-04:00",
       "datePublished": "2026-08-26T22:22:00-04:00",
+      "placementScore": 83,
+      "status": "normal"
+    },
+    {
+      "id": "e-scooter-burlington-rules",
+      "kind": "original",
+      "headline": "E-scooter injuries are rising. Burlington’s rules are stricter than you might think.",
+      "deck": "Most public roads and sidewalks in Burlington are still off-limits.",
+      "label": "Transportation",
+      "labelEssential": true,
+      "topic": "transportation",
+      "subjects": [
+        "e-scooter",
+        "safety",
+        "centennial-trail"
+      ],
+      "url": "articles/e-scooter-burlington-rules.html",
+      "image": "assets/e-scooter.png",
+      "alt": "A person riding an e-scooter along the right side of a suburban street.",
+      "credit": "Burlington News visual",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Connect the national rise in e-scooter injuries to Burlington’s narrow Centennial Trail-only rules.",
+      "publishedAt": "2026-08-26T17:03:00-04:00",
+      "datePublished": "2026-08-26T17:03:00-04:00",
       "placementScore": 83,
       "status": "normal"
     }
   ],
   "picks": [
     {
-      "id": "burlington-crime-analysis-2026",
-      "kind": "original",
-      "headline": "How bad is crime in Burlington, really?",
-      "deck": "One category of crime is moving the wrong way.",
-      "label": "Public safety",
-      "labelEssential": true,
-      "topic": "public-safety",
-      "subjects": [
-        "crime"
-      ],
-      "url": "articles/how-bad-is-burlington-crime.html",
-      "image": "assets/stories/public-safety/halton-police-crime-burlington.webp",
-      "alt": "Halton Regional Police vehicle behind crime-scene tape.",
-      "credit": "Burlington News",
-      "published": "2026-08-25",
-      "activeFrom": "2026-08-25",
-      "storyGoal": "Help Burlington readers understand what the best comparable crime data actually says, and where a regional score cannot answer a city-level question.",
-      "placementScore": 85,
-      "publishedAt": "2026-08-25T12:00:00-04:00",
-      "datePublished": "2026-08-25T12:00:00-04:00",
-      "status": "normal"
-    },
-    {
-      "id": "ontario-student-rights-school",
-      "kind": "service",
-      "headline": "Can a teacher take your phone? Seven Ontario school rules students should know.",
-      "deck": "Ontario schools have broad authority in some situations, but there are limits students and parents should know.",
-      "label": "Schools",
-      "labelEssential": true,
-      "topic": "schools",
-      "subjects": [
-        "school-policy"
-      ],
-      "url": "articles/ontario-student-rights-school.html",
-      "image": "assets/back-to-school.png",
-      "alt": "Students walking toward a school entrance beside a yellow school bus.",
-      "credit": "Burlington News visual",
-      "published": "2026-08-24",
-      "activeFrom": "2026-08-24",
-      "placementScore": 85,
-      "publishedAt": "2026-08-24T12:00:00-04:00",
-      "datePublished": "2026-08-24T12:00:00-04:00",
-      "status": "normal"
-    },
-    {
       "id": "sekisui-burlington-modular-factory",
       "kind": "original",
       "headline": "Up to 90% of a building can now be made inside this Burlington factory.",
@@ -404,6 +353,53 @@
       "publishedAt": "2026-08-26T22:22:00-04:00",
       "datePublished": "2026-08-26T22:22:00-04:00",
       "placementScore": 83,
+      "status": "normal"
+    },
+    {
+      "id": "e-scooter-burlington-rules",
+      "kind": "original",
+      "headline": "E-scooter injuries are rising. Burlington’s rules are stricter than you might think.",
+      "deck": "Most public roads and sidewalks in Burlington are still off-limits.",
+      "label": "Transportation",
+      "labelEssential": true,
+      "topic": "transportation",
+      "subjects": [
+        "e-scooter",
+        "safety",
+        "centennial-trail"
+      ],
+      "url": "articles/e-scooter-burlington-rules.html",
+      "image": "assets/e-scooter.png",
+      "alt": "A person riding an e-scooter along the right side of a suburban street.",
+      "credit": "Burlington News visual",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "storyGoal": "Connect the national rise in e-scooter injuries to Burlington’s narrow Centennial Trail-only rules.",
+      "publishedAt": "2026-08-26T17:03:00-04:00",
+      "datePublished": "2026-08-26T17:03:00-04:00",
+      "placementScore": 83,
+      "status": "normal"
+    },
+    {
+      "id": "skyway-tunnels",
+      "kind": "feature",
+      "headline": "Ontario nearly replaced the Skyway with three tunnels.",
+      "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
+      "label": "Feature",
+      "labelEssential": true,
+      "topic": "history",
+      "subjects": [
+        "skyway",
+        "history"
+      ],
+      "url": "articles/skyway-bridge-story.html",
+      "image": "assets/home/skyway-reader.webp",
+      "alt": "The Burlington Bay James N. Allan Skyway",
+      "credit": "Dave Lauretti · CC BY 2.0",
+      "published": "2026-08-24",
+      "placementScore": 82,
+      "publishedAt": "2026-08-24T12:00:00-04:00",
+      "datePublished": "2026-08-24T12:00:00-04:00",
       "status": "normal"
     }
   ],
@@ -411,19 +407,19 @@
     {
       "id": "which-burlington-intersection-is-worst",
       "state": "eligible",
-      "placementScore": 94,
+      "placementScore": 90,
       "reason": "all gates passed"
     },
     {
       "id": "burlington-flood-protection-90-million",
       "state": "eligible",
-      "placementScore": 85,
+      "placementScore": 84,
       "reason": "all gates passed"
     },
     {
       "id": "burlington-road-closures-september-2026",
       "state": "eligible",
-      "placementScore": 85,
+      "placementScore": 83,
       "reason": "all gates passed"
     },
     {
@@ -441,7 +437,7 @@
     {
       "id": "e-scooter-burlington-rules",
       "state": "eligible",
-      "placementScore": 85,
+      "placementScore": 83,
       "reason": "all gates passed"
     },
     {
@@ -453,13 +449,13 @@
     {
       "id": "nostalgia-games-cafe-closure",
       "state": "eligible",
-      "placementScore": 81,
+      "placementScore": 79,
       "reason": "all gates passed"
     },
     {
       "id": "data-centre-not-ai",
       "state": "eligible",
-      "placementScore": 83,
+      "placementScore": 82,
       "reason": "all gates passed"
     },
     {
@@ -489,7 +485,7 @@
     {
       "id": "ontario-student-rights-school",
       "state": "eligible",
-      "placementScore": 85,
+      "placementScore": 84,
       "reason": "all gates passed"
     },
     {
@@ -501,7 +497,7 @@
     {
       "id": "millcroft-phase-2-138-homes",
       "state": "eligible",
-      "placementScore": 68,
+      "placementScore": 67,
       "reason": "all gates passed"
     },
     {
@@ -531,7 +527,7 @@
     {
       "id": "burlington-ultimate-team-0-24",
       "state": "eligible",
-      "placementScore": 76,
+      "placementScore": 75,
       "reason": "all gates passed"
     }
   ]
