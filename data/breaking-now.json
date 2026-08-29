@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T11:44:56.562691-04:00",
+  "generatedAt": "2026-08-29T14:40:12.831841-04:00",
   "mode": "local_update",
   "label": "Local Update",
   "method": "No fresh Burlington/Halton update was available, so the rail used a verified regional fallback from a neighbouring official source.",
@@ -29,7 +29,7 @@
       "affectedArea": null,
       "publishedAt": "2026-08-28T16:00:00-04:00",
       "updatedAt": null,
-      "discoveredAt": "2026-08-29T11:44:56.562691-04:00",
+      "discoveredAt": "2026-08-29T14:40:12.831841-04:00",
       "severity": null,
       "impactScore": 4.5,
       "confidenceScore": 5.0,
