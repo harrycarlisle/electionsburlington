@@ -81,6 +81,25 @@ body:not(.bn-story-page) .article-post-hero-meta .article-byline{
   font:600 .7rem/1.4 var(--font-sans,Inter,ui-sans-serif,Arial,sans-serif);
 }
 
+/* Article recommendation cards use the approved raster/photo presentation
+   images. Keep maps, timelines and schematics inside the stories where they
+   add context instead of using them as small thumbnails. */
+.bn-story-page .article-related-card[href="/stories/burlington-flood-protection-90-million/"] img{
+  content:url('/assets/D141A9BF-BA83-4191-BD57-C2051798D457.png');
+}
+.bn-story-page .article-related-card[href="/stories/burlington-road-closures-september-2026/"] img{
+  content:url('/assets/road-closure.png');
+}
+.bn-story-page .article-related-card[href="/stories/costco-burloak-wyecroft/"] img{
+  content:url('/assets/costco.png');
+}
+.bn-story-page .article-related-card[href="/stories/sekisui-burlington-modular-factory/"] img{
+  content:url('/assets/0B3CAFA4-0C73-4954-8FEE-842AC0C5CC98.png');
+}
+.bn-story-page .article-related-card[href="/stories/millcroft-phase-2-138-homes/"] img{
+  content:url('/assets/condo-construction.png');
+}
+
 @media(max-width:720px){
   .bn-story-page .article-post-hero-meta{
     width:100%;
