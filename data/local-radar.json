@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T07:12:06.821857-04:00",
+  "generatedAt": "2026-08-29T11:40:17.538140-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -2398,6 +2398,64 @@
       "eligibleEditorial": true
     },
     {
+      "id": "burlington-flood-protection-90-million",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Burlington has spent more than $90 million on stormwater since 2015. What changed?",
+      "deck": "Tuck Creek shows what the money has changed, and why some major flood work is still unfinished.",
+      "label": "Infrastructure",
+      "labelEssential": true,
+      "url": "articles/burlington-flood-protection-90-million.html",
+      "image": "assets/editorial/burlington-flood-investment-timeline.svg",
+      "alt": "Timeline showing Burlington flood protection work from the 2014 storm through 2028.",
+      "credit": "Burlington News graphic",
+      "published": "2026-08-26",
+      "activeFrom": "2026-08-26",
+      "activeUntil": "2026-10-31",
+      "publishedAt": "2026-08-26T22:35:00-04:00",
+      "datePublished": "2026-08-26T22:35:00-04:00",
+      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
+      "verificationTier": "primary",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.8,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 0.7,
+        "sourceConfidence": 5.0,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 0.6762273686111111
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "development",
+      "subjects": [
+        "flooding",
+        "stormwater",
+        "tuck-creek",
+        "infrastructure"
+      ],
+      "lastHomepageLead": "2026-08-28",
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "e51a7f4a6fa434d3",
+      "radarScore": 64,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
       "id": "nostalgia-games-cafe-closure",
       "kind": "original",
       "surfaces": [
@@ -2495,64 +2553,6 @@
       "verificationTier": "reported",
       "radarId": "8b70ba6fd6153946",
       "radarScore": 64,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": false,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "burlington-flood-protection-90-million",
-      "kind": "original",
-      "surfaces": [
-        "feature",
-        "latest",
-        "rail"
-      ],
-      "headline": "Burlington has spent more than $90 million on stormwater since 2015. What changed?",
-      "deck": "Tuck Creek shows what the money has changed, and why some major flood work is still unfinished.",
-      "label": "Infrastructure",
-      "labelEssential": true,
-      "url": "articles/burlington-flood-protection-90-million.html",
-      "image": "assets/editorial/burlington-flood-investment-timeline.svg",
-      "alt": "Timeline showing Burlington flood protection work from the 2014 storm through 2028.",
-      "credit": "Burlington News graphic",
-      "published": "2026-08-26",
-      "activeFrom": "2026-08-26",
-      "activeUntil": "2026-10-31",
-      "publishedAt": "2026-08-26T22:35:00-04:00",
-      "datePublished": "2026-08-26T22:35:00-04:00",
-      "storyGoal": "Explain what Burlington's more than $90 million in stormwater investment has physically changed, using Tuck Creek as a concrete example while being explicit about unfinished and paused work.",
-      "verificationTier": "primary",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.8,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 0.7,
-        "sourceConfidence": 5.0,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 0.30375708428240755
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "topic": "development",
-      "subjects": [
-        "flooding",
-        "stormwater",
-        "tuck-creek",
-        "infrastructure"
-      ],
-      "lastHomepageLead": "2026-08-28",
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "e51a7f4a6fa434d3",
-      "radarScore": 63,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": false,
@@ -2720,7 +2720,7 @@
         "sourceConfidence": 2.8,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.7736815178240741
+        "rotation": 0.15037544543981474
       },
       "gates": {
         "evidence": "passed",
