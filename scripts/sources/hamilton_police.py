@@ -1,4 +1,4 @@
-"""Hamilton Police Service — only when the event can affect Burlington."""
+"""Hamilton Police Service — Burlington-relevant by default, regional fallback on request."""
 
 from __future__ import annotations
 
@@ -83,7 +83,21 @@ def _article_details(url: str) -> dict[str, str]:
     return {"publishedAt": published, "summary": summary}
 
 
-def collect(now_iso: str, *, live: bool = False, cached: list[dict] | None = None) -> list[dict[str, Any]]:
+def collect(
+    now_iso: str,
+    *,
+    live: bool = False,
+    cached: list[dict] | None = None,
+    include_regional: bool = False,
+) -> list[dict[str, Any]]:
+    """Collect Hamilton Police items.
+
+    Normal callers receive only events that pass Burlington relevance. The
+    Breaking/Local Update refresh job can request ``include_regional`` so a
+    fresh, significant Hamilton item may be used only as a last-resort regional
+    Local Update when Burlington/Halton has gone quiet. Those rows are marked
+    ``regionalFallback`` and are never intended to qualify as Breaking News.
+    """
     rows = list(cached or [])
     for raw in try_feeds(FEEDS, live=live):
         rows.append(raw)
@@ -121,6 +135,11 @@ def collect(now_iso: str, *, live: bool = False, cached: list[dict] | None = Non
         ok, reason = police_relevance(SOURCE, item)
         if not ok:
             item["rejectReason"] = reason
-            continue
+            if not include_regional:
+                continue
+            item["regionalFallback"] = True
+            # Deliberately below direct Burlington/Halton relevance. This only
+            # lets the regional fallback compete after the normal rail is stale.
+            item["localRelevance"] = 2.5
         items.append(item)
     return items
