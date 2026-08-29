@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T00:12:08.125771-04:00",
+  "generatedAt": "2026-08-29T07:12:06.821857-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -2269,7 +2269,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 3.5644385386342594
+        "rotation": 3.75
       },
       "gates": {
         "evidence": "passed",
@@ -2533,7 +2533,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.0
+        "rotation": 0.30375708428240755
       },
       "gates": {
         "evidence": "passed",
@@ -2609,74 +2609,6 @@
       "eligibleEditorial": true
     },
     {
-      "id": "which-burlington-intersection-is-worst",
-      "kind": "original",
-      "surfaces": [
-        "feature",
-        "latest",
-        "rail"
-      ],
-      "headline": "Which Burlington intersection is actually the worst?",
-      "deck": "The corner with the most crashes is not the one with the most red-light tickets. The public records point to a larger problem along one of Burlington's busiest roads.",
-      "label": "Road safety",
-      "labelEssential": true,
-      "url": "articles/which-burlington-intersection-is-worst.html",
-      "image": "assets/burling-car-crash.png",
-      "alt": "Illustration of a damaged car and motorcycle at an intersection; not a photograph of a collision discussed in this article.",
-      "credit": "Burlington News illustration",
-      "imageRights": "User-supplied editorial illustration",
-      "published": "2026-08-28",
-      "activeFrom": "2026-08-28",
-      "activeUntil": "2026-10-31",
-      "publishedAt": "2026-08-28T17:55:00-04:00",
-      "datePublished": "2026-08-28T17:55:00-04:00",
-      "storyGoal": "Use collision counts, red-light camera totals and engineering records to explain why Burlington's worst intersection changes by the measure used, and why different problems keep appearing along Guelph Line.",
-      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
-      "editorialWorkflow": "ready",
-      "verificationTier": "Primary records with clearly attributed secondary summaries",
-      "sources": [
-        "https://www.halton.ca/for-residents/regional-roads",
-        "https://www.halton.ca/for-residents/regional-roads/red-light-cameras",
-        "https://www.halton.ca/for-residents/infrastructure-and-growth/municipal-class-environmental-assessment-studies/guelph-line-harvester-road",
-        "https://www.burlingtontoday.com/local-news/burlington-intersection-tops-list-for-most-crashes-in-halton-11262734",
-        "https://www.burlingtontoday.com/local-news/burlington-intersections-among-haltons-top-red-light-camera-violations-11279788"
-      ],
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.3,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 1.5,
-        "sourceConfidence": 2.8,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 1.0514751413194445
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "topic": "traffic",
-      "subjects": [
-        "intersections",
-        "road-safety",
-        "guelph-line",
-        "traffic-data"
-      ],
-      "lastHomepageLead": "2026-08-28",
-      "source": "Burlington News",
-      "sourceType": "official",
-      "radarId": "8cc1d7aaa391b96b",
-      "radarScore": 62,
-      "eligibleRightNow": false,
-      "eligibleHomepage": false,
-      "eligibleNewest": false,
-      "eligibleEditorial": true
-    },
-    {
       "title": "Infrastructure and Growth",
       "url": "https://www.halton.ca/for-residents/infrastructure-and-growth",
       "source": "Halton Region",
@@ -2744,6 +2676,74 @@
       "eligibleHomepage": true,
       "eligibleNewest": false,
       "eligibleEditorial": false
+    },
+    {
+      "id": "which-burlington-intersection-is-worst",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Which Burlington intersection is actually the worst?",
+      "deck": "The corner with the most crashes is not the one with the most red-light tickets. The public records point to a larger problem along one of Burlington's busiest roads.",
+      "label": "Road safety",
+      "labelEssential": true,
+      "url": "articles/which-burlington-intersection-is-worst.html",
+      "image": "assets/burling-car-crash.png",
+      "alt": "Illustration of a damaged car and motorcycle at an intersection; not a photograph of a collision discussed in this article.",
+      "credit": "Burlington News illustration",
+      "imageRights": "User-supplied editorial illustration",
+      "published": "2026-08-28",
+      "activeFrom": "2026-08-28",
+      "activeUntil": "2026-10-31",
+      "publishedAt": "2026-08-28T17:55:00-04:00",
+      "datePublished": "2026-08-28T17:55:00-04:00",
+      "storyGoal": "Use collision counts, red-light camera totals and engineering records to explain why Burlington's worst intersection changes by the measure used, and why different problems keep appearing along Guelph Line.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary records with clearly attributed secondary summaries",
+      "sources": [
+        "https://www.halton.ca/for-residents/regional-roads",
+        "https://www.halton.ca/for-residents/regional-roads/red-light-cameras",
+        "https://www.halton.ca/for-residents/infrastructure-and-growth/municipal-class-environmental-assessment-studies/guelph-line-harvester-road",
+        "https://www.burlingtontoday.com/local-news/burlington-intersection-tops-list-for-most-crashes-in-halton-11262734",
+        "https://www.burlingtontoday.com/local-news/burlington-intersections-among-haltons-top-red-light-camera-violations-11279788"
+      ],
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 0.7736815178240741
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "traffic",
+      "subjects": [
+        "intersections",
+        "road-safety",
+        "guelph-line",
+        "traffic-data"
+      ],
+      "lastHomepageLead": "2026-08-29",
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "8cc1d7aaa391b96b",
+      "radarScore": 61,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
     },
     {
       "id": "511:293205",
