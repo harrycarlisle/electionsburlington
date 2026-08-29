@@ -31,13 +31,13 @@
   },
   "homepageTraffic": {
     "label": "Traffic",
-    "title": "QEW → Toronto",
+    "title": "QEW → Hamilton",
     "context": "Live route check",
-    "impact": "30 cameras along this route",
+    "impact": "11 cameras along this route",
     "freshness": "",
-    "url": "/traffic/?destination=toronto",
+    "url": "/traffic/?destination=hamilton",
     "alert": false,
-    "advisory": "QEW Toronto-bound on-ramp closed at Dorval Drive"
+    "advisory": ""
   },
   "routes": {
     "toronto": {
@@ -1432,6 +1432,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-08-29T14:48:55.382669-04:00"
+    "updatedAt": "2026-08-29T15:50:02.099248-04:00"
   }
 }
