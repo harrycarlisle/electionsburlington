@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-28T19:05:26.748769-04:00",
+  "updatedAt": "2026-08-28T20:35:04.399666-04:00",
   "items": {
     "81a263fb84a5d3ef": {
       "firstSeenAt": "2026-08-25T14:06:50.332498-04:00",
@@ -450,7 +450,9 @@
     "8cc1d7aaa391b96b": {
       "firstSeenAt": "2026-08-28T19:05:26.748769-04:00",
       "lastSeenAt": "2026-08-28T19:05:26.748769-04:00",
-      "headline": "Which Burlington intersection is actually the worst?"
+      "headline": "Which Burlington intersection is actually the worst?",
+      "homepageShows": 1,
+      "lastHomepageAt": "2026-08-28T20:35:04.399666-04:00"
     }
   }
 }
