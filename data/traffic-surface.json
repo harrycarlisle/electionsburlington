@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T14:48:51.127604-04:00",
+  "generatedAt": "2026-08-29T17:40:51.812147-04:00",
   "source": "Ontario 511 events + OSRM geometry + camera inventory",
   "licence": "Open Government Licence - Ontario",
   "incidents": [
@@ -48,12 +48,11 @@
       "geometrySource": "osrm",
       "metres": 51679.9,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "30 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on Hwy 427 near Dundas Street",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "QEW Toronto-bound on-ramp closed at Dorval Drive"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -77,6 +76,26 @@
           "updatedLabel": ""
         },
         {
+          "id": "511:295107",
+          "title": "Collision on Hwy 427 near Dundas Street",
+          "rawHeadline": "Collision on HWY 427 Southbound EXPRESS at DUNDAS STREET, Toronto. Left shoulder and left lane closed.",
+          "roadway": "Hwy 427",
+          "direction": "Toronto-bound",
+          "type": "collision",
+          "facility": "mainline",
+          "nearestRoad": "Dundas Street",
+          "municipality": "Toronto",
+          "context": "Toronto · Dundas Street / Hwy 427",
+          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
+          "latitude": 43.62833109,
+          "longitude": -79.55690389,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
           "id": "511:292475",
           "title": "Construction on QEW near Brant Street",
           "rawHeadline": "Nightly Construction on QEW Fort Erie Bound  between GUELPH LINE and BRANT STREET, Burlington. 2 Alternating Lane(s).",
@@ -90,26 +109,6 @@
           "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
           "latitude": 43.35202,
           "longitude": -79.80386,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
-        },
-        {
-          "id": "511:292480",
-          "title": "Construction on QEW near Brant Street",
-          "rawHeadline": "Nightly Construction on QEW Toronto bound  between BRANT STREET and GUELPH LINE, Burlington. 2 Alternating Lane(s).",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "construction",
-          "facility": "mainline",
-          "nearestRoad": "Brant Street",
-          "municipality": "Burlington",
-          "context": "Burlington · Brant Street / QEW",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.341724,
-          "longitude": -79.82237,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -1432,6 +1431,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-08-29T15:50:02.099248-04:00"
+    "updatedAt": "2026-08-29T17:40:56.224228-04:00"
   }
 }
