@@ -1,0 +1,38 @@
+name: Traffic flow
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/build_here_traffic.py'
+      - '.github/workflows/traffic-flow.yml'
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: burlington-news-main-writers
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh QEW traffic flow
+        env:
+          HERE_API_KEY: ${{ secrets.HERE_API_KEY }}
+        run: python scripts/build_here_traffic.py
+      - name: Commit changed traffic flow
+        run: >-
+          python scripts/safe_bot_commit.py
+          --name "burlington-news-bot"
+          --message "Update Burlington traffic flow"
+          data/traffic-flow.json data/traffic-flow-history.json
