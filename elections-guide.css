@@ -69,17 +69,17 @@
 .mobile-election-tools{display:none}
 
 @media(max-width:720px){
-  main#main.wrap{padding-top:28px!important}
-  #candidates{margin-bottom:30px}
-  #candidates>.eyebrow{display:block;margin-bottom:7px}
-  #candidates>h1{margin:0 0 12px;font-size:clamp(38px,11vw,46px);line-height:1.01}
-  .section-intro{margin:0 0 20px;font-size:15px;line-height:1.45}
+  main#main.wrap{padding-top:40px!important}
+  #candidates{margin-bottom:34px}
+  #candidates>.eyebrow{display:block;margin-bottom:12px}
+  #candidates>h1{margin:0 0 18px;font-size:clamp(38px,11vw,46px);line-height:1.01}
+  .section-intro{margin:0 0 26px;font-size:15px;line-height:1.5}
   .election-layout{grid-template-columns:1fr;gap:0}
-  .candidate-picker{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:10px;margin:0}
+  .candidate-picker{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px;margin:0}
   .candidate-picker label{margin:0}
   .candidate-picker select{min-height:46px;max-width:none;border-radius:12px}
   .candidate-strip{display:none}
-  .mobile-election-tools{display:block;margin:12px 0 18px;padding:13px;border:1px solid var(--line,#d8e2ec);border-radius:14px;background:var(--soft,#f4f8fc)}
+  .mobile-election-tools{display:block;margin:16px 0 22px;padding:13px;border:1px solid var(--line,#d8e2ec);border-radius:14px;background:var(--soft,#f4f8fc)}
   .mobile-h2h-label{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:9px}
   .mobile-h2h-label strong{color:var(--navy,#0b335f);font:800 14px/1.2 Inter,Arial,sans-serif}
   .mobile-h2h-label span{color:var(--muted,#5d7287);font:600 11px/1.2 Inter,Arial,sans-serif}
