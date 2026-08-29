@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Add one fresh regional news item when Local Update is otherwise just utility data.
+"""Add one fresh regional news item when Local Update is otherwise utility-only.
 
 The traffic/GO utility already has its own prominent rail. When the Local Update
-selector only finds traffic, this pass may add a recent, verified Hamilton Police
-item so the news rail does not become a duplicate traffic ticker. It never changes
-Breaking News, never changes the main homepage/story ranking, and never promotes
-an unknown-time item as fresh.
+selector only finds service notices, civic reminders or traffic, this pass may
+add a recent, verified Hamilton Police item so the news rail stays useful. It
+never changes Breaking News, never changes the main homepage/story ranking, and
+never promotes an unknown-time item as fresh.
 """
 from __future__ import annotations
 
@@ -23,10 +23,27 @@ ROOT = Path(__file__).resolve().parents[1]
 PATH = ROOT / "data" / "breaking-now.json"
 TZ = ZoneInfo("America/Toronto")
 MAX_REGIONAL_AGE_HOURS = 24.0
+UTILITY_WORDS = {
+    "traffic", "transit", "weather", "roads", "road", "service", "service notice",
+    "construction", "closure", "closures", "civic", "election reminder", "parking"
+}
 
 
-def is_news(item: dict) -> bool:
-    return str(item.get("category") or "").upper() not in {"TRAFFIC", "TRANSIT", "WEATHER"}
+def is_meaningful_news(item: dict) -> bool:
+    """Separate actual news from utility/service rows that already have other rails."""
+    fields = {
+        str(item.get("category") or "").strip().lower(),
+        str(item.get("topic") or "").strip().lower(),
+        str(item.get("eventType") or "").strip().lower(),
+        str(item.get("kind") or "").strip().lower(),
+        str(item.get("label") or "").strip().lower(),
+    }
+    fields.discard("")
+    if fields & UTILITY_WORDS:
+        return False
+    if any(word in str(item.get("headline") or "").lower() for word in ("road closed", "roads will stay", "service disruption", "election sign rules")):
+        return False
+    return True
 
 
 def main() -> int:
@@ -36,7 +53,7 @@ def main() -> int:
         return 0
 
     current = [item for item in (payload.get("items") or []) if isinstance(item, dict)]
-    if any(is_news(item) for item in current) and len(current) >= 2:
+    if any(is_meaningful_news(item) for item in current) and len(current) >= 2:
         print("Fresh news already present in Local Update")
         return 0
 
@@ -69,20 +86,24 @@ def main() -> int:
         print("No fresh regional news supplement available")
         return 0
 
-    # Keep the live rail compact. If a direct Burlington/Halton item exists it
-    # stays first; this fills only an open second slot. A utility-only rail may
-    # therefore become [traffic, regional news] rather than two traffic rows.
+    candidate = candidates[0]
+    # Preserve a direct Burlington/Halton news item if one exists. Otherwise a
+    # regional news item may replace the weakest utility row, not the strongest
+    # local news row.
     if len(current) < 2:
-        current.append(candidates[0])
-    elif not any(is_news(item) for item in current):
-        current[-1] = candidates[0]
+        current.append(candidate)
+    elif not any(is_meaningful_news(item) for item in current):
+        current[-1] = candidate
     else:
-        return 0
+        utility_indexes = [index for index, item in enumerate(current) if not is_meaningful_news(item)]
+        if not utility_indexes:
+            return 0
+        current[utility_indexes[-1]] = candidate
 
     payload["items"] = current[:2]
-    payload["method"] = str(payload.get("method") or "") + " Fresh regional news may fill an otherwise utility-only second slot."
+    payload["method"] = str(payload.get("method") or "") + " Fresh Hamilton-area news may replace an otherwise stale utility/service row."
     PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Regional Local Update supplement: {candidates[0].get('headline')}")
+    print(f"Regional Local Update supplement: {candidate.get('headline')}")
     return 0
 
 
