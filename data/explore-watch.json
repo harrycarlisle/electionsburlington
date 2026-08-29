@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-29T07:51:30+00:00",
+  "checkedAt": "2026-08-29T13:49:34+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -72,7 +72,7 @@
       "url": "https://visitoakville.com/events/",
       "scope": "Nearby Oakville",
       "ok": true,
-      "candidates": 31
+      "candidates": 32
     },
     {
       "name": "City of Hamilton events calendar",
@@ -1101,6 +1101,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Art in my Garden",
+      "url": "https://visitoakville.com/events/art-in-my-garden-2026/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Arts & Culture",
       "url": "https://visitoakville.com/experience-oakville/arts-and-culture/",
       "source": "Visit Oakville events",
@@ -1179,8 +1192,21 @@
       "candidateType": "link"
     },
     {
-      "title": "Bronte Lake Notes",
+      "title": "Bronte Lake Notes 2026",
       "url": "https://visitoakville.com/events/bronte-lake-notes-2026/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Bronte’s Dominican Bachata Party 2026",
+      "url": "https://visitoakville.com/events/brontes-dominican-bachata-party-2026/",
       "source": "Visit Oakville events",
       "scope": "Nearby Oakville",
       "priority": 4,
@@ -1274,6 +1300,19 @@
       "url": "https://events.burlington.ca/",
       "source": "Love My Neighbourhood",
       "scope": "Burlington",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Card Yard",
+      "url": "https://visitoakville.com/events/card-yard-2/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -1608,19 +1647,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Full Moon Ceremony",
-      "url": "https://visitoakville.com/events/full-moon-ceremony-2/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Gallery Flow Yoga",
       "url": "https://visitoakville.com/events/gallery-flow-yoga-fall-2026/",
       "source": "Visit Oakville events",
@@ -1725,6 +1751,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Kerrfest 2026",
+      "url": "https://visitoakville.com/events/kerrfest-2026/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Lane Restrictions & Road Closures",
       "url": "https://www.hamilton.ca/home-neighbourhood/getting-around/driving-traffic/lane-restrictions-and-road-closures",
       "source": "City of Hamilton events calendar",
@@ -1816,8 +1855,8 @@
       "candidateType": "link"
     },
     {
-      "title": "Oakville Civitan Farmer's Market",
-      "url": "https://visitoakville.com/events/oakville-civitan-farmers-market/",
+      "title": "Oak Park Fall Fair",
+      "url": "https://visitoakville.com/events/oak-park-fall-fair-3/",
       "source": "Visit Oakville events",
       "scope": "Nearby Oakville",
       "priority": 4,
@@ -2206,19 +2245,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Summer Sweat",
-      "url": "https://visitoakville.com/events/summer-sweat-2/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Supercrawl Presents an All-Ages Day Party Sept 5 at Bridgeworks",
       "url": "https://supercrawl.ca/2026/05/all-ages-day-party/",
       "source": "Supercrawl",
@@ -2405,19 +2431,6 @@
       "url": "https://www.hamilton.ca/home-neighbourhood/property-taxes/vacant-unit-tax",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Veronica Tyrrell Day 2026",
-      "url": "https://visitoakville.com/events/veronica-tyrrell-day-2026/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
