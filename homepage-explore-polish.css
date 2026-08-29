@@ -1,0 +1,108 @@
+/* Homepage Explore section polish: match Top picks hierarchy and preserve card identity in light mode. */
+.explore-band .explore-heading{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+  padding:0 0 10px;
+  border-bottom:1px solid var(--line,#dfe4ea);
+}
+.explore-band .explore-heading h2{
+  margin:0;
+}
+.explore-band .explore-intro{
+  margin:14px 0 20px;
+}
+.explore-home-card{
+  display:block;
+  overflow:hidden;
+  border:1px solid #d7dde5;
+  border-radius:14px;
+  background:#fff;
+  color:inherit;
+  text-decoration:none;
+  box-shadow:0 1px 2px rgba(7,27,53,.05),0 8px 24px rgba(7,27,53,.035);
+}
+.explore-home-card img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  background:#eef2f5;
+  border-bottom:1px solid #e2e6eb;
+}
+.explore-home-card>span{
+  display:block;
+  padding:15px 17px 18px;
+}
+.explore-home-card small{
+  margin-bottom:7px;
+}
+.explore-home-card strong{
+  line-height:1.18;
+}
+.explore-home-card em{
+  margin-top:8px;
+  line-height:1.38;
+}
+
+@media(max-width:680px){
+  .explore-band{
+    margin-top:34px!important;
+    padding-top:24px!important;
+  }
+  .explore-band .explore-heading{
+    padding-bottom:11px;
+  }
+  .explore-band .explore-intro{
+    margin:16px 0 20px;
+    max-width:30rem;
+  }
+  .explore-home-grid{
+    gap:20px!important;
+  }
+  .explore-home-card{
+    width:100%;
+    min-height:0;
+    border-radius:14px;
+  }
+  .explore-home-card img{
+    aspect-ratio:16/9!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  .explore-home-card>span{
+    padding:15px 17px 18px!important;
+    min-height:0!important;
+  }
+  .explore-home-card strong{
+    font-size:18px!important;
+    line-height:1.18!important;
+  }
+  .explore-home-card em{
+    font-size:13px!important;
+    line-height:1.38!important;
+  }
+}
+
+@media(prefers-color-scheme:dark){
+  html:not([data-theme="light"]) .explore-home-card{
+    border-color:rgba(255,255,255,.13);
+    background:var(--paper,#101923);
+    box-shadow:none;
+  }
+  html:not([data-theme="light"]) .explore-home-card img{
+    border-bottom-color:rgba(255,255,255,.10);
+    background:#111b25;
+  }
+}
+html[data-theme="dark"] .explore-home-card{
+  border-color:rgba(255,255,255,.13);
+  background:var(--paper,#101923);
+  box-shadow:none;
+}
+html[data-theme="dark"] .explore-home-card img{
+  border-bottom-color:rgba(255,255,255,.10);
+  background:#111b25;
+}
