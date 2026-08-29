@@ -5,6 +5,7 @@
   const profile = document.getElementById('profilePanel');
   const compare = document.getElementById('issueCompare');
   const selector = document.getElementById('candidateSelect');
+  const picker = document.querySelector('.candidate-picker');
   const intro = document.querySelector('#candidates .section-intro');
   if (!strip || !profile) return;
 
@@ -45,9 +46,20 @@
     return extra.length >= 16 ? detail : '';
   }
 
+  function syncMobileCompareWithActive() {
+    const left = document.getElementById('mobileCompareLeft');
+    const right = document.getElementById('mobileCompareRight');
+    if (!left || !right || !byId(activeCandidateId)) return;
+    left.value = activeCandidateId;
+    if (right.value === activeCandidateId) {
+      right.value = data.candidates.find(candidate => candidate.id !== activeCandidateId)?.id || activeCandidateId;
+    }
+  }
+
   function setActive(id, { hash = true } = {}) {
     if (!byId(id) || id === activeCandidateId) {
       if (selector && byId(id)) selector.value = id;
+      syncMobileCompareWithActive();
       return;
     }
     activeCandidateId = id;
@@ -58,6 +70,7 @@
       card.classList.toggle('is-active', on);
     });
     if (selector && selector.value !== id) selector.value = id;
+    syncMobileCompareWithActive();
     renderIssueCompare();
     renderProfile();
     if (hash) {
@@ -85,6 +98,40 @@
       selector.innerHTML = data.candidates.map(candidate => `<option value="${esc(candidate.id)}">${esc(candidate.name)}</option>`).join('');
       selector.value = activeCandidateId;
     }
+  }
+
+  function renderMobileCompareTools() {
+    if (!picker || document.querySelector('.mobile-election-tools')) return;
+    const options = selected => data.candidates.map(candidate => `<option value="${esc(candidate.id)}"${candidate.id === selected ? ' selected' : ''}>${esc(candidate.name)}</option>`).join('');
+    const rightDefault = data.candidates.find(candidate => candidate.id !== activeCandidateId)?.id || activeCandidateId;
+    const tools = document.createElement('div');
+    tools.className = 'mobile-election-tools';
+    tools.innerHTML = `
+      <div class="mobile-h2h-label"><strong>Head to head</strong><span>Pick two candidates</span></div>
+      <div class="mobile-h2h-pickers">
+        <label><span class="sr-only">First candidate</span><select id="mobileCompareLeft">${options(activeCandidateId)}</select></label>
+        <span class="mobile-h2h-vs" aria-hidden="true">vs</span>
+        <label><span class="sr-only">Second candidate</span><select id="mobileCompareRight">${options(rightDefault)}</select></label>
+      </div>
+      <div class="mobile-h2h-actions">
+        <button class="mobile-h2h-button" id="mobileCompareGo" type="button">Compare these two <span aria-hidden="true">→</span></button>
+        <a class="mobile-all-link" href="/elections/compare/">See all five</a>
+      </div>`;
+    picker.after(tools);
+    const left = tools.querySelector('#mobileCompareLeft');
+    const right = tools.querySelector('#mobileCompareRight');
+    const keepDistinct = changed => {
+      if (left.value !== right.value) return;
+      const alternate = data.candidates.find(candidate => candidate.id !== changed.value)?.id;
+      if (changed === left && alternate) right.value = alternate;
+      if (changed === right && alternate) left.value = alternate;
+    };
+    left.addEventListener('change', () => keepDistinct(left));
+    right.addEventListener('change', () => keepDistinct(right));
+    tools.querySelector('#mobileCompareGo')?.addEventListener('click', () => {
+      const params = new URLSearchParams({ left: left.value, right: right.value });
+      location.href = `/head-to-head.html?${params.toString()}`;
+    });
   }
 
   function renderIssueCompare() {
@@ -174,6 +221,7 @@
       activeCandidateId = idFromHash();
       bindControls();
       renderCards();
+      renderMobileCompareTools();
       renderProfile();
     })
     .catch(() => {
