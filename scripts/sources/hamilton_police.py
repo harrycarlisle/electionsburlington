@@ -19,6 +19,19 @@ FEEDS = [
     "https://hamiltonpolice.ca/news/feed",
     "https://hamiltonpolice.on.ca/news",
 ]
+GENERIC_TITLES = {
+    "hamilton police service",
+    "hamilton police",
+    "news",
+    "news releases",
+    "media releases",
+}
+GENERIC_URLS = {
+    "https://hamiltonpolice.on.ca",
+    "https://hamiltonpolice.on.ca/news",
+    "https://hamiltonpolice.ca",
+    "https://hamiltonpolice.ca/news",
+}
 
 
 def _plain(value: str) -> str:
@@ -104,10 +117,14 @@ def collect(
     items = []
     details_cache: dict[str, dict[str, str]] = {}
     for raw in rows:
-        headline = raw.get("title") or raw.get("headline") or ""
-        if not headline:
+        headline = (raw.get("title") or raw.get("headline") or "").strip()
+        if not headline or headline.lower() in GENERIC_TITLES:
             continue
-        source_url = raw.get("url") or raw.get("sourceUrl") or ""
+        source_url = (raw.get("url") or raw.get("sourceUrl") or "").strip()
+        # HTML fallback discovery also sees the site logo/navigation links. They
+        # are not news releases and must never become a Local Update headline.
+        if source_url.rstrip("/").lower() in GENERIC_URLS:
+            continue
         summary = raw.get("summary") or ""
         published = raw.get("publishedAt") or ""
         if live and source_url and (not published or not summary):
