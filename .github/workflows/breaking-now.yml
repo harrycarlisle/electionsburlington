@@ -15,6 +15,7 @@ on:
       - 'scripts/render_homepage.py'
       - 'scripts/render_live_homepage.py'
       - 'scripts/search_indexing_hygiene.py'
+      - 'scripts/dedupe_legacy_redirects.py'
       - 'scripts/sources/**'
       - 'data/story-overrides.json'
       - '.github/workflows/breaking-now.yml'
@@ -52,6 +53,8 @@ jobs:
         run: python scripts/render_live_homepage.py
       - name: Normalize search metadata and sitemaps
         run: python scripts/search_indexing_hygiene.py
+      - name: Remove duplicate legacy redirect tags
+        run: python scripts/dedupe_legacy_redirects.py
       - name: Commit breaking surface, homepage and articles
         run: >-
           python scripts/safe_bot_commit.py
