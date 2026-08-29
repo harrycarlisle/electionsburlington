@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'scripts/build_here_traffic.py'
+      - 'scripts/apply_traffic_policy.py'
       - '.github/workflows/traffic-flow.yml'
   schedule:
     - cron: '*/10 * * * *'
@@ -29,10 +30,12 @@ jobs:
       - name: Refresh QEW traffic flow
         env:
           HERE_API_KEY: ${{ secrets.HERE_API_KEY }}
-        run: python scripts/build_here_traffic.py
+        run: |
+          python scripts/build_here_traffic.py
+          python scripts/apply_traffic_policy.py
       - name: Commit changed traffic flow
         run: >-
           python scripts/safe_bot_commit.py
           --name "burlington-news-bot"
           --message "Update Burlington traffic flow"
-          data/traffic-flow.json data/traffic-flow-history.json
+          data/traffic-flow.json data/traffic-flow-history.json data/traffic-surface.json
