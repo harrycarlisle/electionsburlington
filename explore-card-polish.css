@@ -67,10 +67,10 @@
 
 @media(max-width:680px){
   .home-page .explore-band{
-    width:100%!important;
+    width:auto!important;
     max-width:none!important;
-    margin-left:0!important;
-    margin-right:0!important;
+    margin-left:46px!important;
+    margin-right:46px!important;
     box-sizing:border-box!important;
   }
   .home-page .home-work-band{
@@ -95,9 +95,9 @@
     gap:20px!important;
   }
   .home-page .explore-home-card{
-    width:calc(100% - 44px)!important;
-    margin-left:auto!important;
-    margin-right:auto!important;
+    width:100%!important;
+    margin-left:0!important;
+    margin-right:0!important;
     border-radius:14px!important;
     box-shadow:0 2px 4px rgba(20,43,63,.04),0 8px 20px rgba(20,43,63,.04)!important;
   }
@@ -106,6 +106,12 @@
   }
   .home-page .explore-home-card>span{
     padding:15px 16px 18px!important;
+  }
+}
+@media(max-width:420px){
+  .home-page .explore-band{
+    margin-left:42px!important;
+    margin-right:42px!important;
   }
 }
 
