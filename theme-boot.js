@@ -4,7 +4,7 @@
   const LAT = 43.3255;
   const LON = -79.7990;
   const BRAND_TAB_ICON = '/logo-mark.png?v=20260829nb1';
-  const NAV_STYLE = '/site-nav-traffic-fixes.css?v=20260829nav4';
+  const NAV_STYLE = '/site-nav-traffic-fixes.css?v=20260829nav5';
 
   function syncNavStyle() {
     const head = document.head;
