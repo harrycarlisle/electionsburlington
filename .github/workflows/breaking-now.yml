@@ -9,6 +9,7 @@ on:
     paths:
       - 'scripts/build_breaking_now.py'
       - 'scripts/refresh_breaking_now.py'
+      - 'scripts/enrich_regional_local_update.py'
       - 'scripts/postprocess_breaking_now.py'
       - 'scripts/publish_breaking_briefs.py'
       - 'scripts/render_homepage.py'
@@ -39,6 +40,8 @@ jobs:
           python-version: '3.12'
       - name: Refresh Breaking and Local Update rail from live sources
         run: python scripts/refresh_breaking_now.py
+      - name: Add regional news when Local Update is utility-only
+        run: python scripts/enrich_regional_local_update.py
       - name: Normalize live-rail destinations
         run: python scripts/postprocess_breaking_now.py
       - name: Publish durable breaking briefs
