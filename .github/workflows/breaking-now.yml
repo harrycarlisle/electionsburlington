@@ -9,8 +9,10 @@ on:
     paths:
       - 'scripts/build_breaking_now.py'
       - 'scripts/refresh_breaking_now.py'
+      - 'scripts/postprocess_breaking_now.py'
       - 'scripts/publish_breaking_briefs.py'
       - 'scripts/render_homepage.py'
+      - 'scripts/render_live_homepage.py'
       - 'scripts/sources/**'
       - 'data/story-overrides.json'
       - '.github/workflows/breaking-now.yml'
@@ -37,10 +39,12 @@ jobs:
           python-version: '3.12'
       - name: Refresh Breaking and Local Update rail from live sources
         run: python scripts/refresh_breaking_now.py
+      - name: Normalize live-rail destinations
+        run: python scripts/postprocess_breaking_now.py
       - name: Publish durable breaking briefs
         run: python scripts/publish_breaking_briefs.py
       - name: Render stable homepage first paint
-        run: python scripts/render_homepage.py
+        run: python scripts/render_live_homepage.py
       - name: Commit breaking surface, homepage and articles
         run: >-
           python scripts/safe_bot_commit.py
