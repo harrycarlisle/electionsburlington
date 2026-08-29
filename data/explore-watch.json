@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-28T16:30:12+00:00",
+  "checkedAt": "2026-08-29T00:57:59+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 42
+      "candidates": 37
     },
     {
       "name": "Pokémon GO live events",
@@ -1037,7 +1037,7 @@
     },
     {
       "title": "Administrative Penalty Notice",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/tickets-fines-penalties/administrative-penalty-notice",
+      "url": "https://www.hamilton.ca/home-neighbourhood/tickets-fines-penalties/administrative-penalty-notice",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1192,19 +1192,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Bronte’s Dominican Bachata Party 2026",
-      "url": "https://visitoakville.com/events/brontes-dominican-bachata-party-2026/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Burlington Teen Tour Band",
       "url": "https://www.burlington.ca/en/recreation/burlington-teen-tour-band.aspx",
       "source": "Love My Neighbourhood",
@@ -1219,7 +1206,7 @@
     },
     {
       "title": "Business Licence",
-      "url": "https://www.hamilton.ca/index%2ephp/build-invest-grow/starting-small-business/business-licences",
+      "url": "https://www.hamilton.ca/build-invest-grow/starting-small-business/business-licences",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1297,7 +1284,7 @@
     },
     {
       "title": "Cat Registration",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/animals-pets/cats/register-your-cat",
+      "url": "https://www.hamilton.ca/home-neighbourhood/animals-pets/cats/register-your-cat",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1427,7 +1414,7 @@
     },
     {
       "title": "Dog Licence",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/animals-pets/dogs/dog-licence",
+      "url": "https://www.hamilton.ca/home-neighbourhood/animals-pets/dogs/dog-licence",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1492,7 +1479,7 @@
     },
     {
       "title": "Event Planning & Rentals",
-      "url": "https://www.hamilton.ca/index%2ephp/things-do/venues-facilities-bookings",
+      "url": "https://www.hamilton.ca/things-do/venues-facilities-bookings",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1621,19 +1608,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Friday Night Jazz",
-      "url": "https://visitoakville.com/events/friday-night-jazz-2/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Full Moon Ceremony",
       "url": "https://visitoakville.com/events/full-moon-ceremony-2/",
       "source": "Visit Oakville events",
@@ -1674,7 +1648,7 @@
     },
     {
       "title": "HSR Schedules & Detours",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/hsr/schedule-route-tools/schedules-detours",
+      "url": "https://www.hamilton.ca/home-neighbourhood/hsr/schedule-route-tools/schedules-detours",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1752,7 +1726,7 @@
     },
     {
       "title": "Lane Restrictions & Road Closures",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/getting-around/driving-traffic/lane-restrictions-and-road-closures",
+      "url": "https://www.hamilton.ca/home-neighbourhood/getting-around/driving-traffic/lane-restrictions-and-road-closures",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1855,6 +1829,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Oakville Cruze Night Classic Car Shows",
+      "url": "https://visitoakville.com/events/oakville-cruze-night-classic-car-shows/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Oakville Event Locations",
       "url": "https://visitoakville.com/events/oakville-event-locations/",
       "source": "Visit Oakville events",
@@ -1908,7 +1895,7 @@
     },
     {
       "title": "Paramedic & Ambulance",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/emergency-services/paramedics/about-hamilton-paramedic-service",
+      "url": "https://www.hamilton.ca/home-neighbourhood/emergency-services/paramedics/about-hamilton-paramedic-service",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1921,7 +1908,7 @@
     },
     {
       "title": "Parking Penalty Notice",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/tickets-fines-penalties/parking-penalty-notice",
+      "url": "https://www.hamilton.ca/home-neighbourhood/tickets-fines-penalties/parking-penalty-notice",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1999,7 +1986,7 @@
     },
     {
       "title": "Property Tax",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/property-tax-billing/pay-your-property-tax",
+      "url": "https://www.hamilton.ca/home-neighbourhood/property-taxes/property-tax-billing/pay-your-property-tax",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2012,7 +1999,7 @@
     },
     {
       "title": "Property Tax eBilling",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/property-tax-billing",
+      "url": "https://www.hamilton.ca/home-neighbourhood/property-taxes/property-tax-billing",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2025,7 +2012,7 @@
     },
     {
       "title": "Provincial Offences Notice",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/tickets-fines-penalties/provincial-offences-notice",
+      "url": "https://www.hamilton.ca/home-neighbourhood/tickets-fines-penalties/provincial-offences-notice",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2415,7 +2402,7 @@
     },
     {
       "title": "Vacant Unit Declaration",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/vacant-unit-tax",
+      "url": "https://www.hamilton.ca/home-neighbourhood/property-taxes/vacant-unit-tax",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2440,8 +2427,21 @@
       "candidateType": "link"
     },
     {
+      "title": "Walk & Talk History",
+      "url": "https://visitoakville.com/events/walk-talk-history-2026/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Waste Collection Schedule",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/garbage-recycling/waste-collection-schedule",
+      "url": "https://www.hamilton.ca/home-neighbourhood/garbage-recycling/waste-collection-schedule",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2518,19 +2518,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Get Ready for Kindergarten",
-      "url": "https://activeparents.ca/calendar/get-ready-for-kindergarten/2026-08-28/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-28T13:00:00+00:00",
-      "endsAt": "2026-08-28T20:00:00+00:00",
-      "location": "HPL – selected branches, Library Branches, Hamilton, ON",
-      "description": "<p>For children starting Kindergarten in September. Stories, activities, songs and crafts geared to children starting Kindergarten in September. Tuesday, August 04: 11:00am - 12:00pm Red Hill Branch Wednesday, August 05: 10:00am - 11:00am Terryberry Branch Wednesday, August 05: 10:00am - 11:00am Waterdown Branch Friday, August 07: 9:30am - 10:15am Ancaster B",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Waterloo Buskerfest",
       "url": "https://activeparents.ca/calendar/waterloo-buskerfest/2026-08-28/",
       "source": "Active Parents regional calendar",
@@ -2544,19 +2531,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Nanny McPhee at the Westdale",
-      "url": "https://activeparents.ca/calendar/nanny-mcphee-at-the-westdale/2026-08-28/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-28T17:30:00+00:00",
-      "endsAt": "2026-08-28T20:30:00+00:00",
-      "location": "The Westdale Theatre, 1014 King Street West, Hamilton, Ontario",
-      "description": "<p>Sensory Friendly Screening in partnership with Centre for Diverse Learners on Sat, Aug 29 at 1:30pm. 20th Anniversary! Cedric Brown (Colin Firth) is a hard-working widower who can’t spend much time with his seven children, so he leaves them in the care of nannies. However, the children are very naughty and have managed, with pride, to scare […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Kickstart Your Style at Mapleview",
       "url": "https://activeparents.ca/calendar/kickstart-your-style-at-mapleview/2026-08-28/",
       "source": "Active Parents regional calendar",
@@ -2567,32 +2541,6 @@
       "endsAt": "2026-08-28T23:00:00+00:00",
       "location": "Mapleview Mall, 900 Maple Avenue, Burlington, Ontario",
       "description": "<p> Kickstart Your Style August 28: 3-7 pm | August 29 & 30: 12-5 pm Upper Level by Sporting Life Mapleview\\'s Back-to-School personalization event is back, with even more ways to make your school-year essentials your own! Get ready for the school year with three personalization stations, plus a Mabel’s Label’s pop-up featuring a colouring wall prize […]</p>",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Free Open House & Trial Class – Ultimate Coders Burlington / Triple Stone Learning",
-      "url": "https://activeparents.ca/calendar/free-open-house-trial-class-ultimate-coders-burlington-triple-stone-learning/2026-08-28/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-28T20:00:00+00:00",
-      "endsAt": "2026-08-28T21:00:00+00:00",
-      "location": "Triple Stone Learning, 2180 Itabashi Way, Burlington, ON",
-      "description": "<p>Drop in for a free trial class at Triple Stone Learning! Explore coding, math and enrichment programs for kids and teens. Wednesdays and Fridays, 4–5 PM: Aug 12, 14, 19, 21, 26, 28 & Sep 2.</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Puppy Yoga",
-      "url": "https://activeparents.ca/calendar/puppy-yoga-2/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-28T20:30:00+00:00",
-      "endsAt": "2026-08-28T21:30:00+00:00",
-      "location": "Yogatastic, 3450 Dundas Street – Unit B19, Burlington, ON",
-      "description": "<p>4:45pm – 5:45pm – All ages welcome. Children under 7 must attend with a paid adult (18+). Each person requires their own ticket. ($20/person) There is no viewing area. Photography is not provided; participants attending independently must bring their own device. STOP EVERYTHING… PUPPY YOGA IS HERE! PUPPY YOGA IS BACK! Get ready to stretch, smile, and snug",
       "candidateType": "structured-event"
     },
     {
@@ -2739,6 +2687,19 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Back to School S.T.E.M. Event",
+      "url": "https://activeparents.ca/calendar/back-to-school-s-t-e-m-event/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
       "source": "Active Parents regional calendar",
@@ -2765,34 +2726,8 @@
       "candidateType": "link"
     },
     {
-      "title": "Free Open House & Trial Class – Ultimate Coders Burlington / Triple Stone Learning",
-      "url": "https://activeparents.ca/series/free-open-house-trial-class-ultimate-coders-burlington-triple-stone-learning/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Free Upcoming Events",
       "url": "https://activeparents.ca/free-things-to-do-with-kids-this-month/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Get Ready for Kindergarten",
-      "url": "https://activeparents.ca/series/get-ready-for-kindergarten/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2845,19 +2780,6 @@
     {
       "title": "Harry Potter – all 8 movies at Film.ca",
       "url": "https://activeparents.ca/series/harry-potter-all-8-movies-at-film-ca/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Kickstart Your Style at Mapleview",
-      "url": "https://activeparents.ca/series/kickstart-your-style-at-mapleview/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -3014,6 +2936,19 @@
     {
       "title": "Winona Peach Festival",
       "url": "https://activeparents.ca/series/winona-peach-festival/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Winona Peach Festival",
+      "url": "https://activeparents.ca/calendar/winona-peach-festival/2026-08-29/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
