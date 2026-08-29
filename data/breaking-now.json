@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T23:22:00.877841-04:00",
+  "generatedAt": "2026-08-29T06:24:33.705882-04:00",
   "mode": "local_update",
   "label": "Local Update",
   "method": "No item cleared Breaking News. Local Update = Burlington relevance*.30 + freshness*.25 + practical impact/usefulness*.20 + source confidence*.15 + reader interest*.10.",
@@ -29,7 +29,7 @@
       "storyGoal": "Give Burlington residents a concise, verified list of significant full municipal road closures that continue into September, while separating them from ordinary lane restrictions.",
       "publishedAt": "2026-08-26T22:24:00-04:00",
       "datePublished": "2026-08-26T22:24:00-04:00",
-      "placementScore": 85,
+      "placementScore": 83,
       "status": "normal",
       "storyUrl": "/stories/burlington-road-closures-september-2026/",
       "sourceName": "Burlington News",
@@ -43,7 +43,7 @@
       "noveltyScore": 3.4,
       "publicNeedScore": 4.9,
       "breakingScore": 3.82,
-      "localUpdateScore": 3.68,
+      "localUpdateScore": 3.67,
       "rawHeadline": "Two Burlington roads will stay fully closed into September.",
       "shortHeadline": "Two Burlington roads will stay fully closed into September."
     },
@@ -58,7 +58,7 @@
       "affectedArea": null,
       "publishedAt": "",
       "updatedAt": null,
-      "discoveredAt": "2026-08-28T23:22:00.877841-04:00",
+      "discoveredAt": "2026-08-29T06:24:33.705882-04:00",
       "severity": null,
       "impactScore": 2.2,
       "confidenceScore": 5.0,
