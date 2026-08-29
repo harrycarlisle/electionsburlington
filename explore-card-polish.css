@@ -66,6 +66,14 @@
 }
 
 @media(max-width:680px){
+  .home-page .explore-band,
+  .home-page .home-work-band{
+    width:100%!important;
+    max-width:none!important;
+    margin-left:0!important;
+    margin-right:0!important;
+    box-sizing:border-box!important;
+  }
   .home-page .explore-band{
     margin-top:34px!important;
     padding-top:24px!important;
