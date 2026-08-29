@@ -1,5 +1,5 @@
 .traffic-page{width:min(calc(100% - 32px),920px);max-width:100%;margin:18px auto 64px;overflow-x:clip}
-.traffic-page .traffic-hero{padding:4px 0 0}
+.traffic-page .traffic-hero{padding:4px 0 0;margin:0!important}
 .traffic-page .traffic-kicker{color:var(--muted);font:800 11px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 .traffic-page .live-kicker{display:inline-flex;align-items:center;gap:8px}
 .traffic-page .live-dot{width:8px;height:8px;border-radius:50%;background:#2fa866;box-shadow:0 0 0 0 rgba(47,168,102,.45)}
@@ -9,13 +9,13 @@
 .traffic-page .live-chip{display:inline-flex;align-items:center;gap:6px;margin:0;font-size:11px;font-weight:750;color:var(--muted)}
 .traffic-page .live-chip i{width:8px;height:8px;border-radius:50%;background:#2fa866}
 .traffic-page .live-chip.is-offline i{background:#8b95a1;box-shadow:none}
-.route-picker{margin-top:0}
+.route-picker{margin-top:10px!important}
 .route-origin{margin:4px 0 0;color:var(--muted);font:500 12px/1.3 Inter,Arial,sans-serif}
-.route-chips{display:flex;flex-wrap:nowrap;gap:8px;margin:12px 0 6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.route-chips{display:flex;flex-wrap:nowrap;gap:8px;margin:10px 0 6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .route-chips::-webkit-scrollbar{display:none}
 .route-chips button{flex:0 0 auto;min-height:38px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);font:750 13px/1 Arial,sans-serif;cursor:pointer}
 .route-chips button[aria-pressed="true"]{background:var(--navy);color:var(--paper);border-color:var(--navy)}
-.route-status{margin-top:10px;padding:15px 15px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card,#fff);transition:background-color .16s ease,border-color .16s ease}
+.route-status{margin-top:10px;padding:15px 18px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card,#fff);transition:background-color .16s ease,border-color .16s ease}
 .route-status-row{display:flex;align-items:center;justify-content:space-between;gap:14px}
 .route-status h2{display:flex;align-items:center;gap:10px;margin:0;font:750 21px/1.15 var(--sans,Inter,ui-sans-serif,sans-serif);color:var(--navy)}
 .route-status-icon{display:grid;place-items:center;flex:0 0 auto;width:22px;height:22px;border-radius:50%;font:900 14px/1 Arial,sans-serif}
@@ -43,6 +43,6 @@
 .camera-nav{position:absolute;top:50%;z-index:2;width:36px;height:36px;margin-top:-18px;border:0;border-radius:50%;background:rgba(8,16,24,.62);color:#fff;font-size:22px;cursor:pointer}.camera-nav.is-prev{left:8px}.camera-nav.is-next{right:8px}
 .camera-preview-meta{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.35}.camera-pucks{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.camera-pucks button{width:32px;height:32px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);font:800 12px/1 Arial,sans-serif;cursor:pointer}.camera-pucks button[aria-selected="true"]{background:var(--navy);color:var(--paper);border-color:var(--navy)}.camera-empty{color:var(--muted)}
 .leaflet-control-attribution{max-width:min(100%,280px);font-size:10px!important;background:rgba(255,255,255,.72)!important}.map-credit{margin:8px 0 0;color:var(--muted);font-size:11px;opacity:.8}
-@media(max-width:720px){.traffic-page{width:calc(100% - 28px);margin:18px auto 56px}.traffic-page .traffic-hero{padding-top:6px}.traffic-page h1{font-size:clamp(31px,8.6vw,38px);line-height:1;letter-spacing:-.045em}.route-origin{margin-top:3px;font-size:12.5px}.route-chips{margin-top:12px;margin-bottom:5px;gap:7px}.route-status{margin-top:9px;padding:14px 13px 13px}.route-status h2{font-size:20px;gap:9px}.route-status-icon{width:21px;height:21px}.route-stage{margin-top:14px}.route-map{height:240px}}
+@media(max-width:720px){.traffic-page{width:calc(100% - 28px);margin:18px auto 56px}.traffic-page .traffic-hero{padding-top:6px!important;padding-bottom:0!important;margin-bottom:0!important}.traffic-page h1{font-size:clamp(31px,8.6vw,38px);line-height:1;letter-spacing:-.045em;margin-bottom:0!important}.route-picker{margin-top:14px!important}.route-origin{margin-top:5px;font-size:12.5px}.route-chips{margin-top:0;margin-bottom:6px;gap:7px}.route-status{margin-top:12px;margin-left:4px;margin-right:4px;padding:15px 18px 14px}.route-status h2{font-size:20px;gap:9px}.route-status-icon{width:21px;height:21px}.route-status p,.route-status-note{padding-left:0}.route-stage{margin-top:14px}.route-map{height:240px}}
 @media(max-width:390px){.traffic-page h1{font-size:30px}.route-chips button{padding:0 12px;font-size:12.5px}}
 html[data-theme="dark"] .route-status,html[data-theme="dark"] .route-chips button{background:#15212a;border-color:#30404b;color:#edf4f8}html[data-theme="dark"] .route-chips button[aria-pressed="true"],html[data-theme="dark"] .camera-pucks button[aria-selected="true"]{background:#edf4f8;color:#101517;border-color:#edf4f8}html[data-theme="dark"] .route-status h2{color:#edf4f8}html[data-theme="dark"] .route-status.is-clear{background:#11261a;border-color:#315f44}html[data-theme="dark"] .route-status.is-clear h2{color:#9ce0b8}html[data-theme="dark"] .route-status.is-clear .route-status-icon{background:#173c27;color:#a7e8c1}html[data-theme="dark"] .route-status.is-delay{background:#2a1715;border-color:#633a34}html[data-theme="dark"] .route-status.is-delay h2,html[data-theme="dark"] .route-status.is-delay b{color:#ffaaa0}html[data-theme="dark"] .route-status.is-delay .route-status-icon{background:#48231f;color:#ffaaa0}html[data-theme="dark"] .route-status.is-warning{background:#2a2416;border-color:#66572f}html[data-theme="dark"] .route-status.is-warning h2{color:#efd28b}html[data-theme="dark"] .route-map{background:#101517;border-color:#30404b}html[data-theme="dark"] .route-puck{background:#4d8fbf}html[data-theme="dark"] .route-puck.is-selected{background:#7eb6ea}html[data-theme="dark"] .route-puck.is-offline{background:#6b7680}html[data-theme="dark"] .camera-fallback{background:#151c22;color:#d5dde4}html[data-theme="dark"] .map-credit{color:#8b98a2}
