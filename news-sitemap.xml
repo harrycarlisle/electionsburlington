@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://burlingtonnews.ca/stories/which-burlington-intersection-is-worst/</loc>
-    <news:news><news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication><news:publication_date>2026-08-28</news:publication_date><news:title>Which Burlington intersection is actually the worst?</news:title></news:news>
-  </url>
-  <url>
-    <loc>https://burlingtonnews.ca/stories/burlington-flood-protection-90-million/</loc>
-    <news:news><news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication><news:publication_date>2026-08-26</news:publication_date><news:title>Burlington has spent more than $90 million on stormwater since 2015. What changed?</news:title></news:news>
-  </url>
-  <url>
-    <loc>https://burlingtonnews.ca/stories/burlington-road-closures-september-2026/</loc>
-    <news:news><news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication><news:publication_date>2026-08-26</news:publication_date><news:title>Two Burlington roads will stay fully closed into September. Here is where</news:title></news:news>
-  </url>
-  <url>
-    <loc>https://burlingtonnews.ca/stories/costco-burloak-wyecroft/</loc>
-    <news:news><news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication><news:publication_date>2026-08-26</news:publication_date><news:title>Oakville approved a 1,000-space Costco near Burloak. Here is how drivers will get in</news:title></news:news>
-  </url>
-  <url>
-    <loc>https://burlingtonnews.ca/stories/sekisui-burlington-modular-factory/</loc>
-    <news:news><news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication><news:publication_date>2026-08-26</news:publication_date><news:title>Up to 90% of a building can now be made inside this Burlington factory</news:title></news:news>
-  </url>
-  <url>
-    <loc>https://burlingtonnews.ca/stories/evan-budz-isef-2026/</loc>
+    <loc>https://burlingtonnews.ca/stories/hamilton-qew-closed-near-centennial-parkway/</loc>
     <news:news>
       <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
-      <news:publication_date>2026-08-26</news:publication_date>
-      <news:title>A Burlington Grade 10 student won $50,000 with an AI sea turtle</news:title>
+      <news:publication_date>2026-08-29T11:17:01.993245-04:00</news:publication_date>
+      <news:title>Hamilton: QEW closed near Centennial Parkway.</news:title>
     </news:news>
   </url>
   <url>
-    <loc>https://burlingtonnews.ca/stories/how-bad-is-burlington-crime/</loc>
-    <news:news><news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication><news:publication_date>2026-08-25</news:publication_date><news:title>How bad is crime in Burlington, really?</news:title></news:news>
+    <loc>https://burlingtonnews.ca/stories/hamilton-police-3d-printed-firearm/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-29</news:publication_date>
+      <news:title>A 3D-printed Uzi-style firearm was seized in Hamilton</news:title>
+    </news:news>
   </url>
   <url>
-    <loc>https://burlingtonnews.ca/stories/nostalgia-games-cafe-closure/</loc>
-    <news:news><news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication><news:publication_date>2026-08-25</news:publication_date><news:title>Burlington's board-game cafe closed. The problem wasn't a lack of games.</news:title></news:news>
+    <loc>https://burlingtonnews.ca/stories/which-burlington-intersection-is-worst/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-28T17:55:00-04:00</news:publication_date>
+      <news:title>Which Burlington intersection is actually the worst?</news:title>
+    </news:news>
   </url>
   <url>
-    <loc>https://burlingtonnews.ca/stories/burlington-ultimate-team-0-24/</loc>
-    <news:news><news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication><news:publication_date>2026-08-26</news:publication_date><news:title>This Burlington team is 0–24. Why do they keep coming back?</news:title></news:news>
+    <loc>https://burlingtonnews.ca/stories/police-seize-five-firearms-mud-street/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-28T10:52:00-04:00</news:publication_date>
+      <news:title>Hamilton police seize five firearms after Mud Street shooting call</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/burlington-maple-richmond-fatal-hit-and-run/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-27T19:16:00-04:00</news:publication_date>
+      <news:title>Woman killed in Burlington hit-and-run; police searching for dark sedan</news:title>
+    </news:news>
   </url>
 </urlset>
