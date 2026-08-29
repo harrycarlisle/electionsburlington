@@ -1,0 +1,46 @@
+/* Stronger Explore Burlington card separation, especially in light mode. */
+.home-page .explore-home-card{
+  display:block;
+  overflow:hidden;
+  border:1px solid #d7e0e8!important;
+  border-radius:16px!important;
+  background:#fff!important;
+  box-shadow:0 8px 24px rgba(20,43,63,.07)!important;
+  color:inherit;
+  text-decoration:none;
+  transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
+}
+.home-page .explore-home-card:hover{
+  transform:translateY(-1px);
+  border-color:#c5d3df!important;
+  box-shadow:0 11px 28px rgba(20,43,63,.10)!important;
+}
+.home-page .explore-home-card img{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  background:#eef3f6;
+}
+.home-page .explore-home-card>span{
+  display:block;
+  min-height:138px;
+  padding:16px 18px 19px!important;
+  border-top:1px solid #e2e8ee;
+  background:#fff;
+}
+.home-page .explore-home-grid{gap:22px!important}
+@media(max-width:680px){
+  .home-page .explore-home-grid{gap:22px!important}
+  .home-page .explore-home-card{box-shadow:0 7px 20px rgba(20,43,63,.075)!important}
+  .home-page .explore-home-card>span{min-height:0;padding:16px 18px 20px!important}
+}
+html[data-theme="dark"] .home-page .explore-home-card{
+  border-color:#30414f!important;
+  background:#14212b!important;
+  box-shadow:0 8px 22px rgba(0,0,0,.22)!important;
+}
+html[data-theme="dark"] .home-page .explore-home-card>span{
+  border-top-color:#30414f;
+  background:#14212b;
+}
