@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '7,37 * * * *'
   workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/apply_traffic_policy.py'
+      - 'scripts/build_traffic_surface.py'
+      - '.github/workflows/local-intelligence.yml'
 
 permissions:
   contents: write
@@ -35,6 +40,7 @@ jobs:
           python scripts/build_traffic_cameras.py
           python scripts/analyze_traffic_cameras.py
           python scripts/build_traffic_surface.py
+          python scripts/apply_traffic_policy.py
       - name: Commit changed data
         run: |
           python scripts/safe_bot_commit.py \
