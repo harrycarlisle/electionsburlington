@@ -21,6 +21,8 @@ on:
       - 'scripts/rank_stories.py'
       - 'scripts/render_homepage.py'
       - 'scripts/apply_story_presentation.py'
+      - 'scripts/sync_public_urls.py'
+      - 'scripts/search_indexing_hygiene.py'
       - 'scripts/safe_bot_commit.py'
       - '.github/workflows/daily-civic-watch.yml'
 
@@ -61,6 +63,8 @@ jobs:
         run: python scripts/sync_public_urls.py
       - name: Apply editorial presentation overrides
         run: python scripts/apply_story_presentation.py
+      - name: Normalize search metadata and sitemaps
+        run: python scripts/search_indexing_hygiene.py
       - name: Commit verified updates and stories
         run: >-
           python scripts/safe_bot_commit.py
@@ -71,3 +75,4 @@ jobs:
           data/home-surface.json data/auto-published.json data/original-candidates.json
           data/lead-history.json data/story-catalog.json data/radar-seen.json
           index.html articles news explore elections traffic sports games stories
+          sitemap.xml news-sitemap.xml 404.html
