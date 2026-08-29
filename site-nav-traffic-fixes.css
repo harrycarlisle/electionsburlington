@@ -10,6 +10,7 @@
 .traffic-page .route-map{
   position:relative!important;
   z-index:0!important;
+  scroll-margin-top:76px;
 }
 html.menu-is-open .traffic-page .route-map-wrap{
   pointer-events:none;
