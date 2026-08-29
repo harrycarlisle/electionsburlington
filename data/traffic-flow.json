@@ -1,0 +1,25 @@
+{
+  "generatedAt": null,
+  "source": "HERE Real-Time Traffic",
+  "enabled": false,
+  "routes": {
+    "toronto": {
+      "status": "Unknown",
+      "jamFactor": null,
+      "speedKph": null,
+      "freeFlowKph": null,
+      "slowdownPct": null,
+      "segments": 0,
+      "trend": ""
+    },
+    "hamilton": {
+      "status": "Unknown",
+      "jamFactor": null,
+      "speedKph": null,
+      "freeFlowKph": null,
+      "slowdownPct": null,
+      "segments": 0,
+      "trend": ""
+    }
+  }
+}
