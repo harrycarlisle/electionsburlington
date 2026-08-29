@@ -89,6 +89,9 @@
     gap:20px!important;
   }
   .home-page .explore-home-card{
+    width:calc(100% - 44px)!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
     border-radius:14px!important;
     box-shadow:0 2px 4px rgba(20,43,63,.04),0 8px 20px rgba(20,43,63,.04)!important;
   }
