@@ -32,6 +32,18 @@ GENERIC_URLS = {
     "https://hamiltonpolice.ca",
     "https://hamiltonpolice.ca/news",
 }
+GENERIC_TITLE_PREFIXES = (
+    "view all headlines",
+    "view all news",
+    "news releases",
+    "media releases",
+    "latest news",
+)
+BAD_SUMMARY_FRAGMENTS = (
+    "an error occurred while preparing your download",
+    "these articles were tagged with",
+    "view all headlines",
+)
 
 
 def _plain(value: str) -> str:
@@ -68,6 +80,12 @@ def _visible_hamilton_time(body: str) -> str:
         return ""
 
 
+def _usable_summary(value: str) -> bool:
+    text = _plain(value)
+    lower = text.lower()
+    return bool(text) and len(text) >= 35 and not any(fragment in lower for fragment in BAD_SUMMARY_FRAGMENTS)
+
+
 def _article_details(url: str) -> dict[str, str]:
     if not url or not re.match(r"^https?://(?:www\.)?hamiltonpolice\.(?:on\.ca|ca)/", url, flags=re.I):
         return {}
@@ -89,10 +107,13 @@ def _article_details(url: str) -> dict[str, str]:
         lower = text.lower()
         if len(text) < 45 or any(term in lower for term in ("cookie", "privacy", "subscribe", "copyright")):
             continue
+        if not _usable_summary(text):
+            continue
         paragraphs.append(text)
         if len(paragraphs) >= 3:
             break
-    summary = paragraphs[0] if paragraphs else _meta(body, "description")
+    meta_summary = _meta(body, "description")
+    summary = paragraphs[0] if paragraphs else (meta_summary if _usable_summary(meta_summary) else "")
     return {"publishedAt": published, "summary": summary}
 
 
@@ -118,14 +139,18 @@ def collect(
     details_cache: dict[str, dict[str, str]] = {}
     for raw in rows:
         headline = (raw.get("title") or raw.get("headline") or "").strip()
-        if not headline or headline.lower() in GENERIC_TITLES:
+        headline_lower = headline.lower()
+        if not headline or headline_lower in GENERIC_TITLES or headline_lower.startswith(GENERIC_TITLE_PREFIXES):
             continue
         source_url = (raw.get("url") or raw.get("sourceUrl") or "").strip()
-        # HTML fallback discovery also sees the site logo/navigation links. They
-        # are not news releases and must never become a Local Update headline.
-        if source_url.rstrip("/").lower() in GENERIC_URLS:
+        normalized_url = source_url.rstrip("/").lower()
+        # HTML fallback discovery also sees site navigation, tag/archive and
+        # listing links. They are not individual news releases.
+        if normalized_url in GENERIC_URLS or "/news/?" in normalized_url or normalized_url.endswith("/news"):
             continue
         summary = raw.get("summary") or ""
+        if not _usable_summary(summary):
+            summary = ""
         published = raw.get("publishedAt") or ""
         if live and source_url and (not published or not summary):
             details = details_cache.setdefault(source_url, _article_details(source_url))
