@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
 """Render the homepage using the live rail's selected items first.
 
-The base renderer keeps a recent archive as a resilience fallback. For the live
-Local Update rail, however, a current selector result must not be padded with a
-stale archived story. We use the archive only when the selector produced no
-usable current items at all.
-
-Traffic/transit/weather alerts can belong in Breaking News, but they should not
-replace the editorial homepage hero with a generic utility card or fallback
-share image. The hero remains an actual reported story unless a non-utility
-breaking story with a real image is available.
+The live news rail may carry traffic/transit/weather alerts, but utility notices
+must not replace the editorial homepage hero with a generic card. The hero stays
+an actual reported story unless a non-utility breaking story with a real image
+is available.
 """
 from __future__ import annotations
 
@@ -20,7 +15,18 @@ import render_homepage as base
 FRESH_LOCAL_MAX_AGE = dt.timedelta(hours=18)
 UTILITY_CATEGORIES = {"traffic", "transit", "weather", "roads"}
 GENERIC_IMAGES = {"/assets/editorial/home-share.webp", "assets/editorial/home-share.webp"}
-ORIGINAL_CHOOSE_HERO = base.choose_hero
+
+
+def is_editorial_story(item: dict) -> bool:
+    category = str(item.get("category") or item.get("topic") or item.get("label") or "").strip().lower()
+    image = base.image_url(item)
+    return bool(
+        item.get("headline")
+        and base.public_url(item)
+        and image
+        and category not in UTILITY_CATEGORIES
+        and image not in GENERIC_IMAGES
+    )
 
 
 def selected_breaking_visible(live: dict, archive: dict, now: dt.datetime) -> list[dict]:
@@ -51,18 +57,28 @@ def selected_breaking_visible(live: dict, archive: dict, now: dt.datetime) -> li
 def editorial_hero(home: dict, live: dict, archive: dict, now: dt.datetime):
     if live.get("mode") == "breaking":
         for item in live.get("items") or []:
-            category = str(item.get("category") or item.get("topic") or "").strip().lower()
-            image = base.image_url(item)
-            if category in UTILITY_CATEGORIES or image in GENERIC_IMAGES:
-                continue
-            if item.get("headline") and base.public_url(item) and image:
+            if is_editorial_story(item):
                 return item
 
-    # Ask the normal renderer to choose from recent archive / ranked homepage,
-    # but prevent the utility Breaking mode from taking over the hero.
-    safe_live = dict(live)
-    safe_live["mode"] = "local_update"
-    return ORIGINAL_CHOOSE_HERO(home, safe_live, archive, now)
+    recent_archive = [
+        item for item in (archive.get("items") or [])
+        if is_editorial_story(item)
+        and base.age(item, now) <= base.RECENT_ARCHIVE_HERO_MAX_AGE
+    ]
+    recent_archive.sort(
+        key=lambda item: base.timestamp(item) or dt.datetime.min.replace(tzinfo=base.TZ),
+        reverse=True,
+    )
+    if recent_archive:
+        return recent_archive[0]
+
+    for item in home.get("feature") or []:
+        if is_editorial_story(item):
+            return item
+    for item in home.get("latest") or []:
+        if is_editorial_story(item):
+            return item
+    return None
 
 
 def main() -> int:
