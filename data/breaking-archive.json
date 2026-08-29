@@ -1,6 +1,21 @@
 {
-  "updatedAt": "2026-08-29T18:55:55.487718-04:00",
+  "updatedAt": "2026-08-29T19:22:00-04:00",
   "items": [
+    {
+      "id": "ghent-avenue-barricaded-man",
+      "headline": "Police response on Ghent Avenue after report of armed barricaded man",
+      "deck": "Video posted later appears to show a man being taken into custody. Police have not yet publicly confirmed the outcome.",
+      "label": "Public safety",
+      "topic": "public-safety",
+      "url": "/stories/ghent-avenue-barricaded-man/",
+      "sourceUrl": "https://www.reddit.com/r/BurlingtonON/s/v9RzzWLwlY",
+      "image": "/assets/cops-2.png",
+      "alt": "Police vehicles and emergency lights at a police scene.",
+      "publishedAt": "2026-08-29T19:22:00-04:00",
+      "datePublished": "2026-08-29T19:22:00-04:00",
+      "lastMeaningfulUpdate": "2026-08-29T19:22:00-04:00",
+      "status": "breaking"
+    },
     {
       "id": "e14b8f77ae5a04f2",
       "headline": "Hamilton: QEW closed near Centennial Parkway.",
