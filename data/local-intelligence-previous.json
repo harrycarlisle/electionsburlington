@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-28T21:30:11Z",
+  "generatedAt": "2026-08-29T03:21:17Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 33,
-    "trafficIncidents": 33,
+    "activeSignals": 31,
+    "trafficIncidents": 31,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -32,38 +32,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "636f5e0a1da4b439"
-    },
-    {
-      "id": "511:291512",
-      "kind": "traffic",
-      "headline": "Daily Construction on HWY 403 HAMILTON Eastbound Off-ramp at Highway 24 / Rest Acres Road, Brantford. ALL LANES CLOSED.",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Eastbound",
-      "score": 90,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.161594,
-      "longitude": -80.37695,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "eb1b732ca00e9d75"
-    },
-    {
-      "id": "511:291513",
-      "kind": "traffic",
-      "headline": "Daily Construction on HWY 403 HAMILTON Westbound On-ramp at Highway 24 / Rest Acres Road, Brantford. ALL LANES CLOSED.",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Westbound",
-      "score": 90,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.161594,
-      "longitude": -80.37695,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "804d87a9833ae951"
     },
     {
       "id": "511:289628",
@@ -496,6 +464,38 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "61abbaca9b4a3dc0"
+    },
+    {
+      "id": "511:290748",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 401 Westbound  between REGIONAL ROAD 25 and GUELPH LINE, Milton. 2 Alternating Lane(s).",
+      "location": "HWY 401",
+      "direction": "Westbound",
+      "score": 43,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.52803,
+      "longitude": -79.90527,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "81e9ba9b988064d2"
+    },
+    {
+      "id": "511:294127",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 401 Westbound  between REGIONAL ROAD 25 and GUELPH LINE, Milton. 2 Alternating Lane(s).",
+      "location": "HWY 401",
+      "direction": "Westbound",
+      "score": 43,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.52803,
+      "longitude": -79.90527,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "81e9ba9b988064d2"
     }
   ],
   "topSignal": {
@@ -675,38 +675,6 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "1286b0a6916b6324"
-      },
-      {
-        "id": "511:291512",
-        "kind": "traffic",
-        "headline": "Daily Construction on HWY 403 HAMILTON Eastbound Off-ramp at Highway 24 / Rest Acres Road, Brantford. ALL LANES CLOSED.",
-        "location": "HWY 403 HAMILTON",
-        "direction": "Eastbound",
-        "score": 90,
-        "neighbourhood": "Burlington area",
-        "latitude": 43.161594,
-        "longitude": -80.37695,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "eb1b732ca00e9d75"
-      },
-      {
-        "id": "511:291513",
-        "kind": "traffic",
-        "headline": "Daily Construction on HWY 403 HAMILTON Westbound On-ramp at Highway 24 / Rest Acres Road, Brantford. ALL LANES CLOSED.",
-        "location": "HWY 403 HAMILTON",
-        "direction": "Westbound",
-        "score": 90,
-        "neighbourhood": "Burlington area",
-        "latitude": 43.161594,
-        "longitude": -80.37695,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "804d87a9833ae951"
       },
       {
         "id": "511:292475",
@@ -915,6 +883,38 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "81e9ba9b988064d2"
+      },
+      {
+        "id": "511:294158",
+        "kind": "traffic",
+        "headline": "Nightly Maintenance on HWY 403 HAMILTON Westbound  between ABERDEEN AVE and LINCOLN M. ALEXANDER PARKWAY, Hamilton. 1 Left Lane(s).",
+        "location": "HWY 403 HAMILTON",
+        "direction": "Westbound",
+        "score": 53,
+        "neighbourhood": "Burlington area",
+        "latitude": 43.25535,
+        "longitude": -79.90704,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "1877967a3780f74e"
+      },
+      {
+        "id": "511:294259",
+        "kind": "traffic",
+        "headline": "Daily Maintenance on HWY 5 Eastbound  between HWY 6 / CLAPPISON CORNER'S and HWY 6 / CLAPPISON CORNER'S, Hamilton. 1 Right Lane(s).",
+        "location": "HWY 5",
+        "direction": "Eastbound",
+        "score": 43,
+        "neighbourhood": "Aldershot",
+        "latitude": 43.31215,
+        "longitude": -79.917725,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "583f9dfdc77db127"
       }
     ],
     "cameras": [
