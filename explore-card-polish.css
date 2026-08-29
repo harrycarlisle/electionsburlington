@@ -1,11 +1,31 @@
-/* Stronger Explore Burlington card separation, especially in light mode. */
+/* Explore Burlington should read as a distinct homepage section and use the same card language as Top picks. */
+.home-page .explore-band .explore-heading{
+  display:flex!important;
+  align-items:baseline!important;
+  justify-content:space-between!important;
+  gap:16px;
+  width:100%;
+  padding:0 0 11px!important;
+  border-bottom:1px solid var(--line,#dfe4ea)!important;
+}
+.home-page .explore-band .explore-heading h2{
+  margin:0!important;
+}
+.home-page .explore-band .explore-intro{
+  margin:15px 0 20px!important;
+}
+.home-page .explore-home-grid{
+  gap:20px!important;
+}
 .home-page .explore-home-card{
   display:block;
+  width:100%;
+  min-height:0!important;
   overflow:hidden;
   border:1px solid #d7e0e8!important;
-  border-radius:16px!important;
+  border-radius:14px!important;
   background:#fff!important;
-  box-shadow:0 8px 24px rgba(20,43,63,.07)!important;
+  box-shadow:0 2px 5px rgba(20,43,63,.045),0 10px 24px rgba(20,43,63,.045)!important;
   color:inherit;
   text-decoration:none;
   transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
@@ -13,28 +33,65 @@
 .home-page .explore-home-card:hover{
   transform:translateY(-1px);
   border-color:#c5d3df!important;
-  box-shadow:0 11px 28px rgba(20,43,63,.10)!important;
+  box-shadow:0 3px 7px rgba(20,43,63,.055),0 12px 28px rgba(20,43,63,.065)!important;
 }
 .home-page .explore-home-card img{
   display:block;
   width:100%;
-  aspect-ratio:16/9;
-  object-fit:cover;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  aspect-ratio:16/9!important;
+  object-fit:cover!important;
   background:#eef3f6;
 }
 .home-page .explore-home-card>span{
   display:block;
-  min-height:138px;
-  padding:16px 18px 19px!important;
+  min-height:0!important;
+  padding:15px 16px 18px!important;
   border-top:1px solid #e2e8ee;
   background:#fff;
 }
-.home-page .explore-home-grid{gap:22px!important}
-@media(max-width:680px){
-  .home-page .explore-home-grid{gap:22px!important}
-  .home-page .explore-home-card{box-shadow:0 7px 20px rgba(20,43,63,.075)!important}
-  .home-page .explore-home-card>span{min-height:0;padding:16px 18px 20px!important}
+.home-page .explore-home-card small{
+  margin-bottom:7px!important;
 }
+.home-page .explore-home-card strong{
+  font-size:18px!important;
+  line-height:1.18!important;
+}
+.home-page .explore-home-card em{
+  margin-top:8px!important;
+  font-size:13px!important;
+  line-height:1.38!important;
+}
+
+@media(max-width:680px){
+  .home-page .explore-band{
+    margin-top:34px!important;
+    padding-top:24px!important;
+  }
+  .home-page .explore-band .explore-heading{
+    padding-bottom:11px!important;
+  }
+  .home-page .explore-band .explore-intro{
+    margin:16px 0 20px!important;
+  }
+  .home-page .explore-home-grid{
+    grid-template-columns:1fr!important;
+    gap:20px!important;
+  }
+  .home-page .explore-home-card{
+    border-radius:14px!important;
+    box-shadow:0 2px 4px rgba(20,43,63,.04),0 8px 20px rgba(20,43,63,.04)!important;
+  }
+  .home-page .explore-home-card img{
+    aspect-ratio:16/9!important;
+  }
+  .home-page .explore-home-card>span{
+    padding:15px 16px 18px!important;
+  }
+}
+
 html[data-theme="dark"] .home-page .explore-home-card{
   border-color:#30414f!important;
   background:#14212b!important;
@@ -43,4 +100,15 @@ html[data-theme="dark"] .home-page .explore-home-card{
 html[data-theme="dark"] .home-page .explore-home-card>span{
   border-top-color:#30414f;
   background:#14212b;
+}
+@media(prefers-color-scheme:dark){
+  html:not([data-theme="light"]) .home-page .explore-home-card{
+    border-color:#30414f!important;
+    background:#14212b!important;
+    box-shadow:0 8px 22px rgba(0,0,0,.22)!important;
+  }
+  html:not([data-theme="light"]) .home-page .explore-home-card>span{
+    border-top-color:#30414f;
+    background:#14212b;
+  }
 }
