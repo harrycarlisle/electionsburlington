@@ -38,6 +38,36 @@ Do not inject it into unrelated coding, CSS, or infrastructure work.
 
 Existing copy is not exempt. Do not keep weak copy merely because it already exists.
 
+## Internal linking
+
+For every new article or substantial rewrite, check existing Burlington News stories before publication and add useful internal links where they naturally help the reader.
+
+- Prefer contextual inline links inside sentences over a generic pile of “related stories.”
+- Usually aim for 1–3 strong internal links in a normal-length article when relevant material exists.
+- Link the specific phrase or idea a reader would logically want to understand next.
+- Do not mechanically link every story in the same category. A crime story should link to `How bad is crime in Burlington, really?` only when the broader Burlington crime context genuinely helps the reader.
+- Prefer Burlington News internal links for background/context we have already reported, while still linking primary external sources for evidence and attribution.
+- Never replace a necessary source citation with an internal link.
+- Do not force links into sentences that become awkward or promotional.
+
+Before publishing, search the story catalog and existing `/stories/` routes for relevant coverage.
+
+## Geographic coverage
+
+Burlington News is Burlington-first, not Burlington-only.
+
+Treat these as different editorial thresholds:
+
+- **Core local:** Burlington, including Lowville, Kilbride, Aldershot and the rest of the city; Halton-wide stories with a clear Burlington consequence.
+- **Nearby/regional:** Oakville, Milton, Halton Hills, Hamilton, Waterdown, Stoney Creek, Grimsby, Mississauga, Guelph, Cambridge, Kitchener and Waterloo. Publish when the premise is unusually useful, surprising, consequential or broadly interesting to Burlington readers.
+- **Wider Southern Ontario:** Woodstock, London, Niagara and farther GTA/Ontario communities. Publish selectively when the story is strong enough that proximity plus broad appeal makes it worth a Burlington reader's attention.
+
+Do not publish routine out-of-town crime, municipal process, closures or press releases merely because the place is nearby.
+
+A regional story can qualify without a direct Burlington consequence when the underlying premise is exceptionally strong and easy for Burlington readers to care about, for example a nearby person, company or invention doing something surprising with wider impact.
+
+When packaging regional stories, be transparent about the location. Do not imply an event happened in Burlington when it did not.
+
 ## Internal workflow evidence
 
 Where article/research metadata already exists, record:
