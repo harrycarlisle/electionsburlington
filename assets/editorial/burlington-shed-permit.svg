@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
+<title id="t">Burlington shed permit illustration</title><desc id="d">A backyard shed shown with blueprint-style measurement lines and a 15 square metre threshold card.</desc>
+<rect width="1600" height="900" fill="#eef3f5"/><rect y="555" width="1600" height="345" fill="#9bb786"/><path d="M0 610c350-55 720-20 1100-30 220-5 360-20 500-55v375H0z" fill="#88a977"/>
+<g transform="translate(330 210)"><path d="M120 220L420 25l300 195v390H120z" fill="#d9c3a4" stroke="#183247" stroke-width="10"/><path d="M75 220L420 0l345 220" fill="#785b46" stroke="#183247" stroke-width="10" stroke-linejoin="round"/><rect x="245" y="365" width="178" height="245" fill="#8d6a4e" stroke="#183247" stroke-width="8"/><rect x="515" y="320" width="120" height="130" fill="#b9d7e7" stroke="#183247" stroke-width="8"/><path d="M604 510h40v100h-40z" fill="#596d4e"/></g>
+<g stroke="#3375a5" stroke-width="8" fill="none"><path d="M315 735h760"/><path d="M315 710v50M1075 710v50"/><path d="M1135 225v385"/><path d="M1110 225h50M1110 610h50"/><path d="M390 185l650 0" stroke-dasharray="20 18" opacity=".7"/></g>
+<g fill="#3375a5"><path d="M315 735l28-16v32zM1075 735l-28-16v32zM1135 225l-16 28h32zM1135 610l-16-28h32z"/></g>
+<g transform="translate(1085 520)"><rect x="0" y="0" width="330" height="190" rx="24" fill="#fff" stroke="#cbd9e2" stroke-width="7"/><text x="165" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="68" font-weight="700" fill="#0d2940">15 m²</text><text x="165" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#617384">PERMIT THRESHOLD</text></g>
+<g transform="translate(120 155)" stroke="#9fb6c6" stroke-width="5" opacity=".7"><path d="M0 0h250M0 45h190M0 90h220M0 135h130"/></g>
+</svg>
