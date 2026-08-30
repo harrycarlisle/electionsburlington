@@ -83,5 +83,9 @@
   "which-burlington-intersection-is-worst": {
     "headline": "Which Burlington intersection is actually the worst?",
     "deck": "The public records point to a larger problem along one of Burlington's busiest roads."
+  },
+  "burlington-crime-analysis-2026": {
+    "headline": "How bad is crime in Burlington, really?",
+    "deck": "The latest Halton data complicates the usual picture of crime in Burlington. The category moving fastest is not the one most people see on the street."
   }
 }
