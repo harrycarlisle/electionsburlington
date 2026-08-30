@@ -255,7 +255,11 @@
       "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
       "editorialWorkflow": "ready",
       "verificationTier": "Primary City of Burlington sources",
-      "sources": ["https://www.burlington.ca/en/roads-parking-and-traffic/parking-exemptions.aspx", "https://www.burlington.ca/en/roads-parking-and-traffic/citywide-on-street-residential-parking-permit.aspx"],
+      "sources": [
+        "https://www.burlington.ca/en/roads-parking-and-traffic/parking-exemptions.aspx",
+        "https://www.burlington.ca/en/roads-parking-and-traffic/citywide-on-street-residential-parking-permit.aspx",
+        "https://www.burlington.ca/en/roads-parking-and-traffic/parking-permits.aspx"
+      ],
       "signals": {"relevance": 5, "breadth": 5, "novelty": 4, "familiarity": 5, "consequence": 5, "interest": 4, "originality": 4, "visualStrength": 4},
       "gates": {"evidence": "passed", "burlington": "passed", "imageRights": "passed", "duplicate": "passed"},
       "topic": "traffic",
@@ -283,7 +287,11 @@
       "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
       "editorialWorkflow": "ready",
       "verificationTier": "Primary City of Burlington fire sources",
-      "sources": ["https://www.burlington.ca/en/fire-and-emergency-services/open-air-burning---campfires-chimineas-fire-pits.aspx", "https://www.burlington.ca/en/fire-and-emergency-services/burn-permits.aspx"],
+      "sources": [
+        "https://www.burlington.ca/en/fire-and-emergency-services/open-air-burning---campfires-chimineas-fire-pits.aspx",
+        "https://www.burlington.ca/en/fire-and-emergency-services/burn-permits.aspx",
+        "https://www.burlington.ca/en/fire-and-emergency-services/fire-and-public-safety-education.aspx"
+      ],
       "signals": {"relevance": 5, "breadth": 5, "novelty": 5, "familiarity": 5, "consequence": 5, "interest": 5, "originality": 4, "visualStrength": 5},
       "gates": {"evidence": "passed", "burlington": "passed", "imageRights": "passed", "duplicate": "passed"},
       "topic": "public-safety",
@@ -339,7 +347,12 @@
       "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
       "editorialWorkflow": "ready",
       "verificationTier": "Primary City of Burlington building and zoning sources",
-      "sources": ["https://www.burlington.ca/en/building-and-renovating/sheds-and-accessory-structures.aspx", "https://www.burlington.ca/en/planning-and-development/zoning.aspx"],
+      "sources": [
+        "https://www.burlington.ca/en/building-and-renovating/sheds-and-accessory-structures.aspx",
+        "https://www.burlington.ca/en/planning-and-development/zoning.aspx",
+        "https://www.burlington.ca/en/planning-and-development/pre-building-approval-application.aspx",
+        "https://www.burlington.ca/en/planning-and-development/zoning-clearance-certificates.aspx"
+      ],
       "signals": {"relevance": 5, "breadth": 5, "novelty": 4, "familiarity": 5, "consequence": 5, "interest": 4, "originality": 4, "visualStrength": 4},
       "gates": {"evidence": "passed", "burlington": "passed", "imageRights": "passed", "duplicate": "passed"},
       "topic": "development",
@@ -367,7 +380,13 @@
       "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
       "editorialWorkflow": "ready",
       "verificationTier": "Primary records with clearly attributed secondary summaries",
-      "sources": ["https://www.halton.ca/for-residents/regional-roads", "https://www.halton.ca/for-residents/regional-roads/red-light-cameras", "https://www.halton.ca/for-residents/infrastructure-and-growth/municipal-class-environmental-assessment-studies/guelph-line-harvester-road"],
+      "sources": [
+        "https://www.halton.ca/for-residents/regional-roads",
+        "https://www.halton.ca/for-residents/regional-roads/red-light-cameras",
+        "https://www.halton.ca/for-residents/infrastructure-and-growth/municipal-class-environmental-assessment-studies/guelph-line-harvester-road",
+        "https://www.burlingtontoday.com/local-news/burlington-intersection-tops-list-for-most-crashes-in-halton-11262734",
+        "https://www.burlingtontoday.com/local-news/burlington-intersections-among-haltons-top-red-light-camera-violations-11279788"
+      ],
       "signals": {"relevance": 5, "breadth": 5, "novelty": 5, "familiarity": 5, "consequence": 5, "interest": 5, "originality": 5, "visualStrength": 5},
       "gates": {"evidence": "passed", "burlington": "passed", "imageRights": "passed", "duplicate": "passed"},
       "topic": "traffic",
