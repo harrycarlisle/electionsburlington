@@ -10,6 +10,7 @@ import render_homepage as base
 FRESH_LOCAL_MAX_AGE = dt.timedelta(hours=18)
 UTILITY_CATEGORIES = {"traffic", "transit", "weather", "roads"}
 GENERIC_IMAGES = {"/assets/editorial/home-share.webp", "assets/editorial/home-share.webp"}
+BASE_TIMESTAMP = base.timestamp
 
 
 def display_headline(value) -> str:
@@ -24,6 +25,12 @@ def display_item(item: dict) -> dict:
     if row.get("shortHeadline"):
         row["shortHeadline"] = display_headline(row.get("shortHeadline"))
     return row
+
+
+def item_timestamp(item: dict) -> dt.datetime | None:
+    """A why-now placement can have a context time without pretending the story was republished."""
+    context = base.parse_time(item.get("contextTimestamp"))
+    return context or BASE_TIMESTAMP(item)
 
 
 def editorial_family(item: dict) -> str:
@@ -194,6 +201,7 @@ def diverse_newest_items(home: dict, archive: dict, hero: dict | None, now: dt.d
 
 
 def main() -> int:
+    base.timestamp = item_timestamp
     base.LOCAL_UPDATE_MAX_AGE = FRESH_LOCAL_MAX_AGE
     base.breaking_visible = selected_breaking_visible
     base.choose_hero = editorial_hero
