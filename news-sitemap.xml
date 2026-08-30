@@ -18,11 +18,51 @@
     </news:news>
   </url>
   <url>
+    <loc>https://burlingtonnews.ca/stories/burlington-technologies-used-around-world/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-29</news:publication_date>
+      <news:title>Four Burlington technologies that ended up around the world</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/can-you-have-backyard-fire-pit-burlington/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-29</news:publication_date>
+      <news:title>Can you have a backyard fire pit in Burlington?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/can-you-park-overnight-burlington/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-29</news:publication_date>
+      <news:title>Can you park on a Burlington street overnight?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/do-you-need-permit-shed-burlington/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-29</news:publication_date>
+      <news:title>Do you need a permit for a shed in Burlington?</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://burlingtonnews.ca/stories/hamilton-police-3d-printed-firearm/</loc>
     <news:news>
       <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
       <news:publication_date>2026-08-29</news:publication_date>
       <news:title>A 3D-printed Uzi-style firearm was seized in Hamilton</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/where-are-burlington-red-light-cameras/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-29</news:publication_date>
+      <news:title>Where are Burlington's red-light cameras?</news:title>
     </news:news>
   </url>
   <url>
