@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-08-30T00:11:20Z",
+  "generatedAt": "2026-08-30T05:44:37Z",
   "items": [
+    {
+      "id": "511:295213",
+      "detectedAt": "2026-08-30T05:44:37Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Fort Erie bound  at ROYAL WINDSOR DRIVE, Oakville. 1 right lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:294437",
       "detectedAt": "2026-08-27T23:57:44Z",
