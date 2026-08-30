@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T13:38:31.909973-04:00",
+  "generatedAt": "2026-08-30T16:07:37.523305-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -1458,6 +1458,37 @@
         "sourceConfidence": 5.0,
         "originality": 4.6,
         "visualStrength": 2.2,
+        "rotation": 5.0
+      },
+      "radarScore": 70,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "511:295312",
+      "detectedAt": "2026-08-30T19:26:01Z",
+      "score": 75,
+      "headline": "Vehicle Fire on QEW Toronto bound  at ROYAL WINDSOR DRIVE, Oakville. 3 right lanes and right shoulder closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "528aa0bf2f4e4474",
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.8,
+        "freshness": 5.0,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
         "rotation": 5.0
       },
       "radarScore": 70,
@@ -3063,7 +3094,7 @@
         "sourceConfidence": 2.8,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.7209255653472224
+        "rotation": 0.9279999480324068
       },
       "gates": {
         "evidence": "passed",
@@ -3086,37 +3117,6 @@
       "eligibleHomepage": false,
       "eligibleNewest": false,
       "eligibleEditorial": true
-    },
-    {
-      "id": "511:295213",
-      "detectedAt": "2026-08-30T05:44:37Z",
-      "score": 75,
-      "headline": "Disabled Vehicle on QEW Fort Erie bound  at ROYAL WINDSOR DRIVE, Oakville. 1 right lane closed.",
-      "kind": "traffic",
-      "location": "QEW",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "e7e1b3b938b613c8",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 3.4,
-        "novelty": 2.5,
-        "familiarity": 2.5,
-        "consequence": 2.0,
-        "freshness": 3.2,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 60,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
     },
     {
       "id": "511:293205",
@@ -3178,6 +3178,37 @@
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": false,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "511:295213",
+      "detectedAt": "2026-08-30T05:44:37Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Fort Erie bound  at ROYAL WINDSOR DRIVE, Oakville. 1 right lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "e7e1b3b938b613c8",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.0,
+        "freshness": 2.4,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 58,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
       "eligibleEditorial": false
     },
     {
