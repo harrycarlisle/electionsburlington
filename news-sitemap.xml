@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://burlingtonnews.ca/stories/five-creepiest-burlington-mysteries/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-29T23:59:00-04:00</news:publication_date>
+      <news:title>Five creepiest Burlington mysteries</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/least-expensive-complete-lunches-burlington/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-29T23:58:00-04:00</news:publication_date>
+      <news:title>The least expensive complete lunches we found in Burlington</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/burlington-strangest-street-names/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-29T23:00:00-04:00</news:publication_date>
+      <news:title>The stories behind Burlington's strangest street names</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://burlingtonnews.ca/stories/ghent-avenue-barricaded-man/</loc>
     <news:news>
       <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
@@ -15,6 +39,14 @@
       <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
       <news:publication_date>2026-08-29T11:17:01.993245-04:00</news:publication_date>
       <news:title>Hamilton: QEW closed near Centennial Parkway.</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/best-small-park-burlington/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-29</news:publication_date>
+      <news:title>Which Burlington neighbourhood has the best small park?</news:title>
     </news:news>
   </url>
   <url>
@@ -63,6 +95,14 @@
       <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
       <news:publication_date>2026-08-29</news:publication_date>
       <news:title>Where are Burlington's red-light cameras?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://burlingtonnews.ca/stories/why-is-snake-road-so-winding/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-29</news:publication_date>
+      <news:title>Why is Snake Road so winding?</news:title>
     </news:news>
   </url>
   <url>
