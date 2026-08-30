@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-08-30T16:36:43Z",
+  "generatedAt": "2026-08-30T19:26:01Z",
   "items": [
+    {
+      "id": "511:295312",
+      "detectedAt": "2026-08-30T19:26:01Z",
+      "score": 75,
+      "headline": "Vehicle Fire on QEW Toronto bound  at ROYAL WINDSOR DRIVE, Oakville. 3 right lanes and right shoulder closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:295213",
       "detectedAt": "2026-08-30T05:44:37Z",
