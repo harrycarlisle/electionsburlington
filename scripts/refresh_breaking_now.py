@@ -1,21 +1,16 @@
 #!/usr/bin/env python3
-"""Refresh Breaking/Local Update without changing the main story ranking system.
+"""Refresh Breaking/Local Update with strict freshness and why-now context.
 
-This is intentionally a separate live-rail selector. It keeps the strict
-Breaking News threshold from build_breaking_now.py, but prevents the fallback
-Local Update rail from becoming stale wallpaper. Direct Burlington/Halton and
-corridor updates win. If those are quiet, a fresh significant Hamilton item may
-fill the rail. Toronto remains limited to items the existing relevance rules say
-can affect Burlington.
-
-A newly published source item that clearly continues an archived Burlington News
-story gets a follow-up bonus and links back to the existing story when possible.
-Discovery time is never treated as publication time.
+Breaking News still uses the strict source threshold. Local Update prioritizes
+fresh verified Burlington/Halton developments, then allows an existing Burlington
+News story only when there is a real reason to surface it now: a related fresh
+event, a meaningful update, an explicit editorial context signal, or an anniversary.
 """
 from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -33,6 +28,11 @@ QUEUE = DATA / "discovery-queue.json"
 LOCAL_MAX_HOURS = 18.0
 REGIONAL_MAX_HOURS = 24.0
 FOLLOW_UP_MIN_SIMILARITY = 0.43
+RELATED_STORY_MIN_SIMILARITY = 0.52
+GENERIC_RELATION_WORDS = {
+    "burlington", "halton", "ontario", "canada", "city", "local", "news",
+    "public", "safety", "service", "road", "roads", "street", "police",
+}
 
 
 def load(name: str, fallback):
@@ -40,6 +40,64 @@ def load(name: str, fallback):
         return json.loads((DATA / name).read_text(encoding="utf-8"))
     except Exception:
         return fallback
+
+
+def clean(value) -> str:
+    return re.sub(r"\s+", " ", str(value or "")).strip()
+
+
+def parse_time(value) -> dt.datetime | None:
+    raw = clean(value)
+    if not raw:
+        return None
+    try:
+        if len(raw) == 10 and raw[4] == "-":
+            return dt.datetime.fromisoformat(raw).replace(hour=12, tzinfo=TZ)
+        parsed = dt.datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=TZ)
+        return parsed.astimezone(TZ)
+    except ValueError:
+        return None
+
+
+def editorial_family(item: dict) -> str:
+    value = " ".join(clean(item.get(key)).lower() for key in ("editorialFamily", "kind", "label", "category", "topic"))
+    if re.search(r"home rules|permit|parking|bylaw|service", value):
+        return "service"
+    if re.search(r"public safety|police|crime|shooting|fire", value):
+        return "public-safety"
+    if re.search(r"traffic|transport|road|qew|collision", value):
+        return "traffic"
+    if re.search(r"history|mystery|heritage", value):
+        return "history"
+    if re.search(r"development|construction|housing", value):
+        return "development"
+    if re.search(r"food|restaurant|drink", value):
+        return "food"
+    if "sport" in value:
+        return "sports"
+    if re.search(r"event|festival", value):
+        return "events"
+    if re.search(r"school|education", value):
+        return "schools"
+    if re.search(r"election|council|politic", value):
+        return "civic"
+    return clean(item.get("topic") or item.get("category") or item.get("label") or item.get("id") or "other").lower()
+
+
+def strict_diversify(items: list[dict], limit: int = 2) -> list[dict]:
+    picked = []
+    families = set()
+    for item in items:
+        family = editorial_family(item)
+        if family in families:
+            continue
+        picked.append(item)
+        families.add(family)
+        if len(picked) >= limit:
+            break
+    return picked
 
 
 def archive_follow_up(item: dict, archive: dict) -> tuple[dict | None, float]:
@@ -57,8 +115,6 @@ def archive_follow_up(item: dict, archive: dict) -> tuple[dict | None, float]:
         score = similar(item, probe)
         if score < FOLLOW_UP_MIN_SIMILARITY or score <= best_score:
             continue
-        # Only call it an update when the new source really is newer than the
-        # source/publication timestamp already attached to the archived story.
         old_time = story.get("sourcePublishedAt") or story.get("lastMeaningfulUpdate") or story.get("publishedAt")
         if old_time:
             try:
@@ -91,22 +147,95 @@ def annotate_candidate(item: dict, archive: dict) -> dict:
     return item
 
 
-def home_candidates(home: dict, hero: str, now: dt.datetime) -> list[dict]:
-    """Use Burlington News stories only while they are genuinely recent.
-
-    This prevents a two-day-old service story from winning Local Update merely
-    because it has strong Burlington relevance.
-    """
+def fresh_verified_events(combined: list[dict], now: dt.datetime) -> list[dict]:
     rows = []
+    for raw in combined:
+        item = dict(raw)
+        status = clean(item.get("verificationStatus")).lower()
+        confidence = float(item.get("confidenceScore") or 0)
+        age = source_age_hours(item, now)
+        if status in {"community_lead", "unverified", "unverified_community_report"}:
+            continue
+        if confidence < 4.0 or age is None or age > LOCAL_MAX_HOURS:
+            continue
+        rows.append(item)
+    return rows
+
+
+def relation_words(story: dict) -> set[str]:
+    words = set()
+    for subject in story.get("subjects") or []:
+        for token in re.findall(r"[a-z0-9]+", str(subject).lower()):
+            if len(token) >= 4 and token not in GENERIC_RELATION_WORDS:
+                words.add(token)
+    return words
+
+
+def related_event(story: dict, events: list[dict]) -> tuple[dict | None, float]:
+    """Find a fresh event that gives an existing explainer/story a real why-now hook."""
+    best = None
+    best_score = 0.0
+    subject_words = relation_words(story)
+    for event in events:
+        score = similar(
+            {"headline": story.get("headline") or story.get("title"), "summary": story.get("deck") or ""},
+            {"headline": event.get("headline") or "", "summary": event.get("summary") or event.get("deck") or event.get("description") or ""},
+        )
+        event_text = " ".join(
+            clean(event.get(key)).lower()
+            for key in ("headline", "summary", "deck", "description", "eventType", "category", "topic")
+        )
+        hits = {word for word in subject_words if re.search(rf"\b{re.escape(word)}\b", event_text)}
+        if len(hits) >= 2:
+            score = max(score, 0.68)
+        elif len(hits) == 1 and score >= 0.32:
+            score = max(score, 0.55)
+        if score >= RELATED_STORY_MIN_SIMILARITY and score > best_score:
+            best = event
+            best_score = score
+    return best, best_score
+
+
+def is_anniversary(story: dict, now: dt.datetime) -> bool:
+    published = parse_time(
+        story.get("datePublished")
+        or story.get("publishedAt")
+        or story.get("published")
+        or story.get("activeFrom")
+    )
+    return bool(published and published.year < now.year and (published.month, published.day) == (now.month, now.day))
+
+
+def contextual_story_candidates(home: dict, catalog: dict, combined: list[dict], hero: str, now: dt.datetime) -> list[dict]:
+    """Surface Burlington News stories only when a current hook actually exists."""
+    pool = []
     seen = set()
-    for story in (home.get("latest") or []) + (home.get("rail") or []) + (home.get("feature") or []):
-        key = str(story.get("id") or story.get("url") or "")
+    sources = list(home.get("latest") or []) + list(home.get("rail") or []) + list(home.get("feature") or []) + list(catalog.get("items") or [])
+    for story in sources:
+        key = clean(story.get("id") or story.get("url"))
         if not key or key in seen:
             continue
         seen.add(key)
-        story_url = base.public_story_url(str(story.get("url") or ""))
-        if hero and story_url == hero:
+        pool.append(story)
+
+    events = fresh_verified_events(combined, now)
+    rows = []
+    for story in pool:
+        if clean(story.get("status")).lower() == "expired":
             continue
+        evidence = clean((story.get("gates") or {}).get("evidence")).lower()
+        if evidence and evidence != "passed":
+            continue
+        story_url = base.public_story_url(str(story.get("url") or story.get("storyUrl") or ""))
+        if not story_url or (hero and story_url == hero):
+            continue
+
+        explicit_reason = clean(story.get("localUpdateReason"))
+        anniversary = bool(story.get("anniversaryMatch")) or is_anniversary(story, now)
+        relation, relation_score = related_event(story, events)
+        if not explicit_reason and not anniversary and not relation:
+            continue
+
         published = (
             story.get("sourcePublishedAt")
             or story.get("lastMeaningfulUpdate")
@@ -125,12 +254,25 @@ def home_candidates(home: dict, hero: str, now: dt.datetime) -> list[dict]:
             "confidenceScore": 4.5,
             "localRelevance": 5.0,
             "publishedAt": published,
+            "contextTimestamp": now.isoformat(),
         }
         base.breaking_score(item, now)
-        age = source_age_hours(item, now)
-        if age is None or age > LOCAL_MAX_HOURS:
-            continue
         base.local_update_score(item)
+
+        if anniversary:
+            item["anniversaryMatch"] = True
+            item["localUpdateReason"] = explicit_reason or "anniversary"
+            item["localUpdateScore"] = round(float(item.get("localUpdateScore") or 0) + 1.6, 3)
+        elif relation:
+            item["relatedCurrentEvent"] = clean(relation.get("headline"))
+            item["relatedCurrentEventUrl"] = relation.get("sourceUrl") or relation.get("storyUrl") or ""
+            item["contextSignal"] = "related-current-event"
+            item["localUpdateReason"] = explicit_reason or "related current event"
+            item["contextMatchScore"] = round(relation_score, 3)
+            item["localUpdateScore"] = round(float(item.get("localUpdateScore") or 0) + 1.3, 3)
+        else:
+            item["localUpdateReason"] = explicit_reason
+            item["localUpdateScore"] = round(float(item.get("localUpdateScore") or 0) + 1.1, 3)
         rows.append(item)
     return rows
 
@@ -141,7 +283,7 @@ def fresh_direct_candidates(combined: list[dict], hero: str, archive: dict, now:
         item = dict(raw)
         if hero and base.public_story_url(str(item.get("storyUrl") or "")) == hero:
             continue
-        status = str(item.get("verificationStatus") or "").lower()
+        status = clean(item.get("verificationStatus")).lower()
         confidence = float(item.get("confidenceScore") or 0)
         local = float(item.get("localRelevance") or 0)
         age = source_age_hours(item, now)
@@ -155,8 +297,6 @@ def fresh_direct_candidates(combined: list[dict], hero: str, archive: dict, now:
 
 def regional_candidates(now_iso: str, archive: dict, now: dt.datetime) -> list[dict]:
     rows = []
-    # Hamilton is a neighbour, not Burlington. These items are considered only
-    # after direct Burlington/Halton/corridor candidates have gone quiet.
     for raw in hps_collect(now_iso, live=True, include_regional=True):
         if not raw.get("regionalFallback"):
             continue
@@ -187,6 +327,7 @@ def main() -> int:
     now_iso = now.isoformat()
     policy = load_policy().get("breakingNow") or {}
     home = load("home-surface.json", {})
+    catalog = load("story-catalog.json", {"items": []})
     archive = load("breaking-archive.json", {"items": []})
     combined, leftover = base.collect_all(now_iso, True)
     hero = base.hero_url(home)
@@ -204,16 +345,16 @@ def main() -> int:
         accepted.append(item)
 
     accepted.sort(key=lambda row: float(row.get("breakingScore") or 0), reverse=True)
-    breaking_visible = base.diversify_top(accepted, int(policy.get("maxItems") or 2), "breakingScore")
+    breaking_visible = strict_diversify(accepted, int(policy.get("maxItems") or 2))
 
     if breaking_visible:
         mode = "breaking"
         label = "Breaking News"
         visible = breaking_visible
-        method = "Strict Burlington Breaking News threshold passed."
+        method = "Strict Burlington Breaking News threshold passed; duplicate editorial families are blocked."
     else:
         local_pool = fresh_direct_candidates(combined, hero, archive, now)
-        local_pool.extend(home_candidates(home, hero, now))
+        local_pool.extend(contextual_story_candidates(home, catalog, combined, hero, now))
         deduped = {}
         for item in local_pool:
             key = str(item.get("storyUrl") or item.get("id") or item.get("headline") or "")
@@ -224,17 +365,19 @@ def main() -> int:
         ranked = sorted(
             deduped.values(),
             key=lambda row: (
+                bool(row.get("anniversaryMatch")),
+                bool(row.get("relatedCurrentEvent")),
                 bool(row.get("followUpUpdate")),
                 float(row.get("localUpdateScore") or 0),
             ),
             reverse=True,
         )
         if ranked:
-            visible = base.diversify_top(ranked, 2, "localUpdateScore")
-            method = "Fresh Burlington/Halton Local Update. Existing main story scoring is unchanged; stale rail items are excluded after 18 hours."
+            visible = strict_diversify(ranked, 2)
+            method = "Local Update ranks fresh verified news plus existing stories with a real why-now hook such as a related current event, meaningful update or anniversary; duplicate editorial families are blocked."
         else:
-            visible = regional_candidates(now_iso, archive, now)[:2]
-            method = "No fresh Burlington/Halton update was available, so the rail used a verified regional fallback from a neighbouring official source."
+            visible = strict_diversify(regional_candidates(now_iso, archive, now), 2)
+            method = "No Burlington/Halton item had a strong current hook, so the rail used a verified regional fallback when available."
         mode = "local_update"
         label = "Local Update"
 
@@ -251,6 +394,7 @@ def main() -> int:
             "regionalMaxAgeHours": REGIONAL_MAX_HOURS,
             "priority": ["Burlington", "Halton/Oakville", "QEW/Lakeshore West/Skyway", "Hamilton", "Toronto only when Burlington-relevant"],
             "followUps": "Fresh source updates to archived stories receive a priority bonus; unchanged old stories do not become new again.",
+            "context": "Existing Burlington News stories require a related current event, meaningful update, explicit context signal or anniversary before they can enter Local Update.",
         },
         "items": visible,
         "sourceNotes": {
@@ -261,7 +405,7 @@ def main() -> int:
     }
     queue = {
         "generatedAt": now_iso,
-        "items": leftover + [row for row in rejected if str(row.get("verificationStatus") or "") in {"community_lead", "unverified"}],
+        "items": leftover + [row for row in rejected if clean(row.get("verificationStatus")).lower() in {"community_lead", "unverified"}],
     }
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     QUEUE.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
