@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T03:33:06.648349-04:00",
+  "generatedAt": "2026-08-30T09:20:44.759294-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -2478,37 +2478,6 @@
       "eligibleEditorial": true
     },
     {
-      "id": "511:295213",
-      "detectedAt": "2026-08-30T05:44:37Z",
-      "score": 75,
-      "headline": "Disabled Vehicle on QEW Fort Erie bound  at ROYAL WINDSOR DRIVE, Oakville. 1 right lane closed.",
-      "kind": "traffic",
-      "location": "QEW",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "e7e1b3b938b613c8",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 3.4,
-        "novelty": 2.5,
-        "familiarity": 2.5,
-        "consequence": 2.0,
-        "freshness": 4.6,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 64,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
-    },
-    {
       "id": "burlington-technologies-used-around-world",
       "kind": "original",
       "surfaces": [
@@ -2804,7 +2773,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 1.9995864012268518
+        "rotation": 2.2
       },
       "gates": {
         "evidence": "passed",
@@ -3094,7 +3063,7 @@
         "sourceConfidence": 2.8,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 0.0
+        "rotation": 0.36288967000000016
       },
       "gates": {
         "evidence": "passed",
@@ -3117,6 +3086,37 @@
       "eligibleHomepage": false,
       "eligibleNewest": false,
       "eligibleEditorial": true
+    },
+    {
+      "id": "511:295213",
+      "detectedAt": "2026-08-30T05:44:37Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Fort Erie bound  at ROYAL WINDSOR DRIVE, Oakville. 1 right lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "e7e1b3b938b613c8",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.0,
+        "freshness": 3.2,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 60,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
     },
     {
       "id": "511:293205",
