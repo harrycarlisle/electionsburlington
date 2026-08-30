@@ -12,7 +12,7 @@
   }
 
   function timestamp(item) {
-    const candidates = [item?.lastMeaningfulUpdate, item?.meaningfulUpdatedAt, item?.publishedAt, item?.datePublished];
+    const candidates = [item?.contextTimestamp, item?.lastMeaningfulUpdate, item?.meaningfulUpdatedAt, item?.publishedAt, item?.datePublished];
     for (const value of candidates) {
       const parsed = new Date(value || 0).getTime();
       if (Number.isFinite(parsed) && parsed > 0) return parsed;
@@ -81,6 +81,7 @@
       hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/Toronto'
     }).format(parsed).replace(/\s/g, ' ').toUpperCase();
     if (multiple) return `LATEST ${time}`;
+    if (item?.contextTimestamp && !hasMeaningfulUpdate(item)) return `RELEVANT ${time}`;
     return `${hasMeaningfulUpdate(item) ? 'UPDATED' : 'POSTED'} ${time}`;
   }
 
