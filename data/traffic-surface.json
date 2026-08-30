@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T01:44:38.705081-04:00",
+  "generatedAt": "2026-08-30T07:49:32.775807-04:00",
   "source": "Ontario 511 events + OSRM geometry + camera inventory",
   "licence": "Open Government Licence - Ontario",
   "incidents": [
@@ -33,7 +33,7 @@
     "label": "Traffic",
     "title": "QEW → Toronto",
     "context": "Delay likely",
-    "impact": "Collision on QEW near Trafalgar Road",
+    "impact": "Collision on QEW near Cawthra Road",
     "freshness": "",
     "url": "/traffic/?destination=toronto",
     "alert": true,
@@ -50,7 +50,7 @@
       "status": {
         "level": "delay",
         "headline": "Delay likely",
-        "detail": "Collision on QEW near Trafalgar Road",
+        "detail": "Collision on QEW near Cawthra Road",
         "looks": "",
         "source": "Ontario 511"
       },
@@ -76,19 +76,19 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:295213",
-          "title": "Collision on QEW near Trafalgar Road",
-          "rawHeadline": "Disabled Vehicle on QEW Fort Erie bound  at ROYAL WINDSOR DRIVE, Oakville. 1 right lane closed.",
+          "id": "511:295224",
+          "title": "Collision on QEW near Cawthra Road",
+          "rawHeadline": "Collision on QEW Fort Erie bound  at CAWTHRA ROAD, Mississauga. 1 left lane closed.",
           "roadway": "QEW",
           "direction": "Fort Erie-bound",
           "type": "collision",
           "facility": "mainline",
-          "nearestRoad": "Trafalgar Road",
-          "municipality": "Oakville",
-          "context": "Oakville · Trafalgar Road / QEW",
+          "nearestRoad": "Cawthra Road",
+          "municipality": "Mississauga",
+          "context": "Mississauga · Cawthra Road / QEW",
           "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
-          "latitude": 43.47055,
-          "longitude": -79.674694,
+          "latitude": 43.58352621,
+          "longitude": -79.58328062,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -1085,26 +1085,6 @@
       },
       "incidents": [
         {
-          "id": "511:290769",
-          "title": "QEW Fort Erie-bound on-ramp closed at Bartlett Avenue",
-          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound On-ramp at BARTLETT AVENUE, Grimsby. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Fort Erie-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Bartlett Avenue",
-          "municipality": "Niagara",
-          "context": "Niagara · Bartlett Avenue / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
-          "latitude": 43.189972,
-          "longitude": -79.52388,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
-        },
-        {
           "id": "511:293658",
           "title": "QEW Fort Erie-bound on-ramp closed at Bartlett Avenue",
           "rawHeadline": "Nightly Construction on QEW Fort Erie Bound On-ramp at BARTLETT AVENUE, Grimsby. ALL LANES CLOSED.",
@@ -1138,6 +1118,26 @@
           "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
           "latitude": 43.189972,
           "longitude": -79.52388,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:293674",
+          "title": "QEW Fort Erie-bound off-ramp closed at Ontario Street -Beamsville",
+          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at ONTARIO STREET -BEAMSVILLE, Lincoln. ALL LANES CLOSED.",
+          "roadway": "QEW",
+          "direction": "Fort Erie-bound",
+          "type": "closure",
+          "facility": "off-ramp",
+          "nearestRoad": "Ontario Street -Beamsville",
+          "municipality": "Niagara",
+          "context": "Niagara · Ontario Street -Beamsville / QEW · off-ramp",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.18898,
+          "longitude": -79.47688,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -1365,26 +1365,6 @@
       ],
       "advisories": [
         {
-          "id": "511:290769",
-          "title": "QEW Fort Erie-bound on-ramp closed at Bartlett Avenue",
-          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound On-ramp at BARTLETT AVENUE, Grimsby. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Fort Erie-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Bartlett Avenue",
-          "municipality": "Niagara",
-          "context": "Niagara · Bartlett Avenue / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
-          "latitude": 43.189972,
-          "longitude": -79.52388,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
-        },
-        {
           "id": "511:293658",
           "title": "QEW Fort Erie-bound on-ramp closed at Bartlett Avenue",
           "rawHeadline": "Nightly Construction on QEW Fort Erie Bound On-ramp at BARTLETT AVENUE, Grimsby. ALL LANES CLOSED.",
@@ -1423,6 +1403,26 @@
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
+        },
+        {
+          "id": "511:293674",
+          "title": "QEW Fort Erie-bound off-ramp closed at Ontario Street -Beamsville",
+          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at ONTARIO STREET -BEAMSVILLE, Lincoln. ALL LANES CLOSED.",
+          "roadway": "QEW",
+          "direction": "Fort Erie-bound",
+          "type": "closure",
+          "facility": "off-ramp",
+          "nearestRoad": "Ontario Street -Beamsville",
+          "municipality": "Niagara",
+          "context": "Niagara · Ontario Street -Beamsville / QEW · off-ramp",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.18898,
+          "longitude": -79.47688,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
         }
       ]
     }
@@ -1431,6 +1431,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-08-30T06:30:09.293011-04:00"
+    "updatedAt": "2026-08-30T07:49:35.630753-04:00"
   }
 }
