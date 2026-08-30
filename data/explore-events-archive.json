@@ -1,6 +1,36 @@
 {
-  "updated": "2026-08-30T17:01:56-04:00",
+  "updated": "2026-08-30T19:28:05-04:00",
   "events": [
+    {
+      "id": "winona-peach-festival-2026",
+      "title": "Winona Peach Festival",
+      "category": "Festival",
+      "start": "2026-08-28T17:00:00-04:00",
+      "end": "2026-08-30T18:00:00-04:00",
+      "dateLabel": "Aug. 28 to 30",
+      "location": "Winona Park, 1328 Barton Street, Stoney Creek",
+      "city": "Stoney Creek",
+      "venue": "Winona Park",
+      "travel": "About 25 minutes east of Burlington along the QEW",
+      "summary": "A free three-day peach festival with food, live music, crafts and a midway.",
+      "details": "This is a nearby Stoney Creek festival, not a Burlington event. Hours are Friday 5 to 11 p.m., Saturday 10 a.m. to 11 p.m. and Sunday 10 a.m. to 6 p.m. Admission ends at 9:30 p.m. Friday and Saturday. The official site says bag checks and metal detectors are in use.",
+      "bring": [
+        "A payment card or cash",
+        "A bag that is easy to check",
+        "A plan for parking or the HSR shuttle"
+      ],
+      "source": "https://winonapeach.com/",
+      "sourceName": "Winona Peach Festival",
+      "visualText": "NEARBY",
+      "scope": "Stoney Creek",
+      "weight": 7,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "image": "assets/explore/winona-peach-festival.webp",
+      "imageAlt": "Baskets of ripe peaches on a market table.",
+      "credit": "",
+      "illustration": false,
+      "archivedAt": "2026-08-30T19:28:05-04:00"
+    },
     {
       "id": "elizabeth-gardens-art-walk-2026",
       "title": "Elizabeth Gardens Art Walk",
