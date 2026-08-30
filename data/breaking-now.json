@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T00:17:13.545871-04:00",
+  "generatedAt": "2026-08-30T03:32:28.892409-04:00",
   "mode": "local_update",
   "label": "Local Update",
   "method": "Fresh Burlington/Halton Local Update. Existing main story scoring is unchanged; stale rail items are excluded after 18 hours.",
@@ -50,12 +50,12 @@
       "confidenceScore": 4.5,
       "localRelevance": 5.0,
       "impactScore": 4.4,
-      "recencyScore": 4.3,
+      "recencyScore": 2.5,
       "breadthScore": 4.2,
       "noveltyScore": 3.4,
       "publicNeedScore": 4.4,
-      "breakingScore": 4.475,
-      "localUpdateScore": 4.595,
+      "breakingScore": 4.115,
+      "localUpdateScore": 4.145,
       "rawHeadline": "Can you have a backyard fire pit in Burlington?",
       "shortHeadline": "Can you have a backyard fire pit in Burlington?."
     },
@@ -91,12 +91,12 @@
       "confidenceScore": 4.5,
       "localRelevance": 5.0,
       "impactScore": 2.2,
-      "recencyScore": 4.3,
+      "recencyScore": 2.5,
       "breadthScore": 4.2,
       "noveltyScore": 3.4,
       "publicNeedScore": 2.2,
-      "breakingScore": 3.925,
-      "localUpdateScore": 4.125,
+      "breakingScore": 3.565,
+      "localUpdateScore": 3.675,
       "rawHeadline": "Do you need a permit for a shed in Burlington?",
       "shortHeadline": "Do you need a permit for a shed in Burlington?."
     }
