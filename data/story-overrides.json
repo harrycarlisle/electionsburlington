@@ -87,5 +87,12 @@
   "burlington-crime-analysis-2026": {
     "headline": "How bad is crime in Burlington, really?",
     "deck": "The latest Halton data complicates the usual picture of crime in Burlington. The category moving fastest is not the one most people see on the street."
+  },
+  "king-road-magnetic-hill": {
+    "headline": "Why do cars appear to roll uphill on Burlington's King Road?",
+    "deck": "For decades, one short stretch of King Road has made Burlington drivers question which way is down. The explanation is stranger than a hidden magnet.",
+    "image": "assets/king-road.png",
+    "alt": "A car travelling along the wooded section of King Road in Burlington near the area known for its magnetic hill.",
+    "credit": "User-supplied image"
   }
 }
