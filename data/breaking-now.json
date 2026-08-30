@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T12:15:00-04:00",
+  "generatedAt": "2026-08-30T13:37:44.847918-04:00",
   "mode": "local_update",
   "label": "Local Update",
   "method": "No Local Update was shown because no item had a clear why-now signal.",
@@ -15,7 +15,8 @@
       "Hamilton",
       "Toronto only when Burlington-relevant"
     ],
-    "followUps": "Fresh source updates to archived stories receive a priority bonus; unchanged old stories do not become new again."
+    "followUps": "Fresh source updates to archived stories receive a priority bonus; unchanged old stories do not become new again.",
+    "context": "Existing Burlington News stories require a related current event, meaningful update, explicit context signal or anniversary before they can enter Local Update."
   },
   "items": [],
   "sourceNotes": {
