@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T07:49:32.775807-04:00",
+  "generatedAt": "2026-08-30T12:36:44.872229-04:00",
   "source": "Ontario 511 events + OSRM geometry + camera inventory",
   "licence": "Open Government Licence - Ontario",
   "incidents": [
@@ -96,19 +96,19 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:292475",
-          "title": "Construction on QEW near Brant Street",
-          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound  between GUELPH LINE and BRANT STREET, Burlington. 2 Alternating Lane(s).",
+          "id": "511:295252",
+          "title": "Collision on QEW near Cawthra Road",
+          "rawHeadline": "Emergency Roadwork on QEW Fort Erie bound  at CAWTHRA ROAD, Mississauga. Left shoulder and left lane closed.",
           "roadway": "QEW",
           "direction": "Fort Erie-bound",
-          "type": "construction",
+          "type": "collision",
           "facility": "mainline",
-          "nearestRoad": "Brant Street",
-          "municipality": "Burlington",
-          "context": "Burlington · Brant Street / QEW",
+          "nearestRoad": "Cawthra Road",
+          "municipality": "Mississauga",
+          "context": "Mississauga · Cawthra Road / QEW",
           "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
-          "latitude": 43.35202,
-          "longitude": -79.80386,
+          "latitude": 43.58352621,
+          "longitude": -79.58328062,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -1431,6 +1431,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-08-30T10:56:29.112026-04:00"
+    "updatedAt": "2026-08-30T12:36:48.107585-04:00"
   }
 }
