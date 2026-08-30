@@ -30,6 +30,56 @@
     return Number.isFinite(published) && Number.isFinite(updated) && updated > published + (5 * 60 * 1000);
   }
 
+  function editorialFamily(item) {
+    const value = `${item?.editorialFamily || ''} ${item?.kind || ''} ${item?.label || ''} ${item?.category || ''} ${item?.topic || ''}`.toLowerCase();
+    if (/home rules|permit|parking|bylaw|service/.test(value)) return 'service';
+    if (/public safety|police|crime|shooting|fire/.test(value)) return 'public-safety';
+    if (/traffic|transport|road|qew|collision/.test(value)) return 'traffic';
+    if (/history|mystery|heritage/.test(value)) return 'history';
+    if (/development|construction|housing/.test(value)) return 'development';
+    if (/food|restaurant|drink/.test(value)) return 'food';
+    if (/sport/.test(value)) return 'sports';
+    if (/event|festival/.test(value)) return 'events';
+    if (/school|education/.test(value)) return 'schools';
+    if (/election|council|politic/.test(value)) return 'civic';
+    return String(item?.category || item?.topic || item?.label || item?.id || 'other').toLowerCase();
+  }
+
+  function contextScore(item) {
+    if (item?.localUpdateEligible === false) return 0;
+    if (item?.anniversaryMatch || item?.localUpdateReason === 'anniversary') return 5;
+    if (item?.localUpdateReason || item?.contextSignal || item?.relatedCurrentEvent) return 5;
+    if (hasMeaningfulUpdate(item)) return 4;
+
+    const source = String(item?.sourceName || '').toLowerCase();
+    const kind = String(item?.kind || '').toLowerCase();
+    const label = String(item?.label || item?.category || '').toLowerCase();
+    if (source.includes('burlington news')) {
+      if (kind === 'service' || /home rules|parking|permit/.test(label)) return 0;
+      return 0;
+    }
+
+    return 3;
+  }
+
+  function localRank(item) {
+    const base = Number(item?.localUpdateScore || 0);
+    return base + contextScore(item) * 0.75;
+  }
+
+  function pickDiverse(items, limit = 2) {
+    const picked = [];
+    const families = new Set();
+    for (const item of items) {
+      const family = editorialFamily(item);
+      if (families.has(family)) continue;
+      picked.push(item);
+      families.add(family);
+      if (picked.length >= limit) break;
+    }
+    return picked;
+  }
+
   function timeLabel(item, multiple) {
     const stamp = timestamp(item);
     if (!stamp) return '';
@@ -61,10 +111,27 @@
   function render(doc, archiveDoc = {}) {
     const current = Array.isArray(doc?.items) ? doc.items : [];
     const archive = Array.isArray(archiveDoc?.items) ? archiveDoc.items : [];
-    const visible = unique([...current, ...archive])
+    const candidates = unique([...current, ...archive])
       .filter(item => item?.headline && storyUrl(item) && ageMs(item) <= LOCAL_UPDATE_MAX_AGE_MS)
-      .sort((a, b) => timestamp(b) - timestamp(a))
-      .slice(0, 2);
+      .sort((a, b) => timestamp(b) - timestamp(a));
+
+    const currentIds = new Set(current.map(item => item?.id).filter(Boolean));
+    const freshestCandidate = candidates[0];
+    const breakingMode = Boolean(
+      freshestCandidate &&
+      doc?.mode === 'breaking' &&
+      currentIds.has(freshestCandidate?.id) &&
+      ageMs(freshestCandidate) <= BREAKING_MAX_AGE_MS
+    );
+
+    const visible = breakingMode
+      ? candidates.slice(0, 2)
+      : pickDiverse(
+          candidates
+            .filter(item => contextScore(item) > 0)
+            .sort((a, b) => localRank(b) - localRank(a) || timestamp(b) - timestamp(a)),
+          2
+        );
 
     if (!visible.length) {
       hide();
@@ -72,8 +139,7 @@
     }
 
     const freshest = visible[0];
-    const currentIds = new Set(current.map(item => item?.id).filter(Boolean));
-    const isBreaking = doc?.mode === 'breaking' && currentIds.has(freshest?.id) && ageMs(freshest) <= BREAKING_MAX_AGE_MS;
+    const isBreaking = breakingMode && currentIds.has(freshest?.id);
     const label = isBreaking ? 'Breaking News' : 'Local Update';
     const stamp = timeLabel(freshest, visible.length > 1);
 
@@ -84,7 +150,7 @@
     host.dataset.count = String(visible.length);
     host.dataset.selectionReason = isBreaking
       ? 'verified story published or meaningfully updated within three hours'
-      : 'recent verified local story; breaking treatment expires after three hours';
+      : 'why-now context required; local score boosted by context; duplicate editorial families blocked';
 
     host.innerHTML = `
       <div class="breaking-heading">
@@ -94,7 +160,7 @@
       <div class="breaking-list" data-count="${visible.length}">
         ${visible.map(item => {
           const href = storyUrl(item);
-          return `<a class="breaking-row" href="${esc(href)}" data-breaking-score="${esc(item.breakingScore ?? '')}" data-local-update-score="${esc(item.localUpdateScore ?? '')}"${/^https?:\/\//.test(href) ? ' target="_blank" rel="noopener"' : ''}><strong>${esc(item.shortHeadline || item.headline)}</strong><span class="breaking-chevron" aria-hidden="true">›</span></a>`;
+          return `<a class="breaking-row" href="${esc(href)}" data-breaking-score="${esc(item.breakingScore ?? '')}" data-local-update-score="${esc(item.localUpdateScore ?? '')}" data-context-score="${esc(contextScore(item))}"${/^https?:\/\//.test(href) ? ' target="_blank" rel="noopener"' : ''}><strong>${esc(item.shortHeadline || item.headline)}</strong><span class="breaking-chevron" aria-hidden="true">›</span></a>`;
         }).join('')}
       </div>`;
   }
