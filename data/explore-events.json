@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30T13:26:49-04:00",
+  "updated": "2026-08-30T17:01:56-04:00",
   "timezone": "America/Toronto",
   "events": [
     {
@@ -30,34 +30,6 @@
       "imageAlt": "Baskets of ripe peaches on a market table.",
       "credit": "",
       "illustration": false
-    },
-    {
-      "id": "elizabeth-gardens-art-walk-2026",
-      "title": "Elizabeth Gardens Art Walk",
-      "category": "Public art",
-      "start": "2026-08-30T10:00:00-04:00",
-      "end": "2026-08-30T16:00:00-04:00",
-      "dateLabel": "Sun, Aug. 30 · 10 a.m. to 4 p.m.",
-      "location": "Lions Park and Lions Hall, 471 Pearl Street",
-      "city": "Burlington",
-      "venue": "Lions Park",
-      "travel": "Elizabeth Gardens neighbourhood, Burlington",
-      "summary": "A free outdoor art walk with local artists, hands-on activities and live music.",
-      "details": "The Elizabeth Gardens Creative Collective lists the sixth annual Art Walk as rain or shine. Admission is free. The organizers describe outdoor exhibitions, demos, a scavenger hunt and kids’ activities.",
-      "bring": [
-        "Comfortable walking shoes",
-        "Cash or a card for art you want to buy",
-        "A water bottle"
-      ],
-      "source": "https://creativecollectiveonline.com/art-walk/",
-      "sourceName": "Elizabeth Gardens Creative Collective",
-      "scope": "Burlington",
-      "weight": 6,
-      "verifiedAt": "2026-08-26T12:00:00-04:00",
-      "image": "assets/explore/art-walk.svg",
-      "imageAlt": "Burlington News editorial graphic for Art Walk",
-      "credit": "Burlington News illustration",
-      "illustration": true
     },
     {
       "id": "royal-canadian-circus-2026",
