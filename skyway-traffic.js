@@ -33,6 +33,7 @@ let routesData = null;
 let estimates = {};
 let selectedIndex = 0;
 let routeCameras = [];
+let mapCameras = [];
 let map = null;
 let routeLine = null;
 let puckLayer = null;
@@ -121,6 +122,18 @@ function camerasForMode() {
   const sky = cameras.find(item => Number(item.viewId) === skyId);
   if (!sky || picked.some(item => Number(item.viewId) === skyId)) return picked;
   return [{ ...sky, puck: 1, sourceUrl: sky.sourceUrl }, ...picked.map((item, index) => ({ ...item, puck: index + 2 }))].slice(0, 8);
+}
+
+function mapCamerasForMode() {
+  const route = selectedRoute();
+  const clipped = polylineFor(mode);
+  const line = clipped.line || [];
+  return selectRouteCameras(mode, route?.cameras || [], cameras, line, {
+    start: ROUTE_START[mode] || BURLINGTON_ROUTE_ORIGIN,
+    fullLine: routesData?.routes?.[mode]?.polyline || line,
+    startIndex: clipped.startIndex || 0,
+    max: 999
+  });
 }
 
 function routeIncidents() {
@@ -241,6 +254,15 @@ function puckIcon(number, selected, offline) {
   });
 }
 
+function mapCameraIcon(offline) {
+  return window.L.divIcon({
+    className: `route-camera-dot${offline ? ' is-offline' : ''}`,
+    html: '<span></span>',
+    iconSize: [12, 12],
+    iconAnchor: [6, 6]
+  });
+}
+
 function startIcon() {
   return window.L.divIcon({
     className: 'route-start',
@@ -292,16 +314,30 @@ function renderMarkers() {
   if (!puckLayer || !incidentLayer) return;
   puckLayer.clearLayers();
   incidentLayer.clearLayers();
-  routeCameras.forEach((cam, index) => {
+  mapCameras.forEach((cam, mapIndex) => {
     const offline = unavailable.has(String(cam.viewId));
+    const curatedIndex = routeCameras.findIndex(item => String(item.viewId) === String(cam.viewId));
+    const curated = curatedIndex >= 0;
+    const highlighted = curated ? routeCameras[curatedIndex] : null;
     const marker = window.L.marker([cam.latitude, cam.longitude], {
-      icon: puckIcon(cam.puck || index + 1, index === selectedIndex, offline),
+      icon: curated
+        ? puckIcon(highlighted?.puck || curatedIndex + 1, curatedIndex === selectedIndex, offline)
+        : mapCameraIcon(offline),
       keyboard: true,
-      title: `Camera ${cam.puck || index + 1}`
+      title: cameraDisplayName(cam) || `Camera ${mapIndex + 1}`
     });
     marker.on('click', () => {
       noteInteraction();
-      selectCamera(index);
+      if (curated) {
+        selectCamera(curatedIndex);
+        return;
+      }
+      if (popup) popup.remove();
+      const sourceUrl = cam.sourceUrl || `https://511on.ca/map/Cctv/${cam.viewId}`;
+      popup = window.L.popup({ className: 'route-camera-popup', closeButton: true })
+        .setLatLng([cam.latitude, cam.longitude])
+        .setContent(`<strong>${esc(cameraDisplayName(cam))}</strong><p>Additional Ontario 511 camera on this route.</p><a href="${esc(sourceUrl)}" target="_blank" rel="noopener">Open live camera ↗</a>`)
+        .openOn(map);
     });
     puckLayer.addLayer(marker);
   });
@@ -352,7 +388,7 @@ function renderPreview() {
       <button type="button" class="camera-nav is-next" data-camera-step="1" aria-label="Next camera">›</button>
     </div>
     <p class="camera-preview-meta">${esc(cameraCaption(cam))}${updated ? ` · Updated ${esc(updated)}` : ''}${looks && !offline ? ` · Traffic looks ${esc(looks)}` : ''}</p>
-    <div class="camera-pucks" role="tablist" aria-label="Cameras along this route">
+    <div class="camera-pucks" role="tablist" aria-label="Highlighted cameras along this route">
       ${routeCameras.map((item, index) => `<button type="button" role="tab" aria-selected="${index === selectedIndex}" data-camera-index="${index}">${item.puck || index + 1}</button>`).join('')}
     </div>`;
   bindPreview(host);
@@ -426,7 +462,11 @@ function paintStatus() {
   const el = byId('cameraStatus');
   const images = [...document.querySelectorAll('#cameraPreview [data-camera]')];
   const count = images.filter(image => live.has(image.dataset.camera) && image.naturalWidth).length;
-  if (el) el.textContent = routeCameras.length ? `${count ? 'Live' : 'Loading'} · ${routeCameras.length} cameras` : 'Loading cameras';
+  if (el) {
+    el.textContent = routeCameras.length
+      ? `${count ? 'Live' : 'Loading'} · ${routeCameras.length} highlighted · ${mapCameras.length} on map`
+      : 'Loading cameras';
+  }
 }
 
 function bindImage(image) {
@@ -463,6 +503,7 @@ function startRotation() {
 
 function renderAll() {
   routeCameras = camerasForMode();
+  mapCameras = mapCamerasForMode();
   if (wantsSkyway) {
     const skyId = SKYWAY_VIEWS[mode];
     const skyIndex = routeCameras.findIndex(item => Number(item.viewId) === skyId);
