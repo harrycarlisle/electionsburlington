@@ -99,7 +99,7 @@
     // Only genuinely live utility rails refresh in the browser.
     loadScript('/mobile-top-panel.js?v=20260828fresh4');
     loadScript('/local-now.js?v=20260828fresh5', { module: true });
-    loadScript('/breaking-now.js?v=20260828fresh4');
+    loadScript('/breaking-now.js?v=20260830context1');
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
