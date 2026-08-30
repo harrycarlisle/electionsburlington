@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T21:47:10.255079-04:00",
+  "generatedAt": "2026-08-30T03:33:06.648349-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -498,6 +498,70 @@
       "eligibleEditorial": true
     },
     {
+      "id": "can-you-have-backyard-fire-pit-burlington",
+      "kind": "original",
+      "surfaces": [
+        "latest",
+        "rail"
+      ],
+      "headline": "Can you have a backyard fire pit in Burlington?",
+      "deck": "A wood fire for sitting around is generally not allowed in urban Burlington. Propane and cooking fires are treated differently.",
+      "label": "Home rules",
+      "labelEssential": true,
+      "url": "articles/can-you-have-backyard-fire-pit-burlington.html",
+      "image": "assets/editorial/burlington-backyard-fire-rules.svg",
+      "alt": "Illustration comparing a wood fire pit with a propane fire table in a Burlington backyard.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-29",
+      "activeFrom": "2026-08-29",
+      "activeUntil": "2027-08-29",
+      "publishedAt": "2026-08-29T22:51:00-04:00",
+      "datePublished": "2026-08-29T22:51:00-04:00",
+      "storyGoal": "Explain the Burlington backyard-fire rule in plain language, including the urban wood-fire ban, cooking exception, propane and natural-gas exception, and rural permit system.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary City of Burlington fire sources",
+      "sources": [
+        "https://www.burlington.ca/en/fire-and-emergency-services/open-air-burning---campfires-chimineas-fire-pits.aspx",
+        "https://www.burlington.ca/en/fire-and-emergency-services/burn-permits.aspx",
+        "https://www.burlington.ca/en/fire-and-emergency-services/fire-and-public-safety-education.aspx"
+      ],
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.8,
+        "freshness": 1.5,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "public-safety",
+      "subjects": [
+        "fire-pits",
+        "open-air-burning",
+        "backyards",
+        "fire-safety"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "5f5a71775b26ff74",
+      "radarScore": 69,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
       "id": "pitch:corned-beef-hut-origin",
       "headline": "How one sandwich shop became a Burlington obsession",
       "description": "A restaurant named after one sandwich has survived in a city with hundreds of places to eat. What did it understand that larger menus miss?",
@@ -844,54 +908,6 @@
       "eligibleRightNow": false,
       "eligibleHomepage": true,
       "eligibleNewest": false,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "election-field-2026",
-      "kind": "original",
-      "surfaces": [
-        "feature"
-      ],
-      "headline": "Five people want to lead Burlington. Start with their biggest differences.",
-      "deck": "Compare their plans, records and unanswered questions without campaign spin.",
-      "label": "Election",
-      "labelEssential": true,
-      "url": "election-guide.html#candidates",
-      "mediaKey": "candidate-montage",
-      "byline": "By the Burlington News Election Desk",
-      "activeFrom": "2026-08-21",
-      "activeUntil": "2026-10-26",
-      "signals": {
-        "interest": 2.3,
-        "relevance": 5.0,
-        "novelty": 3.3,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 2.4,
-        "sourceConfidence": 4.0,
-        "originality": 5.0,
-        "visualStrength": 2.2,
-        "rotation": 5.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "topic": "election",
-      "subjects": [
-        "election",
-        "mayor"
-      ],
-      "source": "Burlington News",
-      "sourceType": "official",
-      "verificationTier": "reported",
-      "radarId": "fca8483c76d83c75",
-      "radarScore": 66,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
       "eligibleEditorial": true
     }
   ],
@@ -1487,6 +1503,70 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": false
+    },
+    {
+      "id": "can-you-have-backyard-fire-pit-burlington",
+      "kind": "original",
+      "surfaces": [
+        "latest",
+        "rail"
+      ],
+      "headline": "Can you have a backyard fire pit in Burlington?",
+      "deck": "A wood fire for sitting around is generally not allowed in urban Burlington. Propane and cooking fires are treated differently.",
+      "label": "Home rules",
+      "labelEssential": true,
+      "url": "articles/can-you-have-backyard-fire-pit-burlington.html",
+      "image": "assets/editorial/burlington-backyard-fire-rules.svg",
+      "alt": "Illustration comparing a wood fire pit with a propane fire table in a Burlington backyard.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-29",
+      "activeFrom": "2026-08-29",
+      "activeUntil": "2027-08-29",
+      "publishedAt": "2026-08-29T22:51:00-04:00",
+      "datePublished": "2026-08-29T22:51:00-04:00",
+      "storyGoal": "Explain the Burlington backyard-fire rule in plain language, including the urban wood-fire ban, cooking exception, propane and natural-gas exception, and rural permit system.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary City of Burlington fire sources",
+      "sources": [
+        "https://www.burlington.ca/en/fire-and-emergency-services/open-air-burning---campfires-chimineas-fire-pits.aspx",
+        "https://www.burlington.ca/en/fire-and-emergency-services/burn-permits.aspx",
+        "https://www.burlington.ca/en/fire-and-emergency-services/fire-and-public-safety-education.aspx"
+      ],
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.8,
+        "freshness": 1.5,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "public-safety",
+      "subjects": [
+        "fire-pits",
+        "open-air-burning",
+        "backyards",
+        "fire-safety"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "5f5a71775b26ff74",
+      "radarScore": 69,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
     },
     {
       "id": "pitch:corned-beef-hut-origin",
@@ -2398,6 +2478,300 @@
       "eligibleEditorial": true
     },
     {
+      "id": "511:295213",
+      "detectedAt": "2026-08-30T05:44:37Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Fort Erie bound  at ROYAL WINDSOR DRIVE, Oakville. 1 right lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "e7e1b3b938b613c8",
+      "signals": {
+        "interest": 2.3,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.0,
+        "freshness": 4.6,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 64,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
+      "id": "burlington-technologies-used-around-world",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Four Burlington technologies that ended up around the world",
+      "deck": "Water treatment systems, laboratory robots, broadcast hardware and plant-based materials all have deep Burlington roots.",
+      "label": "Made in Burlington",
+      "labelEssential": true,
+      "url": "articles/burlington-technologies-used-around-world.html",
+      "image": "assets/editorial/burlington-global-technologies.svg",
+      "alt": "Illustration linking Burlington to water, laboratory, broadcast and bio-based technologies around the world.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-29",
+      "activeFrom": "2026-08-29",
+      "activeUntil": "2026-11-30",
+      "publishedAt": "2026-08-29T22:55:00-04:00",
+      "datePublished": "2026-08-29T22:55:00-04:00",
+      "storyGoal": "Show Burlington's global technology footprint through four verified examples whose products or systems are used around the world.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary company sources plus Burlington Economic Development records",
+      "sources": [
+        "https://investburlington.ca/business-success-stories/aslan-technologies/",
+        "https://investburlington.ca/business-success-stories/1980s-startup-grows-into-one-of-burlingtons-largest-companies/",
+        "https://apps.thermofisher.com/apps/lahr/LA_Online_Help_Resource/en-us/Content/Topics/Contact%20Us/Contact%20Us.htm",
+        "https://evertz.com/contact/about/",
+        "https://ecosynthetix.com/about-us/",
+        "https://ecosynthetix.com/our-capabilities/"
+      ],
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "burlington",
+      "subjects": [
+        "made-in-burlington",
+        "technology",
+        "manufacturing",
+        "water",
+        "robotics",
+        "broadcast"
+      ],
+      "lastHomepageLead": "2026-08-29",
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "5bafa01b11628b0b",
+      "radarScore": 64,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
+      "id": "can-you-park-overnight-burlington",
+      "kind": "original",
+      "surfaces": [
+        "latest",
+        "rail"
+      ],
+      "headline": "Can you park on a Burlington street overnight?",
+      "deck": "Usually no. Most streets have a 1 to 6 a.m. parking ban, but exemptions and a paid citywide permit can make overnight parking legal.",
+      "label": "Parking",
+      "labelEssential": true,
+      "url": "articles/can-you-park-overnight-burlington.html",
+      "image": "assets/editorial/burlington-overnight-parking.svg",
+      "alt": "Illustration of a car parked on a Burlington residential street at night beside a clock.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-29",
+      "activeFrom": "2026-08-29",
+      "activeUntil": "2027-08-29",
+      "publishedAt": "2026-08-29T22:52:00-04:00",
+      "datePublished": "2026-08-29T22:52:00-04:00",
+      "storyGoal": "Give Burlington drivers the exact overnight parking rule and clearly separate occasional exemptions from the recurring residential permit.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary City of Burlington sources",
+      "sources": [
+        "https://www.burlington.ca/en/roads-parking-and-traffic/parking-exemptions.aspx",
+        "https://www.burlington.ca/en/roads-parking-and-traffic/citywide-on-street-residential-parking-permit.aspx",
+        "https://www.burlington.ca/en/roads-parking-and-traffic/parking-permits.aspx"
+      ],
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "traffic",
+      "subjects": [
+        "parking",
+        "overnight-parking",
+        "parking-permits",
+        "bylaws"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "dc630f9d91fbe311",
+      "radarScore": 64,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
+      "id": "where-are-burlington-red-light-cameras",
+      "kind": "original",
+      "surfaces": [
+        "latest",
+        "rail"
+      ],
+      "headline": "Where are Burlington's red-light cameras?",
+      "deck": "There are five. Three are on Guelph Line, and running one of them can cost $325.",
+      "label": "Road safety",
+      "labelEssential": true,
+      "url": "articles/where-are-burlington-red-light-cameras.html",
+      "image": "assets/editorial/burlington-red-light-cameras.svg",
+      "alt": "Illustration of a red traffic light and roadside camera at a Burlington intersection.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-29",
+      "activeFrom": "2026-08-29",
+      "activeUntil": "2027-08-29",
+      "publishedAt": "2026-08-29T22:50:00-04:00",
+      "datePublished": "2026-08-29T22:50:00-04:00",
+      "storyGoal": "Create a definitive Burlington search page listing every current red-light camera, the penalty and how the cameras trigger.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary Halton Region source",
+      "sources": [
+        "https://www.halton.ca/for-residents/regional-roads/red-light-cameras"
+      ],
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "traffic",
+      "subjects": [
+        "red-light-cameras",
+        "intersections",
+        "tickets",
+        "road-safety",
+        "guelph-line"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "fe2bae9d3033a2ff",
+      "radarScore": 64,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
+      "id": "do-you-need-permit-shed-burlington",
+      "kind": "original",
+      "surfaces": [
+        "latest",
+        "rail"
+      ],
+      "headline": "Do you need a permit for a shed in Burlington?",
+      "deck": "Not always. The building-permit threshold is 15 square metres, but a small shed still has to follow zoning rules.",
+      "label": "Home rules",
+      "labelEssential": true,
+      "url": "articles/do-you-need-permit-shed-burlington.html",
+      "image": "assets/editorial/burlington-shed-permit.svg",
+      "alt": "Illustration of a backyard shed with measurement lines and a 15-square-metre permit threshold.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-29",
+      "activeFrom": "2026-08-29",
+      "activeUntil": "2027-08-29",
+      "publishedAt": "2026-08-29T22:49:00-04:00",
+      "datePublished": "2026-08-29T22:49:00-04:00",
+      "storyGoal": "Answer the Burlington shed-permit question directly, then separate the 15-square-metre building-permit exemption from zoning and property-specific approvals.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary City of Burlington building and zoning sources",
+      "sources": [
+        "https://www.burlington.ca/en/building-and-renovating/sheds-and-accessory-structures.aspx",
+        "https://www.burlington.ca/en/planning-and-development/zoning.aspx",
+        "https://www.burlington.ca/en/planning-and-development/pre-building-approval-application.aspx",
+        "https://www.burlington.ca/en/planning-and-development/zoning-clearance-certificates.aspx"
+      ],
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 1.5,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "development",
+      "subjects": [
+        "sheds",
+        "building-permits",
+        "zoning",
+        "home-renovation"
+      ],
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "94bcca582238a0b1",
+      "radarScore": 64,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": false,
+      "eligibleEditorial": true
+    },
+    {
       "id": "burlington-flood-protection-90-million",
       "kind": "original",
       "surfaces": [
@@ -2430,7 +2804,7 @@
         "sourceConfidence": 5.0,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 1.5191143347916667
+        "rotation": 1.9995864012268518
       },
       "gates": {
         "evidence": "passed",
@@ -2735,7 +3109,6 @@
         "guelph-line",
         "traffic-data"
       ],
-      "lastHomepageLead": "2026-08-29",
       "source": "Burlington News",
       "sourceType": "official",
       "radarId": "8cc1d7aaa391b96b",
