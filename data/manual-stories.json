@@ -1,6 +1,38 @@
 {
   "items": [
     {
+      "id": "king-road-magnetic-hill",
+      "kind": "original",
+      "surfaces": ["feature", "latest", "rail"],
+      "headline": "Why do cars appear to roll uphill on Burlington's King Road?",
+      "deck": "For at least 70 years, one short stretch of King Road has made drivers question which way is down. The explanations have ranged from magnetism to ghosts.",
+      "label": "Local mysteries",
+      "labelEssential": true,
+      "url": "articles/king-road-magnetic-hill.html",
+      "image": "assets/editorial/king-road-magnetic-hill.jpg",
+      "alt": "Illustrative view of a rural road rising toward a wooded hill, representing Burlington's King Road magnetic hill effect.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-30",
+      "activeFrom": "2026-08-30",
+      "activeUntil": "2027-02-28",
+      "publishedAt": "2026-08-30T11:07:00-04:00",
+      "datePublished": "2026-08-30T11:07:00-04:00",
+      "storyGoal": "Start with the apparent gravity-defying motion on King Road, trace the decades-old Burlington legend, and reveal the visual-perception mechanism only after the mystery has been established.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Peer-reviewed visual-perception research, Burlington Historical Society archive material and attributed local reporting",
+      "sources": [
+        "https://www.burlingtontoday.com/local-news/video-gravity-or-ghosts-burlingtons-magnetic-hill-pulls-drivers-up-the-road-11204236",
+        "https://burlingtonhistorical.ca/wp/wp-content/uploads/media/2016/newsletter/BHS_NL_2016.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/12930474/"
+      ],
+      "signals": {"relevance": 5, "breadth": 5, "novelty": 5, "familiarity": 4, "consequence": 3, "interest": 5, "originality": 5, "visualStrength": 5},
+      "gates": {"evidence": "passed", "burlington": "passed", "imageRights": "passed", "duplicate": "passed"},
+      "topic": "history",
+      "subjects": ["king-road", "magnetic-hill", "optical-illusion", "local-history", "folklore"]
+    },
+    {
       "id": "five-creepiest-burlington-mysteries",
       "kind": "original",
       "surfaces": ["feature", "latest", "rail"],
