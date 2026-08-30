@@ -1,31 +1,10 @@
-name: Daily Burlington news watch
+name: Burlington news watch
 
 on:
   schedule:
+    # General local-news monitoring remains hourly. Pushes no longer create duplicate runs.
     - cron: '20 * * * *'
   workflow_dispatch:
-  push:
-    paths:
-      - 'data/councillor-profiles.json'
-      - 'data/community-discussion.json'
-      - 'data/story-catalog.json'
-      - 'data/story-overrides.json'
-      - 'data/manual-stories.json'
-      - 'data/editorial-policy.json'
-      - 'scripts/update_candidate_assets.py'
-      - 'scripts/update_civic_watch.py'
-      - 'scripts/update_civic_watch_local.py'
-      - 'scripts/build_editorial_queue.py'
-      - 'scripts/auto_publish_briefs.py'
-      - 'scripts/merge_manual_stories.py'
-      - 'scripts/rank_stories.py'
-      - 'scripts/render_homepage.py'
-      - 'scripts/apply_story_presentation.py'
-      - 'scripts/sync_public_urls.py'
-      - 'scripts/search_indexing_hygiene.py'
-      - 'scripts/dedupe_legacy_redirects.py'
-      - 'scripts/safe_bot_commit.py'
-      - '.github/workflows/daily-civic-watch.yml'
 
 permissions:
   contents: write
@@ -47,8 +26,6 @@ jobs:
           python-version: '3.12'
       - name: Check Burlington news sources
         run: python scripts/update_civic_watch_local.py
-      - name: Verify candidate photos
-        run: python scripts/update_candidate_assets.py
       - name: Build original-story candidates
         run: python scripts/build_original_candidates.py
       - name: Build editorial queue
@@ -60,7 +37,7 @@ jobs:
       - name: Rotate homepage stories
         run: python scripts/rank_stories.py
       - name: Render stable homepage first paint
-        run: python scripts/render_homepage.py
+        run: python scripts/render_live_homepage.py
       - name: Publish clean public URLs
         run: python scripts/sync_public_urls.py
       - name: Apply editorial presentation overrides

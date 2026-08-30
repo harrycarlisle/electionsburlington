@@ -2,29 +2,13 @@ name: Burlington breaking now
 
 on:
   schedule:
-    # Check official police/newsroom feeds every 15 minutes, offset from GO / 511 jobs.
+    # Breaking monitoring stays frequent, but code/content pushes no longer create extra runs.
     - cron: '4,19,34,49 * * * *'
   workflow_dispatch:
-  push:
-    paths:
-      - 'scripts/build_breaking_now.py'
-      - 'scripts/refresh_breaking_now.py'
-      - 'scripts/enrich_regional_local_update.py'
-      - 'scripts/postprocess_breaking_now.py'
-      - 'scripts/publish_breaking_briefs.py'
-      - 'scripts/render_homepage.py'
-      - 'scripts/render_live_homepage.py'
-      - 'scripts/search_indexing_hygiene.py'
-      - 'scripts/dedupe_legacy_redirects.py'
-      - 'scripts/sources/**'
-      - 'data/story-overrides.json'
-      - '.github/workflows/breaking-now.yml'
 
 permissions:
   contents: write
 
-# All bots that write generated data to main use the same queue. This prevents
-# a breaking-news commit from rebasing against a simultaneous GO/traffic update.
 concurrency:
   group: burlington-news-main-writers
   cancel-in-progress: false
@@ -45,7 +29,7 @@ jobs:
         run: python scripts/refresh_breaking_now.py
       - name: Add regional news when Local Update is utility-only
         run: python scripts/enrich_regional_local_update.py
-      - name: Normalize live-rail destinations
+      - name: Normalize live-rail destinations and eligibility
         run: python scripts/postprocess_breaking_now.py
       - name: Publish durable breaking briefs
         run: python scripts/publish_breaking_briefs.py

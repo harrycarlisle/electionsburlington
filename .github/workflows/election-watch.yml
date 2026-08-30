@@ -1,24 +1,16 @@
-name: Election Watch
+name: Burlington election watch
 
 on:
   schedule:
-    - cron: '20 12 * * 1'
+    # Weekly until September 14, then daily through Election Day.
+    - cron: '20 12 31 8 *'
+    - cron: '20 12 7 9 *'
+    - cron: '20 12 14-30 9 *'
+    - cron: '20 12 1-26 10 *'
   workflow_dispatch:
-  push:
-    paths:
-      - '.github/workflows/election-watch.yml'
-      - 'tools/polish_site.py'
-      - 'scripts/election_watch.py'
-      - 'scripts/safe_bot_commit.py'
-      - 'site-extra.css'
-      - 'site-extra.js'
-      - 'privacy.html'
-      - 'terms.html'
-      - 'help.html'
 
 permissions:
   contents: write
-  issues: write
 
 concurrency:
   group: burlington-news-main-writers
@@ -28,26 +20,41 @@ jobs:
   review:
     runs-on: ubuntu-latest
     steps:
+      - name: Check monitoring window
+        id: window
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u +%Y)" = "2026" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Check out repository
+        if: steps.window.outputs.run == 'true'
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Set up Python
+        if: steps.window.outputs.run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Polish static site
-        run: python tools/polish_site.py
+      - name: Verify candidate photos
+        if: steps.window.outputs.run == 'true'
+        run: python scripts/update_candidate_assets.py
 
-      - name: Create weekly review and archive
+      - name: Create election source review and archive
+        if: steps.window.outputs.run == 'true'
         run: python scripts/election_watch.py
 
-      - name: Commit monitoring state and site polish
+      - name: Commit election monitoring state
+        if: steps.window.outputs.run == 'true'
         run: >-
           python scripts/safe_bot_commit.py
           --name "election-watch-bot"
-          --message "Weekly election source check"
-          election-guide.html head-to-head.html monitoring/source-state.json
+          --message "Update election source check"
+          data/ballot.json monitoring/source-state.json
           monitoring/latest.md monitoring/archive monitoring/history.jsonl

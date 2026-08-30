@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Render the first-paint Burlington News homepage from generated editorial data.
+"""Render the first-paint Burlington News homepage from the same generated data the live rails use.
 
-The main editorial page is server-rendered so the first paint matches the live
-selection rules. Live traffic and breaking/local-update scripts can still refresh
-their own rails after load.
+The homepage used to ship one editorial state in index.html and then re-rank the
+hero/newest blocks in the browser a fraction of a second later. That created a
+visible page swap. This renderer makes the HTML itself authoritative at load time.
+Live traffic and breaking/local-update scripts can still refresh their own rails
+without replacing the main editorial page after first paint.
 """
 from __future__ import annotations
 
@@ -102,7 +104,14 @@ def parse_time(value) -> dt.datetime | None:
 
 
 def timestamp(item: dict) -> dt.datetime | None:
-    for key in ("lastMeaningfulUpdate", "meaningfulUpdatedAt", "publishedAt", "datePublished", "published", "activeFrom"):
+    for key in (
+        "lastMeaningfulUpdate",
+        "meaningfulUpdatedAt",
+        "publishedAt",
+        "datePublished",
+        "published",
+        "activeFrom",
+    ):
         parsed = parse_time(item.get(key))
         if parsed:
             return parsed
@@ -142,45 +151,6 @@ def category_label(item: dict) -> str:
     return TOPIC_LABELS.get(topic, "Burlington")
 
 
-def editorial_family(item: dict) -> str:
-    value = " ".join(clean(item.get(key)).lower() for key in ("editorialFamily", "kind", "label", "category", "topic"))
-    if re.search(r"home rules|permit|parking|bylaw|service", value):
-        return "service"
-    if re.search(r"public safety|police|crime|shooting|fire", value):
-        return "public-safety"
-    if re.search(r"traffic|transport|road|qew|collision", value):
-        return "traffic"
-    if re.search(r"history|mystery|heritage", value):
-        return "history"
-    if re.search(r"development|construction|housing", value):
-        return "development"
-    if re.search(r"food|restaurant|drink", value):
-        return "food"
-    if "sport" in value:
-        return "sports"
-    if re.search(r"event|festival", value):
-        return "events"
-    if re.search(r"school|education", value):
-        return "schools"
-    if re.search(r"election|council|politic", value):
-        return "civic"
-    return clean(item.get("topic") or item.get("category") or item.get("label") or item.get("id") or "other").lower()
-
-
-def pick_diverse(items: list[dict], limit: int) -> list[dict]:
-    picked: list[dict] = []
-    families: set[str] = set()
-    for item in items:
-        family = editorial_family(item)
-        if family in families:
-            continue
-        picked.append(item)
-        families.add(family)
-        if len(picked) >= limit:
-            break
-    return picked
-
-
 def hero_deck(item: dict) -> str:
     key = clean(item.get("id"))
     if key in HERO_DECK_OVERRIDES:
@@ -188,47 +158,16 @@ def hero_deck(item: dict) -> str:
     return clean(item.get("deck") or item.get("summary") or item.get("description"))
 
 
-def has_meaningful_update(item: dict) -> bool:
-    published = parse_time(item.get("publishedAt") or item.get("datePublished"))
-    updated = parse_time(item.get("lastMeaningfulUpdate") or item.get("meaningfulUpdatedAt"))
-    return bool(published and updated and updated > published + dt.timedelta(minutes=5))
-
-
-def local_context_score(item: dict) -> float:
-    if item.get("localUpdateEligible") is False:
-        return 0.0
-    if item.get("anniversaryMatch") or clean(item.get("localUpdateReason")).lower() == "anniversary":
-        return 5.0
-    if item.get("localUpdateReason") or item.get("contextSignal") or item.get("relatedCurrentEvent"):
-        return 5.0
-    if has_meaningful_update(item):
-        return 4.0
-    source = clean(item.get("sourceName")).lower()
-    kind = clean(item.get("kind")).lower()
-    label = clean(item.get("label") or item.get("category")).lower()
-    if "burlington news" in source:
-        if kind == "service" or re.search(r"home rules|parking|permit", label):
-            return 0.0
-        return 0.0
-    return 3.0
-
-
-def local_rank(item: dict) -> float:
-    return float(item.get("localUpdateScore") or 0) + local_context_score(item) * 0.75
-
-
 def breaking_visible(live: dict, archive: dict, now: dt.datetime) -> list[dict]:
     current = [row for row in (live.get("items") or []) if isinstance(row, dict)]
     old = [row for row in (archive.get("items") or []) if isinstance(row, dict)]
-    candidates = [row for row in unique(current + old) if row.get("headline") and public_url(row) and age(row, now) <= LOCAL_UPDATE_MAX_AGE]
-    candidates.sort(key=lambda row: timestamp(row) or dt.datetime.min.replace(tzinfo=TZ), reverse=True)
-    current_ids = {clean(row.get("id")) for row in current if row.get("id")}
-    breaking_candidates = [row for row in candidates if live.get("mode") == "breaking" and clean(row.get("id")) in current_ids and age(row, now) <= BREAKING_MAX_AGE]
-    if breaking_candidates:
-        return candidates[:2]
-    local = [row for row in candidates if local_context_score(row) > 0]
-    local.sort(key=lambda row: (local_rank(row), timestamp(row) or dt.datetime.min.replace(tzinfo=TZ)), reverse=True)
-    return pick_diverse(local, 2)
+    rows = [
+        row
+        for row in unique(current + old)
+        if row.get("headline") and public_url(row) and age(row, now) <= LOCAL_UPDATE_MAX_AGE
+    ]
+    rows.sort(key=lambda row: timestamp(row) or dt.datetime.min.replace(tzinfo=TZ), reverse=True)
+    return rows[:2]
 
 
 def clock_label(value: dt.datetime) -> str:
@@ -238,13 +177,24 @@ def clock_label(value: dt.datetime) -> str:
     return f"{hour}:{local.minute:02d} {suffix}"
 
 
+def has_meaningful_update(item: dict) -> bool:
+    published = parse_time(item.get("publishedAt") or item.get("datePublished"))
+    updated = parse_time(item.get("lastMeaningfulUpdate") or item.get("meaningfulUpdatedAt"))
+    return bool(published and updated and updated > published + dt.timedelta(minutes=5))
+
+
 def render_breaking_section(live: dict, archive: dict, now: dt.datetime) -> str:
     visible = breaking_visible(live, archive, now)
     if not visible:
         return '<section class="breaking-now is-empty" id="breakingNow" hidden aria-hidden="true"></section>'
+
     current_ids = {clean(row.get("id")) for row in (live.get("items") or []) if row.get("id")}
     freshest = visible[0]
-    is_breaking = live.get("mode") == "breaking" and clean(freshest.get("id")) in current_ids and age(freshest, now) <= BREAKING_MAX_AGE
+    is_breaking = (
+        live.get("mode") == "breaking"
+        and clean(freshest.get("id")) in current_ids
+        and age(freshest, now) <= BREAKING_MAX_AGE
+    )
     state = "breaking" if is_breaking else "local-update"
     label = "Breaking News" if is_breaking else "Local Update"
     stamp = timestamp(freshest)
@@ -253,19 +203,29 @@ def render_breaking_section(live: dict, archive: dict, now: dt.datetime) -> str:
         status = f'<span class="breaking-status">{prefix} {clock_label(stamp)}</span>'
     else:
         status = ""
-    reason = "verified story published or meaningfully updated within three hours" if is_breaking else "why-now context required; context boosts ranking; duplicate editorial families blocked"
+    reason = (
+        "verified story published or meaningfully updated within three hours"
+        if is_breaking
+        else "recent verified local story; breaking treatment expires after three hours"
+    )
     rows = []
     for item in visible:
         href = public_url(item)
-        attrs = ' target="_blank" rel="noopener"' if href.startswith("http://") or href.startswith("https://") else ""
+        external = href.startswith("http://") or href.startswith("https://")
+        attrs = ' target="_blank" rel="noopener"' if external else ""
+        breaking_score = esc(item.get("breakingScore") if item.get("breakingScore") is not None else "")
+        local_score = esc(item.get("localUpdateScore") if item.get("localUpdateScore") is not None else "")
+        headline = esc(item.get("shortHeadline") or item.get("headline"))
         rows.append(
-            f'<a class="breaking-row" href="{esc(href)}" data-breaking-score="{esc(item.get("breakingScore") if item.get("breakingScore") is not None else "")}" '
-            f'data-local-update-score="{esc(item.get("localUpdateScore") if item.get("localUpdateScore") is not None else "")}" data-context-score="{esc(local_context_score(item))}"{attrs}>'
-            f'<strong>{esc(item.get("shortHeadline") or item.get("headline"))}</strong><span class="breaking-chevron" aria-hidden="true">›</span></a>'
+            f'<a class="breaking-row" href="{esc(href)}" data-breaking-score="{breaking_score}" '
+            f'data-local-update-score="{local_score}"{attrs}><strong>{headline}</strong>'
+            '<span class="breaking-chevron" aria-hidden="true">›</span></a>'
         )
     return (
-        f'<section class="breaking-now" id="breakingNow" data-state="{state}" data-count="{len(visible)}" data-selection-reason="{esc(reason)}">'
-        f'<div class="breaking-heading"><strong>{label}</strong>{status}</div><div class="breaking-list" data-count="{len(visible)}'>{"".join(rows)}</div></section>'
+        f'<section class="breaking-now" id="breakingNow" data-state="{state}" data-count="{len(visible)}" '
+        f'data-selection-reason="{esc(reason)}">'
+        f'<div class="breaking-heading"><strong>{label}</strong>{status}</div>'
+        f'<div class="breaking-list" data-count="{len(visible)}">{"".join(rows)}</div></section>'
     )
 
 
@@ -274,10 +234,19 @@ def choose_hero(home: dict, live: dict, archive: dict, now: dt.datetime) -> dict
         for item in live.get("items") or []:
             if item.get("headline") and public_url(item) and image_url(item):
                 return item
-    recent_archive = [item for item in (archive.get("items") or []) if item.get("headline") and public_url(item) and image_url(item) and age(item, now) <= RECENT_ARCHIVE_HERO_MAX_AGE]
+
+    recent_archive = [
+        item
+        for item in (archive.get("items") or [])
+        if item.get("headline")
+        and public_url(item)
+        and image_url(item)
+        and age(item, now) <= RECENT_ARCHIVE_HERO_MAX_AGE
+    ]
     recent_archive.sort(key=lambda item: timestamp(item) or dt.datetime.min.replace(tzinfo=TZ), reverse=True)
     if recent_archive:
         return recent_archive[0]
+
     for item in home.get("feature") or []:
         if item.get("headline") and public_url(item) and image_url(item):
             return item
@@ -287,14 +256,17 @@ def choose_hero(home: dict, live: dict, archive: dict, now: dt.datetime) -> dict
 def render_hero(item: dict) -> str:
     href = public_url(item)
     image = image_url(item)
-    attrs = ' target="_blank" rel="noopener"' if href.startswith("http://") or href.startswith("https://") else ""
+    external = href.startswith("http://") or href.startswith("https://")
+    attrs = ' target="_blank" rel="noopener"' if external else ""
     deck = hero_deck(item)
     deck_html = f'<p>{esc(deck)}</p>' if deck else ""
     return (
         '<section class="lead-grid" aria-label="Top story">'
         f'<article class="top-story" data-story-id="{esc(item.get("id"))}"><a href="{esc(href)}"{attrs}>'
-        f'<div class="top-image"><img src="{esc(image)}" alt="{esc(item.get("alt") or item.get("headline"))}" fetchpriority="high" decoding="async"></div>'
-        f'<div class="top-copy"><span class="kicker">{esc(category_label(item))}</span><h1>{esc(item.get("headline"))}</h1>{deck_html}</div></a></article></section>'
+        f'<div class="top-image"><img src="{esc(image)}" alt="{esc(item.get("alt") or item.get("headline"))}" '
+        'fetchpriority="high" decoding="async"></div>'
+        f'<div class="top-copy"><span class="kicker">{esc(category_label(item))}</span>'
+        f'<h1>{esc(item.get("headline"))}</h1>{deck_html}</div></a></article></section>'
     )
 
 
@@ -306,7 +278,9 @@ def relative_time(item: dict, now: dt.datetime) -> str:
     now_local = now.astimezone(TZ)
     if local.date() == now_local.date():
         hours = max(0, int((now_local - local).total_seconds() // 3600))
-        return "Just now" if hours < 1 else f"{hours} hour{'s' if hours != 1 else ''} ago"
+        if hours < 1:
+            return "Just now"
+        return f"{hours} hour{'s' if hours != 1 else ''} ago"
     if local.date() == now_local.date() - dt.timedelta(days=1):
         return "Yesterday"
     days = (now_local.date() - local.date()).days
@@ -316,21 +290,41 @@ def relative_time(item: dict, now: dt.datetime) -> str:
 
 
 def newest_items(home: dict, archive: dict, hero: dict | None, now: dt.datetime) -> list[dict]:
-    pool = unique(list(archive.get("items") or []) + list(home.get("latest") or []) + list(home.get("rail") or []) + list(home.get("feature") or []))
+    pool = unique(
+        list(archive.get("items") or [])
+        + list(home.get("latest") or [])
+        + list(home.get("rail") or [])
+        + list(home.get("feature") or [])
+    )
     hero_key = story_key(hero or {})
-    rows = [item for item in pool if story_key(item) != hero_key and item.get("headline") and public_url(item) and timestamp(item) and age(item, now) <= NEWEST_MAX_AGE and clean(item.get("status")).lower() != "expired"]
+    rows = [
+        item
+        for item in pool
+        if story_key(item) != hero_key
+        and item.get("headline")
+        and public_url(item)
+        and timestamp(item)
+        and age(item, now) <= NEWEST_MAX_AGE
+        and clean(item.get("status")).lower() != "expired"
+    ]
     rows.sort(key=lambda item: timestamp(item) or dt.datetime.min.replace(tzinfo=TZ), reverse=True)
-    return pick_diverse(rows, 3)
+    return rows[:3]
 
 
 def render_newest(items: list[dict], now: dt.datetime) -> str:
-    rows = [
-        f'<a href="{esc(public_url(item))}" data-story-id="{esc(item.get("id"))}"><span><small>{esc(category_label(item))}</small>'
-        f'<strong>{esc(item.get("headline"))}</strong><time>{esc(relative_time(item, now))}</time></span></a>'
-        for item in items
-    ]
+    rows = []
+    for item in items:
+        rows.append(
+            f'<a href="{esc(public_url(item))}" data-story-id="{esc(item.get("id"))}"><span>'
+            f'<small>{esc(category_label(item))}</small><strong>{esc(item.get("headline"))}</strong>'
+            f'<time>{esc(relative_time(item, now))}</time></span></a>'
+        )
     hidden = ' hidden aria-hidden="true"' if not rows else ""
-    return f'<section class="newest" id="newestRail" aria-labelledby="newestTitle"{hidden}><div class="mini-heading"><h2 id="newestTitle">Newest</h2><a href="/news/">All stories →</a></div><div id="latestList" class="newest-list">{"".join(rows)}</div></section>'
+    return (
+        f'<section class="newest" id="newestRail" aria-labelledby="newestTitle"{hidden}>'
+        '<div class="mini-heading"><h2 id="newestTitle">Newest</h2><a href="/news/">All stories →</a></div>'
+        f'<div id="latestList" class="newest-list">{"".join(rows)}</div></section>'
+    )
 
 
 def replace_once(text: str, pattern: str, replacement: str, label: str) -> str:
@@ -348,15 +342,42 @@ def main() -> int:
     hero = choose_hero(home, live, archive, now)
     if not hero:
         raise RuntimeError("No valid homepage hero was available")
+
     text = INDEX.read_text(encoding="utf-8")
-    text = replace_once(text, r'<section class="breaking-now[^\"]*" id="breakingNow".*?</section>', render_breaking_section(live, archive, now), "breaking/local-update")
-    text = replace_once(text, r'<section class="lead-grid" aria-label="Top story">.*?</section>', render_hero(hero), "hero")
-    text = replace_once(text, r'<section class="newest" id="newestRail" aria-labelledby="newestTitle".*?</section>', render_newest(newest_items(home, archive, hero, now), now), "newest")
+    text = replace_once(
+        text,
+        r'<section class="breaking-now[^\"]*" id="breakingNow".*?</section>',
+        render_breaking_section(live, archive, now),
+        "breaking/local-update",
+    )
+    text = replace_once(
+        text,
+        r'<section class="lead-grid" aria-label="Top story">.*?</section>',
+        render_hero(hero),
+        "hero",
+    )
+    text = replace_once(
+        text,
+        r'<section class="newest" id="newestRail" aria-labelledby="newestTitle".*?</section>',
+        render_newest(newest_items(home, archive, hero, now), now),
+        "newest",
+    )
     hero_image = image_url(hero)
-    text, preload_count = re.subn(r'(<link rel="preload" as="image" href=")[^"]+(" fetchpriority="high">)', lambda match: match.group(1) + hero_image + match.group(2), text, count=1)
+    text, preload_count = re.subn(
+        r'(<link rel="preload" as="image" href=")[^"]+(" fetchpriority="high">)',
+        lambda match: match.group(1) + hero_image + match.group(2),
+        text,
+        count=1,
+    )
     if preload_count != 1:
         raise RuntimeError("Could not update homepage hero preload")
-    text = re.sub(r'/homepage-boot\.js\?v=[^\"]+', '/homepage-boot.js?v=20260830context1', text, count=1)
+    text = re.sub(
+        r'/homepage-boot\.js\?v=[^\"]+',
+        '/homepage-boot.js?v=20260828stable1',
+        text,
+        count=1,
+    )
+
     current = INDEX.read_text(encoding="utf-8")
     if text == current:
         print("Homepage already matches generated first-paint state")

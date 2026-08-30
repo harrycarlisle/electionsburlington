@@ -5,6 +5,7 @@
   const BREAKING_MAX_AGE_MS = 3 * 60 * 60 * 1000;
   const LOCAL_UPDATE_MAX_AGE_MS = 24 * 60 * 60 * 1000;
   const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[ch]));
+  const displayHeadline = value => String(value || '').trim().replace(/\.+$/, '');
 
   function storyUrl(item) {
     return item?.storyUrl || item?.url || '';
@@ -50,21 +51,13 @@
     if (item?.anniversaryMatch || item?.localUpdateReason === 'anniversary') return 5;
     if (item?.localUpdateReason || item?.contextSignal || item?.relatedCurrentEvent) return 5;
     if (hasMeaningfulUpdate(item)) return 4;
-
-    const source = String(item?.sourceName || '').toLowerCase();
-    const kind = String(item?.kind || '').toLowerCase();
-    const label = String(item?.label || item?.category || '').toLowerCase();
-    if (source.includes('burlington news')) {
-      if (kind === 'service' || /home rules|parking|permit/.test(label)) return 0;
-      return 0;
-    }
-
-    return 3;
+    const source = String(item?.sourceName || '').trim().toLowerCase();
+    if (source === 'burlington news') return 0;
+    return source ? 3 : 0;
   }
 
   function localRank(item) {
-    const base = Number(item?.localUpdateScore || 0);
-    return base + contextScore(item) * 0.75;
+    return Number(item?.localUpdateScore || 0) + contextScore(item) * 0.75;
   }
 
   function pickDiverse(items, limit = 2) {
@@ -108,26 +101,21 @@
     host.innerHTML = '';
   }
 
-  function render(doc, archiveDoc = {}) {
-    const current = Array.isArray(doc?.items) ? doc.items : [];
-    const archive = Array.isArray(archiveDoc?.items) ? archiveDoc.items : [];
-    const candidates = unique([...current, ...archive])
-      .filter(item => item?.headline && storyUrl(item) && ageMs(item) <= LOCAL_UPDATE_MAX_AGE_MS)
-      .sort((a, b) => timestamp(b) - timestamp(a));
+  function render(doc) {
+    const current = unique(Array.isArray(doc?.items) ? doc.items : [])
+      .filter(item => item?.headline && storyUrl(item) && ageMs(item) <= LOCAL_UPDATE_MAX_AGE_MS);
 
-    const currentIds = new Set(current.map(item => item?.id).filter(Boolean));
-    const freshestCandidate = candidates[0];
-    const breakingMode = Boolean(
-      freshestCandidate &&
-      doc?.mode === 'breaking' &&
-      currentIds.has(freshestCandidate?.id) &&
-      ageMs(freshestCandidate) <= BREAKING_MAX_AGE_MS
-    );
+    const breaking = doc?.mode === 'breaking'
+      ? current
+          .filter(item => ageMs(item) <= BREAKING_MAX_AGE_MS)
+          .sort((a, b) => timestamp(b) - timestamp(a))
+      : [];
 
-    const visible = breakingMode
-      ? candidates.slice(0, 2)
+    const isBreaking = breaking.length > 0;
+    const visible = isBreaking
+      ? pickDiverse(breaking, 2)
       : pickDiverse(
-          candidates
+          current
             .filter(item => contextScore(item) > 0)
             .sort((a, b) => localRank(b) - localRank(a) || timestamp(b) - timestamp(a)),
           2
@@ -139,7 +127,6 @@
     }
 
     const freshest = visible[0];
-    const isBreaking = breakingMode && currentIds.has(freshest?.id);
     const label = isBreaking ? 'Breaking News' : 'Local Update';
     const stamp = timeLabel(freshest, visible.length > 1);
 
@@ -160,7 +147,8 @@
       <div class="breaking-list" data-count="${visible.length}">
         ${visible.map(item => {
           const href = storyUrl(item);
-          return `<a class="breaking-row" href="${esc(href)}" data-breaking-score="${esc(item.breakingScore ?? '')}" data-local-update-score="${esc(item.localUpdateScore ?? '')}" data-context-score="${esc(contextScore(item))}"${/^https?:\/\//.test(href) ? ' target="_blank" rel="noopener"' : ''}><strong>${esc(item.shortHeadline || item.headline)}</strong><span class="breaking-chevron" aria-hidden="true">›</span></a>`;
+          const headline = displayHeadline(item.shortHeadline || item.headline);
+          return `<a class="breaking-row" href="${esc(href)}" data-breaking-score="${esc(item.breakingScore ?? '')}" data-local-update-score="${esc(item.localUpdateScore ?? '')}" data-context-score="${esc(contextScore(item))}"${/^https?:\/\//.test(href) ? ' target="_blank" rel="noopener"' : ''}><strong>${esc(headline)}</strong><span class="breaking-chevron" aria-hidden="true">›</span></a>`;
         }).join('')}
       </div>`;
   }
@@ -180,11 +168,8 @@
   }
 
   async function load() {
-    const [live, archive] = await Promise.all([
-      fetchJson('/data/breaking-now.json'),
-      fetchJson('/data/breaking-archive.json')
-    ]);
-    render(live, archive);
+    const live = await fetchJson('/data/breaking-now.json');
+    render(live);
   }
 
   load();
