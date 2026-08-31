@@ -189,6 +189,16 @@ def contextual_clock_label(value: dt.datetime, now: dt.datetime) -> str:
     return f"{local.strftime('%b').upper()}. {local.day}, {clock_label(local)}"
 
 
+def contextual_day_label(value: dt.datetime, now: dt.datetime) -> str:
+    local = value.astimezone(TZ)
+    today = now.astimezone(TZ).date()
+    if local.date() == today:
+        return "TODAY"
+    if local.date() == today - dt.timedelta(days=1):
+        return "YESTERDAY"
+    return f"{local.strftime('%b').upper()}. {local.day}"
+
+
 def has_meaningful_update(item: dict) -> bool:
     published = parse_time(item.get("publishedAt") or item.get("datePublished"))
     updated = parse_time(item.get("lastMeaningfulUpdate") or item.get("meaningfulUpdatedAt"))
@@ -212,10 +222,11 @@ def render_breaking_section(live: dict, archive: dict, now: dt.datetime) -> str:
     stamp = timestamp(freshest)
     if stamp:
         if is_resolved(freshest):
-            prefix = "UPDATED"
+            resolved_stamp = parse_time(freshest.get("publishedAt") or freshest.get("datePublished")) or stamp
+            status = f'<span class="breaking-status">RESOLVED {contextual_day_label(resolved_stamp, now)}</span>'
         else:
             prefix = "LATEST" if len(visible) > 1 else ("UPDATED" if has_meaningful_update(freshest) else "POSTED")
-        status = f'<span class="breaking-status">{prefix} {contextual_clock_label(stamp, now)}</span>'
+            status = f'<span class="breaking-status">{prefix} {contextual_clock_label(stamp, now)}</span>'
     else:
         status = ""
     reason = (

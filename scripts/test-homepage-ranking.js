@@ -66,6 +66,8 @@ const homepage = readFileSync(new URL('../index.html', import.meta.url), 'utf8')
 const exploreMarkup = homepage.match(/<section class="explore-band"[\s\S]*?<\/section>/)?.[0] || '';
 assert(/id="breakingNow"[^>]*data-state="local-update"/.test(homepage), 'homepage ships with a visible Local Update rail');
 assert(/id="breakingNow"[\s\S]*?Police take man into custody after Ghent Avenue standoff/.test(homepage), 'resolved Ghent update remains in the Local Update rail');
+assert(/id="breakingNow"[\s\S]*?RESOLVED YESTERDAY/.test(homepage), 'resolved Ghent update is clearly dated yesterday');
+assert(/class="top-story" data-story-id="can-you-have-backyard-fire-pit-burlington"[\s\S]*?ontario-backyard-fire-pit-gathering-16x9\.png/.test(homepage), 'homepage lead uses a real editorial photograph');
 assert(/class="pick-grid"/.test(exploreMarkup) && /class="pick-card"/.test(exploreMarkup), 'Explore reuses Top Picks grid and card markup');
 assert(!/explore-home-card|explore-home-grid|explore-intro|explore-heading/.test(exploreMarkup), 'legacy Explore-only presentation is absent');
 assert(/<footer class="site-legal-footer">/.test(homepage), 'homepage uses the shared publication footer');

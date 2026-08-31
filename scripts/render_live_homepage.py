@@ -31,7 +31,13 @@ def display_item(item: dict) -> dict:
 def item_timestamp(item: dict) -> dt.datetime | None:
     """A why-now placement can have a context time without pretending the story was republished."""
     context = base.parse_time(item.get("contextTimestamp"))
-    return context or BASE_TIMESTAMP(item)
+    if context:
+        return context
+    if is_resolved(item):
+        published = base.parse_time(item.get("publishedAt") or item.get("datePublished"))
+        if published:
+            return published
+    return BASE_TIMESTAMP(item)
 
 
 def editorial_family(item: dict) -> str:

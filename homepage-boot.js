@@ -98,7 +98,7 @@
     // in the browser after first paint.
     loadScript('/mobile-top-panel.js?v=20260828fresh4');
     loadScript('/local-now.js?v=20260830eventdeep1', { module: true });
-    loadScript('/breaking-now.js?v=20260830railrestore1');
+    loadScript('/breaking-now.js?v=20260831ghentdate2');
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });

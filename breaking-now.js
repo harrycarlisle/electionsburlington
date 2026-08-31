@@ -88,6 +88,16 @@
     const yesterdayDate = new Date(now.getTime() - (24 * 60 * 60 * 1000));
     const yesterday = dateKey(yesterdayDate);
     const itemDay = dateKey(parsed);
+    if (isResolved(item)) {
+      const published = new Date(item?.publishedAt || item?.datePublished || stamp);
+      const publishedDay = dateKey(published);
+      const resolvedContext = publishedDay === today
+        ? 'TODAY'
+        : publishedDay === yesterday
+          ? 'YESTERDAY'
+          : new Intl.DateTimeFormat('en-CA', {month:'short', day:'numeric', timeZone:'America/Toronto'}).format(published).toUpperCase();
+      return `RESOLVED ${resolvedContext}`;
+    }
     const dateContext = itemDay === today
       ? time
       : itemDay === yesterday
