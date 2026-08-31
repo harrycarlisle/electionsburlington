@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-31T00:27:55Z",
+  "generatedAt": "2026-08-31T06:02:28Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -180,7 +180,7 @@
     {
       "id": "511:293161",
       "kind": "traffic",
-      "headline": "Nightly Construction (Cancelled for Today) on QEW Fort Erie Bound  between NORTHSHORE BLVD and BURLINGTON SKYWAY, Burlington. 3 Alternating Lane(s).",
+      "headline": "Nightly Construction on QEW Fort Erie Bound  between NORTHSHORE BLVD and BURLINGTON SKYWAY, Burlington. 3 Alternating Lane(s).",
       "location": "QEW",
       "direction": "Fort Erie Bound",
       "score": 53,
@@ -191,7 +191,7 @@
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
-      "signature": "90fad8824bb1ef9f"
+      "signature": "e692613cf394abfa"
     },
     {
       "id": "511:293707",
@@ -647,7 +647,7 @@
       {
         "id": "511:293161",
         "kind": "traffic",
-        "headline": "Nightly Construction (Cancelled for Today) on QEW Fort Erie Bound  between NORTHSHORE BLVD and BURLINGTON SKYWAY, Burlington. 3 Alternating Lane(s).",
+        "headline": "Nightly Construction on QEW Fort Erie Bound  between NORTHSHORE BLVD and BURLINGTON SKYWAY, Burlington. 3 Alternating Lane(s).",
         "location": "QEW",
         "direction": "Fort Erie Bound",
         "score": 53,
@@ -658,7 +658,7 @@
         "sourceUrl": "https://511on.ca/",
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
-        "signature": "90fad8824bb1ef9f"
+        "signature": "e692613cf394abfa"
       },
       {
         "id": "511:293707",
