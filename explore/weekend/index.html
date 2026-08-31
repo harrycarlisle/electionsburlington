@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Things to do in Burlington this weekend | Burlington News</title>
-  <meta name="description" content="A visual, verified day plan for Burlington this weekend—with events, local stops and food in one route.">
+  <meta name="description" content="See every verified Burlington event happening this weekend, then optionally build a day plan with local stops and food.">
   <link rel="canonical" href="https://burlingtonnews.ca/explore/weekend/">
   <meta name="theme-color" content="#071b35">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Things to do in Burlington this weekend">
-  <meta property="og:description" content="Pick a day. Get one visual route with something to do, somewhere to wander and a local meal.">
+  <meta property="og:description" content="Browse everything happening this weekend, or ask Burlington News to turn it into a simple day plan.">
   <meta property="og:url" content="https://burlingtonnews.ca/explore/weekend/">
   <meta property="og:image" content="https://burlingtonnews.ca/assets/editorial/explore-collage.webp">
   <meta name="twitter:card" content="summary_large_image">
@@ -19,47 +19,62 @@
   <link rel="stylesheet" href="/site-extra.css?v=20260830wp1">
   <link rel="stylesheet" href="/site-bundle.css?v=20260830logo1" data-style="site-bundle">
   <link rel="stylesheet" href="/site-shell.css?v=20260830dark1" data-style="site-shell">
-  <link rel="stylesheet" href="/weekend-planner.css?v=20260830eventdeep1">
+  <link rel="stylesheet" href="/weekend-planner.css?v=20260831optional1">
   <link rel="stylesheet" href="/desktop-system.css?v=20260830wp1" data-style="desktop-system">
   <script src="/theme-boot.js?v=20260830logo1"></script>
   <script src="/site-search.js?v=20260830wp1" defer></script>
   <script src="/site-extra.js?v=20260831design1" defer></script>
-  <script src="/weekend-planner.js?v=20260830eventdeep1" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Things to do in Burlington this weekend","url":"https://burlingtonnews.ca/explore/weekend/","description":"A visual, verified Burlington weekend plan with events, places and food in one route."}</script>
+  <script src="/weekend-planner.js?v=20260831optional1" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Things to do in Burlington this weekend","url":"https://burlingtonnews.ca/explore/weekend/","description":"Every verified Burlington event happening this weekend, with an optional day planner."}</script>
 </head>
 <body class="publication-shell weekend-page">
-  <a class="skip" href="#main">Skip to weekend plan</a>
+  <a class="skip" href="#main">Skip to this weekend</a>
   <header class="header"><div class="wrap header-inner"><a class="brand" href="/">Burlington News</a><button class="menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
 
   <main id="main" class="weekend-shell">
     <header class="weekend-heading">
-      <p class="weekend-kicker">Burlington weekend planner</p>
-      <h1>This weekend, planned.</h1>
-      <div id="dayTabs" class="day-tabs" role="group" aria-label="Choose a day"></div>
+      <p class="weekend-kicker">Explore Burlington</p>
+      <h1>Things to do this weekend</h1>
+      <p class="weekend-deck">See everything happening first. If you want, we can turn your picks into a simple day plan with food and local stops.</p>
     </header>
 
-    <section id="weekendHero" class="weekend-hero" aria-live="polite">
-      <img src="/assets/editorial/explore-collage.webp" alt="A collage of things to do around Burlington" width="1600" height="900">
-      <div class="weekend-hero-shade"></div>
-      <div class="weekend-hero-copy"><span>Building today’s plan</span><h2>Start here.</h2></div>
-    </section>
-
-    <section id="eat" class="route-section" aria-labelledby="routeTitle">
-      <header class="route-heading">
-        <div><p class="weekend-kicker">One route · food included</p><h2 id="routeTitle">Your day in four stops</h2></div>
-        <a id="routeMap" class="route-map" href="https://www.google.com/maps" rel="noopener">Open the route <span aria-hidden="true">↗</span></a>
+    <section class="visual-section weekend-events-section" aria-labelledby="weekendEventsTitle">
+      <header class="section-heading">
+        <div><p id="weekendDateRange" class="weekend-kicker">This weekend</p><h2 id="weekendEventsTitle">Everything happening</h2></div>
+        <a class="back-to-explore" href="/explore/">Full Explore calendar <span aria-hidden="true">→</span></a>
       </header>
-      <div id="planRoute" class="plan-route" aria-live="polite"></div>
+      <div id="weekendEvents" class="visual-grid weekend-events-grid" aria-live="polite"></div>
     </section>
 
-    <section class="visual-section" aria-labelledby="moreTitle">
-      <header class="section-heading"><p class="weekend-kicker">Swap a stop</p><h2 id="moreTitle">More happening</h2></header>
-      <div id="moreEvents" class="visual-grid"></div>
+    <section class="planner-callout" aria-labelledby="plannerCalloutTitle">
+      <div><p class="weekend-kicker">Make it easier</p><h2 id="plannerCalloutTitle">Want your day planned?</h2><p>Choose a day and we’ll arrange an event, something nearby and a local meal into one route.</p></div>
+      <button id="plannerToggle" type="button" aria-expanded="false" aria-controls="plannerPanel">Plan my day <span aria-hidden="true">→</span></button>
     </section>
 
-    <section class="visual-section local-section" aria-labelledby="localTitle">
-      <header class="section-heading"><p class="weekend-kicker">Keep exploring</p><h2 id="localTitle">Add one more stop</h2></header>
-      <div id="localStops" class="local-strip"></div>
+    <section id="plannerPanel" class="planner-panel" hidden aria-labelledby="plannerTitle">
+      <header class="planner-panel-heading">
+        <div><p class="weekend-kicker">Optional day planner</p><h2 id="plannerTitle">Choose your day</h2></div>
+        <div id="dayTabs" class="day-tabs" role="group" aria-label="Choose a day"></div>
+      </header>
+
+      <section id="weekendHero" class="weekend-hero" aria-live="polite">
+        <img src="/assets/editorial/explore-collage.webp" alt="A collage of things to do around Burlington" width="1600" height="900">
+        <div class="weekend-hero-shade"></div>
+        <div class="weekend-hero-copy"><span>Building your plan</span><h2>Start here.</h2></div>
+      </section>
+
+      <section id="eat" class="route-section" aria-labelledby="routeTitle">
+        <header class="route-heading">
+          <div><p class="weekend-kicker">One route · food included</p><h2 id="routeTitle">Your day in four stops</h2></div>
+          <a id="routeMap" class="route-map" href="https://www.google.com/maps" target="_blank" rel="noopener">Open the route <span aria-hidden="true">↗</span></a>
+        </header>
+        <div id="planRoute" class="plan-route" aria-live="polite"></div>
+      </section>
+
+      <section class="visual-section local-section" aria-labelledby="localTitle">
+        <header class="section-heading"><p class="weekend-kicker">Keep exploring</p><h2 id="localTitle">Add one more stop</h2></header>
+        <div id="localStops" class="local-strip"></div>
+      </section>
     </section>
   </main>
 </body>

@@ -16,16 +16,24 @@ food.spots.forEach(spot => {
   if (!Array.isArray(spot.roles) || !spot.roles.length) fail(`${spot.id} is missing a route role`);
 });
 
-for (const path of ['explore/index.html', 'explore/weekend/index.html']) {
-  const html = read(path);
-  if (!html.includes('/weekend-planner.js')) fail(`${path} does not load the planner`);
-  if (!html.includes('id="planRoute"')) fail(`${path} has no visual route host`);
-  if (!html.includes('id="eat"')) fail(`${path} has no integrated food destination`);
-  if (/direct answer|authority-copy|verified meals, not/i.test(html)) fail(`${path} still contains the old text-heavy authority copy`);
+const explore = read('explore/index.html');
+if (!explore.includes('<h1>Explore Burlington</h1>')) fail('Explore landing page was not restored');
+if (!explore.includes('id="eventGrid"') || !explore.includes('id="boredCard"') || !explore.includes('id="passportRail"')) {
+  fail('Explore landing page is missing the event-first layout');
 }
+if (!explore.includes('href="/explore/weekend/"')) fail('Explore landing page does not offer the weekend view');
+if (explore.includes('/weekend-planner.js')) fail('the optional planner still replaces the Explore landing page');
+
+const weekend = read('explore/weekend/index.html');
+if (!weekend.includes('/weekend-planner.js')) fail('weekend page does not load the planner');
+if (!weekend.includes('id="weekendEvents"')) fail('weekend page has no complete event-list host');
+if (!weekend.includes('id="plannerToggle"')) fail('weekend page has no planner choice');
+if (!weekend.includes('id="plannerPanel" class="planner-panel" hidden')) fail('planner is not optional by default');
+if (!weekend.includes('id="planRoute"') || !weekend.includes('id="eat"')) fail('optional planner has no visual route and food destination');
+if (/direct answer|authority-copy|verified meals, not/i.test(weekend)) fail('weekend page still contains the old text-heavy authority copy');
 
 const foodRedirect = read('food/index.html');
-if (!foodRedirect.includes("/explore/#eat")) fail('/food/ does not lead to the integrated plan');
+if (!foodRedirect.includes("/explore/weekend/?plan=1#eat")) fail('/food/ does not open the optional integrated plan');
 if (!/noindex/i.test(foodRedirect)) fail('/food/ redirect should not compete in search');
 
 const publicUrlSync = read('scripts/sync_public_urls.py');
@@ -39,6 +47,8 @@ const planner = read('weekend-planner.js');
 if (!planner.includes("America/Toronto")) fail('planner date logic is not pinned to Burlington time');
 if (!planner.includes('event.end') || !planner.includes('Date.now()')) fail('planner does not remove events once they finish');
 if (!planner.includes('mapsUrl')) fail('planner is missing its route link');
+if (!planner.includes('renderWeekendEvents(events, days, today)')) fail('weekend events are not rendered before the planner');
+if (!planner.includes("setPlannerOpen(params.get('plan') === '1'")) fail('optional planner state does not follow the URL');
 if (!planner.includes('openEventModal(requestedRow, { updateUrl: false })')) fail('event deep links do not open the requested detail card');
 if (!planner.includes('mapsSearchUrl(address)')) fail('event addresses do not link to Google Maps');
 if (!planner.includes('role="dialog"') || !planner.includes('aria-modal="true"')) fail('event details are not an accessible dialog');

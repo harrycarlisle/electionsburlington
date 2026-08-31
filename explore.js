@@ -42,6 +42,7 @@
     if (/^https?:\/\//i.test(raw) || raw.startsWith('data:')) return raw;
     return raw.startsWith('/') ? raw : `/${raw}`;
   };
+  const mapsSearchUrl = query => `https://www.google.com/maps/search/?${new URLSearchParams({api:'1',query:String(query || 'Burlington, Ontario')})}`;
   const categoryArt = (item, className) => `<div class="${className} category-art category-${esc(String(item.category || item.visualText || 'local').toLowerCase().replace(/[^a-z]+/g,'-'))}"><span class="category-art-icon">${categoryIcon(item.category || item.visualText)}</span><span class="category-art-label">${esc(item.visualText || item.category || 'Local')}</span></div>`;
   const imageMarkup = (item, className) => item.image
     ? `<div class="${className}"><img src="${esc(imageSrc(item.image))}" alt="${esc(item.imageAlt || '')}" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('category-art')">${item.credit && !item.illustration && !/^Burlington News/i.test(item.credit) ? `<span class="image-credit">${esc(item.credit)}</span>` : ''}</div>`
@@ -187,13 +188,18 @@
     qs('#showAllEvents').textContent = showAll ? 'Show the next three' : 'Show all upcoming events';
   }
 
-  function openEvent(id) {
+  function openEvent(id, { updateUrl = true } = {}) {
     const event = events.find(item => item.id === id);
     if (!event) return;
     const saved = savedEvents.has(id);
-    dialogContent.innerHTML = `${imageMarkup(event,'dialog-visual')}<div class="dialog-body"><span class="eyebrow">${esc(event.category)}${event.scope !== 'Burlington' ? ` · ${esc(event.scope)}` : ''}</span><h2>${esc(event.title)}</h2><div class="dialog-meta">${esc(event.dateLabel)} · ${esc(event.location)}</div><p>${esc(event.details)}</p>${event.bring?.length ? `<div class="bring-list"><strong>What to bring</strong><ul>${event.bring.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="dialog-actions"><a href="${esc(event.source)}" target="_blank" rel="noopener">Check official details</a><button type="button" id="dialogSave" data-id="${esc(id)}">${saved ? 'Saved ✓' : 'Save event'}</button></div><p class="publication-credit">Source: ${esc(event.sourceName)}. Event details were checked August 26, 2026.</p></div>`;
+    dialogContent.innerHTML = `${imageMarkup(event,'dialog-visual')}<div class="dialog-body"><span class="eyebrow">${esc(event.category)}${event.scope !== 'Burlington' ? ` · ${esc(event.scope)}` : ''}</span><h2>${esc(event.title)}</h2><div class="dialog-meta">${esc(event.dateLabel)}</div><a class="dialog-map-link" href="${esc(mapsSearchUrl(event.location))}" target="_blank" rel="noopener"><span aria-hidden="true">⌖</span>${esc(event.location)}<b aria-hidden="true">↗</b></a><p>${esc(event.details)}</p>${event.bring?.length ? `<div class="bring-list"><strong>What to bring</strong><ul>${event.bring.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>` : ''}<div class="dialog-actions"><a href="${esc(event.source)}" target="_blank" rel="noopener">Check official details</a><a class="dialog-map-action" href="${esc(mapsSearchUrl(event.location))}" target="_blank" rel="noopener">Open in Google Maps</a><button type="button" id="dialogSave" data-id="${esc(id)}">${saved ? 'Saved ✓' : 'Save event'}</button></div><p class="publication-credit">Source: ${esc(event.sourceName)}. Event details were checked August 26, 2026.</p></div>`;
     if (typeof detailDialog.showModal === 'function') detailDialog.showModal();
     else detailDialog.setAttribute('open','');
+    if (updateUrl) {
+      const url = new URL(location.href);
+      url.searchParams.set('event', id);
+      history.pushState({ eventId: id }, '', `${url.pathname}${url.search}${url.hash}`);
+    }
     qs('#dialogSave')?.addEventListener('click', () => {
       if (savedEvents.has(id)) savedEvents.delete(id); else savedEvents.add(id);
       writeSet(storage.events, savedEvents);
@@ -311,6 +317,12 @@
     [detailDialog,qs('#passportDialog')].forEach(dialog => dialog.addEventListener('click', event => {
       if (event.target === dialog) dialog.close();
     }));
+    detailDialog.addEventListener('close', () => {
+      const url = new URL(location.href);
+      if (!url.searchParams.has('event')) return;
+      url.searchParams.delete('event');
+      history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+    });
   }
 
   async function init() {
@@ -337,8 +349,13 @@
       paintPassport();
       installEvents();
       paintIdea();
-      const hash = location.hash.replace('#event-','');
-      if (hash && events.some(item => item.id === hash)) openEvent(hash);
+      const requestedEvent = new URLSearchParams(location.search).get('event') || location.hash.replace('#event-','');
+      if (requestedEvent && events.some(item => item.id === requestedEvent)) openEvent(requestedEvent, { updateUrl: false });
+      window.addEventListener('popstate', () => {
+        const eventId = new URLSearchParams(location.search).get('event') || '';
+        if (eventId && events.some(item => item.id === eventId)) openEvent(eventId, { updateUrl: false });
+        else if (detailDialog.open) detailDialog.close();
+      });
     } catch (error) {
       const grid = qs('#eventGrid');
       if (grid) grid.innerHTML = '<p class="empty-note">The events calendar could not load. Try again shortly.</p>';

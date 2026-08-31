@@ -218,8 +218,21 @@
     return `
       <a class="visual-card" href="${escapeHtml(eventDeepLink(event))}" data-event-id="${escapeHtml(event.id)}">
         <img src="${escapeHtml(imagePath(event.image))}" alt="${escapeHtml(event.imageAlt || event.title)}" loading="lazy" width="800" height="500">
-        <div><small>${escapeHtml(label)}</small><h3>${escapeHtml(event.title)}</h3><p>${escapeHtml(event.dateLabel)}</p></div>
+        <div><small>${escapeHtml(label)}</small><h3>${escapeHtml(event.title)}</h3><p>${escapeHtml(event.dateLabel)}</p><p class="visual-card-place"><span aria-hidden="true">⌖</span> ${escapeHtml(event.location || event.venue || '')}</p></div>
       </a>`;
+  }
+
+  function renderWeekendEvents(events, days, today) {
+    const rows = events
+      .filter(event => days.some(day => isLiveOn(event, day, today)))
+      .sort((a, b) => new Date(a.start) - new Date(b.start) || eventScore(b) - eventScore(a));
+    const host = $('#weekendEvents');
+    host.innerHTML = rows.length
+      ? rows.map(event => eventCard(event, days[0], today)).join('')
+      : '<p class="planner-empty">No verified events are listed for this weekend yet. Check the full Explore calendar for what is coming next.</p>';
+    $('#weekendDateRange').textContent = days.length > 1
+      ? `${dayLabel(days[0], true)} to ${dayLabel(days[days.length - 1], true)}`
+      : dayLabel(days[0]);
   }
 
   function eventModal() {
@@ -354,8 +367,9 @@
     let requestedEvent = new URLSearchParams(location.search).get('event') || '';
     const requestedRow = events.find(event => event.id === requestedEvent);
     let selected = days.find(day => requestedRow && isLiveOn(requestedRow, day, today)) || days[0];
+    let plannerRendered = false;
 
-    function render(day) {
+    function renderPlanner(day) {
       selected = day;
       const currentEvents = events
         .filter(event => isLiveOn(event, day, today))
@@ -365,20 +379,46 @@
       const plan = buildPlan(primary, places, placeData.bonus, foods);
       renderTabs(days, selected, nextDay => {
         requestedEvent = '';
-        render(nextDay);
+        renderPlanner(nextDay);
       });
       renderHero(primary, selected, fallbackPlace);
       renderRoute(plan);
-      renderMore(events, primary, selected, days, today);
       renderLocal(places, placeData.bonus, plan.find(stop => stop.kind === 'place')?.item);
       bindEventOpeners(events);
       installImageFallbacks();
+      plannerRendered = true;
     }
 
-    render(selected);
+    function setPlannerOpen(open, { updateUrl = true, scroll = false } = {}) {
+      const panel = $('#plannerPanel');
+      const toggle = $('#plannerToggle');
+      if (open && !plannerRendered) renderPlanner(selected);
+      panel.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.innerHTML = open
+        ? 'Hide day plan <span aria-hidden="true">↑</span>'
+        : 'Plan my day <span aria-hidden="true">→</span>';
+      if (updateUrl) {
+        const url = new URL(location.href);
+        if (open) url.searchParams.set('plan', '1');
+        else url.searchParams.delete('plan');
+        history.pushState({ plannerOpen: open }, '', `${url.pathname}${url.search}${url.hash}`);
+      }
+      if (open && scroll) requestAnimationFrame(() => panel.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    }
+
+    renderWeekendEvents(events, days, today);
+    bindEventOpeners(events);
+    installImageFallbacks();
+    $('#plannerToggle').addEventListener('click', () => {
+      setPlannerOpen($('#plannerPanel').hidden, { scroll: $('#plannerPanel').hidden });
+    });
+    if (new URLSearchParams(location.search).get('plan') === '1') setPlannerOpen(true, { updateUrl: false });
     if (requestedRow) openEventModal(requestedRow, { updateUrl: false });
     window.addEventListener('popstate', () => {
-      const eventId = new URLSearchParams(location.search).get('event') || '';
+      const params = new URLSearchParams(location.search);
+      setPlannerOpen(params.get('plan') === '1', { updateUrl: false });
+      const eventId = params.get('event') || '';
       const row = events.find(event => event.id === eventId);
       if (row) openEventModal(row, { updateUrl: false });
       else closeEventModal({ updateUrl: false });
@@ -389,6 +429,7 @@
   }
 
   init().catch(() => {
-    $('#planRoute').innerHTML = '<p class="planner-empty">The current plan could not load. Try again shortly.</p>';
+    const host = $('#weekendEvents') || $('#planRoute');
+    if (host) host.innerHTML = '<p class="planner-empty">The current listings could not load. Try again shortly.</p>';
   });
 })();
