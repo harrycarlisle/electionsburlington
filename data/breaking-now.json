@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T21:20:41.487521-04:00",
+  "generatedAt": "2026-08-31T03:34:38.655223-04:00",
   "mode": "local_update",
   "label": "Local Update",
   "method": "No Local Update was shown because no item had a clear why-now signal.",
@@ -19,6 +19,7 @@
     "context": "Existing Burlington News stories require a related current event, meaningful update, explicit context signal or anniversary before they can enter Local Update."
   },
   "items": [],
+  "lifecycleUpdates": [],
   "sourceNotes": {
     "officialPolice": "Halton Police, Hamilton Police, OPP and Toronto Police official newsroom/RSS/HTML feeds are checked live.",
     "regionalFallback": "Hamilton may fill Local Update only when the direct Burlington/Halton rail has no sufficiently fresh verified item. Toronto still requires existing Burlington/corridor relevance.",
