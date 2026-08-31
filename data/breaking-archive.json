@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-08-31T03:35:01.364722-04:00",
+  "updatedAt": "2026-08-31T16:00:00-04:00",
   "items": [
+    {
+      "id": "domcon-2026-burlington-atrium",
+      "headline": "Nationalist conference moved to Burlington after two Hamilton venues cancelled",
+      "deck": "The private Burlington venue says it did not know the Dominion Society's background when it accepted the booking.",
+      "label": "Local affairs",
+      "topic": "city",
+      "url": "/stories/domcon-2026-burlington-atrium/",
+      "sourceUrl": "https://hamiltonpolice.on.ca/news/domcon-continues-to-search-for-hamilton-venue/",
+      "image": "/assets/editorial/domcon-hamilton-to-burlington.png",
+      "alt": "Graphic showing DomCon moving along the QEW from two cancelled Hamilton venues to Burlington.",
+      "publishedAt": "2026-08-31T16:00:00-04:00",
+      "datePublished": "2026-08-31T16:00:00-04:00",
+      "localUpdateReason": "Conference location and Burlington venue confirmed after two Hamilton cancellations",
+      "localUpdateEligible": true,
+      "status": "normal"
+    },
     {
       "id": "ghent-avenue-barricaded-man",
       "headline": "Police take man into custody after Ghent Avenue standoff",

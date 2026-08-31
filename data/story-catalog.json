@@ -3,6 +3,66 @@
   "scale": "Each placement signal is scored from 0 to 5. Evidence and image rights are gates, not engagement points.",
   "items": [
     {
+      "id": "domcon-2026-burlington-atrium",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Nationalist conference moved to Burlington after two Hamilton venues cancelled bookings",
+      "deck": "DomCon 2026 was held at The Atrium on North Service Road. The private venue says it did not know the Dominion Society's background when it accepted the booking.",
+      "label": "Local affairs",
+      "labelEssential": true,
+      "url": "stories/domcon-2026-burlington-atrium/",
+      "image": "assets/editorial/domcon-hamilton-to-burlington.png",
+      "alt": "Graphic showing DomCon moving along the QEW from two cancelled Hamilton venues to Burlington.",
+      "credit": "Burlington News graphic",
+      "imageRights": "Original Burlington News graphic",
+      "published": "2026-08-31",
+      "activeFrom": "2026-08-31",
+      "activeUntil": "2026-09-14",
+      "publishedAt": "2026-08-31T16:00:00-04:00",
+      "datePublished": "2026-08-31T16:00:00-04:00",
+      "storyGoal": "Explain how DomCon relocated from two cancelled Hamilton bookings to a private Burlington venue and identify the unanswered questions about the booking and notice.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Official police and organizer records plus attributed CBC, CHCH and community-organization reporting",
+      "sources": [
+        "https://hamiltonpolice.on.ca/news/domcon-continues-to-search-for-hamilton-venue/",
+        "https://www.chch.com/chch-news/anti-immigration-group-moves-planned-conference-out-of-hamilton-amid-pressure/",
+        "https://thepublicrecord.ca/tpr-now-hamilton-news-info-updates-links-for-25-august-2026/",
+        "https://www.dominionsociety.ca/domcon",
+        "https://www.dominionsociety.ca/what-is-remigration"
+      ],
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 4,
+        "consequence": 4,
+        "interest": 5,
+        "originality": 4,
+        "visualStrength": 4
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "city",
+      "subjects": [
+        "domcon",
+        "dominion-society",
+        "the-atrium",
+        "private-venues",
+        "hamilton",
+        "burlington"
+      ],
+      "lastHomepageLead": "2026-08-31"
+    },
+    {
       "id": "burlington-technologies-used-around-world",
       "kind": "original",
       "surfaces": [
