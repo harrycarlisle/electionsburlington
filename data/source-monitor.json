@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-31T22:44:32Z",
+  "checkedAt": "2026-08-31T23:16:10Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
@@ -81,7 +81,7 @@
     {
       "source": "Focus Burlington",
       "ok": true,
-      "found": 0
+      "found": 16
     },
     {
       "source": "Tourism Burlington",
