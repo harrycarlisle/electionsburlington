@@ -22,6 +22,7 @@
     'Search “Things to do”'
   ];
   const index = [
+    {title:'Burlington tested curbside recycling before the blue box. The result looked like a failure.',url:'/stories/burlington-recycling-pilot-1971/',section:'Local history',keywords:'1971 recycling curbside blue box paper glass metal cans pilot study citizens committee pollution control first recycling centre'},
     {title:'Burlington has spent more than $90 million on stormwater since 2015. What changed?',url:'/stories/burlington-flood-protection-90-million/',section:'Infrastructure',keywords:'flood flooding stormwater tuck creek new street spruce regal lower rambo basement flood protection 2014'},
     {title:'Two Burlington roads will stay fully closed into September. Here is where',url:'/stories/burlington-road-closures-september-2026/',section:'Roads',keywords:'road closures spruce avenue shoreacres goodram britannia walkers guelph line detour construction september'},
     {title:'Oakville approved a 1,000-space Costco near Burloak. Here is how drivers will get in',url:'/stories/costco-burloak-wyecroft/',section:'Development',keywords:'costco oakville burloak wyecroft riocan parking gas bar traffic warehouse'},

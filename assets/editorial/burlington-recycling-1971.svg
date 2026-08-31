@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Burlington's 1971 recycling experiment</title>
+  <desc id="desc">An editorial reconstruction of a 1970s kitchen counter with a glass jar, metal can, newspapers and paper sorting bags, with Burlington homes and a collection truck beyond the window.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2dfbc"/><stop offset="1" stop-color="#d9b77c"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a8d4d5"/><stop offset="1" stop-color="#e7e5c7"/></linearGradient>
+    <linearGradient id="counter" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#254f59"/><stop offset="1" stop-color="#12333c"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#061820" flood-opacity=".28"/></filter>
+    <pattern id="grain" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="3" cy="5" r="1" fill="#fff" opacity=".11"/><circle cx="22" cy="17" r="1" fill="#102e34" opacity=".09"/><circle cx="12" cy="27" r=".8" fill="#fff" opacity=".08"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#wall)"/>
+  <rect width="1600" height="1000" fill="url(#grain)"/>
+
+  <rect x="112" y="92" width="1040" height="560" rx="8" fill="#f8f0d9" stroke="#173a42" stroke-width="24"/>
+  <rect x="139" y="119" width="986" height="506" fill="url(#sky)"/>
+  <path d="M139 475 C300 420 430 458 560 410 C705 358 805 415 940 365 C1015 338 1076 345 1125 360 L1125 625 L139 625Z" fill="#799273"/>
+  <path d="M139 530 C330 500 490 535 650 492 C820 445 958 475 1125 432 L1125 625 L139 625Z" fill="#466c61"/>
+  <g fill="#e9d7ad" stroke="#294c51" stroke-width="8">
+    <path d="M196 504v-96l92-62 94 62v96z"/><path d="M432 492v-110l108-70 108 70v110z"/><path d="M716 467v-92l91-58 92 58v92z"/>
+  </g>
+  <g fill="#af5c3e"><path d="M183 411l105-77 107 77z"/><path d="M417 385l123-87 125 87z"/><path d="M703 378l104-74 108 74z"/></g>
+  <path d="M908 526h142l55 36v45H916z" fill="#e9c75f" stroke="#173a42" stroke-width="8"/>
+  <rect x="935" y="542" width="72" height="37" rx="3" fill="#f6edcf"/>
+  <text x="971" y="568" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#173a42">TOWN</text>
+  <circle cx="948" cy="612" r="22" fill="#173a42"/><circle cx="1065" cy="612" r="22" fill="#173a42"/>
+  <path d="M632 119v506M139 292h986" stroke="#173a42" stroke-width="18"/>
+
+  <rect y="646" width="1600" height="354" fill="url(#counter)"/>
+  <path d="M0 671h1600" stroke="#f4d58d" stroke-width="14" opacity=".8"/>
+
+  <g>
+    <path d="M93 705h286l-32 237H124z" fill="#d6a65e" stroke="#142f37" stroke-width="8"/>
+    <path d="M105 718l50-66h166l49 66" fill="none" stroke="#142f37" stroke-width="10"/>
+    <text x="236" y="816" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="800" fill="#173a42">PAPER</text>
+    <path d="M407 705h270l-25 237H435z" fill="#c99a54" stroke="#142f37" stroke-width="8"/>
+    <path d="M419 718l47-66h156l46 66" fill="none" stroke="#142f37" stroke-width="10"/>
+    <text x="542" y="816" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="800" fill="#173a42">GLASS</text>
+    <path d="M706 705h270l-25 237H734z" fill="#d6a65e" stroke="#142f37" stroke-width="8"/>
+    <path d="M718 718l47-66h156l46 66" fill="none" stroke="#142f37" stroke-width="10"/>
+    <text x="841" y="816" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="800" fill="#173a42">METAL</text>
+  </g>
+
+  <g>
+    <rect x="1030" y="625" width="185" height="272" rx="34" fill="#c7e6dd" fill-opacity=".72" stroke="#102f39" stroke-width="12"/>
+    <rect x="1054" y="595" width="137" height="53" rx="18" fill="#d8eee6" stroke="#102f39" stroke-width="12"/>
+    <path d="M1080 738h86" stroke="#fff" stroke-width="10" opacity=".75"/>
+    <path d="M1105 672v178" stroke="#fff" stroke-width="7" opacity=".4"/>
+    <ellipse cx="1122" cy="897" rx="110" ry="20" fill="#061820" opacity=".2"/>
+    <path d="M1280 677h172v220h-172z" fill="#cfc9b8" stroke="#102f39" stroke-width="12"/>
+    <ellipse cx="1366" cy="677" rx="86" ry="26" fill="#e4dfd0" stroke="#102f39" stroke-width="12"/>
+    <ellipse cx="1366" cy="897" rx="86" ry="25" fill="#9f9a8d" stroke="#102f39" stroke-width="12"/>
+    <path d="M1312 750h108M1312 793h108" stroke="#6e6a61" stroke-width="8"/>
+  </g>
+
+  <g transform="translate(1200 102)">
+    <rect width="322" height="152" rx="10" fill="#f4d58d" stroke="#173a42" stroke-width="8"/>
+    <text x="30" y="58" font-family="Arial, sans-serif" font-size="27" font-weight="800" fill="#173a42">BURLINGTON</text>
+    <text x="30" y="112" font-family="Georgia, serif" font-size="55" font-weight="700" fill="#a43f2f">1971</text>
+  </g>
+  <text x="1198" y="326" font-family="Georgia, serif" font-size="54" font-weight="700" fill="#173a42">Before the</text>
+  <text x="1198" y="386" font-family="Georgia, serif" font-size="54" font-weight="700" fill="#173a42">blue box</text>
+  <path d="M1201 420h254" stroke="#a43f2f" stroke-width="12"/>
+  <text x="1200" y="473" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#173a42">1,000 homes</text>
+  <text x="1200" y="513" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#173a42">4 sorted streams</text>
+  <text x="1200" y="553" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#173a42">No purpose-built bins</text>
+</svg>

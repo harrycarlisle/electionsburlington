@@ -1,6 +1,40 @@
 {
   "items": [
     {
+      "id": "burlington-recycling-pilot-1971",
+      "kind": "feature",
+      "surfaces": ["feature", "latest", "rail"],
+      "headline": "Burlington tested curbside recycling before the blue box. The result looked like a failure.",
+      "deck": "No bins, four sorted streams and 1,000 homes exposed the problem that volunteers alone could not solve.",
+      "label": "Local history",
+      "labelEssential": true,
+      "url": "articles/burlington-recycling-pilot-1971.html",
+      "image": "assets/editorial/burlington-recycling-1971.webp",
+      "alt": "A 1970s kitchen counter with a glass jar, metal can, newspapers and sorting bags, with Burlington homes beyond the window.",
+      "credit": "Burlington News editorial reconstruction",
+      "imageRights": "Original Burlington News SVG and WebP rendering; source-anchored editorial reconstruction",
+      "published": "2026-08-31",
+      "activeFrom": "2026-08-31",
+      "activeUntil": "2027-08-31",
+      "publishedAt": "2026-08-31T09:04:00-04:00",
+      "datePublished": "2026-08-31T09:04:00-04:00",
+      "storyGoal": "Reconstruct Burlington's 1971 curbside recycling experiment and explain why weak weekly set-out numbers concealed much broader participation and a lesson about the public infrastructure recycling would require.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary 1972 Ontario Ministry of the Environment final report, Burlington Public Library archive record, contemporary archive material and attributed participant interviews",
+      "sources": [
+        "https://archive.org/details/burlingtonwaster00onta",
+        "https://digitalarchive.bpl.on.ca/Documents/Detail/first-in-canada_-recycling-centre-to-open/104997",
+        "https://www.ocna.org/uploads/files/PC07_3rd_Burlington%20Post.pdf",
+        "https://www.ontario.ca/page/renewing-blue-box-final-report-blue-box-mediation-process",
+        "https://www.halton.ca/for-residents/recycling-waste/recycling"
+      ],
+      "signals": {"relevance": 5, "breadth": 5, "novelty": 5, "familiarity": 5, "consequence": 4, "interest": 5, "originality": 5, "visualStrength": 5},
+      "gates": {"evidence": "passed", "burlington": "passed", "imageRights": "passed", "duplicate": "passed"},
+      "topic": "history",
+      "subjects": ["recycling", "local-history", "environment", "blue-box", "citizen-action"]
+    },
+    {
       "id": "king-road-magnetic-hill",
       "kind": "original",
       "surfaces": ["feature", "latest", "rail"],

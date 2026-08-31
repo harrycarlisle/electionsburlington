@@ -1,6 +1,38 @@
 {
-  "updated": "2026-08-24",
+  "updated": "2026-08-31",
   "features": [
+    {
+      "slug": "burlington-recycling-pilot-1971",
+      "headline": "Burlington tested curbside recycling before the blue box. The result looked like a failure.",
+      "url": "articles/burlington-recycling-pilot-1971.html",
+      "published": "2026-08-31",
+      "readTimeMinutes": 9,
+      "desk": "Burlington News Staff",
+      "status": "published",
+      "visuals": [
+        {
+          "path": "assets/editorial/burlington-recycling-1971.webp",
+          "type": "source-anchored editorial reconstruction",
+          "note": "An original Burlington News visual built from verified program details in the 1972 final report. It is not presented as a historical photograph."
+        }
+      ],
+      "primaryResearch": [
+        "Ontario Ministry of the Environment, Burlington Waste Reclamation Pilot Study: Final Report (1972)",
+        "Burlington Public Library digital archive record for the first-in-Canada recycling centre",
+        "Ontario Community Newspapers Association archive of the Burlington Post's 2017 participant interviews"
+      ],
+      "audit": {
+        "citationToClaim": "passed",
+        "dates": "passed",
+        "burlingtonRelevance": "passed",
+        "imageRights": "passed",
+        "defamationAndPrivacy": "passed",
+        "internalLinks": "passed",
+        "externalLinks": "passed",
+        "originality": "passed",
+        "duplicateStory": "passed"
+      }
+    },
     {
       "slug": "skyway-tunnel-plan",
       "headline": "Ontario nearly replaced the Skyway with three tunnels.",

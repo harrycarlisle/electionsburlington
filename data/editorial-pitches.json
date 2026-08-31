@@ -1,8 +1,17 @@
 {
-  "updated": "2026-08-24",
+  "updated": "2026-08-31",
   "publishingCadence": "One exceptional evergreen feature each Monday; publish nothing when reporting is not strong enough.",
   "standards": ["editorial/voice-and-style.md", "editorial/headline-rubric.md", "editorial/publication-checklist.md"],
   "pitches": [
+    {
+      "slug": "burlington-recycling-pilot-1971",
+      "workingTitle": "Burlington tested curbside recycling before the blue box. The result looked like a failure.",
+      "hook": "A 1971 provincial experiment seemed to show that only a minority of Burlington households recycled. The final report reveals that the measurement was misleading and that volunteers had exposed a larger structural problem.",
+      "status": "published",
+      "published": "2026-08-31",
+      "url": "articles/burlington-recycling-pilot-1971.html",
+      "sourceLeads": ["https://archive.org/details/burlingtonwaster00onta", "https://digitalarchive.bpl.on.ca/Documents/Detail/first-in-canada_-recycling-centre-to-open/104997", "https://www.ocna.org/uploads/files/PC07_3rd_Burlington%20Post.pdf"]
+    },
     {
       "slug": "corned-beef-hut-origin",
       "workingTitle": "How one sandwich shop became a Burlington obsession",

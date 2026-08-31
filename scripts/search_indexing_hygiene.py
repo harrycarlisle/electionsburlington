@@ -129,8 +129,8 @@ def get_meta(doc: str, attr: str, key: str) -> str:
     )
     if not tag_match:
         return ""
-    content = re.search(r"\bcontent=[\"']([^\"']*)[\"']", tag_match.group(0), re.I)
-    return html_lib.unescape(content.group(1)).strip() if content else ""
+    content = re.search(r"\bcontent\s*=\s*([\"'])(.*?)\1", tag_match.group(0), re.I)
+    return html_lib.unescape(content.group(2)).strip() if content else ""
 
 
 def get_canonical(doc: str) -> str:
@@ -390,9 +390,15 @@ def add_legacy_redirect(path: Path) -> None:
     doc = upsert_canonical(doc, target)
     doc = upsert_meta(doc, "name", "robots", "noindex,follow", " data-legacy-source-redirect=\"true\"")
 
-    refresh_pattern = re.compile(r"<meta\b[^>]*data-legacy-source-redirect[^>]*http-equiv=[\"']refresh[\"'][^>]*>", re.I)
+    refresh_pattern = re.compile(
+        r"<meta\b(?=[^>]*data-legacy-source-redirect)(?=[^>]*http-equiv=[\"']refresh[\"'])[^>]*>",
+        re.I,
+    )
     refresh = f'<meta http-equiv="refresh" content="0; url={escape_attr(target_path)}" data-legacy-source-redirect="true">'
-    if refresh_pattern.search(doc):
+    refresh_matches = list(refresh_pattern.finditer(doc))
+    if refresh_matches:
+        for match in reversed(refresh_matches[1:]):
+            doc = doc[:match.start()] + doc[match.end():]
         doc = refresh_pattern.sub(refresh, doc, count=1)
     else:
         doc = insert_before_head_close(doc, refresh)

@@ -3,37 +3,323 @@
   "scale": "Each placement signal is scored from 0 to 5. Evidence and image rights are gates, not engagement points.",
   "items": [
     {
-      "id": "domcon-2026-burlington-atrium",
+      "id": "burlington-recycling-pilot-1971",
+      "kind": "feature",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Burlington tested curbside recycling before the blue box. The result looked like a failure.",
+      "deck": "No bins, four sorted streams and 1,000 homes exposed the problem that volunteers alone could not solve.",
+      "label": "Local history",
+      "labelEssential": true,
+      "url": "articles/burlington-recycling-pilot-1971.html",
+      "image": "assets/editorial/burlington-recycling-1971.webp",
+      "alt": "A 1970s kitchen counter with a glass jar, metal can, newspapers and sorting bags, with Burlington homes beyond the window.",
+      "credit": "Burlington News editorial reconstruction",
+      "imageRights": "Original Burlington News SVG and WebP rendering; source-anchored editorial reconstruction",
+      "published": "2026-08-31",
+      "activeFrom": "2026-08-31",
+      "activeUntil": "2027-08-31",
+      "publishedAt": "2026-08-31T09:04:00-04:00",
+      "datePublished": "2026-08-31T09:04:00-04:00",
+      "storyGoal": "Reconstruct Burlington's 1971 curbside recycling experiment and explain why weak weekly set-out numbers concealed much broader participation and a lesson about the public infrastructure recycling would require.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary 1972 Ontario Ministry of the Environment final report, Burlington Public Library archive record, contemporary archive material and attributed participant interviews",
+      "sources": [
+        "https://archive.org/details/burlingtonwaster00onta",
+        "https://digitalarchive.bpl.on.ca/Documents/Detail/first-in-canada_-recycling-centre-to-open/104997",
+        "https://www.ocna.org/uploads/files/PC07_3rd_Burlington%20Post.pdf",
+        "https://www.ontario.ca/page/renewing-blue-box-final-report-blue-box-mediation-process",
+        "https://www.halton.ca/for-residents/recycling-waste/recycling"
+      ],
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 5,
+        "consequence": 4,
+        "interest": 5,
+        "originality": 5,
+        "visualStrength": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "history",
+      "subjects": [
+        "recycling",
+        "local-history",
+        "environment",
+        "blue-box",
+        "citizen-action"
+      ]
+    },
+    {
+      "id": "king-road-magnetic-hill",
       "kind": "original",
       "surfaces": [
         "feature",
         "latest",
         "rail"
       ],
-      "headline": "Nationalist conference moved to Burlington after two Hamilton venues cancelled bookings",
-      "deck": "DomCon 2026 was held at The Atrium on North Service Road. The private venue says it did not know the Dominion Society's background when it accepted the booking.",
-      "label": "Local affairs",
+      "headline": "Why do cars appear to roll uphill on Burlington's King Road?",
+      "deck": "For at least 70 years, one short stretch of King Road has made drivers question which way is down. The explanations have ranged from magnetism to ghosts.",
+      "label": "Local mysteries",
       "labelEssential": true,
-      "url": "stories/domcon-2026-burlington-atrium/",
-      "image": "assets/editorial/domcon-hamilton-to-burlington.png",
-      "alt": "Graphic showing DomCon moving along the QEW from two cancelled Hamilton venues to Burlington.",
-      "credit": "Burlington News graphic",
-      "imageRights": "Original Burlington News graphic",
-      "published": "2026-08-31",
-      "activeFrom": "2026-08-31",
-      "activeUntil": "2026-09-14",
-      "publishedAt": "2026-08-31T16:00:00-04:00",
-      "datePublished": "2026-08-31T16:00:00-04:00",
-      "storyGoal": "Explain how DomCon relocated from two cancelled Hamilton bookings to a private Burlington venue and identify the unanswered questions about the booking and notice.",
+      "url": "articles/king-road-magnetic-hill.html",
+      "image": "assets/editorial/king-road-magnetic-hill.jpg",
+      "alt": "Illustrative view of a rural road rising toward a wooded hill, representing Burlington's King Road magnetic hill effect.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-30",
+      "activeFrom": "2026-08-30",
+      "activeUntil": "2027-02-28",
+      "publishedAt": "2026-08-30T11:07:00-04:00",
+      "datePublished": "2026-08-30T11:07:00-04:00",
+      "storyGoal": "Start with the apparent gravity-defying motion on King Road, trace the decades-old Burlington legend, and reveal the visual-perception mechanism only after the mystery has been established.",
       "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
       "editorialWorkflow": "ready",
-      "verificationTier": "Official police and organizer records plus attributed CBC, CHCH and community-organization reporting",
+      "verificationTier": "Peer-reviewed visual-perception research, Burlington Historical Society archive material and attributed local reporting",
       "sources": [
-        "https://hamiltonpolice.on.ca/news/domcon-continues-to-search-for-hamilton-venue/",
-        "https://www.chch.com/chch-news/anti-immigration-group-moves-planned-conference-out-of-hamilton-amid-pressure/",
-        "https://thepublicrecord.ca/tpr-now-hamilton-news-info-updates-links-for-25-august-2026/",
-        "https://www.dominionsociety.ca/domcon",
-        "https://www.dominionsociety.ca/what-is-remigration"
+        "https://www.burlingtontoday.com/local-news/video-gravity-or-ghosts-burlingtons-magnetic-hill-pulls-drivers-up-the-road-11204236",
+        "https://burlingtonhistorical.ca/wp/wp-content/uploads/media/2016/newsletter/BHS_NL_2016.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/12930474/"
+      ],
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 4,
+        "consequence": 3,
+        "interest": 5,
+        "originality": 5,
+        "visualStrength": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "history",
+      "subjects": [
+        "king-road",
+        "magnetic-hill",
+        "optical-illusion",
+        "local-history",
+        "folklore"
+      ]
+    },
+    {
+      "id": "five-creepiest-burlington-mysteries",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Five creepiest Burlington mysteries",
+      "deck": "A child vanished 400 yards from home. A dinner in Niagara Falls ended with no trace. Some of Burlington's strangest questions are still open.",
+      "label": "Local mysteries",
+      "labelEssential": true,
+      "url": "articles/five-creepiest-burlington-mysteries.html",
+      "image": "assets/editorial/burlington-mysteries.jpg",
+      "alt": "A dark waterfront scene used as an illustration for Burlington mysteries.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-29",
+      "activeFrom": "2026-08-29",
+      "activeUntil": "2027-02-28",
+      "publishedAt": "2026-08-29T23:59:00-04:00",
+      "datePublished": "2026-08-29T23:59:00-04:00",
+      "storyGoal": "Tell five verified Burlington mystery stories with narrative tension while clearly separating open police cases from folklore and never presenting speculation as fact.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary Halton Police and Veterans Affairs records, with clearly attributed local historical reporting",
+      "sources": [
+        "https://www.haltonpolice.ca/news-releases/posts/missing-person-marianne-schuett/",
+        "https://www.haltonpolice.ca/news-releases/posts/missing-person-john-antic/",
+        "https://www.haltonpolice.ca/news-releases/posts/halton-police-offering-25-000-reward-in-irma-galastica-investigation/",
+        "https://www.haltonpolice.ca/news-releases/posts/homicide-kimlyn-judy-tolgyes/",
+        "https://www.veterans.gc.ca/en/remembrance/memorials/canada/burlington-cenotaph"
+      ],
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 5,
+        "consequence": 4,
+        "interest": 5,
+        "originality": 5,
+        "visualStrength": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "history",
+      "subjects": [
+        "mysteries",
+        "missing-persons",
+        "unsolved-homicide",
+        "local-history",
+        "folklore"
+      ]
+    },
+    {
+      "id": "least-expensive-complete-lunches-burlington",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "The least expensive complete lunches we found in Burlington",
+      "deck": "We checked current restaurant menus and recent reviews to see how far $11 still goes at Burlington lunch spots.",
+      "label": "Food & drink",
+      "labelEssential": true,
+      "url": "articles/least-expensive-complete-lunches-burlington.html",
+      "image": "assets/editorial/burlington-cheap-lunches.jpg",
+      "alt": "A sandwich, soup and drink arranged as an inexpensive lunch.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-29",
+      "activeFrom": "2026-08-29",
+      "activeUntil": "2026-11-30",
+      "publishedAt": "2026-08-29T23:58:00-04:00",
+      "datePublished": "2026-08-29T23:58:00-04:00",
+      "storyGoal": "Find the lowest currently verifiable Burlington lunch prices that still buy a main plus at least one meaningful side, bread, soup, salad or drink.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Current restaurant-published menus, with recent public reviews used for discovery and cross-checking",
+      "sources": [
+        "https://aromakitchen.ca/menu/",
+        "https://hakkarise.ca/menu/",
+        "https://thebombaygrill.ca/",
+        "https://burlingtonhakkaandmomohub.ca/menu/",
+        "https://banhmicornedbeef.com/menu/",
+        "https://www.squires.pub/specials"
+      ],
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 5,
+        "consequence": 4,
+        "interest": 5,
+        "originality": 5,
+        "visualStrength": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "food",
+      "subjects": [
+        "restaurants",
+        "lunch",
+        "cheap-eats",
+        "food",
+        "prices"
+      ]
+    },
+    {
+      "id": "burlington-strangest-street-names",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "The stories behind Burlington's strangest street names",
+      "deck": "Several ordinary Burlington street signs point back to explosives, billiards, war history and people the modern city nearly forgot.",
+      "label": "Local history",
+      "labelEssential": true,
+      "url": "articles/burlington-strangest-street-names.html",
+      "image": "assets/editorial/burlington-strangest-street-names.svg",
+      "alt": "Illustration of Burlington street signs for Powder Magazine Road, Locust Street, Putter Place and Tweedsmuir Court.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-29",
+      "activeFrom": "2026-08-29",
+      "activeUntil": "2027-02-28",
+      "publishedAt": "2026-08-29T22:58:00-04:00",
+      "datePublished": "2026-08-29T22:58:00-04:00",
+      "storyGoal": "Use verified local history to show what Burlington street names reveal about former industries, people and the city's older landscape.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Burlington historical records and city heritage sources",
+      "sources": [
+        "https://www.burlingtonhistorical.ca/publications",
+        "https://www.burlingtontoday.com/local-news/street-smart-the-stories-behind-burlingtons-street-names-6003954",
+        "https://www.burlington.ca/en/arts-culture-and-events/history-and-heritage.aspx"
+      ],
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 5,
+        "consequence": 3,
+        "interest": 5,
+        "originality": 5,
+        "visualStrength": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "history",
+      "subjects": [
+        "street-names",
+        "local-history",
+        "powder-magazine-road",
+        "putter-place",
+        "walkers-line"
+      ]
+    },
+    {
+      "id": "why-is-snake-road-so-winding",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Why is Snake Road so winding?",
+      "deck": "Drivers have followed the same strange bends for generations, and at one point Burlington considered removing some of them.",
+      "label": "Local history",
+      "labelEssential": true,
+      "url": "articles/why-is-snake-road-so-winding.html",
+      "image": "assets/editorial/snake-road-burlington.svg",
+      "alt": "Illustration of Snake Road winding up the Niagara Escarpment.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-29",
+      "activeFrom": "2026-08-29",
+      "activeUntil": "2026-11-30",
+      "publishedAt": "2026-08-29T22:57:00-04:00",
+      "datePublished": "2026-08-29T22:57:00-04:00",
+      "storyGoal": "Explain why Snake Road has so many bends, connect its shape to its pre-automobile history, and use the current 2026 renewal as a timely entry point.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary City project and budget records plus Flamborough historical archives",
+      "sources": [
+        "https://www.flamboroughhistory.com/the-long-and-winding-road/",
+        "https://www.flamboroughhistory.com/snake-road/",
+        "https://www.flamboroughhistory.com/snake-roads-importance-lost/",
+        "https://www.burlington.ca/en/news/current-city-projects-and-construction/snake-road-minor-reconstruction.aspx"
       ],
       "signals": {
         "relevance": 5,
@@ -42,8 +328,8 @@
         "familiarity": 4,
         "consequence": 4,
         "interest": 5,
-        "originality": 4,
-        "visualStrength": 4
+        "originality": 5,
+        "visualStrength": 5
       },
       "gates": {
         "evidence": "passed",
@@ -51,16 +337,71 @@
         "imageRights": "passed",
         "duplicate": "passed"
       },
-      "topic": "city",
+      "topic": "history",
       "subjects": [
-        "domcon",
-        "dominion-society",
-        "the-atrium",
-        "private-venues",
-        "hamilton",
-        "burlington"
+        "snake-road",
+        "niagara-escarpment",
+        "roads",
+        "local-history",
+        "construction"
+      ]
+    },
+    {
+      "id": "best-small-park-burlington",
+      "kind": "original",
+      "surfaces": [
+        "latest",
+        "rail"
       ],
-      "lastHomepageLead": "2026-08-31"
+      "headline": "Which Burlington neighbourhood has the best small park?",
+      "deck": "We compared compact Burlington parks by what they actually let a neighbourhood do in a small amount of space.",
+      "label": "Parks",
+      "labelEssential": true,
+      "url": "articles/best-small-park-burlington.html",
+      "image": "assets/editorial/bolus-gardens-parkette.svg",
+      "alt": "Illustration of a compact park with a playground, splash pad, court and bike path.",
+      "credit": "Burlington News illustration",
+      "imageRights": "Original Burlington News illustration",
+      "published": "2026-08-29",
+      "activeFrom": "2026-08-29",
+      "activeUntil": "2026-10-31",
+      "publishedAt": "2026-08-29T22:56:00-04:00",
+      "datePublished": "2026-08-29T22:56:00-04:00",
+      "storyGoal": "Answer a subjective local question with a transparent criterion: which compact Burlington park packs in the broadest mix of useful everyday amenities.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Primary City of Burlington parks, budget and recreation records",
+      "sources": [
+        "https://www.burlington.ca/en/recreation/pickleball.aspx",
+        "https://www.burlington.ca/en/parks-facilities-and-rentals/pools-splash-pads-and-spray-parks.aspx",
+        "https://www.burlington.ca/en/news/game-on-free-sports-equipment-lockers-coming-to-burlington-parks.aspx",
+        "https://www.burlington.ca/en/by-laws-and-animal-services/leash-free-dog-parks.aspx",
+        "https://www.burlington.ca/en/news/current-city-projects-and-construction/windows-to-the-lake.aspx"
+      ],
+      "signals": {
+        "relevance": 5,
+        "breadth": 4,
+        "novelty": 5,
+        "familiarity": 5,
+        "consequence": 3,
+        "interest": 5,
+        "originality": 5,
+        "visualStrength": 5
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "burlington",
+      "subjects": [
+        "parks",
+        "aldershot",
+        "bolus-gardens",
+        "playgrounds",
+        "recreation"
+      ]
     },
     {
       "id": "burlington-technologies-used-around-world",
@@ -71,7 +412,7 @@
         "rail"
       ],
       "headline": "Four Burlington technologies that ended up around the world",
-      "deck": "Water treatment systems, laboratory robots, broadcast hardware and plant-based materials all have deep Burlington roots.",
+      "deck": "Four Burlington operations make things most residents will never see, even though their work shows up far beyond the city.",
       "label": "Made in Burlington",
       "labelEssential": true,
       "url": "articles/burlington-technologies-used-around-world.html",
@@ -91,10 +432,8 @@
       "sources": [
         "https://investburlington.ca/business-success-stories/aslan-technologies/",
         "https://investburlington.ca/business-success-stories/1980s-startup-grows-into-one-of-burlingtons-largest-companies/",
-        "https://apps.thermofisher.com/apps/lahr/LA_Online_Help_Resource/en-us/Content/Topics/Contact%20Us/Contact%20Us.htm",
         "https://evertz.com/contact/about/",
-        "https://ecosynthetix.com/about-us/",
-        "https://ecosynthetix.com/our-capabilities/"
+        "https://ecosynthetix.com/about-us/"
       ],
       "signals": {
         "relevance": 5,
@@ -120,8 +459,7 @@
         "water",
         "robotics",
         "broadcast"
-      ],
-      "lastHomepageLead": "2026-08-29"
+      ]
     },
     {
       "id": "can-you-park-overnight-burlington",
@@ -131,7 +469,7 @@
         "rail"
       ],
       "headline": "Can you park on a Burlington street overnight?",
-      "deck": "Usually no. Most streets have a 1 to 6 a.m. parking ban, but exemptions and a paid citywide permit can make overnight parking legal.",
+      "deck": "Burlington's overnight parking rules are stricter than many drivers realize, but the city has more than one way to handle an overnight vehicle.",
       "label": "Parking",
       "labelEssential": true,
       "url": "articles/can-you-park-overnight-burlington.html",
@@ -185,7 +523,7 @@
         "rail"
       ],
       "headline": "Can you have a backyard fire pit in Burlington?",
-      "deck": "A wood fire for sitting around is generally not allowed in urban Burlington. Propane and cooking fires are treated differently.",
+      "deck": "The answer changes depending on what you burn, what you burn it in and where in Burlington you live.",
       "label": "Home rules",
       "labelEssential": true,
       "url": "articles/can-you-have-backyard-fire-pit-burlington.html",
@@ -239,7 +577,7 @@
         "rail"
       ],
       "headline": "Where are Burlington's red-light cameras?",
-      "deck": "There are five. Three are on Guelph Line, and running one of them can cost $325.",
+      "deck": "A small number of Burlington intersections generate thousands of camera violations. Here is where the cameras are and what triggers them.",
       "label": "Road safety",
       "labelEssential": true,
       "url": "articles/where-are-burlington-red-light-cameras.html",
@@ -292,7 +630,7 @@
         "rail"
       ],
       "headline": "Do you need a permit for a shed in Burlington?",
-      "deck": "Not always. The building-permit threshold is 15 square metres, but a small shed still has to follow zoning rules.",
+      "deck": "A shed can be small enough to skip one city approval and still run into another.",
       "label": "Home rules",
       "labelEssential": true,
       "url": "articles/do-you-need-permit-shed-burlington.html",
@@ -395,6 +733,66 @@
         "guelph-line",
         "traffic-data"
       ]
+    },
+    {
+      "id": "domcon-2026-burlington-atrium",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Nationalist conference moved to Burlington after two Hamilton venues cancelled bookings",
+      "deck": "DomCon 2026 was held at The Atrium on North Service Road. The private venue says it did not know the Dominion Society's background when it accepted the booking.",
+      "label": "Local affairs",
+      "labelEssential": true,
+      "url": "stories/domcon-2026-burlington-atrium/",
+      "image": "assets/editorial/domcon-hamilton-to-burlington.png",
+      "alt": "Graphic showing DomCon moving along the QEW from two cancelled Hamilton venues to Burlington.",
+      "credit": "Burlington News graphic",
+      "imageRights": "Original Burlington News graphic",
+      "published": "2026-08-31",
+      "activeFrom": "2026-08-31",
+      "activeUntil": "2026-09-14",
+      "publishedAt": "2026-08-31T16:00:00-04:00",
+      "datePublished": "2026-08-31T16:00:00-04:00",
+      "storyGoal": "Explain how DomCon relocated from two cancelled Hamilton bookings to a private Burlington venue and identify the unanswered questions about the booking and notice.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Official police and organizer records plus attributed CBC, CHCH and community-organization reporting",
+      "sources": [
+        "https://hamiltonpolice.on.ca/news/domcon-continues-to-search-for-hamilton-venue/",
+        "https://www.chch.com/chch-news/anti-immigration-group-moves-planned-conference-out-of-hamilton-amid-pressure/",
+        "https://thepublicrecord.ca/tpr-now-hamilton-news-info-updates-links-for-25-august-2026/",
+        "https://www.dominionsociety.ca/domcon",
+        "https://www.dominionsociety.ca/what-is-remigration"
+      ],
+      "signals": {
+        "relevance": 5,
+        "breadth": 5,
+        "novelty": 5,
+        "familiarity": 4,
+        "consequence": 4,
+        "interest": 5,
+        "originality": 4,
+        "visualStrength": 4
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "city",
+      "subjects": [
+        "domcon",
+        "dominion-society",
+        "the-atrium",
+        "private-venues",
+        "hamilton",
+        "burlington"
+      ],
+      "lastHomepageLead": "2026-08-31"
     },
     {
       "id": "burlington-flood-protection-90-million",

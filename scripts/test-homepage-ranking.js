@@ -68,7 +68,8 @@ const exploreMarkup = homepage.match(/<section class="explore-band"[\s\S]*?<\/se
 assert(/id="breakingNow"[^>]*data-state="local-update"/.test(homepage), 'homepage ships with a visible Local Update rail');
 assert(/id="breakingNow"[\s\S]*?Nationalist conference moved to Burlington after two Hamilton venues cancelled/.test(homepage), 'newest verified Burlington development replaces the older Ghent update');
 assert(/id="breakingNow"[\s\S]*?TODAY/.test(homepage), 'new local update is clearly dated today');
-assert(/class="top-story" data-story-id="domcon-2026-burlington-atrium"[\s\S]*?domcon-hamilton-to-burlington\.png/.test(homepage), 'homepage lead uses the original DomCon editorial graphic');
+assert(/class="top-story" data-story-id="domcon-2026-burlington-atrium"[\s\S]*?domcon-hamilton-to-burlington\.png/.test(homepage), 'homepage lead preserves the newer local-affairs story');
+assert(/id="latestList"[\s\S]*?data-story-id="burlington-recycling-pilot-1971"/.test(homepage), 'published feature appears in the homepage Latest rail');
 assert(breakingArchive.items?.[0]?.id === 'domcon-2026-burlington-atrium', 'live Local Update data advances to the DomCon Burlington story');
 assert(/class="pick-grid"/.test(exploreMarkup) && /class="pick-card"/.test(exploreMarkup), 'Explore reuses Top Picks grid and card markup');
 assert(!/explore-home-card|explore-home-grid|explore-intro|explore-heading/.test(exploreMarkup), 'legacy Explore-only presentation is absent');
