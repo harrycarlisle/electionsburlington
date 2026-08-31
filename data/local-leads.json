@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-08-31T13:34:28Z",
+  "generatedAt": "2026-08-31T19:37:25Z",
   "items": [
+    {
+      "id": "511:296764",
+      "detectedAt": "2026-08-31T19:37:25Z",
+      "score": 75,
+      "headline": "Collision on QEW Toronto bound RAMP at NIKOLA TESLA, Hamilton. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:295312",
       "detectedAt": "2026-08-30T19:26:01Z",
