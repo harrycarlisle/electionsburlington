@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-30T23:28:14+00:00",
+  "checkedAt": "2026-08-31T05:29:24+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 41
+      "candidates": 42
     },
     {
       "name": "Pokémon GO live events",
@@ -998,7 +998,7 @@
     },
     {
       "title": "257 King William Street",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/cityhousing-hamilton/development-revitalization/development-projects/257-king",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/cityhousing-hamilton/development-revitalization/development-projects/257-king",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1011,7 +1011,7 @@
     },
     {
       "title": "500 MacNab Street North",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/cityhousing-hamilton/development-revitalization/development-projects/500-macnab",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/cityhousing-hamilton/development-revitalization/development-projects/500-macnab",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1089,7 +1089,7 @@
     },
     {
       "title": "Approved Temporary Shelter Expansion",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/preventing-ending-homelessness/approved-temporary-shelter-expansion",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/preventing-ending-homelessness/approved-temporary-shelter-expansion",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1245,7 +1245,7 @@
     },
     {
       "title": "CEF Agriculture Program",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-agriculture-program",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-agriculture-program",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1258,7 +1258,7 @@
     },
     {
       "title": "CEF Arts Program",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-arts-program",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-arts-program",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1271,7 +1271,7 @@
     },
     {
       "title": "CEF Communities, Culture & Heritage Program",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-communities-culture",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-communities-culture",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1323,7 +1323,7 @@
     },
     {
       "title": "Cemetery Events",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/hamilton-municipal-cemeteries/our-cemeteries/cemetery-events",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/hamilton-municipal-cemeteries/our-cemeteries/cemetery-events",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1336,7 +1336,7 @@
     },
     {
       "title": "City of Hamilton Encampment Protocol",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/preventing-ending-homelessness/city-hamilton-encampment-protocol",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/preventing-ending-homelessness/city-hamilton-encampment-protocol",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1479,7 +1479,7 @@
     },
     {
       "title": "EarlyON Child and Family Centres Locations",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/early-years-child-care/early-years-services/earlyon-child-and-family-centres",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/early-years-child-care/early-years-services/earlyon-child-and-family-centres",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1492,7 +1492,7 @@
     },
     {
       "title": "Emergency & Violence Against Women Shelters & Drop-in Programs",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/preventing-ending-homelessness/emergency-and-violence-against-women",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/preventing-ending-homelessness/emergency-and-violence-against-women",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1570,7 +1570,7 @@
     },
     {
       "title": "Eviction Prevention",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/housing-supports/eviction-prevention",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/housing-supports/eviction-prevention",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1596,7 +1596,7 @@
     },
     {
       "title": "Family & Pet Burial",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/hamilton-municipal-cemeteries/cremation-burial/family-pet-burial",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/hamilton-municipal-cemeteries/cremation-burial/family-pet-burial",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1674,7 +1674,7 @@
     },
     {
       "title": "Historical Family Search",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/hamilton-municipal-cemeteries/products-services/historical-family-search",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/hamilton-municipal-cemeteries/products-services/historical-family-search",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1687,7 +1687,7 @@
     },
     {
       "title": "Historical Walking Tours",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/hamilton-municipal-cemeteries/our-cemeteries/historical-walking-tours",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/hamilton-municipal-cemeteries/our-cemeteries/historical-walking-tours",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1791,7 +1791,7 @@
     },
     {
       "title": "Market Rent Housing",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/cityhousing-hamilton/applicants/market-rent-housing",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/cityhousing-hamilton/applicants/market-rent-housing",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2012,7 +2012,7 @@
     },
     {
       "title": "Preventing & Ending Homelessness",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/preventing-ending-homelessness",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/preventing-ending-homelessness",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2103,7 +2103,7 @@
     },
     {
       "title": "Red Hill Family Centre",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/early-years-child-care/child-care-services/red-hill-family-centre",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/early-years-child-care/child-care-services/red-hill-family-centre",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2116,7 +2116,7 @@
     },
     {
       "title": "Safe Apartments",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/cityhousing-hamilton/tenants/cityhousing-safe-apartments",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/cityhousing-hamilton/tenants/cityhousing-safe-apartments",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2194,7 +2194,7 @@
     },
     {
       "title": "Start The Conversation",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/hamilton-municipal-cemeteries/planning-ahead/start-conversation",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/hamilton-municipal-cemeteries/planning-ahead/start-conversation",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2441,7 +2441,7 @@
     },
     {
       "title": "Winter Response Strategy",
-      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/preventing-ending-homelessness/winter-response-strategy",
+      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/preventing-ending-homelessness/winter-response-strategy",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2476,84 +2476,6 @@
       "endsAt": "2026-09-21T03:59:59+00:00",
       "location": "Royal Botanical Gardens Hendrie Park, 680 Plains Road West, Burlington, Ontario",
       "description": "<p>This outdoor exhibition features 18 sculptures and a hidden digital world set amongst nature and blooms! With Canada Strong Pass, children 0-17 receive free Garden Admission, and young adults 18–24 enjoy 50% off until September 7th. Prices adjust automatically. Explore the vibrant sculptural universe of artist and contemporary sculptor Ken Kelleher, inter",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Creative STEM Workshops, Hands-On Sunday Activities",
-      "url": "https://activeparents.ca/calendar/creative-stem-workshops-hands-on-sunday-activities/2026-08-30/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-30T04:00:00+00:00",
-      "endsAt": "2026-08-31T03:59:59+00:00",
-      "location": "Steamulation Lab, 2861 Sherwood Heights Drive, Oakville, ON",
-      "description": "<p>Looking for fun and educational weekend activities for kids in Oakville? Join our Hands-On Creative STEM Workshops every Sunday at STEAMULATION Lab, where children explore a new creative STEM activity each week through art, science, engineering, and hands-on learning. Kids will enjoy exciting projects such as slime making, homemade playdough, origami, col",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Halton Storage & Boat Club Annual Salmon Derby",
-      "url": "https://activeparents.ca/calendar/halton-storage-boat-club-annual-salmon-derby/2026-08-30/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-30T09:00:00+00:00",
-      "endsAt": "2026-08-31T01:00:00+00:00",
-      "location": "Halton Storage & Boat Club Weigh Station, 1155 Beach Blvd, Hamilton, ON",
-      "description": "<p>Get your gear ready! Our annual fishing derby returns this August for an exciting weekend of Lake Ontario salmon fishing. August 28–30, 2026 Free Coffee for Friday Morning derby Anglers until 12pm. Raffles First place: Cash Prize Tickets:$55+HST (Adult) & $25+HST (Youth) Official Weigh Station Halton Storage & Boat Club 1155 Beach Blvd, Hamilton Scales […",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Winona Peach Festival",
-      "url": "https://activeparents.ca/calendar/winona-peach-festival/2026-08-30/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-30T14:00:00+00:00",
-      "endsAt": "2026-08-30T22:00:00+00:00",
-      "location": "Winona Park, 1328 Barton Street, Winona, ON",
-      "description": "<p>If you\\'re a peach lover you don\\'t want to miss this iconic festival when the Winona Peach Festival returns to Winona Park this summer. With something for everyone from midway rides, arts and crafts, children\\'s programs, and live music in the evenings, the entire family is sure to be entertained throughout the weekend. You\\'ll want […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Hamilton Cardinals Home Game",
-      "url": "https://activeparents.ca/calendar/hamilton-cardinals-home-game/2026-08-30/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-30T20:00:00+00:00",
-      "endsAt": "2026-08-30T23:00:00+00:00",
-      "location": "Bernie Arbour Stadium, 1100 Mohawk Rd East, Hamilton, Ontario",
-      "description": "<p>Come along and support the home team at these games: vs Guelph Royals, June 19, 7:30pm, Bark in the Park - Dog Shirt Giveaway vs Chatham-Kent Barnstormers, June 21, 4:00pm Father\\'s Day Celebration vs Kitchener Panthers, June 26, 7:30pm Cirque Du Soleil Night vs Welland Jackfish, Jul 3, 7:30 pm, Alpha-1 Wrestling vs Toronto Maple Leafs, […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Nanny McPhee at the Westdale",
-      "url": "https://activeparents.ca/calendar/nanny-mcphee-at-the-westdale/2026-08-30/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-30T22:30:00+00:00",
-      "endsAt": "2026-08-31T01:30:00+00:00",
-      "location": "The Westdale Theatre, 1014 King Street West, Hamilton, Ontario",
-      "description": "<p>Sensory Friendly Screening in partnership with Centre for Diverse Learners on Sat, Aug 29 at 1:30pm. 20th Anniversary! Cedric Brown (Colin Firth) is a hard-working widower who can’t spend much time with his seven children, so he leaves them in the care of nannies. However, the children are very naughty and have managed, with pride, to scare […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Harry Potter – all 8 movies at Film.ca",
-      "url": "https://activeparents.ca/calendar/harry-potter-all-8-movies-at-film-ca/2026-08-30/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-30T23:00:00+00:00",
-      "endsAt": "2026-08-31T02:00:00+00:00",
-      "location": "Film.ca Theatre, 171 Speers Road, Unit 25, Oakville, Ontario",
-      "description": "<p>Celebrate 25 years of magic with the ultimate Harry Potter movie marathon, featuring all eight films on the big screen this summer! Please note: The full eight-film marathon is only playing at our Oakville location. Our Trenton location will only be playing Harry Potter and the Sorcerer\\'s Stone (Year 1) on August 28th. Showtimes: Years […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -2661,6 +2583,149 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Afternoon snack with On y va Milton @ Main",
+      "url": "https://activeparents.ca/calendar/afternoon-snack-with-on-y-va-milton-main/2026-09-02/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-02T18:30:00+00:00",
+      "endsAt": "2026-09-02T19:30:00+00:00",
+      "location": "MPL Main branch, 1010 Main St E, Milton, ON",
+      "description": "<p>Young children know that books hold meaning. Every book you read to your child is a gift they will cherish. A book truly comes alive when shared between an adult and a young child! Come share this moment with us through reading and many other activities! Wednesday, August 5, 2026 Wednesday, August 12, 2026 Wednesday, […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Free Open House & Trial Class – Ultimate Coders Burlington / Triple Stone Learning",
+      "url": "https://activeparents.ca/calendar/free-open-house-trial-class-ultimate-coders-burlington-triple-stone-learning/2026-09-02/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-02T20:00:00+00:00",
+      "endsAt": "2026-09-02T21:00:00+00:00",
+      "location": "Triple Stone Learning, 2180 Itabashi Way, Burlington, ON",
+      "description": "<p>Drop in for a free trial class at Triple Stone Learning! Explore coding, math and enrichment programs for kids and teens. Wednesdays and Fridays, 4–5 PM: Aug 12, 14, 19, 21, 26, 28 & Sep 2.</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Free Swim Oakville",
+      "url": "https://activeparents.ca/calendar/free-swim-oakville/2026-09-02/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-02T20:00:00+00:00",
+      "endsAt": "2026-09-02T21:30:00+00:00",
+      "location": "Various Oakville pools, Oakville, ON",
+      "description": "<p>Join us at one of our outdoor pools for Community Play Night Free Leisure Swims. Below are the dates and times: Tuesday, June 30 from 6:30-8 p.m. at Bronte Pool Wednesday, July 8 from 6:30-8 p.m. at Brookdale Pool Wednesday, July 15 from 6:30-8 p.m. at Falgarwood Pool Wednesday, July 22 from 5-6:30 p.m. at […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Mountainside Pool Summer Community Events",
+      "url": "https://activeparents.ca/calendar/mountainside-pool-summer-community-events/2026-09-02/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-02T21:00:00+00:00",
+      "endsAt": "2026-09-02T23:00:00+00:00",
+      "location": "Mountainside Recreation Centre, 2205 Mount Forest Drive, Burlington, Ontario",
+      "description": "<p>Get Ready for a Splash of Fun This Summer! Join us every Wednesday from 5:00-7:00pm for our weekly Community Event Nights — a summer series packed with creativity, laughter, and poolside fun! (Regular admission rates apply) What We’ve Got Lined Up This Summer: July 1st: Canada Day Craft Kick off the fun with a night of festive creativity! […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Harry Potter – all 8 movies at Film.ca",
+      "url": "https://activeparents.ca/calendar/harry-potter-all-8-movies-at-film-ca/2026-09-02/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-02T23:00:00+00:00",
+      "endsAt": "2026-09-03T02:00:00+00:00",
+      "location": "Film.ca Theatre, 171 Speers Road, Unit 25, Oakville, Ontario",
+      "description": "<p>Celebrate 25 years of magic with the ultimate Harry Potter movie marathon, featuring all eight films on the big screen this summer! Please note: The full eight-film marathon is only playing at our Oakville location. Our Trenton location will only be playing Harry Potter and the Sorcerer\\'s Stone (Year 1) on August 28th. Showtimes: Years […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Toonie Swims in Lincoln",
+      "url": "https://activeparents.ca/calendar/toonie-swims-in-lincoln/2026-09-02/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-03T00:00:00+00:00",
+      "endsAt": "2026-09-03T01:00:00+00:00",
+      "location": "Lincoln Pools, Lincoln, ON",
+      "description": "<p>Still lots of Toonie Swims left this summer at the pools. Register Today at https://www.lincoln.ca/DropInActivities/public-swimming Cool off this summer at our all ages Leisure Swim. Regular admission standards apply and can be found online at lincoln.ca Check website for locations, dates and times. </p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Mini Maker Studio",
+      "url": "https://activeparents.ca/calendar/mini-maker-studio-3/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-03T16:00:00+00:00",
+      "endsAt": "2026-09-03T18:00:00+00:00",
+      "location": "Milton Mall, 55 Ontario Street South, Milton, Ontario",
+      "description": "<p>Join us on Thursday, September 3rd from 12pm-2pm for our Bookmark Craft Event hosted by Mini Maker! Kids can make personalized bookmarks to take home and use for the upcoming school year! Located in the common area near Slime lab, don\\'t miss this fun and FREE event, while supplies last!</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Toonie Swims in Lincoln",
+      "url": "https://activeparents.ca/calendar/toonie-swims-in-lincoln/2026-09-03/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-03T17:00:00+00:00",
+      "endsAt": "2026-09-03T21:00:00+00:00",
+      "location": "Lincoln Pools, Lincoln, ON",
+      "description": "<p>Still lots of Toonie Swims left this summer at the pools. Register Today at https://www.lincoln.ca/DropInActivities/public-swimming Cool off this summer at our all ages Leisure Swim. Regular admission standards apply and can be found online at lincoln.ca Check website for locations, dates and times. </p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Harry Potter – all 8 movies at Film.ca",
+      "url": "https://activeparents.ca/calendar/harry-potter-all-8-movies-at-film-ca/2026-09-03/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-03T21:00:00+00:00",
+      "endsAt": "2026-09-04T03:00:00+00:00",
+      "location": "Film.ca Theatre, 171 Speers Road, Unit 25, Oakville, Ontario",
+      "description": "<p>Celebrate 25 years of magic with the ultimate Harry Potter movie marathon, featuring all eight films on the big screen this summer! Please note: The full eight-film marathon is only playing at our Oakville location. Our Trenton location will only be playing Harry Potter and the Sorcerer\\'s Stone (Year 1) on August 28th. Showtimes: Years […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Make a Back-to-School Vision Board",
+      "url": "https://activeparents.ca/calendar/make-a-back-to-school-vision-board/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-03T22:30:00+00:00",
+      "endsAt": "2026-09-03T23:30:00+00:00",
+      "location": "BPL – Tansley Woods, 1996 Itabashi Way, Burlington, Ontario",
+      "description": "<p>Create, plan, and design your goals for the new school year! Ages 9-13 Heading back to school? Create a personalized fall‑themed vision board that highlights your hopes, goals, and inspirations for the year ahead. Using magazines, images, and craft materials, create a collage of things that inspire you such as school goals, hobbies, future plans, or fun f",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Little Wigglers at Hamilton Children’s Museum",
+      "url": "https://activeparents.ca/calendar/little-wigglers-at-hamilton-childrens-museum/2026-09-04/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-04T14:30:00+00:00",
+      "endsAt": "2026-09-04T15:30:00+00:00",
+      "location": "New Hamilton Children’s Museum, 1072 Main St E, Hamilton, ON",
+      "description": "<p>Little Wigglers is a pre-school program for 18-month-olds to four-year-olds. The one-hour program is themed and supports children’s learning about themselves, their families, neighborhoods, seasons, and the world around them. Event Highlights Support cognitive and social development: Each session includes story time, exploration, and hands-on activities S",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
       "source": "Active Parents regional calendar",
@@ -2687,47 +2752,8 @@
       "candidateType": "link"
     },
     {
-      "title": "Creative STEM Workshops, Hands-On Sunday Activities",
-      "url": "https://activeparents.ca/series/creative-stem-workshops-hands-on-sunday-activities/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Free Open House & Trial Class – Ultimate Coders Burlington / Triple Stone Learning",
-      "url": "https://activeparents.ca/calendar/free-open-house-trial-class-ultimate-coders-burlington-triple-stone-learning/2026-09-02/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Free Open House & Trial Class – Ultimate Coders Burlington / Triple Stone Learning",
       "url": "https://activeparents.ca/series/free-open-house-trial-class-ultimate-coders-burlington-triple-stone-learning/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Free Swim Oakville",
-      "url": "https://activeparents.ca/calendar/free-swim-oakville/2026-09-02/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2817,21 +2843,8 @@
       "candidateType": "link"
     },
     {
-      "title": "Harry Potter – all 8 movies at Film.ca",
-      "url": "https://activeparents.ca/calendar/harry-potter-all-8-movies-at-film-ca/2026-09-02/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Mountainside Pool Summer Community Events",
-      "url": "https://activeparents.ca/calendar/mountainside-pool-summer-community-events/2026-09-02/",
+      "title": "Little Wigglers at Hamilton Children’s Museum",
+      "url": "https://activeparents.ca/series/little-wigglers-at-hamilton-childrens-museum/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
