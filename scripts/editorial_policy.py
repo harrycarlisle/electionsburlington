@@ -76,6 +76,11 @@ def allowed_tiers() -> set[str]:
     return {str(item).lower() for item in rules.get("allowedVerificationTiers") or ("primary", "official", "reported", "corroborated")}
 
 
+def primary_only_tiers() -> set[str]:
+    rules = auto_publish_rules()
+    return {str(item).lower() for item in rules.get("primaryOnlyVerificationTiers") or ("primary", "official", "corroborated")}
+
+
 def is_low_risk(item: dict) -> bool:
     rules = auto_publish_rules()
     tier = str(item.get("verificationTier") or item.get("verification") or "").lower()
@@ -83,6 +88,15 @@ def is_low_risk(item: dict) -> bool:
     if tier not in allowed_tiers():
         return False
     if any(term in text for term in blocked_terms()):
+        return False
+    primary_only_terms = tuple(str(term).lower() for term in rules.get("primaryOnlyTerms") or ())
+    if any(term in text for term in primary_only_terms) and tier not in primary_only_tiers():
+        return False
+    blocked_classes = {str(value).lower() for value in rules.get("blockedRadarClasses") or ()}
+    if str(item.get("radarClass") or "").lower() in blocked_classes:
+        return False
+    minimum_score = float(rules.get("minimumEditorialScore") or 0)
+    if item.get("editorialScore") is not None and float(item.get("editorialScore") or 0) < minimum_score:
         return False
     if rules.get("requireSourceUrl", True) and not item.get("url"):
         return False

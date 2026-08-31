@@ -49,6 +49,19 @@
   "gates": ["evidence", "burlington", "imageRights", "duplicate"],
   "autoPublish": {
     "allowedVerificationTiers": ["primary", "official", "reported", "corroborated"],
+    "primaryOnlyVerificationTiers": ["primary", "official", "corroborated"],
+    "primaryOnlyTerms": [
+      "candidate",
+      "election",
+      "police",
+      "death",
+      "died",
+      "fatal",
+      "killed",
+      "lawsuit",
+      "court",
+      "legal dispute"
+    ],
     "blockedTopics": [
       "unverified allegation",
       "candidate endorsement",
@@ -61,6 +74,8 @@
     "requireSourceUrl": true,
     "requireStoryGoal": true,
     "requireImageRights": false,
+    "minimumEditorialScore": 55,
+    "blockedRadarClasses": ["Probably Ignore"],
     "holdIfUnclear": true
   },
   "discovery": {
