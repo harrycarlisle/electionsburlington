@@ -37,7 +37,6 @@ STATIC_CANONICAL_PATHS = [
     "/parking/",
     "/beach/",
     "/safety/",
-    "/food/",
     "/sports/",
     "/about/",
     "/editorial-standards/",

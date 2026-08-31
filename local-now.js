@@ -190,7 +190,9 @@ import { uniqueCameraCount } from '/lib/homepage-ranking.js';
       title: item.title || item.name,
       relative: tonight ? 'Tonight' : (item.dateLabel || item.relative || ''),
       hours: item.venue || item.hours || '',
-      url: item.url || (item.id ? `/explore/?event=${encodeURIComponent(item.id)}` : '/explore/'),
+      // Event IDs open the matching Explore detail card immediately. A generic
+      // event URL would add an unnecessary second tap before the useful detail.
+      url: item.id ? `/explore/?event=${encodeURIComponent(item.id)}` : (item.url || '/explore/'),
       isTonight: tonight
     };
   }

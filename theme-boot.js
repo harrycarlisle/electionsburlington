@@ -3,7 +3,9 @@
   const MODE_KEY = 'burlington-news-theme-mode';
   const LAT = 43.3255;
   const LON = -79.7990;
-  const BRAND_TAB_ICON = '/logo-mark.png?v=20260829nb2';
+  const BRAND_TAB_ICON = '/assets/brand/favicon-32x32.png?v=20260830logo1';
+  const BRAND_SMALL_ICON = '/assets/brand/favicon-16x16.png?v=20260830logo1';
+  const BRAND_TOUCH_ICON = '/assets/brand/apple-touch-icon.png?v=20260830logo1';
   const NAV_STYLE = '/site-nav-traffic-fixes.css?v=20260829nav5';
 
   function syncNavStyle() {
@@ -37,12 +39,13 @@
       head.appendChild(icon);
     } else {
       iconLinks.forEach(icon => {
-        if (icon.getAttribute('href') !== BRAND_TAB_ICON) icon.setAttribute('href', BRAND_TAB_ICON);
+        const target = icon.getAttribute('sizes') === '16x16' ? BRAND_SMALL_ICON : BRAND_TAB_ICON;
+        if (icon.getAttribute('href') !== target) icon.setAttribute('href', target);
         icon.setAttribute('type', 'image/png');
       });
     }
     head.querySelectorAll('link[rel="apple-touch-icon"]').forEach(icon => {
-      if (icon.getAttribute('href') !== BRAND_TAB_ICON) icon.setAttribute('href', BRAND_TAB_ICON);
+      if (icon.getAttribute('href') !== BRAND_TOUCH_ICON) icon.setAttribute('href', BRAND_TOUCH_ICON);
     });
   }
 
@@ -201,11 +204,13 @@
 
   syncNavStyle();
   syncBrandIcons();
-  const headAssetObserver = new MutationObserver(() => {
-    syncNavStyle();
-    syncBrandIcons();
-  });
-  headAssetObserver.observe(document.head, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
+  if (typeof MutationObserver === 'function' && document.head) {
+    const headAssetObserver = new MutationObserver(() => {
+      syncNavStyle();
+      syncBrandIcons();
+    });
+    headAssetObserver.observe(document.head, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
+  }
 
   apply(savedMode(), false);
 

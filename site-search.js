@@ -58,7 +58,7 @@
     {title:'Can I park here tonight?',url:'/parking/',section:'Parking',keywords:'overnight downtown snow event exemption'},
     {title:'Can I swim at Burlington Beach today?',url:'/beach/',section:'Beach',keywords:'beachway brant street swim e coli sample'},
     {title:'Things to do this weekend',url:'/explore/weekend/',section:'Explore',keywords:'weekend events ribfest market date night'},
-    {title:'Where to eat in Burlington',url:'/food/',section:'Food',keywords:'restaurants food passport dinner tonight'}
+    {title:'Food in this weekend’s Burlington plan',url:'/explore/#eat',section:'Explore',keywords:'restaurants food dinner tonight where to eat weekend plan'}
   ];
   const homeSuggested = ['I’m bored','Best tacos','This weekend','Things to do'];
   const innerSuggested = ['Skyway','Events','Food','Election'];
@@ -73,6 +73,7 @@
     if (!q) return '';
     if (/^(i m bored|im bored|bored)$/.test(q)) return '/explore/#bored';
     if (/^(this weekend|things to do|what s happening|whats happening|date night|free things to do|what to do|next event)$/.test(q)) return '/explore/weekend/';
+    if (/^(where to eat|dinner tonight|food this weekend)$/.test(q)) return '/explore/#eat';
     if (/^(best tacos|best food|food passport)$/.test(q)) return '/food-passport/';
     if (/^(election|elections|mayor|compare candidates)$/.test(q)) return '/elections/compare/';
     if (/^(ward|what ward)$/.test(q)) return '/elections/ward/';

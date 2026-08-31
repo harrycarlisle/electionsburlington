@@ -39,8 +39,9 @@ def write_story_copy(src: Path, dest: Path) -> None:
 def main() -> int:
     # /news/ has its own live archive layout. Do not overwrite it with the
     # legacy updates.html page when the hourly publishing job syncs clean URLs.
+    # Explore owns a live visual planner at /explore/. Its legacy explore.html
+    # file is a redirect and must never overwrite the canonical page.
     pairs = [
-        (ROOT / "explore.html", ROOT / "explore" / "index.html"),
         (ROOT / "election-guide.html", ROOT / "elections" / "index.html"),
         (ROOT / "skyway-traffic.html", ROOT / "traffic" / "index.html"),
         (ROOT / "sports.html", ROOT / "sports" / "index.html"),

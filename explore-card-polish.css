@@ -1,137 +1,144 @@
-/* Explore Burlington should read as a distinct homepage section and use the same card language as Top picks. */
-.home-page .explore-band .explore-heading{
+/* Homepage consistency pass: Explore reuses Top Picks; the footer reuses the publication footer. */
+.home-page .explore-band .mini-heading{
   display:flex!important;
   align-items:baseline!important;
   justify-content:space-between!important;
-  gap:16px;
-  width:100%;
-  padding:0 0 11px!important;
+  gap:16px!important;
+  width:100%!important;
+  margin:0!important;
+  padding:0 0 10px!important;
   border-bottom:1px solid var(--line,#dfe4ea)!important;
 }
-.home-page .explore-band .explore-heading h2{
+.home-page .explore-band .mini-heading h2{
   margin:0!important;
+  font-size:24px!important;
+  line-height:1.1!important;
+  letter-spacing:-.025em!important;
 }
-.home-page .explore-band .explore-intro{
-  margin:15px 0 20px!important;
+.home-page .explore-band .mini-heading a{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:4px!important;
+  white-space:nowrap!important;
 }
-.home-page .explore-home-grid{
-  gap:20px!important;
+
+/* Match the footer generated on News and every other publication page. */
+.home-page .site-legal-footer{
+  width:100%!important;
+  max-width:none!important;
+  margin:64px 0 0!important;
+  padding:0!important;
+  border-top:1px solid var(--line,#dfe4ea)!important;
+  background:var(--soft,#f5f7fa)!important;
+  color:var(--ink,#152238)!important;
 }
-.home-page .explore-home-card{
-  display:block;
-  width:100%;
-  min-height:0!important;
-  overflow:hidden;
-  border:1px solid #d7e0e8!important;
-  border-radius:14px!important;
-  background:#fff!important;
-  box-shadow:0 2px 5px rgba(20,43,63,.045),0 10px 24px rgba(20,43,63,.045)!important;
-  color:inherit;
-  text-decoration:none;
-  transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
+.home-page .site-legal-footer-inner{
+  display:grid!important;
+  grid-template-columns:minmax(220px,1.1fr) minmax(420px,1.9fr)!important;
+  align-items:start!important;
+  gap:48px!important;
+  width:min(calc(100% - 40px),1180px)!important;
+  max-width:none!important;
+  margin-inline:auto!important;
+  padding:38px 0 42px!important;
+  border:0!important;
 }
-.home-page .explore-home-card:hover{
-  transform:translateY(-1px);
-  border-color:#c5d3df!important;
-  box-shadow:0 3px 7px rgba(20,43,63,.055),0 12px 28px rgba(20,43,63,.065)!important;
+.home-page .footer-news-brand{
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:10px!important;
 }
-.home-page .explore-home-card img{
-  display:block;
-  width:100%;
-  height:auto!important;
-  min-height:0!important;
-  max-height:none!important;
-  aspect-ratio:16/9!important;
-  object-fit:cover!important;
-  background:#eef3f6;
+.home-page .footer-news-brand .news-brand-mark{
+  width:30px!important;
+  height:30px!important;
+  flex:0 0 30px!important;
+  background:url('/assets/brand/bn-logo-transparent.png?v=20260830logo1') center/contain no-repeat!important;
 }
-.home-page .explore-home-card>span{
-  display:block;
-  min-height:0!important;
-  padding:15px 16px 18px!important;
-  border-top:1px solid #e2e8ee;
-  background:#fff;
+.home-page .footer-news-brand>div>strong{
+  color:var(--navy,#071b35)!important;
+  font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,"Times New Roman",serif!important;
+  font-size:22px!important;
+  letter-spacing:-.04em!important;
 }
-.home-page .explore-home-card small{
-  margin-bottom:7px!important;
+.home-page .footer-news-brand p{
+  margin:4px 0 0!important;
+  color:var(--muted,#657083)!important;
+  font-size:10px!important;
 }
-.home-page .explore-home-card strong{
-  font-size:18px!important;
-  line-height:1.18!important;
+.home-page .site-footer-columns{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:34px!important;
 }
-.home-page .explore-home-card em{
-  margin-top:8px!important;
+.home-page .site-footer-columns nav{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  gap:7px!important;
+}
+.home-page .site-footer-columns nav strong{
+  margin-bottom:4px!important;
+  color:var(--navy,#071b35)!important;
+  font-family:var(--sans,Inter,ui-sans-serif,sans-serif)!important;
   font-size:13px!important;
-  line-height:1.38!important;
+  font-weight:700!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+}
+.home-page .site-legal-footer a{
+  color:var(--muted,#657083)!important;
+  font-size:10px!important;
+  font-weight:760!important;
+  text-decoration:none!important;
+}
+.home-page .site-legal-footer a:hover{text-decoration:underline!important}
+.home-page .preferred-source{
+  margin:8px 0 0!important;
+  font-size:10px!important;
+}
+
+@media(max-width:900px){
+  .home-page .site-legal-footer-inner{grid-template-columns:1fr!important}
+  .home-page .site-footer-columns{max-width:620px!important}
+}
+
+@media(max-width:720px){
+  .home-page .explore-band{
+    margin-left:24px!important;
+    margin-right:24px!important;
+  }
+  .home-page .explore-band .mini-heading{padding-bottom:10px!important}
+  .home-page .explore-band .mini-heading h2{font-size:23px!important}
+  .home-page .explore-band .mini-heading a{font-size:9px!important}
+  .home-page .site-legal-footer-inner{
+    width:calc(100% - 32px)!important;
+    padding-block:32px!important;
+  }
+  .home-page .site-footer-columns{
+    grid-template-columns:1fr 1fr!important;
+    gap:26px!important;
+  }
+  .home-page .site-footer-columns nav:first-child{grid-row:span 2!important}
 }
 
 @media(max-width:680px){
   .home-page .explore-band{
-    width:auto!important;
-    max-width:none!important;
-    margin-left:46px!important;
-    margin-right:46px!important;
-    box-sizing:border-box!important;
-  }
-  .home-page .home-work-band{
-    width:calc(100% - 44px)!important;
-    max-width:none!important;
-    margin-left:auto!important;
-    margin-right:auto!important;
-    box-sizing:border-box!important;
-  }
-  .home-page .explore-band{
-    margin-top:34px!important;
-    padding-top:24px!important;
-  }
-  .home-page .explore-band .explore-heading{
-    padding-bottom:11px!important;
-  }
-  .home-page .explore-band .explore-intro{
-    margin:16px 0 20px!important;
-  }
-  .home-page .explore-home-grid{
-    grid-template-columns:1fr!important;
-    gap:20px!important;
-  }
-  .home-page .explore-home-card{
-    width:100%!important;
-    margin-left:0!important;
-    margin-right:0!important;
-    border-radius:14px!important;
-    box-shadow:0 2px 4px rgba(20,43,63,.04),0 8px 20px rgba(20,43,63,.04)!important;
-  }
-  .home-page .explore-home-card img{
-    aspect-ratio:16/9!important;
-  }
-  .home-page .explore-home-card>span{
-    padding:15px 16px 18px!important;
-  }
-}
-@media(max-width:420px){
-  .home-page .explore-band{
-    margin-left:42px!important;
-    margin-right:42px!important;
+    margin-left:28px!important;
+    margin-right:28px!important;
   }
 }
 
-html[data-theme="dark"] .home-page .explore-home-card{
-  border-color:#30414f!important;
-  background:#14212b!important;
-  box-shadow:0 8px 22px rgba(0,0,0,.22)!important;
-}
-html[data-theme="dark"] .home-page .explore-home-card>span{
-  border-top-color:#30414f;
-  background:#14212b;
-}
-@media(prefers-color-scheme:dark){
-  html:not([data-theme="light"]) .home-page .explore-home-card{
-    border-color:#30414f!important;
-    background:#14212b!important;
-    box-shadow:0 8px 22px rgba(0,0,0,.22)!important;
-  }
-  html:not([data-theme="light"]) .home-page .explore-home-card>span{
-    border-top-color:#30414f;
-    background:#14212b;
+@media(max-width:420px){
+  .home-page .explore-band{
+    margin-left:24px!important;
+    margin-right:24px!important;
   }
 }
+
+html[data-theme="dark"] .home-page .site-legal-footer{
+  border-color:var(--line,#30404b)!important;
+  background:var(--soft,#17232c)!important;
+  color:var(--ink,#edf4f8)!important;
+}
+html[data-theme="dark"] .home-page .site-legal-footer :is(a,p){color:var(--muted,#aebcc6)!important}
+html[data-theme="dark"] .home-page .site-legal-footer :is(strong,.site-footer-columns nav strong){color:var(--ink,#edf4f8)!important}

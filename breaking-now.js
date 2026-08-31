@@ -3,8 +3,8 @@
   if (!host) return;
 
   const BREAKING_MAX_AGE_MS = 3 * 60 * 60 * 1000;
-  const LOCAL_UPDATE_MAX_AGE_MS = 24 * 60 * 60 * 1000;
-  const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[ch]));
+  const LOCAL_UPDATE_MAX_AGE_MS = 36 * 60 * 60 * 1000;
+  const esc = value => String(value || '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const displayHeadline = value => String(value || '').trim().replace(/\.+$/, '');
 
   function storyUrl(item) {
@@ -80,9 +80,27 @@
     const time = new Intl.DateTimeFormat('en-CA', {
       hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/Toronto'
     }).format(parsed).replace(/\s/g, ' ').toUpperCase();
-    if (multiple) return `LATEST ${time}`;
-    if (item?.contextTimestamp && !hasMeaningfulUpdate(item)) return `RELEVANT ${time}`;
-    return `${hasMeaningfulUpdate(item) ? 'UPDATED' : 'POSTED'} ${time}`;
+    const dateKey = value => new Intl.DateTimeFormat('en-CA', {
+      year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'America/Toronto'
+    }).format(value);
+    const now = new Date();
+    const today = dateKey(now);
+    const yesterdayDate = new Date(now.getTime() - (24 * 60 * 60 * 1000));
+    const yesterday = dateKey(yesterdayDate);
+    const itemDay = dateKey(parsed);
+    const dateContext = itemDay === today
+      ? time
+      : itemDay === yesterday
+        ? `YESTERDAY ${time}`
+        : `${new Intl.DateTimeFormat('en-CA', {month:'short', day:'numeric', timeZone:'America/Toronto'}).format(parsed).toUpperCase()}, ${time}`;
+    if (multiple) return `LATEST ${dateContext}`;
+    if (item?.contextTimestamp && !hasMeaningfulUpdate(item)) return `RELEVANT ${dateContext}`;
+    return `${hasMeaningfulUpdate(item) ? 'UPDATED' : 'POSTED'} ${dateContext}`;
+  }
+
+  function isResolved(item) {
+    const lifecycle = String(item?.lifecycleStatus || item?.status || '').toLowerCase();
+    return lifecycle === 'resolved' || item?.resolved === true || item?.isResolved === true;
   }
 
   function unique(items) {
@@ -102,25 +120,28 @@
     host.innerHTML = '';
   }
 
-  function render(doc) {
-    const current = unique(Array.isArray(doc?.items) ? doc.items : [])
-      .filter(item => item?.headline && storyUrl(item) && ageMs(item) <= LOCAL_UPDATE_MAX_AGE_MS);
+  function render(doc, archive) {
+    const liveItems = unique([
+      ...(Array.isArray(doc?.items) ? doc.items : []),
+      ...(Array.isArray(doc?.lifecycleUpdates) ? doc.lifecycleUpdates : [])
+    ]).filter(item => item?.headline && storyUrl(item));
 
     const breaking = doc?.mode === 'breaking'
-      ? current
+      ? liveItems
+          .filter(item => !isResolved(item))
           .filter(item => ageMs(item) <= BREAKING_MAX_AGE_MS)
           .sort((a, b) => timestamp(b) - timestamp(a))
       : [];
 
     const isBreaking = breaking.length > 0;
+    const archiveItems = Array.isArray(archive?.items) ? archive.items : [];
+    const local = unique([...liveItems, ...archiveItems])
+      .filter(item => item?.headline && storyUrl(item) && String(item?.status || '').toLowerCase() !== 'expired')
+      .sort((a, b) => timestamp(b) - timestamp(a));
+    const freshLocal = local.filter(item => ageMs(item) <= LOCAL_UPDATE_MAX_AGE_MS);
     const visible = isBreaking
       ? pickDiverse(breaking, 2)
-      : pickDiverse(
-          current
-            .filter(item => contextScore(item) > 0)
-            .sort((a, b) => localRank(b) - localRank(a) || timestamp(b) - timestamp(a)),
-          2
-        );
+      : (freshLocal.length ? freshLocal : local).slice(0, 1);
 
     if (!visible.length) {
       hide();
@@ -138,7 +159,7 @@
     host.dataset.count = String(visible.length);
     host.dataset.selectionReason = isBreaking
       ? 'verified story published or meaningfully updated within three hours'
-      : 'why-now context required; local score boosted by context; duplicate editorial families blocked';
+      : 'newest verified outcome remains until a newer breaking or local update replaces it';
 
     host.innerHTML = `
       <div class="breaking-heading">
@@ -169,8 +190,11 @@
   }
 
   async function load() {
-    const live = await fetchJson('/data/breaking-now.json');
-    render(live);
+    const [live, archive] = await Promise.all([
+      fetchJson('/data/breaking-now.json'),
+      fetchJson('/data/breaking-archive.json')
+    ]);
+    render(live, archive);
   }
 
   load();

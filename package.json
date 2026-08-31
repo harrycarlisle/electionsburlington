@@ -8,6 +8,7 @@
     "test:traffic": "node scripts/test-traffic-route.js",
     "test:explore-ideas": "node scripts/test-explore-ideas.js",
     "test:explore-events": "node scripts/test-explore-events.js",
+    "test:weekend": "node scripts/test-weekend-planner.js",
     "test:authority": "node scripts/test-authority.js",
     "test:theme": "node scripts/test-theme-boot.js",
     "test:audio": "node scripts/test-article-audio.js",

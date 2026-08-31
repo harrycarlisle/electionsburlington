@@ -78,14 +78,14 @@
   }
 
   function ensureStyles() {
-    ensureStyle('/site-bundle.css?v=20260824z4', 'site-bundle');
-    ensureStyle('/site-shell.css?v=20260824z4', 'site-shell');
+    ensureStyle('/site-bundle.css?v=20260830logo1', 'site-bundle');
+    ensureStyle('/site-shell.css?v=20260830dark1', 'site-shell');
     ensureStyle('/publication-polish.css?v=20260826hu', 'publication-polish');
     ensureStyle('/product-pass.css?v=20260826hu', 'product-pass');
     if (isArticle()) ensureStyle('/article-modern.css?v=20260826tb', 'article-modern');
     if (isElectionGuide()) ensureStyle('/elections-guide.css?v=20260826f', 'elections-guide');
     ensureStyle('/type-system.css?v=20260826a', 'type-system');
-    ensureStyle('/site-header.css?v=20260826hu', 'site-header');
+    ensureStyle('/site-header.css?v=20260831design1', 'site-header');
     ensureStyle('/desktop-system.css?v=20260826hu', 'desktop-system');
   }
 
@@ -110,9 +110,11 @@
     if (banner) banner.innerHTML = '<div class="wrap"><strong>2026 election</strong><span class="banner-sep" aria-hidden="true"> · </span><span>Voting starts Oct. 14</span><span class="banner-sep" aria-hidden="true"> · </span><span>Election Day Oct. 26</span></div>';
   }
 
-  const BRAND_ICON = '/assets/brand/favicon-32x32.png';
-  const BRAND_TOUCH = '/assets/brand/apple-touch-icon.png';
-  const BRAND_MARK = '/logo-mark.png?v=20260826ta';
+  const BRAND_ICON = '/assets/brand/favicon-32x32.png?v=20260830logo1';
+  const BRAND_TOUCH = '/assets/brand/apple-touch-icon.png?v=20260830logo1';
+  const BRAND_MARK = isHome()
+    ? '/assets/brand/bn-logo-transparent.png?v=20260830logo1'
+    : '/assets/brand/bn-logo-transparent.png?v=20260831transparent1';
 
   function brandMarkup() {
     return `<img class="news-brand-logo" src="${BRAND_MARK}" alt="">`;
@@ -138,10 +140,10 @@
       brand.setAttribute('aria-label', 'Burlington News home');
     });
     ensureHeadLink('icon', BRAND_ICON, { type: 'image/png', sizes: '32x32' });
-    ensureHeadLink('icon', '/assets/brand/favicon-16x16.png', { type: 'image/png', sizes: '16x16' });
+    ensureHeadLink('icon', '/assets/brand/favicon-16x16.png?v=20260830logo1', { type: 'image/png', sizes: '16x16' });
     ensureHeadLink('shortcut icon', BRAND_ICON);
     ensureHeadLink('apple-touch-icon', BRAND_TOUCH);
-    ensureHeadLink('manifest', '/site.webmanifest');
+    ensureHeadLink('manifest', '/site.webmanifest?v=20260830logo1');
     let theme = document.querySelector('meta[name="theme-color"]');
     if (!theme) {
       theme = document.createElement('meta');
@@ -206,6 +208,36 @@
     }
   }
 
+  function applyStoryPresentation() {
+    const stories = {
+      'can-you-have-backyard-fire-pit-burlington': {
+        image: '/assets/ontario-backyard-fire-pit-gathering-16x9.png',
+        alt: 'People gathered around a backyard wood fire pit at dusk.',
+        caption: 'Burlington News image'
+      },
+      'do-you-need-permit-shed-burlington': {
+        image: '/assets/backyard-shed.png',
+        alt: 'Two people building a wooden shed in a residential backyard.',
+        caption: 'Burlington News image'
+      },
+      'where-are-burlington-red-light-cameras': {
+        image: '/assets/burlington-ontario-red-light-camera-16x9.png',
+        alt: 'A roadside red-light camera beside a signalized Burlington intersection.',
+        caption: 'Burlington News image'
+      }
+    };
+    const slug = path.match(/\/(?:articles|stories)\/([^/.]+)/)?.[1];
+    const story = slug && stories[slug];
+    if (!story) return;
+    const hero = document.querySelector('.article-hero img');
+    if (hero) {
+      hero.src = story.image;
+      hero.alt = story.alt;
+    }
+    const caption = document.querySelector('.article-hero figcaption');
+    if (caption) caption.textContent = story.caption;
+  }
+
   function torontoToday() {
     return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Toronto' });
   }
@@ -256,6 +288,10 @@
         <button class="menu-theme-toggle" type="button" data-theme-toggle aria-label="Dark mode"></button>
         ${drawerSearchMarkup()}
       </div>
+      <div class="menu-scroll-cue" data-menu-scroll-cue hidden aria-hidden="true">
+        <span>More menu items below</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5"></path></svg>
+      </div>
       <div class="menu-primary" role="list">
         ${navLink('/', 'home', 'Home')}
         ${navLink('/news/', 'news', 'News')}
@@ -279,6 +315,16 @@
       <div class="menu-drawer-util">
         <a class="drawer-weather-line" href="https://weather.gc.ca/city/pages/on-15_metric_e.html" rel="noopener" data-weather-temperature data-weather-drawer>Burlington weather</a>
       </div>`;
+    const syncScrollCue = () => {
+      const cue = nav.querySelector('[data-menu-scroll-cue]');
+      if (!cue) return;
+      cue.hidden = nav.scrollHeight <= nav.clientHeight + 4 || nav.scrollTop > 24;
+    };
+    nav._menuScrollCueSync = syncScrollCue;
+    if (nav.dataset.scrollCueBound !== 'true') {
+      nav.addEventListener('scroll', () => nav._menuScrollCueSync?.(), { passive: true });
+      nav.dataset.scrollCueBound = 'true';
+    }
     installDrawerSearch(nav);
     try { window.BurlingtonWeather?.load(); } catch (_) {}
   }
@@ -441,12 +487,16 @@
       const headerEl = document.querySelector('.header, .site-header');
       const bottom = Math.ceil((headerEl?.getBoundingClientRect().bottom || 0));
       root.style.setProperty('--mobile-menu-top', `${bottom + 8}px`);
+      nav.scrollTop = 0;
       nav.classList.add('open');
       menu.setAttribute('aria-expanded', 'true');
       menu.setAttribute('aria-label', 'Close site menu');
       backdrop.hidden = false;
       lockScroll();
-      requestAnimationFrame(() => nav.querySelector('.menu-primary a, a.menu-link')?.focus());
+      requestAnimationFrame(() => {
+        nav._menuScrollCueSync?.();
+        nav.querySelector('.menu-primary a, a.menu-link')?.focus();
+      });
     };
 
     if (header) header.dataset.bnShell = 'ready';
@@ -596,7 +646,7 @@
     document.querySelectorAll('a[href="/feedback/?type=partner"], a[href="feedback/?type=partner"]').forEach(link => {
       link.href = '/work-with-us/';
     });
-    if (isHome()) return;
+    document.querySelectorAll('footer.site-footer:not(.site-legal-footer)').forEach(footer => footer.remove());
     let footer = document.querySelector('.site-legal-footer');
     if (!footer) {
       footer = document.createElement('footer');
@@ -630,13 +680,14 @@
     if (!isHome()) ensureStyles();
     else {
       ensureStyle('/type-system.css?v=20260826a', 'type-system');
-      ensureStyle('/site-header.css?v=20260826hu', 'site-header');
+      ensureStyle('/site-header.css?v=20260830logo1', 'site-header');
       ensureStyle('/desktop-system.css?v=20260826hu', 'desktop-system');
     }
-    ensureScript('/theme-boot.js?v=20260826hu', 'theme-boot');
+    ensureScript('/theme-boot.js?v=20260830logo1', 'theme-boot');
     ensureUtilityBar();
     ensureBanner();
     addSeo();
+    applyStoryPresentation();
     prepareHeader();
     installDesktopNav();
     rotateSearchPrompt();
@@ -648,9 +699,9 @@
     if (electionHeading) electionHeading.textContent = 'Meet the mayoral candidates';
     ensureFooter();
     applyBrand();
-    ensureScript('/site-search.js?v=20260826gt', 'site-search');
+    ensureScript('/site-search.js?v=20260830wp1', 'site-search');
     if (!isHome() && !isElectionPage() && !isArticle() && !document.body.classList.contains('authority-page') && !document.body.classList.contains('food-passport-page')) {
-      ensureScript('/site-bundle.js?v=20260826w', 'site-bundle');
+      ensureScript('/site-bundle.js?v=20260830logo1', 'site-bundle');
     }
     ensureScript('/weather-alert.js?v=20260826f', 'weather-alert');
     if (isArticle()) ensureScript('/article-modern.js?v=20260826tb', 'article-modern');

@@ -4,99 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Explore Burlington | Burlington News</title>
-  <meta name="description" content="A verified Burlington events calendar, one idea for when you are bored, and a twelve-stop Burlington Passport saved on this device.">
+  <meta name="robots" content="noindex">
   <link rel="canonical" href="https://burlingtonnews.ca/explore/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Explore Burlington: events, one idea and your passport">
-  <meta property="og:description" content="See what is happening this week, get one specific idea and keep track of Burlington places you have explored.">
-  <meta property="og:url" content="https://burlingtonnews.ca/explore/">
-  <meta property="og:image" content="https://burlingtonnews.ca/assets/explore/brant-street-pier.webp">
-  <meta property="og:image:width" content="1600">
-  <meta property="og:image:height" content="900">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16x16.png"><link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#071b35"><link rel="stylesheet" href="/site-extra.css?v=20260824z4">
-  <link rel="stylesheet" href="/site-bundle.css?v=20260824z4" data-style="site-bundle">
-  <link rel="stylesheet" href="/site-shell.css?v=20260824z6" data-style="site-shell">
-  <link rel="stylesheet" href="/explore.css?v=20260826ta">
-  <link rel="stylesheet" href="/release.css?v=20260824z6">
-  <link rel="stylesheet" href="/publication-polish.css?v=20260825f">
-  <link rel="stylesheet" href="/product-pass.css?v=20260826t">
-  <link rel="stylesheet" href="/type-system.css?v=20260826a">
-  <script type="module" src="/explore-recurrence.js?v=20260826ta"></script>
-  <script type="module" src="/explore-ideas.js?v=20260826ta"></script>
-  <script src="/site-search.js?v=20260826f" defer></script>
-  <link rel="stylesheet" href="/desktop-system.css?v=20260826ds" data-style="desktop-system"><script src="/theme-boot.js?v=20260826ds"></script><script src="/site-extra.js?v=20260826ac" defer></script>
+  <meta http-equiv="refresh" content="0;url=/explore/">
+  <script>location.replace('/explore/')</script>
 </head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="header"><div class="wrap header-inner"><a class="brand" href="/">Burlington News</a><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
-
-  <main id="main" class="explore-main">
-    <header class="explore-heading">
-      <h1>Explore Burlington</h1>
-      <p class="explore-weekend-link"><a href="/explore/weekend/">Things to do this weekend</a></p>
-      <div class="explore-tabs" role="tablist" aria-label="Explore Burlington views">
-        <button id="upcomingTab" class="explore-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="upcomingPanel">Upcoming</button>
-        <button id="myTab" class="explore-tab" type="button" role="tab" aria-selected="false" aria-controls="myPanel">My Burlington</button>
-      </div>
-    </header>
-
-    <section id="upcomingPanel" role="tabpanel" aria-labelledby="upcomingTab">
-      <div class="explore-top-grid">
-        <section class="calendar-card" aria-labelledby="calendarTitle">
-          <div class="section-row">
-            <div class="calendar-title"><span class="calendar-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v3M18 3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"/></svg></span><h2 id="calendarTitle">This week</h2></div>
-            <label class="calendar-view" for="calendarView"><span class="sr-only">Calendar view</span><select id="calendarView"><option value="next-7" selected>Next 7 days</option><option value="weekend">This weekend</option><option value="next-30">Next 30 days</option><option value="all">All dates</option></select><span aria-hidden="true">⌄</span></label>
-          </div>
-          <div class="week-strip" id="weekStrip" aria-label="Week of August 24, 2026"></div>
-          <div class="month-calendar" id="monthCalendar" hidden></div>
-          <div class="event-grid" id="eventGrid" aria-live="polite"></div>
-          <p class="empty-note" id="eventEmpty" hidden>No verified events are listed for this day yet.</p>
-          <button class="text-button" id="showAllEvents" type="button">Show all upcoming events</button>
-        </section>
-
-        <aside class="bored-card" id="boredCard" aria-labelledby="boredTitle">
-          <h2 id="boredTitle">I’m bored</h2>
-          <div id="boredIdea" aria-live="polite"></div>
-          <button class="sr-only" id="pickAnother" type="button">Another idea</button>
-        </aside>
-      </div>
-    </section>
-
-    <section id="myPanel" role="tabpanel" aria-labelledby="myTab" hidden>
-      <div class="my-grid">
-        <section class="saved-panel"><span class="eyebrow">Your list</span><h2>Saved events</h2><div id="savedEvents"></div></section>
-        <section class="device-note"><strong>No account needed</strong><p>Your saved events and passport stay in this browser. Nothing is uploaded.</p></section>
-      </div>
-    </section>
-
-    <section class="passport-panel" aria-labelledby="passportTitle">
-      <div class="passport-head">
-        <div><span class="eyebrow">My Burlington</span><div class="passport-title-row"><h2 id="passportTitle">Burlington Passport</h2><button class="info-button" id="passportInfo" type="button" aria-haspopup="dialog" aria-label="About Burlington Passport"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10v6M12 7.25h.01"/></svg></button></div></div>
-        <div class="passport-progress-block"><div class="passport-progress-copy"><strong id="passportCount">0 of 12 explored</strong><span>Progress stays on this device</span></div><div class="passport-track" aria-hidden="true"><i id="passportProgress"></i></div></div>
-      </div>
-      <div class="passport-layout">
-        <div class="passport-map-wrap"><div class="passport-map" id="passportMap" aria-label="Orientation map of Burlington passport stops"></div><span class="map-help">Tap a number to jump to a stop</span></div>
-        <div class="passport-rail-wrap">
-          <div class="passport-rail" id="passportRail"></div>
-          <button class="rail-next" id="passportNext" type="button" aria-label="Show more passport stops">›</button>
-        </div>
-      </div>
-    </section>
-    <section class="food-passport-callout" aria-labelledby="foodPassportTitle"><div><span class="eyebrow">Burlington food passport</span><h2 id="foodPassportTitle">Five local meals to start with.</h2><p>Mark the ones you’ve tried. Your progress stays on this device.</p></div><a class="primary-button" href="/food-passport/">Open food passport</a></section>
-  </main>
-
-  <dialog class="explore-dialog" id="detailDialog">
-    <button class="dialog-close" id="dialogClose" type="button" aria-label="Close"><svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-    <div id="dialogContent"></div>
-  </dialog>
-
-  <dialog class="explore-dialog passport-dialog" id="passportDialog">
-    <button class="dialog-close" id="passportDialogClose" type="button" aria-label="Close"><svg class="icon-close" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-    <h2>Your Burlington list</h2>
-    <p>Save places you want to visit and mark them explored when you go. Complete all twelve to reveal one extra stop. Everything stays in this browser.</p>
-  </dialog>
-
-  <script src="/explore.js?v=20260826ta" defer></script>
-</body>
+<body><p><a href="/explore/">Explore Burlington this weekend.</a></p></body>
 </html>

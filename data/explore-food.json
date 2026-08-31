@@ -1,0 +1,65 @@
+{
+  "updated": "2026-08-30",
+  "spots": [
+    {
+      "id": "jcs-hot-bagels",
+      "title": "JC’s Hot Bagels",
+      "category": "Breakfast",
+      "roles": ["morning"],
+      "area": "central",
+      "address": "3011 New Street, Burlington",
+      "dish": "Hot bagel breakfast sandwich",
+      "image": "/assets/food/jcs-hot-bagels.svg",
+      "imageAlt": "Editorial illustration of a bagel breakfast sandwich.",
+      "url": "https://jcshotbagels.com/"
+    },
+    {
+      "id": "corn-beef-hut",
+      "title": "Corn Beef Hut",
+      "category": "Lunch",
+      "roles": ["lunch"],
+      "area": "downtown",
+      "address": "476 Brant Street, Burlington",
+      "dish": "Bánh mì or corned beef sandwich",
+      "image": "/assets/food/corn-beef-hut.svg",
+      "imageAlt": "Editorial illustration of a bánh mì and a corned-beef sandwich.",
+      "url": "https://banhmicornedbeef.com/menu/"
+    },
+    {
+      "id": "son-of-a-peach",
+      "title": "Son of a Peach",
+      "category": "Dinner",
+      "roles": ["lunch", "dinner"],
+      "area": "downtown",
+      "address": "2049 Pine Street, Burlington",
+      "dish": "Hand-forged pizza",
+      "image": "/assets/food/son-of-a-peach.svg",
+      "imageAlt": "Editorial illustration of a wood-fired pizza.",
+      "url": "https://www.heypeachy.com/"
+    },
+    {
+      "id": "d-hot-shoppe",
+      "title": "D Hot Shoppe",
+      "category": "Lunch or dinner",
+      "roles": ["lunch", "dinner"],
+      "area": "east",
+      "address": "4155 Fairview Street, Burlington",
+      "dish": "Roti or doubles",
+      "image": "/assets/food/d-hot-shoppe.svg",
+      "imageAlt": "Editorial illustration of roti and doubles.",
+      "url": "https://www.dhotshoppe.ca/"
+    },
+    {
+      "id": "bahn-thai",
+      "title": "Bahn Thai",
+      "category": "Dinner",
+      "roles": ["dinner"],
+      "area": "east",
+      "address": "4490 Fairview Street, Burlington",
+      "dish": "Pad Thai or curry to share",
+      "image": "/assets/food/bahn-thai.svg",
+      "imageAlt": "Editorial illustration of Thai noodles and curry.",
+      "url": "https://www.bahnthaigroup.com/"
+    }
+  ]
+}

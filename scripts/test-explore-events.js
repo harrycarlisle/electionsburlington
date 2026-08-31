@@ -23,7 +23,7 @@ events.forEach(event => {
   if (new Date(event.end) < new Date(event.start)) fail(event.id + ' ends before it starts');
 });
 
-if (!ids.has('movies-under-the-stars-2026-08-27')) fail('Thursday movie night missing');
+if (!ids.has('movies-under-the-stars-2026-09-03')) fail('next verified Thursday movie night missing');
 if (events.some(event => /friday, august 28|aug\. 28.*movie/i.test(`${event.title} ${event.dateLabel}`))) {
   fail('unverified Friday movie night should not be added');
 }

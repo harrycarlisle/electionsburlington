@@ -15,12 +15,16 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from build_breaking_now import diversify_top
+from publish_breaking_briefs import update_existing_brief
+from render_homepage import contextual_clock_label
+from render_live_homepage import diverse_newest_items, selected_breaking_visible
 from sources.cause import official_cause
 from sources.model import quick_update
 from sources.relevance import police_relevance
 from sources.score import breaking_score, passes_breaking_threshold, recency_score
 from sources.utility import choose_default_mode, is_critical_go, is_critical_road
 from sources.verify import corroborate, cluster_updates
+from story_lifecycle import is_resolved, lifecycle_status
 
 TZ = ZoneInfo("America/Toronto")
 NOW = dt.datetime(2026, 8, 26, 8, 15, tzinfo=TZ)
@@ -38,6 +42,71 @@ class RecencyTests(unittest.TestCase):
         self.assertGreaterEqual(recency_score(NOW - dt.timedelta(minutes=50), NOW), 4.0)
         self.assertLess(recency_score(NOW - dt.timedelta(hours=8), NOW), 2.0)
         self.assertLess(recency_score(NOW - dt.timedelta(hours=20), NOW), 1.0)
+
+
+class HomepageLifecycleTests(unittest.TestCase):
+    def test_resolved_archive_story_remains_as_local_update(self):
+        resolved = {
+            "id": "ghent",
+            "headline": "Police take man into custody after Ghent Avenue standoff",
+            "url": "/stories/ghent/",
+            "publishedAt": (NOW - dt.timedelta(hours=16)).isoformat(),
+            "lastMeaningfulUpdate": (NOW - dt.timedelta(hours=1)).isoformat(),
+            "status": "resolved",
+            "lifecycleStatus": "resolved",
+        }
+        rows = selected_breaking_visible(
+            {"mode": "local_update", "items": []},
+            {"items": [resolved]},
+            NOW,
+        )
+        self.assertEqual([row["id"] for row in rows], ["ghent"])
+
+    def test_active_breaking_story_preempts_local_update(self):
+        breaking = {
+            "id": "active",
+            "headline": "Police close Brant Street",
+            "storyUrl": "/stories/active/",
+            "publishedAt": (NOW - dt.timedelta(minutes=20)).isoformat(),
+            "status": "breaking",
+        }
+        old = {
+            "id": "older",
+            "headline": "Earlier local update",
+            "url": "/stories/older/",
+            "publishedAt": (NOW - dt.timedelta(hours=2)).isoformat(),
+        }
+        rows = selected_breaking_visible(
+            {"mode": "breaking", "items": [breaking]},
+            {"items": [old]},
+            NOW,
+        )
+        self.assertEqual([row["id"] for row in rows], ["active"])
+
+    def test_archive_story_moves_into_newest_after_hero(self):
+        hero = {
+            "id": "hero",
+            "headline": "Lead story",
+            "url": "/stories/hero/",
+            "image": "/assets/hero.png",
+            "publishedAt": (NOW - dt.timedelta(hours=2)).isoformat(),
+            "topic": "history",
+        }
+        ghent = {
+            "id": "ghent",
+            "headline": "Police take man into custody after Ghent Avenue standoff",
+            "url": "/stories/ghent/",
+            "lastMeaningfulUpdate": (NOW - dt.timedelta(hours=1)).isoformat(),
+            "topic": "public-safety",
+            "status": "resolved",
+        }
+        rows = diverse_newest_items(
+            {"feature": [hero], "latest": []},
+            {"items": [ghent]},
+            hero,
+            NOW,
+        )
+        self.assertEqual([row["id"] for row in rows], ["ghent"])
 
 
 class UtilityOverrideTests(unittest.TestCase):
@@ -268,7 +337,49 @@ class BreakingThresholdTests(unittest.TestCase):
         )
         ok, reason = passes_breaking_threshold(row, NOW)
         self.assertFalse(ok)
-        self.assertEqual(reason, "stale")
+        self.assertEqual(reason, "breaking-window-expired")
+
+
+class StoryLifecycleTests(unittest.TestCase):
+    def test_custody_update_is_resolved(self):
+        row = item(headline="Man taken into custody after Ghent Avenue standoff")
+        self.assertTrue(is_resolved(row))
+        self.assertEqual(lifecycle_status(row), "resolved")
+
+    def test_cleared_road_is_resolved(self):
+        row = item(headline="All lanes have reopened after QEW collision")
+        self.assertTrue(is_resolved(row))
+
+    def test_closed_road_is_still_active(self):
+        row = item(headline="QEW closed near Centennial Parkway", status="closed")
+        self.assertFalse(is_resolved(row))
+        self.assertEqual(lifecycle_status(row), "active")
+
+    def test_active_response_stays_active(self):
+        row = item(headline="Police response underway on Brant Street", status="active")
+        self.assertFalse(is_resolved(row))
+        self.assertEqual(lifecycle_status(row), "active")
+
+    def test_resolution_updates_existing_archive_row(self):
+        existing = {
+            "id": "example-incident",
+            "headline": "Police response underway",
+            "publishedAt": "2026-08-26T07:00:00-04:00",
+            "status": "breaking",
+        }
+        incoming = {
+            "headline": "Person taken into custody after police response",
+            "updatedAt": "2026-08-26T08:00:00-04:00",
+            "status": "resolved",
+        }
+        self.assertTrue(update_existing_brief(existing, incoming, NOW))
+        self.assertEqual(existing["status"], "resolved")
+        self.assertEqual(existing["lifecycleStatus"], "resolved")
+        self.assertEqual(existing["lastMeaningfulUpdate"], "2026-08-26T08:00:00-04:00")
+
+    def test_previous_day_clock_is_not_ambiguous(self):
+        yesterday = NOW - dt.timedelta(days=1, minutes=53)
+        self.assertTrue(contextual_clock_label(yesterday, NOW).startswith("YESTERDAY "))
 
 
 class CauseAndDedupeTests(unittest.TestCase):

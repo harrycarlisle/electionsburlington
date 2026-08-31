@@ -78,7 +78,7 @@
     const load = () => {
       if (loaded) return;
       loaded = true;
-      loadScript('/site-search.js?v=20260828fresh4');
+      loadScript('/site-search.js?v=20260830wp1');
     };
     input.addEventListener('focus', load, { once: true });
     input.addEventListener('pointerdown', load, { once: true });
@@ -97,8 +97,8 @@
     // scripts/render_live_homepage.py. Only genuinely live utility rails refresh
     // in the browser after first paint.
     loadScript('/mobile-top-panel.js?v=20260828fresh4');
-    loadScript('/local-now.js?v=20260828fresh5', { module: true });
-    loadScript('/breaking-now.js?v=20260830context3');
+    loadScript('/local-now.js?v=20260830eventdeep1', { module: true });
+    loadScript('/breaking-now.js?v=20260830railrestore1');
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });

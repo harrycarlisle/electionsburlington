@@ -5,7 +5,7 @@ html,body{max-width:100%;overflow-x:hidden}
 .news-brand-copy{display:block!important;min-width:0}.news-brand-copy strong{display:block;color:var(--ink)!important;font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;letter-spacing:-.045em;line-height:1;white-space:nowrap}.news-brand-copy em{color:#69c2f4;font-style:normal}
 .banner .wrap{display:flex;align-items:center;justify-content:center;gap:8px;min-height:36px;padding-top:6px!important;padding-bottom:6px!important}.banner .wrap span{font-weight:650;opacity:.88}.banner-sep{opacity:.58!important}
 .landing-home .election-hero{min-height:auto!important;margin-top:24px!important;padding:52px 0 58px!important;gap:42px!important}.landing-home .election-hero::before{display:none!important}.landing-home .election-hero::after{display:none!important}.landing-home .hero-map-card{aspect-ratio:1.32/1!important;max-height:390px!important}.landing-home #candidates{padding-top:48px!important}
-.site-legal-footer .footer-news-brand{display:flex;align-items:flex-start;gap:10px}.footer-news-brand .news-brand-mark{width:30px;height:30px;flex:0 0 30px;background:url('/assets/brand/bn-mark.png') center/contain no-repeat}.footer-news-brand>div>strong{font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,"Times New Roman",serif;color:var(--ink)}
+.site-legal-footer .footer-news-brand{display:flex;align-items:flex-start;gap:10px}.footer-news-brand .news-brand-mark{width:30px;height:30px;flex:0 0 30px;background:url('/assets/brand/bn-logo-transparent.png?v=20260831transparent1') center/contain no-repeat}.footer-news-brand>div>strong{font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,"Times New Roman",serif;color:var(--ink)}
 .site-legal-footer-inner{display:grid!important;grid-template-columns:minmax(220px,1.1fr) minmax(420px,1.9fr)!important;align-items:start!important;gap:48px!important}.site-footer-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px}.site-footer-columns nav{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.site-footer-columns nav strong{margin-bottom:4px;color:var(--ink);font-family:var(--publication-sans,Inter,ui-sans-serif,sans-serif);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.site-footer-columns a{font-size:11px;text-decoration:none}.site-footer-columns a:hover{text-decoration:underline}
 @media(max-width:900px){
   .site-legal-footer-inner{grid-template-columns:1fr!important}.site-footer-columns{max-width:620px}
@@ -62,7 +62,7 @@ html[data-theme="dark"] .publication-shell .site-footer-columns nav strong,html[
 .publication-shell #candidateStrip .candidate-card{overflow:hidden!important;border:1px solid var(--line)!important;background:#fff!important}
 .publication-shell .site-legal-footer{margin-top:64px!important;background:var(--soft)!important;color:var(--ink)!important;border-top:1px solid var(--line)!important}
 .publication-shell .site-legal-footer-inner{padding:38px 0 42px!important}
-.publication-shell .footer-news-brand .news-brand-mark{background-image:url('/logo-mark.png?v=20260826b')!important}
+.publication-shell .footer-news-brand .news-brand-mark{background-image:url('/assets/brand/bn-logo-transparent.png?v=20260831transparent1')!important}
 .publication-shell .footer-news-brand>div>strong{color:var(--navy)!important;font-size:22px!important;letter-spacing:-.04em!important}
 .publication-shell .footer-news-brand p,.publication-shell .site-legal-footer a{color:var(--muted)!important}
 .publication-shell .site-footer-columns nav strong{color:var(--navy)!important}
@@ -94,3 +94,22 @@ html[data-theme="dark"] .publication-shell .weather-alert-button{background:#341
 html[data-theme="dark"] .publication-shell .weather-alert-popover{background:#151b1e;color:var(--ink)}
 @media(max-width:720px){.publication-shell .publication-utility-inner{width:calc(100% - 32px);min-height:30px}.publication-shell .weather-alert-button{width:25px;padding:0;justify-content:center}.publication-shell .weather-alert-button>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.publication-shell .weather-alert-popover{position:fixed;top:40px;right:12px}.publication-shell .weather-alert-popover span{display:-webkit-box}}
 .menu-theme-choices{display:none!important}
+
+/* Keep late V3 light tokens from overriding dark mode. */
+html[data-theme="dark"]{
+  --paper:#101820!important;
+  --soft:#17232c!important;
+  --card:#15212a!important;
+  --ink:#edf4f8!important;
+  --text:#edf4f8!important;
+  --navy:#f3f7fa!important;
+  --muted:#aebcc6!important;
+  --line:#30404b!important
+}
+html[data-theme="dark"] body.publication-shell .site-legal-footer{
+  background:#17232c!important;
+  color:#edf4f8!important;
+  border-color:#30404b!important
+}
+html[data-theme="dark"] body.publication-shell .site-legal-footer :is(a,p){color:#aebcc6!important}
+html[data-theme="dark"] body.publication-shell .site-legal-footer :is(strong,.site-footer-columns nav strong){color:#f3f7fa!important}

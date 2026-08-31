@@ -16,6 +16,8 @@ import re
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from story_lifecycle import is_resolved
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 INDEX = ROOT / "index.html"
@@ -177,6 +179,16 @@ def clock_label(value: dt.datetime) -> str:
     return f"{hour}:{local.minute:02d} {suffix}"
 
 
+def contextual_clock_label(value: dt.datetime, now: dt.datetime) -> str:
+    local = value.astimezone(TZ)
+    today = now.astimezone(TZ).date()
+    if local.date() == today:
+        return clock_label(local)
+    if local.date() == today - dt.timedelta(days=1):
+        return f"YESTERDAY {clock_label(local)}"
+    return f"{local.strftime('%b').upper()}. {local.day}, {clock_label(local)}"
+
+
 def has_meaningful_update(item: dict) -> bool:
     published = parse_time(item.get("publishedAt") or item.get("datePublished"))
     updated = parse_time(item.get("lastMeaningfulUpdate") or item.get("meaningfulUpdatedAt"))
@@ -199,14 +211,17 @@ def render_breaking_section(live: dict, archive: dict, now: dt.datetime) -> str:
     label = "Breaking News" if is_breaking else "Local Update"
     stamp = timestamp(freshest)
     if stamp:
-        prefix = "LATEST" if len(visible) > 1 else ("UPDATED" if has_meaningful_update(freshest) else "POSTED")
-        status = f'<span class="breaking-status">{prefix} {clock_label(stamp)}</span>'
+        if is_resolved(freshest):
+            prefix = "UPDATED"
+        else:
+            prefix = "LATEST" if len(visible) > 1 else ("UPDATED" if has_meaningful_update(freshest) else "POSTED")
+        status = f'<span class="breaking-status">{prefix} {contextual_clock_label(stamp, now)}</span>'
     else:
         status = ""
     reason = (
         "verified story published or meaningfully updated within three hours"
         if is_breaking
-        else "recent verified local story; breaking treatment expires after three hours"
+        else "newest verified outcome remains until a newer breaking or local update replaces it"
     )
     rows = []
     for item in visible:
@@ -232,20 +247,14 @@ def render_breaking_section(live: dict, archive: dict, now: dt.datetime) -> str:
 def choose_hero(home: dict, live: dict, archive: dict, now: dt.datetime) -> dict | None:
     if live.get("mode") == "breaking":
         for item in live.get("items") or []:
-            if item.get("headline") and public_url(item) and image_url(item):
+            if (
+                item.get("headline")
+                and public_url(item)
+                and image_url(item)
+                and not is_resolved(item)
+                and age(item, now) <= BREAKING_MAX_AGE
+            ):
                 return item
-
-    recent_archive = [
-        item
-        for item in (archive.get("items") or [])
-        if item.get("headline")
-        and public_url(item)
-        and image_url(item)
-        and age(item, now) <= RECENT_ARCHIVE_HERO_MAX_AGE
-    ]
-    recent_archive.sort(key=lambda item: timestamp(item) or dt.datetime.min.replace(tzinfo=TZ), reverse=True)
-    if recent_archive:
-        return recent_archive[0]
 
     for item in home.get("feature") or []:
         if item.get("headline") and public_url(item) and image_url(item):
@@ -322,7 +331,7 @@ def render_newest(items: list[dict], now: dt.datetime) -> str:
     hidden = ' hidden aria-hidden="true"' if not rows else ""
     return (
         f'<section class="newest" id="newestRail" aria-labelledby="newestTitle"{hidden}>'
-        '<div class="mini-heading"><h2 id="newestTitle">Newest</h2><a href="/news/">All stories →</a></div>'
+        '<div class="mini-heading"><h2 id="newestTitle">Latest</h2><a href="/news/">All stories →</a></div>'
         f'<div id="latestList" class="newest-list">{"".join(rows)}</div></section>'
     )
 
@@ -373,7 +382,7 @@ def main() -> int:
         raise RuntimeError("Could not update homepage hero preload")
     text = re.sub(
         r'/homepage-boot\.js\?v=[^\"]+',
-        '/homepage-boot.js?v=20260828stable1',
+        '/homepage-boot.js?v=20260830eventdeep1',
         text,
         count=1,
     )

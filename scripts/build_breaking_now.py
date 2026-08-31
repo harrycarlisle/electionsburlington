@@ -41,6 +41,7 @@ from sources.score import breaking_score, passes_breaking_threshold
 from sources.toronto_police import collect as tps_collect
 from sources.verify import cluster_updates, corroborate, rewrite_verified_headline, similar
 from sources.weather import collect as weather_collect
+from story_lifecycle import is_resolved
 
 TZ = ZoneInfo("America/Toronto")
 OUT = DATA / "breaking-now.json"
@@ -339,7 +340,7 @@ def diversify_top(items: list[dict], limit: int = 2, score_key: str = "breakingS
         same_score = float(same.get(score_key) or 0)
         diverse_impact = float(second.get("impactScore") or 0)
         diverse_score = float(second.get(score_key) or 0)
-        if diverse_impact < 2.4 or (same_impact >= 4.6 and same_score + 0.05 >= diverse_score):
+        if diverse_impact < 2.4 or (same_impact >= 4.4 and same_score >= diverse_score + 0.2):
             second = same
     return [first, second]
 
@@ -363,6 +364,9 @@ def main() -> int:
         ok, reason = passes_breaking_threshold(item, now)
         if hero and public_story_url(str(item.get("storyUrl") or "")) == hero:
             rejected.append({**item, "rejectReason": "hero-duplicate"})
+            continue
+        if is_resolved(item):
+            rejected.append({**item, "rejectReason": "resolved-update"})
             continue
         if not ok:
             rejected.append({**item, "rejectReason": reason})

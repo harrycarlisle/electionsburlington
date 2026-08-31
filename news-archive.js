@@ -114,6 +114,17 @@
     burlington: ['/assets/editorial/explore-collage.webp','/assets/explore/brant-street-pier.webp']
   };
 
+  const STORY_MEDIA = {
+    'can-you-have-backyard-fire-pit-burlington': '/assets/ontario-backyard-fire-pit-gathering-16x9.png',
+    'where-are-burlington-red-light-cameras': '/assets/burlington-ontario-red-light-camera-16x9.png',
+    'do-you-need-permit-shed-burlington': '/assets/backyard-shed.png'
+  };
+  const STORY_MEDIA_ALT = {
+    'can-you-have-backyard-fire-pit-burlington': 'People gathered around a backyard wood fire pit at dusk.',
+    'where-are-burlington-red-light-cameras': 'A roadside red-light camera beside a signalized Burlington intersection.',
+    'do-you-need-permit-shed-burlington': 'Two people building a wooden shed in a residential backyard.'
+  };
+
   const candidateCollage = () => `
     <div class="news-card-media candidate-collage" data-card-media data-media-key="candidate-field-2026" role="img" aria-label="Available Burlington mayoral candidate portraits and a note that five candidates are registered.">
       <img src="/assets/candidates/mw.webp" alt="" loading="lazy" decoding="async">
@@ -128,7 +139,7 @@
     if (/candidate-nominations|registered-field|registered candidate/.test(descriptor)) {
       return {type:'collage',key:'candidate-field-2026',html:candidateCollage(),candidates:[]};
     }
-    let image = normalizeImage(item?.image);
+    let image = STORY_MEDIA[String(item?.id || '')] || normalizeImage(item?.image);
     let className = 'news-card-media';
     if (/ward-map|ward map changed|check yours before voting/.test(descriptor)) {
       image = '/assets/editorial/burlington-wards-2026.svg';
@@ -144,7 +155,7 @@
       key:mediaKey(primary),
       primary,
       candidates,
-      html:`<div class="${className}" data-card-media><img data-card-image src="${esc(primary)}" alt="${esc(item?.alt || item?.headline || 'Burlington News')}" loading="lazy" decoding="async"></div>`
+      html:`<div class="${className}" data-card-media><img data-card-image src="${esc(primary)}" alt="${esc(STORY_MEDIA_ALT[String(item?.id || '')] || item?.alt || item?.headline || 'Burlington News')}" loading="lazy" decoding="async"></div>`
     };
   }
 

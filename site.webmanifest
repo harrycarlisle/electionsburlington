@@ -8,8 +8,8 @@
   "theme_color": "#071b35",
   "icons": [
     {
-      "src": "/logo-mark.png?v=20260829nb2",
-      "sizes": "512x555",
+      "src": "/assets/brand/android-chrome-512x512.png?v=20260830logo1",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }

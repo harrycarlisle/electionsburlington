@@ -4,7 +4,7 @@
 :root{
   --bn-header-h:56px;
   --bn-gutter:16px;
-  --bn-logo:32px;
+  --bn-logo:38px;
   --news-banner-h:0px;
 }
 
@@ -76,7 +76,7 @@ html body .brand-mark-only img,
 html body .header .brand img{
   display:block!important;
   width:var(--bn-logo)!important;
-  height:calc(var(--bn-logo) * 1.1)!important;
+  height:var(--bn-logo)!important;
   max-width:var(--bn-logo)!important;
   flex:0 0 var(--bn-logo)!important;
   object-fit:contain!important
@@ -208,6 +208,32 @@ html body.publication-shell .menu-panel.open,
 html body.home-shell .menu-panel.open,
 html body .nav.menu-panel.open{
   display:flex!important
+}
+
+html body .menu-scroll-cue{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  margin:-2px 4px 7px!important;
+  padding:7px 10px!important;
+  border-radius:999px!important;
+  background:var(--soft,#eef3f6)!important;
+  color:var(--muted,#5d7287)!important;
+  font:750 10px/1 Inter,ui-sans-serif,Arial,sans-serif!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+  pointer-events:none!important
+}
+html body .menu-scroll-cue[hidden]{display:none!important}
+html body .menu-scroll-cue svg{
+  width:14px!important;
+  height:14px!important;
+  fill:none!important;
+  stroke:currentColor!important;
+  stroke-width:2!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important
 }
 
 html body .menu-heading,
@@ -428,7 +454,7 @@ html body .header-live{
 }
 
 @media(max-width:720px){
-  :root{--bn-header-h:52px;--bn-logo:28px;--bn-gutter:16px}
+  :root{--bn-header-h:52px;--bn-logo:34px;--bn-gutter:16px}
   html body.home-page .header-inner{
     gap:8px!important
   }
@@ -473,7 +499,7 @@ html body .header-live{
 }
 
 @media(min-width:721px){
-  :root{--bn-header-h:64px;--bn-logo:36px;--bn-gutter:20px}
+  :root{--bn-header-h:64px;--bn-logo:42px;--bn-gutter:20px}
   html body .header-live{display:none!important}
   html body .header-weather:not([hidden]),
   html body.publication-shell .header-weather:not([hidden]),

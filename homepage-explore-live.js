@@ -1,5 +1,5 @@
 (() => {
-  const grid = document.querySelector('.explore-home-grid');
+  const grid = document.querySelector('.explore-band .pick-grid');
   if (!grid) return;
 
   const esc = value => String(value || '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
@@ -90,7 +90,7 @@
     if (!picks.length) return;
     grid.innerHTML = picks.map(event => {
       const href = `/explore/?event=${encodeURIComponent(event.id)}`;
-      return `<a class="explore-home-card" href="${href}"><img src="${esc(imageSrc(event))}" alt="${esc(imageAlt(event))}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/assets/editorial/explore-collage.webp'"><span><small>${esc(labelFor(event))}</small><strong>${esc(event.title)}</strong><em>${esc(event.summary || event.details || event.location)}</em></span></a>`;
+      return `<a class="pick-card" href="${href}"><div class="pick-image"><img src="${esc(imageSrc(event))}" alt="${esc(imageAlt(event))}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/assets/editorial/explore-collage.webp'"></div><span class="kicker">${esc(labelFor(event))}</span><h3>${esc(event.title)}</h3><p class="pick-hook">${esc(event.summary || event.details || event.location)}</p></a>`;
     }).join('');
   }
 

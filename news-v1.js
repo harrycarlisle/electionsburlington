@@ -2,7 +2,7 @@
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const fetchJson=async url=>{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(url);return r.json()};
   const home=()=>location.pathname==='/'||location.pathname.endsWith('/index.html');
-  const brandMarkup='<img class="news-brand-logo" src="/logo-mark.png?v=20260826b" alt="">';
+  const brandMarkup='<img class="news-brand-logo" src="/assets/brand/bn-logo-transparent.png?v=20260831transparent1" alt="">';
 
   function restoreBrand(){
     document.querySelectorAll('.header .brand, .site-header .brand').forEach(b=>{b.className='brand news-brand brand-mark-only';b.href='/';b.innerHTML=brandMarkup;b.setAttribute('aria-label','Burlington News home')});
@@ -53,7 +53,7 @@
   async function rebuildUpdates(){
     const out=document.getElementById('updatesList');if(!out)return;
     const items=await getLocalStories(12);if(!items.length)return;const top=items.slice(0,3),newest=items.slice(3);
-    out.className='news-page-feed';out.innerHTML=`<section class="updates-top"><div class="section-rule"><h2>Top stories</h2><small>What to know now</small></div><div class="news-brief-grid">${top.map(storyCard).join('')}</div></section>${newest.length?`<section class="updates-newest"><div class="section-rule"><h2>Newest</h2><small>Latest updates</small></div><div class="newest-list">${newest.map(i=>`<a class="newest-row" href="${esc(i.url)}" target="_blank" rel="noopener"><span><small>${esc(i.tag)}</small><strong>${esc(i.headline)}</strong><em>${esc(integratedSummary(i))}</em></span><span aria-hidden="true">→</span></a>`).join('')}</div></section>`:''}`;
+    out.className='news-page-feed';out.innerHTML=`<section class="updates-top"><div class="section-rule"><h2>Top stories</h2><small>What to know now</small></div><div class="news-brief-grid">${top.map(storyCard).join('')}</div></section>${newest.length?`<section class="updates-newest"><div class="section-rule"><h2>Latest</h2><small>Local updates</small></div><div class="newest-list">${newest.map(i=>`<a class="newest-row" href="${esc(i.url)}" target="_blank" rel="noopener"><span><small>${esc(i.tag)}</small><strong>${esc(i.headline)}</strong><em>${esc(integratedSummary(i))}</em></span><span aria-hidden="true">→</span></a>`).join('')}</div></section>`:''}`;
     document.querySelector('.updates-page .content-lead')?.replaceChildren(document.createTextNode('Local government, elections, development, transit and decisions that affect Burlington.'));
   }
 

@@ -20,6 +20,8 @@ Light category diversity may break a same-category tie only when the alternative
 
 Meaningful updates include a new official fact, a road reopening, a vote, or a GO disruption resolving. They do not include typos, image swaps, meta edits or automated timestamp refreshes.
 
+Resolved breaking stories may briefly appear as a clearly labelled Local Update when the resolution itself is new. They never remain the homepage hero after the active breaking state ends. A previous-day time must say **Yesterday** (or show its date), not display a bare clock time that can be mistaken for today.
+
 ## Popular now / Most read
 
 The site currently has **no first-party readership pipeline**. Article pages store anonymous on-device events and open counts. That is not enough to label a public module Most Read.

@@ -19,6 +19,7 @@ from editorial_policy import load_policy
 from sources.hamilton_police import collect as hps_collect
 from sources.score import breaking_score, passes_breaking_threshold, source_age_hours
 from sources.verify import similar
+from story_lifecycle import is_resolved, lifecycle_status
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -135,6 +136,15 @@ def archive_follow_up(item: dict, archive: dict) -> tuple[dict | None, float]:
 
 def annotate_candidate(item: dict, archive: dict) -> dict:
     item = dict(item)
+    item["lifecycleStatus"] = lifecycle_status(item)
+    if is_resolved(item):
+        item["status"] = "resolved"
+        item["lastMeaningfulUpdate"] = (
+            item.get("lastMeaningfulUpdate")
+            or item.get("meaningfulUpdatedAt")
+            or item.get("updatedAt")
+            or item.get("publishedAt")
+        )
     base.breaking_score(item)
     base.local_update_score(item)
     prior, match_score = archive_follow_up(item, archive)
@@ -334,10 +344,25 @@ def main() -> int:
 
     accepted = []
     rejected = []
+    lifecycle_updates = []
     for item in combined:
         ok, reason = passes_breaking_threshold(item, now)
         if hero and base.public_story_url(str(item.get("storyUrl") or "")) == hero:
             rejected.append({**item, "rejectReason": "hero-duplicate"})
+            continue
+        if is_resolved(item):
+            resolved = annotate_candidate(item, archive)
+            rejected.append({**resolved, "rejectReason": "resolved-update"})
+            age = source_age_hours(resolved, now)
+            verification = clean(resolved.get("verificationStatus")).lower()
+            if (
+                resolved.get("followUpUpdate")
+                and verification not in {"community_lead", "unverified", "unverified_community_report"}
+                and float(resolved.get("confidenceScore") or 0) >= 4.0
+                and age is not None
+                and age <= LOCAL_MAX_HOURS
+            ):
+                lifecycle_updates.append(resolved)
             continue
         if not ok:
             rejected.append({**item, "rejectReason": reason})
@@ -397,6 +422,7 @@ def main() -> int:
             "context": "Existing Burlington News stories require a related current event, meaningful update, explicit context signal or anniversary before they can enter Local Update.",
         },
         "items": visible,
+        "lifecycleUpdates": lifecycle_updates[:10],
         "sourceNotes": {
             "officialPolice": "Halton Police, Hamilton Police, OPP and Toronto Police official newsroom/RSS/HTML feeds are checked live.",
             "regionalFallback": "Hamilton may fill Local Update only when the direct Burlington/Halton rail has no sufficiently fresh verified item. Toronto still requires existing Burlington/corridor relevance.",

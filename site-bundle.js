@@ -3,11 +3,11 @@
   const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const fetchJson=async url=>{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error(url);return r.json()};
   const home=()=>location.pathname==='/'||location.pathname==='/index.html';
-  const brandMarkup='<img class="news-brand-logo" src="/logo-mark.png?v=20260826b" alt="">';
+  const brandMarkup='<img class="news-brand-logo" src="/assets/brand/bn-logo-transparent.png?v=20260831transparent1" alt="">';
 
   function restoreBrand(){
     document.querySelectorAll('.header .brand').forEach(b=>{if(!b.classList.contains('brand-mark-only')||!b.querySelector('.news-brand-logo')){b.className='brand news-brand brand-mark-only';b.href='/';b.innerHTML=brandMarkup;b.setAttribute('aria-label','Burlington News home')}});
-    let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='/logo-mark.png?v=20260826b';
+    let icon=document.querySelector('link[rel="icon"]');if(!icon){icon=document.createElement('link');icon.rel='icon';document.head.appendChild(icon)}icon.href='/assets/brand/favicon-32x32.png?v=20260830logo1';
     const path=location.pathname.replace(/\/$/,'');
     const titles={
       '':'Burlington News | Local news, events and election coverage','/index.html':'Burlington News | Local news, events and election coverage',
@@ -53,7 +53,7 @@
   async function rebuildUpdates(){
     const out=document.getElementById('updatesList');if(!out)return;
     const items=await getLocalStories(12);if(!items.length)return;const top=items.slice(0,3),newest=items.slice(3);
-    out.className='news-page-feed';out.innerHTML=`<section class="updates-top"><div class="section-rule"><h2>Top stories</h2><small>What to know now</small></div><div class="news-brief-grid">${top.map(storyCard).join('')}</div></section>${newest.length?`<section class="updates-newest"><div class="section-rule"><h2>Newest</h2><small>Latest updates</small></div><div class="newest-list">${newest.map(i=>`<a class="newest-row" href="${esc(i.url)}" target="_blank" rel="noopener"><span><small>${esc(i.tag)}</small><strong>${esc(i.headline)}</strong><em>${esc(integratedSummary(i))}</em></span><span aria-hidden="true">→</span></a>`).join('')}</div></section>`:''}`;
+    out.className='news-page-feed';out.innerHTML=`<section class="updates-top"><div class="section-rule"><h2>Top stories</h2><small>What to know now</small></div><div class="news-brief-grid">${top.map(storyCard).join('')}</div></section>${newest.length?`<section class="updates-newest"><div class="section-rule"><h2>Latest</h2><small>Local updates</small></div><div class="newest-list">${newest.map(i=>`<a class="newest-row" href="${esc(i.url)}" target="_blank" rel="noopener"><span><small>${esc(i.tag)}</small><strong>${esc(i.headline)}</strong><em>${esc(integratedSummary(i))}</em></span><span aria-hidden="true">→</span></a>`).join('')}</div></section>`:''}`;
     document.querySelector('.updates-page .content-lead')?.replaceChildren(document.createTextNode('Local government, elections, development, transit and decisions that affect Burlington.'));
   }
 
@@ -112,7 +112,7 @@
       <div class="publication-heading"><h1>Burlington, in one place.</h1><p>Local news, things to do, civic decisions and an election guide that tells you exactly what each choice means.</p></div>
       <div class="publication-lead-grid"><a class="publication-lead" href="${esc(lead.url)}"><div class="publication-lead-media">${media(lead)}</div><span class="publication-tag">${esc(lead.tag||'Burlington')}</span><h2>${esc(lead.headline)}</h2><p>${esc(lead.summary||lead.description||'Open the full update.')}</p></a><div class="publication-side">${side.map(x=>`<a class="publication-side-story" href="${esc(x.url)}" target="_blank" rel="noopener"><div class="publication-side-media">${media(x)}</div><div class="publication-side-copy"><span class="publication-tag">${esc(x.tag||'Burlington')}</span><h3>${esc(x.headline)}</h3><p>${esc(x.summary||x.description||'Open the full update.')}</p></div></a>`).join('')}</div></div>
       <p class="publication-credit">Wildlife images: Jefferson salamander by Jake Scott, CC BY-SA 3.0; Cerulean warbler by Mdf/MPF, CC BY-SA 3.0; Fishway photo via Royal Botanical Gardens.</p>
-      <nav class="publication-shortcuts" aria-label="Popular Burlington sections"><a href="updates.html"><small>Newest</small><strong>Today in Burlington</strong></a><a href="explore.html"><small>Do something</small><strong>Explore Burlington</strong></a><a href="#election-guide"><small>2026 vote</small><strong>Election guide</strong></a><a href="puzzles.html"><small>Play</small><strong>Local puzzles</strong></a></nav>`;
+      <nav class="publication-shortcuts" aria-label="Popular Burlington sections"><a href="updates.html"><small>Latest</small><strong>Today in Burlington</strong></a><a href="explore.html"><small>Do something</small><strong>Explore Burlington</strong></a><a href="#election-guide"><small>2026 vote</small><strong>Election guide</strong></a><a href="puzzles.html"><small>Play</small><strong>Local puzzles</strong></a></nav>`;
     main.prepend(section);
     const hero=document.querySelector('.election-hero');if(hero)hero.id='election-guide';
     const candidates=document.getElementById('candidates');if(candidates&&!document.querySelector('.explore-teaser')){const e=document.createElement('section');e.className='explore-teaser';e.innerHTML='<div><span class="publication-tag">Shuffle your city</span><h2>Find something in Burlington you would never search for.</h2><p>Local oddities, free stops, overlooked history and small challenges. Start with one card and see where it takes you.</p><a href="explore.html">Shuffle the deck →</a></div><div class="explore-stack" aria-hidden="true"><div class="explore-stack-card"></div><div class="explore-stack-card"></div><div class="explore-stack-card"><small>Try this</small><strong>Find the plaque most people walk past.</strong></div></div>';candidates.insertAdjacentElement('beforebegin',e)}

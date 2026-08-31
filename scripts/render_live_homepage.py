@@ -6,8 +6,9 @@ import datetime as dt
 import re
 
 import render_homepage as base
+from story_lifecycle import is_resolved
 
-FRESH_LOCAL_MAX_AGE = dt.timedelta(hours=18)
+FRESH_LOCAL_MAX_AGE = dt.timedelta(hours=36)
 UTILITY_CATEGORIES = {"traffic", "transit", "weather", "roads"}
 GENERIC_IMAGES = {"/assets/editorial/home-share.webp", "assets/editorial/home-share.webp"}
 BASE_TIMESTAMP = base.timestamp
@@ -125,47 +126,51 @@ def selected_breaking_visible(live: dict, archive: dict, now: dt.datetime) -> li
         if isinstance(row, dict)
         and row.get("headline")
         and base.public_url(row)
-        and base.age(row, now) <= FRESH_LOCAL_MAX_AGE
     ]
     current = base.unique(current)
 
     if live.get("mode") == "breaking":
-        current.sort(
+        breaking = [
+            item for item in current
+            if not is_resolved(item)
+            and base.age(item, now) <= base.BREAKING_MAX_AGE
+        ]
+        breaking.sort(
             key=lambda row: base.timestamp(row) or dt.datetime.min.replace(tzinfo=base.TZ),
             reverse=True,
         )
-        return pick_diverse(current, 2)
+        if breaking:
+            return pick_diverse(breaking, 2)
 
-    # Local Update is intentionally not backfilled from the breaking archive.
-    # It needs an explicit why-now reason or a genuinely fresh external update.
-    local = [row for row in current if has_why_now(row)]
+    # When an incident ends, keep its newest verified outcome in this rail until
+    # the next breaking item or local update replaces it. If publishing has been
+    # quiet for longer than a day, retain one clearly dated archive fallback so
+    # the established mobile stack never collapses into the header.
+    archive_rows = [
+        row for row in (archive.get("items") or [])
+        if isinstance(row, dict)
+        and row.get("headline")
+        and base.public_url(row)
+        and base.clean(row.get("status")).lower() != "expired"
+    ]
+    local = base.unique(current + archive_rows)
     local.sort(
-        key=lambda row: (
-            local_rank(row),
-            base.timestamp(row) or dt.datetime.min.replace(tzinfo=base.TZ),
-        ),
+        key=lambda row: base.timestamp(row) or dt.datetime.min.replace(tzinfo=base.TZ),
         reverse=True,
     )
-    return pick_diverse(local, 2)
+    fresh = [row for row in local if base.age(row, now) <= FRESH_LOCAL_MAX_AGE]
+    return (fresh or local)[:1]
 
 
 def editorial_hero(home: dict, live: dict, archive: dict, now: dt.datetime):
     if live.get("mode") == "breaking":
         for item in live.get("items") or []:
-            if is_editorial_story(item):
+            if (
+                is_editorial_story(item)
+                and not is_resolved(item)
+                and base.age(item, now) <= base.BREAKING_MAX_AGE
+            ):
                 return display_item(item)
-
-    recent_archive = [
-        item for item in (archive.get("items") or [])
-        if is_editorial_story(item)
-        and base.age(item, now) <= base.RECENT_ARCHIVE_HERO_MAX_AGE
-    ]
-    recent_archive.sort(
-        key=lambda item: base.timestamp(item) or dt.datetime.min.replace(tzinfo=base.TZ),
-        reverse=True,
-    )
-    if recent_archive:
-        return display_item(recent_archive[0])
 
     for item in home.get("feature") or []:
         if is_editorial_story(item):
@@ -177,9 +182,11 @@ def editorial_hero(home: dict, live: dict, archive: dict, now: dt.datetime):
 
 
 def diverse_newest_items(home: dict, archive: dict, hero: dict | None, now: dt.datetime) -> list[dict]:
-    # Newest is an editorial list, not a replay of the breaking archive.
+    # Breaking stories remain ordinary stories after urgency expires. They move
+    # through Newest by their last meaningful update instead of disappearing.
     pool = base.unique(
-        list(home.get("latest") or [])
+        list(archive.get("items") or [])
+        + list(home.get("latest") or [])
         + list(home.get("rail") or [])
         + list(home.get("feature") or [])
     )

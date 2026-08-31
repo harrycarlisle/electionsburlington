@@ -17,6 +17,8 @@ import re
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from story_lifecycle import has_newer_update, is_resolved, lifecycle_status, update_time
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 BREAKING = DATA / "breaking-now.json"
@@ -135,12 +137,17 @@ def article_html(item: dict, story_url: str, image: str, alt: str, now: dt.datet
         body.append(f"<p>The reported location is {html.escape(location)}.</p>")
     elif city:
         body.append(f"<p>The update concerns {html.escape(city)}.</p>")
-    body.append("<p>This is a developing story. Burlington News will update this page if additional verified information becomes available.</p>")
+    resolved = is_resolved(item)
+    if resolved:
+        body.append("<p>The active incident has ended. Burlington News will update this page if the source publishes additional verified details.</p>")
+    else:
+        body.append("<p>This is a developing story. Burlington News will update this page if additional verified information becomes available.</p>")
     source_markup = f'<a href="{html.escape(source_url)}" target="_blank" rel="noopener">{html.escape(source_name)}</a>' if source_url else html.escape(source_name)
     body.append(f'<section class="sources"><h2>Source</h2><p>{source_markup}</p></section>')
     absolute_image = image if image.startswith("http") else f"https://burlingtonnews.ca{image}"
     canonical = f"https://burlingtonnews.ca{story_url}"
     category = clean(item.get("category") or item.get("label")) or "Local update"
+    kicker = "Resolved" if resolved else category.title()
     deck_markup = f'<p class="article-deck">{html.escape(deck)}</p>' if deck else ''
     return f'''<!doctype html>
 <html lang="en-CA"><head>
@@ -153,11 +160,62 @@ def article_html(item: dict, story_url: str, image: str, alt: str, now: dt.datet
 </head><body>
 <a class="skip" href="#article">Skip to article</a>
 <header class="header"><div class="wrap header-inner"><a class="brand" href="/">Burlington News</a><button class="menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
-<main class="article" id="article"><header class="article-head"><div class="article-kicker">{html.escape(category.title())}</div><h1>{html.escape(title)}</h1>{deck_markup}</header>
+<main class="article" id="article"><header class="article-head"><div class="article-kicker">{html.escape(kicker)}</div><h1>{html.escape(title)}</h1>{deck_markup}</header>
 <figure class="article-hero"><img src="{html.escape(image)}" alt="{html.escape(alt)}" fetchpriority="high"><figcaption>Burlington News visual</figcaption></figure>
 <div class="article-post-hero-meta"><div class="article-byline"><strong>By Burlington News</strong><span>{html.escape(date_label)}</span><span>1 min read</span></div></div>
 <div class="article-layout"><article class="article-body">{''.join(body)}</article></div></main>
 </body></html>'''
+
+
+def story_target(story_url: str) -> Path | None:
+    match = re.fullmatch(r"/stories/([^/]+)/?", clean(story_url))
+    if not match:
+        return None
+    return STORIES / match.group(1) / "index.html"
+
+
+def update_existing_brief(existing: dict, item: dict, now: dt.datetime) -> bool:
+    """Apply a substantive follow-up without reviving breaking urgency."""
+    incoming_status = lifecycle_status(item)
+    existing_status = lifecycle_status(existing)
+    newer = has_newer_update(item, existing)
+    lifecycle_changed = incoming_status == "resolved" and existing_status != "resolved"
+    if not newer and not lifecycle_changed:
+        return False
+
+    title = clean(item.get("headline") or item.get("shortHeadline"))
+    deck = deck_for(item)
+    if title:
+        existing["headline"] = title
+    if deck:
+        existing["deck"] = deck
+    existing["status"] = "resolved" if incoming_status == "resolved" else "updated"
+    existing["lifecycleStatus"] = incoming_status
+    stamp = update_time(item) or now
+    existing["lastMeaningfulUpdate"] = stamp.isoformat()
+    existing["dateModified"] = stamp.isoformat()
+
+    if existing.get("generatedBrief"):
+        target = story_target(str(existing.get("url") or ""))
+        if target and target.exists():
+            default_image, default_alt = image_for(item)
+            image = clean(existing.get("image")) or default_image
+            alt = clean(existing.get("alt")) or default_alt
+            merged = {
+                **existing,
+                **item,
+                "headline": existing.get("headline"),
+                "deck": existing.get("deck"),
+                "publishedAt": existing.get("publishedAt"),
+                "datePublished": existing.get("datePublished"),
+                "status": existing.get("status"),
+                "lifecycleStatus": incoming_status,
+            }
+            target.write_text(
+                article_html(merged, str(existing.get("url")), image, alt, now),
+                encoding="utf-8",
+            )
+    return True
 
 
 def main() -> int:
@@ -168,46 +226,59 @@ def main() -> int:
     by_source = {clean(row.get("sourceUrl")): row for row in rows if clean(row.get("sourceUrl"))}
     by_id = {str(row.get("id") or ""): row for row in rows if row.get("id")}
     created = 0
+    updated = 0
 
-    if breaking.get("mode") == "breaking":
-        for item in breaking.get("items") or []:
-            source_url = clean(item.get("sourceUrl"))
-            existing = by_source.get(source_url) or by_id.get(str(item.get("id") or ""))
-            if existing:
-                item["storyUrl"] = existing.get("url") or item.get("storyUrl")
-                item["image"] = existing.get("image") or item.get("image")
-                item["alt"] = existing.get("alt") or item.get("alt")
-                continue
+    public_items = list(breaking.get("items") or [])
+    lifecycle_updates = list(breaking.get("lifecycleUpdates") or [])
+    for item in public_items + lifecycle_updates:
+        source_url = clean(item.get("sourceUrl"))
+        existing = (
+            by_source.get(source_url)
+            or by_id.get(str(item.get("id") or ""))
+            or by_id.get(str(item.get("followUpTo") or ""))
+        )
+        if existing:
+            item["storyUrl"] = existing.get("url") or item.get("storyUrl")
+            item["image"] = existing.get("image") or item.get("image")
+            item["alt"] = existing.get("alt") or item.get("alt")
+            if update_existing_brief(existing, item, now):
+                updated += 1
+            continue
 
-            slug = slugify(item.get("headline") or item.get("id") or "breaking-update")
-            story_url = f"/stories/{slug}/"
-            target = STORIES / slug / "index.html"
-            image, alt = image_for(item)
-            target.parent.mkdir(parents=True, exist_ok=True)
-            if not target.exists():
-                target.write_text(article_html(item, story_url, image, alt, now), encoding="utf-8")
-                created += 1
-            item["storyUrl"] = story_url
-            item["image"] = image
-            item["alt"] = alt
-            archive_row = {
-                "id": item.get("id") or slug,
-                "headline": clean(item.get("headline")),
-                "deck": deck_for(item),
-                "label": clean(item.get("category")) or "Local update",
-                "topic": topic_for(item),
-                "url": story_url,
-                "sourceUrl": source_url,
-                "image": image,
-                "alt": alt,
-                "publishedAt": published_at(item, now),
-                "datePublished": published_at(item, now),
-                "status": "breaking",
-            }
-            rows.insert(0, archive_row)
-            if source_url:
-                by_source[source_url] = archive_row
-            by_id[str(archive_row["id"])] = archive_row
+        if breaking.get("mode") != "breaking" or is_resolved(item):
+            continue
+
+        slug = slugify(item.get("headline") or item.get("id") or "breaking-update")
+        story_url = f"/stories/{slug}/"
+        target = STORIES / slug / "index.html"
+        image, alt = image_for(item)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if not target.exists():
+            target.write_text(article_html(item, story_url, image, alt, now), encoding="utf-8")
+            created += 1
+        item["storyUrl"] = story_url
+        item["image"] = image
+        item["alt"] = alt
+        archive_row = {
+            "id": item.get("id") or slug,
+            "headline": clean(item.get("headline")),
+            "deck": deck_for(item),
+            "label": clean(item.get("category")) or "Local update",
+            "topic": topic_for(item),
+            "url": story_url,
+            "sourceUrl": source_url,
+            "image": image,
+            "alt": alt,
+            "publishedAt": published_at(item, now),
+            "datePublished": published_at(item, now),
+            "status": "breaking",
+            "lifecycleStatus": lifecycle_status(item),
+            "generatedBrief": True,
+        }
+        rows.insert(0, archive_row)
+        if source_url:
+            by_source[source_url] = archive_row
+        by_id[str(archive_row["id"])] = archive_row
 
     # Past breaking items stay in this archive and naturally age into Newest.
     unique = []
@@ -222,7 +293,7 @@ def main() -> int:
     archive["updatedAt"] = now.isoformat()
     BREAKING.write_text(json.dumps(breaking, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     ARCHIVE.write_text(json.dumps(archive, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Published {created} new breaking brief(s); archive contains {len(unique)} story/stories")
+    print(f"Published {created} new breaking brief(s), updated {updated}; archive contains {len(unique)} story/stories")
     return 0
 
 

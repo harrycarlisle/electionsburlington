@@ -6,6 +6,7 @@ import {
   selectNewest,
   uniqueCameraCount
 } from '../lib/homepage-ranking.js';
+import {readFileSync} from 'node:fs';
 
 let failed = 0;
 function assert(cond, message) {
@@ -60,6 +61,22 @@ assert(popularA > popularB, 'recent velocity outranks lifetime reads');
 assert(canLabelMostRead(12) === false, 'cold start cannot be called Most Read');
 assert(canLabelMostRead(40) === true, 'mature sample can use a readership label');
 assert(uniqueCameraCount([{viewId: 1}, {cameraId: 1}, {viewId: 2}]) === 2, 'unique cameras');
+
+const homepage = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const exploreMarkup = homepage.match(/<section class="explore-band"[\s\S]*?<\/section>/)?.[0] || '';
+assert(/id="breakingNow"[^>]*data-state="local-update"/.test(homepage), 'homepage ships with a visible Local Update rail');
+assert(/id="breakingNow"[\s\S]*?Police take man into custody after Ghent Avenue standoff/.test(homepage), 'resolved Ghent update remains in the Local Update rail');
+assert(/class="pick-grid"/.test(exploreMarkup) && /class="pick-card"/.test(exploreMarkup), 'Explore reuses Top Picks grid and card markup');
+assert(!/explore-home-card|explore-home-grid|explore-intro|explore-heading/.test(exploreMarkup), 'legacy Explore-only presentation is absent');
+assert(/<footer class="site-legal-footer">/.test(homepage), 'homepage uses the shared publication footer');
+assert(!/<footer class="site-footer">/.test(homepage), 'legacy homepage footer is absent');
+
+const exploreLive = readFileSync(new URL('../homepage-explore-live.js', import.meta.url), 'utf8');
+assert(/class="pick-card"/.test(exploreLive), 'live Explore cards preserve Top Picks markup');
+
+const siteExtra = readFileSync(new URL('../site-extra.js', import.meta.url), 'utf8');
+const footerFunction = siteExtra.match(/function ensureFooter\(\)[\s\S]*?\n  }/)?.[0] || '';
+assert(!/if \(isHome\(\)\) return/.test(footerFunction), 'shared footer updater runs on the homepage');
 
 if (failed) {
   console.error(`${failed} homepage ranking checks failed`);
