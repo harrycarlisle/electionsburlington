@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T23:36:33.500835-04:00",
+  "generatedAt": "2026-08-31T18:44:55.545201-04:00",
   "method": "Rank unpublished original pitches for curiosity, local specificity, available reporting leads and archive potential. Do not invent finished features.",
   "cadence": "At least one original-story candidate every daily news watch. Publish nothing when reporting is not strong enough.",
   "today": [
@@ -118,6 +118,12 @@
     }
   ],
   "held": [
+    {
+      "id": "burlington-recycling-pilot-1971",
+      "headline": "Burlington tested curbside recycling before the blue box. The result looked like a failure.",
+      "status": "published",
+      "reason": "Held by editorial status or already published."
+    },
     {
       "id": "burlington-international-games",
       "headline": "The Olympics that connected three Burlingtons",
