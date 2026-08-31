@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">DomCon moved from Hamilton to Burlington</title>
+  <desc id="desc">Editorial map graphic showing the conference moving east along the QEW from two cancelled Hamilton venues to a private venue in Burlington.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#edf4f7"/>
+      <stop offset="1" stop-color="#dfeaf0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#071b35" flood-opacity=".16"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 12 6 0 12Z" fill="#cc4b38"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <path d="M0 746C270 665 486 744 731 676c239-66 478-249 869-236v460H0Z" fill="#c6d8d0"/>
+  <path d="M0 808c294-81 521 26 797-68 262-89 481-236 803-210v370H0Z" fill="#9dbfb2"/>
+  <path d="M166 574C462 588 647 547 824 472c198-84 366-148 617-135" fill="none" stroke="#fff" stroke-width="78" stroke-linecap="round"/>
+  <path d="M166 574C462 588 647 547 824 472c198-84 366-148 617-135" fill="none" stroke="#173653" stroke-width="58" stroke-linecap="round"/>
+  <path d="M166 574C462 588 647 547 824 472c198-84 366-148 617-135" fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="28 24" opacity=".8"/>
+  <path d="M409 572C607 570 727 527 851 469c174-82 300-118 438-127" fill="none" stroke="#cc4b38" stroke-width="12" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <rect x="62" y="58" width="1476" height="190" rx="22" fill="#071b35"/>
+    <text x="116" y="139" fill="#8dc9ee" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="800" letter-spacing="6">LOCAL AFFAIRS</text>
+    <text x="116" y="207" fill="#fff" font-family="Georgia,serif" font-size="62" font-weight="700">Two cancellations. One last-minute move.</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="79" y="426" width="354" height="282" rx="24" fill="#fff"/>
+    <text x="117" y="483" fill="#697589" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="800" letter-spacing="4">HAMILTON</text>
+    <text x="117" y="541" fill="#071b35" font-family="Georgia,serif" font-size="46" font-weight="700">Two venues</text>
+    <text x="117" y="592" fill="#071b35" font-family="Georgia,serif" font-size="46" font-weight="700">cancelled</text>
+    <path d="m119 638 34 34m0-34-34 34M200 638l34 34m0-34-34 34" stroke="#cc4b38" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1180" y="275" width="354" height="294" rx="24" fill="#fff"/>
+    <text x="1219" y="333" fill="#2d6fb7" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="800" letter-spacing="4">BURLINGTON</text>
+    <text x="1219" y="391" fill="#071b35" font-family="Georgia,serif" font-size="46" font-weight="700">Conference</text>
+    <text x="1219" y="442" fill="#071b35" font-family="Georgia,serif" font-size="46" font-weight="700">held Aug. 29</text>
+    <rect x="1219" y="481" width="224" height="45" rx="22" fill="#e9f1f6"/>
+    <text x="1244" y="511" fill="#173653" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="800">NORTH SERVICE RD.</text>
+  </g>
+  <g transform="translate(664 507)">
+    <path d="M0 0h164v64H0Z" fill="#1e66a5" rx="8"/>
+    <path d="M16 11h132v42H16Z" fill="none" stroke="#fff" stroke-width="4" rx="6"/>
+    <text x="82" y="44" text-anchor="middle" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="800">QEW</text>
+  </g>
+  <text x="800" y="842" text-anchor="middle" fill="#173653" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" letter-spacing="2">BURLINGTON NEWS GRAPHIC · NOT A PHOTOGRAPH OF THE EVENT</text>
+</svg>
