@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-08-31T13:43:14+00:00",
+  "checkedAt": "2026-08-31T20:01:42+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -2492,32 +2492,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Safe Swimmers Storytime at OPL",
-      "url": "https://activeparents.ca/calendar/safe-swimmers-storytime-at-opl/2026-08-31/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-31T14:00:00+00:00",
-      "endsAt": "2026-08-31T14:30:00+00:00",
-      "location": "Oakville Public Library – various branches, Oakville, ON",
-      "description": "<p>Dive into swim safety with the Town of Oakville. In this special storytime we will learn essential skills and information to stay safe around water this summer. Lifeguards from the Town of Oakville will join library staff to offer this session. For more information of Town of Oakville Aquatics Programs, please visit oakville.ca Caregivers must remain […]<",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Story Time Mondays at Donut Monster in Hamilton",
-      "url": "https://activeparents.ca/calendar/story-time-mondays-at-donut-monster-in-hamilton/2026-08-31/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-08-31T14:00:00+00:00",
-      "endsAt": "2026-08-31T14:30:00+00:00",
-      "location": "Donut Monster Hamilton, 246 Locke Street South, Hamilton, Ontario",
-      "description": "<p>Story Time at Donut Monster returns for the summer, on Mondays at 10am! No purchase required, just bring your littles for a free story reading session that runs from 10-10:30 every Monday morning all summer long.</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Sensory Friendly Social at HPL",
       "url": "https://activeparents.ca/calendar/sensory-friendly-social-at-hpl/",
       "source": "Active Parents regional calendar",
@@ -2713,8 +2687,8 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Little Wigglers at Hamilton Children’s Museum",
-      "url": "https://activeparents.ca/calendar/little-wigglers-at-hamilton-childrens-museum/2026-09-04/",
+      "title": "Baby Wigglers at Hamilton Children’s Museum",
+      "url": "https://activeparents.ca/calendar/baby-wigglers-at-hamilton-childrens-museum/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2722,12 +2696,64 @@
       "startsAt": "2026-09-04T14:30:00+00:00",
       "endsAt": "2026-09-04T15:30:00+00:00",
       "location": "New Hamilton Children’s Museum, 1072 Main St E, Hamilton, ON",
-      "description": "<p>Little Wigglers is a pre-school program for 18-month-olds to four-year-olds. The one-hour program is themed and supports children’s learning about themselves, their families, neighborhoods, seasons, and the world around them. Event Highlights Support cognitive and social development: Each session includes story time, exploration, and hands-on activities S",
+      "description": "<p>Discover, learn, and play as you and your baby explore together in this adult-facilitated, baby-led program just for babies up to 18 months. Touch and manipulate a variety of interesting materials at our sensory stations, enjoy songs, stories and movement, and meet other families in an engaging and fun environment. Event Highlights Meet other families: Th",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Art Class Open House for Kids – Ultimate Coders Burlington",
+      "url": "https://activeparents.ca/calendar/art-class-open-house-for-kids-ultimate-coders-burlington/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-04T17:30:00+00:00",
+      "endsAt": "2026-09-04T19:30:00+00:00",
+      "location": "Ultimate Coders Burlington, 2180 Itabashi Way, Unit 102, Burlington, Ontario",
+      "description": "<p>Art Class Open House — Burlington Come join us for a fun afternoon of creativity at Triple Stone Learning × Ultimate Coders Burlington! Our Art Class Open House gives kids and teens the opportunity to experience our new Creative Arts programs, meet the instructor, and participate in hands-on art activities. No previous art experience is […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Nelson Pool Summer Community Event Nights",
+      "url": "https://activeparents.ca/calendar/nelson-pool-summer-community-event-nights/2026-09-04/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-04T20:30:00+00:00",
+      "endsAt": "2026-09-04T22:30:00+00:00",
+      "location": "Nelson Pool, 4235 New Street, Burlington, ON",
+      "description": "<p>Join us every Friday from 4:30-6:30pm for our weekly Community Event Nights — a summer series packed with creativity, laughter, and poolside fun! (Regular admission rates apply) What We’ve Got Lined Up This Summer: July 3rd: Canada Day Craft Kick off the fun with a night of festive creativity! Celebrate Canada by making your very own Canada Day […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "BurlingtonGreen’s Weekend Beach Drop in Activities",
+      "url": "https://activeparents.ca/calendar/burlingtongreens-weekend-beach-drop-in-activities/2026-09-05/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "BurlingtonGreen’s Weekend Beach Drop in Activities",
+      "url": "https://activeparents.ca/series/burlingtongreens-weekend-beach-drop-in-activities/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2791,19 +2817,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Get Ready for Kindergarten",
-      "url": "https://activeparents.ca/series/get-ready-for-kindergarten/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Google Calendar",
       "url": "https://www.google.com/calendar/render?cid=webcal%3A%2F%2Factiveparents.ca%2F%3Fpost_type%3Dtribe_events%26ical%3D1%26eventDisplay%3Dlist",
       "source": "Active Parents regional calendar",
@@ -2843,8 +2856,8 @@
       "candidateType": "link"
     },
     {
-      "title": "Little Wigglers at Hamilton Children’s Museum",
-      "url": "https://activeparents.ca/series/little-wigglers-at-hamilton-childrens-museum/",
+      "title": "Mountainside Pool Summer Community Events",
+      "url": "https://activeparents.ca/series/mountainside-pool-summer-community-events/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2856,8 +2869,8 @@
       "candidateType": "link"
     },
     {
-      "title": "Mountainside Pool Summer Community Events",
-      "url": "https://activeparents.ca/series/mountainside-pool-summer-community-events/",
+      "title": "Nelson Pool Summer Community Event Nights",
+      "url": "https://activeparents.ca/series/nelson-pool-summer-community-event-nights/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2962,19 +2975,6 @@
     {
       "title": "Sensory-Safe Events",
       "url": "https://activeparents.ca/sensory-friendly-events/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Story Time Mondays at Donut Monster in Hamilton",
-      "url": "https://activeparents.ca/series/story-time-mondays-at-donut-monster-in-hamilton/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
