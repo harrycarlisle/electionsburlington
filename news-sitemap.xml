@@ -2,6 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://burlingtonnews.ca/stories/domcon-2026-burlington-atrium/</loc>
+    <news:news>
+      <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-08-31T16:00:00-04:00</news:publication_date>
+      <news:title>Nationalist conference moved to Burlington after two Hamilton venues cancelled bookings</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://burlingtonnews.ca/stories/king-road-magnetic-hill/</loc>
     <news:news>
       <news:publication><news:name>Burlington News</news:name><news:language>en</news:language></news:publication>
