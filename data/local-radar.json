@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T02:38:42.122314-04:00",
+  "generatedAt": "2026-08-31T09:38:02.427558-04:00",
   "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
   "rightNow": [],
   "homepage": [
@@ -803,6 +803,76 @@
       "eligibleEditorial": true
     },
     {
+      "id": "domcon-2026-burlington-atrium",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Nationalist conference moved to Burlington after two Hamilton venues cancelled bookings",
+      "deck": "DomCon 2026 was held at The Atrium on North Service Road. The private venue says it did not know the Dominion Society's background when it accepted the booking.",
+      "label": "Local affairs",
+      "labelEssential": true,
+      "url": "stories/domcon-2026-burlington-atrium/",
+      "image": "assets/editorial/domcon-hamilton-to-burlington.png",
+      "alt": "Graphic showing DomCon moving along the QEW from two cancelled Hamilton venues to Burlington.",
+      "credit": "Burlington News graphic",
+      "imageRights": "Original Burlington News graphic",
+      "published": "2026-08-31",
+      "activeFrom": "2026-08-31",
+      "activeUntil": "2026-09-14",
+      "publishedAt": "2026-08-31T16:00:00-04:00",
+      "datePublished": "2026-08-31T16:00:00-04:00",
+      "storyGoal": "Explain how DomCon relocated from two cancelled Hamilton bookings to a private Burlington venue and identify the unanswered questions about the booking and notice.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Official police and organizer records plus attributed CBC, CHCH and community-organization reporting",
+      "sources": [
+        "https://hamiltonpolice.on.ca/news/domcon-continues-to-search-for-hamilton-venue/",
+        "https://www.chch.com/chch-news/anti-immigration-group-moves-planned-conference-out-of-hamilton-amid-pressure/",
+        "https://thepublicrecord.ca/tpr-now-hamilton-news-info-updates-links-for-25-august-2026/",
+        "https://www.dominionsociety.ca/domcon",
+        "https://www.dominionsociety.ca/what-is-remigration"
+      ],
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 2.4,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "city",
+      "subjects": [
+        "domcon",
+        "dominion-society",
+        "the-atrium",
+        "private-venues",
+        "hamilton",
+        "burlington"
+      ],
+      "lastHomepageLead": "2026-08-31",
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "d1da068f3ddf0085",
+      "radarScore": 66,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": true,
+      "eligibleEditorial": true
+    },
+    {
       "id": "costco-burloak-wyecroft",
       "kind": "original",
       "surfaces": [
@@ -855,55 +925,6 @@
       "source": "Burlington News",
       "sourceType": "official",
       "radarId": "7191e542f0cca14a",
-      "radarScore": 66,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": false,
-      "eligibleEditorial": true
-    },
-    {
-      "id": "skyway-tunnels",
-      "kind": "original",
-      "surfaces": [
-        "feature"
-      ],
-      "headline": "Ontario nearly replaced the Skyway with three tunnels.",
-      "deck": "A ship strike, failed tolls, 84 purchased properties and a crash 14 minutes after the second span opened.",
-      "label": "Feature",
-      "labelEssential": true,
-      "url": "articles/skyway-bridge-story.html",
-      "image": "assets/home/skyway-reader.webp",
-      "alt": "The Burlington Bay James N. Allan Skyway",
-      "credit": "Dave Lauretti · CC BY 2.0",
-      "published": "2026-08-24",
-      "evergreen": true,
-      "signals": {
-        "interest": 3.0999999999999996,
-        "relevance": 5.0,
-        "novelty": 3.3,
-        "familiarity": 3.5,
-        "consequence": 2.0,
-        "freshness": 0.7,
-        "sourceConfidence": 4.0,
-        "originality": 5.0,
-        "visualStrength": 5.0,
-        "rotation": 5.0
-      },
-      "gates": {
-        "evidence": "passed",
-        "burlington": "passed",
-        "imageRights": "passed",
-        "duplicate": "passed"
-      },
-      "topic": "history",
-      "subjects": [
-        "skyway",
-        "history"
-      ],
-      "source": "Burlington News",
-      "sourceType": "official",
-      "verificationTier": "reported",
-      "radarId": "b406746ce2dd679e",
       "radarScore": 66,
       "eligibleRightNow": false,
       "eligibleHomepage": true,
@@ -1993,6 +2014,76 @@
       "eligibleEditorial": false
     },
     {
+      "id": "domcon-2026-burlington-atrium",
+      "kind": "original",
+      "surfaces": [
+        "feature",
+        "latest",
+        "rail"
+      ],
+      "headline": "Nationalist conference moved to Burlington after two Hamilton venues cancelled bookings",
+      "deck": "DomCon 2026 was held at The Atrium on North Service Road. The private venue says it did not know the Dominion Society's background when it accepted the booking.",
+      "label": "Local affairs",
+      "labelEssential": true,
+      "url": "stories/domcon-2026-burlington-atrium/",
+      "image": "assets/editorial/domcon-hamilton-to-burlington.png",
+      "alt": "Graphic showing DomCon moving along the QEW from two cancelled Hamilton venues to Burlington.",
+      "credit": "Burlington News graphic",
+      "imageRights": "Original Burlington News graphic",
+      "published": "2026-08-31",
+      "activeFrom": "2026-08-31",
+      "activeUntil": "2026-09-14",
+      "publishedAt": "2026-08-31T16:00:00-04:00",
+      "datePublished": "2026-08-31T16:00:00-04:00",
+      "storyGoal": "Explain how DomCon relocated from two cancelled Hamilton bookings to a private Burlington venue and identify the unanswered questions about the booking and notice.",
+      "editorialStandard": "docs/EDITORIAL_OPERATING_SYSTEM.md",
+      "editorialWorkflow": "ready",
+      "verificationTier": "Official police and organizer records plus attributed CBC, CHCH and community-organization reporting",
+      "sources": [
+        "https://hamiltonpolice.on.ca/news/domcon-continues-to-search-for-hamilton-venue/",
+        "https://www.chch.com/chch-news/anti-immigration-group-moves-planned-conference-out-of-hamilton-amid-pressure/",
+        "https://thepublicrecord.ca/tpr-now-hamilton-news-info-updates-links-for-25-august-2026/",
+        "https://www.dominionsociety.ca/domcon",
+        "https://www.dominionsociety.ca/what-is-remigration"
+      ],
+      "signals": {
+        "interest": 2.3,
+        "relevance": 5.0,
+        "novelty": 3.3,
+        "familiarity": 3.5,
+        "consequence": 2.0,
+        "freshness": 2.4,
+        "sourceConfidence": 2.8,
+        "originality": 5.0,
+        "visualStrength": 5.0,
+        "rotation": 5.0
+      },
+      "gates": {
+        "evidence": "passed",
+        "burlington": "passed",
+        "imageRights": "passed",
+        "duplicate": "passed"
+      },
+      "topic": "city",
+      "subjects": [
+        "domcon",
+        "dominion-society",
+        "the-atrium",
+        "private-venues",
+        "hamilton",
+        "burlington"
+      ],
+      "lastHomepageLead": "2026-08-31",
+      "source": "Burlington News",
+      "sourceType": "official",
+      "radarId": "d1da068f3ddf0085",
+      "radarScore": 66,
+      "eligibleRightNow": false,
+      "eligibleHomepage": false,
+      "eligibleNewest": true,
+      "eligibleEditorial": true
+    },
+    {
       "id": "costco-burloak-wyecroft",
       "kind": "original",
       "surfaces": [
@@ -2259,37 +2350,6 @@
       "eligibleHomepage": true,
       "eligibleNewest": true,
       "eligibleEditorial": true
-    },
-    {
-      "id": "511:295312",
-      "detectedAt": "2026-08-30T19:26:01Z",
-      "score": 75,
-      "headline": "Vehicle Fire on QEW Toronto bound  at ROYAL WINDSOR DRIVE, Oakville. 3 right lanes and right shoulder closed.",
-      "kind": "traffic",
-      "location": "QEW",
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "status": "review",
-      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
-      "url": "https://511on.ca/",
-      "radarId": "528aa0bf2f4e4474",
-      "signals": {
-        "interest": 3.0999999999999996,
-        "relevance": 3.4,
-        "novelty": 2.5,
-        "familiarity": 2.5,
-        "consequence": 2.8,
-        "freshness": 3.2,
-        "sourceConfidence": 5.0,
-        "originality": 2.6,
-        "visualStrength": 4.0,
-        "rotation": 5.0
-      },
-      "radarScore": 65,
-      "eligibleRightNow": false,
-      "eligibleHomepage": true,
-      "eligibleNewest": true,
-      "eligibleEditorial": false
     },
     {
       "id": "burlington-road-closures-september-2026",
@@ -2983,6 +3043,37 @@
       "eligibleEditorial": true
     },
     {
+      "id": "511:295312",
+      "detectedAt": "2026-08-30T19:26:01Z",
+      "score": 75,
+      "headline": "Vehicle Fire on QEW Toronto bound  at ROYAL WINDSOR DRIVE, Oakville. 3 right lanes and right shoulder closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article.",
+      "url": "https://511on.ca/",
+      "radarId": "528aa0bf2f4e4474",
+      "signals": {
+        "interest": 3.0999999999999996,
+        "relevance": 3.4,
+        "novelty": 2.5,
+        "familiarity": 2.5,
+        "consequence": 2.8,
+        "freshness": 2.4,
+        "sourceConfidence": 5.0,
+        "originality": 2.6,
+        "visualStrength": 4.0,
+        "rotation": 5.0
+      },
+      "radarScore": 62,
+      "eligibleRightNow": false,
+      "eligibleHomepage": true,
+      "eligibleNewest": true,
+      "eligibleEditorial": false
+    },
+    {
       "title": "Infrastructure and Growth",
       "url": "https://www.halton.ca/for-residents/infrastructure-and-growth",
       "source": "Halton Region",
@@ -3125,7 +3216,7 @@
         "sourceConfidence": 2.8,
         "originality": 5.0,
         "visualStrength": 5.0,
-        "rotation": 1.804495295462963
+        "rotation": 2.2
       },
       "gates": {
         "evidence": "passed",
