@@ -5,6 +5,19 @@ on:
     # Scan general civic/local sources twice an hour. Breaking sources run separately every 15 minutes.
     - cron: '12,42 * * * *'
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/daily-civic-watch.yml'
+      - 'data/beat-watchlist.json'
+      - 'data/editorial-policy.json'
+      - 'data/story-catalog.json'
+      - 'scripts/auto_publish_briefs.py'
+      - 'scripts/build_editorial_queue.py'
+      - 'scripts/editorial_policy.py'
+      - 'scripts/test_auto_publish_policy.py'
+      - 'scripts/test_civic_watch_memory.py'
+      - 'scripts/update_civic_watch.py'
+      - 'scripts/update_civic_watch_local.py'
 
 permissions:
   contents: write
