@@ -1,0 +1,29 @@
+{
+  "purpose": "Seed active follow-up beats and semantic terms that may not appear verbatim in published story subjects. Published story subjects are also added automatically by the civic monitor.",
+  "beats": [
+    {
+      "id": "e-scooter-policy",
+      "name": "E-scooters and micromobility",
+      "enabled": true,
+      "terms": ["e-scooter", "e-scooters", "electric scooter", "micromobility", "shared scooter", "scooter pilot"]
+    },
+    {
+      "id": "domcon-follow-up",
+      "name": "DomCon and Dominion Society",
+      "enabled": true,
+      "terms": ["DomCon", "Dominion Society", "remigration", "The Atrium"]
+    },
+    {
+      "id": "skyway-corridor",
+      "name": "Skyway and harbour crossings",
+      "enabled": true,
+      "terms": ["Burlington Skyway", "James N. Allan Skyway", "lift bridge", "canal bridge", "harbour crossing"]
+    },
+    {
+      "id": "burlington-election-2026",
+      "name": "Burlington election",
+      "enabled": true,
+      "terms": ["Burlington election", "municipal election", "candidate debate", "all-candidates", "ward boundaries"]
+    }
+  ]
+}
