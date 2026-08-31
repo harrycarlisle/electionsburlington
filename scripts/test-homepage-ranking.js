@@ -63,11 +63,13 @@ assert(canLabelMostRead(40) === true, 'mature sample can use a readership label'
 assert(uniqueCameraCount([{viewId: 1}, {cameraId: 1}, {viewId: 2}]) === 2, 'unique cameras');
 
 const homepage = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const breakingArchive = JSON.parse(readFileSync(new URL('../data/breaking-archive.json', import.meta.url), 'utf8'));
 const exploreMarkup = homepage.match(/<section class="explore-band"[\s\S]*?<\/section>/)?.[0] || '';
 assert(/id="breakingNow"[^>]*data-state="local-update"/.test(homepage), 'homepage ships with a visible Local Update rail');
-assert(/id="breakingNow"[\s\S]*?Police take man into custody after Ghent Avenue standoff/.test(homepage), 'resolved Ghent update remains in the Local Update rail');
-assert(/id="breakingNow"[\s\S]*?RESOLVED YESTERDAY/.test(homepage), 'resolved Ghent update is clearly dated yesterday');
-assert(/class="top-story" data-story-id="can-you-have-backyard-fire-pit-burlington"[\s\S]*?ontario-backyard-fire-pit-gathering-16x9\.png/.test(homepage), 'homepage lead uses a real editorial photograph');
+assert(/id="breakingNow"[\s\S]*?Nationalist conference moved to Burlington after two Hamilton venues cancelled/.test(homepage), 'newest verified Burlington development replaces the older Ghent update');
+assert(/id="breakingNow"[\s\S]*?TODAY/.test(homepage), 'new local update is clearly dated today');
+assert(/class="top-story" data-story-id="domcon-2026-burlington-atrium"[\s\S]*?domcon-hamilton-to-burlington\.png/.test(homepage), 'homepage lead uses the original DomCon editorial graphic');
+assert(breakingArchive.items?.[0]?.id === 'domcon-2026-burlington-atrium', 'live Local Update data advances to the DomCon Burlington story');
 assert(/class="pick-grid"/.test(exploreMarkup) && /class="pick-card"/.test(exploreMarkup), 'Explore reuses Top Picks grid and card markup');
 assert(!/explore-home-card|explore-home-grid|explore-intro|explore-heading/.test(exploreMarkup), 'legacy Explore-only presentation is absent');
 assert(/<footer class="site-legal-footer">/.test(homepage), 'homepage uses the shared publication footer');
