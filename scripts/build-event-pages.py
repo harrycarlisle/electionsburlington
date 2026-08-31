@@ -72,6 +72,13 @@ def page_html(event: dict) -> str:
         ],
     }
     nearby = "NEARBY" if event.get("scope") != "Burlington" else "Burlington"
+    hero = ""
+    if event.get("showHero"):
+        hero = (
+            f'<figure class="authority-event-hero"><img src="{escape(image)}" '
+            f'alt="{escape(event.get("imageAlt") or title)}" fetchpriority="high">'
+            f'<figcaption>{escape(event.get("credit") or "Burlington News")}</figcaption></figure>'
+        )
     return f"""<!doctype html>
 <html lang="en-CA">
 <head>
@@ -98,12 +105,13 @@ def page_html(event: dict) -> str:
 </head>
 <body class="authority-page">
 <a class="skip" href="#main">Skip to content</a>
-<header class="header"><div class="wrap header-inner"><a class="brand" href="/">Burlington News</a><button class="menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
+<header class="header"><div class="wrap header-inner"><a class="brand news-brand brand-mark-only" href="/" aria-label="Burlington News home"><img class="news-brand-logo" src="/assets/brand/bn-logo-transparent.png?v=20260831transparent2" width="38" height="38" alt=""></a><button class="menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button><nav class="nav" id="mainNav" aria-label="Primary"></nav></div></header>
 <main id="main" class="authority-shell">
 <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="/">Home</a> /</li><li><a href="/explore/">Explore</a> /</li><li>{escape(title)}</li></ol></nav>
 <p class="authority-kicker">{escape(event.get("category") or "Event")} · {escape(nearby)}</p>
 <h1>{escape(title)}</h1>
 <p class="authority-hook">{escape(why)}</p>
+{hero}
 <section class="direct-answer"><h2>Why go</h2><p>{escape(why)}</p></section>
 <section class="authority-section">
 <table class="data-table">

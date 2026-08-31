@@ -112,12 +112,23 @@
 
   const BRAND_ICON = '/assets/brand/favicon-32x32.png?v=20260830logo1';
   const BRAND_TOUCH = '/assets/brand/apple-touch-icon.png?v=20260830logo1';
-  const BRAND_MARK = isHome()
-    ? '/assets/brand/bn-logo-transparent.png?v=20260830logo1'
-    : '/assets/brand/bn-logo-transparent.png?v=20260831transparent1';
+  const BRAND_MARK = '/assets/brand/bn-logo-transparent.png?v=20260831transparent2';
+  const MOBILE_HEADER = matchMedia('(max-width:720px)');
 
   function brandMarkup() {
     return `<img class="news-brand-logo" src="${BRAND_MARK}" alt="">`;
+  }
+
+  function syncBrandHomeLink(brand) {
+    if (MOBILE_HEADER.matches) {
+      brand.removeAttribute('href');
+      brand.setAttribute('aria-label', 'Burlington News');
+      brand.setAttribute('tabindex', '-1');
+    } else {
+      brand.href = '/';
+      brand.setAttribute('aria-label', 'Burlington News home');
+      brand.removeAttribute('tabindex');
+    }
   }
 
   function ensureHeadLink(rel, href, attrs) {
@@ -135,9 +146,8 @@
   function applyBrand() {
     document.querySelectorAll('.header .brand, .site-header .brand').forEach(brand => {
       brand.className = 'brand news-brand brand-mark-only';
-      brand.href = '/';
       brand.innerHTML = brandMarkup();
-      brand.setAttribute('aria-label', 'Burlington News home');
+      syncBrandHomeLink(brand);
     });
     ensureHeadLink('icon', BRAND_ICON, { type: 'image/png', sizes: '32x32' });
     ensureHeadLink('icon', '/assets/brand/favicon-16x16.png?v=20260830logo1', { type: 'image/png', sizes: '16x16' });
@@ -152,6 +162,10 @@
     }
     theme.content = '#071b35';
   }
+
+  MOBILE_HEADER.addEventListener?.('change', () => {
+    document.querySelectorAll('.header .brand, .site-header .brand').forEach(syncBrandHomeLink);
+  });
 
   function addSeo() {
     if (isHome()) document.title = 'Burlington News | Local news, events and election coverage';
