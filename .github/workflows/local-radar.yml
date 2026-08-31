@@ -8,11 +8,12 @@ on:
     paths:
       - 'scripts/build_local_radar.py'
       - 'data/story-catalog.json'
+      - 'data/beat-watchlist.json'
       - 'data/editorial-policy.json'
       - '.github/workflows/local-radar.yml'
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: burlington-news-main-writers
@@ -30,9 +31,11 @@ jobs:
           python-version: '3.12'
       - name: Build ranked local radar
         run: python scripts/build_local_radar.py
-      - name: Commit radar state
-        run: >-
-          python scripts/safe_bot_commit.py
-          --name "burlington-news-radar"
-          --message "Update Burlington local radar"
-          data/local-radar.json data/radar-seen.json
+      - name: Upload radar for editorial review
+        uses: actions/upload-artifact@v4
+        with:
+          name: burlington-local-radar-${{ github.run_id }}
+          path: |
+            data/local-radar.json
+            data/radar-seen.json
+          retention-days: 14

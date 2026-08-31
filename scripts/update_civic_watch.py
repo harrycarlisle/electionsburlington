@@ -28,13 +28,18 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
 ARCHIVE = DATA / 'archive'
 IMAGE_HISTORY = DATA / 'image-history.json'
+BEAT_WATCHLIST = DATA / 'beat-watchlist.json'
 
 SOURCES = [
     {'name':'City of Burlington News','url':'https://www.burlington.ca/en/news-and-notices/news-and-notices.aspx','type':'official','scope':'city','images':True},
+    {'name':'City of Burlington Public Engagement','url':'https://www.burlington.ca/en/council-and-city-administration/public-engagement.aspx','type':'official','scope':'city','images':False},
     {'name':'City mayoral decisions','url':'https://www.burlington.ca/en/council-and-city-administration/mayoral-decisions.aspx','type':'official','scope':'city','images':True},
     {'name':'City development applications','url':'https://www.burlington.ca/en/planning-and-development/development-applications.aspx','type':'official','scope':'city','images':True},
     {'name':'City of Burlington Election','url':'https://myvote.burlington.ca/','type':'official','scope':'election','images':True},
     {'name':'Halton Region','url':'https://www.halton.ca/news/media-releases','type':'official','scope':'region','images':True},
+    {'name':'Town of Oakville News and Notices','url':'https://www.oakville.ca/town-hall/news-notices/','type':'official','scope':'oakville','images':True},
+    {'name':'Town of Oakville Agendas and Meetings','url':'https://www.oakville.ca/town-hall/mayor-council-administration/agendas-meetings/','type':'official','scope':'oakville','images':False},
+    {'name':'City of Hamilton News Releases','url':'https://www.hamilton.ca/city-council/news-notices/news-releases','type':'official','scope':'hamilton','images':True},
     {'name':'Metrolinx','url':'https://www.metrolinx.com/en/news/archive','type':'official','scope':'transit','images':True},
     {'name':'Ontario 511','url':'https://511on.ca/','type':'official','scope':'transit','images':False},
     {'name':'Hamilton Harbour Lift Bridge','url':'https://www.harbourwest.ca/public-notice/','type':'official','scope':'transit','images':False},
@@ -58,11 +63,61 @@ TOPIC_KEYWORDS = (
     'community centre','park','development application','appeal','ontario land tribunal','train station',
     'festival','ribfest','event','food','restaurant','market','concert','fitness','pickleball','sport',
     'collision','crash','closure','skyway','lift bridge','canal bridge','qew','highway 403','highway 407',
-    'school','student','wildlife','bird','fish','trail','museum','library','waterfront','beach','recreation'
+    'school','student','wildlife','bird','fish','trail','museum','library','waterfront','beach','recreation',
+    'e-scooter','scooter','micromobility','pilot program','town hall','public consultation','public meeting',
+    'public information centre','open house','community meeting','committee meeting','agenda','delegation','hearing','survey','engagement'
 )
 REGIONAL_TERMS = ('burlington','regional council','regional chair','halton budget','halton housing','water','wastewater','regional road','growth','infrastructure','police board')
 TRANSIT_TERMS = ('burlington','burlington station','appleby','burloak','lakeshore west','hamilton','confederation go','go station','go transit','presto','rail bridge','skyway','lift bridge','canal bridge','qew','highway 403','highway 407','oakville','milton','georgetown')
+HAMILTON_CROSSOVER_TERMS = ('burlington','halton','waterdown','stoney creek','qew','skyway','lift bridge','canal bridge','highway 403','burloak')
+GENERIC_BEAT_TERMS = {
+    'burlington','city','local','news','safety','ontario','canada','public','today','original','official','reported',
+    'event','events','community','sports','traffic','transit','transportation','roads','road closures','closures',
+    'parks','recreation','schools','students','development','housing','business','food','election','environment'
+}
+UPCOMING_TERMS = ('town hall','public consultation','public meeting','public information centre','open house','community meeting','committee meeting','hearing','survey','engagement session','have your say')
+BREAKING_TERMS = ('emergency','evacuation','service suspended','all lanes closed','active fire','police warning','boil water advisory','tornado warning','shelter in place')
 USER_AGENT='BurlingtonNews/2.0 (+https://burlingtonnews.ca/)'
+
+
+def load_json(path, fallback):
+    try: return json.loads(Path(path).read_text(encoding='utf-8'))
+    except Exception: return fallback
+
+
+def normalized(value):
+    return re.sub(r'[^a-z0-9]+',' ',str(value or '').lower()).strip()
+
+
+def active_beats(catalog=None, configured=None):
+    """Combine explicit beats with meaningful subjects from published stories."""
+    catalog = catalog if catalog is not None else load_json(DATA/'story-catalog.json', {'items':[]})
+    configured = configured if configured is not None else load_json(BEAT_WATCHLIST, {'beats':[]})
+    beats=[]
+    for raw in configured.get('beats',[]):
+        if raw.get('enabled',True) is False: continue
+        terms=[]
+        for value in raw.get('terms') or []:
+            term=normalized(value)
+            if len(term)>=4 and term not in GENERIC_BEAT_TERMS: terms.append(term)
+        if terms: beats.append({**raw,'terms':sorted(set(terms)),'origin':'configured-beat'})
+    for story in catalog.get('items',[]):
+        terms=[]
+        for value in story.get('subjects') or []:
+            term=normalized(value)
+            if term not in GENERIC_BEAT_TERMS and (len(term)>=8 or ' ' in term): terms.append(term)
+        if not terms: continue
+        beats.append({'id':story.get('id'),'headline':story.get('headline'),'terms':sorted(set(terms)),'origin':'published-story'})
+    return beats
+
+
+def matching_beats(value, beats):
+    hay=f" {normalized(value)} "
+    matches=[]
+    for beat in beats:
+        found=[term for term in beat.get('terms',[]) if f" {term} " in hay]
+        if found: matches.append({'id':beat.get('id'),'headline':beat.get('headline') or beat.get('name'),'terms':found,'origin':beat.get('origin')})
+    return matches
 
 
 class LinkParser(HTMLParser):
@@ -88,21 +143,23 @@ def fetch(url):
         return r.read().decode(charset,errors='replace'), r.headers.get('Content-Type','')
 
 
-def relevant(source,title,url):
+def relevant(source,title,url,beats=()):
     hay=f'{title} {url}'.lower()
+    beat_hit=bool(matching_beats(hay,beats))
     if re.fullmatch(r'(list of candidates|for candidates|candidate financials|candidate news and updates)',title.strip(),re.I): return False
-    if not any(k in hay for k in TOPIC_KEYWORDS): return False
+    if not any(k in hay for k in TOPIC_KEYWORDS) and not beat_hit: return False
     if source.get('scope')=='transit': return any(k in hay for k in TRANSIT_TERMS)
     if source.get('scope')=='region': return any(k in hay for k in REGIONAL_TERMS)
+    if source.get('scope')=='hamilton': return beat_hit or any(k in hay for k in HAMILTON_CROSSOVER_TERMS)
     return True
 
 
-def clean_links(source,body):
+def clean_links(source,body,beats=()):
     p=LinkParser(source['url']); p.feed(body)
     seen=set(); items=[]
     for rank,link in enumerate(p.links):
         title=link['title'].strip(' -–—|•'); url=link['url']
-        if len(title)<12 or len(title)>180 or not relevant(source,title,url): continue
+        if len(title)<12 or len(title)>180 or not relevant(source,title,url,beats): continue
         if urllib.parse.urlparse(url).scheme not in ('http','https'): continue
         key=(title.lower(),url.split('#')[0].rstrip('/'))
         if key in seen: continue
@@ -168,6 +225,28 @@ def importance(item):
     return min(score,5)
 
 
+def classify_item(item, beats):
+    content_hay=f"{item.get('title','')} {item.get('description','')}"
+    hay=f"{content_hay} {item.get('url','')}"
+    matches=matching_beats(hay,beats)
+    if matches:
+        item['followUpTo']=[match['id'] for match in matches if match.get('id')]
+        item['beatMatches']=matches
+        item['importance']=min(5,int(item.get('importance') or 1)+1)
+    normalized_hay=normalized(content_hay)
+    if int(item.get('importance') or 1)>=5 and any(term in normalized_hay for term in BREAKING_TERMS):
+        item['radarClass']='Breaking'
+    elif any(term in normalized_hay for term in UPCOMING_TERMS):
+        item['radarClass']='Upcoming'
+    elif int(item.get('importance') or 1)>=5:
+        item['radarClass']='Publish Today'
+    elif int(item.get('importance') or 1)>=3 or matches:
+        item['radarClass']='Watch'
+    else:
+        item['radarClass']='Probably Ignore'
+    return item
+
+
 def why_for(item):
     s=f"{item['title']} {item.get('description','')}".lower()
     if 'result' in s or 'elected' in s or 'winner' in s: return 'This changes who represents Burlington and what happens next at City Hall.'
@@ -230,12 +309,13 @@ def recent_image_conflict(image,url,now,history):
 
 def main():
     now=dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
+    beats=active_beats()
     try: history=json.loads(IMAGE_HISTORY.read_text(encoding='utf-8')).get('items',[])
     except Exception: history=[]
     collected=[]; source_status=[]
     for source in SOURCES:
         try:
-            body,_=fetch(source['url']); links=clean_links(source,body); collected.extend(links)
+            body,_=fetch(source['url']); links=clean_links(source,body,beats); collected.extend(links)
             source_status.append({'source':source['name'],'ok':True,'found':len(links)})
         except Exception as exc:
             source_status.append({'source':source['name'],'ok':False,'error':str(exc)[:180]})
@@ -250,7 +330,7 @@ def main():
     enriched=[enrich(dict(x)) for x in candidates]
     enriched=[x for x in enriched if x.get('verified')]
     for item in enriched:
-        item['importance']=importance(item); item['why']=why_for(item); item['tag']=tag_for(item)
+        item['importance']=importance(item); item['why']=why_for(item); item['tag']=tag_for(item); classify_item(item,beats)
 
     enriched.sort(key=lambda x:(x['importance'],date_key(x),-x.get('pageRank',9999)),reverse=True)
     top=[]; used_sources={}; current_images=set()
@@ -264,7 +344,7 @@ def main():
         if image: current_images.add(image)
         if len(top)==3: break
 
-    monitor={'checkedAt':now.isoformat().replace('+00:00','Z'),'method':'Verified, rule-based Burlington civic monitor. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.','sources':source_status,'items':enriched[:100]}
+    monitor={'checkedAt':now.isoformat().replace('+00:00','Z'),'method':'Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.','activeBeatCount':len(beats),'sources':source_status,'items':enriched[:100]}
     DATA.mkdir(parents=True,exist_ok=True); ARCHIVE.mkdir(parents=True,exist_ok=True)
     (DATA/'source-monitor.json').write_text(json.dumps(monitor,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     (ARCHIVE/f'{now.date().isoformat()}.json').write_text(json.dumps(monitor,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
@@ -272,7 +352,7 @@ def main():
     if top:
         brief_items=[]
         for item in top:
-            brief_items.append({'date':item.get('published','')[:10] or now.date().isoformat(),'tag':item['tag'],'headline':item['title'],'summary':item.get('description') or item['title'],'why':item['why'],'importance':item['importance'],'source':item['source'],'sourceType':item['sourceType'],'verificationTier':item.get('verificationTier'),'url':item['url'],**({'image':item['image'],'imageSource':item.get('imageSource'),'imageSourceUrl':item.get('imageSourceUrl')} if item.get('image') else {}),**({'mediaType':item['mediaType']} if item.get('mediaType') else {})})
+            brief_items.append({'date':item.get('published','')[:10] or now.date().isoformat(),'tag':item['tag'],'headline':item['title'],'summary':item.get('description') or item['title'],'why':item['why'],'importance':item['importance'],'radarClass':item.get('radarClass'),'followUpTo':item.get('followUpTo') or [],'beatMatches':item.get('beatMatches') or [],'source':item['source'],'sourceType':item['sourceType'],'verificationTier':item.get('verificationTier'),'url':item['url'],**({'image':item['image'],'imageSource':item.get('imageSource'),'imageSourceUrl':item.get('imageSourceUrl')} if item.get('image') else {}),**({'mediaType':item['mediaType']} if item.get('mediaType') else {})})
         brief={'updated':now.isoformat().replace('+00:00','Z'),'scope':'Burlington news, local life and civic affairs','items':brief_items,'sourcesCheckedAt':now.isoformat().replace('+00:00','Z')}
         (DATA/'daily-brief.json').write_text(json.dumps(brief,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
         for item in brief_items:

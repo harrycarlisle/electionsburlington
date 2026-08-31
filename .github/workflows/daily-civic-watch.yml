@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: burlington-news-main-writers
@@ -26,34 +26,20 @@ jobs:
           python-version: '3.12'
       - name: Check Burlington news sources
         run: python scripts/update_civic_watch_local.py
+      - name: Verify published-story memory
+        run: python scripts/test_civic_watch_memory.py
       - name: Build original-story candidates
         run: python scripts/build_original_candidates.py
       - name: Build editorial queue
         run: python scripts/build_editorial_queue.py
-      - name: Publish verified low-risk stories
-        run: python scripts/auto_publish_briefs.py
-      - name: Merge manually published stories
-        run: python scripts/merge_manual_stories.py
-      - name: Rotate homepage stories
-        run: python scripts/rank_stories.py
-      - name: Render stable homepage first paint
-        run: python scripts/render_live_homepage.py
-      - name: Publish clean public URLs
-        run: python scripts/sync_public_urls.py
-      - name: Apply editorial presentation overrides
-        run: python scripts/apply_story_presentation.py
-      - name: Normalize search metadata and sitemaps
-        run: python scripts/search_indexing_hygiene.py
-      - name: Remove duplicate legacy redirect tags
-        run: python scripts/dedupe_legacy_redirects.py
-      - name: Commit verified updates and stories
-        run: >-
-          python scripts/safe_bot_commit.py
-          --name "burlington-news-watch"
-          --message "Update Burlington news watch"
-          data/source-monitor.json data/archive data/daily-brief.json
-          data/image-history.json data/ballot.json data/editorial-queue.json
-          data/home-surface.json data/auto-published.json data/original-candidates.json
-          data/lead-history.json data/story-catalog.json data/radar-seen.json
-          index.html articles news explore elections traffic sports games stories
-          sitemap.xml news-sitemap.xml 404.html
+      - name: Upload leads for editorial review
+        uses: actions/upload-artifact@v4
+        with:
+          name: burlington-news-leads-${{ github.run_id }}
+          path: |
+            data/source-monitor.json
+            data/daily-brief.json
+            data/editorial-queue.json
+            data/original-candidates.json
+            data/lead-history.json
+          retention-days: 14

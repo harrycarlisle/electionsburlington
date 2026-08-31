@@ -29,7 +29,7 @@ NAV_JUNK = (
 )
 
 SOURCE_CONFIDENCE = {"official": 5.0, "primary": 5.0, "reporting": 4.0, "reported": 4.0, "community": 2.0, "social": 1.5}
-HIGH_INTEREST = ("crash", "collision", "fire", "crime", "police", "rabies", "school", "tax", "closure", "flood", "outage", "election", "restaurant", "food", "golf", "record", "winless", "0-24", "skyway", "go transit", "housing")
+HIGH_INTEREST = ("crash", "collision", "fire", "crime", "police", "rabies", "school", "tax", "closure", "flood", "outage", "election", "restaurant", "food", "golf", "record", "winless", "0-24", "skyway", "go transit", "housing", "e-scooter", "micromobility", "town hall", "public meeting", "consultation", "domcon", "dominion society")
 HIGH_CONSEQUENCE = ("collision", "closure", "outage", "evac", "fire", "rabies", "crime", "police", "tax", "budget", "election", "road closed", "train", "school", "health")
 BURLINGTON_TERMS = ("burlington", "brant street", "guelph line", "walkers line", "appleby line", "aldershot", "plains road", "spencer smith", "millcroft", "mount nemo", "lowville", "skyway", "burloak")
 NEARBY_TERMS = ("oakville", "halton", "hamilton", "waterdown", "milton", "qew", "lakeshore west", "royal botanical gardens")
@@ -157,7 +157,7 @@ def normalize(item: dict, kind: str, now: dt.datetime, seen: dict) -> dict:
     signals = {
         "interest": keyword_score(candidate, HIGH_INTEREST, 2.3),
         "relevance": locality_score(candidate),
-        "novelty": clamp(2.5 + (0.8 if kind in {"community", "original"} else 0) + (0.5 if re.search(r"\b\d{2,}\b", text(candidate)) else 0)),
+        "novelty": clamp(2.5 + (0.8 if kind in {"community", "original"} else 0) + (0.5 if re.search(r"\b\d{2,}\b", text(candidate)) else 0) + (0.6 if candidate.get("followUpTo") else 0)),
         "familiarity": clamp(2.5 + (1.0 if any(term in text(candidate) for term in BURLINGTON_TERMS) else 0)),
         "consequence": keyword_score(candidate, HIGH_CONSEQUENCE, 2.0),
         "freshness": freshness_score(candidate, now),
@@ -173,9 +173,15 @@ def normalize(item: dict, kind: str, now: dt.datetime, seen: dict) -> dict:
     if "burlingtontoday" in source_lower:
         score *= .82
         candidate["sourceIndependencePenalty"] = True
+    if candidate.get("followUpTo"):
+        score *= 1.12
+        candidate["publishedStoryMemoryBoost"] = True
+    if candidate.get("radarClass") == "Upcoming":
+        score += 8
+        candidate["advanceEventBoost"] = True
     if signals["relevance"] < 2.5 and signals["consequence"] < 4.4:
         score *= .55
-    candidate["radarScore"] = round(score)
+    candidate["radarScore"] = round(min(100, score))
     rules = (load_policy().get("eligibility") or {})
     right_now = rules.get("rightNow") or {}
     homepage = rules.get("homepage") or {}
@@ -191,7 +197,7 @@ def normalize(item: dict, kind: str, now: dt.datetime, seen: dict) -> dict:
         and candidate["radarScore"] >= float(homepage.get("minRadarScore") or 58)
     )
     candidate["eligibleNewest"] = signals["freshness"] >= 2.4 and signals["relevance"] >= 3.0
-    candidate["eligibleEditorial"] = candidate["kind"] in {"original", "community"} or signals["novelty"] >= 3.2
+    candidate["eligibleEditorial"] = candidate["kind"] in {"original", "community"} or signals["novelty"] >= 3.2 or bool(candidate.get("followUpTo")) or candidate.get("radarClass") == "Upcoming"
     return candidate
 
 
@@ -271,6 +277,11 @@ def main() -> int:
         row for row in ranked
         if row["kind"] == "original" or (row["signals"]["novelty"] >= 3.1 and row["signals"]["interest"] >= 3.0)
     ][:12]
+    breaking = [row for row in ranked if row.get("radarClass") == "Breaking"][:8]
+    publish_today = [row for row in ranked if row.get("radarClass") == "Publish Today"][:12]
+    upcoming = [row for row in ranked if row.get("radarClass") == "Upcoming"][:12]
+    watch = [row for row in ranked if row.get("radarClass") == "Watch"][:20]
+    probably_ignore = [row for row in ranked if row.get("radarClass") == "Probably Ignore"][:20]
 
     for row in ranked:
         rec = seen.setdefault(row["radarId"], {})
@@ -285,6 +296,11 @@ def main() -> int:
         "generatedAt": now.isoformat(),
         "method": "Interest + relevance + novelty + familiarity + consequence + freshness + source confidence + originality + visual strength + rotation. BurlingtonToday is discovery/backstop, not a preferred publisher.",
         "rightNow": right_now,
+        "breaking": breaking,
+        "publishToday": publish_today,
+        "upcoming": upcoming,
+        "watch": watch,
+        "probablyIgnore": probably_ignore,
         "homepage": homepage,
         "originalIdeas": originals,
         "items": ranked[:80],
