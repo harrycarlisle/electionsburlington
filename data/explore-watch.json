@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-01T18:28:08+00:00",
+  "checkedAt": "2026-09-01T21:45:17+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 41
+      "candidates": 40
     },
     {
       "name": "Pokémon GO live events",
@@ -2700,16 +2700,16 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "BurlingtonGreen’s Weekend Beach Drop in Activities",
-      "url": "https://activeparents.ca/calendar/burlingtongreens-weekend-beach-drop-in-activities/2026-09-05/",
+      "title": "Kids PAINTNITE",
+      "url": "https://activeparents.ca/calendar/kids-paintnite/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
       "discoveryOnly": true,
-      "startsAt": "2026-09-05T14:00:00+00:00",
-      "endsAt": "2026-09-05T20:00:00+00:00",
-      "location": "BurlingtonGreen Eco-Hub headquarters, 1094 Lakeshore Rd, Burlington, Ontario",
-      "description": "<p>School is out and our team is leading eco-activities and sharing resources at our Eco Hub (1094 Lakeshore Rd). Pop by for a variety of eco-awareness, advocacy, and action opportunities, such as nurdle hunts, button making, microplastic beach clean ups, seed ball making, our popular Eco-Trivia game, and more! You can also visit our pollinator garden to lea",
+      "startsAt": "2026-09-04T22:00:00+00:00",
+      "endsAt": "2026-09-05T00:00:00+00:00",
+      "location": "Williams Fresh Cafe Centennial Drive, 3080 Centennial Dr, Burlington, ON",
+      "description": "<p>PAINTNITE is hosting kids paint parties at Williams Cafe on Brant St (Burlington) EVERY Friday 6-8pm for all ages! Buy your ticket on our website with the promo codes available and get ready for a fun night of artist lead painting!</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -2728,19 +2728,6 @@
     {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "BurlingtonGreen’s Weekend Beach Drop in Activities",
-      "url": "https://activeparents.ca/series/burlingtongreens-weekend-beach-drop-in-activities/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
