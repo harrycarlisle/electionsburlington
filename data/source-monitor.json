@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-01T07:44:12Z",
+  "checkedAt": "2026-09-01T13:27:43Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
@@ -26,7 +26,7 @@
     {
       "source": "City of Burlington Election",
       "ok": true,
-      "found": 24
+      "found": 23
     },
     {
       "source": "Halton Region",
@@ -101,7 +101,7 @@
     {
       "source": "Conservation Halton",
       "ok": true,
-      "found": 30
+      "found": 35
     },
     {
       "source": "Halton District School Board",
@@ -112,7 +112,7 @@
   "items": [
     {
       "title": "Property Tax eBilling",
-      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/property-taxes/property-tax-billing",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/property-tax-billing",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -139,31 +139,18 @@
       "radarClass": "Watch"
     },
     {
-      "title": "Now hiring: Burlington is looking for temporary election officials to help run the 2026 municipal election. All positions are paid and include in-person training. Apply today.",
-      "url": "https://myvote.burlington.ca/work-the-election/",
+      "title": "Election Sign Rules for Candidates",
+      "url": "https://myvote.burlington.ca/for-candidates/election-sign-rules-for-candidates/",
       "source": "City of Burlington Election",
       "sourceType": "official",
       "scope": "election",
       "allowImage": true,
-      "pageRank": 1,
+      "pageRank": 12,
       "verified": true,
       "verificationTier": "primary",
-      "importance": 3,
-      "why": "",
-      "tag": "Burlington",
-      "followUpTo": [
-        "burlington-election-2026"
-      ],
-      "beatMatches": [
-        {
-          "id": "burlington-election-2026",
-          "headline": "Burlington election",
-          "terms": [
-            "municipal election"
-          ],
-          "origin": "configured-beat"
-        }
-      ],
+      "importance": 4,
+      "why": "It adds information voters can use to compare candidates.",
+      "tag": "Candidates",
       "radarClass": "Watch"
     },
     {
@@ -239,7 +226,7 @@
     },
     {
       "title": "Vacant Unit Declaration",
-      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/property-taxes/vacant-unit-tax",
+      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/vacant-unit-tax",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -267,7 +254,7 @@
     },
     {
       "title": "Building Permit",
-      "url": "https://www.hamilton.ca/index%2Ephp/build-invest-grow/construction-renovation/residential-building-renovation",
+      "url": "https://www.hamilton.ca/index%2ephp/build-invest-grow/construction-renovation/residential-building-renovation",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -304,7 +291,7 @@
     },
     {
       "title": "Business Licence",
-      "url": "https://www.hamilton.ca/index%2Ephp/build-invest-grow/starting-small-business/business-licences",
+      "url": "https://www.hamilton.ca/index%2ephp/build-invest-grow/starting-small-business/business-licences",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -332,7 +319,7 @@
     },
     {
       "title": "Jobs at the City",
-      "url": "https://www.hamilton.ca/index%2Ephp/city-council/jobs-city",
+      "url": "https://www.hamilton.ca/index%2ephp/city-council/jobs-city",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -360,7 +347,7 @@
     },
     {
       "title": "Recreation Programs",
-      "url": "https://www.hamilton.ca/index%2Ephp/things-do/recreation/programs",
+      "url": "https://www.hamilton.ca/index%2ephp/things-do/recreation/programs",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -528,6 +515,21 @@
       "radarClass": "Probably Ignore"
     },
     {
+      "title": "New Voting Wards",
+      "url": "https://myvote.burlington.ca/for-voters/new-voting-wards/",
+      "source": "City of Burlington Election",
+      "sourceType": "official",
+      "scope": "election",
+      "allowImage": true,
+      "pageRank": 7,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Your ward",
+      "radarClass": "Probably Ignore"
+    },
+    {
       "title": "Business & Development",
       "url": "https://www.oakville.ca/business-development/",
       "source": "Town of Oakville News and Notices",
@@ -577,8 +579,8 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "New Voting Wards",
-      "url": "https://myvote.burlington.ca/for-voters/new-voting-wards/",
+      "title": "Voters' List",
+      "url": "https://myvote.burlington.ca/for-voters/voters-list/",
       "source": "City of Burlington Election",
       "sourceType": "official",
       "scope": "election",
@@ -588,7 +590,7 @@
       "verificationTier": "primary",
       "importance": 2,
       "why": "",
-      "tag": "Your ward",
+      "tag": "Burlington",
       "radarClass": "Probably Ignore"
     },
     {
@@ -626,8 +628,8 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Voters' List",
-      "url": "https://myvote.burlington.ca/for-voters/voters-list/",
+      "title": "Voting Locations",
+      "url": "https://myvote.burlington.ca/for-voters/voting-locations/",
       "source": "City of Burlington Election",
       "sourceType": "official",
       "scope": "election",
@@ -648,21 +650,6 @@
       "scope": "schools",
       "allowImage": true,
       "pageRank": 9,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington",
-      "radarClass": "Probably Ignore"
-    },
-    {
-      "title": "Voting Locations",
-      "url": "https://myvote.burlington.ca/for-voters/voting-locations/",
-      "source": "City of Burlington Election",
-      "sourceType": "official",
-      "scope": "election",
-      "allowImage": true,
-      "pageRank": 10,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
