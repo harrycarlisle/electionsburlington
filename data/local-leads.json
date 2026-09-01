@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-09-01T18:24:11Z",
+  "generatedAt": "2026-09-01T21:17:19Z",
   "items": [
+    {
+      "id": "511:299505",
+      "detectedAt": "2026-09-01T21:17:19Z",
+      "score": 90,
+      "headline": "Nightly Maintenance on QEW Toronto bound On-ramp at FORD DRIVE, Oakville. ALL LANES CLOSED.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:299506",
+      "detectedAt": "2026-09-01T21:17:19Z",
+      "score": 90,
+      "headline": "Nightly Maintenance on QEW Toronto bound On-ramp at WINSTON CHURCHILL BLVD, Oakville. ALL LANES CLOSED.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:296764",
       "detectedAt": "2026-08-31T19:37:25Z",
