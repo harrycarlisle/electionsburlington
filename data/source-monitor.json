@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-01T17:25:53Z",
+  "checkedAt": "2026-09-01T20:08:22Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
@@ -101,7 +101,7 @@
     {
       "source": "Conservation Halton",
       "ok": true,
-      "found": 30
+      "found": 35
     },
     {
       "source": "Halton District School Board",
@@ -400,6 +400,22 @@
       "scope": "election",
       "allowImage": true,
       "pageRank": 0,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington",
+      "radarClass": "Probably Ignore"
+    },
+    {
+      "title": "Register for School",
+      "url": "https://www.hdsb.ca/students-families/register-for-school/",
+      "source": "Halton District School Board",
+      "sourceType": "official",
+      "scope": "schools",
+      "allowImage": true,
+      "pageRank": 0,
+      "description": "Register your child with HDSB. Find your local school, complete forms, and learn requirements for Kindergarten and grade-level registration.",
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
