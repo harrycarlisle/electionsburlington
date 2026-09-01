@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-01T14:51:43+00:00",
+  "checkedAt": "2026-09-01T18:28:08+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -373,19 +373,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Corporate Accessibility Policy",
-      "url": "https://www.burlington.ca/en/community-supports/corporate-accessibility-policy.aspx",
-      "source": "City of Burlington calendar",
-      "scope": "Burlington",
-      "priority": 5,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Cultural Partners",
       "url": "https://www.burlington.ca/en/arts-culture-and-events/cultural-partners.aspx",
       "source": "City of Burlington calendar",
@@ -414,6 +401,19 @@
     {
       "title": "Discover Burlington",
       "url": "https://tourismburlington.com/",
+      "source": "City of Burlington calendar",
+      "scope": "Burlington",
+      "priority": 5,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Doors Open Burlington",
+      "url": "https://www.burlington.ca/en/news/festivals-and-events/doors-open-burlington.aspx",
       "source": "City of Burlington calendar",
       "scope": "Burlington",
       "priority": 5,
@@ -1049,19 +1049,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Agricultural and Rural Affairs Advisory Committee",
-      "url": "https://www.burlington.ca/en/council-and-city-administration/agricultural-and-rural-affairs-advisory-committee.aspx",
-      "source": "Love My Neighbourhood",
-      "scope": "Burlington",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Ali Cherri: To Fall, Patiently",
       "url": "https://visitoakville.com/events/ali-cherri-to-fall-patiently/",
       "source": "Visit Oakville events",
@@ -1443,6 +1430,19 @@
       "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/animals-pets/dogs/dog-licence",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Doors Open Burlington",
+      "url": "https://www.burlington.ca/en/news/festivals-and-events/doors-open-burlington.aspx",
+      "source": "Love My Neighbourhood",
+      "scope": "Burlington",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
