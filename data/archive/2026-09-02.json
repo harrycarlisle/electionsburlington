@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-02T13:50:43Z",
+  "checkedAt": "2026-09-02T17:51:26Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
@@ -112,7 +112,7 @@
   "items": [
     {
       "title": "Property Tax eBilling",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/property-tax-billing",
+      "url": "https://www.hamilton.ca/home-neighbourhood/property-taxes/property-tax-billing",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -226,7 +226,7 @@
     },
     {
       "title": "Vacant Unit Declaration",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/vacant-unit-tax",
+      "url": "https://www.hamilton.ca/home-neighbourhood/property-taxes/vacant-unit-tax",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -254,7 +254,7 @@
     },
     {
       "title": "Building Permit",
-      "url": "https://www.hamilton.ca/index%2ephp/build-invest-grow/construction-renovation/residential-building-renovation",
+      "url": "https://www.hamilton.ca/build-invest-grow/construction-renovation/residential-building-renovation",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -291,7 +291,7 @@
     },
     {
       "title": "Business Licence",
-      "url": "https://www.hamilton.ca/index%2ephp/build-invest-grow/starting-small-business/business-licences",
+      "url": "https://www.hamilton.ca/build-invest-grow/starting-small-business/business-licences",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -319,7 +319,7 @@
     },
     {
       "title": "Jobs at the City",
-      "url": "https://www.hamilton.ca/index%2ephp/city-council/jobs-city",
+      "url": "https://www.hamilton.ca/city-council/jobs-city",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -347,7 +347,7 @@
     },
     {
       "title": "Recreation Programs",
-      "url": "https://www.hamilton.ca/index%2ephp/things-do/recreation/programs",
+      "url": "https://www.hamilton.ca/things-do/recreation/programs",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -371,6 +371,25 @@
           "origin": "published-story"
         }
       ],
+      "radarClass": "Watch"
+    },
+    {
+      "title": "Rivers & Streams Water Safety Water Safety Water Safety Water Safety",
+      "url": "https://www.conservationhalton.ca/flood-status/",
+      "source": "Conservation Halton",
+      "sourceType": "official",
+      "scope": "local-life",
+      "allowImage": true,
+      "pageRank": 11,
+      "description": "Current Rivers & Streams Flood Status: Watershed Conditions Statement – Water Safety September 2, 2026 at 1:30 P.M. Conservation Halton advises that Environment Canada has issued an Orange Watch –...",
+      "image": "https://www.conservationhalton.ca/wp-content/uploads/2022/05/Genericbanner2_1920x240.jpg",
+      "imageSource": "Conservation Halton",
+      "imageSourceUrl": "https://www.conservationhalton.ca/flood-status/",
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 3,
+      "why": "",
+      "tag": "Burlington",
       "radarClass": "Watch"
     },
     {
@@ -733,25 +752,6 @@
       "scope": "schools",
       "allowImage": true,
       "pageRank": 12,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington",
-      "radarClass": "Probably Ignore"
-    },
-    {
-      "title": "Children’s Programs",
-      "url": "https://www.burlington.ca/en/recreation/childrens-programs.aspx",
-      "source": "City of Burlington News",
-      "sourceType": "official",
-      "scope": "city",
-      "allowImage": true,
-      "pageRank": 13,
-      "description": "Check out the variety of recreation programs available for children and teens in the City of Burlington.",
-      "image": "https://www.burlington.ca/en/images/structure/news_avatar.jpg",
-      "imageSource": "City of Burlington News",
-      "imageSourceUrl": "https://www.burlington.ca/en/recreation/childrens-programs.aspx",
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,

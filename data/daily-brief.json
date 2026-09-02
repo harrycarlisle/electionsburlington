@@ -1,43 +1,25 @@
 {
-  "updated": "2026-08-24T04:00:00Z",
-  "scope": "Burlington news and civic affairs",
+  "updated": "2026-09-02T17:51:26Z",
+  "scope": "Burlington news, local life and civic affairs",
   "items": [
     {
-      "date": "2026-08-24",
-      "tag": "Your ward",
-      "headline": "Burlington’s ward map changed. Check yours before voting.",
-      "summary": "New boundaries are in effect for the 2026 municipal election, so some residents will vote in a different councillor race.",
-      "why": "Your ward determines which councillor candidates and voting locations apply to you.",
-      "importance": 4,
-      "source": "City of Burlington Election",
-      "sourceType": "official",
-      "verificationTier": "primary",
-      "url": "https://myvote.burlington.ca/news/posts/new-ward-boundaries-in-effect-for-the-2026-municipal-election-has-your-ward-changed/"
-    },
-    {
-      "date": "2026-08-24",
-      "tag": "Candidates",
-      "headline": "Candidate nominations have closed. Here is the registered field.",
-      "summary": "Burlington’s nomination deadline passed Aug. 21. The City’s candidate list now shows five people registered to run for mayor.",
-      "why": "The official list shows voters who is registered in every Burlington race.",
-      "importance": 4,
-      "source": "City of Burlington Election",
-      "sourceType": "official",
-      "verificationTier": "primary",
-      "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
-    },
-    {
-      "date": "2026-08-23",
-      "tag": "Environment",
-      "headline": "What 26,503 fish revealed about a damaged local marsh.",
-      "summary": "The hopeful Fishway count masks a harder restoration problem involving water quality, invasive species and low oxygen.",
-      "why": "The count shows both ecological progress and what the Fishway cannot repair on its own.",
+      "date": "2026-09-02",
+      "tag": "Burlington",
+      "headline": "Rivers & Streams Water Safety Water Safety Water Safety Water Safety",
+      "summary": "Current Rivers & Streams Flood Status: Watershed Conditions Statement – Water Safety September 2, 2026 at 1:30 P.M. Conservation Halton advises that Environment Canada has issued an Orange Watch –...",
+      "why": "",
       "importance": 3,
-      "source": "Burlington News",
-      "sourceType": "reporting",
-      "verificationTier": "reported",
-      "url": "articles/fishway-26000-fish.html"
+      "radarClass": "Watch",
+      "followUpTo": [],
+      "beatMatches": [],
+      "source": "Conservation Halton",
+      "sourceType": "official",
+      "verificationTier": "primary",
+      "url": "https://www.conservationhalton.ca/flood-status/",
+      "image": "https://www.conservationhalton.ca/wp-content/uploads/2022/05/Genericbanner2_1920x240.jpg",
+      "imageSource": "Conservation Halton",
+      "imageSourceUrl": "https://www.conservationhalton.ca/flood-status/"
     }
   ],
-  "sourcesCheckedAt": "2026-08-24T04:00:00Z"
+  "sourcesCheckedAt": "2026-09-02T17:51:26Z"
 }
