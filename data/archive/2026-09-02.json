@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-02T00:29:54Z",
+  "checkedAt": "2026-09-02T05:01:01Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
@@ -101,7 +101,7 @@
     {
       "source": "Conservation Halton",
       "ok": true,
-      "found": 30
+      "found": 35
     },
     {
       "source": "Halton District School Board",
