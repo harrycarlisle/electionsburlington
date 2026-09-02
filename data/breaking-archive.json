@@ -1,6 +1,22 @@
 {
-  "updatedAt": "2026-09-02T17:45:50.778597-04:00",
+  "updatedAt": "2026-09-02T19:36:44.006037-04:00",
   "items": [
+    {
+      "id": "487f29ccde707bfc",
+      "headline": "tornado watch",
+      "deck": "Conditions are no longer favourable for the development of tornadoes.",
+      "label": "WEATHER",
+      "topic": "weather",
+      "url": "/stories/tornado-watch/",
+      "sourceUrl": "https://weather.gc.ca/warnings/report_e.html?onrm70=undefined",
+      "image": "/assets/editorial/home-share.webp",
+      "alt": "Burlington News.",
+      "publishedAt": "2026-09-02T19:36:33.193114-04:00",
+      "datePublished": "2026-09-02T19:36:33.193114-04:00",
+      "status": "breaking",
+      "lifecycleStatus": "developing",
+      "generatedBrief": true
+    },
     {
       "id": "domcon-2026-burlington-atrium",
       "headline": "Nationalist conference moved to Burlington after two Hamilton venues cancelled",
