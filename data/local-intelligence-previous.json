@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T23:32:52Z",
+  "generatedAt": "2026-09-02T01:20:19Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 31,
-    "trafficIncidents": 31,
+    "activeSignals": 29,
+    "trafficIncidents": 29,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -64,22 +64,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "083a7bd58a7ed0f4"
-    },
-    {
-      "id": "511:299675",
-      "kind": "traffic",
-      "headline": "Collision on QEW Toronto bound  at BRONTE ROAD, Oakville. 1 right lane and right shoulder closed.",
-      "location": "QEW",
-      "direction": "Toronto Bound",
-      "score": 75,
-      "neighbourhood": "Orchard",
-      "latitude": 43.40941762,
-      "longitude": -79.74117822,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "ee7d1f6ef7e9aa2b"
     },
     {
       "id": "511:291254",
@@ -272,22 +256,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "94eb8795ff3e7f45"
-    },
-    {
-      "id": "511:294587",
-      "kind": "traffic",
-      "headline": "Nightly Construction on QEW Toronto bound  between CENTENNIAL PKWY, Hamilton and BURLINGTON SKYWAY, Burlington. 3 Alternating Lane(s).",
-      "location": "QEW",
-      "direction": "Toronto Bound",
-      "score": 53,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.24609,
-      "longitude": -79.75694,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "37f8b0646b1083d6"
     },
     {
       "id": "511:294823",
@@ -496,6 +464,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "0e48fe503f157d65"
+    },
+    {
+      "id": "511:299377",
+      "kind": "traffic",
+      "headline": "Daily Engineering Investigation on HWY 5 Eastbound  between HWY 6 / CLAPPISON CORNER'S and HWY 6 / CLAPPISON CORNER'S, Hamilton. 1 Right Lane(s).",
+      "location": "HWY 5",
+      "direction": "Eastbound",
+      "score": 35,
+      "neighbourhood": "Aldershot",
+      "latitude": 43.31215,
+      "longitude": -79.917725,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "bc29db44c33aa881"
     }
   ],
   "topSignal": {
@@ -805,22 +789,6 @@
         "signature": "94eb8795ff3e7f45"
       },
       {
-        "id": "511:294587",
-        "kind": "traffic",
-        "headline": "Nightly Construction on QEW Toronto bound  between CENTENNIAL PKWY, Hamilton and BURLINGTON SKYWAY, Burlington. 3 Alternating Lane(s).",
-        "location": "QEW",
-        "direction": "Toronto Bound",
-        "score": 53,
-        "neighbourhood": "Burlington area",
-        "latitude": 43.24609,
-        "longitude": -79.75694,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "37f8b0646b1083d6"
-      },
-      {
         "id": "511:294823",
         "kind": "traffic",
         "headline": "Daily Construction on HWY 403 HAMILTON Westbound  between Highway 24 / Rest Acres Road and Highway 24 / Rest Acres Road, Brantford. 1 Right Lane(s).",
@@ -915,6 +883,22 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "a61662008826c55d"
+      },
+      {
+        "id": "511:299486",
+        "kind": "traffic",
+        "headline": "Nightly Construction on QEW Fort Erie Bound  between BRONTE ROAD, Oakville and BURLOAK DRIVE, Burlington. 3 Left(with HOV) Lane(s).",
+        "location": "QEW",
+        "direction": "Fort Erie Bound",
+        "score": 53,
+        "neighbourhood": "Orchard",
+        "latitude": 43.409355,
+        "longitude": -79.74126,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "8278ab012b170563"
       }
     ],
     "cameras": [
