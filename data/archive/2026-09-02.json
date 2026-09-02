@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-02T20:58:25Z",
+  "checkedAt": "2026-09-02T23:16:14Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
@@ -81,7 +81,7 @@
     {
       "source": "Focus Burlington",
       "ok": true,
-      "found": 16
+      "found": 19
     },
     {
       "source": "Tourism Burlington",
@@ -161,34 +161,6 @@
       "scope": "hamilton",
       "allowImage": true,
       "pageRank": 1,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 3,
-      "why": "",
-      "tag": "Burlington",
-      "followUpTo": [
-        "domcon-2026-burlington-atrium"
-      ],
-      "beatMatches": [
-        {
-          "id": "domcon-2026-burlington-atrium",
-          "headline": "Nationalist conference moved to Burlington after two Hamilton venues cancelled bookings",
-          "terms": [
-            "hamilton"
-          ],
-          "origin": "published-story"
-        }
-      ],
-      "radarClass": "Watch"
-    },
-    {
-      "title": "Report a problem",
-      "url": "https://services.my.hamilton.ca/reportaproblem/",
-      "source": "City of Hamilton News Releases",
-      "sourceType": "official",
-      "scope": "hamilton",
-      "allowImage": true,
-      "pageRank": 3,
       "verified": true,
       "verificationTier": "primary",
       "importance": 3,
