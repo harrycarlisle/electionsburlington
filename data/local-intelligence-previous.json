@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-01T21:17:19Z",
+  "generatedAt": "2026-09-01T23:32:52Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 30,
-    "trafficIncidents": 30,
+    "activeSignals": 31,
+    "trafficIncidents": 31,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -64,6 +64,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "083a7bd58a7ed0f4"
+    },
+    {
+      "id": "511:299675",
+      "kind": "traffic",
+      "headline": "Collision on QEW Toronto bound  at BRONTE ROAD, Oakville. 1 right lane and right shoulder closed.",
+      "location": "QEW",
+      "direction": "Toronto Bound",
+      "score": 75,
+      "neighbourhood": "Orchard",
+      "latitude": 43.40941762,
+      "longitude": -79.74117822,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "accidentsAndIncidents",
+      "signature": "ee7d1f6ef7e9aa2b"
     },
     {
       "id": "511:291254",
@@ -480,22 +496,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "0e48fe503f157d65"
-    },
-    {
-      "id": "511:299377",
-      "kind": "traffic",
-      "headline": "Daily Engineering Investigation on HWY 5 Eastbound  between HWY 6 / CLAPPISON CORNER'S and HWY 6 / CLAPPISON CORNER'S, Hamilton. 1 Right Lane(s).",
-      "location": "HWY 5",
-      "direction": "Eastbound",
-      "score": 35,
-      "neighbourhood": "Aldershot",
-      "latitude": 43.31215,
-      "longitude": -79.917725,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "bc29db44c33aa881"
     }
   ],
   "topSignal": {
