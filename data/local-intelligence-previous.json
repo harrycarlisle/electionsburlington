@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-02T16:29:43Z",
+  "generatedAt": "2026-09-02T19:28:42Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 34,
-    "trafficIncidents": 34,
+    "activeSignals": 37,
+    "trafficIncidents": 37,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -466,36 +466,36 @@
       "signature": "1286b0a6916b6324"
     },
     {
-      "id": "511:290120",
+      "id": "511:300689",
       "kind": "traffic",
-      "headline": "Continuous Engineering Investigation on QEW Toronto bound  between THIRD LINE and THIRD LINE, Oakville. 1 Right Lane(s).",
-      "location": "QEW",
-      "direction": "Toronto Bound",
-      "score": 45,
-      "neighbourhood": "Orchard",
-      "latitude": 43.42389,
-      "longitude": -79.72526,
+      "headline": "Nightly Construction on HWY 403 HAMILTON Eastbound  between WATERDOWN ROAD and KING ROAD, Burlington. 2 Alternating Lane(s).",
+      "location": "HWY 403 HAMILTON",
+      "direction": "Eastbound",
+      "score": 53,
+      "neighbourhood": "Aldershot",
+      "latitude": 43.3121,
+      "longitude": -79.85993,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
-      "signature": "b24da3cece4ef540"
+      "signature": "2d4a695774db42cc"
     },
     {
-      "id": "511:294127",
+      "id": "511:300694",
       "kind": "traffic",
-      "headline": "Nightly Construction on HWY 401 Westbound  between REGIONAL ROAD 25 and GUELPH LINE, Milton. 2 Alternating Lane(s).",
-      "location": "HWY 401",
+      "headline": "Nightly Construction on HWY 403 HAMILTON Westbound  between HWY 6 NORTH and HWY 6 NORTH, Burlington. 1 Right Lane(s).",
+      "location": "HWY 403 HAMILTON",
       "direction": "Westbound",
-      "score": 43,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.52803,
-      "longitude": -79.90527,
+      "score": 53,
+      "neighbourhood": "Aldershot",
+      "latitude": 43.29363,
+      "longitude": -79.89257,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
-      "signature": "81e9ba9b988064d2"
+      "signature": "a61662008826c55d"
     }
   ],
   "topSignal": {
