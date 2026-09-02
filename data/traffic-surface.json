@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T12:29:44.156448-04:00",
+  "generatedAt": "2026-09-02T15:28:45.293847-04:00",
   "source": "Ontario 511 events + OSRM geometry + camera inventory",
   "licence": "Open Government Licence - Ontario",
   "incidents": [],
@@ -10,13 +10,13 @@
   },
   "homepageTraffic": {
     "label": "Traffic",
-    "title": "QEW → Toronto",
+    "title": "QEW → Hamilton",
     "context": "Live route check",
-    "impact": "30 cameras along this route",
+    "impact": "11 cameras along this route",
     "freshness": "",
-    "url": "/traffic/?destination=toronto",
+    "url": "/traffic/?destination=hamilton",
     "alert": false,
-    "advisory": "QEW Toronto-bound on-ramp closed at Dorval Drive"
+    "advisory": ""
   },
   "routes": {
     "toronto": {
@@ -799,33 +799,14 @@
       "geometrySource": "osrm",
       "metres": 35587.3,
       "status": {
-        "level": "delay",
-        "headline": "Delay likely",
-        "detail": "QEW closed near Centennial Parkway",
+        "level": "unknown",
+        "headline": "Live route check",
+        "detail": "22 cameras along this route",
         "looks": "",
-        "source": "Ontario 511"
+        "source": "Ontario 511",
+        "advisory": "QEW Toronto-bound on-ramp closed at Fifty Road"
       },
       "incidents": [
-        {
-          "id": "511:300490",
-          "title": "QEW closed near Centennial Parkway",
-          "rawHeadline": "Nightly Construction on QEW Toronto bound  between CENTENNIAL PKWY and RED HILL CREEK EXPRESSWAY, Hamilton. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "mainline",
-          "nearestRoad": "Centennial Parkway",
-          "municipality": "Hamilton",
-          "context": "Hamilton · Centennial Parkway / QEW",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.24609,
-          "longitude": -79.75694,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
-        },
         {
           "id": "511:300503",
           "title": "QEW Toronto-bound on-ramp closed at Fifty Road",
@@ -848,6 +829,26 @@
         },
         {
           "id": "511:300506",
+          "title": "QEW Toronto-bound on-ramp closed at Fruitland Road",
+          "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FRUITLAND ROAD, Hamilton. ALL LANES CLOSED.",
+          "roadway": "QEW",
+          "direction": "Toronto-bound",
+          "type": "closure",
+          "facility": "on-ramp",
+          "nearestRoad": "Fruitland Road",
+          "municipality": "Hamilton",
+          "context": "Hamilton · Fruitland Road / QEW · on-ramp",
+          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
+          "latitude": 43.2315,
+          "longitude": -79.6965,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:300523",
           "title": "QEW Toronto-bound on-ramp closed at Fruitland Road",
           "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FRUITLAND ROAD, Hamilton. ALL LANES CLOSED.",
           "roadway": "QEW",
@@ -1068,6 +1069,26 @@
         },
         {
           "id": "511:300506",
+          "title": "QEW Toronto-bound on-ramp closed at Fruitland Road",
+          "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FRUITLAND ROAD, Hamilton. ALL LANES CLOSED.",
+          "roadway": "QEW",
+          "direction": "Toronto-bound",
+          "type": "closure",
+          "facility": "on-ramp",
+          "nearestRoad": "Fruitland Road",
+          "municipality": "Hamilton",
+          "context": "Hamilton · Fruitland Road / QEW · on-ramp",
+          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
+          "latitude": 43.2315,
+          "longitude": -79.6965,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
+          "id": "511:300523",
           "title": "QEW Toronto-bound on-ramp closed at Fruitland Road",
           "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FRUITLAND ROAD, Hamilton. ALL LANES CLOSED.",
           "roadway": "QEW",
@@ -1451,6 +1472,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-09-02T13:17:14.101373-04:00"
+    "updatedAt": "2026-09-02T15:28:48.560267-04:00"
   }
 }
