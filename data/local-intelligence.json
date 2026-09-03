@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-03T17:48:23Z",
+  "generatedAt": "2026-09-03T20:56:16Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -66,22 +66,6 @@
       "signature": "083a7bd58a7ed0f4"
     },
     {
-      "id": "511:303056",
-      "kind": "traffic",
-      "headline": "Disabled Vehicle on QEW Toronto bound RAMP at THIRD LINE, Oakville. Right lane and right shoulder closed.",
-      "location": "QEW",
-      "direction": "Toronto Bound",
-      "score": 75,
-      "neighbourhood": "Orchard",
-      "latitude": 43.42195481,
-      "longitude": -79.72653239,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "1dabb3fba71e1d44"
-    },
-    {
       "id": "511:291254",
       "kind": "traffic",
       "headline": "Nightly Construction on QEW Fort Erie Bound  between BRONTE ROAD, Oakville and ONTARIO STREET -BEAMSVILLE, Lincoln. 1 Alternating Lane(s).",
@@ -128,22 +112,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "5ff543f82c80d221"
-    },
-    {
-      "id": "511:294158",
-      "kind": "traffic",
-      "headline": "Nightly Maintenance on HWY 403 HAMILTON Westbound  between ABERDEEN AVE and LINCOLN M. ALEXANDER PARKWAY, Hamilton. 1 Left Lane(s).",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Westbound",
-      "score": 53,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.25535,
-      "longitude": -79.90704,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "1877967a3780f74e"
     },
     {
       "id": "511:294585",
@@ -482,6 +450,38 @@
       "signature": "37f8b0646b1083d6"
     },
     {
+      "id": "511:303108",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Fort Erie Bound  between BRANT STREET and FAIRVIEW STREET/PLAINS ROAD, Burlington. 1 Alternating Lane(s).",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 53,
+      "neighbourhood": "Mountainside",
+      "latitude": 43.341724,
+      "longitude": -79.82237,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "11c151514d0ef376"
+    },
+    {
+      "id": "511:303157",
+      "kind": "traffic",
+      "headline": "Nightly Maintenance on HWY 403 HAMILTON Westbound  between ABERDEEN AVE and LINCOLN M. ALEXANDER PARKWAY, Hamilton. 1 Left Lane(s).",
+      "location": "HWY 403 HAMILTON",
+      "direction": "Westbound",
+      "score": 53,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.25535,
+      "longitude": -79.90704,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "1877967a3780f74e"
+    },
+    {
       "id": "511:290120",
       "kind": "traffic",
       "headline": "Continuous Engineering Investigation on QEW Toronto bound  between THIRD LINE and THIRD LINE, Oakville. 1 Right Lane(s).",
@@ -611,22 +611,6 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "81e9ba9b988064d2"
-      },
-      {
-        "id": "511:294158",
-        "kind": "traffic",
-        "headline": "Nightly Maintenance on HWY 403 HAMILTON Westbound  between ABERDEEN AVE and LINCOLN M. ALEXANDER PARKWAY, Hamilton. 1 Left Lane(s).",
-        "location": "HWY 403 HAMILTON",
-        "direction": "Westbound",
-        "score": 53,
-        "neighbourhood": "Burlington area",
-        "latitude": 43.25535,
-        "longitude": -79.90704,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "1877967a3780f74e"
       },
       {
         "id": "511:294259",
@@ -915,6 +899,22 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "782c4ea31ed6153f"
+      },
+      {
+        "id": "511:300549",
+        "kind": "traffic",
+        "headline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and NORTHSHORE BLVD, Burlington. 1 Right Lane(s).",
+        "location": "QEW",
+        "direction": "Fort Erie Bound",
+        "score": 53,
+        "neighbourhood": "Downtown",
+        "latitude": 43.327545,
+        "longitude": -79.825485,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "f53b0dcd27aecebe"
       }
     ],
     "cameras": [
