@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-03T15:10:03Z",
+  "checkedAt": "2026-09-03T18:35:12Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
@@ -66,7 +66,7 @@
     {
       "source": "CHCH Hamilton and Halton",
       "ok": true,
-      "found": 1
+      "found": 0
     },
     {
       "source": "BurlingtonToday",
