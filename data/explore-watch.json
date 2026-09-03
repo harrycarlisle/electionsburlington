@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-03T00:13:14+00:00",
+  "checkedAt": "2026-09-03T04:21:00+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -64,8 +64,8 @@
       "name": "Town of Oakville events",
       "url": "https://www.oakville.ca/community-events/events/",
       "scope": "Nearby Oakville",
-      "ok": false,
-      "error": "<urlopen error [Errno 111] Connection refused>"
+      "ok": true,
+      "candidates": 9
     },
     {
       "name": "Visit Oakville events",
@@ -1348,6 +1348,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Community & Events",
+      "url": "https://www.oakville.ca/community-events/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Community Partners",
       "url": "https://www.burlington.ca/en/community-supports/community-partners.aspx",
       "source": "Love My Neighbourhood",
@@ -1504,6 +1517,45 @@
       "candidateType": "link"
     },
     {
+      "title": "Event Planning Guidelines",
+      "url": "https://www.oakville.ca/community-events/events/event-planning/event-planning-guidelines/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Event Planning Plan your event at one of our recreation facilities, parks or open spaces. Municipal spaces can be great venues for community events of all sizes.",
+      "url": "https://www.oakville.ca/community-events/events/event-planning/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Event Sponsorship and Partnerships Increase your brand presence by sponsoring Town-run events.",
+      "url": "https://www.oakville.ca/community-events/events/event-sponsorship-partnership/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Event Submission Guidelines",
       "url": "https://visitoakville.com/event-submission-guidelines/",
       "source": "Visit Oakville events",
@@ -1521,6 +1573,19 @@
       "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/housing-supports/eviction-prevention",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Facility Rentals",
+      "url": "https://www.oakville.ca/parks-recreation-culture/facilities-rentals/facility-rentals/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -1842,6 +1907,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Oakville Special Events Plan The Special Events Plan will provide a roadmap to guide future planning and decisions relating to special events in the community. Go to the Oakville S",
+      "url": "https://www.oakville.ca/town-hall/plans-strategies/oakville-special-events-plan/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Outdoor Play",
       "url": "https://www.burlington.ca/en/recreation/outdoor-play.aspx",
       "source": "Love My Neighbourhood",
@@ -1872,6 +1950,19 @@
       "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/tickets-fines-penalties/parking-penalty-notice",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Parks, Recreation & Culture",
+      "url": "https://www.oakville.ca/parks-recreation-culture/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -2054,6 +2145,19 @@
       "url": "https://www.burlington.ca/en/community-supports/love-my-neighbourhood.aspx",
       "source": "Love My Neighbourhood",
       "scope": "Burlington",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Skip to Content",
+      "url": "https://www.oakville.ca/community-events/events/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -2258,6 +2362,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Town of Oakville Events Discover a wide range of events and activities organized or supported by the Town of Oakville.",
+      "url": "https://www.oakville.ca/community-events/events/town-of-oakville-events/",
+      "source": "Town of Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Tree Permit Application",
       "url": "https://www.burlington.ca/en/home-property-and-environment/tree-permit-application.aspx?_mid_=10918",
       "source": "Love My Neighbourhood",
@@ -2359,45 +2476,6 @@
       "endsAt": "2026-09-21T03:59:59+00:00",
       "location": "Royal Botanical Gardens Hendrie Park, 680 Plains Road West, Burlington, Ontario",
       "description": "<p>This outdoor exhibition features 18 sculptures and a hidden digital world set amongst nature and blooms! With Canada Strong Pass, children 0-17 receive free Garden Admission, and young adults 18–24 enjoy 50% off until September 7th. Prices adjust automatically. Explore the vibrant sculptural universe of artist and contemporary sculptor Ken Kelleher, inter",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Mountainside Pool Summer Community Events",
-      "url": "https://activeparents.ca/calendar/mountainside-pool-summer-community-events/2026-09-02/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-02T21:00:00+00:00",
-      "endsAt": "2026-09-02T23:00:00+00:00",
-      "location": "Mountainside Recreation Centre, 2205 Mount Forest Drive, Burlington, Ontario",
-      "description": "<p>Get Ready for a Splash of Fun This Summer! Join us every Wednesday from 5:00-7:00pm for our weekly Community Event Nights — a summer series packed with creativity, laughter, and poolside fun! (Regular admission rates apply) What We’ve Got Lined Up This Summer: July 1st: Canada Day Craft Kick off the fun with a night of festive creativity! […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Harry Potter – all 8 movies at Film.ca",
-      "url": "https://activeparents.ca/calendar/harry-potter-all-8-movies-at-film-ca/2026-09-02/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-02T23:00:00+00:00",
-      "endsAt": "2026-09-03T02:00:00+00:00",
-      "location": "Film.ca Theatre, 171 Speers Road, Unit 25, Oakville, Ontario",
-      "description": "<p>Celebrate 25 years of magic with the ultimate Harry Potter movie marathon, featuring all eight films on the big screen this summer! Please note: The full eight-film marathon is only playing at our Oakville location. Our Trenton location will only be playing Harry Potter and the Sorcerer\\'s Stone (Year 1) on August 28th. Showtimes: Years […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Toonie Swims in Lincoln",
-      "url": "https://activeparents.ca/calendar/toonie-swims-in-lincoln/2026-09-02/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-03T00:00:00+00:00",
-      "endsAt": "2026-09-03T01:00:00+00:00",
-      "location": "Lincoln Pools, Lincoln, ON",
-      "description": "<p>Still lots of Toonie Swims left this summer at the pools. Register Today at https://www.lincoln.ca/DropInActivities/public-swimming Cool off this summer at our all ages Leisure Swim. Regular admission standards apply and can be found online at lincoln.ca Check website for locations, dates and times. </p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -2609,6 +2687,45 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Burlington Inspired Paint By Numbers Workshops",
+      "url": "https://activeparents.ca/calendar/burlington-inspired-paint-by-numbers-workshops/2026-09-05/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-05T18:15:00+00:00",
+      "endsAt": "2026-09-05T19:45:00+00:00",
+      "location": "BPL – New Appleby, 5151 New St, Burlington, Ontario",
+      "description": "<p>Join local artist Hope Flynn for “Burlington Inspired Paint By Numbers”, a free art workshop series for youth at Burlington Public Library - New Appleby Branch. Participants will create artwork inspired by Burlington\\'s landscapes and wildlife. All materials are provided. We welcome participants of all skill levels and art abilities. For kids 6 to 13, who",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Creative STEM Workshops, Hands-On Sunday Activities",
+      "url": "https://activeparents.ca/calendar/creative-stem-workshops-hands-on-sunday-activities/2026-09-06/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-06T04:00:00+00:00",
+      "endsAt": "2026-09-07T03:59:59+00:00",
+      "location": "Steamulation Lab, 2861 Sherwood Heights Drive, Oakville, ON",
+      "description": "<p>Looking for fun and educational weekend activities for kids in Oakville? Join our Hands-On Creative STEM Workshops every Sunday at STEAMULATION Lab, where children explore a new creative STEM activity each week through art, science, engineering, and hands-on learning. Kids will enjoy exciting projects such as slime making, homemade playdough, origami, col",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Harvest Weekends at Springridge",
+      "url": "https://activeparents.ca/calendar/harvest-weekends-at-springridge/2026-09-06/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-06T13:00:00+00:00",
+      "endsAt": "2026-09-06T21:00:00+00:00",
+      "location": "Springridge Farm, 7256 Bell School Line, Milton, Ontario",
+      "description": "<p>Celebrate the season with memory-making moments here on our family farm! Play, run, jump, and explore here in everybody’s favourite Fun Farmyard which, on weekends, includes our Giant Corn Trail. September weekend admission $16 per person aged 2-92. October weekend admission $19 per person. Our Farm Bakery is busy baking magic with the season’s best […]</",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Brantwood Farms Fall Festival",
       "url": "https://activeparents.ca/series/brantwood-farms-fall-festival/",
       "source": "Active Parents regional calendar",
@@ -2624,19 +2741,6 @@
     {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Burlington Inspired Paint By Numbers Workshops",
-      "url": "https://activeparents.ca/calendar/burlington-inspired-paint-by-numbers-workshops/2026-09-05/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2702,6 +2806,19 @@
     {
       "title": "Cineplex Family Favourites",
       "url": "https://activeparents.ca/series/cineplex-family-favourites/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Creative STEM Workshops, Hands-On Sunday Activities",
+      "url": "https://activeparents.ca/series/creative-stem-workshops-hands-on-sunday-activities/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
