@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-04T19:06:11Z",
+  "generatedAt": "2026-09-04T21:25:03Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 33,
-    "trafficIncidents": 33,
+    "activeSignals": 35,
+    "trafficIncidents": 35,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -98,12 +98,28 @@
       "signature": "6132a2deb8c9e582"
     },
     {
+      "id": "511:303761",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 403 HAMILTON Westbound On-ramp at BRANT STREET, Burlington. ALL LANES CLOSED.",
+      "location": "HWY 403 HAMILTON",
+      "direction": "Westbound",
+      "score": 90,
+      "neighbourhood": "Mountainside",
+      "latitude": 43.34001,
+      "longitude": -79.82295,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "264597ee059631af"
+    },
+    {
       "id": "511:303674",
       "kind": "traffic",
-      "headline": "Collision on QEW Toronto bound  at TRAFALGAR ROAD, Oakville. All lanes closed.",
+      "headline": "Collision on QEW Toronto bound  at TRAFALGAR ROAD, Oakville. 2 right lanes and right shoulder closed.",
       "location": "QEW",
       "direction": "Toronto Bound",
-      "score": 90,
+      "score": 75,
       "neighbourhood": "Orchard",
       "latitude": 43.46143303,
       "longitude": -79.68362343,
@@ -111,7 +127,39 @@
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "accidentsAndIncidents",
-      "signature": "a6744d3ce33af633"
+      "signature": "650f034e2ab184d5"
+    },
+    {
+      "id": "511:303745",
+      "kind": "traffic",
+      "headline": "Disabled Vehicle on QEW Toronto bound  at THIRD LINE, Oakville. 1 centre lane closed.",
+      "location": "QEW",
+      "direction": "Toronto Bound",
+      "score": 75,
+      "neighbourhood": "Orchard",
+      "latitude": 43.42398426,
+      "longitude": -79.72517004,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "accidentsAndIncidents",
+      "signature": "52c6b8d15c2247dd"
+    },
+    {
+      "id": "511:303784",
+      "kind": "traffic",
+      "headline": "Collision on HWY 403 HAMILTON Westbound  at KING ROAD, Burlington. Right lane and right shoulder closed.",
+      "location": "HWY 403 HAMILTON",
+      "direction": "Westbound",
+      "score": 75,
+      "neighbourhood": "Aldershot",
+      "latitude": 43.32877732,
+      "longitude": -79.84265921,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "accidentsAndIncidents",
+      "signature": "eff71cbd77c0b22f"
     },
     {
       "id": "511:294823",
@@ -418,22 +466,6 @@
       "signature": "8db5e92d721e9bcc"
     },
     {
-      "id": "511:303495",
-      "kind": "traffic",
-      "headline": "Nightly Construction on QEW Fort Erie Bound  between GUELPH LINE and BRANT STREET, Burlington. 2 Alternating Lane(s).",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 53,
-      "neighbourhood": "Mountainside",
-      "latitude": 43.35202,
-      "longitude": -79.80386,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "767ddc4c2a7c582d"
-    },
-    {
       "id": "511:303614",
       "kind": "traffic",
       "headline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and NORTHSHORE BLVD, Burlington. 3 Alternating Lane(s).",
@@ -464,38 +496,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "467e5d0c6511ea40"
-    },
-    {
-      "id": "511:290120",
-      "kind": "traffic",
-      "headline": "Continuous Engineering Investigation on QEW Toronto bound  between THIRD LINE and THIRD LINE, Oakville. 1 Right Lane(s).",
-      "location": "QEW",
-      "direction": "Toronto Bound",
-      "score": 45,
-      "neighbourhood": "Orchard",
-      "latitude": 43.42389,
-      "longitude": -79.72526,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "b24da3cece4ef540"
-    },
-    {
-      "id": "511:296303",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 6 Northbound  between PARKSIDE DRIVE and EAST FLAMBOROUGH TWP CON. 5 EAST, Hamilton. 1 Alternating Lane(s).",
-      "location": "HWY 6",
-      "direction": "Northbound",
-      "score": 43,
-      "neighbourhood": "Aldershot",
-      "latitude": 43.319767,
-      "longitude": -79.92808,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "b7252b680a22cf68"
     }
   ],
   "topSignal": {

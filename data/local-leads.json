@@ -1,6 +1,42 @@
 {
-  "generatedAt": "2026-09-04T19:06:11Z",
+  "generatedAt": "2026-09-04T21:25:03Z",
   "items": [
+    {
+      "id": "511:303761",
+      "detectedAt": "2026-09-04T21:25:03Z",
+      "score": 90,
+      "headline": "Nightly Construction on HWY 403 HAMILTON Westbound On-ramp at BRANT STREET, Burlington. ALL LANES CLOSED.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:303745",
+      "detectedAt": "2026-09-04T21:25:03Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Toronto bound  at THIRD LINE, Oakville. 1 centre lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:303784",
+      "detectedAt": "2026-09-04T21:25:03Z",
+      "score": 75,
+      "headline": "Collision on HWY 403 HAMILTON Westbound  at KING ROAD, Burlington. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:303674",
       "detectedAt": "2026-09-04T19:06:11Z",
