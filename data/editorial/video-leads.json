@@ -1,0 +1,1988 @@
+{
+  "generatedAt": "2026-08-26T14:14:09.857573-04:00",
+  "method": "Official YouTube RSS plus optional Data API. Score local relevance, velocity, novelty, appeal, article potential and source quality. Cluster duplicates. Extract a concept, never an article. Never auto-publish.",
+  "autoPublish": false,
+  "videosScanned": 159,
+  "qualifiedLeads": 9,
+  "duplicatesCollapsed": 12,
+  "transcriptSuccessRate": 0.887,
+  "discovery": {
+    "rssChannels": 13,
+    "rssVideos": 159,
+    "apiSearches": 0,
+    "apiVideos": 0,
+    "apiAvailable": false,
+    "existingUrls": 0,
+    "redditMentions": 0,
+    "googleCseVideos": 0,
+    "googleCseAvailable": false
+  },
+  "providers": [
+    "youtube_rss",
+    "youtube_data_api (inactive, no key)",
+    "existing_public_urls",
+    "reddit_mentions",
+    "google_cse_video (inactive, no key)"
+  ],
+  "rejectedTranscriptProviders": [
+    {
+      "name": "youtube_timedtext",
+      "reason": "Unofficial caption download circumvents YouTube's captions.download OAuth requirement.",
+      "priority": 1
+    },
+    {
+      "name": "invidious_instances",
+      "reason": "Alternative frontends are not an official API. Random public instances often forbid automated harvesting and can change terms without notice.",
+      "priority": 4
+    },
+    {
+      "name": "piped_instances",
+      "reason": "Same class as other alternative frontends: not official, instance ToS vary, and using them to extract captions would bypass YouTube's caption controls.",
+      "priority": 4
+    },
+    {
+      "name": "youtubetranscript.com",
+      "reason": "Third-party transcript site. No confirmed license for automated harvesting of YouTube caption text.",
+      "priority": 3
+    },
+    {
+      "name": "downsub_tactiq_class",
+      "reason": "Commercial caption-export sites. Terms do not authorize unattended editorial harvesting.",
+      "priority": 3
+    }
+  ],
+  "slowNewsDayPriority": [
+    "Breaking Burlington",
+    "Major Burlington original",
+    "New Burlington reporting",
+    "Useful Burlington evergreen",
+    "Strong Halton/Hamilton/Oakville story",
+    "Major Toronto/Ontario story with Burlington relevance",
+    "Video-discovered independently reported explainer",
+    "Hidden Burlington/history/development backlog",
+    "Worth Watching"
+  ],
+  "items": [
+    {
+      "id": "video:lrt-underground",
+      "discoveredAt": "2026-08-26T14:14:09.843196-04:00",
+      "videoUrl": "https://www.youtube.com/shorts/btQmRSjOxiw",
+      "videoId": "btQmRSjOxiw",
+      "title": "How do you prepare for a light rail transit line?",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-25T15:40:13+00:00",
+      "views": 1762,
+      "velocity": 66.33,
+      "topic": "infrastructure",
+      "region": "hamilton",
+      "localRelevanceScore": 4.3,
+      "localRelevance": "Burlington’s GO major-transit-station areas will face the same buried-utility problem if higher-order transit is built.",
+      "relevanceReasons": [
+        "affects Burlington transportation",
+        "applies through Ontario law/policy"
+      ],
+      "noveltyScore": 4.0,
+      "articlePotential": 4.1000000000000005,
+      "overallScore": 3.826,
+      "scoreParts": {
+        "localRelevance": 4.3,
+        "velocity": 2.0823881448098773,
+        "novelty": 4.0,
+        "broadAppeal": 4.3999999999999995,
+        "articlePotential": 4.1000000000000005,
+        "sourceQuality": 4.6
+      },
+      "transcriptSource": "creator_text",
+      "transcriptStatus": "description_only",
+      "suggestedHeadline": "What has to move under the street before a light-rail line can open?",
+      "suggestedAngle": "Utility relocation, who pays, and how long the invisible work takes.",
+      "hook": "Tracks are the visible part. Water, power and fibre usually have to move first.",
+      "centralQuestion": "What has to move under the street before a light-rail line can open?",
+      "leadType": "idea_lead",
+      "verificationStatus": "unverified",
+      "editorialStatus": "new",
+      "autoPublish": false,
+      "clusterId": "lrt-underground",
+      "clusterSize": 1,
+      "supportingVideos": [],
+      "existingCoverage": {
+        "existingArticles": [],
+        "backlogHit": "",
+        "recommendation": "new concept"
+      },
+      "claimLedger": [
+        {
+          "claim": "From utilities to watermains, what's under your feet is getting an upgrade.",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        },
+        {
+          "claim": "Prep work for Hamilton's light rail project is under way and that means its a great time to upgrade aging infrastructure beneath and alongside the future 14-kilometre route.",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        }
+      ],
+      "researchPacket": {
+        "workingHeadline": "What has to move under the street before a light-rail line can open?",
+        "curiosityHook": "Tracks are the visible part. Water, power and fibre usually have to move first.",
+        "whyBurlingtonReadersCare": "Burlington’s GO major-transit-station areas will face the same buried-utility problem if higher-order transit is built.",
+        "videoSources": [
+          {
+            "creator": "Metrolinx",
+            "title": "How do you prepare for a light rail transit line?",
+            "url": "https://www.youtube.com/shorts/btQmRSjOxiw",
+            "publishedAt": "2026-08-25T15:40:13+00:00",
+            "views": 1762,
+            "velocity": 66.33
+          }
+        ],
+        "supportingVideos": [],
+        "creditNote": "If this becomes a story, credit Metrolinx and link the original video. The video is a lead, not verification.",
+        "keyClaims": [
+          {
+            "claim": "From utilities to watermains, what's under your feet is getting an upgrade.",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          },
+          {
+            "claim": "Prep work for Hamilton's light rail project is under way and that means its a great time to upgrade aging infrastructure beneath and alongside the future 14-kilometre route.",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          }
+        ],
+        "primarySourcesToFind": [
+          "Metrolinx project documents",
+          "municipal utility companies",
+          "City engineering reports"
+        ],
+        "governmentSources": [
+          "Identify the responsible municipality or provincial agency"
+        ],
+        "mapsDataPossibilities": "underground utility cross-section",
+        "potentialVisuals": [
+          "underground utility cross-section",
+          "Do not screenshot the creator's video for a hero image."
+        ],
+        "questionsStillUnanswered": [
+          "What has to move under the street before a light-rail line can open?",
+          "Which official document can independently confirm the central number or ownership claim?",
+          "What can Burlington News add that the video does not already show?"
+        ],
+        "recommendedNextStep": "new concept",
+        "transcriptStatus": "description_only",
+        "transcriptSource": "creator_text",
+        "doNot": [
+          "Do not paraphrase the transcript into an article.",
+          "Do not auto-publish.",
+          "Do not treat the creator as the primary source unless the article attributes a firsthand discovery."
+        ]
+      },
+      "seo": {
+        "likelyQuery": "What has to move under the street before a light-rail line can open?",
+        "evergreenPotential": "high",
+        "questionSearch": true
+      }
+    },
+    {
+      "id": "video:highway-403-lrt",
+      "discoveredAt": "2026-08-26T14:14:09.843478-04:00",
+      "videoUrl": "https://www.youtube.com/shorts/_JCzXzoj_eM",
+      "videoId": "_JCzXzoj_eM",
+      "title": "Elevated guideway nears completion over Highway 403 - Hazel McCallion Line",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-13T15:29:05+00:00",
+      "views": 5798,
+      "velocity": 18.42,
+      "topic": "infrastructure",
+      "region": "toronto",
+      "localRelevanceScore": 3.7,
+      "localRelevance": "Highway 403 is part of the same west-end system that dumps traffic onto the QEW and Burlington streets.",
+      "relevanceReasons": [
+        "affects Burlington transportation",
+        "applies through Ontario law/policy"
+      ],
+      "noveltyScore": 4.0,
+      "articlePotential": 4.1000000000000005,
+      "overallScore": 3.542,
+      "scoreParts": {
+        "localRelevance": 3.7,
+        "velocity": 1.407577781044368,
+        "novelty": 4.0,
+        "broadAppeal": 4.3999999999999995,
+        "articlePotential": 4.1000000000000005,
+        "sourceQuality": 4.6
+      },
+      "transcriptSource": "creator_text",
+      "transcriptStatus": "description_only",
+      "suggestedHeadline": "How do you build a rail line over a live 400-series highway?",
+      "suggestedAngle": "Construction method, traffic management, and what west-GTA drivers should expect.",
+      "hook": "The interesting problem is not the train. It is keeping Highway 403 moving while the guideway lands above it.",
+      "centralQuestion": "How do you build a rail line over a live 400-series highway?",
+      "leadType": "idea_lead",
+      "verificationStatus": "unverified",
+      "editorialStatus": "new",
+      "autoPublish": false,
+      "clusterId": "highway-403-lrt",
+      "clusterSize": 3,
+      "supportingVideos": [
+        {
+          "videoId": "KeZlOkLP2oQ",
+          "title": "How to stay safe around the Hazel McCallion Line",
+          "channel": "Metrolinx",
+          "videoUrl": "https://www.youtube.com/shorts/KeZlOkLP2oQ",
+          "views": 2600
+        },
+        {
+          "videoId": "nVvFkChTYTk",
+          "title": "Staying safe around the Hazel McCallion Line pt. 2",
+          "channel": "Metrolinx",
+          "videoUrl": "https://www.youtube.com/shorts/nVvFkChTYTk",
+          "views": 2389
+        }
+      ],
+      "existingCoverage": {
+        "existingArticles": [],
+        "backlogHit": "",
+        "recommendation": "new concept"
+      },
+      "claimLedger": [
+        {
+          "claim": "How do you build a rail bridge over an active highway while keeping traffic moving below?",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        },
+        {
+          "claim": "The Hazel McCallion Line's elevated guideway over Highway 403 is nearing completion after years of careful planning, engineering, and construction.",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        },
+        {
+          "claim": "This landmark structure will soon help connect riders across the line's 19 stops from Brampton Gateway Terminal to Mississauga City Centre.",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        }
+      ],
+      "researchPacket": {
+        "workingHeadline": "How do you build a rail line over a live 400-series highway?",
+        "curiosityHook": "The interesting problem is not the train. It is keeping Highway 403 moving while the guideway lands above it.",
+        "whyBurlingtonReadersCare": "Highway 403 is part of the same west-end system that dumps traffic onto the QEW and Burlington streets.",
+        "videoSources": [
+          {
+            "creator": "Metrolinx",
+            "title": "Elevated guideway nears completion over Highway 403 - Hazel McCallion Line",
+            "url": "https://www.youtube.com/shorts/_JCzXzoj_eM",
+            "publishedAt": "2026-08-13T15:29:05+00:00",
+            "views": 5798,
+            "velocity": 18.42
+          }
+        ],
+        "supportingVideos": [
+          {
+            "videoId": "KeZlOkLP2oQ",
+            "title": "How to stay safe around the Hazel McCallion Line",
+            "channel": "Metrolinx",
+            "videoUrl": "https://www.youtube.com/shorts/KeZlOkLP2oQ",
+            "views": 2600
+          },
+          {
+            "videoId": "nVvFkChTYTk",
+            "title": "Staying safe around the Hazel McCallion Line pt. 2",
+            "channel": "Metrolinx",
+            "videoUrl": "https://www.youtube.com/shorts/nVvFkChTYTk",
+            "views": 2389
+          }
+        ],
+        "creditNote": "If this becomes a story, credit Metrolinx and link the original video. The video is a lead, not verification.",
+        "keyClaims": [
+          {
+            "claim": "How do you build a rail bridge over an active highway while keeping traffic moving below?",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          },
+          {
+            "claim": "The Hazel McCallion Line's elevated guideway over Highway 403 is nearing completion after years of careful planning, engineering, and construction.",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          },
+          {
+            "claim": "This landmark structure will soon help connect riders across the line's 19 stops from Brampton Gateway Terminal to Mississauga City Centre.",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          }
+        ],
+        "primarySourcesToFind": [
+          "Metrolinx Hazel McCallion Line",
+          "MTO Highway 403 notices",
+          "City of Mississauga construction updates"
+        ],
+        "governmentSources": [
+          "City of Toronto",
+          "Metrolinx"
+        ],
+        "mapsDataPossibilities": "simple over-highway guideway diagram",
+        "potentialVisuals": [
+          "simple over-highway guideway diagram",
+          "Do not screenshot the creator's video for a hero image."
+        ],
+        "questionsStillUnanswered": [
+          "How do you build a rail line over a live 400-series highway?",
+          "Which official document can independently confirm the central number or ownership claim?",
+          "What can Burlington News add that the video does not already show?"
+        ],
+        "recommendedNextStep": "new concept",
+        "transcriptStatus": "description_only",
+        "transcriptSource": "creator_text",
+        "doNot": [
+          "Do not paraphrase the transcript into an article.",
+          "Do not auto-publish.",
+          "Do not treat the creator as the primary source unless the article attributes a firsthand discovery."
+        ]
+      },
+      "seo": {
+        "likelyQuery": "How do you build a rail line over a live 400-series highway?",
+        "evergreenPotential": "high",
+        "questionSearch": true
+      }
+    },
+    {
+      "id": "video:go-sand",
+      "discoveredAt": "2026-08-26T14:14:09.843843-04:00",
+      "videoUrl": "https://www.youtube.com/shorts/4FgMBCPa_Qc",
+      "videoId": "4FgMBCPa_Qc",
+      "title": "Trains have a sand tank?",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-23T15:30:03+00:00",
+      "views": 5756,
+      "velocity": 7.03,
+      "topic": "transit",
+      "region": "toronto",
+      "localRelevanceScore": 4.45,
+      "localRelevance": "Lakeshore West trains through Burlington use the same traction equipment as the rest of the GO network.",
+      "relevanceReasons": [
+        "burlington residents commonly use/travel there",
+        "affects Burlington transportation",
+        "applies through Ontario law/policy"
+      ],
+      "noveltyScore": 4.0,
+      "articlePotential": 3.8,
+      "overallScore": 3.435,
+      "scoreParts": {
+        "localRelevance": 4.45,
+        "velocity": 1.0604039090580009,
+        "novelty": 4.0,
+        "broadAppeal": 3.2,
+        "articlePotential": 3.8,
+        "sourceQuality": 4.6
+      },
+      "transcriptSource": "creator_text",
+      "transcriptStatus": "description_only",
+      "suggestedHeadline": "Why do GO trains dump sand on the rails?",
+      "suggestedAngle": "Traction, stopping distance, and what passengers notice when a train sands the rail.",
+      "hook": "The tank is not for winter roads. It is how a heavy train keeps grip on steel.",
+      "centralQuestion": "Why do GO trains dump sand on the rails?",
+      "leadType": "idea_lead",
+      "verificationStatus": "unverified",
+      "editorialStatus": "new",
+      "autoPublish": false,
+      "clusterId": "go-sand",
+      "clusterSize": 1,
+      "supportingVideos": [],
+      "existingCoverage": {
+        "existingArticles": [],
+        "backlogHit": "",
+        "recommendation": "new concept"
+      },
+      "claimLedger": [
+        {
+          "claim": "What's hidden behind this little door on GO trains?",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        }
+      ],
+      "researchPacket": {
+        "workingHeadline": "Why do GO trains dump sand on the rails?",
+        "curiosityHook": "The tank is not for winter roads. It is how a heavy train keeps grip on steel.",
+        "whyBurlingtonReadersCare": "Lakeshore West trains through Burlington use the same traction equipment as the rest of the GO network.",
+        "videoSources": [
+          {
+            "creator": "Metrolinx",
+            "title": "Trains have a sand tank?",
+            "url": "https://www.youtube.com/shorts/4FgMBCPa_Qc",
+            "publishedAt": "2026-07-23T15:30:03+00:00",
+            "views": 5756,
+            "velocity": 7.03
+          }
+        ],
+        "supportingVideos": [],
+        "creditNote": "If this becomes a story, credit Metrolinx and link the original video. The video is a lead, not verification.",
+        "keyClaims": [
+          {
+            "claim": "What's hidden behind this little door on GO trains?",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          }
+        ],
+        "primarySourcesToFind": [
+          "Metrolinx / GO fleet documentation",
+          "rail operating rules on sanding",
+          "existing Burlington News GO tools"
+        ],
+        "governmentSources": [
+          "City of Toronto",
+          "Metrolinx"
+        ],
+        "mapsDataPossibilities": "simple wheel-and-rail sanding diagram",
+        "potentialVisuals": [
+          "simple wheel-and-rail sanding diagram",
+          "Do not screenshot the creator's video for a hero image."
+        ],
+        "questionsStillUnanswered": [
+          "Why do GO trains dump sand on the rails?",
+          "Which official document can independently confirm the central number or ownership claim?",
+          "What can Burlington News add that the video does not already show?"
+        ],
+        "recommendedNextStep": "new concept",
+        "transcriptStatus": "description_only",
+        "transcriptSource": "creator_text",
+        "doNot": [
+          "Do not paraphrase the transcript into an article.",
+          "Do not auto-publish.",
+          "Do not treat the creator as the primary source unless the article attributes a firsthand discovery."
+        ]
+      },
+      "seo": {
+        "likelyQuery": "Why do GO trains dump sand on the rails?",
+        "evergreenPotential": "high",
+        "questionSearch": true
+      }
+    },
+    {
+      "id": "video:cne-go",
+      "discoveredAt": "2026-08-26T14:14:09.844109-04:00",
+      "videoUrl": "https://www.youtube.com/shorts/JueXaMHpLOM",
+      "videoId": "JueXaMHpLOM",
+      "title": "3 tools to build Exhibition Station, explained",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-29T15:30:13+00:00",
+      "views": 3286,
+      "velocity": 4.87,
+      "topic": "transit",
+      "region": "toronto",
+      "localRelevanceScore": 3.7,
+      "localRelevance": "CNE is one of the few Toronto events Burlington families routinely take GO to.",
+      "relevanceReasons": [
+        "affects Burlington transportation",
+        "applies through Ontario law/policy"
+      ],
+      "noveltyScore": 4.0,
+      "articlePotential": 4.1000000000000005,
+      "overallScore": 3.434,
+      "scoreParts": {
+        "localRelevance": 3.7,
+        "velocity": 0.8722293798340965,
+        "novelty": 4.0,
+        "broadAppeal": 4.3999999999999995,
+        "articlePotential": 4.1000000000000005,
+        "sourceQuality": 4.6
+      },
+      "transcriptSource": "creator_text",
+      "transcriptStatus": "description_only",
+      "suggestedHeadline": "If you take GO to the CNE, which station actually drops you closest?",
+      "suggestedAngle": "Station choice from Burlington, crowd crush, and last-train risk.",
+      "hook": "Exhibition Station is the obvious answer. The useful answer includes walking time, crowds and the last train home.",
+      "centralQuestion": "If you take GO to the CNE, which station actually drops you closest?",
+      "leadType": "idea_lead",
+      "verificationStatus": "unverified",
+      "editorialStatus": "new",
+      "autoPublish": false,
+      "clusterId": "cne-go",
+      "clusterSize": 7,
+      "supportingVideos": [
+        {
+          "videoId": "i7d_wDh-2JA",
+          "title": "Going to the CNE? Watch this first",
+          "channel": "Metrolinx",
+          "videoUrl": "https://www.youtube.com/shorts/i7d_wDh-2JA",
+          "views": 1200
+        },
+        {
+          "videoId": "M6Q4SJ5dg4E",
+          "title": "Staying safe on the GO during the Canadian National Exhibition",
+          "channel": "Metrolinx",
+          "videoUrl": "https://www.youtube.com/shorts/M6Q4SJ5dg4E",
+          "views": 1739
+        },
+        {
+          "videoId": "L4llyXu9AsQ",
+          "title": "You can now eat at the CNE without paying admission 😋",
+          "channel": "blogTO",
+          "videoUrl": "https://www.youtube.com/shorts/L4llyXu9AsQ",
+          "views": 2205
+        },
+        {
+          "videoId": "94PHxTH_lH4",
+          "title": "If you were to take a first-timer to the CNE, what's one thing you would have them try? 🤔🎢",
+          "channel": "blogTO",
+          "videoUrl": "https://www.youtube.com/shorts/94PHxTH_lH4",
+          "views": 1833
+        },
+        {
+          "videoId": "kuKjEc5Saps",
+          "title": "What's your budget for the CNE this year? 💸🎢 #Toronto #CNE",
+          "channel": "blogTO",
+          "videoUrl": "https://www.youtube.com/shorts/kuKjEc5Saps",
+          "views": 3586
+        }
+      ],
+      "existingCoverage": {
+        "existingArticles": [],
+        "backlogHit": "",
+        "recommendation": "new concept"
+      },
+      "claimLedger": [
+        {
+          "claim": "As we expand Exhibition Station and build the Ontario Line, there are a few things you may have noticed at the construction site.",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        },
+        {
+          "claim": "Learn why we’re doing this work and about the structures you’re seeing.",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        },
+        {
+          "claim": "Expanding transit and building a new subway in Toronto is a massive undertaking, but we're here to ensure you get the information you need as we build.",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        },
+        {
+          "claim": "If you found this video helpful, please share it with your neighbours and friends, and if you haven’t signed up for our Neighbourhood Notices, visit metrolinx.com/getupdates.",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        },
+        {
+          "claim": "You can also feel free to email us directly at ontarioline@metrolinx.com or call us 24-7 at 416-202-5100.",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        }
+      ],
+      "researchPacket": {
+        "workingHeadline": "If you take GO to the CNE, which station actually drops you closest?",
+        "curiosityHook": "Exhibition Station is the obvious answer. The useful answer includes walking time, crowds and the last train home.",
+        "whyBurlingtonReadersCare": "CNE is one of the few Toronto events Burlington families routinely take GO to.",
+        "videoSources": [
+          {
+            "creator": "Metrolinx",
+            "title": "3 tools to build Exhibition Station, explained",
+            "url": "https://www.youtube.com/shorts/JueXaMHpLOM",
+            "publishedAt": "2026-07-29T15:30:13+00:00",
+            "views": 3286,
+            "velocity": 4.87
+          }
+        ],
+        "supportingVideos": [
+          {
+            "videoId": "i7d_wDh-2JA",
+            "title": "Going to the CNE? Watch this first",
+            "channel": "Metrolinx",
+            "videoUrl": "https://www.youtube.com/shorts/i7d_wDh-2JA",
+            "views": 1200
+          },
+          {
+            "videoId": "M6Q4SJ5dg4E",
+            "title": "Staying safe on the GO during the Canadian National Exhibition",
+            "channel": "Metrolinx",
+            "videoUrl": "https://www.youtube.com/shorts/M6Q4SJ5dg4E",
+            "views": 1739
+          },
+          {
+            "videoId": "L4llyXu9AsQ",
+            "title": "You can now eat at the CNE without paying admission 😋",
+            "channel": "blogTO",
+            "videoUrl": "https://www.youtube.com/shorts/L4llyXu9AsQ",
+            "views": 2205
+          },
+          {
+            "videoId": "94PHxTH_lH4",
+            "title": "If you were to take a first-timer to the CNE, what's one thing you would have them try? 🤔🎢",
+            "channel": "blogTO",
+            "videoUrl": "https://www.youtube.com/shorts/94PHxTH_lH4",
+            "views": 1833
+          },
+          {
+            "videoId": "kuKjEc5Saps",
+            "title": "What's your budget for the CNE this year? 💸🎢 #Toronto #CNE",
+            "channel": "blogTO",
+            "videoUrl": "https://www.youtube.com/shorts/kuKjEc5Saps",
+            "views": 3586
+          }
+        ],
+        "creditNote": "If this becomes a story, credit Metrolinx and link the original video. The video is a lead, not verification.",
+        "keyClaims": [
+          {
+            "claim": "As we expand Exhibition Station and build the Ontario Line, there are a few things you may have noticed at the construction site.",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          },
+          {
+            "claim": "Learn why we’re doing this work and about the structures you’re seeing.",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          },
+          {
+            "claim": "Expanding transit and building a new subway in Toronto is a massive undertaking, but we're here to ensure you get the information you need as we build.",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          },
+          {
+            "claim": "If you found this video helpful, please share it with your neighbours and friends, and if you haven’t signed up for our Neighbourhood Notices, visit metrolinx.com/getupdates.",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          },
+          {
+            "claim": "You can also feel free to email us directly at ontarioline@metrolinx.com or call us 24-7 at 416-202-5100.",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          }
+        ],
+        "primarySourcesToFind": [
+          "GO / Exhibition Station",
+          "CNE visitor information",
+          "Metrolinx special-event service"
+        ],
+        "governmentSources": [
+          "City of Toronto",
+          "Metrolinx"
+        ],
+        "mapsDataPossibilities": "walk-shed from Exhibition vs Union",
+        "potentialVisuals": [
+          "walk-shed from Exhibition vs Union",
+          "Do not screenshot the creator's video for a hero image."
+        ],
+        "questionsStillUnanswered": [
+          "If you take GO to the CNE, which station actually drops you closest?",
+          "Which official document can independently confirm the central number or ownership claim?",
+          "What can Burlington News add that the video does not already show?"
+        ],
+        "recommendedNextStep": "new concept",
+        "transcriptStatus": "description_only",
+        "transcriptSource": "creator_text",
+        "doNot": [
+          "Do not paraphrase the transcript into an article.",
+          "Do not auto-publish.",
+          "Do not treat the creator as the primary source unless the article attributes a firsthand discovery."
+        ]
+      },
+      "seo": {
+        "likelyQuery": "If you take GO to the CNE, which station actually drops you closest?",
+        "evergreenPotential": "high",
+        "questionSearch": true
+      }
+    },
+    {
+      "id": "video:lake-ontario-name",
+      "discoveredAt": "2026-08-26T14:14:09.844399-04:00",
+      "videoUrl": "https://www.youtube.com/watch?v=4Gn-UG5DCcA",
+      "videoId": "4Gn-UG5DCcA",
+      "title": "“Not very neighbourly”: Toronto Mayor Chow on Trump threat to rename Lake Ontario to “Lake America”",
+      "channel": "Global News",
+      "publishedAt": "2026-08-26T17:56:41+00:00",
+      "views": 428,
+      "velocity": 214.0,
+      "topic": "law",
+      "region": "toronto",
+      "localRelevanceScore": 3.45,
+      "localRelevance": "Burlington sits on Lake Ontario. The name is not a Toronto-only joke.",
+      "relevanceReasons": [
+        "applies through Ontario law/policy"
+      ],
+      "noveltyScore": 3.6,
+      "articlePotential": 4.1000000000000005,
+      "overallScore": 3.423,
+      "scoreParts": {
+        "localRelevance": 3.45,
+        "velocity": 1.8253116278681674,
+        "novelty": 3.6,
+        "broadAppeal": 4.3999999999999995,
+        "articlePotential": 4.1000000000000005,
+        "sourceQuality": 3.8
+      },
+      "transcriptSource": "creator_text",
+      "transcriptStatus": "description_only",
+      "suggestedHeadline": "Can a U.S. president rename Lake Ontario?",
+      "suggestedAngle": "Geographic naming law in Canada and the U.S., and why the shoreline cities care.",
+      "hook": "The lake has an official name on both sides of the border. Changing it is not a tweet.",
+      "centralQuestion": "Can a U.S. president rename Lake Ontario?",
+      "leadType": "idea_lead",
+      "verificationStatus": "unverified",
+      "editorialStatus": "new",
+      "autoPublish": false,
+      "clusterId": "lake-ontario-name",
+      "clusterSize": 3,
+      "supportingVideos": [
+        {
+          "videoId": "4h2KUXbF_uc",
+          "title": "Trump wants to rename Lake Ontario 🌊",
+          "channel": "blogTO",
+          "videoUrl": "https://www.youtube.com/shorts/4h2KUXbF_uc",
+          "views": 1922
+        },
+        {
+          "videoId": "1DENKwhVEl4",
+          "title": "US-Canada trade war: Trump threatens to rename Lake Ontario",
+          "channel": "Global News",
+          "videoUrl": "https://www.youtube.com/watch?v=1DENKwhVEl4",
+          "views": 10137
+        }
+      ],
+      "existingCoverage": {
+        "existingArticles": [],
+        "backlogHit": "",
+        "recommendation": "new concept"
+      },
+      "claimLedger": [
+        {
+          "claim": "All options are on the table — that’s the approach Toronto Mayor Olivia Chow and Ontario Premier Doug Ford are taking with respect to retaliatory measures against U.S.",
+          "videoTimestamp": "",
+          "creator": "Global News",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        },
+        {
+          "claim": "President Donald Trump’s threat to rename Lake Ontario to “Lake America” as “not very neighbourly.” As Global’s Victoria Femia reports, Chow backed Ford’s threat to cut electricity to the U.S., saying “whatever it takes.",
+          "videoTimestamp": "",
+          "creator": "Global News",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        }
+      ],
+      "researchPacket": {
+        "workingHeadline": "Can a U.S. president rename Lake Ontario?",
+        "curiosityHook": "The lake has an official name on both sides of the border. Changing it is not a tweet.",
+        "whyBurlingtonReadersCare": "Burlington sits on Lake Ontario. The name is not a Toronto-only joke.",
+        "videoSources": [
+          {
+            "creator": "Global News",
+            "title": "“Not very neighbourly”: Toronto Mayor Chow on Trump threat to rename Lake Ontario to “Lake America”",
+            "url": "https://www.youtube.com/watch?v=4Gn-UG5DCcA",
+            "publishedAt": "2026-08-26T17:56:41+00:00",
+            "views": 428,
+            "velocity": 214.0
+          }
+        ],
+        "supportingVideos": [
+          {
+            "videoId": "4h2KUXbF_uc",
+            "title": "Trump wants to rename Lake Ontario 🌊",
+            "channel": "blogTO",
+            "videoUrl": "https://www.youtube.com/shorts/4h2KUXbF_uc",
+            "views": 1922
+          },
+          {
+            "videoId": "1DENKwhVEl4",
+            "title": "US-Canada trade war: Trump threatens to rename Lake Ontario",
+            "channel": "Global News",
+            "videoUrl": "https://www.youtube.com/watch?v=1DENKwhVEl4",
+            "views": 10137
+          }
+        ],
+        "creditNote": "If this becomes a story, credit Global News and link the original video. The video is a lead, not verification.",
+        "keyClaims": [
+          {
+            "claim": "All options are on the table — that’s the approach Toronto Mayor Olivia Chow and Ontario Premier Doug Ford are taking with respect to retaliatory measures against U.S.",
+            "videoTimestamp": "",
+            "creator": "Global News",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          },
+          {
+            "claim": "President Donald Trump’s threat to rename Lake Ontario to “Lake America” as “not very neighbourly.” As Global’s Victoria Femia reports, Chow backed Ford’s threat to cut electricity to the U.S., saying “whatever it takes.",
+            "videoTimestamp": "",
+            "creator": "Global News",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          }
+        ],
+        "primarySourcesToFind": [
+          "Geographical Names Board of Canada",
+          "U.S. Board on Geographic Names",
+          "Ontario / City of Toronto statements"
+        ],
+        "governmentSources": [
+          "City of Toronto",
+          "Metrolinx",
+          "Government of Ontario"
+        ],
+        "mapsDataPossibilities": "simple binational naming diagram",
+        "potentialVisuals": [
+          "simple binational naming diagram",
+          "Do not screenshot the creator's video for a hero image."
+        ],
+        "questionsStillUnanswered": [
+          "Can a U.S. president rename Lake Ontario?",
+          "Which official document can independently confirm the central number or ownership claim?",
+          "What can Burlington News add that the video does not already show?"
+        ],
+        "recommendedNextStep": "new concept",
+        "transcriptStatus": "description_only",
+        "transcriptSource": "creator_text",
+        "doNot": [
+          "Do not paraphrase the transcript into an article.",
+          "Do not auto-publish.",
+          "Do not treat the creator as the primary source unless the article attributes a firsthand discovery."
+        ]
+      },
+      "seo": {
+        "likelyQuery": "Can a U.S. president rename Lake Ontario?",
+        "evergreenPotential": "high",
+        "questionSearch": true
+      }
+    },
+    {
+      "id": "video:ontario-name-change",
+      "discoveredAt": "2026-08-26T14:14:09.844693-04:00",
+      "videoUrl": "https://www.youtube.com/shorts/s-6tlJKUj_Y",
+      "videoId": "s-6tlJKUj_Y",
+      "title": "How to change your name in Ontario?",
+      "channel": "TVO Today",
+      "publishedAt": "2026-08-26T11:30:10+00:00",
+      "views": 1039,
+      "velocity": 154.31,
+      "topic": "law",
+      "region": "ontario",
+      "localRelevanceScore": 2.65,
+      "localRelevance": "Name changes are an Ontario process that Burlington residents file the same way as anyone else in the province.",
+      "relevanceReasons": [
+        "applies through Ontario law/policy"
+      ],
+      "noveltyScore": 4.0,
+      "articlePotential": 4.1000000000000005,
+      "overallScore": 3.389,
+      "scoreParts": {
+        "localRelevance": 2.65,
+        "velocity": 2.4062311567675487,
+        "novelty": 4.0,
+        "broadAppeal": 3.8,
+        "articlePotential": 4.1000000000000005,
+        "sourceQuality": 4.6
+      },
+      "transcriptSource": "creator_text",
+      "transcriptStatus": "description_only",
+      "suggestedHeadline": "How do you legally change your name in Ontario?",
+      "suggestedAngle": "Service explainer from the statute and the ministry process, not a recap of a TV segment.",
+      "hook": "The form is public. The delays, costs and exceptions are what people actually get wrong.",
+      "centralQuestion": "How do you legally change your name in Ontario?",
+      "leadType": "idea_lead",
+      "verificationStatus": "unverified",
+      "editorialStatus": "new",
+      "autoPublish": false,
+      "clusterId": "ontario-name-change",
+      "clusterSize": 1,
+      "supportingVideos": [],
+      "existingCoverage": {
+        "existingArticles": [],
+        "backlogHit": "",
+        "recommendation": "new concept"
+      },
+      "claimLedger": [
+        {
+          "claim": "Whether you're changing your last name after marriage or legally changing your name for another reason, TVO's Knowledge Gap tells what you need to know about changing your name in Ontario.",
+          "videoTimestamp": "",
+          "creator": "TVO Today",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        }
+      ],
+      "researchPacket": {
+        "workingHeadline": "How do you legally change your name in Ontario?",
+        "curiosityHook": "The form is public. The delays, costs and exceptions are what people actually get wrong.",
+        "whyBurlingtonReadersCare": "Name changes are an Ontario process that Burlington residents file the same way as anyone else in the province.",
+        "videoSources": [
+          {
+            "creator": "TVO Today",
+            "title": "How to change your name in Ontario?",
+            "url": "https://www.youtube.com/shorts/s-6tlJKUj_Y",
+            "publishedAt": "2026-08-26T11:30:10+00:00",
+            "views": 1039,
+            "velocity": 154.31
+          }
+        ],
+        "supportingVideos": [],
+        "creditNote": "If this becomes a story, credit TVO Today and link the original video. The video is a lead, not verification.",
+        "keyClaims": [
+          {
+            "claim": "Whether you're changing your last name after marriage or legally changing your name for another reason, TVO's Knowledge Gap tells what you need to know about changing your name in Ontario.",
+            "videoTimestamp": "",
+            "creator": "TVO Today",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          }
+        ],
+        "primarySourcesToFind": [
+          "Ontario name-change statute and ministry page",
+          "ServiceOntario"
+        ],
+        "governmentSources": [
+          "Government of Ontario"
+        ],
+        "mapsDataPossibilities": "process diagram",
+        "potentialVisuals": [
+          "process diagram",
+          "Do not screenshot the creator's video for a hero image."
+        ],
+        "questionsStillUnanswered": [
+          "How do you legally change your name in Ontario?",
+          "Which official document can independently confirm the central number or ownership claim?",
+          "What can Burlington News add that the video does not already show?"
+        ],
+        "recommendedNextStep": "new concept",
+        "transcriptStatus": "description_only",
+        "transcriptSource": "creator_text",
+        "doNot": [
+          "Do not paraphrase the transcript into an article.",
+          "Do not auto-publish.",
+          "Do not treat the creator as the primary source unless the article attributes a firsthand discovery."
+        ]
+      },
+      "seo": {
+        "likelyQuery": "How do you legally change your name in Ontario?",
+        "evergreenPotential": "high",
+        "questionSearch": true
+      }
+    },
+    {
+      "id": "video:railway-move",
+      "discoveredAt": "2026-08-26T14:14:09.844935-04:00",
+      "videoUrl": "https://www.youtube.com/shorts/LBmLdj4iitM",
+      "videoId": "LBmLdj4iitM",
+      "title": "How we relocate railway tracks",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-07T19:53:36+00:00",
+      "views": 2690,
+      "velocity": 2.24,
+      "topic": "infrastructure",
+      "region": "toronto",
+      "localRelevanceScore": 3.7,
+      "localRelevance": "Burlington’s GO corridor is rebuilt the same way: trains first, neighbourhoods second.",
+      "relevanceReasons": [
+        "affects Burlington transportation",
+        "applies through Ontario law/policy"
+      ],
+      "noveltyScore": 4.0,
+      "articlePotential": 4.1000000000000005,
+      "overallScore": 3.375,
+      "scoreParts": {
+        "localRelevance": 3.7,
+        "velocity": 0.5746311953693707,
+        "novelty": 4.0,
+        "broadAppeal": 4.3999999999999995,
+        "articlePotential": 4.1000000000000005,
+        "sourceQuality": 4.6
+      },
+      "transcriptSource": "creator_text",
+      "transcriptStatus": "description_only",
+      "suggestedHeadline": "How do you pick up a working railway and put it somewhere else?",
+      "suggestedAngle": "Method, weekend closures, and what that means on Lakeshore West.",
+      "hook": "The track has to keep carrying trains while the corridor is being rebuilt around it.",
+      "centralQuestion": "How do you pick up a working railway and put it somewhere else?",
+      "leadType": "idea_lead",
+      "verificationStatus": "unverified",
+      "editorialStatus": "new",
+      "autoPublish": false,
+      "clusterId": "railway-move",
+      "clusterSize": 1,
+      "supportingVideos": [],
+      "existingCoverage": {
+        "existingArticles": [],
+        "backlogHit": "",
+        "recommendation": "new concept"
+      },
+      "claimLedger": [
+        {
+          "claim": "Ever wonder how railway tracks are moved and rebuilt?",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        },
+        {
+          "claim": "Here’s how we move, upgrade, and resurface railway track to make room for a new station.",
+          "videoTimestamp": "",
+          "creator": "Metrolinx",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        }
+      ],
+      "researchPacket": {
+        "workingHeadline": "How do you pick up a working railway and put it somewhere else?",
+        "curiosityHook": "The track has to keep carrying trains while the corridor is being rebuilt around it.",
+        "whyBurlingtonReadersCare": "Burlington’s GO corridor is rebuilt the same way: trains first, neighbourhoods second.",
+        "videoSources": [
+          {
+            "creator": "Metrolinx",
+            "title": "How we relocate railway tracks",
+            "url": "https://www.youtube.com/shorts/LBmLdj4iitM",
+            "publishedAt": "2026-07-07T19:53:36+00:00",
+            "views": 2690,
+            "velocity": 2.24
+          }
+        ],
+        "supportingVideos": [],
+        "creditNote": "If this becomes a story, credit Metrolinx and link the original video. The video is a lead, not verification.",
+        "keyClaims": [
+          {
+            "claim": "Ever wonder how railway tracks are moved and rebuilt?",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          },
+          {
+            "claim": "Here’s how we move, upgrade, and resurface railway track to make room for a new station.",
+            "videoTimestamp": "",
+            "creator": "Metrolinx",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          }
+        ],
+        "primarySourcesToFind": [
+          "Metrolinx corridor projects",
+          "CN/CP operating rules",
+          "GO weekend-closure notices"
+        ],
+        "governmentSources": [
+          "City of Toronto",
+          "Metrolinx"
+        ],
+        "mapsDataPossibilities": "track-shift diagram",
+        "potentialVisuals": [
+          "track-shift diagram",
+          "Do not screenshot the creator's video for a hero image."
+        ],
+        "questionsStillUnanswered": [
+          "How do you pick up a working railway and put it somewhere else?",
+          "Which official document can independently confirm the central number or ownership claim?",
+          "What can Burlington News add that the video does not already show?"
+        ],
+        "recommendedNextStep": "new concept",
+        "transcriptStatus": "description_only",
+        "transcriptSource": "creator_text",
+        "doNot": [
+          "Do not paraphrase the transcript into an article.",
+          "Do not auto-publish.",
+          "Do not treat the creator as the primary source unless the article attributes a firsthand discovery."
+        ]
+      },
+      "seo": {
+        "likelyQuery": "How do you pick up a working railway and put it somewhere else?",
+        "evergreenPotential": "high",
+        "questionSearch": true
+      }
+    },
+    {
+      "id": "video:halton-source-water",
+      "discoveredAt": "2026-08-26T14:14:09.845864-04:00",
+      "videoUrl": "https://www.youtube.com/watch?v=9RCJs9j4kOg",
+      "videoId": "9RCJs9j4kOg",
+      "title": "Proposed Updates to the Halton-Hamilton Source Protection Plan Webinar",
+      "channel": "Conservation Halton",
+      "publishedAt": "2026-08-07T12:52:27+00:00",
+      "views": 19,
+      "velocity": 0.04,
+      "topic": "environment",
+      "region": "halton",
+      "localRelevanceScore": 4.65,
+      "localRelevance": "Burlington drinking water and creeks sit inside the Halton-Hamilton source protection area.",
+      "relevanceReasons": [
+        "infrastructure/system directly connected to Burlington"
+      ],
+      "noveltyScore": 3.0,
+      "articlePotential": 2.4,
+      "overallScore": 3.027,
+      "scoreParts": {
+        "localRelevance": 4.65,
+        "velocity": 0.5720643280159369,
+        "novelty": 3.0,
+        "broadAppeal": 3.2,
+        "articlePotential": 2.4,
+        "sourceQuality": 4.6
+      },
+      "transcriptSource": "creator_text",
+      "transcriptStatus": "description_only",
+      "suggestedHeadline": "What is Halton actually trying to change about the water you drink?",
+      "suggestedAngle": "Read the proposed updates and translate the land-use consequences.",
+      "hook": "Source protection plans are boring until they decide what can be built near a well or creek.",
+      "centralQuestion": "What is Halton actually trying to change about the water you drink?",
+      "leadType": "idea_lead",
+      "verificationStatus": "unverified",
+      "editorialStatus": "new",
+      "autoPublish": false,
+      "clusterId": "halton-source-water",
+      "clusterSize": 1,
+      "supportingVideos": [],
+      "existingCoverage": {
+        "existingArticles": [],
+        "backlogHit": "",
+        "recommendation": "new concept"
+      },
+      "claimLedger": [
+        {
+          "claim": "On August 6, 2026, Conservation Halton staff hosted a webinar to discuss proposed updates to the Halton-Hamilton Source Protection Plan.",
+          "videoTimestamp": "",
+          "creator": "Conservation Halton",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        },
+        {
+          "claim": "These updates will ensure local sources of drinking water continue to be safe, reliable, and protected for the future.",
+          "videoTimestamp": "",
+          "creator": "Conservation Halton",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        },
+        {
+          "claim": "Learn more at https://www.protectingwater.ca/”",
+          "videoTimestamp": "",
+          "creator": "Conservation Halton",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        }
+      ],
+      "researchPacket": {
+        "workingHeadline": "What is Halton actually trying to change about the water you drink?",
+        "curiosityHook": "Source protection plans are boring until they decide what can be built near a well or creek.",
+        "whyBurlingtonReadersCare": "Burlington drinking water and creeks sit inside the Halton-Hamilton source protection area.",
+        "videoSources": [
+          {
+            "creator": "Conservation Halton",
+            "title": "Proposed Updates to the Halton-Hamilton Source Protection Plan Webinar",
+            "url": "https://www.youtube.com/watch?v=9RCJs9j4kOg",
+            "publishedAt": "2026-08-07T12:52:27+00:00",
+            "views": 19,
+            "velocity": 0.04
+          }
+        ],
+        "supportingVideos": [],
+        "creditNote": "If this becomes a story, credit Conservation Halton and link the original video. The video is a lead, not verification.",
+        "keyClaims": [
+          {
+            "claim": "On August 6, 2026, Conservation Halton staff hosted a webinar to discuss proposed updates to the Halton-Hamilton Source Protection Plan.",
+            "videoTimestamp": "",
+            "creator": "Conservation Halton",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          },
+          {
+            "claim": "These updates will ensure local sources of drinking water continue to be safe, reliable, and protected for the future.",
+            "videoTimestamp": "",
+            "creator": "Conservation Halton",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          },
+          {
+            "claim": "Learn more at https://www.protectingwater.ca/”",
+            "videoTimestamp": "",
+            "creator": "Conservation Halton",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          }
+        ],
+        "primarySourcesToFind": [
+          "Halton-Hamilton Source Protection Plan",
+          "Conservation Halton",
+          "City of Burlington comments"
+        ],
+        "governmentSources": [
+          "City of Burlington",
+          "Halton Region"
+        ],
+        "mapsDataPossibilities": "source-protection map of Burlington wells and intakes",
+        "potentialVisuals": [
+          "source-protection map of Burlington wells and intakes",
+          "Do not screenshot the creator's video for a hero image."
+        ],
+        "questionsStillUnanswered": [
+          "What is Halton actually trying to change about the water you drink?",
+          "Which official document can independently confirm the central number or ownership claim?",
+          "What can Burlington News add that the video does not already show?"
+        ],
+        "recommendedNextStep": "new concept",
+        "transcriptStatus": "description_only",
+        "transcriptSource": "creator_text",
+        "doNot": [
+          "Do not paraphrase the transcript into an article.",
+          "Do not auto-publish.",
+          "Do not treat the creator as the primary source unless the article attributes a firsthand discovery."
+        ]
+      },
+      "seo": {
+        "likelyQuery": "What is Halton actually trying to change about the water you drink?",
+        "evergreenPotential": "high",
+        "questionSearch": true
+      }
+    },
+    {
+      "id": "video:ontario-fighter-jet",
+      "discoveredAt": "2026-08-26T14:14:09.846362-04:00",
+      "videoUrl": "https://www.youtube.com/shorts/yTMw5wV7gqc",
+      "videoId": "yTMw5wV7gqc",
+      "title": "There's now a giant supersonic fighter jet sitting at an Ontario park ✈️",
+      "channel": "blogTO",
+      "publishedAt": "2026-08-25T21:30:06+00:00",
+      "views": 2329,
+      "velocity": 112.33,
+      "topic": "history",
+      "region": "toronto",
+      "localRelevanceScore": 3.45,
+      "localRelevance": "Ontario leftover military hardware often ends up in parks people already drive to.",
+      "relevanceReasons": [
+        "applies through Ontario law/policy"
+      ],
+      "noveltyScore": 3.0,
+      "articlePotential": 3.8,
+      "overallScore": 3.001,
+      "scoreParts": {
+        "localRelevance": 3.45,
+        "velocity": 1.5933291040293134,
+        "novelty": 3.0,
+        "broadAppeal": 3.2,
+        "articlePotential": 3.8,
+        "sourceQuality": 3.2
+      },
+      "transcriptSource": "creator_text",
+      "transcriptStatus": "TRANSCRIPT UNAVAILABLE",
+      "suggestedHeadline": "Why is there a supersonic fighter jet sitting in an Ontario park?",
+      "suggestedAngle": "Identify the park, the aircraft, the transfer, and the municipal decision.",
+      "hook": "The aircraft is the hook. The public-record question is who owns it, who moved it, and whether it stays.",
+      "centralQuestion": "Why is there a supersonic fighter jet sitting in an Ontario park?",
+      "leadType": "idea_lead",
+      "verificationStatus": "unverified",
+      "editorialStatus": "new",
+      "autoPublish": false,
+      "clusterId": "ontario-fighter-jet",
+      "clusterSize": 1,
+      "supportingVideos": [],
+      "existingCoverage": {
+        "existingArticles": [],
+        "backlogHit": "",
+        "recommendation": "new concept"
+      },
+      "claimLedger": [
+        {
+          "claim": "There's now a giant supersonic fighter jet sitting at an Ontario park ✈️",
+          "videoTimestamp": "",
+          "creator": "blogTO",
+          "verificationStatus": "creator_claim",
+          "verificationSource": "",
+          "confidence": "low"
+        }
+      ],
+      "researchPacket": {
+        "workingHeadline": "Why is there a supersonic fighter jet sitting in an Ontario park?",
+        "curiosityHook": "The aircraft is the hook. The public-record question is who owns it, who moved it, and whether it stays.",
+        "whyBurlingtonReadersCare": "Ontario leftover military hardware often ends up in parks people already drive to.",
+        "videoSources": [
+          {
+            "creator": "blogTO",
+            "title": "There's now a giant supersonic fighter jet sitting at an Ontario park ✈️",
+            "url": "https://www.youtube.com/shorts/yTMw5wV7gqc",
+            "publishedAt": "2026-08-25T21:30:06+00:00",
+            "views": 2329,
+            "velocity": 112.33
+          }
+        ],
+        "supportingVideos": [],
+        "creditNote": "If this becomes a story, credit blogTO and link the original video. The video is a lead, not verification.",
+        "keyClaims": [
+          {
+            "claim": "There's now a giant supersonic fighter jet sitting at an Ontario park ✈️",
+            "videoTimestamp": "",
+            "creator": "blogTO",
+            "verificationStatus": "creator_claim",
+            "verificationSource": "",
+            "confidence": "low"
+          }
+        ],
+        "primarySourcesToFind": [
+          "municipality / park operator",
+          "DND or museum transfer record",
+          "local reporting"
+        ],
+        "governmentSources": [
+          "City of Toronto",
+          "Metrolinx",
+          "Government of Ontario"
+        ],
+        "mapsDataPossibilities": "rights-safe still of the aircraft, not a YouTube frame",
+        "potentialVisuals": [
+          "rights-safe still of the aircraft, not a YouTube frame",
+          "Do not screenshot the creator's video for a hero image."
+        ],
+        "questionsStillUnanswered": [
+          "Why is there a supersonic fighter jet sitting in an Ontario park?",
+          "Which official document can independently confirm the central number or ownership claim?",
+          "What can Burlington News add that the video does not already show?"
+        ],
+        "recommendedNextStep": "new concept",
+        "transcriptStatus": "TRANSCRIPT UNAVAILABLE",
+        "transcriptSource": "creator_text",
+        "doNot": [
+          "Do not paraphrase the transcript into an article.",
+          "Do not auto-publish.",
+          "Do not treat the creator as the primary source unless the article attributes a firsthand discovery."
+        ]
+      },
+      "seo": {
+        "likelyQuery": "Why is there a supersonic fighter jet sitting in an Ontario park?",
+        "evergreenPotential": "high",
+        "questionSearch": true
+      }
+    }
+  ],
+  "top20": [
+    {
+      "videoId": "btQmRSjOxiw",
+      "title": "How do you prepare for a light rail transit line?",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-25T15:40:13+00:00",
+      "views": 1762,
+      "overallScore": 3.826,
+      "region": "hamilton",
+      "videoUrl": "https://www.youtube.com/shorts/btQmRSjOxiw"
+    },
+    {
+      "videoId": "_JCzXzoj_eM",
+      "title": "Elevated guideway nears completion over Highway 403 - Hazel McCallion Line",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-13T15:29:05+00:00",
+      "views": 5798,
+      "overallScore": 3.542,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/_JCzXzoj_eM"
+    },
+    {
+      "videoId": "RqZCcTH18j4",
+      "title": "Scarborough Subway Extension tunnel reaches 75% completion",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-29T19:45:28+00:00",
+      "views": 15262,
+      "overallScore": 3.46,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/RqZCcTH18j4"
+    },
+    {
+      "videoId": "4FgMBCPa_Qc",
+      "title": "Trains have a sand tank?",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-23T15:30:03+00:00",
+      "views": 5756,
+      "overallScore": 3.435,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/4FgMBCPa_Qc"
+    },
+    {
+      "videoId": "JueXaMHpLOM",
+      "title": "3 tools to build Exhibition Station, explained",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-29T15:30:13+00:00",
+      "views": 3286,
+      "overallScore": 3.434,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/JueXaMHpLOM"
+    },
+    {
+      "videoId": "4Gn-UG5DCcA",
+      "title": "“Not very neighbourly”: Toronto Mayor Chow on Trump threat to rename Lake Ontario to “Lake America”",
+      "channel": "Global News",
+      "publishedAt": "2026-08-26T17:56:41+00:00",
+      "views": 428,
+      "overallScore": 3.423,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/watch?v=4Gn-UG5DCcA"
+    },
+    {
+      "videoId": "jgQtRaG3QtE",
+      "title": "Bet you've never seen a GO Train like this before",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-12T20:13:36+00:00",
+      "views": 3990,
+      "overallScore": 3.395,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/jgQtRaG3QtE"
+    },
+    {
+      "videoId": "s-6tlJKUj_Y",
+      "title": "How to change your name in Ontario?",
+      "channel": "TVO Today",
+      "publishedAt": "2026-08-26T11:30:10+00:00",
+      "views": 1039,
+      "overallScore": 3.389,
+      "region": "ontario",
+      "videoUrl": "https://www.youtube.com/shorts/s-6tlJKUj_Y"
+    },
+    {
+      "videoId": "LBmLdj4iitM",
+      "title": "How we relocate railway tracks",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-07T19:53:36+00:00",
+      "views": 2690,
+      "overallScore": 3.375,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/LBmLdj4iitM"
+    },
+    {
+      "videoId": "KeZlOkLP2oQ",
+      "title": "How to stay safe around the Hazel McCallion Line",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-16T15:56:25+00:00",
+      "views": 2600,
+      "overallScore": 3.323,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/KeZlOkLP2oQ"
+    },
+    {
+      "videoId": "i7d_wDh-2JA",
+      "title": "Going to the CNE? Watch this first",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-21T20:07:52+00:00",
+      "views": 1200,
+      "overallScore": 3.293,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/i7d_wDh-2JA"
+    },
+    {
+      "videoId": "9x6Hn5xtwKg",
+      "title": "How will the trade war impact the cost of goods and what does it mean for retail?",
+      "channel": "CP24",
+      "publishedAt": "2026-08-26T16:54:18+00:00",
+      "views": 470,
+      "overallScore": 3.231,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/watch?v=9x6Hn5xtwKg"
+    },
+    {
+      "videoId": "6xDOtm4WmNA",
+      "title": "Construction complete on the Ontario Line's east end bridges",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-13T15:42:05+00:00",
+      "views": 10694,
+      "overallScore": 3.219,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/6xDOtm4WmNA"
+    },
+    {
+      "videoId": "GkdH3ILZznE",
+      "title": "‘I think Mr. Trump has lost his way’: Olivia Chow speaks on trade war",
+      "channel": "CP24",
+      "publishedAt": "2026-08-26T15:23:18+00:00",
+      "views": 418,
+      "overallScore": 3.193,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/GkdH3ILZznE"
+    },
+    {
+      "videoId": "M6Q4SJ5dg4E",
+      "title": "Staying safe on the GO during the Canadian National Exhibition",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-22T15:30:23+00:00",
+      "views": 1739,
+      "overallScore": 3.178,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/M6Q4SJ5dg4E"
+    },
+    {
+      "videoId": "O20Ni4e1Sq8",
+      "title": "How are international treaties negotiated?",
+      "channel": "TVO Today",
+      "publishedAt": "2026-08-20T18:35:24+00:00",
+      "views": 1795,
+      "overallScore": 3.129,
+      "region": "ontario",
+      "videoUrl": "https://www.youtube.com/shorts/O20Ni4e1Sq8"
+    },
+    {
+      "videoId": "GOjr96LK1HQ",
+      "title": "Making progress on the Yonge North Subway Extension",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-19T13:22:19+00:00",
+      "views": 8055,
+      "overallScore": 3.085,
+      "region": "toronto",
+      "videoUrl": "https://www.youtube.com/shorts/GOjr96LK1HQ"
+    },
+    {
+      "videoId": "a0-pxM8b-QU",
+      "title": "How much do pets really cost? | Knowledge Gap",
+      "channel": "TVO Today",
+      "publishedAt": "2026-08-05T11:30:28+00:00",
+      "views": 1016,
+      "overallScore": 3.049,
+      "region": "ontario",
+      "videoUrl": "https://www.youtube.com/watch?v=a0-pxM8b-QU"
+    },
+    {
+      "videoId": "xLybyj1SXik",
+      "title": "Tim Curry, known for 'The Rocky Horror Picture Show,' dead at 80",
+      "channel": "CityNews",
+      "publishedAt": "2026-08-26T16:41:41+00:00",
+      "views": 352,
+      "overallScore": 3.047,
+      "region": "gta",
+      "videoUrl": "https://www.youtube.com/watch?v=xLybyj1SXik"
+    },
+    {
+      "videoId": "9RCJs9j4kOg",
+      "title": "Proposed Updates to the Halton-Hamilton Source Protection Plan Webinar",
+      "channel": "Conservation Halton",
+      "publishedAt": "2026-08-07T12:52:27+00:00",
+      "views": 19,
+      "overallScore": 3.027,
+      "region": "halton",
+      "videoUrl": "https://www.youtube.com/watch?v=9RCJs9j4kOg"
+    }
+  ],
+  "scannedSample": [
+    {
+      "videoId": "btQmRSjOxiw",
+      "title": "How do you prepare for a light rail transit line?",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-25T15:40:13+00:00",
+      "views": 1762,
+      "overallScore": 3.826,
+      "region": "hamilton"
+    },
+    {
+      "videoId": "_JCzXzoj_eM",
+      "title": "Elevated guideway nears completion over Highway 403 - Hazel McCallion Line",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-13T15:29:05+00:00",
+      "views": 5798,
+      "overallScore": 3.542,
+      "region": "toronto"
+    },
+    {
+      "videoId": "RqZCcTH18j4",
+      "title": "Scarborough Subway Extension tunnel reaches 75% completion",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-29T19:45:28+00:00",
+      "views": 15262,
+      "overallScore": 3.46,
+      "region": "toronto"
+    },
+    {
+      "videoId": "4FgMBCPa_Qc",
+      "title": "Trains have a sand tank?",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-23T15:30:03+00:00",
+      "views": 5756,
+      "overallScore": 3.435,
+      "region": "toronto"
+    },
+    {
+      "videoId": "JueXaMHpLOM",
+      "title": "3 tools to build Exhibition Station, explained",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-29T15:30:13+00:00",
+      "views": 3286,
+      "overallScore": 3.434,
+      "region": "toronto"
+    },
+    {
+      "videoId": "4Gn-UG5DCcA",
+      "title": "“Not very neighbourly”: Toronto Mayor Chow on Trump threat to rename Lake Ontario to “Lake America”",
+      "channel": "Global News",
+      "publishedAt": "2026-08-26T17:56:41+00:00",
+      "views": 428,
+      "overallScore": 3.423,
+      "region": "toronto"
+    },
+    {
+      "videoId": "jgQtRaG3QtE",
+      "title": "Bet you've never seen a GO Train like this before",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-12T20:13:36+00:00",
+      "views": 3990,
+      "overallScore": 3.395,
+      "region": "toronto"
+    },
+    {
+      "videoId": "s-6tlJKUj_Y",
+      "title": "How to change your name in Ontario?",
+      "channel": "TVO Today",
+      "publishedAt": "2026-08-26T11:30:10+00:00",
+      "views": 1039,
+      "overallScore": 3.389,
+      "region": "ontario"
+    },
+    {
+      "videoId": "LBmLdj4iitM",
+      "title": "How we relocate railway tracks",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-07T19:53:36+00:00",
+      "views": 2690,
+      "overallScore": 3.375,
+      "region": "toronto"
+    },
+    {
+      "videoId": "KeZlOkLP2oQ",
+      "title": "How to stay safe around the Hazel McCallion Line",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-16T15:56:25+00:00",
+      "views": 2600,
+      "overallScore": 3.323,
+      "region": "toronto"
+    },
+    {
+      "videoId": "i7d_wDh-2JA",
+      "title": "Going to the CNE? Watch this first",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-21T20:07:52+00:00",
+      "views": 1200,
+      "overallScore": 3.293,
+      "region": "toronto"
+    },
+    {
+      "videoId": "9x6Hn5xtwKg",
+      "title": "How will the trade war impact the cost of goods and what does it mean for retail?",
+      "channel": "CP24",
+      "publishedAt": "2026-08-26T16:54:18+00:00",
+      "views": 470,
+      "overallScore": 3.231,
+      "region": "toronto"
+    },
+    {
+      "videoId": "6xDOtm4WmNA",
+      "title": "Construction complete on the Ontario Line's east end bridges",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-13T15:42:05+00:00",
+      "views": 10694,
+      "overallScore": 3.219,
+      "region": "toronto"
+    },
+    {
+      "videoId": "GkdH3ILZznE",
+      "title": "‘I think Mr. Trump has lost his way’: Olivia Chow speaks on trade war",
+      "channel": "CP24",
+      "publishedAt": "2026-08-26T15:23:18+00:00",
+      "views": 418,
+      "overallScore": 3.193,
+      "region": "toronto"
+    },
+    {
+      "videoId": "M6Q4SJ5dg4E",
+      "title": "Staying safe on the GO during the Canadian National Exhibition",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-22T15:30:23+00:00",
+      "views": 1739,
+      "overallScore": 3.178,
+      "region": "toronto"
+    },
+    {
+      "videoId": "O20Ni4e1Sq8",
+      "title": "How are international treaties negotiated?",
+      "channel": "TVO Today",
+      "publishedAt": "2026-08-20T18:35:24+00:00",
+      "views": 1795,
+      "overallScore": 3.129,
+      "region": "ontario"
+    },
+    {
+      "videoId": "GOjr96LK1HQ",
+      "title": "Making progress on the Yonge North Subway Extension",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-08-19T13:22:19+00:00",
+      "views": 8055,
+      "overallScore": 3.085,
+      "region": "toronto"
+    },
+    {
+      "videoId": "a0-pxM8b-QU",
+      "title": "How much do pets really cost? | Knowledge Gap",
+      "channel": "TVO Today",
+      "publishedAt": "2026-08-05T11:30:28+00:00",
+      "views": 1016,
+      "overallScore": 3.049,
+      "region": "ontario"
+    },
+    {
+      "videoId": "xLybyj1SXik",
+      "title": "Tim Curry, known for 'The Rocky Horror Picture Show,' dead at 80",
+      "channel": "CityNews",
+      "publishedAt": "2026-08-26T16:41:41+00:00",
+      "views": 352,
+      "overallScore": 3.047,
+      "region": "gta"
+    },
+    {
+      "videoId": "9RCJs9j4kOg",
+      "title": "Proposed Updates to the Halton-Hamilton Source Protection Plan Webinar",
+      "channel": "Conservation Halton",
+      "publishedAt": "2026-08-07T12:52:27+00:00",
+      "views": 19,
+      "overallScore": 3.027,
+      "region": "halton"
+    },
+    {
+      "videoId": "EM-WyNcmc_8",
+      "title": "How are treaties made? | Unravelled",
+      "channel": "TVO Today",
+      "publishedAt": "2026-08-07T20:44:01+00:00",
+      "views": 600,
+      "overallScore": 3.011,
+      "region": "ontario"
+    },
+    {
+      "videoId": "AGnatsf3lmk",
+      "title": "Endometriosis | (MIS)Treated",
+      "channel": "TVO Today",
+      "publishedAt": "2026-08-20T20:00:18+00:00",
+      "views": 1446,
+      "overallScore": 3.008,
+      "region": "ontario"
+    },
+    {
+      "videoId": "yTMw5wV7gqc",
+      "title": "There's now a giant supersonic fighter jet sitting at an Ontario park ✈️",
+      "channel": "blogTO",
+      "publishedAt": "2026-08-25T21:30:06+00:00",
+      "views": 2329,
+      "overallScore": 3.001,
+      "region": "toronto"
+    },
+    {
+      "videoId": "Anh3EIWFGEo",
+      "title": "Ford says 'everything’s on the table' in Ontario’s response to U.S.",
+      "channel": "CP24",
+      "publishedAt": "2026-08-26T17:41:47+00:00",
+      "views": 2220,
+      "overallScore": 2.974,
+      "region": "toronto"
+    },
+    {
+      "videoId": "2avKDfG8hRU",
+      "title": "Toronto-Trained Simon Wang Makes NHL History",
+      "channel": "CityNews",
+      "publishedAt": "2026-08-26T17:36:15+00:00",
+      "views": 22,
+      "overallScore": 2.974,
+      "region": "toronto"
+    },
+    {
+      "videoId": "ZIGFkESEUZ4",
+      "title": "Heritage Minutes: A New Part of Our Heritage",
+      "channel": "Historica Canada",
+      "publishedAt": "2026-08-26T15:15:32+00:00",
+      "views": 238,
+      "overallScore": 2.973,
+      "region": "canada"
+    },
+    {
+      "videoId": "l5tV5feO3IE",
+      "title": "A medical school just for family doctors?",
+      "channel": "TVO Today",
+      "publishedAt": "2026-08-12T20:43:30+00:00",
+      "views": 1272,
+      "overallScore": 2.928,
+      "region": "ontario"
+    },
+    {
+      "videoId": "D3OCFpltwwk",
+      "title": "Russia just failed to claim enormous seized jet stuck in Toronto for years ✈️",
+      "channel": "blogTO",
+      "publishedAt": "2026-08-24T15:45:28+00:00",
+      "views": 50125,
+      "overallScore": 2.919,
+      "region": "toronto"
+    },
+    {
+      "videoId": "LUgGiKm0mVw",
+      "title": "Learn to lock #shorts | Parks Canada",
+      "channel": "Parks Canada",
+      "publishedAt": "2026-08-24T18:59:51+00:00",
+      "views": 1208,
+      "overallScore": 2.902,
+      "region": "ontario"
+    },
+    {
+      "videoId": "Ez_ZDIl3yPM",
+      "title": "Ontario Line construction through the Don Valley",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-28T19:40:20+00:00",
+      "views": 3688,
+      "overallScore": 2.897,
+      "region": "toronto"
+    },
+    {
+      "videoId": "uK2wquXwoQ4",
+      "title": "Joshua Odjick on Heritage Minutes and remembering",
+      "channel": "Historica Canada",
+      "publishedAt": "2026-07-15T15:15:25+00:00",
+      "views": 1444,
+      "overallScore": 2.877,
+      "region": "hamilton"
+    },
+    {
+      "videoId": "6QctdAwNqLk",
+      "title": "Meet the future Don Valley Crossing",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-08T17:48:14+00:00",
+      "views": 2592,
+      "overallScore": 2.872,
+      "region": "toronto"
+    },
+    {
+      "videoId": "p4tQNRz6CaI",
+      "title": "Why Dolly Parton left her last song to be released in 2046",
+      "channel": "CityNews",
+      "publishedAt": "2026-08-26T16:54:59+00:00",
+      "views": 404,
+      "overallScore": 2.843,
+      "region": "gta"
+    },
+    {
+      "videoId": "nVvFkChTYTk",
+      "title": "Staying safe around the Hazel McCallion Line pt. 2",
+      "channel": "Metrolinx",
+      "publishedAt": "2026-07-17T16:01:05+00:00",
+      "views": 2389,
+      "overallScore": 2.839,
+      "region": "toronto"
+    },
+    {
+      "videoId": "4h2KUXbF_uc",
+      "title": "Trump wants to rename Lake Ontario 🌊",
+      "channel": "blogTO",
+      "publishedAt": "2026-08-25T21:15:00+00:00",
+      "views": 1922,
+      "overallScore": 2.83,
+      "region": "toronto"
+    },
+    {
+      "videoId": "DBUVlLqhpaw",
+      "title": "Trump administration reportedly planning more trade action against Canada",
+      "channel": "CityNews",
+      "publishedAt": "2026-08-26T14:49:50+00:00",
+      "views": 4128,
+      "overallScore": 2.816,
+      "region": "gta"
+    },
+    {
+      "videoId": "A-xnLBN1zu4",
+      "title": "New laws & rules coming to Ontario next month 👀",
+      "channel": "blogTO",
+      "publishedAt": "2026-08-24T21:25:09+00:00",
+      "views": 2549,
+      "overallScore": 2.813,
+      "region": "toronto"
+    },
+    {
+      "videoId": "tFxxzWStGJw",
+      "title": "Ontario's winter forecast for 2026 has arrived ❄️",
+      "channel": "blogTO",
+      "publishedAt": "2026-08-24T15:20:34+00:00",
+      "views": 2962,
+      "overallScore": 2.797,
+      "region": "toronto"
+    },
+    {
+      "videoId": "IpVd8a5c0oY",
+      "title": "‘Always concerned about the auto industry’ amid trade war: Oshawa mayor",
+      "channel": "CP24",
+      "publishedAt": "2026-08-26T15:32:51+00:00",
+      "views": 1673,
+      "overallScore": 2.794,
+      "region": "toronto"
+    },
+    {
+      "videoId": "4UcrbMe9J0Q",
+      "title": "WATCH LIVE | Doug Ford set to make announcement in Vaughan, Ont.",
+      "channel": "CBC News",
+      "publishedAt": "2026-08-26T15:38:44+00:00",
+      "views": 8863,
+      "overallScore": 2.772,
+      "region": "ontario"
+    }
+  ]
+}
