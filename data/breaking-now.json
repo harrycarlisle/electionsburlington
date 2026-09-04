@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T14:29:02.113036-04:00",
+  "generatedAt": "2026-09-04T17:00:09.415724-04:00",
   "mode": "local_update",
   "label": "Local Update",
   "method": "Local Update ranks fresh verified news plus existing stories with a real why-now hook such as a related current event, meaningful update or anniversary; duplicate editorial families are blocked.",
@@ -30,7 +30,7 @@
       "affectedArea": null,
       "publishedAt": "2026-09-04T01:40:00-04:00",
       "updatedAt": null,
-      "discoveredAt": "2026-09-04T14:29:02.113036-04:00",
+      "discoveredAt": "2026-09-04T17:00:09.415724-04:00",
       "severity": null,
       "impactScore": 4.4,
       "confidenceScore": 5.0,
