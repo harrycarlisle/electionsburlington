@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T19:30:19.834001-04:00",
+  "generatedAt": "2026-09-03T21:19:38.458763-04:00",
   "mode": "local_update",
   "label": "Local Update",
   "method": "No Burlington/Halton item had a strong current hook, so the rail used a verified regional fallback when available.",
@@ -30,7 +30,7 @@
       "affectedArea": null,
       "publishedAt": "2026-09-03T06:13:00-04:00",
       "updatedAt": null,
-      "discoveredAt": "2026-09-03T19:30:19.834001-04:00",
+      "discoveredAt": "2026-09-03T21:19:38.458763-04:00",
       "severity": null,
       "impactScore": 4.5,
       "confidenceScore": 5.0,
