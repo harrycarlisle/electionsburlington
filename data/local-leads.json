@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-09-04T01:19:06Z",
+  "generatedAt": "2026-09-04T11:41:42Z",
   "items": [
+    {
+      "id": "511:303388",
+      "detectedAt": "2026-09-04T11:41:42Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on HWY 403 HAMILTON Eastbound  at HWY 6 NORTH, Burlington. Left lane closed.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:303413",
+      "detectedAt": "2026-09-04T11:41:42Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Toronto bound  at THIRD LINE, Oakville. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:303056",
       "detectedAt": "2026-09-03T17:48:23Z",
