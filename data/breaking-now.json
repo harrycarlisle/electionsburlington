@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-04T07:42:20.268503-04:00",
+  "generatedAt": "2026-09-04T11:09:40.921777-04:00",
   "mode": "local_update",
   "label": "Local Update",
-  "method": "No Burlington/Halton item had a strong current hook, so the rail used a verified regional fallback when available. Fresh Hamilton-area news may replace an otherwise stale utility/service row.",
+  "method": "Local Update ranks fresh verified news plus existing stories with a real why-now hook such as a related current event, meaningful update or anniversary; duplicate editorial families are blocked.",
   "maxItems": 2,
   "liveFetches": true,
   "fallbackPolicy": {
@@ -21,8 +21,8 @@
   "items": [
     {
       "id": "041729a03dafad2c",
-      "headline": "Hamilton Police Seek Witnesses in Overnight Shooting in Oriole Crescent",
-      "shortHeadline": "Hamilton Police Seek Witnesses in Overnight Shooting in Oriole Crescent",
+      "headline": "Hamilton police seek witnesses in overnight shooting in oriole crescent",
+      "shortHeadline": "Hamilton police seek witnesses in overnight shooting in oriole crescent",
       "category": "PUBLIC SAFETY",
       "summary": "In the evening hours of Thursday, September 3rd, 2026, shortly after 10:30pm, Hamilton Police were called to the area of 2 Oriole Cresent for a shooting. Upon arrival, officers located spent casings, and a residence that sustained gunfire. There were no victims injured.",
       "location": "Hamilton",
@@ -30,7 +30,7 @@
       "affectedArea": null,
       "publishedAt": "2026-09-04T01:40:00-04:00",
       "updatedAt": null,
-      "discoveredAt": "2026-09-04T07:42:40.276039-04:00",
+      "discoveredAt": "2026-09-04T11:09:40.921777-04:00",
       "severity": null,
       "impactScore": 4.4,
       "confidenceScore": 5.0,
@@ -56,8 +56,11 @@
       "relatedSources": [],
       "label": null,
       "rejectReason": null,
+      "lifecycleStatus": "developing",
       "localUpdateScore": 3.375,
-      "regionalSupplement": true
+      "rawHeadline": "Hamilton Police Seek Witnesses in Overnight Shooting in Oriole Crescent.",
+      "scopeLabel": "Hamilton",
+      "agencyLabel": "Hamilton police"
     }
   ],
   "lifecycleUpdates": [],
