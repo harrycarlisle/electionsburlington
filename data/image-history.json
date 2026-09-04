@@ -3,11 +3,6 @@
     {
       "image": "https://www.conservationhalton.ca/wp-content/uploads/2022/05/Genericbanner2_1920x240.jpg",
       "url": "https://www.conservationhalton.ca/flood-status/",
-      "usedAt": "2026-09-03T11:40:51Z"
-    },
-    {
-      "image": "https://www.conservationhalton.ca/wp-content/uploads/2022/05/Genericbanner2_1920x240.jpg",
-      "url": "https://www.conservationhalton.ca/flood-status/",
       "usedAt": "2026-09-03T15:10:03Z"
     },
     {
@@ -29,6 +24,11 @@
       "image": "https://www.conservationhalton.ca/wp-content/uploads/2022/05/Genericbanner2_1920x240.jpg",
       "url": "https://www.conservationhalton.ca/flood-status/",
       "usedAt": "2026-09-04T06:30:59Z"
+    },
+    {
+      "image": "https://www.conservationhalton.ca/wp-content/uploads/2022/05/Genericbanner2_1920x240.jpg",
+      "url": "https://www.conservationhalton.ca/flood-status/",
+      "usedAt": "2026-09-04T11:42:59Z"
     }
   ]
 }
