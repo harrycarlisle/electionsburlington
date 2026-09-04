@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T20:03:51-04:00",
+  "updated": "2026-09-04T00:27:50-04:00",
   "timezone": "America/Toronto",
   "events": [
     {
@@ -31,32 +31,6 @@
       "scope": "Burlington",
       "weight": 8,
       "verifiedAt": "2026-08-26T16:00:00-04:00"
-    },
-    {
-      "id": "movies-under-the-stars-2026-09-03",
-      "title": "Movies Under the Stars: Lilo & Stitch",
-      "category": "Movie",
-      "start": "2026-09-03T20:00:00-04:00",
-      "end": "2026-09-03T23:00:00-04:00",
-      "dateLabel": "Thu, Sept. 3 · 8 p.m. at Ireland Park",
-      "location": "Ireland Park, Burlington",
-      "city": "Burlington",
-      "venue": "Ireland Park",
-      "summary": "The official City table also lists a September 3 screening at Ireland Park.",
-      "details": "The City page intro says the series runs through August 27, but the published schedule table includes Thursday, September 3 at Ireland Park for Lilo & Stitch 2025. Confirm closer to the date.",
-      "bring": [
-        "A lawn chair or blanket",
-        "Bug spray",
-        "A weather check before you leave"
-      ],
-      "source": "https://www.burlington.ca/en/news/festivals-and-events/movies-under-the-stars.aspx",
-      "sourceName": "City of Burlington",
-      "image": "assets/explore/movies-under-the-stars.webp",
-      "imageAlt": "Editorial reconstruction of a community outdoor movie night in a park.",
-      "credit": "Burlington News editorial visual",
-      "illustration": true,
-      "scope": "Burlington",
-      "verifiedAt": "2026-08-26"
     },
     {
       "id": "ribfest-2026",
