@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-04T09:36:18+00:00",
+  "checkedAt": "2026-09-04T14:20:05+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -72,7 +72,7 @@
       "url": "https://visitoakville.com/events/",
       "scope": "Nearby Oakville",
       "ok": true,
-      "candidates": 29
+      "candidates": 31
     },
     {
       "name": "City of Hamilton events calendar",
@@ -1037,7 +1037,7 @@
     },
     {
       "title": "Administrative Penalty Notice",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/tickets-fines-penalties/administrative-penalty-notice",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/tickets-fines-penalties/administrative-penalty-notice",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1079,6 +1079,19 @@
       "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/preventing-ending-homelessness/approved-temporary-shelter-expansion",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Archive Market",
+      "url": "https://visitoakville.com/events/archive-market/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -1206,7 +1219,7 @@
     },
     {
       "title": "Business Licence",
-      "url": "https://www.hamilton.ca/index%2ephp/build-invest-grow/starting-small-business/business-licences",
+      "url": "https://www.hamilton.ca/index%2Ephp/build-invest-grow/starting-small-business/business-licences",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1284,7 +1297,7 @@
     },
     {
       "title": "Cat Registration",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/animals-pets/cats/register-your-cat",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/animals-pets/cats/register-your-cat",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1414,7 +1427,7 @@
     },
     {
       "title": "Dog Licence",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/animals-pets/dogs/dog-licence",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/animals-pets/dogs/dog-licence",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1492,7 +1505,7 @@
     },
     {
       "title": "Event Planning & Rentals",
-      "url": "https://www.hamilton.ca/index%2ephp/things-do/venues-facilities-bookings",
+      "url": "https://www.hamilton.ca/index%2Ephp/things-do/venues-facilities-bookings",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1621,6 +1634,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Friday Night Jazz",
+      "url": "https://visitoakville.com/events/friday-night-jazz-2/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Gallery Flow Yoga",
       "url": "https://visitoakville.com/events/gallery-flow-yoga-fall-2026/",
       "source": "Visit Oakville events",
@@ -1648,7 +1674,7 @@
     },
     {
       "title": "HSR Schedules & Detours",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/hsr/schedule-route-tools/schedules-detours",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/hsr/schedule-route-tools/schedules-detours",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1739,7 +1765,7 @@
     },
     {
       "title": "Lane Restrictions & Road Closures",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/getting-around/driving-traffic/lane-restrictions-and-road-closures",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/getting-around/driving-traffic/lane-restrictions-and-road-closures",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1921,7 +1947,7 @@
     },
     {
       "title": "Paramedic & Ambulance",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/emergency-services/paramedics/about-hamilton-paramedic-service",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/emergency-services/paramedics/about-hamilton-paramedic-service",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1934,7 +1960,7 @@
     },
     {
       "title": "Parking Penalty Notice",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/tickets-fines-penalties/parking-penalty-notice",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/tickets-fines-penalties/parking-penalty-notice",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2012,7 +2038,7 @@
     },
     {
       "title": "Property Tax",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/property-tax-billing/pay-your-property-tax",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/property-taxes/property-tax-billing/pay-your-property-tax",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2025,7 +2051,7 @@
     },
     {
       "title": "Property Tax eBilling",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/property-tax-billing",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/property-taxes/property-tax-billing",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2038,7 +2064,7 @@
     },
     {
       "title": "Provincial Offences Notice",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/tickets-fines-penalties/provincial-offences-notice",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/tickets-fines-penalties/provincial-offences-notice",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2389,7 +2415,7 @@
     },
     {
       "title": "Vacant Unit Declaration",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/vacant-unit-tax",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/property-taxes/vacant-unit-tax",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2415,7 +2441,7 @@
     },
     {
       "title": "Waste Collection Schedule",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/garbage-recycling/waste-collection-schedule",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/garbage-recycling/waste-collection-schedule",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
