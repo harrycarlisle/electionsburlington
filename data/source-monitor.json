@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-04T01:20:24Z",
+  "checkedAt": "2026-09-04T06:30:59Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
@@ -101,7 +101,7 @@
     {
       "source": "Conservation Halton",
       "ok": true,
-      "found": 31
+      "found": 35
     },
     {
       "source": "Halton District School Board",
@@ -112,7 +112,7 @@
   "items": [
     {
       "title": "Property Tax eBilling",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/property-tax-billing",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/property-taxes/property-tax-billing",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -198,7 +198,7 @@
     },
     {
       "title": "Vacant Unit Declaration",
-      "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/property-taxes/vacant-unit-tax",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/property-taxes/vacant-unit-tax",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -226,7 +226,7 @@
     },
     {
       "title": "Building Permit",
-      "url": "https://www.hamilton.ca/index%2ephp/build-invest-grow/construction-renovation/residential-building-renovation",
+      "url": "https://www.hamilton.ca/index%2Ephp/build-invest-grow/construction-renovation/residential-building-renovation",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -263,7 +263,7 @@
     },
     {
       "title": "Business Licence",
-      "url": "https://www.hamilton.ca/index%2ephp/build-invest-grow/starting-small-business/business-licences",
+      "url": "https://www.hamilton.ca/index%2Ephp/build-invest-grow/starting-small-business/business-licences",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -291,7 +291,7 @@
     },
     {
       "title": "Jobs at the City",
-      "url": "https://www.hamilton.ca/index%2ephp/city-council/jobs-city",
+      "url": "https://www.hamilton.ca/index%2Ephp/city-council/jobs-city",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
@@ -319,7 +319,7 @@
     },
     {
       "title": "Recreation Programs",
-      "url": "https://www.hamilton.ca/index%2ephp/things-do/recreation/programs",
+      "url": "https://www.hamilton.ca/index%2Ephp/things-do/recreation/programs",
       "source": "City of Hamilton News Releases",
       "sourceType": "official",
       "scope": "hamilton",
