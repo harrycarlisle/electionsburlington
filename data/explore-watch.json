@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-04T14:20:05+00:00",
+  "checkedAt": "2026-09-04T18:22:34+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -37,7 +37,7 @@
       "url": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
       "scope": "Burlington",
       "ok": true,
-      "candidates": 4
+      "candidates": 3
     },
     {
       "name": "Canada's Largest Ribfest",
@@ -64,8 +64,8 @@
       "name": "Town of Oakville events",
       "url": "https://www.oakville.ca/community-events/events/",
       "scope": "Nearby Oakville",
-      "ok": true,
-      "candidates": 9
+      "ok": false,
+      "error": "<urlopen error [Errno 111] Connection refused>"
     },
     {
       "name": "Visit Oakville events",
@@ -271,19 +271,6 @@
     {
       "title": "Burlington Farmers Market",
       "url": "https://www.burlingtonlionsclub.ca/burlington-farmers-market",
-      "source": "Burlington Lions Club Farmers Market",
-      "scope": "Burlington",
-      "priority": 5,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Burlington Farmers Market",
-      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-09-04-08-00",
       "source": "Burlington Lions Club Farmers Market",
       "scope": "Burlington",
       "priority": 5,
@@ -1348,19 +1335,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Community & Events",
-      "url": "https://www.oakville.ca/community-events/",
-      "source": "Town of Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Community Partners",
       "url": "https://www.burlington.ca/en/community-supports/community-partners.aspx",
       "source": "Love My Neighbourhood",
@@ -1517,45 +1491,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Event Planning Guidelines",
-      "url": "https://www.oakville.ca/community-events/events/event-planning/event-planning-guidelines/",
-      "source": "Town of Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Event Planning Plan your event at one of our recreation facilities, parks or open spaces. Municipal spaces can be great venues for community events of all sizes.",
-      "url": "https://www.oakville.ca/community-events/events/event-planning/",
-      "source": "Town of Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Event Sponsorship and Partnerships Increase your brand presence by sponsoring Town-run events.",
-      "url": "https://www.oakville.ca/community-events/events/event-sponsorship-partnership/",
-      "source": "Town of Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Event Submission Guidelines",
       "url": "https://visitoakville.com/event-submission-guidelines/",
       "source": "Visit Oakville events",
@@ -1573,19 +1508,6 @@
       "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/housing-supports/eviction-prevention",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Facility Rentals",
-      "url": "https://www.oakville.ca/parks-recreation-culture/facilities-rentals/facility-rentals/",
-      "source": "Town of Oakville events",
-      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -1920,19 +1842,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Oakville Special Events Plan The Special Events Plan will provide a roadmap to guide future planning and decisions relating to special events in the community. Go to the Oakville S",
-      "url": "https://www.oakville.ca/town-hall/plans-strategies/oakville-special-events-plan/",
-      "source": "Town of Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Outdoor Play",
       "url": "https://www.burlington.ca/en/recreation/outdoor-play.aspx",
       "source": "Love My Neighbourhood",
@@ -1963,19 +1872,6 @@
       "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/tickets-fines-penalties/parking-penalty-notice",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Parks, Recreation & Culture",
-      "url": "https://www.oakville.ca/parks-recreation-culture/",
-      "source": "Town of Oakville events",
-      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -2158,19 +2054,6 @@
       "url": "https://www.burlington.ca/en/community-supports/love-my-neighbourhood.aspx",
       "source": "Love My Neighbourhood",
       "scope": "Burlington",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Skip to Content",
-      "url": "https://www.oakville.ca/community-events/events/",
-      "source": "Town of Oakville events",
-      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -2375,19 +2258,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Town of Oakville Events Discover a wide range of events and activities organized or supported by the Town of Oakville.",
-      "url": "https://www.oakville.ca/community-events/events/town-of-oakville-events/",
-      "source": "Town of Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Tree Permit Application",
       "url": "https://www.burlington.ca/en/home-property-and-environment/tree-permit-application.aspx?_mid_=10918",
       "source": "Love My Neighbourhood",
@@ -2502,19 +2372,6 @@
       "endsAt": "2026-09-08T01:30:00+00:00",
       "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
       "description": "<p>⭐ Step Right Up, Burlington! The Royal Canadian Circus Is Back with an All-New 2026 Show! For over 50 years, the Royal Canadian Circus has brought families together through breathtaking performances, jaw-dropping stunts, and unforgettable moments of wonder. Now, the magic arrives in Burlington with an all-new 2026 production, a spectacular celebration of ",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Baby Wigglers at Hamilton Children’s Museum",
-      "url": "https://activeparents.ca/calendar/baby-wigglers-at-hamilton-childrens-museum/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-04T14:30:00+00:00",
-      "endsAt": "2026-09-04T15:30:00+00:00",
-      "location": "New Hamilton Children’s Museum, 1072 Main St E, Hamilton, ON",
-      "description": "<p>Discover, learn, and play as you and your baby explore together in this adult-facilitated, baby-led program just for babies up to 18 months. Touch and manipulate a variety of interesting materials at our sensory stations, enjoy songs, stories and movement, and meet other families in an engaging and fun environment. Event Highlights Meet other families: Th",
       "candidateType": "structured-event"
     },
     {
@@ -2923,6 +2780,19 @@
     {
       "title": "Outdoor Activities",
       "url": "https://activeparents.ca/outdoor-activities-in-burlington-oakville-and-hamilton/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Outlook 365",
+      "url": "https://outlook.office.com/owa?path=/calendar/action/compose&rru=addsubscription&url=webcal%3A%2F%2Factiveparents.ca%2F%3Fpost_type%3Dtribe_events%26ical%3D1%26eventDisplay%3Dlist&name=Active+Parents+Events+Archive+–+Active+Parents",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
