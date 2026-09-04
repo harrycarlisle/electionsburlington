@@ -1,6 +1,54 @@
 {
-  "generatedAt": "2026-09-04T11:41:42Z",
+  "generatedAt": "2026-09-04T16:16:13Z",
   "items": [
+    {
+      "id": "511:303519",
+      "detectedAt": "2026-09-04T16:16:13Z",
+      "score": 90,
+      "headline": "Disabled Vehicle on QEW Fort Erie bound HOV at WALKERS LINE, Burlington. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:303581",
+      "detectedAt": "2026-09-04T16:16:13Z",
+      "score": 90,
+      "headline": "Collision on QEW Toronto bound ON-RAMP at TRAFALGAR ROAD, Oakville. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:303575",
+      "detectedAt": "2026-09-04T16:16:13Z",
+      "score": 75,
+      "headline": "Collision on QEW Toronto bound  at TRAFALGAR ROAD, Oakville. 2 right lanes and right shoulder closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:303599",
+      "detectedAt": "2026-09-04T16:16:13Z",
+      "score": 75,
+      "headline": "Collision on QEW Fort Erie bound ON-RAMP at APPLEBY LINE, Burlington. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:303388",
       "detectedAt": "2026-09-04T11:41:42Z",
