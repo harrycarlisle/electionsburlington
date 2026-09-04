@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-04T16:16:13Z",
+  "generatedAt": "2026-09-04T19:06:11Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 34,
-    "trafficIncidents": 34,
+    "activeSignals": 33,
+    "trafficIncidents": 33,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -66,22 +66,6 @@
       "signature": "083a7bd58a7ed0f4"
     },
     {
-      "id": "511:303519",
-      "kind": "traffic",
-      "headline": "Disabled Vehicle on QEW Fort Erie bound HOV at WALKERS LINE, Burlington. All lanes closed.",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 90,
-      "neighbourhood": "Palmer",
-      "latitude": 43.366303485,
-      "longitude": -79.788293839,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "f6c26c7fb0450efa"
-    },
-    {
       "id": "511:303581",
       "kind": "traffic",
       "headline": "Collision on QEW Toronto bound ON-RAMP at TRAFALGAR ROAD, Oakville. All lanes closed.",
@@ -98,12 +82,28 @@
       "signature": "6132a2deb8c9e582"
     },
     {
-      "id": "511:303575",
+      "id": "511:303672",
       "kind": "traffic",
-      "headline": "Collision on QEW Toronto bound  at TRAFALGAR ROAD, Oakville. 2 right lanes and right shoulder closed.",
+      "headline": "Collision on QEW Toronto bound ON-RAMP at TRAFALGAR ROAD, Oakville. All lanes closed.",
       "location": "QEW",
       "direction": "Toronto Bound",
-      "score": 75,
+      "score": 90,
+      "neighbourhood": "Orchard",
+      "latitude": 43.460699,
+      "longitude": -79.684054,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "accidentsAndIncidents",
+      "signature": "6132a2deb8c9e582"
+    },
+    {
+      "id": "511:303674",
+      "kind": "traffic",
+      "headline": "Collision on QEW Toronto bound  at TRAFALGAR ROAD, Oakville. All lanes closed.",
+      "location": "QEW",
+      "direction": "Toronto Bound",
+      "score": 90,
       "neighbourhood": "Orchard",
       "latitude": 43.46143303,
       "longitude": -79.68362343,
@@ -111,23 +111,7 @@
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "accidentsAndIncidents",
-      "signature": "650f034e2ab184d5"
-    },
-    {
-      "id": "511:303599",
-      "kind": "traffic",
-      "headline": "Collision on QEW Fort Erie bound ON-RAMP at APPLEBY LINE, Burlington. Right lane and right shoulder closed.",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 75,
-      "neighbourhood": "Tansley",
-      "latitude": 43.381497,
-      "longitude": -79.771854,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "8ceecba1669e4a28"
+      "signature": "a6744d3ce33af633"
     },
     {
       "id": "511:294823",
@@ -466,6 +450,22 @@
       "signature": "3eab45607ceb7a3e"
     },
     {
+      "id": "511:303667",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 403 HAMILTON Eastbound  between Garden Ave and Jerseyville Road / Brant Road 17, Brantford. 1 Right Lane(s).",
+      "location": "HWY 403 HAMILTON",
+      "direction": "Eastbound",
+      "score": 53,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.167484,
+      "longitude": -80.21334,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "467e5d0c6511ea40"
+    },
+    {
       "id": "511:290120",
       "kind": "traffic",
       "headline": "Continuous Engineering Investigation on QEW Toronto bound  between THIRD LINE and THIRD LINE, Oakville. 1 Right Lane(s).",
@@ -482,20 +482,20 @@
       "signature": "b24da3cece4ef540"
     },
     {
-      "id": "511:294259",
+      "id": "511:296303",
       "kind": "traffic",
-      "headline": "Daily Maintenance on HWY 5 Eastbound  between HWY 6 / CLAPPISON CORNER'S and HWY 6 / CLAPPISON CORNER'S, Hamilton. 1 Right Lane(s).",
-      "location": "HWY 5",
-      "direction": "Eastbound",
+      "headline": "Nightly Construction on HWY 6 Northbound  between PARKSIDE DRIVE and EAST FLAMBOROUGH TWP CON. 5 EAST, Hamilton. 1 Alternating Lane(s).",
+      "location": "HWY 6",
+      "direction": "Northbound",
       "score": 43,
       "neighbourhood": "Aldershot",
-      "latitude": 43.31215,
-      "longitude": -79.917725,
+      "latitude": 43.319767,
+      "longitude": -79.92808,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
-      "signature": "583f9dfdc77db127"
+      "signature": "b7252b680a22cf68"
     }
   ],
   "topSignal": {
@@ -547,22 +547,6 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "b24da3cece4ef540"
-      },
-      {
-        "id": "511:294259",
-        "kind": "traffic",
-        "headline": "Daily Maintenance on HWY 5 Eastbound  between HWY 6 / CLAPPISON CORNER'S and HWY 6 / CLAPPISON CORNER'S, Hamilton. 1 Right Lane(s).",
-        "location": "HWY 5",
-        "direction": "Eastbound",
-        "score": 43,
-        "neighbourhood": "Aldershot",
-        "latitude": 43.31215,
-        "longitude": -79.917725,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "583f9dfdc77db127"
       },
       {
         "id": "511:294823",
@@ -915,6 +899,22 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "11c151514d0ef376"
+      },
+      {
+        "id": "511:303157",
+        "kind": "traffic",
+        "headline": "Nightly Maintenance on HWY 403 HAMILTON Westbound  between ABERDEEN AVE and LINCOLN M. ALEXANDER PARKWAY, Hamilton. 1 Left Lane(s).",
+        "location": "HWY 403 HAMILTON",
+        "direction": "Westbound",
+        "score": 53,
+        "neighbourhood": "Burlington area",
+        "latitude": 43.25535,
+        "longitude": -79.90704,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "1877967a3780f74e"
       }
     ],
     "cameras": [

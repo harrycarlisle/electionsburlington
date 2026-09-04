@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-09-04T16:16:13Z",
+  "generatedAt": "2026-09-04T19:06:11Z",
   "items": [
+    {
+      "id": "511:303674",
+      "detectedAt": "2026-09-04T19:06:11Z",
+      "score": 90,
+      "headline": "Collision on QEW Toronto bound  at TRAFALGAR ROAD, Oakville. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:303519",
       "detectedAt": "2026-09-04T16:16:13Z",
