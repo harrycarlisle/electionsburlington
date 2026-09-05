@@ -1,6 +1,42 @@
 {
-  "generatedAt": "2026-09-05T01:21:03Z",
+  "generatedAt": "2026-09-05T06:16:56Z",
   "items": [
+    {
+      "id": "511:303898",
+      "detectedAt": "2026-09-05T06:16:56Z",
+      "score": 90,
+      "headline": "Collision on QEW Fort Erie bound ON-RAMP at BURLOAK DRIVE, Burlington. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:303900",
+      "detectedAt": "2026-09-05T06:16:56Z",
+      "score": 90,
+      "headline": "Collision on QEW Fort Erie bound ON-RAMP at BURLOAK DRIVE, Burlington. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:303899",
+      "detectedAt": "2026-09-05T06:16:56Z",
+      "score": 75,
+      "headline": "Collision on QEW Fort Erie bound  at BURLOAK DRIVE, Burlington. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:303761",
       "detectedAt": "2026-09-04T21:25:03Z",
