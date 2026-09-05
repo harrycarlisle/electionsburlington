@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-05T20:21:58+00:00",
+  "checkedAt": "2026-09-05T22:52:56+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 42
+      "candidates": 40
     },
     {
       "name": "Pokémon GO live events",
@@ -283,7 +283,7 @@
     },
     {
       "title": "Burlington Farmers Market",
-      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-09-09-08-00",
+      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-09-05-08-00",
       "source": "Burlington Lions Club Farmers Market",
       "scope": "Burlington",
       "priority": 5,
@@ -2531,19 +2531,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "BurlingtonGreen’s Weekend Beach Drop in Activities",
-      "url": "https://activeparents.ca/calendar/burlingtongreens-weekend-beach-drop-in-activities/2026-09-05/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-05T14:00:00+00:00",
-      "endsAt": "2026-09-05T20:00:00+00:00",
-      "location": "BurlingtonGreen Eco-Hub headquarters, 1094 Lakeshore Rd, Burlington, Ontario",
-      "description": "<p>School is out and our team is leading eco-activities and sharing resources at our Eco Hub (1094 Lakeshore Rd). Pop by for a variety of eco-awareness, advocacy, and action opportunities, such as nurdle hunts, button making, microplastic beach clean ups, seed ball making, our popular Eco-Trivia game, and more! You can also visit our pollinator garden to lea",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Royal Canadian Circus Comes To Burlington",
       "url": "https://activeparents.ca/calendar/royal-canadian-circus-comes-to-burlington/2026-09-05/",
       "source": "Active Parents regional calendar",
@@ -2554,32 +2541,6 @@
       "endsAt": "2026-09-06T01:30:00+00:00",
       "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
       "description": "<p>⭐ Step Right Up, Burlington! The Royal Canadian Circus Is Back with an All-New 2026 Show! For over 50 years, the Royal Canadian Circus has brought families together through breathtaking performances, jaw-dropping stunts, and unforgettable moments of wonder. Now, the magic arrives in Burlington with an all-new 2026 production, a spectacular celebration of ",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Hook at the Westdale",
-      "url": "https://activeparents.ca/calendar/hook-at-the-westdale/2026-09-05/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-05T17:00:00+00:00",
-      "endsAt": "2026-09-05T20:00:00+00:00",
-      "location": "The Westdale Theatre, 1014 King Street West, Hamilton, Ontario",
-      "description": "<p>ll Tickets are just $9.25! Sponsored by the Merchants of Westdale Village. Sensory Friendly Screening in partnership with Centre for Diverse Learners on Sun, Sept 6 at 1:00pm. Special Labour Day Weekend screenings! 35th Anniversary! When his young children are abducted by his old nemesis Captain Hook, (Dustin Hoffman) middle-aged lawyer Peter Banning (Rob",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Burlington Inspired Paint By Numbers Workshops",
-      "url": "https://activeparents.ca/calendar/burlington-inspired-paint-by-numbers-workshops/2026-09-05/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-05T18:15:00+00:00",
-      "endsAt": "2026-09-05T19:45:00+00:00",
-      "location": "BPL – New Appleby, 5151 New St, Burlington, Ontario",
-      "description": "<p>Join local artist Hope Flynn for “Burlington Inspired Paint By Numbers”, a free art workshop series for youth at Burlington Public Library - New Appleby Branch. Participants will create artwork inspired by Burlington\\'s landscapes and wildlife. All materials are provided. We welcome participants of all skill levels and art abilities. For kids 6 to 13, who",
       "candidateType": "structured-event"
     },
     {
@@ -2739,19 +2700,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Brantwood Farms Fall Festival",
-      "url": "https://activeparents.ca/series/brantwood-farms-fall-festival/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
       "source": "Active Parents regional calendar",
@@ -2858,6 +2806,32 @@
     {
       "title": "Hamilton",
       "url": "https://activeparents.ca/hamilton/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Kerrfest & Kerrfest Kids Festival",
+      "url": "https://activeparents.ca/calendar/kerrfest-kerrfest-kids-festival/2026-09-11/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Kerrfest & Kerrfest Kids Festival",
+      "url": "https://activeparents.ca/series/kerrfest-kerrfest-kids-festival/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
