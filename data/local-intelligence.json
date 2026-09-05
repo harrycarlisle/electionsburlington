@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-05T06:16:56Z",
+  "generatedAt": "2026-09-05T10:52:59Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 32,
-    "trafficIncidents": 32,
+    "activeSignals": 30,
+    "trafficIncidents": 30,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -82,52 +82,20 @@
       "signature": "264597ee059631af"
     },
     {
-      "id": "511:303898",
+      "id": "511:303926",
       "kind": "traffic",
-      "headline": "Collision on QEW Fort Erie bound ON-RAMP at BURLOAK DRIVE, Burlington. All lanes closed.",
+      "headline": "Disabled Vehicle on QEW Fort Erie bound ON-RAMP at GUELPH LINE, Burlington. All lanes closed.",
       "location": "QEW",
       "direction": "Fort Erie Bound",
       "score": 90,
-      "neighbourhood": "Orchard",
-      "latitude": 43.395736,
-      "longitude": -79.756392,
+      "neighbourhood": "Mountainside",
+      "latitude": 43.351821,
+      "longitude": -79.804062,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "accidentsAndIncidents",
-      "signature": "ff4c241e5e0fe96f"
-    },
-    {
-      "id": "511:303900",
-      "kind": "traffic",
-      "headline": "Collision on QEW Fort Erie bound ON-RAMP at BURLOAK DRIVE, Burlington. All lanes closed.",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 90,
-      "neighbourhood": "Orchard",
-      "latitude": 43.395736,
-      "longitude": -79.756392,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "ff4c241e5e0fe96f"
-    },
-    {
-      "id": "511:303899",
-      "kind": "traffic",
-      "headline": "Collision on QEW Fort Erie bound  at BURLOAK DRIVE, Burlington. Right lane and right shoulder closed.",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 75,
-      "neighbourhood": "Orchard",
-      "latitude": 43.39532871,
-      "longitude": -79.75669063,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "92cce994b992140c"
+      "signature": "8cecf940da0de657"
     },
     {
       "id": "511:296199",
@@ -496,6 +464,38 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "0e48fe503f157d65"
+    },
+    {
+      "id": "511:303558",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 401 Westbound  between REGIONAL ROAD 25 and GUELPH LINE, Milton. 2 Alternating Lane(s).",
+      "location": "HWY 401",
+      "direction": "Westbound",
+      "score": 43,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.52803,
+      "longitude": -79.90527,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "81e9ba9b988064d2"
+    },
+    {
+      "id": "511:299377",
+      "kind": "traffic",
+      "headline": "Daily Engineering Investigation on HWY 5 Eastbound  between HWY 6 / CLAPPISON CORNER'S and HWY 6 / CLAPPISON CORNER'S, Hamilton. 1 Right Lane(s).",
+      "location": "HWY 5",
+      "direction": "Eastbound",
+      "score": 35,
+      "neighbourhood": "Aldershot",
+      "latitude": 43.31215,
+      "longitude": -79.917725,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "bc29db44c33aa881"
     }
   ],
   "topSignal": {
