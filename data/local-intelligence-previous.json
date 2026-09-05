@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-05T10:52:59Z",
+  "generatedAt": "2026-09-05T13:49:52Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 30,
-    "trafficIncidents": 30,
+    "activeSignals": 28,
+    "trafficIncidents": 28,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -80,38 +80,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "264597ee059631af"
-    },
-    {
-      "id": "511:303926",
-      "kind": "traffic",
-      "headline": "Disabled Vehicle on QEW Fort Erie bound ON-RAMP at GUELPH LINE, Burlington. All lanes closed.",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 90,
-      "neighbourhood": "Mountainside",
-      "latitude": 43.351821,
-      "longitude": -79.804062,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "8cecf940da0de657"
-    },
-    {
-      "id": "511:296199",
-      "kind": "traffic",
-      "headline": "Nightly Maintenance on QEW Toronto bound  between GARDEN CITY SKYWAY and GARDEN CITY SKYWAY, St. Catharines. 1 Right Lane(s).",
-      "location": "QEW",
-      "direction": "Toronto Bound",
-      "score": 53,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.167168,
-      "longitude": -79.19359,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "fa95f76060bfc2d0"
     },
     {
       "id": "511:300520",
@@ -549,22 +517,6 @@
         "signature": "b24da3cece4ef540"
       },
       {
-        "id": "511:296199",
-        "kind": "traffic",
-        "headline": "Nightly Maintenance on QEW Toronto bound  between GARDEN CITY SKYWAY and GARDEN CITY SKYWAY, St. Catharines. 1 Right Lane(s).",
-        "location": "QEW",
-        "direction": "Toronto Bound",
-        "score": 53,
-        "neighbourhood": "Burlington area",
-        "latitude": 43.167168,
-        "longitude": -79.19359,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "fa95f76060bfc2d0"
-      },
-      {
         "id": "511:296303",
         "kind": "traffic",
         "headline": "Nightly Construction on HWY 6 Northbound  between PARKSIDE DRIVE and EAST FLAMBOROUGH TWP CON. 5 EAST, Hamilton. 1 Alternating Lane(s).",
@@ -915,6 +867,22 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "8db5e92d721e9bcc"
+      },
+      {
+        "id": "511:303558",
+        "kind": "traffic",
+        "headline": "Nightly Construction on HWY 401 Westbound  between REGIONAL ROAD 25 and GUELPH LINE, Milton. 2 Alternating Lane(s).",
+        "location": "HWY 401",
+        "direction": "Westbound",
+        "score": 43,
+        "neighbourhood": "Burlington area",
+        "latitude": 43.52803,
+        "longitude": -79.90527,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "81e9ba9b988064d2"
       }
     ],
     "cameras": [
