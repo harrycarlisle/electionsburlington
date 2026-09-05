@@ -10,11 +10,11 @@
   },
   "homepageTraffic": {
     "label": "Traffic",
-    "title": "QEW → Hamilton",
+    "title": "QEW → Toronto",
     "context": "Live route check",
-    "impact": "11 cameras along this route",
+    "impact": "30 cameras along this route",
     "freshness": "",
-    "url": "/traffic/?destination=hamilton",
+    "url": "/traffic/?destination=toronto",
     "alert": false,
     "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
   },
@@ -1514,6 +1514,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-09-04T21:21:12.498351-04:00"
+    "updatedAt": "2026-09-05T01:45:44.754238-04:00"
   }
 }
