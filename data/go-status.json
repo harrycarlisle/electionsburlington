@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T02:28:44.046421-04:00",
+  "generatedAt": "2026-09-05T08:15:11.665599-04:00",
   "source": "Metrolinx GO Transit GTFS",
   "sourceUrl": "https://www.gotransit.com/en/partner-with-us/software-developers",
   "dataKind": "scheduled",
@@ -16,24 +16,6 @@
         "stopCode": "UN"
       },
       "journeys": [
-        {
-          "departure": "07:42:00",
-          "arrival": "08:48:00",
-          "duration": "66 min",
-          "line": "LW",
-          "type": "Train",
-          "tripNumber": "20260905-LW-1708",
-          "scheduled": true
-        },
-        {
-          "departure": "08:12:00",
-          "arrival": "09:18:00",
-          "duration": "66 min",
-          "line": "LW",
-          "type": "Train",
-          "tripNumber": "20260905-LW-1010",
-          "scheduled": true
-        },
         {
           "departure": "08:42:00",
           "arrival": "09:48:00",
