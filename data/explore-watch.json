@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-05T18:15:46+00:00",
+  "checkedAt": "2026-09-05T20:21:58+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -283,7 +283,7 @@
     },
     {
       "title": "Burlington Farmers Market",
-      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-09-05-08-00",
+      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-09-09-08-00",
       "source": "Burlington Lions Club Farmers Market",
       "scope": "Burlington",
       "priority": 5,
@@ -2544,45 +2544,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Craft Club at Pinch",
-      "url": "https://activeparents.ca/calendar/craft-club-at-pinch/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-05T14:00:00+00:00",
-      "endsAt": "2026-09-05T17:00:00+00:00",
-      "location": "Pinch Bakery and Plant Shop, 183 Sherman Ave N, Hamilton, ON",
-      "description": "<p>We’ll meet on the Pinch patio, there will be alllll the crafts: fairy neighbours🧚 wooden snakes🐍 bug homes🐞bookmarking📖 flag making and more!! Best for ages 4-10ish but alllll welcome. Donate what you can but no one will be turned away.</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Burlington Model Railway Club Public Demonstration",
-      "url": "https://activeparents.ca/calendar/burlington-model-railway-club-public-demonstration/2026-09-05/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-05T15:00:00+00:00",
-      "endsAt": "2026-09-05T19:00:00+00:00",
-      "location": "Burlington Model Railway Club, 1137 Hidden Valley Road, Burlington, Ontario",
-      "description": "<p>At the Burlington Model Railway Centre - Hidden Valley Park, Aldershot (Burlington) Ontario See operating model railroads in three different scales: N-scale and HO scale layouts inside, G-scale outside on the garden railway (weather permitting). Interactive fun for the youngsters! Admission is free Donations will be gratefully accepted</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Cineplex Family Favourites",
-      "url": "https://activeparents.ca/calendar/cineplex-family-favourites-2/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-05T15:00:00+00:00",
-      "endsAt": "2026-09-05T17:00:00+00:00",
-      "location": "Cineplex and SilverCity Theatres, Burlington, Ontario",
-      "description": "<p>Weekend plans for the whole gang just got easier! Our Family Favourites program runs movies Saturdays, for only $3.99 plus applicable taxes (in-theatre price). Select theatres only! Boxtrolls: September 5 Kubo And The Two Strings - A Family Favourites Presentation: September 12 The Lego Batman Movie: September 19 Paranorman: September 26 Coraline: October",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Royal Canadian Circus Comes To Burlington",
       "url": "https://activeparents.ca/calendar/royal-canadian-circus-comes-to-burlington/2026-09-05/",
       "source": "Active Parents regional calendar",
@@ -2739,6 +2700,45 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "BurlingtonGreen’s Weekend Beach Drop in Activities",
+      "url": "https://activeparents.ca/calendar/burlingtongreens-weekend-beach-drop-in-activities/2026-09-07/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-07T14:00:00+00:00",
+      "endsAt": "2026-09-07T20:00:00+00:00",
+      "location": "BurlingtonGreen Eco-Hub headquarters, 1094 Lakeshore Rd, Burlington, Ontario",
+      "description": "<p>School is out and our team is leading eco-activities and sharing resources at our Eco Hub (1094 Lakeshore Rd). Pop by for a variety of eco-awareness, advocacy, and action opportunities, such as nurdle hunts, button making, microplastic beach clean ups, seed ball making, our popular Eco-Trivia game, and more! You can also visit our pollinator garden to lea",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Royal Canadian Circus Comes To Burlington",
+      "url": "https://activeparents.ca/calendar/royal-canadian-circus-comes-to-burlington/2026-09-07/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-07T15:00:00+00:00",
+      "endsAt": "2026-09-07T21:00:00+00:00",
+      "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
+      "description": "<p>⭐ Step Right Up, Burlington! The Royal Canadian Circus Is Back with an All-New 2026 Show! For over 50 years, the Royal Canadian Circus has brought families together through breathtaking performances, jaw-dropping stunts, and unforgettable moments of wonder. Now, the magic arrives in Burlington with an all-new 2026 production, a spectacular celebration of ",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Hook at the Westdale",
+      "url": "https://activeparents.ca/calendar/hook-at-the-westdale/2026-09-07/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-07T22:30:00+00:00",
+      "endsAt": "2026-09-08T01:30:00+00:00",
+      "location": "The Westdale Theatre, 1014 King Street West, Hamilton, Ontario",
+      "description": "<p>ll Tickets are just $9.25! Sponsored by the Merchants of Westdale Village. Sensory Friendly Screening in partnership with Centre for Diverse Learners on Sun, Sept 6 at 1:00pm. Special Labour Day Weekend screenings! 35th Anniversary! When his young children are abducted by his old nemesis Captain Hook, (Dustin Hoffman) middle-aged lawyer Peter Banning (Rob",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Brantwood Farms Fall Festival",
       "url": "https://activeparents.ca/series/brantwood-farms-fall-festival/",
       "source": "Active Parents regional calendar",
@@ -2765,47 +2765,8 @@
       "candidateType": "link"
     },
     {
-      "title": "Burlington Inspired Paint By Numbers Workshops",
-      "url": "https://activeparents.ca/series/burlington-inspired-paint-by-numbers-workshops/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Burlington Model Railway Club Public Demonstration",
-      "url": "https://activeparents.ca/series/burlington-model-railway-club-public-demonstration/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "BurlingtonGreen’s Weekend Beach Drop in Activities",
       "url": "https://activeparents.ca/series/burlingtongreens-weekend-beach-drop-in-activities/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "BurlingtonGreen’s Weekend Beach Drop in Activities",
-      "url": "https://activeparents.ca/calendar/burlingtongreens-weekend-beach-drop-in-activities/2026-09-07/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2832,6 +2793,32 @@
     {
       "title": "Creative STEM Workshops, Hands-On Sunday Activities",
       "url": "https://activeparents.ca/series/creative-stem-workshops-hands-on-sunday-activities/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Fall Fair at HPL",
+      "url": "https://activeparents.ca/calendar/fall-fair-at-hpl-2/2026-09-10/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Fall Fair at HPL",
+      "url": "https://activeparents.ca/series/fall-fair-at-hpl-2/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2921,6 +2908,32 @@
       "candidateType": "link"
     },
     {
+      "title": "Outdoor Family Storytime with BPL",
+      "url": "https://activeparents.ca/calendar/outdoor-family-storytime-with-bpl/2026-09-09/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Outdoor Family Storytime with BPL",
+      "url": "https://activeparents.ca/series/outdoor-family-storytime-with-bpl/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Outlook 365",
       "url": "https://outlook.office.com/owa?path=/calendar/action/compose&rru=addsubscription&url=webcal%3A%2F%2Factiveparents.ca%2F%3Fpost_type%3Dtribe_events%26ical%3D1%26eventDisplay%3Dlist&name=Active+Parents+Events+Archive+–+Active+Parents",
       "source": "Active Parents regional calendar",
@@ -2962,19 +2975,6 @@
     {
       "title": "Royal Canadian Circus Comes To Burlington",
       "url": "https://activeparents.ca/series/royal-canadian-circus-comes-to-burlington/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Royal Canadian Circus Comes To Burlington",
-      "url": "https://activeparents.ca/calendar/royal-canadian-circus-comes-to-burlington/2026-09-07/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
