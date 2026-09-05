@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T20:52:53.466280-04:00",
+  "generatedAt": "2026-09-05T01:37:01.000943-04:00",
   "mode": "local_update",
   "label": "Local Update",
   "method": "No Burlington/Halton item had a strong current hook, so the rail used a verified regional fallback when available. Fresh Hamilton-area news may replace an otherwise stale utility/service row.",
@@ -30,7 +30,7 @@
       "affectedArea": null,
       "publishedAt": "2026-09-04T01:40:00-04:00",
       "updatedAt": null,
-      "discoveredAt": "2026-09-04T20:53:14.038992-04:00",
+      "discoveredAt": "2026-09-05T01:37:21.884493-04:00",
       "severity": null,
       "impactScore": 4.4,
       "confidenceScore": 5.0,
