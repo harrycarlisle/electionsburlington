@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-06T00:54:33+00:00",
+  "checkedAt": "2026-09-06T05:55:31+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 38
+      "candidates": 41
     },
     {
       "name": "Pokémon GO live events",
@@ -2492,19 +2492,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Royal Canadian Circus Comes To Burlington",
-      "url": "https://activeparents.ca/calendar/royal-canadian-circus-comes-to-burlington/2026-09-05/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-05T16:00:00+00:00",
-      "endsAt": "2026-09-06T01:30:00+00:00",
-      "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
-      "description": "<p>⭐ Step Right Up, Burlington! The Royal Canadian Circus Is Back with an All-New 2026 Show! For over 50 years, the Royal Canadian Circus has brought families together through breathtaking performances, jaw-dropping stunts, and unforgettable moments of wonder. Now, the magic arrives in Burlington with an all-new 2026 production, a spectacular celebration of ",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Creative STEM Workshops, Hands-On Sunday Activities",
       "url": "https://activeparents.ca/calendar/creative-stem-workshops-hands-on-sunday-activities/2026-09-06/",
       "source": "Active Parents regional calendar",
@@ -2661,6 +2648,84 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Outdoor Family Storytime with BPL",
+      "url": "https://activeparents.ca/calendar/outdoor-family-storytime-with-bpl/2026-09-09/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-09T14:30:00+00:00",
+      "endsAt": "2026-09-09T15:00:00+00:00",
+      "location": "BPL – Brant Hills, 2255 Brant Street, Burlington, Ontario",
+      "description": "<p>Read, write, talk, sing and play along with us at Family Storytime – OUTSIDE! Perfect for children ages 5 and younger and their grownups. Please meet us near the playground near Brant Hills Public School. We invite you to bring a lawn chair or blanket for comfort. In the case of inclement weather, please consider attending […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Afternoon snack with On y va Milton @ Main",
+      "url": "https://activeparents.ca/calendar/afternoon-snack-with-on-y-va-milton-main/2026-09-09/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-09T18:30:00+00:00",
+      "endsAt": "2026-09-09T19:30:00+00:00",
+      "location": "MPL Main branch, 1010 Main St E, Milton, ON",
+      "description": "<p>Young children know that books hold meaning. Every book you read to your child is a gift they will cherish. A book truly comes alive when shared between an adult and a young child! Come share this moment with us through reading and many other activities! Wednesday, August 5, 2026 Wednesday, August 12, 2026 Wednesday, […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Fall Fair at HPL",
+      "url": "https://activeparents.ca/calendar/fall-fair-at-hpl-2/2026-09-10/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-10T14:00:00+00:00",
+      "endsAt": "2026-09-10T15:00:00+00:00",
+      "location": "HPL – selected branches, Library Branches, Hamilton, ON",
+      "description": "<p>Fall-Fair fun and games. Join us for a variety of Fall Fair-inspired games and activities. Thursday, September 10: 10:00am - 11:00am Binbrook Branch Saturday, September 19: 10:00am - 12:00pm Barton Branch </p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "My First Library Card Storytime",
+      "url": "https://activeparents.ca/calendar/my-first-library-card-storytime/2026-09-10/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-10T14:30:00+00:00",
+      "endsAt": "2026-09-10T15:30:00+00:00",
+      "location": "BPL various branches, Burlington Libraries, Burlington, ON",
+      "description": "<p>Welcome to the magical world of the library! Come for stories and crafts—and sign up your child for their own Burlington Public Library card! Parents/Guardians need to bring current photo ID with proof of address. Ages infant to 5. My First Library Card is very popular, and space is limited; please arrive early to secure […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Kerrfest & Kerrfest Kids Festival",
+      "url": "https://activeparents.ca/calendar/kerrfest-kerrfest-kids-festival/2026-09-11/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-11T04:00:00+00:00",
+      "endsAt": "2026-09-12T03:59:59+00:00",
+      "location": "Westwood Park, 170 Wilson St, Oakville, Ontario",
+      "description": "<p>Kick off the fall season with Kerrfest and Kerrfest Kids back for 2026! The 10th Annual Kerrfest will run from September 11-13 in Westwood Park to kick off the Fall season! Enjoy live music, local food vendors and sponsor booths. Plus on Sunday September 13, enjoy family-friendly activities such as Crash Rhythm, Paw Patrol Meet […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "West Niagara Fair",
+      "url": "https://activeparents.ca/calendar/west-niagara-fair-2/2026-09-11/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-11T12:00:00+00:00",
+      "endsAt": "2026-09-12T02:00:00+00:00",
+      "location": "West Niagara Agricultural Society, 7402 Mud St W, Grassie, ON",
+      "description": "<p>Make family memories at the West Niagara Fair! This beloved community tradition offers three days of affordable fun with exciting midway rides, agricultural exhibits, live entertainment, family activities, livestock shows, homecraft displays, delicious fair food, and hands-on experiences for all ages. Kids can meet farm animals, explore interactive exhibi",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
       "source": "Active Parents regional calendar",
@@ -2702,19 +2767,6 @@
     {
       "title": "Creative STEM Workshops, Hands-On Sunday Activities",
       "url": "https://activeparents.ca/series/creative-stem-workshops-hands-on-sunday-activities/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Fall Fair at HPL",
-      "url": "https://activeparents.ca/calendar/fall-fair-at-hpl-2/2026-09-10/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2779,19 +2831,6 @@
     },
     {
       "title": "Kerrfest & Kerrfest Kids Festival",
-      "url": "https://activeparents.ca/calendar/kerrfest-kerrfest-kids-festival/2026-09-11/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Kerrfest & Kerrfest Kids Festival",
       "url": "https://activeparents.ca/series/kerrfest-kerrfest-kids-festival/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
@@ -2832,19 +2871,6 @@
     {
       "title": "Outdoor Activities",
       "url": "https://activeparents.ca/outdoor-activities-in-burlington-oakville-and-hamilton/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Outdoor Family Storytime with BPL",
-      "url": "https://activeparents.ca/calendar/outdoor-family-storytime-with-bpl/2026-09-09/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2949,6 +2975,19 @@
     {
       "title": "Toddlers + Babies",
       "url": "https://activeparents.ca/things-to-do-with-babies-and-toddlers-in-burlington-oakville-milton-and-hamilton/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "West Niagara Fair",
+      "url": "https://activeparents.ca/series/west-niagara-fair-2/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
