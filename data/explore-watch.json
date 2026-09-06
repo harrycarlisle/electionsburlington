@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-06T21:18:58+00:00",
+  "checkedAt": "2026-09-06T23:51:19+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 44
+      "candidates": 40
     },
     {
       "name": "Pokémon GO live events",
@@ -2505,32 +2505,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Harvest Weekends at Springridge",
-      "url": "https://activeparents.ca/calendar/harvest-weekends-at-springridge/2026-09-06/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-06T13:00:00+00:00",
-      "endsAt": "2026-09-06T21:00:00+00:00",
-      "location": "Springridge Farm, 7256 Bell School Line, Milton, Ontario",
-      "description": "<p>Celebrate the season with memory-making moments here on our family farm! Play, run, jump, and explore here in everybody’s favourite Fun Farmyard which, on weekends, includes our Giant Corn Trail. September weekend admission $16 per person aged 2-92. October weekend admission $19 per person. Our Farm Bakery is busy baking magic with the season’s best […]</",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "BurlingtonGreen’s Weekend Beach Drop in Activities",
-      "url": "https://activeparents.ca/calendar/burlingtongreens-weekend-beach-drop-in-activities/2026-09-06/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-06T14:00:00+00:00",
-      "endsAt": "2026-09-06T20:00:00+00:00",
-      "location": "BurlingtonGreen Eco-Hub headquarters, 1094 Lakeshore Rd, Burlington, Ontario",
-      "description": "<p>School is out and our team is leading eco-activities and sharing resources at our Eco Hub (1094 Lakeshore Rd). Pop by for a variety of eco-awareness, advocacy, and action opportunities, such as nurdle hunts, button making, microplastic beach clean ups, seed ball making, our popular Eco-Trivia game, and more! You can also visit our pollinator garden to lea",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Royal Canadian Circus Comes To Burlington",
       "url": "https://activeparents.ca/calendar/royal-canadian-circus-comes-to-burlington/2026-09-06/",
       "source": "Active Parents regional calendar",
@@ -2541,45 +2515,6 @@
       "endsAt": "2026-09-07T01:30:00+00:00",
       "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
       "description": "<p>⭐ Step Right Up, Burlington! The Royal Canadian Circus Is Back with an All-New 2026 Show! For over 50 years, the Royal Canadian Circus has brought families together through breathtaking performances, jaw-dropping stunts, and unforgettable moments of wonder. Now, the magic arrives in Burlington with an all-new 2026 production, a spectacular celebration of ",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Family Sunday: Picture This!",
-      "url": "https://activeparents.ca/calendar/family-sunday-picture-this/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-06T17:00:00+00:00",
-      "endsAt": "2026-09-06T20:00:00+00:00",
-      "location": "Kitchener-Waterloo Art Gallery, 101 Queen St N, Kitchener, ON",
-      "description": "<p>Guided by our talented Art Instructors, families of all ages will explore new art techniques, play with materials, and create one-of-a-kind artworks together. There’s no better way to spend time with the people you love than by imagining, creating, and making side by side! Taking inspiration from our current exhibitions, bring the whole family and […]</p>",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Hook at the Westdale",
-      "url": "https://activeparents.ca/calendar/hook-at-the-westdale/2026-09-06/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-06T17:00:00+00:00",
-      "endsAt": "2026-09-06T20:00:00+00:00",
-      "location": "The Westdale Theatre, 1014 King Street West, Hamilton, Ontario",
-      "description": "<p>ll Tickets are just $9.25! Sponsored by the Merchants of Westdale Village. Sensory Friendly Screening in partnership with Centre for Diverse Learners on Sun, Sept 6 at 1:00pm. Special Labour Day Weekend screenings! 35th Anniversary! When his young children are abducted by his old nemesis Captain Hook, (Dustin Hoffman) middle-aged lawyer Peter Banning (Rob",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "How to Be a Victorian at Ireland House Museum",
-      "url": "https://activeparents.ca/calendar/how-to-be-a-victorian-at-ireland-house-museum/2026-09-06/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-06T17:00:00+00:00",
-      "endsAt": "2026-09-06T20:00:00+00:00",
-      "location": "Ireland House Museum, 2168 Guelph Line, Burlington, Ontario",
-      "description": "<p>Think you could be a Victorian? Find out! Each month, How to Be a Victorian takes on a different part of everyday life in the 19th century — from getting dressed and going to school, to surviving winter, and celebrating Christmas. Explore historic objects, try your hand at Victorian skills, and tackle the everyday challenges of life before […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -2910,6 +2845,19 @@
     {
       "title": "Outlook 365",
       "url": "https://outlook.office.com/owa?path=/calendar/action/compose&rru=addsubscription&url=webcal%3A%2F%2Factiveparents.ca%2F%3Fpost_type%3Dtribe_events%26ical%3D1%26eventDisplay%3Dlist&name=Active+Parents+Events+Archive+–+Active+Parents",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Outlook Live",
+      "url": "https://outlook.live.com/owa?path=/calendar/action/compose&rru=addsubscription&url=webcal%3A%2F%2Factiveparents.ca%2F%3Fpost_type%3Dtribe_events%26ical%3D1%26eventDisplay%3Dlist&name=Active+Parents+Events+Archive+–+Active+Parents",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
