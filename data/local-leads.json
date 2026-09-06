@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-09-05T23:13:43Z",
+  "generatedAt": "2026-09-06T01:17:57Z",
   "items": [
+    {
+      "id": "511:304294",
+      "detectedAt": "2026-09-06T01:17:57Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Toronto bound  at ROYAL WINDSOR DRIVE, Oakville. Left shoulder and 1 left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:304267",
       "detectedAt": "2026-09-05T23:13:43Z",

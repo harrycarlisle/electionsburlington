@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-05T23:13:43Z",
+  "generatedAt": "2026-09-06T01:17:57Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 30,
-    "trafficIncidents": 30,
+    "activeSignals": 29,
+    "trafficIncidents": 29,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -82,36 +82,20 @@
       "signature": "264597ee059631af"
     },
     {
-      "id": "511:304267",
+      "id": "511:304294",
       "kind": "traffic",
-      "headline": "Collision on HWY 403 HAMILTON Eastbound RAMP at QEW TORONTO, Burlington. 2 right lanes and right shoulder closed.",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Eastbound",
-      "score": 75,
-      "neighbourhood": "Mountainside",
-      "latitude": 43.33588702,
-      "longitude": -79.83009382,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "afaae2b238760d10"
-    },
-    {
-      "id": "511:304269",
-      "kind": "traffic",
-      "headline": "Collision on QEW Toronto bound  at BRANT STREET, Burlington. 2 right lanes closed.",
+      "headline": "Disabled Vehicle on QEW Toronto bound  at ROYAL WINDSOR DRIVE, Oakville. Left shoulder and 1 left lane closed.",
       "location": "QEW",
       "direction": "Toronto Bound",
       "score": 75,
-      "neighbourhood": "Mountainside",
-      "latitude": 43.3416727,
-      "longitude": -79.82216982,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.47083556,
+      "longitude": -79.67429177,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "accidentsAndIncidents",
-      "signature": "62920135a987225c"
+      "signature": "9ed2b201362cb393"
     },
     {
       "id": "511:300520",
