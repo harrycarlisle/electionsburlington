@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-05T22:52:56+00:00",
+  "checkedAt": "2026-09-06T00:54:33+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -72,7 +72,7 @@
       "url": "https://visitoakville.com/events/",
       "scope": "Nearby Oakville",
       "ok": true,
-      "candidates": 31
+      "candidates": 30
     },
     {
       "name": "City of Hamilton events calendar",
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 40
+      "candidates": 38
     },
     {
       "name": "Pokémon GO live events",
@@ -283,7 +283,7 @@
     },
     {
       "title": "Burlington Farmers Market",
-      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-09-05-08-00",
+      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-09-09-08-00",
       "source": "Burlington Lions Club Farmers Market",
       "scope": "Burlington",
       "priority": 5,
@@ -1894,19 +1894,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Oakville Place’s Back to School Play Pass",
-      "url": "https://visitoakville.com/events/oakville-places-back-to-school-play-pass/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Oakville Special Events Plan The Special Events Plan will provide a roadmap to guide future planning and decisions relating to special events in the community. Go to the Oakville S",
       "url": "https://www.oakville.ca/town-hall/plans-strategies/oakville-special-events-plan/",
       "source": "Town of Oakville events",
@@ -2502,32 +2489,6 @@
       "endsAt": "2026-09-08T01:30:00+00:00",
       "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
       "description": "<p>⭐ Step Right Up, Burlington! The Royal Canadian Circus Is Back with an All-New 2026 Show! For over 50 years, the Royal Canadian Circus has brought families together through breathtaking performances, jaw-dropping stunts, and unforgettable moments of wonder. Now, the magic arrives in Burlington with an all-new 2026 production, a spectacular celebration of ",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Harvest Weekends at Springridge",
-      "url": "https://activeparents.ca/calendar/harvest-weekends-at-springridge/2026-09-05/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-05T13:00:00+00:00",
-      "endsAt": "2026-09-05T21:00:00+00:00",
-      "location": "Springridge Farm, 7256 Bell School Line, Milton, Ontario",
-      "description": "<p>Celebrate the season with memory-making moments here on our family farm! Play, run, jump, and explore here in everybody’s favourite Fun Farmyard which, on weekends, includes our Giant Corn Trail. September weekend admission $16 per person aged 2-92. October weekend admission $19 per person. Our Farm Bakery is busy baking magic with the season’s best […]</",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Brantwood Farms Fall Festival",
-      "url": "https://activeparents.ca/calendar/brantwood-farms-fall-festival-2/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-05T14:00:00+00:00",
-      "endsAt": "2026-09-05T21:00:00+00:00",
-      "location": "Brantwood Farms, 251 Powerline Rd, Brantford, Ontario",
-      "description": "<p>September 3 note - due to the storms this week, the farm had some cleaning up to do. Please contact Brantwood Farms before heading out to make sure they are ready for visitors. Wagon Ride Giant Jumping Pillows Character Corn Maze Obstacle Course Corn Pit Mini Maze Tractor Go-Karts Apple Sling Shots Super Slide Spider […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
