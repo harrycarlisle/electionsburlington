@@ -1,6 +1,37 @@
 {
-  "updated": "2026-09-07T15:56:19-04:00",
+  "updated": "2026-09-07T18:48:39-04:00",
   "events": [
+    {
+      "id": "royal-canadian-circus-2026",
+      "slug": "royal-canadian-circus-2026",
+      "title": "Royal Canadian Circus",
+      "category": "Family",
+      "start": "2026-09-03T19:30:00-04:00",
+      "end": "2026-09-07T17:00:00-04:00",
+      "dateLabel": "Sept. 3 to 7",
+      "location": "Burlington Centre, 777 Guelph Line",
+      "city": "Burlington",
+      "venue": "Burlington Centre",
+      "travel": "In Burlington",
+      "summary": "The touring circus’s Burlington stop, with multiple daily shows over the Labour Day weekend.",
+      "details": "Official tickets list Thursday 7:30 p.m.; Friday 4 and 7:30 p.m.; Saturday and Sunday 12, 4 and 7:30 p.m.; Monday 11 a.m. and 3 p.m. Doors open 30–45 minutes before showtime. Children 3 and under are free on an adult’s lap. Use the mall parking lot.",
+      "bring": [
+        "A ticket",
+        "A parking plan for Burlington Centre"
+      ],
+      "price": "From $35",
+      "source": "https://tickets.royalcanadiancircus.ca/burlington/",
+      "sourceName": "Royal Canadian Circus",
+      "image": "/assets/circus.png",
+      "imageAlt": "The red-and-yellow Royal Canadian Circus big top at Burlington Centre.",
+      "credit": "Burlington News photo",
+      "illustration": false,
+      "showHero": true,
+      "scope": "Burlington",
+      "weight": 8,
+      "verifiedAt": "2026-08-26T16:00:00-04:00",
+      "archivedAt": "2026-09-07T18:48:39-04:00"
+    },
     {
       "id": "rbg-after-dark-anchorball-sept-5-2026",
       "title": "RBG After Dark: ANCHORBALL",
