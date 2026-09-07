@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-07T12:20:34Z",
+  "checkedAt": "2026-09-07T17:53:12Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
@@ -388,6 +388,21 @@
       "allowImage": true,
       "pageRank": 0,
       "description": "Register your child with HDSB. Find your local school, complete forms, and learn requirements for Kindergarten and grade-level registration.",
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington",
+      "radarClass": "Probably Ignore"
+    },
+    {
+      "title": "Transportation & Roads",
+      "url": "https://www.oakville.ca/transportation-roads/",
+      "source": "Town of Oakville News and Notices",
+      "sourceType": "official",
+      "scope": "oakville",
+      "allowImage": true,
+      "pageRank": 3,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
