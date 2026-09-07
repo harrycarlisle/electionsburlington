@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-07T05:59:49Z",
+  "checkedAt": "2026-09-07T12:20:34Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
@@ -179,6 +179,21 @@
           "origin": "published-story"
         }
       ],
+      "radarClass": "Watch"
+    },
+    {
+      "title": "Parks, Recreation & Culture",
+      "url": "https://www.oakville.ca/parks-recreation-culture/",
+      "source": "Town of Oakville News and Notices",
+      "sourceType": "official",
+      "scope": "oakville",
+      "allowImage": true,
+      "pageRank": 4,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 3,
+      "why": "",
+      "tag": "Burlington",
       "radarClass": "Watch"
     },
     {
@@ -412,6 +427,21 @@
       "radarClass": "Probably Ignore"
     },
     {
+      "title": "Community & Events",
+      "url": "https://www.oakville.ca/community-events/",
+      "source": "Town of Oakville News and Notices",
+      "sourceType": "official",
+      "scope": "oakville",
+      "allowImage": true,
+      "pageRank": 5,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington",
+      "radarClass": "Probably Ignore"
+    },
+    {
       "title": "Absence Reporting (SchoolMessenger)",
       "url": "https://www.hdsb.ca/students-families/absence-reporting-schoolmessenger/",
       "source": "Halton District School Board",
@@ -454,6 +484,21 @@
       "importance": 2,
       "why": "",
       "tag": "Your ward",
+      "radarClass": "Probably Ignore"
+    },
+    {
+      "title": "Business & Development",
+      "url": "https://www.oakville.ca/business-development/",
+      "source": "Town of Oakville News and Notices",
+      "sourceType": "official",
+      "scope": "oakville",
+      "allowImage": true,
+      "pageRank": 7,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "It can affect where, how and how quickly Burlington grows.",
+      "tag": "Growth",
       "radarClass": "Probably Ignore"
     },
     {
