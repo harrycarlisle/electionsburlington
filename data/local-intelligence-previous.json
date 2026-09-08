@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-08T16:33:40Z",
+  "generatedAt": "2026-09-08T19:33:43Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 32,
-    "trafficIncidents": 32,
+    "activeSignals": 33,
+    "trafficIncidents": 33,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -82,20 +82,20 @@
       "signature": "264597ee059631af"
     },
     {
-      "id": "511:304975",
+      "id": "511:305033",
       "kind": "traffic",
-      "headline": "Disabled Vehicle on QEW Fort Erie bound ON-RAMP at FORD DRIVE, Oakville. Left shoulder and left lane closed.",
+      "headline": "Disabled Vehicle on QEW Toronto bound  at BURLINGTON SKYWAY, Burlington. 1 centre lane closed.",
       "location": "QEW",
-      "direction": "Fort Erie Bound",
+      "direction": "Toronto Bound",
       "score": 75,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.494487,
-      "longitude": -79.673646,
+      "neighbourhood": "Downtown",
+      "latitude": 43.29851876,
+      "longitude": -79.79709653,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "accidentsAndIncidents",
-      "signature": "5bf1f2cf5bb1ed32"
+      "signature": "67af25663a1eeb5b"
     },
     {
       "id": "511:300520",

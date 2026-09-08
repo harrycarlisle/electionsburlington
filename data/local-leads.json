@@ -1,6 +1,42 @@
 {
-  "generatedAt": "2026-09-08T19:33:43Z",
+  "generatedAt": "2026-09-08T22:00:00Z",
   "items": [
+    {
+      "id": "511:305092",
+      "detectedAt": "2026-09-08T22:00:00Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on HWY 403 HAMILTON Westbound  at WATERDOWN ROAD, Burlington. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:305094",
+      "detectedAt": "2026-09-08T22:00:00Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Fort Erie bound  at GUELPH LINE, Burlington. 2 left lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:305102",
+      "detectedAt": "2026-09-08T22:00:00Z",
+      "score": 75,
+      "headline": "Collision on QEW Toronto bound  at BURLOAK DRIVE, Burlington. 1 left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:305033",
       "detectedAt": "2026-09-08T19:33:43Z",
