@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-07T22:48:51+00:00",
+  "checkedAt": "2026-09-08T01:11:14+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 40
+      "candidates": 39
     },
     {
       "name": "Pokémon GO live events",
@@ -107,7 +107,7 @@
       "url": "https://science.nasa.gov/solar-system/skywatching/",
       "scope": "Visible from Burlington",
       "ok": false,
-      "error": "HTTP Error 404: Not Found"
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
     },
     {
       "name": "NOAA Space Weather Prediction Center",
@@ -2487,19 +2487,6 @@
       "discoveryOnly": true,
       "startsAt": "2026-09-03T23:30:00+00:00",
       "endsAt": "2026-09-08T01:30:00+00:00",
-      "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
-      "description": "<p>⭐ Step Right Up, Burlington! The Royal Canadian Circus Is Back with an All-New 2026 Show! For over 50 years, the Royal Canadian Circus has brought families together through breathtaking performances, jaw-dropping stunts, and unforgettable moments of wonder. Now, the magic arrives in Burlington with an all-new 2026 production, a spectacular celebration of ",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Royal Canadian Circus Comes To Burlington",
-      "url": "https://activeparents.ca/calendar/royal-canadian-circus-comes-to-burlington/2026-09-07/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-07T15:00:00+00:00",
-      "endsAt": "2026-09-07T21:00:00+00:00",
       "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
       "description": "<p>⭐ Step Right Up, Burlington! The Royal Canadian Circus Is Back with an All-New 2026 Show! For over 50 years, the Royal Canadian Circus has brought families together through breathtaking performances, jaw-dropping stunts, and unforgettable moments of wonder. Now, the magic arrives in Burlington with an all-new 2026 production, a spectacular celebration of ",
       "candidateType": "structured-event"

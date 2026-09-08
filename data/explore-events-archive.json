@@ -1,6 +1,36 @@
 {
-  "updated": "2026-09-07T18:48:39-04:00",
+  "updated": "2026-09-07T21:10:40-04:00",
   "events": [
+    {
+      "id": "ribfest-2026",
+      "slug": "ribfest-2026",
+      "title": "Canada’s Largest Ribfest",
+      "category": "Festival",
+      "start": "2026-09-04T11:00:00-04:00",
+      "end": "2026-09-07T19:00:00-04:00",
+      "dateLabel": "Sept. 4 to 7",
+      "location": "Spencer Smith Park",
+      "summary": "Four days of rib teams, music and fundraising on Burlington’s waterfront.",
+      "details": "The festival runs 11 a.m. to 11 p.m. Friday through Sunday and 11 a.m. to 7 p.m. Monday. Food and drinks cost extra after admission.",
+      "bring": [
+        "A payment card or cash",
+        "Water",
+        "A plan for transit or parking"
+      ],
+      "source": "https://canadaslargestribfest.com/",
+      "sourceName": "Canada’s Largest Ribfest",
+      "image": "assets/home/ribs.webp",
+      "imageAlt": "Ribs cooking over a barbecue pit",
+      "credit": "Thogru via Wikimedia Commons · CC BY-SA 3.0",
+      "scope": "Burlington",
+      "city": "Burlington",
+      "venue": "Spencer Smith Park",
+      "travel": "Downtown Burlington waterfront",
+      "weight": 9,
+      "verifiedAt": "2026-08-26T12:00:00-04:00",
+      "illustration": false,
+      "archivedAt": "2026-09-07T21:10:40-04:00"
+    },
     {
       "id": "royal-canadian-circus-2026",
       "slug": "royal-canadian-circus-2026",
