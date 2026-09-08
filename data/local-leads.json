@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-09-08T11:42:07Z",
+  "generatedAt": "2026-09-08T16:33:40Z",
   "items": [
+    {
+      "id": "511:304975",
+      "detectedAt": "2026-09-08T16:33:40Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Fort Erie bound ON-RAMP at FORD DRIVE, Oakville. Left shoulder and left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:304764",
       "detectedAt": "2026-09-07T22:46:18Z",
