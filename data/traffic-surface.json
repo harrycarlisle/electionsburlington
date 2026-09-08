@@ -1,22 +1,43 @@
 {
-  "generatedAt": "2026-09-08T12:33:41.792863-04:00",
+  "generatedAt": "2026-09-08T15:33:46.154465-04:00",
   "source": "Ontario 511 events + OSRM geometry + camera inventory",
   "licence": "Open Government Licence - Ontario",
-  "incidents": [],
+  "incidents": [
+    {
+      "id": "511:305033",
+      "title": "Collision on QEW near Burlington Skyway",
+      "rawHeadline": "Disabled Vehicle on QEW Toronto bound  at BURLINGTON SKYWAY, Burlington. 1 centre lane closed.",
+      "roadway": "QEW",
+      "direction": "Toronto-bound",
+      "type": "collision",
+      "facility": "mainline",
+      "nearestRoad": "Burlington Skyway",
+      "municipality": "Burlington",
+      "context": "Burlington · Burlington Skyway / QEW",
+      "impact": "Could affect Skyway crossings between Burlington and Hamilton.",
+      "latitude": 43.29851876,
+      "longitude": -79.79709653,
+      "score": 0,
+      "affectsSkyway": true,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    }
+  ],
   "skyway": {
-    "value": "Check cameras",
-    "alert": false,
-    "detail": ""
+    "value": "Collision",
+    "alert": true,
+    "detail": "Collision on QEW near Burlington Skyway"
   },
   "homepageTraffic": {
     "label": "Traffic",
-    "title": "QEW → Toronto",
-    "context": "Live route check",
-    "impact": "30 cameras along this route",
+    "title": "QEW → Hamilton",
+    "context": "Delay likely",
+    "impact": "Collision on QEW near Burlington Skyway",
     "freshness": "",
-    "url": "/traffic/?destination=toronto",
-    "alert": false,
-    "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+    "url": "/traffic/?destination=hamilton",
+    "alert": true,
+    "advisory": ""
   },
   "routes": {
     "toronto": {
@@ -651,12 +672,11 @@
       "geometrySource": "osrm",
       "metres": 27987.2,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "11 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on QEW near Burlington Skyway",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -680,6 +700,26 @@
           "updatedLabel": ""
         },
         {
+          "id": "511:305033",
+          "title": "Collision on QEW near Burlington Skyway",
+          "rawHeadline": "Disabled Vehicle on QEW Toronto bound  at BURLINGTON SKYWAY, Burlington. 1 centre lane closed.",
+          "roadway": "QEW",
+          "direction": "Toronto-bound",
+          "type": "collision",
+          "facility": "mainline",
+          "nearestRoad": "Burlington Skyway",
+          "municipality": "Burlington",
+          "context": "Burlington · Burlington Skyway / QEW",
+          "impact": "Could affect Skyway crossings between Burlington and Hamilton.",
+          "latitude": 43.29851876,
+          "longitude": -79.79709653,
+          "score": 0,
+          "affectsSkyway": true,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
           "id": "511:300522",
           "title": "Construction on QEW near North Shore Boulevard",
           "rawHeadline": "Nightly Construction on EASTPORT DRIVE Southbound  between HWY 2\\NORTH SHORE BLVD and QEW, Burlington. 1 Alternating Lane(s).",
@@ -695,26 +735,6 @@
           "longitude": -79.800095,
           "score": 0,
           "affectsSkyway": true,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
-        },
-        {
-          "id": "511:300525",
-          "title": "Construction on Highway 403 near Brant Street",
-          "rawHeadline": "Nightly Construction on HWY 403 HAMILTON Westbound  between BRANT STREET, Burlington and CITY OF HAMILTON-COUNTY OF BRANT TOWNLINE , Hamilton. 1 Alternating Lane(s).",
-          "roadway": "Highway 403",
-          "direction": "westbound",
-          "type": "construction",
-          "facility": "mainline",
-          "nearestRoad": "Brant Street",
-          "municipality": "Burlington",
-          "context": "Burlington · Brant Street / Highway 403",
-          "impact": "",
-          "latitude": 43.34001,
-          "longitude": -79.82295,
-          "score": 0,
-          "affectsSkyway": false,
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
@@ -841,12 +861,11 @@
       "geometrySource": "osrm",
       "metres": 35587.3,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "22 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on QEW near Burlington Skyway",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -870,6 +889,26 @@
           "updatedLabel": ""
         },
         {
+          "id": "511:305033",
+          "title": "Collision on QEW near Burlington Skyway",
+          "rawHeadline": "Disabled Vehicle on QEW Toronto bound  at BURLINGTON SKYWAY, Burlington. 1 centre lane closed.",
+          "roadway": "QEW",
+          "direction": "Toronto-bound",
+          "type": "collision",
+          "facility": "mainline",
+          "nearestRoad": "Burlington Skyway",
+          "municipality": "Burlington",
+          "context": "Burlington · Burlington Skyway / QEW",
+          "impact": "Could affect Skyway crossings between Burlington and Hamilton.",
+          "latitude": 43.29851876,
+          "longitude": -79.79709653,
+          "score": 0,
+          "affectsSkyway": true,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
           "id": "511:300523",
           "title": "QEW Toronto-bound on-ramp closed at Fruitland Road",
           "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FRUITLAND ROAD, Hamilton. ALL LANES CLOSED.",
@@ -883,26 +922,6 @@
           "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
           "latitude": 43.2315,
           "longitude": -79.6965,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
-        },
-        {
-          "id": "511:300524",
-          "title": "QEW Toronto-bound on-ramp closed at Fifty Road",
-          "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FIFTY ROAD, Hamilton. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Fifty Road",
-          "municipality": "Hamilton",
-          "context": "Hamilton · Fifty Road / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.217094,
-          "longitude": -79.6369,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -1128,26 +1147,6 @@
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
-        },
-        {
-          "id": "511:300524",
-          "title": "QEW Toronto-bound on-ramp closed at Fifty Road",
-          "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FIFTY ROAD, Hamilton. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Fifty Road",
-          "municipality": "Hamilton",
-          "context": "Hamilton · Fifty Road / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.217094,
-          "longitude": -79.6369,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
         }
       ]
     },
@@ -1159,12 +1158,11 @@
       "geometrySource": "osrm",
       "metres": 86993.2,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "27 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on QEW near Burlington Skyway",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -1188,6 +1186,26 @@
           "updatedLabel": ""
         },
         {
+          "id": "511:305033",
+          "title": "Collision on QEW near Burlington Skyway",
+          "rawHeadline": "Disabled Vehicle on QEW Toronto bound  at BURLINGTON SKYWAY, Burlington. 1 centre lane closed.",
+          "roadway": "QEW",
+          "direction": "Toronto-bound",
+          "type": "collision",
+          "facility": "mainline",
+          "nearestRoad": "Burlington Skyway",
+          "municipality": "Burlington",
+          "context": "Burlington · Burlington Skyway / QEW",
+          "impact": "Could affect Skyway crossings between Burlington and Hamilton.",
+          "latitude": 43.29851876,
+          "longitude": -79.79709653,
+          "score": 0,
+          "affectsSkyway": true,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
           "id": "511:300523",
           "title": "QEW Toronto-bound on-ramp closed at Fruitland Road",
           "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FRUITLAND ROAD, Hamilton. ALL LANES CLOSED.",
@@ -1201,26 +1219,6 @@
           "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
           "latitude": 43.2315,
           "longitude": -79.6965,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
-        },
-        {
-          "id": "511:300524",
-          "title": "QEW Toronto-bound on-ramp closed at Fifty Road",
-          "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FIFTY ROAD, Hamilton. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Fifty Road",
-          "municipality": "Hamilton",
-          "context": "Hamilton · Fifty Road / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.217094,
-          "longitude": -79.6369,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -1486,26 +1484,6 @@
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
-        },
-        {
-          "id": "511:300524",
-          "title": "QEW Toronto-bound on-ramp closed at Fifty Road",
-          "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FIFTY ROAD, Hamilton. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Fifty Road",
-          "municipality": "Hamilton",
-          "context": "Hamilton · Fifty Road / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.217094,
-          "longitude": -79.6369,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
         }
       ]
     }
@@ -1514,6 +1492,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-09-08T14:32:46.380532-04:00"
+    "updatedAt": "2026-09-08T15:33:49.776734-04:00"
   }
 }
