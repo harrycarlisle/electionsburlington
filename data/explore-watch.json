@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-09T18:34:11+00:00",
+  "checkedAt": "2026-09-09T21:40:28+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -72,7 +72,7 @@
       "url": "https://visitoakville.com/events/",
       "scope": "Nearby Oakville",
       "ok": true,
-      "candidates": 29
+      "candidates": 28
     },
     {
       "name": "City of Hamilton events calendar",
@@ -283,7 +283,7 @@
     },
     {
       "title": "Burlington Farmers Market",
-      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-09-11-08-00",
+      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-09-09-08-00",
       "source": "Burlington Lions Club Farmers Market",
       "scope": "Burlington",
       "priority": 5,
@@ -1842,19 +1842,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Oakville Cruze Night Classic Car Shows",
-      "url": "https://visitoakville.com/events/oakville-cruze-night-classic-car-shows/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Oakville Event Locations",
       "url": "https://visitoakville.com/events/oakville-event-locations/",
       "source": "Visit Oakville events",
@@ -2453,32 +2440,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Harvest Festival at Hamilton Farmer’s Market",
-      "url": "https://activeparents.ca/calendar/harvest-festival-at-hamilton-farmers-market/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-09T13:00:00+00:00",
-      "endsAt": "2026-09-09T21:00:00+00:00",
-      "location": "Hamilton Farmers Market, 35 York Boulevard, Hamilton, Ontario",
-      "description": "<p>Harvest Festival 2026 brings five weeks of fall food, live entertainment, seasonal shopping, and unforgettable autumn experiences to downtown Hamilton. Explore the schedule, events and vendor line-up at hamiltonfarmersmarket.ca/harvest-festival-2026. Join us for the kick off event September 9.</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Afternoon snack with On y va Milton @ Main",
-      "url": "https://activeparents.ca/calendar/afternoon-snack-with-on-y-va-milton-main/2026-09-09/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-09T18:30:00+00:00",
-      "endsAt": "2026-09-09T19:30:00+00:00",
-      "location": "MPL Main branch, 1010 Main St E, Milton, ON",
-      "description": "<p>Young children know that books hold meaning. Every book you read to your child is a gift they will cherish. A book truly comes alive when shared between an adult and a young child! Come share this moment with us through reading and many other activities! Wednesday, August 5, 2026 Wednesday, August 12, 2026 Wednesday, […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Fall Fair at HPL",
       "url": "https://activeparents.ca/calendar/fall-fair-at-hpl-2/2026-09-10/",
       "source": "Active Parents regional calendar",
@@ -2697,6 +2658,32 @@
       "endsAt": "2026-09-12T15:30:00+00:00",
       "location": "Rock Chapel Ranch, 373 Rock Chapel Rd., Dundas, ON",
       "description": "<p>Breathe in the fresh air, take in the peaceful views and enjoy some time with playful goats — all while supporting affordable mental health services in your community! A perfect event for all ages. Date: Saturday July 18 Cost: $35 Location: Rock Chapel Ranch, 373 Rock Chapel Rd. Dundas, ON Bring your own mat 50% of registration fee donated […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Life in the Late Summer Wetland Nature Expedition",
+      "url": "https://activeparents.ca/calendar/life-in-the-late-summer-wetland-nature-expedition/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-12T14:30:00+00:00",
+      "endsAt": "2026-09-12T16:30:00+00:00",
+      "location": "Carlisle Courtliffe Park, 155 Carlisle Rd, Carlisle, ON",
+      "description": "<p>Our guide is the one and only DAN THE NATURE MAN! You’re in for a treat! Dan Schneider knows nature! His passion is connecting people, including families and kids to the natural world. In fact, former students still remember him affectionately as Dan the Nature Man. Dan worked at the Grand River Conservation Authority for […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Oak Park Fall Fair",
+      "url": "https://activeparents.ca/calendar/oak-park-fall-fair/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-12T15:00:00+00:00",
+      "endsAt": "2026-09-13T02:00:00+00:00",
+      "location": "Oak Park Neighbourhood Centre, 2200 Sawgrass Drive, Oakville, Ontario",
+      "description": "<p>MAIN EVENTS 7 inflatables, 60 exhibitors with interactive activities & silent auction! Enter auction at www.OakParkFallFair.ca Thank you to our generous donors for contributing over 100 amazing items. 11:00 Opening Ceremony 11:30 Beebop Magic Show 12:00 Spider-Man 1:00 Brendon Gomez 2:00 Club Pilates Glen Abbey 2:30 Birds of Prey 3:00 Zumba 3:30 The Cover",
       "candidateType": "structured-event"
     },
     {
