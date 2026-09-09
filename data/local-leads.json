@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-09-09T13:52:29Z",
+  "generatedAt": "2026-09-09T17:46:48Z",
   "items": [
+    {
+      "id": "511:305379",
+      "detectedAt": "2026-09-09T17:46:48Z",
+      "score": 90,
+      "headline": "Collision on QEW Toronto bound RAMP at NIKOLA TESLA, Hamilton. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:305406",
+      "detectedAt": "2026-09-09T17:46:48Z",
+      "score": 90,
+      "headline": "Highway Maintenance on QEW Fort Erie bound ON-RAMP at FORD DRIVE, Oakville. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:305184",
       "detectedAt": "2026-09-09T09:09:42Z",
