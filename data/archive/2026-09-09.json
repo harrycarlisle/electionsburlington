@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-09T16:33:10Z",
+  "checkedAt": "2026-09-09T19:27:42Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
@@ -180,6 +180,38 @@
       "importance": 4,
       "why": "It adds information voters can use to compare candidates.",
       "tag": "Candidates",
+      "radarClass": "Watch"
+    },
+    {
+      "title": "Infrastructure and Growth",
+      "url": "https://www.halton.ca/for-residents/infrastructure-and-growth",
+      "source": "Halton Region",
+      "sourceType": "official",
+      "scope": "region",
+      "allowImage": true,
+      "pageRank": 13,
+      "description": "Learn about the Region's ongoing work to enhance and expand its roads, water and wastewater, and facilities for our growing community.",
+      "image": "https://www.halton.ca:443/getmedia/8cd17423-2856-484f-8bf7-1afc4d460f5a/pw-infrastructure-and-growth-page-thumbnail-may-2026.jpg?width=200&height=200&mediaprotectionhash=99ce5a7963461ab953cbedfc4cfb5d8b874e2db3fdaafe839425ad15e1093019&ext=.jpg",
+      "imageSource": "Halton Region",
+      "imageSourceUrl": "https://www.halton.ca/for-residents/infrastructure-and-growth",
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 4,
+      "why": "",
+      "tag": "Halton Region",
+      "followUpTo": [
+        "burlington-flood-protection-90-million"
+      ],
+      "beatMatches": [
+        {
+          "id": "burlington-flood-protection-90-million",
+          "headline": "Burlington has spent more than $90 million on stormwater since 2015. What changed?",
+          "terms": [
+            "infrastructure"
+          ],
+          "origin": "published-story"
+        }
+      ],
       "radarClass": "Watch"
     },
     {
@@ -409,22 +441,6 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Halton District School Board",
-      "url": "https://www.hdsb.ca/",
-      "source": "Halton District School Board",
-      "sourceType": "official",
-      "scope": "schools",
-      "allowImage": true,
-      "pageRank": 2,
-      "description": "The Halton District School Board serves public school students across Halton Region, including Burlington, Halton Hills, Milton, and Oakville.",
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington",
-      "radarClass": "Probably Ignore"
-    },
-    {
       "title": "Transportation & Roads",
       "url": "https://www.oakville.ca/transportation-roads/",
       "source": "Town of Oakville News and Notices",
@@ -440,13 +456,14 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Students & Families",
-      "url": "https://www.hdsb.ca/students-families/",
+      "title": "Halton District School Board",
+      "url": "https://www.hdsb.ca/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
       "allowImage": true,
       "pageRank": 3,
+      "description": "The Halton District School Board serves public school students across Halton Region, including Burlington, Halton Hills, Milton, and Oakville.",
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -455,8 +472,8 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Absence Reporting (SchoolMessenger)",
-      "url": "https://www.hdsb.ca/students-families/absence-reporting-schoolmessenger/",
+      "title": "Students & Families",
+      "url": "https://www.hdsb.ca/students-families/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -485,8 +502,8 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Aspen Family Portal",
-      "url": "https://www.hdsb.ca/students-families/aspen-family-portal/",
+      "title": "Absence Reporting (SchoolMessenger)",
+      "url": "https://www.hdsb.ca/students-families/absence-reporting-schoolmessenger/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -500,8 +517,8 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Before & After School Care",
-      "url": "https://www.hdsb.ca/students-families/before-after-school-care/",
+      "title": "Aspen Family Portal",
+      "url": "https://www.hdsb.ca/students-families/aspen-family-portal/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -530,8 +547,8 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Bus Cancellations & School Closures",
-      "url": "https://www.hdsb.ca/students-families/bus-cancellations-school-closures/",
+      "title": "Before & After School Care",
+      "url": "https://www.hdsb.ca/students-families/before-after-school-care/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -541,7 +558,7 @@
       "verificationTier": "primary",
       "importance": 2,
       "why": "",
-      "tag": "Traffic",
+      "tag": "Burlington",
       "radarClass": "Probably Ignore"
     },
     {
@@ -564,8 +581,8 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Get Involved",
-      "url": "https://www.hdsb.ca/students-families/get-involved/",
+      "title": "Bus Cancellations & School Closures",
+      "url": "https://www.hdsb.ca/students-families/bus-cancellations-school-closures/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -575,7 +592,7 @@
       "verificationTier": "primary",
       "importance": 2,
       "why": "",
-      "tag": "Burlington",
+      "tag": "Traffic",
       "radarClass": "Probably Ignore"
     },
     {
@@ -613,8 +630,8 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Health & Well-Being",
-      "url": "https://www.hdsb.ca/students-families/health-well-being/",
+      "title": "Get Involved",
+      "url": "https://www.hdsb.ca/students-families/get-involved/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -643,8 +660,8 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Indigenous Rights & Education",
-      "url": "https://www.hdsb.ca/students-families/indigenous-rights-education/",
+      "title": "Health & Well-Being",
+      "url": "https://www.hdsb.ca/students-families/health-well-being/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -677,8 +694,8 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "New to Canada & Halton Region",
-      "url": "https://www.hdsb.ca/students-families/new-to-canada-halton-region/",
+      "title": "Indigenous Rights & Education",
+      "url": "https://www.hdsb.ca/students-families/indigenous-rights-education/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
@@ -711,8 +728,8 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Pay Online (School Cash Online)",
-      "url": "https://www.hdsb.ca/students-families/pay-online-school-cash-online/",
+      "title": "New to Canada & Halton Region",
+      "url": "https://www.hdsb.ca/students-families/new-to-canada-halton-region/",
       "source": "Halton District School Board",
       "sourceType": "official",
       "scope": "schools",
