@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-09-09T17:46:48Z",
+  "generatedAt": "2026-09-09T20:52:23Z",
   "items": [
+    {
+      "id": "511:305487",
+      "detectedAt": "2026-09-09T20:52:23Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Toronto bound  at BURLINGTON SKYWAY, Burlington. 1 right lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:305379",
       "detectedAt": "2026-09-09T17:46:48Z",
