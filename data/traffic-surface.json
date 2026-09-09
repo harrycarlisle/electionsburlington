@@ -1,8 +1,29 @@
 {
-  "generatedAt": "2026-09-09T00:35:40.730189-04:00",
+  "generatedAt": "2026-09-09T05:09:46.349200-04:00",
   "source": "Ontario 511 events + OSRM geometry + camera inventory",
   "licence": "Open Government Licence - Ontario",
-  "incidents": [],
+  "incidents": [
+    {
+      "id": "511:305184",
+      "title": "Collision on Highway 403 near Plains Road",
+      "rawHeadline": "Collision on HWY 403 HAMILTON Westbound  at WATERDOWN ROAD, Burlington. Right lane closed.",
+      "roadway": "Highway 403",
+      "direction": "westbound",
+      "type": "collision",
+      "facility": "mainline",
+      "nearestRoad": "Plains Road",
+      "municipality": "Burlington",
+      "context": "Burlington · Plains Road / Highway 403",
+      "impact": "Watch for delays near Plains Road.",
+      "latitude": 43.31209876,
+      "longitude": -79.86012323,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    }
+  ],
   "skyway": {
     "value": "Check cameras",
     "alert": false,
@@ -651,12 +672,11 @@
       "geometrySource": "osrm",
       "metres": 27987.2,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "11 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on Highway 403 near Plains Road",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -680,6 +700,26 @@
           "updatedLabel": ""
         },
         {
+          "id": "511:305184",
+          "title": "Collision on Highway 403 near Plains Road",
+          "rawHeadline": "Collision on HWY 403 HAMILTON Westbound  at WATERDOWN ROAD, Burlington. Right lane closed.",
+          "roadway": "Highway 403",
+          "direction": "westbound",
+          "type": "collision",
+          "facility": "mainline",
+          "nearestRoad": "Plains Road",
+          "municipality": "Burlington",
+          "context": "Burlington · Plains Road / Highway 403",
+          "impact": "Watch for delays near Plains Road.",
+          "latitude": 43.31209876,
+          "longitude": -79.86012323,
+          "score": 0,
+          "affectsSkyway": false,
+          "source": "Ontario 511",
+          "url": "/traffic/",
+          "updatedLabel": ""
+        },
+        {
           "id": "511:300522",
           "title": "Construction on QEW near North Shore Boulevard",
           "rawHeadline": "Nightly Construction on EASTPORT DRIVE Southbound  between HWY 2\\NORTH SHORE BLVD and QEW, Burlington. 1 Alternating Lane(s).",
@@ -695,26 +735,6 @@
           "longitude": -79.800095,
           "score": 0,
           "affectsSkyway": true,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
-        },
-        {
-          "id": "511:300525",
-          "title": "Construction on Highway 403 near Brant Street",
-          "rawHeadline": "Nightly Construction on HWY 403 HAMILTON Westbound  between BRANT STREET, Burlington and CITY OF HAMILTON-COUNTY OF BRANT TOWNLINE , Hamilton. 1 Alternating Lane(s).",
-          "roadway": "Highway 403",
-          "direction": "westbound",
-          "type": "construction",
-          "facility": "mainline",
-          "nearestRoad": "Brant Street",
-          "municipality": "Burlington",
-          "context": "Burlington · Brant Street / Highway 403",
-          "impact": "",
-          "latitude": 43.34001,
-          "longitude": -79.82295,
-          "score": 0,
-          "affectsSkyway": false,
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
@@ -1514,6 +1534,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-09-09T02:08:05.392475-04:00"
+    "updatedAt": "2026-09-09T05:09:50.581419-04:00"
   }
 }
