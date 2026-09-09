@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T04:35:39Z",
+  "generatedAt": "2026-09-09T09:09:42Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -80,6 +80,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "264597ee059631af"
+    },
+    {
+      "id": "511:305184",
+      "kind": "traffic",
+      "headline": "Collision on HWY 403 HAMILTON Westbound  at WATERDOWN ROAD, Burlington. Right lane closed.",
+      "location": "HWY 403 HAMILTON",
+      "direction": "Westbound",
+      "score": 75,
+      "neighbourhood": "Aldershot",
+      "latitude": 43.31209876,
+      "longitude": -79.86012323,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "accidentsAndIncidents",
+      "signature": "44edea16264fab44"
     },
     {
       "id": "511:300520",
@@ -434,22 +450,6 @@
       "signature": "a9f423b296871a9c"
     },
     {
-      "id": "511:290120",
-      "kind": "traffic",
-      "headline": "Continuous Engineering Investigation on QEW Toronto bound  between THIRD LINE and THIRD LINE, Oakville. 1 Right Lane(s).",
-      "location": "QEW",
-      "direction": "Toronto Bound",
-      "score": 45,
-      "neighbourhood": "Orchard",
-      "latitude": 43.42389,
-      "longitude": -79.72526,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "b24da3cece4ef540"
-    },
-    {
       "id": "511:296303",
       "kind": "traffic",
       "headline": "Nightly Construction on HWY 6 Northbound  between PARKSIDE DRIVE and EAST FLAMBOROUGH TWP CON. 5 EAST, Hamilton. 1 Alternating Lane(s).",
@@ -531,22 +531,6 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "636f5e0a1da4b439"
-      },
-      {
-        "id": "511:290120",
-        "kind": "traffic",
-        "headline": "Continuous Engineering Investigation on QEW Toronto bound  between THIRD LINE and THIRD LINE, Oakville. 1 Right Lane(s).",
-        "location": "QEW",
-        "direction": "Toronto Bound",
-        "score": 45,
-        "neighbourhood": "Orchard",
-        "latitude": 43.42389,
-        "longitude": -79.72526,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "b24da3cece4ef540"
       },
       {
         "id": "511:296303",
@@ -915,6 +899,22 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "3eab45607ceb7a3e"
+      },
+      {
+        "id": "511:303667",
+        "kind": "traffic",
+        "headline": "Nightly Construction on HWY 403 HAMILTON Eastbound  between Garden Ave and Jerseyville Road / Brant Road 17, Brantford. 1 Right Lane(s).",
+        "location": "HWY 403 HAMILTON",
+        "direction": "Eastbound",
+        "score": 53,
+        "neighbourhood": "Burlington area",
+        "latitude": 43.167484,
+        "longitude": -80.21334,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "467e5d0c6511ea40"
       }
     ],
     "cameras": [
