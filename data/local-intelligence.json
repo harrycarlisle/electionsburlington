@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T20:52:23Z",
+  "generatedAt": "2026-09-09T23:10:01Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -82,20 +82,20 @@
       "signature": "083a7bd58a7ed0f4"
     },
     {
-      "id": "511:305487",
+      "id": "511:305548",
       "kind": "traffic",
-      "headline": "Disabled Vehicle on QEW Toronto bound  at BURLINGTON SKYWAY, Burlington. 1 right lane closed.",
+      "headline": "Disabled Vehicle on QEW Fort Erie bound  at GARDEN CITY SKYWAY, St. Catharines. Right lane closed.",
       "location": "QEW",
-      "direction": "Toronto Bound",
+      "direction": "Fort Erie Bound",
       "score": 75,
-      "neighbourhood": "Downtown",
-      "latitude": 43.29851876,
-      "longitude": -79.79709653,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.16718726,
+      "longitude": -79.19346889,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "accidentsAndIncidents",
-      "signature": "694fc6f6bbb57a53"
+      "signature": "6e2588fb5b16b4e9"
     },
     {
       "id": "511:300520",

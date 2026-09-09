@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-09-09T20:52:23Z",
+  "generatedAt": "2026-09-09T23:10:01Z",
   "items": [
+    {
+      "id": "511:305548",
+      "detectedAt": "2026-09-09T23:10:01Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Fort Erie bound  at GARDEN CITY SKYWAY, St. Catharines. Right lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:305487",
       "detectedAt": "2026-09-09T20:52:23Z",
