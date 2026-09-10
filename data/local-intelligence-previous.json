@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-10T16:18:58Z",
+  "generatedAt": "2026-09-10T19:14:00Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 44,
-    "trafficIncidents": 44,
+    "activeSignals": 46,
+    "trafficIncidents": 46,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -82,36 +82,20 @@
       "signature": "083a7bd58a7ed0f4"
     },
     {
-      "id": "511:305748",
+      "id": "511:305805",
       "kind": "traffic",
-      "headline": "Collision on QEW Fort Erie bound HOV at APPLEBY LINE, Burlington. All lanes closed.",
+      "headline": "Nightly Construction on QEW Toronto bound On-ramp at WALKERS LINE, Burlington. ALL LANES CLOSED.",
       "location": "QEW",
-      "direction": "Fort Erie Bound",
+      "direction": "Toronto Bound",
       "score": 90,
-      "neighbourhood": "Tansley",
-      "latitude": 43.380820767,
-      "longitude": -79.772345424,
+      "neighbourhood": "Palmer",
+      "latitude": 43.36641,
+      "longitude": -79.78798,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "54bddcc3e7cc8ff5"
-    },
-    {
-      "id": "511:305747",
-      "kind": "traffic",
-      "headline": "Collision on QEW Fort Erie bound  at APPLEBY LINE, Burlington. Left lane closed.",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 75,
-      "neighbourhood": "Tansley",
-      "latitude": 43.38102569,
-      "longitude": -79.77215975,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "edbdd034c20ace4f"
+      "rawType": "roadwork",
+      "signature": "98d1216c39b2b875"
     },
     {
       "id": "511:300520",
@@ -496,6 +480,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "1286b0a6916b6324"
+    },
+    {
+      "id": "511:305414",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 2 Alternating Lane(s).",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 53,
+      "neighbourhood": "Downtown",
+      "latitude": 43.327545,
+      "longitude": -79.825485,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "0f4cdd6a3734644c"
     }
   ],
   "topSignal": {
