@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-09-10T16:18:58Z",
+  "generatedAt": "2026-09-10T19:14:00Z",
   "items": [
+    {
+      "id": "511:305805",
+      "detectedAt": "2026-09-10T19:14:00Z",
+      "score": 90,
+      "headline": "Nightly Construction on QEW Toronto bound On-ramp at WALKERS LINE, Burlington. ALL LANES CLOSED.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:305748",
       "detectedAt": "2026-09-10T16:18:58Z",
