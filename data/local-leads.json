@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-09-10T11:48:15Z",
+  "generatedAt": "2026-09-10T16:18:58Z",
   "items": [
+    {
+      "id": "511:305748",
+      "detectedAt": "2026-09-10T16:18:58Z",
+      "score": 90,
+      "headline": "Collision on QEW Fort Erie bound HOV at APPLEBY LINE, Burlington. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:305747",
+      "detectedAt": "2026-09-10T16:18:58Z",
+      "score": 75,
+      "headline": "Collision on QEW Fort Erie bound  at APPLEBY LINE, Burlington. Left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:305548",
       "detectedAt": "2026-09-09T23:10:01Z",
