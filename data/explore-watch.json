@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-10T18:25:04+00:00",
+  "checkedAt": "2026-09-10T21:36:26+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 38
+      "candidates": 37
     },
     {
       "name": "Pokémon GO live events",
@@ -2437,19 +2437,6 @@
       "endsAt": "2026-09-21T03:59:59+00:00",
       "location": "Royal Botanical Gardens Hendrie Park, 680 Plains Road West, Burlington, Ontario",
       "description": "<p>This outdoor exhibition features 18 sculptures and a hidden digital world set amongst nature and blooms! With Canada Strong Pass, children 0-17 receive free Garden Admission, and young adults 18–24 enjoy 50% off until September 7th. Prices adjust automatically. Explore the vibrant sculptural universe of artist and contemporary sculptor Ken Kelleher, inter",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Mighty Mom Oakville Launch Party",
-      "url": "https://activeparents.ca/calendar/mighty-mom-oakville-launch-party/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-10T17:00:00+00:00",
-      "endsAt": "2026-09-10T19:00:00+00:00",
-      "location": "CourtX, 226 Wyecroft Rd., Oakville, ON",
-      "description": "<p>We’re thrilled to announce the launch of Mighty Mom in Oakville with host Mighty Mom Kate and we want you and your whole crew to celebrate with us! Get active, socialize, and have fun together.</p>\\n",
       "candidateType": "structured-event"
     },
     {
