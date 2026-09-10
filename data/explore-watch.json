@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-10T14:24:35+00:00",
+  "checkedAt": "2026-09-10T18:25:04+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -2440,32 +2440,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Fall Fair at HPL",
-      "url": "https://activeparents.ca/calendar/fall-fair-at-hpl-2/2026-09-10/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-10T14:00:00+00:00",
-      "endsAt": "2026-09-10T15:00:00+00:00",
-      "location": "HPL – selected branches, Library Branches, Hamilton, ON",
-      "description": "<p>Fall-Fair fun and games. Join us for a variety of Fall Fair-inspired games and activities. Thursday, September 10: 10:00am - 11:00am Binbrook Branch Saturday, September 19: 10:00am - 12:00pm Barton Branch </p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "My First Library Card Storytime",
-      "url": "https://activeparents.ca/calendar/my-first-library-card-storytime/2026-09-10/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-10T14:30:00+00:00",
-      "endsAt": "2026-09-10T15:30:00+00:00",
-      "location": "BPL various branches, Burlington Libraries, Burlington, ON",
-      "description": "<p>Welcome to the magical world of the library! Come for stories and crafts—and sign up your child for their own Burlington Public Library card! Parents/Guardians need to bring current photo ID with proof of address. Ages infant to 5. My First Library Card is very popular, and space is limited; please arrive early to secure […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Mighty Mom Oakville Launch Party",
       "url": "https://activeparents.ca/calendar/mighty-mom-oakville-launch-party/",
       "source": "Active Parents regional calendar",
@@ -2687,6 +2661,19 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Food For Feedback – City of Burlington",
+      "url": "https://activeparents.ca/calendar/food-for-feedback-city-of-burlington/2026-09-12/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-12T16:00:00+00:00",
+      "endsAt": "2026-09-12T19:00:00+00:00",
+      "location": "Central Park Burlington, 2311 New Street, Burlington, Ontario",
+      "description": "<p>The free drop-in event features 35 booths and five food trucks. There is a special area called the \\'Kidz Zone\\' where children can have fun while family members provide feedback on City projects. Attendees will receive a free lunch from a food truck, in exchange for providing feedback to the City on projects and initiatives. […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
       "source": "Active Parents regional calendar",
@@ -2713,8 +2700,21 @@
       "candidateType": "link"
     },
     {
-      "title": "Fall Fair at HPL",
-      "url": "https://activeparents.ca/series/fall-fair-at-hpl-2/",
+      "title": "Family Friendly Painting Workshop",
+      "url": "https://activeparents.ca/calendar/family-friendly-painting-workshop/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Food For Feedback – City of Burlington",
+      "url": "https://activeparents.ca/series/food-for-feedback-city-of-burlington/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
