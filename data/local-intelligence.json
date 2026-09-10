@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T23:10:01Z",
+  "generatedAt": "2026-09-10T01:24:23Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 40,
-    "trafficIncidents": 40,
+    "activeSignals": 39,
+    "trafficIncidents": 39,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -80,22 +80,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "083a7bd58a7ed0f4"
-    },
-    {
-      "id": "511:305548",
-      "kind": "traffic",
-      "headline": "Disabled Vehicle on QEW Fort Erie bound  at GARDEN CITY SKYWAY, St. Catharines. Right lane closed.",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 75,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.16718726,
-      "longitude": -79.19346889,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "6e2588fb5b16b4e9"
     },
     {
       "id": "511:300520",
@@ -496,6 +480,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "acc9dddc9d5a791e"
+    },
+    {
+      "id": "511:305411",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Fort Erie Bound  between BRONTE ROAD, Oakville and ONTARIO STREET -BEAMSVILLE, Lincoln. 1 Alternating Lane(s).",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 53,
+      "neighbourhood": "Orchard",
+      "latitude": 43.409355,
+      "longitude": -79.74126,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "1286b0a6916b6324"
     }
   ],
   "topSignal": {
