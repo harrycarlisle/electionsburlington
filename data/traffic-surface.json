@@ -1,8 +1,28 @@
 {
-  "generatedAt": "2026-09-11T13:10:00.374469-04:00",
+  "generatedAt": "2026-09-11T15:59:52.459472-04:00",
   "source": "Ontario 511 events + OSRM geometry + camera inventory",
   "licence": "Open Government Licence - Ontario",
   "incidents": [
+    {
+      "id": "511:306257",
+      "title": "Collision on Eastport Drive near North Shore Boulevard",
+      "rawHeadline": "Collision on EASTPORT DRIVE Southbound  at HWY 2\\NORTH SHORE BLVD, Burlington. All lanes closed.",
+      "roadway": "Eastport Drive",
+      "direction": "southbound",
+      "type": "collision",
+      "facility": "mainline",
+      "nearestRoad": "North Shore Boulevard",
+      "municipality": "Burlington",
+      "context": "Burlington · North Shore Boulevard / Eastport Drive",
+      "impact": "Watch for delays near North Shore Boulevard.",
+      "latitude": 43.302001,
+      "longitude": -79.800094,
+      "score": 0,
+      "affectsSkyway": true,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
     {
       "id": "511:303687",
       "title": "QEW closed near Centennial Parkway",
@@ -25,19 +45,19 @@
     }
   ],
   "skyway": {
-    "value": "Check cameras",
-    "alert": false,
-    "detail": ""
+    "value": "Collision",
+    "alert": true,
+    "detail": "Collision on Eastport Drive near North Shore Boulevard"
   },
   "homepageTraffic": {
     "label": "Traffic",
     "title": "QEW → Hamilton",
-    "context": "Live route check",
-    "impact": "11 cameras along this route",
+    "context": "Delay likely",
+    "impact": "Collision on Eastport Drive near North Shore Boulevard",
     "freshness": "",
     "url": "/traffic/?destination=hamilton",
-    "alert": false,
-    "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+    "alert": true,
+    "advisory": ""
   },
   "routes": {
     "toronto": {
@@ -692,12 +712,11 @@
       "geometrySource": "osrm",
       "metres": 27987.2,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "11 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on Eastport Drive near North Shore Boulevard",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -741,19 +760,19 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:300540",
-          "title": "Construction on QEW near Fairview Street",
-          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 3 Alternating Lane(s).",
-          "roadway": "QEW",
-          "direction": "Fort Erie-bound",
-          "type": "construction",
+          "id": "511:306257",
+          "title": "Collision on Eastport Drive near North Shore Boulevard",
+          "rawHeadline": "Collision on EASTPORT DRIVE Southbound  at HWY 2\\NORTH SHORE BLVD, Burlington. All lanes closed.",
+          "roadway": "Eastport Drive",
+          "direction": "southbound",
+          "type": "collision",
           "facility": "mainline",
-          "nearestRoad": "Fairview Street",
+          "nearestRoad": "North Shore Boulevard",
           "municipality": "Burlington",
-          "context": "Burlington · Fairview Street / QEW",
-          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
-          "latitude": 43.327545,
-          "longitude": -79.825485,
+          "context": "Burlington · North Shore Boulevard / Eastport Drive",
+          "impact": "Watch for delays near North Shore Boulevard.",
+          "latitude": 43.302001,
+          "longitude": -79.800094,
           "score": 0,
           "affectsSkyway": true,
           "source": "Ontario 511",
@@ -902,12 +921,11 @@
       "geometrySource": "osrm",
       "metres": 35587.3,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "22 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on Eastport Drive near North Shore Boulevard",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -951,21 +969,21 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:303568",
-          "title": "QEW Toronto-bound on-ramp closed at Fruitland Road",
-          "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FRUITLAND ROAD, Hamilton. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Fruitland Road",
-          "municipality": "Hamilton",
-          "context": "Hamilton · Fruitland Road / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.2315,
-          "longitude": -79.6965,
+          "id": "511:306257",
+          "title": "Collision on Eastport Drive near North Shore Boulevard",
+          "rawHeadline": "Collision on EASTPORT DRIVE Southbound  at HWY 2\\NORTH SHORE BLVD, Burlington. All lanes closed.",
+          "roadway": "Eastport Drive",
+          "direction": "southbound",
+          "type": "collision",
+          "facility": "mainline",
+          "nearestRoad": "North Shore Boulevard",
+          "municipality": "Burlington",
+          "context": "Burlington · North Shore Boulevard / Eastport Drive",
+          "impact": "Watch for delays near North Shore Boulevard.",
+          "latitude": 43.302001,
+          "longitude": -79.800094,
           "score": 0,
-          "affectsSkyway": false,
+          "affectsSkyway": true,
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
@@ -1189,26 +1207,6 @@
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
-        },
-        {
-          "id": "511:303568",
-          "title": "QEW Toronto-bound on-ramp closed at Fruitland Road",
-          "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FRUITLAND ROAD, Hamilton. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Fruitland Road",
-          "municipality": "Hamilton",
-          "context": "Hamilton · Fruitland Road / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.2315,
-          "longitude": -79.6965,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
         }
       ]
     },
@@ -1220,12 +1218,11 @@
       "geometrySource": "osrm",
       "metres": 86993.2,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "27 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on Eastport Drive near North Shore Boulevard",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -1269,21 +1266,21 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:300680",
-          "title": "QEW Fort Erie-bound off-ramp closed at Victoria Avenue",
-          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at VICTORIA AVENUE, Lincoln. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Fort Erie-bound",
-          "type": "closure",
-          "facility": "off-ramp",
-          "nearestRoad": "Victoria Avenue",
-          "municipality": "Niagara",
-          "context": "Niagara · Victoria Avenue / QEW · off-ramp",
-          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
-          "latitude": 43.186478,
-          "longitude": -79.394714,
+          "id": "511:306257",
+          "title": "Collision on Eastport Drive near North Shore Boulevard",
+          "rawHeadline": "Collision on EASTPORT DRIVE Southbound  at HWY 2\\NORTH SHORE BLVD, Burlington. All lanes closed.",
+          "roadway": "Eastport Drive",
+          "direction": "southbound",
+          "type": "collision",
+          "facility": "mainline",
+          "nearestRoad": "North Shore Boulevard",
+          "municipality": "Burlington",
+          "context": "Burlington · North Shore Boulevard / Eastport Drive",
+          "impact": "Watch for delays near North Shore Boulevard.",
+          "latitude": 43.302001,
+          "longitude": -79.800094,
           "score": 0,
-          "affectsSkyway": false,
+          "affectsSkyway": true,
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
@@ -1547,26 +1544,6 @@
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
-        },
-        {
-          "id": "511:300680",
-          "title": "QEW Fort Erie-bound off-ramp closed at Victoria Avenue",
-          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at VICTORIA AVENUE, Lincoln. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Fort Erie-bound",
-          "type": "closure",
-          "facility": "off-ramp",
-          "nearestRoad": "Victoria Avenue",
-          "municipality": "Niagara",
-          "context": "Niagara · Victoria Avenue / QEW · off-ramp",
-          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
-          "latitude": 43.186478,
-          "longitude": -79.394714,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
         }
       ]
     }
@@ -1575,6 +1552,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-09-11T15:38:05.721448-04:00"
+    "updatedAt": "2026-09-11T15:59:55.905092-04:00"
   }
 }

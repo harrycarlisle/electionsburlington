@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-09-11T17:09:57Z",
+  "generatedAt": "2026-09-11T19:59:50Z",
   "items": [
+    {
+      "id": "511:306265",
+      "detectedAt": "2026-09-11T19:59:50Z",
+      "score": 90,
+      "headline": "Collision on QEW Toronto bound RAMP at EASTPORT DRIVE, Hamilton. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:306257",
+      "detectedAt": "2026-09-11T19:59:50Z",
+      "score": 80,
+      "headline": "Collision on EASTPORT DRIVE Southbound  at HWY 2\\NORTH SHORE BLVD, Burlington. All lanes closed.",
+      "kind": "traffic",
+      "location": "EASTPORT DRIVE",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:306186",
       "detectedAt": "2026-09-11T17:09:57Z",
