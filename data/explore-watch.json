@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-11T18:29:53+00:00",
+  "checkedAt": "2026-09-11T21:41:53+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -1218,19 +1218,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Bronte’s Dominican Bachata Party 2026",
-      "url": "https://visitoakville.com/events/brontes-dominican-bachata-party-2026/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Burlington Teen Tour Band",
       "url": "https://www.burlington.ca/en/recreation/burlington-teen-tour-band.aspx",
       "source": "Love My Neighbourhood",
@@ -1456,6 +1443,19 @@
       "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/animals-pets/dogs/dog-licence",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Doggie Dip Fest",
+      "url": "https://visitoakville.com/events/doggie-dip-fest/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -2154,6 +2154,19 @@
       "candidateType": "link"
     },
     {
+      "title": "She Soars Collective - Empowered Connects for Women in Business",
+      "url": "https://visitoakville.com/events/she-soars-collective-empowered-connects-for-women-in-business-8/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Skip to Content",
       "url": "https://www.burlington.ca/en/community-supports/love-my-neighbourhood.aspx",
       "source": "Love My Neighbourhood",
@@ -2312,19 +2325,6 @@
     {
       "title": "Take the Sustainable Tourism 2030 Pledge",
       "url": "https://visitoakville.com/take-the-sustainable-tourism-2030-pledge/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Taste & Paint: An Evening of Wine and Art",
-      "url": "https://visitoakville.com/events/taste-paint-an-evening-of-wine-and-art-recurring-event/",
       "source": "Visit Oakville events",
       "scope": "Nearby Oakville",
       "priority": 4,
