@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-11T10:20:28.522555-04:00",
+  "generatedAt": "2026-09-11T13:52:36.164308-04:00",
   "mode": "local_update",
   "label": "Local Update",
-  "method": "No Burlington/Halton item had a strong current hook, so the rail used a verified regional fallback when available. Fresh Hamilton-area news may replace an otherwise stale utility/service row.",
+  "method": "Local Update ranks fresh verified news plus existing stories with a real why-now hook such as a related current event, meaningful update or anniversary; duplicate editorial families are blocked. Fresh Hamilton-area news may replace an otherwise stale utility/service row.",
   "maxItems": 2,
   "liveFetches": true,
   "fallbackPolicy": {
@@ -21,8 +21,8 @@
   "items": [
     {
       "id": "e22bb67322148943",
-      "headline": "Two Charged, One Wanted in Dundas Shooting",
-      "shortHeadline": "Two Charged, One Wanted in Dundas Shooting",
+      "headline": "Hamilton police: Two Charged, One Wanted in Dundas Shooting",
+      "shortHeadline": "Hamilton police: Two Charged, One Wanted in Dundas Shooting",
       "category": "PUBLIC SAFETY",
       "summary": "Hamilton Police have arrested two individuals and are seeking a third following a shooting investigation in Dundas.",
       "location": "Hamilton",
@@ -30,16 +30,16 @@
       "affectedArea": null,
       "publishedAt": "2026-09-11T10:18:00-04:00",
       "updatedAt": null,
-      "discoveredAt": "2026-09-11T10:21:47.896779-04:00",
+      "discoveredAt": "2026-09-11T13:52:36.164308-04:00",
       "severity": null,
       "impactScore": 4.5,
       "confidenceScore": 5.0,
       "localRelevance": 3.6,
-      "recencyScore": 5.0,
+      "recencyScore": 2.5,
       "breadthScore": 2.8,
       "noveltyScore": 3.4,
       "publicNeedScore": 4.5,
-      "breakingScore": 4.225,
+      "breakingScore": 3.725,
       "sourceType": "official",
       "sourceName": "Hamilton Police Service",
       "sourceUrl": "https://hamiltonpolice.on.ca/news/two-charged-one-wanted-in-dundas-shooting/",
@@ -56,8 +56,11 @@
       "relatedSources": [],
       "label": null,
       "rejectReason": null,
-      "localUpdateScore": 4.32,
-      "regionalSupplement": true
+      "lifecycleStatus": "developing",
+      "localUpdateScore": 3.695,
+      "rawHeadline": "Two Charged, One Wanted in Dundas Shooting",
+      "scopeLabel": "Hamilton",
+      "agencyLabel": "Hamilton police"
     }
   ],
   "lifecycleUpdates": [],
