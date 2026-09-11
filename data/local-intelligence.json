@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-11T13:30:44Z",
+  "generatedAt": "2026-09-11T17:09:57Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 36,
-    "trafficIncidents": 36,
+    "activeSignals": 37,
+    "trafficIncidents": 37,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -98,6 +98,22 @@
       "signature": "98d1216c39b2b875"
     },
     {
+      "id": "511:306186",
+      "kind": "traffic",
+      "headline": "Collision on QEW Toronto bound  at BRONTE ROAD, Oakville. Left lane closed.",
+      "location": "QEW",
+      "direction": "Toronto Bound",
+      "score": 75,
+      "neighbourhood": "Orchard",
+      "latitude": 43.40941762,
+      "longitude": -79.74117822,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "accidentsAndIncidents",
+      "signature": "d1c4e4c5665a8185"
+    },
+    {
       "id": "511:300540",
       "kind": "traffic",
       "headline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 3 Alternating Lane(s).",
@@ -112,22 +128,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "782c4ea31ed6153f"
-    },
-    {
-      "id": "511:300549",
-      "kind": "traffic",
-      "headline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and NORTHSHORE BLVD, Burlington. 1 Right Lane(s).",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 53,
-      "neighbourhood": "Downtown",
-      "latitude": 43.327545,
-      "longitude": -79.825485,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "f53b0dcd27aecebe"
     },
     {
       "id": "511:303108",
@@ -450,6 +450,22 @@
       "signature": "260e1fabf9edc3a0"
     },
     {
+      "id": "511:306182",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and NORTHSHORE BLVD, Burlington. 1 Right Lane(s).",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 53,
+      "neighbourhood": "Downtown",
+      "latitude": 43.327545,
+      "longitude": -79.825485,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "f53b0dcd27aecebe"
+    },
+    {
       "id": "511:296303",
       "kind": "traffic",
       "headline": "Nightly Construction on HWY 6 Northbound  between PARKSIDE DRIVE and EAST FLAMBOROUGH TWP CON. 5 EAST, Hamilton. 1 Alternating Lane(s).",
@@ -480,22 +496,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "0e48fe503f157d65"
-    },
-    {
-      "id": "511:303558",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 401 Westbound  between REGIONAL ROAD 25 and GUELPH LINE, Milton. 2 Alternating Lane(s).",
-      "location": "HWY 401",
-      "direction": "Westbound",
-      "score": 43,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.52803,
-      "longitude": -79.90527,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "81e9ba9b988064d2"
     }
   ],
   "topSignal": {
@@ -595,22 +595,6 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "782c4ea31ed6153f"
-      },
-      {
-        "id": "511:300549",
-        "kind": "traffic",
-        "headline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and NORTHSHORE BLVD, Burlington. 1 Right Lane(s).",
-        "location": "QEW",
-        "direction": "Fort Erie Bound",
-        "score": 53,
-        "neighbourhood": "Downtown",
-        "latitude": 43.327545,
-        "longitude": -79.825485,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "f53b0dcd27aecebe"
       },
       {
         "id": "511:303108",
@@ -915,6 +899,22 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "acc9dddc9d5a791e"
+      },
+      {
+        "id": "511:305411",
+        "kind": "traffic",
+        "headline": "Nightly Construction on QEW Fort Erie Bound  between BRONTE ROAD, Oakville and ONTARIO STREET -BEAMSVILLE, Lincoln. 1 Alternating Lane(s).",
+        "location": "QEW",
+        "direction": "Fort Erie Bound",
+        "score": 53,
+        "neighbourhood": "Orchard",
+        "latitude": 43.409355,
+        "longitude": -79.74126,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "1286b0a6916b6324"
       }
     ],
     "cameras": [

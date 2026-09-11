@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-11T09:05:37Z",
+  "generatedAt": "2026-09-11T13:30:44Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 37,
-    "trafficIncidents": 37,
+    "activeSignals": 36,
+    "trafficIncidents": 36,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -192,22 +192,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "3eab45607ceb7a3e"
-    },
-    {
-      "id": "511:303667",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 403 HAMILTON Eastbound  between Garden Ave and Jerseyville Road / Brant Road 17, Brantford. 1 Right Lane(s).",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Eastbound",
-      "score": 53,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.167484,
-      "longitude": -80.21334,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "467e5d0c6511ea40"
     },
     {
       "id": "511:304871",
@@ -448,6 +432,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "acc9dddc9d5a791e"
+    },
+    {
+      "id": "511:306086",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Toronto bound  between CENTENNIAL PKWY, Hamilton and BURLINGTON SKYWAY, Burlington. 2 Alternating Lane(s).",
+      "location": "QEW",
+      "direction": "Toronto Bound",
+      "score": 53,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.24609,
+      "longitude": -79.75694,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "260e1fabf9edc3a0"
     },
     {
       "id": "511:296303",
@@ -693,22 +693,6 @@
         "signature": "3eab45607ceb7a3e"
       },
       {
-        "id": "511:303667",
-        "kind": "traffic",
-        "headline": "Nightly Construction on HWY 403 HAMILTON Eastbound  between Garden Ave and Jerseyville Road / Brant Road 17, Brantford. 1 Right Lane(s).",
-        "location": "HWY 403 HAMILTON",
-        "direction": "Eastbound",
-        "score": 53,
-        "neighbourhood": "Burlington area",
-        "latitude": 43.167484,
-        "longitude": -80.21334,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "467e5d0c6511ea40"
-      },
-      {
         "id": "511:303761",
         "kind": "traffic",
         "headline": "Nightly Construction on HWY 403 HAMILTON Westbound On-ramp at BRANT STREET, Burlington. ALL LANES CLOSED.",
@@ -915,6 +899,22 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "61abbaca9b4a3dc0"
+      },
+      {
+        "id": "511:305381",
+        "kind": "traffic",
+        "headline": "Nightly Construction on QEW Toronto bound  between BRANT STREET and GUELPH LINE, Burlington. 3 Right Lane(s).",
+        "location": "QEW",
+        "direction": "Toronto Bound",
+        "score": 53,
+        "neighbourhood": "Mountainside",
+        "latitude": 43.341724,
+        "longitude": -79.82237,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "acc9dddc9d5a791e"
       }
     ],
     "cameras": [
