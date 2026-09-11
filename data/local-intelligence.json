@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-11T19:59:50Z",
+  "generatedAt": "2026-09-11T22:29:47Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 36,
-    "trafficIncidents": 36,
+    "activeSignals": 37,
+    "trafficIncidents": 37,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -128,6 +128,22 @@
       "url": "skyway-traffic.html",
       "rawType": "accidentsAndIncidents",
       "signature": "1e105f44300deaee"
+    },
+    {
+      "id": "511:306316",
+      "kind": "traffic",
+      "headline": "Disabled Vehicle on HWY 403 HAMILTON Westbound  at YORK BLVD, Hamilton. Right lane and right shoulder closed.",
+      "location": "HWY 403 HAMILTON",
+      "direction": "Westbound",
+      "score": 75,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.28407869,
+      "longitude": -79.89515305,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "accidentsAndIncidents",
+      "signature": "0f72130d0faa6e3d"
     },
     {
       "id": "511:300540",
@@ -480,22 +496,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "f53b0dcd27aecebe"
-    },
-    {
-      "id": "511:296303",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 6 Northbound  between PARKSIDE DRIVE and EAST FLAMBOROUGH TWP CON. 5 EAST, Hamilton. 1 Alternating Lane(s).",
-      "location": "HWY 6",
-      "direction": "Northbound",
-      "score": 43,
-      "neighbourhood": "Aldershot",
-      "latitude": 43.319767,
-      "longitude": -79.92808,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "b7252b680a22cf68"
     }
   ],
   "topSignal": {

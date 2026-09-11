@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-09-11T19:59:50Z",
+  "generatedAt": "2026-09-11T22:29:47Z",
   "items": [
+    {
+      "id": "511:306316",
+      "detectedAt": "2026-09-11T22:29:47Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on HWY 403 HAMILTON Westbound  at YORK BLVD, Hamilton. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:306265",
       "detectedAt": "2026-09-11T19:59:50Z",
