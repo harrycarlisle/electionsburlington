@@ -1,27 +1,27 @@
 {
-  "checkedAt": "2026-09-11T13:29:45Z",
+  "checkedAt": "2026-09-11T17:10:21Z",
   "method": "Verified, rule-based Burlington civic monitor with published-story memory and advance-event detection. Destination pages are checked before publication; no sentiment score, endorsement or inferred political conclusion is generated.",
   "activeBeatCount": 32,
   "sources": [
     {
       "source": "City of Burlington News",
-      "ok": true,
-      "found": 35
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
     },
     {
       "source": "City of Burlington Public Engagement",
-      "ok": true,
-      "found": 35
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
     },
     {
       "source": "City mayoral decisions",
-      "ok": true,
-      "found": 35
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
     },
     {
       "source": "City development applications",
-      "ok": true,
-      "found": 35
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
     },
     {
       "source": "City of Burlington Election",
@@ -30,8 +30,8 @@
     },
     {
       "source": "Halton Region",
-      "ok": true,
-      "found": 5
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
     },
     {
       "source": "Town of Oakville News and Notices",
@@ -394,6 +394,62 @@
       "radarClass": "Watch"
     },
     {
+      "title": "Administrative Penalty Notice",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/tickets-fines-penalties/administrative-penalty-notice",
+      "source": "City of Hamilton News Releases",
+      "sourceType": "official",
+      "scope": "hamilton",
+      "allowImage": true,
+      "pageRank": 13,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 3,
+      "why": "",
+      "tag": "Burlington",
+      "followUpTo": [
+        "domcon-2026-burlington-atrium"
+      ],
+      "beatMatches": [
+        {
+          "id": "domcon-2026-burlington-atrium",
+          "headline": "Nationalist conference moved to Burlington after two Hamilton venues cancelled bookings",
+          "terms": [
+            "hamilton"
+          ],
+          "origin": "published-story"
+        }
+      ],
+      "radarClass": "Watch"
+    },
+    {
+      "title": "Cat Registration",
+      "url": "https://www.hamilton.ca/index%2Ephp/home-neighbourhood/animals-pets/cats/register-your-cat",
+      "source": "City of Hamilton News Releases",
+      "sourceType": "official",
+      "scope": "hamilton",
+      "allowImage": true,
+      "pageRank": 14,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 3,
+      "why": "",
+      "tag": "Burlington",
+      "followUpTo": [
+        "domcon-2026-burlington-atrium"
+      ],
+      "beatMatches": [
+        {
+          "id": "domcon-2026-burlington-atrium",
+          "headline": "Nationalist conference moved to Burlington after two Hamilton venues cancelled bookings",
+          "terms": [
+            "hamilton"
+          ],
+          "origin": "published-story"
+        }
+      ],
+      "radarClass": "Watch"
+    },
+    {
       "title": "Privacy Policy and Terms of Use",
       "url": "https://myvote.burlington.ca/privacy-policy-and-terms-of-use/",
       "source": "City of Burlington Election",
@@ -545,25 +601,6 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Public Engagement",
-      "url": "https://www.burlington.ca/en/council-and-city-administration/public-engagement.aspx",
-      "source": "City of Burlington News",
-      "sourceType": "official",
-      "scope": "city",
-      "allowImage": true,
-      "pageRank": 8,
-      "description": "As a resident of Burlington, there are many ways for you to get involved with your local government and share your voice on municipal issues.",
-      "image": "https://www.burlington.ca/en/images/structure/news_avatar.jpg",
-      "imageSource": "City of Burlington News",
-      "imageSourceUrl": "https://www.burlington.ca/en/council-and-city-administration/public-engagement.aspx",
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington",
-      "radarClass": "Probably Ignore"
-    },
-    {
       "title": "Get Involved",
       "url": "https://www.hdsb.ca/students-families/get-involved/",
       "source": "Halton District School Board",
@@ -571,25 +608,6 @@
       "scope": "schools",
       "allowImage": true,
       "pageRank": 8,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington",
-      "radarClass": "Probably Ignore"
-    },
-    {
-      "title": "Service Burlington",
-      "url": "https://www.burlington.ca/en/council-and-city-administration/service-burlington.aspx",
-      "source": "City of Burlington News",
-      "sourceType": "official",
-      "scope": "city",
-      "allowImage": true,
-      "pageRank": 9,
-      "description": "Find a variety of online and in-person services in the City of Burlington, including what services are offered at the Service Burlington counter, requests for information and services, and share feedback.",
-      "image": "https://www.burlington.ca/en/images/structure/news_avatar.jpg",
-      "imageSource": "City of Burlington News",
-      "imageSourceUrl": "https://www.burlington.ca/en/council-and-city-administration/service-burlington.aspx",
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -658,25 +676,6 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Accessible Recreation",
-      "url": "https://www.burlington.ca/en/recreation/accessible-recreation.aspx",
-      "source": "City of Burlington News",
-      "sourceType": "official",
-      "scope": "city",
-      "allowImage": true,
-      "pageRank": 11,
-      "description": "The City of Burlington offers accessible recreation programs with assistive devices, personal support persons and recreation fee assistance.",
-      "image": "https://www.burlington.ca/en/images/structure/news_avatar.jpg",
-      "imageSource": "City of Burlington News",
-      "imageSourceUrl": "https://www.burlington.ca/en/recreation/accessible-recreation.aspx",
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington",
-      "radarClass": "Probably Ignore"
-    },
-    {
       "title": "New to Canada & Halton Region",
       "url": "https://www.hdsb.ca/students-families/new-to-canada-halton-region/",
       "source": "Halton District School Board",
@@ -684,25 +683,6 @@
       "scope": "schools",
       "allowImage": true,
       "pageRank": 11,
-      "verified": true,
-      "verificationTier": "primary",
-      "importance": 2,
-      "why": "",
-      "tag": "Burlington",
-      "radarClass": "Probably Ignore"
-    },
-    {
-      "title": "Adult and Adult 55+ Programs",
-      "url": "https://www.burlington.ca/en/recreation/adult-19-and-55-programs.aspx",
-      "source": "City of Burlington News",
-      "sourceType": "official",
-      "scope": "city",
-      "allowImage": true,
-      "pageRank": 12,
-      "description": "Learn more about the recreation options for adults and adults 55+ and additional programs and services including; The Bistro Lounge, Breakfast at the Bistro, Bistro Express, Pickleball and the Seniors’ Centre Bike Lending Program.",
-      "image": "https://www.burlington.ca/en/images/structure/news_avatar.jpg",
-      "imageSource": "City of Burlington News",
-      "imageSourceUrl": "https://www.burlington.ca/en/recreation/adult-19-and-55-programs.aspx",
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
@@ -726,17 +706,74 @@
       "radarClass": "Probably Ignore"
     },
     {
-      "title": "Children’s Programs",
-      "url": "https://www.burlington.ca/en/recreation/childrens-programs.aspx",
-      "source": "City of Burlington News",
+      "title": "Mayor, Council & Administration",
+      "url": "https://www.oakville.ca/town-hall/mayor-council-administration/",
+      "source": "Town of Oakville Agendas and Meetings",
       "sourceType": "official",
-      "scope": "city",
+      "scope": "oakville",
+      "allowImage": false,
+      "pageRank": 13,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "City Hall",
+      "radarClass": "Probably Ignore"
+    },
+    {
+      "title": "Register for School",
+      "url": "https://www.hdsb.ca/students-families/register-for-school/",
+      "source": "Halton District School Board",
+      "sourceType": "official",
+      "scope": "schools",
       "allowImage": true,
       "pageRank": 13,
-      "description": "Check out the variety of recreation programs available for children and teens in the City of Burlington.",
-      "image": "https://www.burlington.ca/en/images/structure/news_avatar.jpg",
-      "imageSource": "City of Burlington News",
-      "imageSourceUrl": "https://www.burlington.ca/en/recreation/childrens-programs.aspx",
+      "description": "Register your child with HDSB. Find your local school, complete forms, and learn requirements for Kindergarten and grade-level registration.",
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington",
+      "radarClass": "Probably Ignore"
+    },
+    {
+      "title": "Third-Party Advertisers",
+      "url": "https://myvote.burlington.ca/third-party-advertisers/",
+      "source": "City of Burlington Election",
+      "sourceType": "official",
+      "scope": "election",
+      "allowImage": true,
+      "pageRank": 14,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington",
+      "radarClass": "Probably Ignore"
+    },
+    {
+      "title": "Report Cards",
+      "url": "https://www.hdsb.ca/students-families/report-cards/",
+      "source": "Halton District School Board",
+      "sourceType": "official",
+      "scope": "schools",
+      "allowImage": true,
+      "pageRank": 14,
+      "verified": true,
+      "verificationTier": "primary",
+      "importance": 2,
+      "why": "",
+      "tag": "Burlington",
+      "radarClass": "Probably Ignore"
+    },
+    {
+      "title": "Work the Election",
+      "url": "https://myvote.burlington.ca/work-the-election/",
+      "source": "City of Burlington Election",
+      "sourceType": "official",
+      "scope": "election",
+      "allowImage": true,
+      "pageRank": 15,
       "verified": true,
       "verificationTier": "primary",
       "importance": 2,
