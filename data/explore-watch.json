@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-12T17:07:22+00:00",
+  "checkedAt": "2026-09-12T19:18:34+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 40
+      "candidates": 38
     },
     {
       "name": "Pokémon GO live events",
@@ -283,7 +283,7 @@
     },
     {
       "title": "Burlington Farmers Market",
-      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-09-12-08-00",
+      "url": "https://www.burlingtonlionsclub.ca/event-details/burlington-farmers-market-2026-09-16-08-00",
       "source": "Burlington Lions Club Farmers Market",
       "scope": "Burlington",
       "priority": 5,
@@ -1066,19 +1066,6 @@
       "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/preventing-ending-homelessness/approved-temporary-shelter-expansion",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Archive Market",
-      "url": "https://visitoakville.com/events/archive-market/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -2349,6 +2336,19 @@
       "candidateType": "link"
     },
     {
+      "title": "The Cooking Studio at Paradiso",
+      "url": "https://visitoakville.com/events/the-cooking-studio-at-paradiso/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Theatres",
       "url": "https://www.burlington.ca/en/arts-culture-and-events/theatres.aspx",
       "source": "Love My Neighbourhood",
@@ -2557,19 +2557,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Fall Harvest Festival at Children’s Garden Project",
-      "url": "https://activeparents.ca/calendar/fall-harvest-festival-at-childrens-garden-project/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-12T14:00:00+00:00",
-      "endsAt": "2026-09-12T17:00:00+00:00",
-      "location": "Children’s Garden Project, 1000 Main St E, Hamilton, ON",
-      "description": "<p>Gather your family and friends at The Children’s Garden on Saturday, September 12th from 10 AM - 1 PM for the ultimate celebration of all things fall at our third-annual Fall Harvest Festival! This FREE, family-friendly celebration will bring the garden to life with hands-on activities, seasonal food experiences, nature-based arts, biodiversity discovery,",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Six Nations Fall Fair",
       "url": "https://activeparents.ca/calendar/six-nations-fall-fair/2026-09-12/",
       "source": "Active Parents regional calendar",
@@ -2583,32 +2570,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Try Ringette",
-      "url": "https://activeparents.ca/calendar/try-ringette/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-12T14:00:00+00:00",
-      "endsAt": "2026-09-12T16:00:00+00:00",
-      "location": "Appleby Ice Centre, Rink 1, 1201 Appleby Line, Burlington, Ontario",
-      "description": "<p>Check out this free event. Come learn a new sport or just to have some fun and learn more about our Learn to Skate program. Hope to see you on the ice!</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Life in the Late Summer Wetland Nature Expedition",
-      "url": "https://activeparents.ca/calendar/life-in-the-late-summer-wetland-nature-expedition/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-12T14:30:00+00:00",
-      "endsAt": "2026-09-12T16:30:00+00:00",
-      "location": "Carlisle Courtliffe Park, 155 Carlisle Rd, Carlisle, ON",
-      "description": "<p>Our guide is the one and only DAN THE NATURE MAN! You’re in for a treat! Dan Schneider knows nature! His passion is connecting people, including families and kids to the natural world. In fact, former students still remember him affectionately as Dan the Nature Man. Dan worked at the Grand River Conservation Authority for […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Oak Park Fall Fair",
       "url": "https://activeparents.ca/calendar/oak-park-fall-fair/",
       "source": "Active Parents regional calendar",
@@ -2619,19 +2580,6 @@
       "endsAt": "2026-09-13T02:00:00+00:00",
       "location": "Oak Park Neighbourhood Centre, 2200 Sawgrass Drive, Oakville, Ontario",
       "description": "<p>MAIN EVENTS 7 inflatables, 60 exhibitors with interactive activities & silent auction! Enter auction at www.OakParkFallFair.ca Thank you to our generous donors for contributing over 100 amazing items. 11:00 Opening Ceremony 11:30 Beebop Magic Show 12:00 Spider-Man 1:00 Brendon Gomez 2:00 Club Pilates Glen Abbey 2:30 Birds of Prey 3:00 Zumba 3:30 The Cover",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Food For Feedback – City of Burlington",
-      "url": "https://activeparents.ca/calendar/food-for-feedback-city-of-burlington/2026-09-12/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-12T16:00:00+00:00",
-      "endsAt": "2026-09-12T19:00:00+00:00",
-      "location": "Central Park Burlington, 2311 New Street, Burlington, Ontario",
-      "description": "<p>The free drop-in event features 35 booths and five food trucks. There is a special area called the \\'Kidz Zone\\' where children can have fun while family members provide feedback on City projects. Attendees will receive a free lunch from a food truck, in exchange for providing feedback to the City on projects and initiatives. […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -2752,6 +2700,58 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "5th Annual HorsePower 4 Hospital in support of Joseph Brant Hospital Foundation",
+      "url": "https://activeparents.ca/calendar/5th-annual-horsepower-4-hospital-in-support-of-joseph-brant-hospital-foundation/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-13T15:00:00+00:00",
+      "endsAt": "2026-09-13T20:00:00+00:00",
+      "location": "Paletta Lakefront Park, 4280 Lakeshore Rd, Burlington, ON",
+      "description": "<p>Join us September 13, 2026, for the 5th Annual HorsePower 4 Hospital, founded by Angelo Paletta and TNG Exotics & Limited Editions The Next Generation, and Vince Molinaro and Paradigm Condominiums. HP4H will include some of the most spectacular cars, which has included a Ford GT40 Le Mans-winning tribute, and other incredibly unique cars you […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "To Infinity and the Farm!",
+      "url": "https://activeparents.ca/calendar/to-infinity-and-the-farm/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-13T16:00:00+00:00",
+      "endsAt": "2026-09-13T18:00:00+00:00",
+      "location": "Howell’s Farm, 2878 Holland Rd, Fonthill, ON",
+      "description": "<p>We’ve got a couple of VERY special visitors dropping by Howell’s Sunday September 13th from 12–2 PM! One’s a rootin’, tootin’ cowboy and the other is ready for an adventure that’s truly out of this world.</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Community BBQ at Family Worship Centre",
+      "url": "https://activeparents.ca/calendar/community-bbq-at-family-worship-centre/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-13T16:30:00+00:00",
+      "endsAt": "2026-09-13T18:30:00+00:00",
+      "location": "Family Worship Centre, 4281 Queen St, Beamsville, ON",
+      "description": "<p>Face Painting, Music, BBQ, Everyone welcome</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "How to Be a Victorian at Ireland House Museum",
+      "url": "https://activeparents.ca/calendar/how-to-be-a-victorian-at-ireland-house-museum/2026-09-13/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-13T17:00:00+00:00",
+      "endsAt": "2026-09-13T20:00:00+00:00",
+      "location": "Ireland House Museum, 2168 Guelph Line, Burlington, Ontario",
+      "description": "<p>Think you could be a Victorian? Find out! Each month, How to Be a Victorian takes on a different part of everyday life in the 19th century — from getting dressed and going to school, to surviving winter, and celebrating Christmas. Explore historic objects, try your hand at Victorian skills, and tackle the everyday challenges of life before […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
       "source": "Active Parents regional calendar",
@@ -2778,34 +2778,8 @@
       "candidateType": "link"
     },
     {
-      "title": "Community BBQ at Family Worship Centre",
-      "url": "https://activeparents.ca/calendar/community-bbq-at-family-worship-centre/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Creative STEM Workshops, Hands-On Sunday Activities",
       "url": "https://activeparents.ca/series/creative-stem-workshops-hands-on-sunday-activities/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Food For Feedback – City of Burlington",
-      "url": "https://activeparents.ca/series/food-for-feedback-city-of-burlington/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
