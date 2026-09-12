@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-12T13:35:48+00:00",
+  "checkedAt": "2026-09-12T17:07:22+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 39
+      "candidates": 40
     },
     {
       "name": "Pokémon GO live events",
@@ -1088,19 +1088,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Art in My Garden",
-      "url": "https://visitoakville.com/events/art-in-my-garden-2026/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Arts & Culture",
       "url": "https://visitoakville.com/experience-oakville/arts-and-culture/",
       "source": "Visit Oakville events",
@@ -1194,19 +1181,6 @@
     {
       "title": "British Car Day",
       "url": "https://visitoakville.com/events/british-car-day-2026/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Bronte Classic",
-      "url": "https://visitoakville.com/events/bronte-classic/",
       "source": "Visit Oakville events",
       "scope": "Nearby Oakville",
       "priority": 4,
@@ -1881,6 +1855,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Oakville Cruze Night Classic Car Shows",
+      "url": "https://visitoakville.com/events/oakville-cruze-night-classic-car-shows/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Oakville Event Locations",
       "url": "https://visitoakville.com/events/oakville-event-locations/",
       "source": "Visit Oakville events",
@@ -2197,6 +2184,19 @@
       "url": "https://www.hamilton.ca/things-do/festivals-events/events-calendar",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Speaker Night: What Our Buildings Say About Us",
+      "url": "https://visitoakville.com/events/speaker-night-what-our-buildings-say-about-us/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -2544,19 +2544,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Build a School Bus Organizer at Home Depot",
-      "url": "https://activeparents.ca/calendar/build-a-school-bus-organizer-at-home-depot/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-12T12:30:00+00:00",
-      "endsAt": "2026-09-12T14:00:00+00:00",
-      "location": "Home Depot Stores, Ontario",
-      "description": "<p>If you are looking for a fun activity to do with the family, we’ve got a great workshop for kids that will teach them about building. Kids can learn how to build their very own School Bus Organizer.</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Harvest Weekends at Springridge",
       "url": "https://activeparents.ca/calendar/harvest-weekends-at-springridge/2026-09-12/",
       "source": "Active Parents regional calendar",
@@ -2606,19 +2593,6 @@
       "endsAt": "2026-09-12T16:00:00+00:00",
       "location": "Appleby Ice Centre, Rink 1, 1201 Appleby Line, Burlington, Ontario",
       "description": "<p>Check out this free event. Come learn a new sport or just to have some fun and learn more about our Learn to Skate program. Hope to see you on the ice!</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Goat Yoga Fundraiser",
-      "url": "https://activeparents.ca/calendar/goat-yoga-fundraiser/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-12T14:30:00+00:00",
-      "endsAt": "2026-09-12T15:30:00+00:00",
-      "location": "Rock Chapel Ranch, 373 Rock Chapel Rd., Dundas, ON",
-      "description": "<p>Breathe in the fresh air, take in the peaceful views and enjoy some time with playful goats — all while supporting affordable mental health services in your community! A perfect event for all ages. Date: Saturday July 18 Cost: $35 Location: Rock Chapel Ranch, 373 Rock Chapel Rd. Dundas, ON Bring your own mat 50% of registration fee donated […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -2752,6 +2726,32 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Harvest Weekends at Springridge",
+      "url": "https://activeparents.ca/calendar/harvest-weekends-at-springridge/2026-09-13/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-13T13:00:00+00:00",
+      "endsAt": "2026-09-13T21:00:00+00:00",
+      "location": "Springridge Farm, 7256 Bell School Line, Milton, Ontario",
+      "description": "<p>Celebrate the season with memory-making moments here on our family farm! Play, run, jump, and explore here in everybody’s favourite Fun Farmyard which, on weekends, includes our Giant Corn Trail. September weekend admission $16 per person aged 2-92. October weekend admission $19 per person. Our Farm Bakery is busy baking magic with the season’s best […]</",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Six Nations Fall Fair",
+      "url": "https://activeparents.ca/calendar/six-nations-fall-fair/2026-09-13/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-13T14:00:00+00:00",
+      "endsAt": "2026-09-13T22:00:00+00:00",
+      "location": "Six Nations Fairgrounds, 1738 Fourth Line Road, Ohsweken, ON",
+      "description": "<p>Join us for a weekend full of agricultural exhibits, entertainment, food, competitions, vendors, midway fun, and so much more. Stay tuned over the coming weeks as we reveal this year’s entertainment, events, schedules, and everything else you won’t want to miss! We can’t wait to see you at the fair!</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
       "source": "Active Parents regional calendar",
@@ -2767,6 +2767,19 @@
     {
       "title": "CALENDAR",
       "url": "https://activeparents.ca/events-in-the-burlington-and-hamilton-area/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Community BBQ at Family Worship Centre",
+      "url": "https://activeparents.ca/calendar/community-bbq-at-family-worship-centre/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
