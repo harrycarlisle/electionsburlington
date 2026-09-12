@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-12T19:18:34+00:00",
+  "checkedAt": "2026-09-12T22:14:57+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -86,14 +86,14 @@
       "url": "https://supercrawl.ca/2026/",
       "scope": "Nearby Hamilton",
       "ok": true,
-      "candidates": 5
+      "candidates": 7
     },
     {
       "name": "Active Parents regional calendar",
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 38
+      "candidates": 37
     },
     {
       "name": "Pokémon GO live events",
@@ -1075,6 +1075,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Art Galleries & Studios",
+      "url": "https://supercrawl.ca/2026/=\"https:/supercrawl.ca/galleries/",
+      "source": "Supercrawl",
+      "scope": "Nearby Hamilton",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Arts & Culture",
       "url": "https://visitoakville.com/experience-oakville/arts-and-culture/",
       "source": "Visit Oakville events",
@@ -1621,6 +1634,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Food Trucks",
+      "url": "https://supercrawl.ca/food/",
+      "source": "Supercrawl",
+      "scope": "Nearby Hamilton",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Gallery Flow Yoga",
       "url": "https://visitoakville.com/events/gallery-flow-yoga-fall-2026/",
       "source": "Visit Oakville events",
@@ -1818,19 +1844,6 @@
     {
       "title": "Neighbourhoods",
       "url": "https://visitoakville.com/about-oakville/neighbourhoods/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Oak Park Fall Fair",
-      "url": "https://visitoakville.com/events/oak-park-fall-fair-3/",
       "source": "Visit Oakville events",
       "scope": "Nearby Oakville",
       "priority": 4,
@@ -2245,6 +2258,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Stroller Socials",
+      "url": "https://visitoakville.com/events/stroller-socials-2/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Submit Your Event",
       "url": "https://visitoakville.com/event-intake-form/",
       "source": "Visit Oakville events",
@@ -2580,19 +2606,6 @@
       "endsAt": "2026-09-13T02:00:00+00:00",
       "location": "Oak Park Neighbourhood Centre, 2200 Sawgrass Drive, Oakville, Ontario",
       "description": "<p>MAIN EVENTS 7 inflatables, 60 exhibitors with interactive activities & silent auction! Enter auction at www.OakParkFallFair.ca Thank you to our generous donors for contributing over 100 amazing items. 11:00 Opening Ceremony 11:30 Beebop Magic Show 12:00 Spider-Man 1:00 Brendon Gomez 2:00 Club Pilates Glen Abbey 2:30 Birds of Prey 3:00 Zumba 3:30 The Cover",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Family Friendly Painting Workshop",
-      "url": "https://activeparents.ca/calendar/family-friendly-painting-workshop/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-12T17:00:00+00:00",
-      "endsAt": "2026-09-12T19:30:00+00:00",
-      "location": "Fieldcote Memorial Park, 64 Sulphur Springs Rd, Hamilton, Ontario",
-      "description": "<p>Looking for something fun and creative to do with your kids? Join award-winning local artist Israa Ahmed for a hands-on acrylic painting workshop for the whole family at Fieldcote Memorial Park & Museum. With guidance from Israa Ahmed, participants in this painting workshop will explore colour, shape, texture, and composition as they create their own mast",
       "candidateType": "structured-event"
     },
     {
