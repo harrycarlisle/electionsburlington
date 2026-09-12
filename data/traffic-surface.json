@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T14:42:31.173048-04:00",
+  "generatedAt": "2026-09-12T17:24:22.421493-04:00",
   "source": "Ontario 511 events + OSRM geometry + camera inventory",
   "licence": "Open Government Licence - Ontario",
   "incidents": [
@@ -1575,6 +1575,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-09-12T16:57:52.249286-04:00"
+    "updatedAt": "2026-09-12T17:24:26.128988-04:00"
   }
 }
