@@ -1,5 +1,8 @@
 scripts/__pycache__/
 scripts/sources/__pycache__/
+scripts/video_leads/__pycache__/
+scripts/providers/__pycache__/
+scripts/providers/**/__pycache__/
 .env
 .env.local
 node_modules/
