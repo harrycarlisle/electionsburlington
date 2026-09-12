@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-12T00:16:00+00:00",
+  "checkedAt": "2026-09-12T04:37:16+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 38
+      "candidates": 39
     },
     {
       "name": "Pokémon GO live events",
@@ -2506,58 +2506,6 @@
     },
     {
       "title": "Kerrfest & Kerrfest Kids Festival",
-      "url": "https://activeparents.ca/calendar/kerrfest-kerrfest-kids-festival/2026-09-11/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-11T04:00:00+00:00",
-      "endsAt": "2026-09-12T03:59:59+00:00",
-      "location": "Westwood Park, 170 Wilson St, Oakville, Ontario",
-      "description": "<p>Kick off the fall season with Kerrfest and Kerrfest Kids back for 2026! The 10th Annual Kerrfest will run from September 11-13 in Westwood Park to kick off the Fall season! Enjoy live music, local food vendors and sponsor booths. Plus on Sunday September 13, enjoy family-friendly activities such as Crash Rhythm, Paw Patrol Meet […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "West Niagara Fair",
-      "url": "https://activeparents.ca/calendar/west-niagara-fair-2/2026-09-11/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-11T12:00:00+00:00",
-      "endsAt": "2026-09-12T02:00:00+00:00",
-      "location": "West Niagara Agricultural Society, 7402 Mud St W, Grassie, ON",
-      "description": "<p>Make family memories at the West Niagara Fair! This beloved community tradition offers three days of affordable fun with exciting midway rides, agricultural exhibits, live entertainment, family activities, livestock shows, homecraft displays, delicious fair food, and hands-on experiences for all ages. Kids can meet farm animals, explore interactive exhibi",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Six Nations Fall Fair",
-      "url": "https://activeparents.ca/calendar/six-nations-fall-fair/2026-09-11/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-11T14:00:00+00:00",
-      "endsAt": "2026-09-12T02:00:00+00:00",
-      "location": "Six Nations Fairgrounds, 1738 Fourth Line Road, Ohsweken, ON",
-      "description": "<p>Join us for a weekend full of agricultural exhibits, entertainment, food, competitions, vendors, midway fun, and so much more. Stay tuned over the coming weeks as we reveal this year’s entertainment, events, schedules, and everything else you won’t want to miss! We can’t wait to see you at the fair!</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Farm Trivia Night",
-      "url": "https://activeparents.ca/calendar/farm-trivia-night/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-11T23:30:00+00:00",
-      "endsAt": "2026-09-12T00:30:00+00:00",
-      "location": "Triple C Farm, 500 Carluke Rd W, Ancaster, Ontario",
-      "description": "<p>Join us for some farm fun! Trivia night will be a night like no other, test your knowledge on farm animals, cost of vaccinations, the name of some of our \"famous\" animals, and have a chance to win some awesome Triple C Farm experiences! Trivia is from 7:30-8:30pm - cost is $15 plus HST […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Kerrfest & Kerrfest Kids Festival",
       "url": "https://activeparents.ca/calendar/kerrfest-kerrfest-kids-festival/2026-09-12/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
@@ -2752,6 +2700,58 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Creative STEM Workshops, Hands-On Sunday Activities",
+      "url": "https://activeparents.ca/calendar/creative-stem-workshops-hands-on-sunday-activities/2026-09-13/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-13T04:00:00+00:00",
+      "endsAt": "2026-09-14T03:59:59+00:00",
+      "location": "Steamulation Lab, 2861 Sherwood Heights Drive, Oakville, ON",
+      "description": "<p>Looking for fun and educational weekend activities for kids in Oakville? Join our Hands-On Creative STEM Workshops every Sunday at STEAMULATION Lab, where children explore a new creative STEM activity each week through art, science, engineering, and hands-on learning. Kids will enjoy exciting projects such as slime making, homemade playdough, origami, col",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Kerrfest & Kerrfest Kids Festival",
+      "url": "https://activeparents.ca/calendar/kerrfest-kerrfest-kids-festival/2026-09-13/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-13T04:00:00+00:00",
+      "endsAt": "2026-09-14T03:59:59+00:00",
+      "location": "Westwood Park, 170 Wilson St, Oakville, Ontario",
+      "description": "<p>Kick off the fall season with Kerrfest and Kerrfest Kids back for 2026! The 10th Annual Kerrfest will run from September 11-13 in Westwood Park to kick off the Fall season! Enjoy live music, local food vendors and sponsor booths. Plus on Sunday September 13, enjoy family-friendly activities such as Crash Rhythm, Paw Patrol Meet […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Royal Duck Bounce Park",
+      "url": "https://activeparents.ca/calendar/royal-duck-bounce-park/2026-09-13/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-13T04:00:00+00:00",
+      "endsAt": "2026-09-14T03:59:59+00:00",
+      "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
+      "description": "<p>Jump in, bounce around, and let the fun begin! The Royal Duck is bringing an exciting inflatable bounce house park to Burlington Centre for a fun-filled experience the whole family can enjoy. Families can stop by and enjoy a variety of inflatable attractions designed for kids to jump, play, and have a blast.</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "West Niagara Fair",
+      "url": "https://activeparents.ca/calendar/west-niagara-fair-2/2026-09-13/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-13T10:00:00+00:00",
+      "endsAt": "2026-09-13T21:00:00+00:00",
+      "location": "West Niagara Agricultural Society, 7402 Mud St W, Grassie, ON",
+      "description": "<p>Make family memories at the West Niagara Fair! This beloved community tradition offers three days of affordable fun with exciting midway rides, agricultural exhibits, live entertainment, family activities, livestock shows, homecraft displays, delicious fair food, and hands-on experiences for all ages. Kids can meet farm animals, explore interactive exhibi",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
       "source": "Active Parents regional calendar",
@@ -2767,6 +2767,19 @@
     {
       "title": "CALENDAR",
       "url": "https://activeparents.ca/events-in-the-burlington-and-hamilton-area/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Creative STEM Workshops, Hands-On Sunday Activities",
+      "url": "https://activeparents.ca/series/creative-stem-workshops-hands-on-sunday-activities/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
