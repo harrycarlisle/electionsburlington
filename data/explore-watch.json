@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-13T20:46:48+00:00",
+  "checkedAt": "2026-09-13T23:07:34+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -71,8 +71,8 @@
       "name": "Visit Oakville events",
       "url": "https://visitoakville.com/events/",
       "scope": "Nearby Oakville",
-      "ok": false,
-      "error": "HTTP Error 403: Forbidden"
+      "ok": true,
+      "candidates": 31
     },
     {
       "name": "City of Hamilton events calendar",
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 39
+      "candidates": 40
     },
     {
       "name": "Pokémon GO live events",
@@ -1010,10 +1010,49 @@
       "candidateType": "link"
     },
     {
+      "title": "About Visit Oakville",
+      "url": "https://visitoakville.com/oakville-tourism-partnership/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Administrative Penalty Notice",
       "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/tickets-fines-penalties/administrative-penalty-notice",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Ali Cherri: To Fall, Patiently",
+      "url": "https://visitoakville.com/events/ali-cherri-to-fall-patiently/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Apply for a Listing",
+      "url": "https://visitoakville.com/contact-oakville-tourism/become-a-partner/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -1040,6 +1079,19 @@
       "url": "https://supercrawl.ca/2026/=\"https:/supercrawl.ca/galleries/",
       "source": "Supercrawl",
       "scope": "Nearby Hamilton",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Arts & Culture",
+      "url": "https://visitoakville.com/experience-oakville/arts-and-culture/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -1088,10 +1140,49 @@
       "candidateType": "link"
     },
     {
+      "title": "Asian Heritage Festival",
+      "url": "https://visitoakville.com/events/asian-heritage-festival-2026/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Become a Partner",
+      "url": "https://visitoakville.com/visit-oakville-membership-overview/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Brant Street Pier",
       "url": "https://www.burlington.ca/en/arts-culture-and-events/brant-street-pier.aspx",
       "source": "Love My Neighbourhood",
       "scope": "Burlington",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "British Car Day",
+      "url": "https://visitoakville.com/events/british-car-day-2026/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -1257,10 +1348,36 @@
       "candidateType": "link"
     },
     {
+      "title": "Contact Us",
+      "url": "https://visitoakville.com/contact-oakville-tourism/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Cultural Partners",
       "url": "https://www.burlington.ca/en/arts-culture-and-events/cultural-partners.aspx",
       "source": "Love My Neighbourhood",
       "scope": "Burlington",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Culture Days",
+      "url": "https://visitoakville.com/events/culture-days-2026/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -1426,6 +1543,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Event Submission Guidelines",
+      "url": "https://visitoakville.com/event-submission-guidelines/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Eviction Prevention",
       "url": "https://www.hamilton.ca/people-programs/housing-shelter/housing-supports/eviction-prevention",
       "source": "City of Hamilton events calendar",
@@ -1504,6 +1634,32 @@
       "candidateType": "link"
     },
     {
+      "title": "Gallery Flow Yoga",
+      "url": "https://visitoakville.com/events/gallery-flow-yoga-fall-2026/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Group Tours",
+      "url": "https://visitoakville.com/stay-dine-shop/group-tours/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "HSR Schedules & Detours",
       "url": "https://www.hamilton.ca/index%2ephp/home-neighbourhood/hsr/schedule-route-tools/schedules-detours",
       "source": "City of Hamilton events calendar",
@@ -1569,6 +1725,19 @@
       "candidateType": "link"
     },
     {
+      "title": "In Conversation With Liane Moriarty",
+      "url": "https://visitoakville.com/events/in-conversation-with-liane-moriarty/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Indigenous Projects and Partnerships in Burlington",
       "url": "https://www.burlington.ca/en/arts-culture-and-events/indigenous-projects-and-partnerships-in-burlington.aspx",
       "source": "Love My Neighbourhood",
@@ -1608,6 +1777,19 @@
       "candidateType": "link"
     },
     {
+      "title": "Map of Oakville",
+      "url": "https://visitoakville.com/contact-oakville-tourism/map-of-oakville/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Market Rent Housing",
       "url": "https://www.hamilton.ca/people-programs/cityhousing-hamilton/applicants/market-rent-housing",
       "source": "City of Hamilton events calendar",
@@ -1621,10 +1803,62 @@
       "candidateType": "link"
     },
     {
+      "title": "Meetings & Events",
+      "url": "https://visitoakville.com/meetings-events/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Neighbourhood Connectors",
       "url": "https://www.burlington.ca/en/community-supports/neighbourhood-connectors.aspx",
       "source": "Love My Neighbourhood",
       "scope": "Burlington",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Neighbourhoods",
+      "url": "https://visitoakville.com/about-oakville/neighbourhoods/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Oakville Cruze Night Classic Car Shows",
+      "url": "https://visitoakville.com/events/oakville-cruze-night-classic-car-shows/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Oakville Event Locations",
+      "url": "https://visitoakville.com/events/oakville-event-locations/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -1689,6 +1923,19 @@
       "title": "Parks, Recreation & Culture",
       "url": "https://www.oakville.ca/parks-recreation-culture/",
       "source": "Town of Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Partners",
+      "url": "https://visitoakville.com/partner/",
+      "source": "Visit Oakville events",
       "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
@@ -1803,6 +2050,19 @@
       "candidateType": "link"
     },
     {
+      "title": "REmarket Oakville",
+      "url": "https://visitoakville.com/events/remarket-oakville/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Recreation, Community and Culture Newsletter",
       "url": "https://www.burlington.ca/Modules/News/en/RCC-Newsletter",
       "source": "Love My Neighbourhood",
@@ -1855,6 +2115,19 @@
       "candidateType": "link"
     },
     {
+      "title": "She Soars Collective - Empowered Connects for Women in Business",
+      "url": "https://visitoakville.com/events/she-soars-collective-empowered-connects-for-women-in-business-8/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Skip to Content",
       "url": "https://www.burlington.ca/en/community-supports/love-my-neighbourhood.aspx",
       "source": "Love My Neighbourhood",
@@ -1894,6 +2167,32 @@
       "candidateType": "link"
     },
     {
+      "title": "Speaker Night: What Our Buildings Say About Us",
+      "url": "https://visitoakville.com/events/speaker-night-what-our-buildings-say-about-us/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Sports Tourism",
+      "url": "https://visitoakville.com/stay-dine-shop/sports-groups/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Start The Conversation",
       "url": "https://www.hamilton.ca/people-programs/hamilton-municipal-cemeteries/planning-ahead/start-conversation",
       "source": "City of Hamilton events calendar",
@@ -1924,6 +2223,32 @@
       "url": "https://www.burlington.ca/en/arts-culture-and-events/story-maps.aspx",
       "source": "Love My Neighbourhood",
       "scope": "Burlington",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Stroller Socials",
+      "url": "https://visitoakville.com/events/stroller-socials-2/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Submit Your Event",
+      "url": "https://visitoakville.com/event-intake-form/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -1985,6 +2310,32 @@
       "candidateType": "link"
     },
     {
+      "title": "Take Back the Night",
+      "url": "https://visitoakville.com/events/take-back-the-night/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Take the Sustainable Tourism 2030 Pledge",
+      "url": "https://visitoakville.com/take-the-sustainable-tourism-2030-pledge/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Temporary Outdoor Patios",
       "url": "https://www.burlington.ca/en/business-in-burlington/temporary-outdoor-patios.aspx?_mid_=10046",
       "source": "Love My Neighbourhood",
@@ -1998,10 +2349,49 @@
       "candidateType": "link"
     },
     {
+      "title": "The Cooking Studio at Paradiso",
+      "url": "https://visitoakville.com/events/the-cooking-studio-at-paradiso/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Theatres",
       "url": "https://www.burlington.ca/en/arts-culture-and-events/theatres.aspx",
       "source": "Love My Neighbourhood",
       "scope": "Burlington",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Tourism Investment Fund",
+      "url": "https://visitoakville.com/about-oakville/visit-oakvilles-tourism-investment-fund/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Tourism Oakville",
+      "url": "https://visitoakville.com/about-tourism/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -2102,6 +2492,19 @@
       "candidateType": "link"
     },
     {
+      "title": "skip to main content",
+      "url": "https://visitoakville.com/events/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "ANCHORBALL: A Curious Art Journey",
       "url": "https://activeparents.ca/calendar/anchorball-a-curious-art-journey/",
       "source": "Active Parents regional calendar",
@@ -2154,32 +2557,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "West Niagara Fair",
-      "url": "https://activeparents.ca/calendar/west-niagara-fair-2/2026-09-13/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-13T10:00:00+00:00",
-      "endsAt": "2026-09-13T21:00:00+00:00",
-      "location": "West Niagara Agricultural Society, 7402 Mud St W, Grassie, ON",
-      "description": "<p>Make family memories at the West Niagara Fair! This beloved community tradition offers three days of affordable fun with exciting midway rides, agricultural exhibits, live entertainment, family activities, livestock shows, homecraft displays, delicious fair food, and hands-on experiences for all ages. Kids can meet farm animals, explore interactive exhibi",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Harvest Weekends at Springridge",
-      "url": "https://activeparents.ca/calendar/harvest-weekends-at-springridge/2026-09-13/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-13T13:00:00+00:00",
-      "endsAt": "2026-09-13T21:00:00+00:00",
-      "location": "Springridge Farm, 7256 Bell School Line, Milton, Ontario",
-      "description": "<p>Celebrate the season with memory-making moments here on our family farm! Play, run, jump, and explore here in everybody’s favourite Fun Farmyard which, on weekends, includes our Giant Corn Trail. September weekend admission $16 per person aged 2-92. October weekend admission $19 per person. Our Farm Bakery is busy baking magic with the season’s best […]</",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Six Nations Fall Fair",
       "url": "https://activeparents.ca/calendar/six-nations-fall-fair/2026-09-13/",
       "source": "Active Parents regional calendar",
@@ -2190,32 +2567,6 @@
       "endsAt": "2026-09-13T22:00:00+00:00",
       "location": "Six Nations Fairgrounds, 1738 Fourth Line Road, Ohsweken, ON",
       "description": "<p>Join us for a weekend full of agricultural exhibits, entertainment, food, competitions, vendors, midway fun, and so much more. Stay tuned over the coming weeks as we reveal this year’s entertainment, events, schedules, and everything else you won’t want to miss! We can’t wait to see you at the fair!</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "5th Annual HorsePower 4 Hospital in support of Joseph Brant Hospital Foundation",
-      "url": "https://activeparents.ca/calendar/5th-annual-horsepower-4-hospital-in-support-of-joseph-brant-hospital-foundation/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-13T15:00:00+00:00",
-      "endsAt": "2026-09-13T20:00:00+00:00",
-      "location": "Paletta Lakefront Park, 4280 Lakeshore Rd, Burlington, ON",
-      "description": "<p>Join us September 13, 2026, for the 5th Annual HorsePower 4 Hospital, founded by Angelo Paletta and TNG Exotics & Limited Editions The Next Generation, and Vince Molinaro and Paradigm Condominiums. HP4H will include some of the most spectacular cars, which has included a Ford GT40 Le Mans-winning tribute, and other incredibly unique cars you […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "How to Be a Victorian at Ireland House Museum",
-      "url": "https://activeparents.ca/calendar/how-to-be-a-victorian-at-ireland-house-museum/2026-09-13/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-13T17:00:00+00:00",
-      "endsAt": "2026-09-13T20:00:00+00:00",
-      "location": "Ireland House Museum, 2168 Guelph Line, Burlington, Ontario",
-      "description": "<p>Think you could be a Victorian? Find out! Each month, How to Be a Victorian takes on a different part of everyday life in the 19th century — from getting dressed and going to school, to surviving winter, and celebrating Christmas. Explore historic objects, try your hand at Victorian skills, and tackle the everyday challenges of life before […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -2362,6 +2713,71 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Free Trial Multi-Sport Class (1.5-6yrs)",
+      "url": "https://activeparents.ca/calendar/free-trial-multi-sport-class-1-5-6yrs/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-17T20:45:00+00:00",
+      "endsAt": "2026-09-17T22:30:00+00:00",
+      "location": "St John’s Anglican Church Burlington, 2464 Dundas Street West, Burlington, ON",
+      "description": "<p>Join coach Dana for a free trial Fit For Fun multi-sport class! Register at: www.fitforfunprograms.com 4:45-5:30pm - 1.5-3yrs (parent participation required) 5:30-6:30pm - 3.5-6yrs (parent supervision required)</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Latin Dancing – Free Introductory Class",
+      "url": "https://activeparents.ca/calendar/latin-dancing-free-introductory-class/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-17T21:00:00+00:00",
+      "endsAt": "2026-09-17T22:00:00+00:00",
+      "location": "Fred Astaire Dance Studios – Oakville, 225 Lakeshore Road East, Oakville, ON",
+      "description": "<p>Latin Dancing introductory class for ages 10-17. Student will learn steps, styling, leads & follows to several popular dances as they develop confidence, poise and fitness while having fun. Try it for free with option to join our 12 week Fall Session including end of season performances. Contact our studio to reserve a spot and/or […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Binbrook Fall Fair",
+      "url": "https://activeparents.ca/calendar/binbrook-fall-fair/2026-09-18/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-18T04:00:00+00:00",
+      "endsAt": "2026-09-19T03:59:59+00:00",
+      "location": "Binbrook Agricultural Society, 2600 Hwy 56, Binbrook, Ontario",
+      "description": "<p>The Binbrook Agricultural Society, established in 1854, is a volunteer-run organization dedicated to promoting agriculture and fostering community spirit in Binbrook, Ontario. Best known for organizing the annual Binbrook Fall Fair—one of Canada’s oldest agricultural fairs</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Royal Duck Bounce Park",
+      "url": "https://activeparents.ca/calendar/royal-duck-bounce-park/2026-09-18/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-18T04:00:00+00:00",
+      "endsAt": "2026-09-19T03:59:59+00:00",
+      "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
+      "description": "<p>Jump in, bounce around, and let the fun begin! The Royal Duck is bringing an exciting inflatable bounce house park to Burlington Centre for a fun-filled experience the whole family can enjoy. Families can stop by and enjoy a variety of inflatable attractions designed for kids to jump, play, and have a blast.</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Binbrook Fall Fair",
+      "url": "https://activeparents.ca/series/binbrook-fall-fair/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Burlington",
       "url": "https://activeparents.ca/things-to-do-in-burlington-with-kids/",
       "source": "Active Parents regional calendar",
@@ -2429,6 +2845,32 @@
     {
       "title": "Hamilton",
       "url": "https://activeparents.ca/hamilton/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Hamilton Burger Fest",
+      "url": "https://activeparents.ca/calendar/hamilton-burger-fest/2026-09-18/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Hamilton Burger Fest",
+      "url": "https://activeparents.ca/series/hamilton-burger-fest/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2544,19 +2986,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Six Nations Fall Fair",
-      "url": "https://activeparents.ca/series/six-nations-fall-fair/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Submit Your Event",
       "url": "https://activeparents.ca/event-submission/",
       "source": "Active Parents regional calendar",
@@ -2572,19 +3001,6 @@
     {
       "title": "Toddlers + Babies",
       "url": "https://activeparents.ca/things-to-do-with-babies-and-toddlers-in-burlington-oakville-milton-and-hamilton/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "West Niagara Fair",
-      "url": "https://activeparents.ca/series/west-niagara-fair-2/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
