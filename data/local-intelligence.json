@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-13T06:44:01Z",
+  "generatedAt": "2026-09-13T12:41:10Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 27,
-    "trafficIncidents": 27,
+    "activeSignals": 26,
+    "trafficIncidents": 26,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -370,22 +370,6 @@
       "signature": "0e48fe503f157d65"
     },
     {
-      "id": "511:303558",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 401 Westbound  between REGIONAL ROAD 25 and GUELPH LINE, Milton. 2 Alternating Lane(s).",
-      "location": "HWY 401",
-      "direction": "Westbound",
-      "score": 43,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.52803,
-      "longitude": -79.90527,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "81e9ba9b988064d2"
-    },
-    {
       "id": "511:305345",
       "kind": "traffic",
       "headline": "Daily Construction on HWY 5 Eastbound  between SOUTH DRIVE / W FLAMBORO TWP RD L25 and HWY 6 / CLAPPISON CORNER'S, Hamilton. 1 Right Lane(s).",
@@ -547,22 +531,6 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "8db5e92d721e9bcc"
-      },
-      {
-        "id": "511:303558",
-        "kind": "traffic",
-        "headline": "Nightly Construction on HWY 401 Westbound  between REGIONAL ROAD 25 and GUELPH LINE, Milton. 2 Alternating Lane(s).",
-        "location": "HWY 401",
-        "direction": "Westbound",
-        "score": 43,
-        "neighbourhood": "Burlington area",
-        "latitude": 43.52803,
-        "longitude": -79.90527,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "81e9ba9b988064d2"
       },
       {
         "id": "511:303614",
@@ -867,6 +835,22 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "acc9dddc9d5a791e"
+      },
+      {
+        "id": "511:306086",
+        "kind": "traffic",
+        "headline": "Nightly Construction on QEW Toronto bound  between CENTENNIAL PKWY, Hamilton and BURLINGTON SKYWAY, Burlington. 2 Alternating Lane(s).",
+        "location": "QEW",
+        "direction": "Toronto Bound",
+        "score": 53,
+        "neighbourhood": "Burlington area",
+        "latitude": 43.24609,
+        "longitude": -79.75694,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "260e1fabf9edc3a0"
       }
     ],
     "cameras": [
