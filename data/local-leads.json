@@ -1,6 +1,42 @@
 {
-  "generatedAt": "2026-09-14T10:32:20Z",
+  "generatedAt": "2026-09-14T16:30:28Z",
   "items": [
+    {
+      "id": "511:307279",
+      "detectedAt": "2026-09-14T16:30:28Z",
+      "score": 90,
+      "headline": "Nightly Construction on HWY 403 HAMILTON Eastbound  between WATERDOWN ROAD and KING ROAD, Burlington. OPP Assisted Full Closure for 15 minutes.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:307280",
+      "detectedAt": "2026-09-14T16:30:28Z",
+      "score": 90,
+      "headline": "Nightly Construction on HWY 403 HAMILTON Westbound  between HWY 407 and KING ROAD, Burlington. OPP Assisted Full Closure for 15 minutes.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:307292",
+      "detectedAt": "2026-09-14T16:30:28Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Fort Erie bound  at HWY 403 HAMILTON, Burlington. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:307157",
       "detectedAt": "2026-09-14T04:49:25Z",

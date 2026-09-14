@@ -1,22 +1,62 @@
 {
-  "generatedAt": "2026-09-14T06:32:22.270606-04:00",
+  "generatedAt": "2026-09-14T12:30:30.393761-04:00",
   "source": "Ontario 511 events + OSRM geometry + camera inventory",
   "licence": "Open Government Licence - Ontario",
   "incidents": [
     {
-      "id": "511:303687",
-      "title": "QEW closed near Centennial Parkway",
-      "rawHeadline": "Nightly Construction on QEW Toronto bound  between CENTENNIAL PKWY and RED HILL CREEK EXPRESSWAY, Hamilton. ALL LANES CLOSED.",
-      "roadway": "QEW",
-      "direction": "Toronto-bound",
+      "id": "511:307279",
+      "title": "Highway 403 closed near Plains Road",
+      "rawHeadline": "Nightly Construction on HWY 403 HAMILTON Eastbound  between WATERDOWN ROAD and KING ROAD, Burlington. OPP Assisted Full Closure for 15 minutes.",
+      "roadway": "Highway 403",
+      "direction": "eastbound",
       "type": "closure",
       "facility": "mainline",
-      "nearestRoad": "Centennial Parkway",
-      "municipality": "Hamilton",
-      "context": "Hamilton · Centennial Parkway / QEW",
-      "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-      "latitude": 43.24609,
-      "longitude": -79.75694,
+      "nearestRoad": "Plains Road",
+      "municipality": "Burlington",
+      "context": "Burlington · Plains Road / Highway 403",
+      "impact": "Watch for delays near Plains Road.",
+      "latitude": 43.3121,
+      "longitude": -79.85993,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:307280",
+      "title": "Highway 403 closed near Plains Road",
+      "rawHeadline": "Nightly Construction on HWY 403 HAMILTON Westbound  between HWY 407 and KING ROAD, Burlington. OPP Assisted Full Closure for 15 minutes.",
+      "roadway": "Highway 403",
+      "direction": "westbound",
+      "type": "closure",
+      "facility": "mainline",
+      "nearestRoad": "Plains Road",
+      "municipality": "Burlington",
+      "context": "Burlington · Plains Road / Highway 403",
+      "impact": "Watch for delays near Plains Road.",
+      "latitude": 43.33392,
+      "longitude": -79.83722,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:307292",
+      "title": "Collision on QEW near Brant Street",
+      "rawHeadline": "Disabled Vehicle on QEW Fort Erie bound  at HWY 403 HAMILTON, Burlington. Right lane and right shoulder closed.",
+      "roadway": "QEW",
+      "direction": "Fort Erie-bound",
+      "type": "collision",
+      "facility": "mainline",
+      "nearestRoad": "Brant Street",
+      "municipality": "Burlington",
+      "context": "Burlington · Brant Street / QEW",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.340415847,
+      "longitude": -79.825488016,
       "score": 0,
       "affectsSkyway": false,
       "source": "Ontario 511",
@@ -32,12 +72,12 @@
   "homepageTraffic": {
     "label": "Traffic",
     "title": "QEW → Toronto",
-    "context": "Live route check",
-    "impact": "30 cameras along this route",
+    "context": "Delay likely",
+    "impact": "Collision on QEW near Brant Street",
     "freshness": "",
     "url": "/traffic/?destination=toronto",
-    "alert": false,
-    "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+    "alert": true,
+    "advisory": ""
   },
   "routes": {
     "toronto": {
@@ -48,12 +88,11 @@
       "geometrySource": "osrm",
       "metres": 51679.9,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "30 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on QEW near Brant Street",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -97,19 +136,19 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:254943",
-          "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
-          "rawHeadline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+          "id": "511:307292",
+          "title": "Collision on QEW near Brant Street",
+          "rawHeadline": "Disabled Vehicle on QEW Fort Erie bound  at HWY 403 HAMILTON, Burlington. Right lane and right shoulder closed.",
           "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Dorval Drive",
-          "municipality": "Oakville",
-          "context": "Oakville · Dorval Drive / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.446465,
-          "longitude": -79.70016,
+          "direction": "Fort Erie-bound",
+          "type": "collision",
+          "facility": "mainline",
+          "nearestRoad": "Brant Street",
+          "municipality": "Burlington",
+          "context": "Burlington · Brant Street / QEW",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.340415847,
+          "longitude": -79.825488016,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -399,26 +438,6 @@
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
-        },
-        {
-          "id": "511:254943",
-          "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
-          "rawHeadline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Dorval Drive",
-          "municipality": "Oakville",
-          "context": "Oakville · Dorval Drive / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.446465,
-          "longitude": -79.70016,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
         }
       ]
     },
@@ -430,12 +449,11 @@
       "geometrySource": "osrm",
       "metres": 15797.9,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "15 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on QEW near Brant Street",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -479,19 +497,19 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:254943",
-          "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
-          "rawHeadline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+          "id": "511:307292",
+          "title": "Collision on QEW near Brant Street",
+          "rawHeadline": "Disabled Vehicle on QEW Fort Erie bound  at HWY 403 HAMILTON, Burlington. Right lane and right shoulder closed.",
           "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Dorval Drive",
-          "municipality": "Oakville",
-          "context": "Oakville · Dorval Drive / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.446465,
-          "longitude": -79.70016,
+          "direction": "Fort Erie-bound",
+          "type": "collision",
+          "facility": "mainline",
+          "nearestRoad": "Brant Street",
+          "municipality": "Burlington",
+          "context": "Burlington · Brant Street / QEW",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.340415847,
+          "longitude": -79.825488016,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -661,26 +679,6 @@
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
-        },
-        {
-          "id": "511:254943",
-          "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
-          "rawHeadline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Dorval Drive",
-          "municipality": "Oakville",
-          "context": "Oakville · Dorval Drive / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.446465,
-          "longitude": -79.70016,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
         }
       ]
     },
@@ -692,12 +690,11 @@
       "geometrySource": "osrm",
       "metres": 27987.2,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "11 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Highway 403 closed near Plains Road",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -741,19 +738,19 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:303108",
-          "title": "Construction on QEW near Brant Street",
-          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound  between BRANT STREET and FAIRVIEW STREET/PLAINS ROAD, Burlington. 1 Alternating Lane(s).",
-          "roadway": "QEW",
-          "direction": "Fort Erie-bound",
-          "type": "construction",
+          "id": "511:307279",
+          "title": "Highway 403 closed near Plains Road",
+          "rawHeadline": "Nightly Construction on HWY 403 HAMILTON Eastbound  between WATERDOWN ROAD and KING ROAD, Burlington. OPP Assisted Full Closure for 15 minutes.",
+          "roadway": "Highway 403",
+          "direction": "eastbound",
+          "type": "closure",
           "facility": "mainline",
-          "nearestRoad": "Brant Street",
+          "nearestRoad": "Plains Road",
           "municipality": "Burlington",
-          "context": "Burlington · Brant Street / QEW",
-          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
-          "latitude": 43.341724,
-          "longitude": -79.82237,
+          "context": "Burlington · Plains Road / Highway 403",
+          "impact": "Watch for delays near Plains Road.",
+          "latitude": 43.3121,
+          "longitude": -79.85993,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -902,12 +899,11 @@
       "geometrySource": "osrm",
       "metres": 35587.3,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "22 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Highway 403 closed near Plains Road",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -951,19 +947,19 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:303568",
-          "title": "QEW Toronto-bound on-ramp closed at Fruitland Road",
-          "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FRUITLAND ROAD, Hamilton. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
+          "id": "511:307280",
+          "title": "Highway 403 closed near Plains Road",
+          "rawHeadline": "Nightly Construction on HWY 403 HAMILTON Westbound  between HWY 407 and KING ROAD, Burlington. OPP Assisted Full Closure for 15 minutes.",
+          "roadway": "Highway 403",
+          "direction": "westbound",
           "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Fruitland Road",
-          "municipality": "Hamilton",
-          "context": "Hamilton · Fruitland Road / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.2315,
-          "longitude": -79.6965,
+          "facility": "mainline",
+          "nearestRoad": "Plains Road",
+          "municipality": "Burlington",
+          "context": "Burlington · Plains Road / Highway 403",
+          "impact": "Watch for delays near Plains Road.",
+          "latitude": 43.33392,
+          "longitude": -79.83722,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -1189,26 +1185,6 @@
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
-        },
-        {
-          "id": "511:303568",
-          "title": "QEW Toronto-bound on-ramp closed at Fruitland Road",
-          "rawHeadline": "Nightly Construction on QEW Toronto bound On-ramp at FRUITLAND ROAD, Hamilton. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Fruitland Road",
-          "municipality": "Hamilton",
-          "context": "Hamilton · Fruitland Road / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.2315,
-          "longitude": -79.6965,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
         }
       ]
     },
@@ -1220,12 +1196,11 @@
       "geometrySource": "osrm",
       "metres": 86993.2,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "27 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Highway 403 closed near Plains Road",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -1269,19 +1244,19 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:300680",
-          "title": "QEW Fort Erie-bound off-ramp closed at Victoria Avenue",
-          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at VICTORIA AVENUE, Lincoln. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Fort Erie-bound",
+          "id": "511:307280",
+          "title": "Highway 403 closed near Plains Road",
+          "rawHeadline": "Nightly Construction on HWY 403 HAMILTON Westbound  between HWY 407 and KING ROAD, Burlington. OPP Assisted Full Closure for 15 minutes.",
+          "roadway": "Highway 403",
+          "direction": "westbound",
           "type": "closure",
-          "facility": "off-ramp",
-          "nearestRoad": "Victoria Avenue",
-          "municipality": "Niagara",
-          "context": "Niagara · Victoria Avenue / QEW · off-ramp",
-          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
-          "latitude": 43.186478,
-          "longitude": -79.394714,
+          "facility": "mainline",
+          "nearestRoad": "Plains Road",
+          "municipality": "Burlington",
+          "context": "Burlington · Plains Road / Highway 403",
+          "impact": "Watch for delays near Plains Road.",
+          "latitude": 43.33392,
+          "longitude": -79.83722,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -1547,26 +1522,6 @@
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
-        },
-        {
-          "id": "511:300680",
-          "title": "QEW Fort Erie-bound off-ramp closed at Victoria Avenue",
-          "rawHeadline": "Nightly Construction on QEW Fort Erie Bound Off-ramp at VICTORIA AVENUE, Lincoln. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Fort Erie-bound",
-          "type": "closure",
-          "facility": "off-ramp",
-          "nearestRoad": "Victoria Avenue",
-          "municipality": "Niagara",
-          "context": "Niagara · Victoria Avenue / QEW · off-ramp",
-          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
-          "latitude": 43.186478,
-          "longitude": -79.394714,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
         }
       ]
     }
@@ -1575,6 +1530,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-09-14T09:04:54.733884-04:00"
+    "updatedAt": "2026-09-14T12:30:33.862372-04:00"
   }
 }

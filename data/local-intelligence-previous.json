@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T04:49:25Z",
+  "generatedAt": "2026-09-14T10:32:20Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 27,
-    "trafficIncidents": 27,
+    "activeSignals": 26,
+    "trafficIncidents": 26,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -96,22 +96,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "98d1216c39b2b875"
-    },
-    {
-      "id": "511:307157",
-      "kind": "traffic",
-      "headline": "Collision on QEW Toronto bound  at WINSTON CHURCHILL BLVD, Oakville. Left shoulder and left lane closed.",
-      "location": "QEW",
-      "direction": "Toronto Bound",
-      "score": 75,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.50976224,
-      "longitude": -79.6636398,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "36893a8858d23107"
     },
     {
       "id": "511:303108",
