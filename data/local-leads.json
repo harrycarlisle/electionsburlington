@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-09-13T21:38:04Z",
+  "generatedAt": "2026-09-14T00:06:18Z",
   "items": [
+    {
+      "id": "511:307106",
+      "detectedAt": "2026-09-14T00:06:18Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on HWY 403 HAMILTON Eastbound  at KING ST WEST, Hamilton. Left shoulder and left lane closed.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:306813",
       "detectedAt": "2026-09-13T01:22:55Z",
