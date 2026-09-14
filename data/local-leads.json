@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-09-14T00:06:18Z",
+  "generatedAt": "2026-09-14T04:49:25Z",
   "items": [
+    {
+      "id": "511:307157",
+      "detectedAt": "2026-09-14T04:49:25Z",
+      "score": 75,
+      "headline": "Collision on QEW Toronto bound  at WINSTON CHURCHILL BLVD, Oakville. Left shoulder and left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:307106",
       "detectedAt": "2026-09-14T00:06:18Z",
