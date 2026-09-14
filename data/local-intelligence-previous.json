@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T00:06:18Z",
+  "generatedAt": "2026-09-14T04:49:25Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -98,20 +98,20 @@
       "signature": "98d1216c39b2b875"
     },
     {
-      "id": "511:307106",
+      "id": "511:307157",
       "kind": "traffic",
-      "headline": "Disabled Vehicle on HWY 403 HAMILTON Eastbound  at KING ST WEST, Hamilton. Left shoulder and left lane closed.",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Eastbound",
+      "headline": "Collision on QEW Toronto bound  at WINSTON CHURCHILL BLVD, Oakville. Left shoulder and left lane closed.",
+      "location": "QEW",
+      "direction": "Toronto Bound",
       "score": 75,
       "neighbourhood": "Burlington area",
-      "latitude": 43.26177648,
-      "longitude": -79.8932004,
+      "latitude": 43.50976224,
+      "longitude": -79.6636398,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "accidentsAndIncidents",
-      "signature": "89ee38aa228c77fa"
+      "signature": "36893a8858d23107"
     },
     {
       "id": "511:303108",
