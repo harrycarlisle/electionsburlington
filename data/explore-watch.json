@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-14T01:01:50+00:00",
+  "checkedAt": "2026-09-14T06:14:58+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 39
+      "candidates": 38
     },
     {
       "name": "Pokémon GO live events",
@@ -2518,45 +2518,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Creative STEM Workshops, Hands-On Sunday Activities",
-      "url": "https://activeparents.ca/calendar/creative-stem-workshops-hands-on-sunday-activities/2026-09-13/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-13T04:00:00+00:00",
-      "endsAt": "2026-09-14T03:59:59+00:00",
-      "location": "Steamulation Lab, 2861 Sherwood Heights Drive, Oakville, ON",
-      "description": "<p>Looking for fun and educational weekend activities for kids in Oakville? Join our Hands-On Creative STEM Workshops every Sunday at STEAMULATION Lab, where children explore a new creative STEM activity each week through art, science, engineering, and hands-on learning. Kids will enjoy exciting projects such as slime making, homemade playdough, origami, col",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Kerrfest & Kerrfest Kids Festival",
-      "url": "https://activeparents.ca/calendar/kerrfest-kerrfest-kids-festival/2026-09-13/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-13T04:00:00+00:00",
-      "endsAt": "2026-09-14T03:59:59+00:00",
-      "location": "Westwood Park, 170 Wilson St, Oakville, Ontario",
-      "description": "<p>Kick off the fall season with Kerrfest and Kerrfest Kids back for 2026! The 10th Annual Kerrfest will run from September 11-13 in Westwood Park to kick off the Fall season! Enjoy live music, local food vendors and sponsor booths. Plus on Sunday September 13, enjoy family-friendly activities such as Crash Rhythm, Paw Patrol Meet […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Royal Duck Bounce Park",
-      "url": "https://activeparents.ca/calendar/royal-duck-bounce-park/2026-09-13/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-13T04:00:00+00:00",
-      "endsAt": "2026-09-14T03:59:59+00:00",
-      "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
-      "description": "<p>Jump in, bounce around, and let the fun begin! The Royal Duck is bringing an exciting inflatable bounce house park to Burlington Centre for a fun-filled experience the whole family can enjoy. Families can stop by and enjoy a variety of inflatable attractions designed for kids to jump, play, and have a blast.</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Royal Duck Bounce Park",
       "url": "https://activeparents.ca/calendar/royal-duck-bounce-park/2026-09-14/",
       "source": "Active Parents regional calendar",
@@ -2752,6 +2713,71 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Hamilton Burger Fest",
+      "url": "https://activeparents.ca/calendar/hamilton-burger-fest/2026-09-18/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-18T15:00:00+00:00",
+      "endsAt": "2026-09-19T02:00:00+00:00",
+      "location": "Gage Park, 1000 Main St East, Hamilton, Ontario",
+      "description": "<p>Hamilton Burger Fest is a community food festival bringing together the best burgers, local restaurants, live entertainment, drinks, and family-friendly experiences. Join us for an unforgettable celebration of Hamilton\\'s vibrant food scene!</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Acton Fall Fair",
+      "url": "https://activeparents.ca/calendar/acton-fall-fair/2026-09-18/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-18T20:00:00+00:00",
+      "endsAt": "2026-09-19T02:00:00+00:00",
+      "location": "Prospect Park Acton, 30 Park Avenue, Acton, ON",
+      "description": "<p>Acton Agricultural Society proudly announces the 113th Annual Acton Fall Fair, returning September 18–20, 2026, at Prospect Park (30 Park Avenue, Acton). Our theme “Cornstalks & Autumn Walks,” this year’s event celebrates the beauty and traditions of the harvest while uniting the community. Dates- Friday September 18, 2026 - 4:00pm-10:00pm Saturday Septem",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Binbrook Fall Fair",
+      "url": "https://activeparents.ca/calendar/binbrook-fall-fair/2026-09-19/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-19T04:00:00+00:00",
+      "endsAt": "2026-09-20T03:59:59+00:00",
+      "location": "Binbrook Agricultural Society, 2600 Hwy 56, Binbrook, Ontario",
+      "description": "<p>The Binbrook Agricultural Society, established in 1854, is a volunteer-run organization dedicated to promoting agriculture and fostering community spirit in Binbrook, Ontario. Best known for organizing the annual Binbrook Fall Fair—one of Canada’s oldest agricultural fairs</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Royal Duck Bounce Park",
+      "url": "https://activeparents.ca/calendar/royal-duck-bounce-park/2026-09-19/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-19T04:00:00+00:00",
+      "endsAt": "2026-09-20T03:59:59+00:00",
+      "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
+      "description": "<p>Jump in, bounce around, and let the fun begin! The Royal Duck is bringing an exciting inflatable bounce house park to Burlington Centre for a fun-filled experience the whole family can enjoy. Families can stop by and enjoy a variety of inflatable attractions designed for kids to jump, play, and have a blast.</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Acton Fall Fair",
+      "url": "https://activeparents.ca/series/acton-fall-fair/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
       "title": "Binbrook Fall Fair",
       "url": "https://activeparents.ca/series/binbrook-fall-fair/",
       "source": "Active Parents regional calendar",
@@ -2780,19 +2806,6 @@
     {
       "title": "CALENDAR",
       "url": "https://activeparents.ca/events-in-the-burlington-and-hamilton-area/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Creative STEM Workshops, Hands-On Sunday Activities",
-      "url": "https://activeparents.ca/series/creative-stem-workshops-hands-on-sunday-activities/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -2844,33 +2857,7 @@
     },
     {
       "title": "Hamilton Burger Fest",
-      "url": "https://activeparents.ca/calendar/hamilton-burger-fest/2026-09-18/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Hamilton Burger Fest",
       "url": "https://activeparents.ca/series/hamilton-burger-fest/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Kerrfest & Kerrfest Kids Festival",
-      "url": "https://activeparents.ca/series/kerrfest-kerrfest-kids-festival/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,

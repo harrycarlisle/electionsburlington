@@ -1,36 +1,7 @@
 {
-  "updated": "2026-09-13T21:01:37-04:00",
+  "updated": "2026-09-14T02:14:41-04:00",
   "timezone": "America/Toronto",
   "events": [
-    {
-      "id": "supercrawl-2026",
-      "title": "Supercrawl",
-      "category": "Nearby",
-      "start": "2026-09-11T17:00:00-04:00",
-      "end": "2026-09-13T23:00:00-04:00",
-      "dateLabel": "Sept. 11 to 13",
-      "location": "James Street North, Hamilton",
-      "summary": "A free weekend of music, art and street programming about 20 minutes from Burlington.",
-      "details": "This is a nearby Hamilton pick, not a Burlington event. Check the official schedule before leaving because set times and road closures can change.",
-      "bring": [
-        "Comfortable shoes",
-        "A transit or parking plan",
-        "A charged phone"
-      ],
-      "source": "https://supercrawl.ca/2026/",
-      "sourceName": "Supercrawl",
-      "visualText": "NEARBY",
-      "scope": "Hamilton",
-      "city": "Hamilton",
-      "venue": "James Street North",
-      "travel": "About 20 minutes from Burlington",
-      "weight": 8,
-      "verifiedAt": "2026-08-26T12:00:00-04:00",
-      "image": "assets/editorial/explore-collage.webp",
-      "imageAlt": "Illustrated collage used as a nearby-event visual",
-      "credit": "Burlington News illustration",
-      "illustration": true
-    },
     {
       "id": "burlington-asian-night-market-2026",
       "slug": "burlington-asian-night-market-2026",
