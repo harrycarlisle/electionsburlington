@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T10:32:20Z",
+  "generatedAt": "2026-09-14T16:30:28Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 26,
-    "trafficIncidents": 26,
+    "activeSignals": 33,
+    "trafficIncidents": 33,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -96,6 +96,54 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "98d1216c39b2b875"
+    },
+    {
+      "id": "511:307279",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 403 HAMILTON Eastbound  between WATERDOWN ROAD and KING ROAD, Burlington. OPP Assisted Full Closure for 15 minutes.",
+      "location": "HWY 403 HAMILTON",
+      "direction": "Eastbound",
+      "score": 90,
+      "neighbourhood": "Aldershot",
+      "latitude": 43.3121,
+      "longitude": -79.85993,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "aacd56a5bf1cffa6"
+    },
+    {
+      "id": "511:307280",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 403 HAMILTON Westbound  between HWY 407 and KING ROAD, Burlington. OPP Assisted Full Closure for 15 minutes.",
+      "location": "HWY 403 HAMILTON",
+      "direction": "Westbound",
+      "score": 90,
+      "neighbourhood": "Aldershot",
+      "latitude": 43.33392,
+      "longitude": -79.83722,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "1a55366c0d8684e7"
+    },
+    {
+      "id": "511:307292",
+      "kind": "traffic",
+      "headline": "Disabled Vehicle on QEW Fort Erie bound  at HWY 403 HAMILTON, Burlington. Right lane and right shoulder closed.",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 75,
+      "neighbourhood": "Mountainside",
+      "latitude": 43.340415847,
+      "longitude": -79.825488016,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "accidentsAndIncidents",
+      "signature": "fb83e51a2ce4aa41"
     },
     {
       "id": "511:303108",
@@ -418,20 +466,36 @@
       "signature": "61abbaca9b4a3dc0"
     },
     {
-      "id": "511:304984",
+      "id": "511:307246",
       "kind": "traffic",
-      "headline": "Daily Engineering Investigation on HWY 5 Eastbound  between HWY 6 / CLAPPISON CORNER'S and HWY 6 / CLAPPISON CORNER'S, Hamilton. 1 Right Lane(s).",
-      "location": "HWY 5",
+      "headline": "Nightly Construction on HWY 401 Eastbound  between GUELPH LINE and GUELPH LINE, Milton. 2 Right Lane(s).",
+      "location": "HWY 401",
       "direction": "Eastbound",
-      "score": 35,
-      "neighbourhood": "Aldershot",
-      "latitude": 43.31215,
-      "longitude": -79.917725,
+      "score": 43,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.49118,
+      "longitude": -79.987885,
       "source": "Ontario 511",
       "sourceUrl": "https://511on.ca/",
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
-      "signature": "bc29db44c33aa881"
+      "signature": "16b9cc76e1133969"
+    },
+    {
+      "id": "511:307251",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 401 Westbound  between HALTON ROAD 22/TREMAINE RD and GUELPH LINE, Milton. 2 Right Lane(s).",
+      "location": "HWY 401",
+      "direction": "Westbound",
+      "score": 43,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.521416,
+      "longitude": -79.934616,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "8cf07a76a681d745"
     }
   ],
   "topSignal": {

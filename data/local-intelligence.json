@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-14T16:30:28Z",
+  "generatedAt": "2026-09-14T20:29:18Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -128,22 +128,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "1a55366c0d8684e7"
-    },
-    {
-      "id": "511:307292",
-      "kind": "traffic",
-      "headline": "Disabled Vehicle on QEW Fort Erie bound  at HWY 403 HAMILTON, Burlington. Right lane and right shoulder closed.",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 75,
-      "neighbourhood": "Mountainside",
-      "latitude": 43.340415847,
-      "longitude": -79.825488016,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "fb83e51a2ce4aa41"
     },
     {
       "id": "511:303108",
@@ -384,6 +368,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "f53b0dcd27aecebe"
+    },
+    {
+      "id": "511:307299",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Fort Erie Bound  between BRONTE ROAD, Oakville and BURLOAK DRIVE, Burlington. 3 Left(with HOV) Lane(s).",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 53,
+      "neighbourhood": "Orchard",
+      "latitude": 43.409355,
+      "longitude": -79.74126,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "8278ab012b170563"
     },
     {
       "id": "511:296303",
