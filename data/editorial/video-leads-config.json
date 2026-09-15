@@ -1,0 +1,85 @@
+{
+  "lookbackDays": 80,
+  "maxVideos": 120,
+  "searchPerRun": 8,
+  "maxResultsPerSearch": 5,
+  "weights": {
+    "localRelevance": 0.25,
+    "velocity": 0.20,
+    "novelty": 0.15,
+    "broadAppeal": 0.15,
+    "articlePotential": 0.15,
+    "sourceQuality": 0.10
+  },
+  "keywords": {
+    "local": [
+      "Burlington Ontario",
+      "Halton",
+      "Oakville",
+      "Hamilton Ontario",
+      "QEW",
+      "Skyway Burlington",
+      "Burlington GO",
+      "Aldershot",
+      "Appleby GO",
+      "Spencer Smith Park",
+      "Royal Botanical Gardens",
+      "LaSalle Park"
+    ],
+    "torontoGta": [
+      "Toronto",
+      "CN Tower",
+      "Rogers Centre",
+      "Blue Jays hotel",
+      "PATH Toronto",
+      "Union Station",
+      "TTC",
+      "Gardiner Expressway",
+      "Pearson Airport",
+      "Ontario Place",
+      "CNE",
+      "Toronto islands",
+      "Toronto infrastructure"
+    ],
+    "ontario": [
+      "GO Transit",
+      "Metrolinx",
+      "Ontario highways",
+      "Ontario infrastructure",
+      "Ontario development",
+      "Ontario abandoned places",
+      "Ontario history",
+      "Ontario laws",
+      "Ontario megaprojects"
+    ],
+    "canada": [
+      "Canadian infrastructure",
+      "Canadian history",
+      "Canadian cities",
+      "Canadian scams",
+      "Canadian laws",
+      "Canadian engineering",
+      "Canadian transportation"
+    ]
+  },
+  "watchlist": [
+    {"id": "city-burlington", "channelId": "UCqkRyOmIjZuRo9BCLRYJflQ", "name": "City of Burlington", "region": "burlington", "topics": ["local", "government"]},
+    {"id": "halton-police", "channelId": "UC2EA32sVndM8MicgCG9Kpqg", "name": "Halton Police", "region": "halton", "topics": ["safety"]},
+    {"id": "conservation-halton", "channelId": "UCTs1qIP17J_epZBmJsPuYtw", "name": "Conservation Halton", "region": "halton", "topics": ["nature"]},
+    {"id": "metrolinx", "channelId": "UCWAUWPKZoDibnpcU7m02vyQ", "name": "Metrolinx", "region": "gta", "topics": ["transit"]},
+    {"id": "rmtransit", "channelId": "UCf4iKXL_SJQ5d0qsKkboRRQ", "name": "RMTransit", "region": "gta", "topics": ["transit", "urbanism"]},
+    {"id": "forgotten-ontario", "channelId": "UCkV9NQbkyHNLry7XFXcODdg", "name": "Forgotten Ontario", "region": "ontario", "topics": ["history", "abandoned"]},
+    {"id": "spacing", "channelId": "UCOE1E15_HZEHggj0wd6yrDA", "name": "Spacing Magazine", "region": "toronto", "topics": ["urbanism"]},
+    {"id": "waterfront-to", "channelId": "UC22nGWJj9aCn8s9qeISM9eQ", "name": "waterfrontTO", "region": "toronto", "topics": ["development"]},
+    {"id": "blogto", "channelId": "UCc6RY7ZDvJIl_MTdyX7QP3w", "name": "blogTO", "region": "toronto", "topics": ["toronto"]},
+    {"id": "tvo-today", "channelId": "UCu_u-P3cBFO7D-sAjxd_I-w", "name": "TVO Today", "region": "ontario", "topics": ["ontario"]},
+    {"id": "not-just-bikes", "channelId": "UC0intLFzLaudFG-xAvUEO-A", "name": "Not Just Bikes", "region": "canada", "topics": ["urbanism"]},
+    {"id": "historica", "channelId": "UCtagGjDO8X1rBROhmSQXZsA", "name": "Historica Canada", "region": "canada", "topics": ["history"]},
+    {"id": "parks-canada", "channelId": "UCzJRhTw3KVtDlcdNz33eDMQ", "name": "Parks Canada", "region": "canada", "topics": ["nature"]},
+    {"id": "cp24", "channelId": "UCs3o4RhBiP2wcwqkZR2QVLw", "name": "CP24", "region": "toronto", "topics": ["news"]},
+    {"id": "citynews", "channelId": "UCVKAcQQCO8vv87Gk62SutAg", "name": "CityNews", "region": "gta", "topics": ["news"]},
+    {"id": "cbc-news", "channelId": "UCuFFtHWoLl5fauMMD5Ww2jA", "name": "CBC News", "region": "canada", "topics": ["news"]},
+    {"id": "global-news", "channelId": "UChLtXXpo4Ge1ReTEboVvTDg", "name": "Global News", "region": "canada", "topics": ["news"]},
+    {"id": "ctv-news", "channelId": "UCi7Zk9baY1tvdlgxIML8MXg", "name": "CTV News", "region": "canada", "topics": ["news"]}
+  ]
+}
