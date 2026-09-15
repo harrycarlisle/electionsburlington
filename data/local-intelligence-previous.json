@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-15T01:51:59Z",
+  "generatedAt": "2026-09-15T07:38:28Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 34,
-    "trafficIncidents": 34,
+    "activeSignals": 33,
+    "trafficIncidents": 33,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -128,22 +128,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "1a55366c0d8684e7"
-    },
-    {
-      "id": "511:307450",
-      "kind": "traffic",
-      "headline": "Collision on HWY 403 HAMILTON Eastbound  at ABERDEEN AVE, Hamilton. Right lane closed.",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Eastbound",
-      "score": 75,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.25532373,
-      "longitude": -79.90681398,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "26941c3a3b85f0f1"
     },
     {
       "id": "511:303108",
@@ -496,6 +480,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "16b9cc76e1133969"
+    },
+    {
+      "id": "511:307251",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 401 Westbound  between HALTON ROAD 22/TREMAINE RD and GUELPH LINE, Milton. 2 Right Lane(s).",
+      "location": "HWY 401",
+      "direction": "Westbound",
+      "score": 43,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.521416,
+      "longitude": -79.934616,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "8cf07a76a681d745"
     }
   ],
   "topSignal": {
