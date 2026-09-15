@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-15T07:38:28Z",
+  "generatedAt": "2026-09-15T13:27:42Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 33,
-    "trafficIncidents": 33,
+    "activeSignals": 34,
+    "trafficIncidents": 34,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -386,6 +386,22 @@
       "signature": "8278ab012b170563"
     },
     {
+      "id": "511:307554",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Toronto bound  between CENTENNIAL PKWY, Hamilton and BURLINGTON SKYWAY, Burlington. 3 Alternating Lane(s).",
+      "location": "QEW",
+      "direction": "Toronto Bound",
+      "score": 53,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.24609,
+      "longitude": -79.75694,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "37f8b0646b1083d6"
+    },
+    {
       "id": "511:296303",
       "kind": "traffic",
       "headline": "Nightly Construction on HWY 6 Northbound  between PARKSIDE DRIVE and EAST FLAMBOROUGH TWP CON. 5 EAST, Hamilton. 1 Alternating Lane(s).",
@@ -480,22 +496,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "16b9cc76e1133969"
-    },
-    {
-      "id": "511:307251",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 401 Westbound  between HALTON ROAD 22/TREMAINE RD and GUELPH LINE, Milton. 2 Right Lane(s).",
-      "location": "HWY 401",
-      "direction": "Westbound",
-      "score": 43,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.521416,
-      "longitude": -79.934616,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "8cf07a76a681d745"
     }
   ],
   "topSignal": {
