@@ -1,6 +1,18 @@
 {
-  "generatedAt": "2026-09-14T23:24:09Z",
+  "generatedAt": "2026-09-15T01:51:59Z",
   "items": [
+    {
+      "id": "511:307450",
+      "detectedAt": "2026-09-15T01:51:59Z",
+      "score": 75,
+      "headline": "Collision on HWY 403 HAMILTON Eastbound  at ABERDEEN AVE, Hamilton. Right lane closed.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:307279",
       "detectedAt": "2026-09-14T16:30:28Z",
