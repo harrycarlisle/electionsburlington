@@ -51,13 +51,13 @@
   },
   "homepageTraffic": {
     "label": "Traffic",
-    "title": "QEW → Hamilton",
-    "context": "Delay likely",
-    "impact": "Highway 403 closed near Plains Road",
+    "title": "QEW → Toronto",
+    "context": "Live route check",
+    "impact": "30 cameras along this route",
     "freshness": "",
-    "url": "/traffic/?destination=hamilton",
-    "alert": true,
-    "advisory": ""
+    "url": "/traffic/?destination=toronto",
+    "alert": false,
+    "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
   },
   "routes": {
     "toronto": {
@@ -1552,6 +1552,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-09-14T21:52:03.298908-04:00"
+    "updatedAt": "2026-09-15T00:57:15.724409-04:00"
   }
 }
