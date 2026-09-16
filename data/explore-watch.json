@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-15T21:17:44+00:00",
+  "checkedAt": "2026-09-16T00:16:44+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -86,7 +86,7 @@
       "url": "https://supercrawl.ca/2026/",
       "scope": "Nearby Hamilton",
       "ok": true,
-      "candidates": 7
+      "candidates": 4
     },
     {
       "name": "Active Parents regional calendar",
@@ -1101,19 +1101,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Art Galleries & Studios",
-      "url": "https://supercrawl.ca/2026/=\"https:/supercrawl.ca/galleries/",
-      "source": "Supercrawl",
-      "scope": "Nearby Hamilton",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Arts & Culture",
       "url": "https://visitoakville.com/experience-oakville/arts-and-culture/",
       "source": "Visit Oakville events",
@@ -1651,19 +1638,6 @@
       "url": "https://www.burlington.ca/en/arts-culture-and-events/festival-and-event-applications.aspx?_mid_=10033",
       "source": "Love My Neighbourhood",
       "scope": "Burlington",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Food Trucks",
-      "url": "https://supercrawl.ca/food/",
-      "source": "Supercrawl",
-      "scope": "Nearby Hamilton",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -2299,19 +2273,6 @@
     {
       "title": "Supercrawl Unveils 2026 Music Stage Schedules",
       "url": "https://supercrawl.ca/2026/08/music-stage-schedules/",
-      "source": "Supercrawl",
-      "scope": "Nearby Hamilton",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "TIM HORTONS FAMILY ZONE",
-      "url": "https://supercrawl.ca/map/",
       "source": "Supercrawl",
       "scope": "Nearby Hamilton",
       "priority": 4,
