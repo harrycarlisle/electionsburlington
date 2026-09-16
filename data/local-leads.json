@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-09-16T18:50:34Z",
+  "generatedAt": "2026-09-16T22:04:36Z",
   "items": [
+    {
+      "id": "511:308208",
+      "detectedAt": "2026-09-16T22:04:36Z",
+      "score": 90,
+      "headline": "Continuous Construction on HWY 403 HAMILTON Eastbound  between Garden Ave and Garden Ave, Brantford. ALL LANES CLOSED.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:308278",
+      "detectedAt": "2026-09-16T22:04:36Z",
+      "score": 75,
+      "headline": "Collision on QEW Toronto bound  at BURLINGTON SKYWAY, Burlington. 1 left lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:308178",
       "detectedAt": "2026-09-16T18:50:34Z",
