@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T05:51:43.313860-04:00",
+  "generatedAt": "2026-09-16T10:51:48.909917-04:00",
   "source": "Ontario 511 events + OSRM geometry + camera inventory",
   "licence": "Open Government Licence - Ontario",
   "incidents": [
@@ -42,6 +42,46 @@
       "source": "Ontario 511",
       "url": "/traffic/",
       "updatedLabel": ""
+    },
+    {
+      "id": "511:308072",
+      "title": "Collision on QEW near Burloak Drive",
+      "rawHeadline": "Debris on QEW Fort Erie bound  at BURLOAK DRIVE, Burlington. Right lane and right shoulder closed.",
+      "roadway": "QEW",
+      "direction": "Fort Erie-bound",
+      "type": "collision",
+      "facility": "mainline",
+      "nearestRoad": "Burloak Drive",
+      "municipality": "Burlington",
+      "context": "Burlington · Burloak Drive / QEW",
+      "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+      "latitude": 43.39532871,
+      "longitude": -79.75669063,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
+    },
+    {
+      "id": "511:308089",
+      "title": "Collision on QEW near Appleby Line",
+      "rawHeadline": "Disabled Vehicle on QEW Toronto bound  at APPLEBY LINE, Burlington. Left lane closed.",
+      "roadway": "QEW",
+      "direction": "Toronto-bound",
+      "type": "collision",
+      "facility": "mainline",
+      "nearestRoad": "Appleby Line",
+      "municipality": "Burlington",
+      "context": "Burlington · Appleby Line / QEW",
+      "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
+      "latitude": 43.38105308,
+      "longitude": -79.7718237,
+      "score": 0,
+      "affectsSkyway": false,
+      "source": "Ontario 511",
+      "url": "/traffic/",
+      "updatedLabel": ""
     }
   ],
   "skyway": {
@@ -52,12 +92,12 @@
   "homepageTraffic": {
     "label": "Traffic",
     "title": "QEW → Toronto",
-    "context": "Live route check",
-    "impact": "30 cameras along this route",
+    "context": "Delay likely",
+    "impact": "Collision on QEW near Burloak Drive",
     "freshness": "",
     "url": "/traffic/?destination=toronto",
-    "alert": false,
-    "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+    "alert": true,
+    "advisory": ""
   },
   "routes": {
     "toronto": {
@@ -68,12 +108,11 @@
       "geometrySource": "osrm",
       "metres": 51679.9,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "30 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on QEW near Burloak Drive",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -117,19 +156,19 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:254943",
-          "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
-          "rawHeadline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+          "id": "511:308072",
+          "title": "Collision on QEW near Burloak Drive",
+          "rawHeadline": "Debris on QEW Fort Erie bound  at BURLOAK DRIVE, Burlington. Right lane and right shoulder closed.",
           "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Dorval Drive",
-          "municipality": "Oakville",
-          "context": "Oakville · Dorval Drive / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.446465,
-          "longitude": -79.70016,
+          "direction": "Fort Erie-bound",
+          "type": "collision",
+          "facility": "mainline",
+          "nearestRoad": "Burloak Drive",
+          "municipality": "Burlington",
+          "context": "Burlington · Burloak Drive / QEW",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.39532871,
+          "longitude": -79.75669063,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -419,26 +458,6 @@
           "source": "Ontario 511",
           "url": "/traffic/",
           "updatedLabel": ""
-        },
-        {
-          "id": "511:254943",
-          "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
-          "rawHeadline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Dorval Drive",
-          "municipality": "Oakville",
-          "context": "Oakville · Dorval Drive / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.446465,
-          "longitude": -79.70016,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
         }
       ]
     },
@@ -450,12 +469,11 @@
       "geometrySource": "osrm",
       "metres": 15797.9,
       "status": {
-        "level": "unknown",
-        "headline": "Live route check",
-        "detail": "15 cameras along this route",
+        "level": "delay",
+        "headline": "Delay likely",
+        "detail": "Collision on QEW near Burloak Drive",
         "looks": "",
-        "source": "Ontario 511",
-        "advisory": "Highway 403 westbound on-ramp closed at Brant Street"
+        "source": "Ontario 511"
       },
       "incidents": [
         {
@@ -499,19 +517,19 @@
           "updatedLabel": ""
         },
         {
-          "id": "511:254943",
-          "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
-          "rawHeadline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
+          "id": "511:308072",
+          "title": "Collision on QEW near Burloak Drive",
+          "rawHeadline": "Debris on QEW Fort Erie bound  at BURLOAK DRIVE, Burlington. Right lane and right shoulder closed.",
           "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Dorval Drive",
-          "municipality": "Oakville",
-          "context": "Oakville · Dorval Drive / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.446465,
-          "longitude": -79.70016,
+          "direction": "Fort Erie-bound",
+          "type": "collision",
+          "facility": "mainline",
+          "nearestRoad": "Burloak Drive",
+          "municipality": "Burlington",
+          "context": "Burlington · Burloak Drive / QEW",
+          "impact": "Could affect trips from Burlington toward Hamilton or Niagara.",
+          "latitude": 43.39532871,
+          "longitude": -79.75669063,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -676,26 +694,6 @@
           "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
           "latitude": 43.36641,
           "longitude": -79.78798,
-          "score": 0,
-          "affectsSkyway": false,
-          "source": "Ontario 511",
-          "url": "/traffic/",
-          "updatedLabel": ""
-        },
-        {
-          "id": "511:254943",
-          "title": "QEW Toronto-bound on-ramp closed at Dorval Drive",
-          "rawHeadline": "Continuous Construction on QEW Toronto bound On-ramp at DORVAL DRIVE, Oakville. ALL LANES CLOSED.",
-          "roadway": "QEW",
-          "direction": "Toronto-bound",
-          "type": "closure",
-          "facility": "on-ramp",
-          "nearestRoad": "Dorval Drive",
-          "municipality": "Oakville",
-          "context": "Oakville · Dorval Drive / QEW · on-ramp",
-          "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-          "latitude": 43.446465,
-          "longitude": -79.70016,
           "score": 0,
           "affectsSkyway": false,
           "source": "Ontario 511",
@@ -1552,6 +1550,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-09-16T08:05:28.643817-04:00"
+    "updatedAt": "2026-09-16T10:51:51.422333-04:00"
   }
 }
