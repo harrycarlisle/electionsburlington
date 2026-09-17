@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-17T11:37:35+00:00",
+  "checkedAt": "2026-09-17T16:57:30+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -2908,19 +2908,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Sensory Friendly Storytime at HPL",
-      "url": "https://activeparents.ca/calendar/sensory-friendly-storytime-at-hpl/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-17T14:00:00+00:00",
-      "endsAt": "2026-09-17T15:00:00+00:00",
-      "location": "HPL – Binbrook Branch, 2641 Regional Road 56 PO Box 89, Binbrook, Ontario",
-      "description": "<p>A storytime for children and their families in a neurodivergent positive space. A small group program sharing stories, songs, and rhymes in a sensory-aware environment with sensory toys and accessories. Ideal for children ages 2-6 years, this program is specifically designed to be welcoming to families with neurodivergent children, including autistic chil",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Free Trial Multi-Sport Class (1.5-6yrs)",
       "url": "https://activeparents.ca/calendar/free-trial-multi-sport-class-1-5-6yrs/",
       "source": "Active Parents regional calendar",
@@ -2956,7 +2943,7 @@
       "startsAt": "2026-09-18T04:00:00+00:00",
       "endsAt": "2026-09-19T03:59:59+00:00",
       "location": "Binbrook Agricultural Society, 2600 Hwy 56, Binbrook, Ontario",
-      "description": "<p>The Binbrook Agricultural Society, established in 1854, is a volunteer-run organization dedicated to promoting agriculture and fostering community spirit in Binbrook, Ontario. Best known for organizing the annual Binbrook Fall Fair—one of Canada’s oldest agricultural fairs</p>\\n",
+      "description": "<p>Wondering what’s happening throughout the weekend? Here’s a quick look at the 2026 Binbrook Fall Fair & Dodge RAM Rodeo schedule! THURSDAY 5 PM–9 PM — Community Appreciation Night & Homecraft Entry Drop-Off FRIDAY 5 PM–9 PM — Fair Opens! 8 PM — Demolition Derby SATURDAY 10 AM–9 PM — Fair Open 12 PM — […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -3021,7 +3008,7 @@
       "startsAt": "2026-09-19T04:00:00+00:00",
       "endsAt": "2026-09-20T03:59:59+00:00",
       "location": "Binbrook Agricultural Society, 2600 Hwy 56, Binbrook, Ontario",
-      "description": "<p>The Binbrook Agricultural Society, established in 1854, is a volunteer-run organization dedicated to promoting agriculture and fostering community spirit in Binbrook, Ontario. Best known for organizing the annual Binbrook Fall Fair—one of Canada’s oldest agricultural fairs</p>\\n",
+      "description": "<p>Wondering what’s happening throughout the weekend? Here’s a quick look at the 2026 Binbrook Fall Fair & Dodge RAM Rodeo schedule! THURSDAY 5 PM–9 PM — Community Appreciation Night & Homecraft Entry Drop-Off FRIDAY 5 PM–9 PM — Fair Opens! 8 PM — Demolition Derby SATURDAY 10 AM–9 PM — Fair Open 12 PM — […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -3139,6 +3126,19 @@
       "endsAt": "2026-09-19T16:00:00+00:00",
       "location": "Mastermind Toys Stores, Burlington",
       "description": "<p>Bring your Pokémon cards, make some trades, and connect with fellow fans at a special morning of Pokémon fun. Date: Saturday, September 19 Time: 10 AM–12 PM Locations: All Mastermind Toys stores</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Summer Saturdays at the Homestead",
+      "url": "https://activeparents.ca/calendar/summer-saturdays-at-the-homestead/2026-09-19/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-19T14:00:00+00:00",
+      "endsAt": "2026-09-19T20:00:00+00:00",
+      "location": "The Brown Homestead, 1317 Pelham Road, St Catharines, ON",
+      "description": "<p>Looking for something new to do in Niagara? Join us for Summer Saturdays at The Brown Homestead. Pop-by to explore our rural historic site, learn the stories held within the oldest home in St. Catharines, create heritage crafts, play lawn games, and enjoy hands-on activities designed for curious minds of all ages. Watch heritage demonstrations, […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
