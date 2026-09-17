@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-17T20:18:59+00:00",
+  "checkedAt": "2026-09-17T23:32:57+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 39
+      "candidates": 41
     },
     {
       "name": "Pokémon GO live events",
@@ -1011,7 +1011,7 @@
     },
     {
       "title": "257 King William Street",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/cityhousing-hamilton/development-revitalization/development-projects/257-king",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/cityhousing-hamilton/development-revitalization/development-projects/257-king",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1024,7 +1024,7 @@
     },
     {
       "title": "500 MacNab Street North",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/cityhousing-hamilton/development-revitalization/development-projects/500-macnab",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/cityhousing-hamilton/development-revitalization/development-projects/500-macnab",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1089,7 +1089,7 @@
     },
     {
       "title": "Approved Temporary Shelter Expansion",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/preventing-ending-homelessness/approved-temporary-shelter-expansion",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/preventing-ending-homelessness/approved-temporary-shelter-expansion",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1336,7 +1336,7 @@
     },
     {
       "title": "CEF Agriculture Program",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-agriculture-program",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-agriculture-program",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1349,7 +1349,7 @@
     },
     {
       "title": "CEF Arts Program",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-arts-program",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-arts-program",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1362,7 +1362,7 @@
     },
     {
       "title": "CEF Communities, Culture & Heritage Program",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-communities-culture",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/community-funding-grant-programs/city-enrichment-fund/cef-communities-culture",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1414,7 +1414,7 @@
     },
     {
       "title": "Cemetery Events",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/hamilton-municipal-cemeteries/our-cemeteries/cemetery-events",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/hamilton-municipal-cemeteries/our-cemeteries/cemetery-events",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1440,7 +1440,7 @@
     },
     {
       "title": "City of Hamilton Encampment Protocol",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/preventing-ending-homelessness/city-hamilton-encampment-protocol",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/preventing-ending-homelessness/city-hamilton-encampment-protocol",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1713,7 +1713,7 @@
     },
     {
       "title": "EarlyON Child and Family Centres Locations",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/early-years-child-care/early-years-services/earlyon-child-and-family-centres",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/early-years-child-care/early-years-services/earlyon-child-and-family-centres",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1765,7 +1765,7 @@
     },
     {
       "title": "Emergency & Violence Against Women Shelters & Drop-in Programs",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/preventing-ending-homelessness/emergency-and-violence-against-women",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/preventing-ending-homelessness/emergency-and-violence-against-women",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1856,7 +1856,7 @@
     },
     {
       "title": "Eviction Prevention",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/housing-supports/eviction-prevention",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/housing-supports/eviction-prevention",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1908,7 +1908,7 @@
     },
     {
       "title": "Family & Pet Burial",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/hamilton-municipal-cemeteries/cremation-burial/family-pet-burial",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/hamilton-municipal-cemeteries/cremation-burial/family-pet-burial",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1973,7 +1973,7 @@
     },
     {
       "title": "Historical Family Search",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/hamilton-municipal-cemeteries/products-services/historical-family-search",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/hamilton-municipal-cemeteries/products-services/historical-family-search",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -1986,7 +1986,7 @@
     },
     {
       "title": "Historical Walking Tours",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/hamilton-municipal-cemeteries/our-cemeteries/historical-walking-tours",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/hamilton-municipal-cemeteries/our-cemeteries/historical-walking-tours",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2155,7 +2155,7 @@
     },
     {
       "title": "Market Rent Housing",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/cityhousing-hamilton/applicants/market-rent-housing",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/cityhousing-hamilton/applicants/market-rent-housing",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2337,7 +2337,7 @@
     },
     {
       "title": "Preventing & Ending Homelessness",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/preventing-ending-homelessness",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/preventing-ending-homelessness",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2454,7 +2454,7 @@
     },
     {
       "title": "Red Hill Family Centre",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/early-years-child-care/child-care-services/red-hill-family-centre",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/early-years-child-care/child-care-services/red-hill-family-centre",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2467,7 +2467,7 @@
     },
     {
       "title": "Safe Apartments",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/cityhousing-hamilton/tenants/cityhousing-safe-apartments",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/cityhousing-hamilton/tenants/cityhousing-safe-apartments",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2545,7 +2545,7 @@
     },
     {
       "title": "Start The Conversation",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/hamilton-municipal-cemeteries/planning-ahead/start-conversation",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/hamilton-municipal-cemeteries/planning-ahead/start-conversation",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2622,19 +2622,6 @@
       "candidateType": "link"
     },
     {
-      "title": "Take Back the Night",
-      "url": "https://visitoakville.com/events/take-back-the-night/",
-      "source": "Visit Oakville events",
-      "scope": "Nearby Oakville",
-      "priority": 4,
-      "discoveryOnly": false,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
       "title": "Take the Sustainable Tourism 2030 Pledge",
       "url": "https://visitoakville.com/take-the-sustainable-tourism-2030-pledge/",
       "source": "Visit Oakville events",
@@ -2691,6 +2678,19 @@
       "url": "http://supercrawl.ca/music?participant=1101",
       "source": "Supercrawl",
       "scope": "Nearby Hamilton",
+      "priority": 4,
+      "discoveryOnly": false,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "The Saturday Morning All-You-Can-Eat Cereal Cartoon Party",
+      "url": "https://visitoakville.com/events/the-saturday-morning-all-you-can-eat-cereal-cartoon-party-3/",
+      "source": "Visit Oakville events",
+      "scope": "Nearby Oakville",
       "priority": 4,
       "discoveryOnly": false,
       "startsAt": "",
@@ -2844,7 +2844,7 @@
     },
     {
       "title": "Winter Response Strategy",
-      "url": "https://www.hamilton.ca/index%2Ephp/people-programs/housing-shelter/preventing-ending-homelessness/winter-response-strategy",
+      "url": "https://www.hamilton.ca/index%2ephp/people-programs/housing-shelter/preventing-ending-homelessness/winter-response-strategy",
       "source": "City of Hamilton events calendar",
       "scope": "Nearby Hamilton",
       "priority": 4,
@@ -2895,6 +2895,19 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Wainfleet Fall Fair",
+      "url": "https://activeparents.ca/calendar/wainfleet-fall-fair/2026-09-17/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-17T04:00:00+00:00",
+      "endsAt": "2026-09-18T03:59:59+00:00",
+      "location": "Wainfleet Agricultural Society, 31943 Park St, Wainfleet, ON",
+      "description": "<p>Come for a weekend full of celebration with live entertainment, livestock exhibits, demolition derby, and so much more!</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Free Trial Multi-Sport Class (1.5-6yrs)",
       "url": "https://activeparents.ca/calendar/free-trial-multi-sport-class-1-5-6yrs/",
       "source": "Active Parents regional calendar",
@@ -2905,19 +2918,6 @@
       "endsAt": "2026-09-17T22:30:00+00:00",
       "location": "St John’s Anglican Church Burlington, 2464 Dundas Street West, Burlington, ON",
       "description": "<p>Join coach Dana for a free trial Fit For Fun multi-sport class! Register at: www.fitforfunprograms.com 4:45-5:30pm - 1.5-3yrs (parent participation required) 5:30-6:30pm - 3.5-6yrs (parent supervision required)</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Latin Dancing – Free Introductory Class",
-      "url": "https://activeparents.ca/calendar/latin-dancing-free-introductory-class/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-17T21:00:00+00:00",
-      "endsAt": "2026-09-17T22:00:00+00:00",
-      "location": "Fred Astaire Dance Studios – Oakville, 225 Lakeshore Road East, Oakville, ON",
-      "description": "<p>Latin Dancing introductory class for ages 10-17. Student will learn steps, styling, leads & follows to several popular dances as they develop confidence, poise and fitness while having fun. Try it for free with option to join our 12 week Fall Session including end of season performances. Contact our studio to reserve a spot and/or […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -2944,6 +2944,19 @@
       "endsAt": "2026-09-19T03:59:59+00:00",
       "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
       "description": "<p>Jump in, bounce around, and let the fun begin! The Royal Duck is bringing an exciting inflatable bounce house park to Burlington Centre for a fun-filled experience the whole family can enjoy. Families can stop by and enjoy a variety of inflatable attractions designed for kids to jump, play, and have a blast.</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Wainfleet Fall Fair",
+      "url": "https://activeparents.ca/calendar/wainfleet-fall-fair/2026-09-18/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-18T04:00:00+00:00",
+      "endsAt": "2026-09-19T03:59:59+00:00",
+      "location": "Wainfleet Agricultural Society, 31943 Park St, Wainfleet, ON",
+      "description": "<p>Come for a weekend full of celebration with live entertainment, livestock exhibits, demolition derby, and so much more!</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -3012,6 +3025,19 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Wainfleet Fall Fair",
+      "url": "https://activeparents.ca/calendar/wainfleet-fall-fair/2026-09-19/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-19T04:00:00+00:00",
+      "endsAt": "2026-09-20T03:59:59+00:00",
+      "location": "Wainfleet Agricultural Society, 31943 Park St, Wainfleet, ON",
+      "description": "<p>Come for a weekend full of celebration with live entertainment, livestock exhibits, demolition derby, and so much more!</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Acton Fall Fair",
       "url": "https://activeparents.ca/calendar/acton-fall-fair/2026-09-19/",
       "source": "Active Parents regional calendar",
@@ -3077,19 +3103,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Farmcrawl Hamilton",
-      "url": "https://activeparents.ca/calendar/farmcrawl-hamilton-2/2026-09-19/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-19T14:00:00+00:00",
-      "endsAt": "2026-09-19T20:00:00+00:00",
-      "location": "Multiple Farms in Hamilton, Hamilton, ON",
-      "description": "<p>Farm Crawl is an opportunity to get an inside look at the operations of many of our farms in Hamilton and the surrounding area. It is a self-guided event where you drive from farm to farm in any order you like to learn about local agriculture. You choose how many farms you would like to […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Free Trial Multi-Sport Class (3.5-6yrs)",
       "url": "https://activeparents.ca/calendar/free-trial-multi-sport-class-3-5-6yrs/",
       "source": "Active Parents regional calendar",
@@ -3113,19 +3126,6 @@
       "endsAt": "2026-09-19T16:00:00+00:00",
       "location": "Mastermind Toys Stores, Burlington",
       "description": "<p>Bring your Pokémon cards, make some trades, and connect with fellow fans at a special morning of Pokémon fun. Date: Saturday, September 19 Time: 10 AM–12 PM Locations: All Mastermind Toys stores</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Summer Saturdays at the Homestead",
-      "url": "https://activeparents.ca/calendar/summer-saturdays-at-the-homestead/2026-09-19/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-19T14:00:00+00:00",
-      "endsAt": "2026-09-19T20:00:00+00:00",
-      "location": "The Brown Homestead, 1317 Pelham Road, St Catharines, ON",
-      "description": "<p>Looking for something new to do in Niagara? Join us for Summer Saturdays at The Brown Homestead. Pop-by to explore our rural historic site, learn the stories held within the oldest home in St. Catharines, create heritage crafts, play lawn games, and enjoy hands-on activities designed for curious minds of all ages. Watch heritage demonstrations, […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -3183,6 +3183,19 @@
     {
       "title": "Fall Fair at HPL",
       "url": "https://activeparents.ca/series/fall-fair-at-hpl-2/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Farmcrawl Hamilton",
+      "url": "https://activeparents.ca/calendar/farmcrawl-hamilton-2/2026-09-19/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -3365,6 +3378,19 @@
     {
       "title": "Toddlers + Babies",
       "url": "https://activeparents.ca/things-to-do-with-babies-and-toddlers-in-burlington-oakville-milton-and-hamilton/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Wainfleet Fall Fair",
+      "url": "https://activeparents.ca/series/wainfleet-fall-fair/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
