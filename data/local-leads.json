@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-09-17T05:16:33Z",
+  "generatedAt": "2026-09-17T10:22:46Z",
   "items": [
+    {
+      "id": "511:308377",
+      "detectedAt": "2026-09-17T10:22:46Z",
+      "score": 75,
+      "headline": "Collision on HWY 403 HAMILTON Eastbound RAMP at QEW TORONTO, Burlington. Right lane and right shoulder closed.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:308380",
+      "detectedAt": "2026-09-17T10:22:46Z",
+      "score": 75,
+      "headline": "Collision on HWY 403 HAMILTON Eastbound  at HWY 6 NORTH, Burlington. Left shoulder and left lane closed.",
+      "kind": "traffic",
+      "location": "HWY 403 HAMILTON",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:308208",
       "detectedAt": "2026-09-16T22:04:36Z",
