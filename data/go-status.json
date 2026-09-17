@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T21:35:35.387419-04:00",
+  "generatedAt": "2026-09-16T22:17:01.865263-04:00",
   "source": "Metrolinx GO Transit GTFS",
   "sourceUrl": "https://www.gotransit.com/en/partner-with-us/software-developers",
   "dataKind": "scheduled",
@@ -16,24 +16,6 @@
         "stopCode": "UN"
       },
       "journeys": [
-        {
-          "departure": "21:42:00",
-          "arrival": "22:45:00",
-          "duration": "63 min",
-          "line": "LW",
-          "type": "Train",
-          "tripNumber": "20260916-LW-1636",
-          "scheduled": true
-        },
-        {
-          "departure": "22:12:00",
-          "arrival": "23:15:00",
-          "duration": "63 min",
-          "line": "LW",
-          "type": "Train",
-          "tripNumber": "20260916-LW-1038",
-          "scheduled": true
-        },
         {
           "departure": "23:12:00",
           "arrival": "24:15:00",
@@ -466,15 +448,6 @@
       },
       "journeys": [
         {
-          "departure": "21:49:00",
-          "arrival": "22:10:00",
-          "duration": "21 min",
-          "line": "LW",
-          "type": "Train",
-          "tripNumber": "20260916-LW-1633",
-          "scheduled": true
-        },
-        {
           "departure": "22:49:00",
           "arrival": "23:10:00",
           "duration": "21 min",
@@ -704,24 +677,6 @@
       },
       "direction": "inbound",
       "journeys": [
-        {
-          "departure": "21:47:00",
-          "arrival": "22:49:00",
-          "duration": "62 min",
-          "line": "LW",
-          "type": "Train",
-          "tripNumber": "20260916-LW-1635",
-          "scheduled": true
-        },
-        {
-          "departure": "22:17:00",
-          "arrival": "23:19:00",
-          "duration": "62 min",
-          "line": "LW",
-          "type": "Train",
-          "tripNumber": "20260916-LW-1037",
-          "scheduled": true
-        },
         {
           "departure": "22:47:00",
           "arrival": "23:49:00",
