@@ -1,6 +1,30 @@
 {
-  "generatedAt": "2026-09-17T15:17:35Z",
+  "generatedAt": "2026-09-17T19:13:37Z",
   "items": [
+    {
+      "id": "511:308552",
+      "detectedAt": "2026-09-17T19:13:37Z",
+      "score": 90,
+      "headline": "Highway Maintenance on QEW Toronto bound ON-RAMP at WINSTON CHURCHILL BLVD, Oakville. All lanes closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
+    {
+      "id": "511:308623",
+      "detectedAt": "2026-09-17T19:13:37Z",
+      "score": 75,
+      "headline": "Disabled Vehicle on QEW Fort Erie bound  at THIRD LINE, Oakville. Centre lane closed.",
+      "kind": "traffic",
+      "location": "QEW",
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "status": "review",
+      "reason": "New high-priority official-source change detected. Verify before turning this into an article."
+    },
     {
       "id": "511:308377",
       "detectedAt": "2026-09-17T10:22:46Z",
