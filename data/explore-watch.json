@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-17T00:28:35+00:00",
+  "checkedAt": "2026-09-17T06:07:34+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -2896,32 +2896,6 @@
     },
     {
       "title": "Royal Duck Bounce Park",
-      "url": "https://activeparents.ca/calendar/royal-duck-bounce-park/2026-09-16/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-16T04:00:00+00:00",
-      "endsAt": "2026-09-17T03:59:59+00:00",
-      "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
-      "description": "<p>Jump in, bounce around, and let the fun begin! The Royal Duck is bringing an exciting inflatable bounce house park to Burlington Centre for a fun-filled experience the whole family can enjoy. Families can stop by and enjoy a variety of inflatable attractions designed for kids to jump, play, and have a blast.</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "YAC (Youth Arts Collective) Drop-in Open Studio",
-      "url": "https://activeparents.ca/calendar/yac-youth-arts-collective-drop-in-open-studio/2026-09-16/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-16T22:30:00+00:00",
-      "endsAt": "2026-09-17T00:30:00+00:00",
-      "location": "Art Gallery of Hamilton, 123 King Street West, Hamilton, Ontario",
-      "description": "<p>Join us in person at Art Gallery of Hamilton for some dedicated time to learn and create. All mediums are welcome – sketching, collaging, painting, fibre arts, illustration, and more. This creative opportunity is dedicated and open to creative folks aged 14 – 25 years. There are no pre-requisite skills or creative abilities required to […]</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Royal Duck Bounce Park",
       "url": "https://activeparents.ca/calendar/royal-duck-bounce-park/2026-09-17/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
@@ -3129,6 +3103,19 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Farmcrawl Hamilton",
+      "url": "https://activeparents.ca/calendar/farmcrawl-hamilton-2/2026-09-19/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-19T14:00:00+00:00",
+      "endsAt": "2026-09-19T20:00:00+00:00",
+      "location": "Multiple Farms in Hamilton, Hamilton, ON",
+      "description": "<p>Farm Crawl is an opportunity to get an inside look at the operations of many of our farms in Hamilton and the surrounding area. It is a self-guided event where you drive from farm to farm in any order you like to learn about local agriculture. You choose how many farms you would like to […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Free Trial Multi-Sport Class (3.5-6yrs)",
       "url": "https://activeparents.ca/calendar/free-trial-multi-sport-class-3-5-6yrs/",
       "source": "Active Parents regional calendar",
@@ -3139,6 +3126,19 @@
       "endsAt": "2026-09-19T15:00:00+00:00",
       "location": "St John’s Anglican Church Burlington, 2464 Dundas Street West, Burlington, ON",
       "description": "<p>Join coach Dana for a free trial Fit For Fun multi-sport class! Register at: www.fitforfunprograms.com</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Pokemon Trade and Play at Mastermind",
+      "url": "https://activeparents.ca/calendar/pokemon-trade-and-play-at-mastermind/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-19T14:00:00+00:00",
+      "endsAt": "2026-09-19T16:00:00+00:00",
+      "location": "Mastermind Toys Stores, Burlington",
+      "description": "<p>Bring your Pokémon cards, make some trades, and connect with fellow fans at a special morning of Pokémon fun. Date: Saturday, September 19 Time: 10 AM–12 PM Locations: All Mastermind Toys stores</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -3196,6 +3196,19 @@
     {
       "title": "Fall Fair at HPL",
       "url": "https://activeparents.ca/series/fall-fair-at-hpl-2/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "",
+      "endsAt": "",
+      "location": "",
+      "description": "",
+      "candidateType": "link"
+    },
+    {
+      "title": "Farmcrawl Hamilton",
+      "url": "https://activeparents.ca/series/farmcrawl-hamilton-2/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
@@ -3365,19 +3378,6 @@
     {
       "title": "Toddlers + Babies",
       "url": "https://activeparents.ca/things-to-do-with-babies-and-toddlers-in-burlington-oakville-milton-and-hamilton/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "YAC (Youth Arts Collective) Drop-in Open Studio",
-      "url": "https://activeparents.ca/series/yac-youth-arts-collective-drop-in-open-studio/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
