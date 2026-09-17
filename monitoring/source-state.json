@@ -1,50 +1,50 @@
 {
   "3110 South Service Road": {
     "bytes": 226383,
-    "checked_at": "2026-09-16T17:06:31.857850+00:00",
+    "checked_at": "2026-09-17T17:07:44.191721+00:00",
     "sha256": "0acaf3bd9208528cab94207b0210de0b3b7aa454c3de9823253f485767bf5c3b",
     "url": "https://www.burlington.ca/en/news/current-development-projects/3110_South_Service_Rd.aspx"
   },
   "Burlington council records": {
     "bytes": 248495,
-    "checked_at": "2026-09-16T17:06:31.857850+00:00",
-    "sha256": "7505ef6171c2dab9ad74e6b314d687faafa4bb7abce1478a39aa0b4adcb53aa5",
+    "checked_at": "2026-09-17T17:07:44.191721+00:00",
+    "sha256": "07934e27bffd433c61e483dea21bc20b4512d79caf91b0ef31735444fe8d87be",
     "url": "https://burlingtonpublishing.escribemeetings.com/"
   },
   "City budget portal": {
     "bytes": 261162,
-    "checked_at": "2026-09-16T17:06:31.857850+00:00",
+    "checked_at": "2026-09-17T17:07:44.191721+00:00",
     "sha256": "3244468a8c5f83427e1112c1dd9e07d34e7a8c2a0d506b1247ab909bf4ce92b2",
     "url": "https://www.burlington.ca/en/council-and-city-administration/budget.aspx"
   },
   "Lisa Kearns campaign": {
-    "bytes": 374253,
-    "checked_at": "2026-09-16T17:06:31.857850+00:00",
-    "sha256": "b171e7b678c694d8f89f207e220ade26ce2434dfc9bba682050ed645d8f062c4",
+    "bytes": 380349,
+    "checked_at": "2026-09-17T17:07:44.191721+00:00",
+    "sha256": "3a75f2ed7d78b12caaa9e7fc0ff30a779bbf1943328de296a58b3199272d2e63",
     "url": "https://lisakearns.ca/"
   },
   "Meed Ward campaign": {
-    "bytes": 117361,
-    "checked_at": "2026-09-16T17:06:31.857850+00:00",
-    "sha256": "ef9ab5990b7c5cea0815edd00f17add31c064b7c39362e6f778e38525acdaa72",
+    "bytes": 167,
+    "checked_at": "2026-09-17T17:07:44.191721+00:00",
+    "sha256": "b8d62e6e56b9af4f57eab2e8d170ba4c6ba9ac39f9341994e2f12295fabe276c",
     "url": "https://votemarianne.ca/"
   },
   "Official candidate list": {
     "bytes": 79232,
-    "checked_at": "2026-09-16T17:06:31.857850+00:00",
-    "sha256": "b636defeff0b9d0b49d6fefba5f3a90ffa2a689e38a0e1e7d0f3106ee2fa6e0c",
+    "checked_at": "2026-09-17T17:07:44.191721+00:00",
+    "sha256": "4a7d8654fcdc63eb897955ab6a2235f5c931e4f33512f93c44b44ea6b5ebf2cd",
     "url": "https://myvote.burlington.ca/for-voters/list-of-candidates/"
   },
   "Official voting information": {
     "bytes": 68403,
-    "checked_at": "2026-09-16T17:06:31.857850+00:00",
+    "checked_at": "2026-09-17T17:07:44.191721+00:00",
     "sha256": "15acc354ac539bb617a6876afa467a38022bcd13b9d303477ac9ec4b15abd204",
     "url": "https://myvote.burlington.ca/for-voters/how-to-vote/"
   },
   "Rory Nisan campaign": {
     "bytes": 52064,
-    "checked_at": "2026-09-16T17:06:31.857850+00:00",
-    "sha256": "73ae49af76ecf3867dc93bd1fd2b81ef59090caf697895f6f4fbd15f3951e425",
+    "checked_at": "2026-09-17T17:07:44.191721+00:00",
+    "sha256": "06cee8e8777605ffe9cd1d1bf3fc249f635581953a069e0d2ae1f0eac842ab3c",
     "url": "https://rorynisan.ca/"
   }
 }
