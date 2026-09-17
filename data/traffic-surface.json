@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T06:22:47.023789-04:00",
+  "generatedAt": "2026-09-17T11:17:37.391944-04:00",
   "source": "Ontario 511 events + OSRM geometry + camera inventory",
   "licence": "Open Government Licence - Ontario",
   "incidents": [
@@ -37,46 +37,6 @@
       "impact": "Watch for delays near Plains Road.",
       "latitude": 43.33392,
       "longitude": -79.83722,
-      "score": 0,
-      "affectsSkyway": false,
-      "source": "Ontario 511",
-      "url": "/traffic/",
-      "updatedLabel": ""
-    },
-    {
-      "id": "511:308377",
-      "title": "Collision on Highway 403 near Brant Street",
-      "rawHeadline": "Collision on HWY 403 HAMILTON Eastbound RAMP at QEW TORONTO, Burlington. Right lane and right shoulder closed.",
-      "roadway": "Highway 403",
-      "direction": "Toronto-bound",
-      "type": "collision",
-      "facility": "mainline",
-      "nearestRoad": "Brant Street",
-      "municipality": "Burlington",
-      "context": "Burlington · Brant Street / Highway 403",
-      "impact": "Could affect trips from Burlington toward Oakville or Toronto.",
-      "latitude": 43.33588702,
-      "longitude": -79.83009382,
-      "score": 0,
-      "affectsSkyway": false,
-      "source": "Ontario 511",
-      "url": "/traffic/",
-      "updatedLabel": ""
-    },
-    {
-      "id": "511:308380",
-      "title": "Collision on Highway 403 near Hwy 6 North",
-      "rawHeadline": "Collision on HWY 403 HAMILTON Eastbound  at HWY 6 NORTH, Burlington. Left shoulder and left lane closed.",
-      "roadway": "Highway 403",
-      "direction": "eastbound",
-      "type": "collision",
-      "facility": "mainline",
-      "nearestRoad": "Hwy 6 North",
-      "municipality": "Burlington",
-      "context": "Burlington · Hwy 6 North / Highway 403",
-      "impact": "Watch for delays near Hwy 6 North.",
-      "latitude": 43.29308284,
-      "longitude": -79.8919664,
       "score": 0,
       "affectsSkyway": false,
       "source": "Ontario 511",
@@ -1592,6 +1552,6 @@
   "presentationPolicy": {
     "primary": "mainline conditions and live flow",
     "secondary": "routine construction ramp closures",
-    "updatedAt": "2026-09-17T11:00:00.664953-04:00"
+    "updatedAt": "2026-09-17T11:17:39.970543-04:00"
   }
 }
