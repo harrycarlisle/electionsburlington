@@ -1,12 +1,7 @@
 name: Burlington election watch
 
 on:
-  schedule:
-    # Weekly until September 14, then daily through Election Day.
-    - cron: '20 12 31 8 *'
-    - cron: '20 12 7 9 *'
-    - cron: '20 12 14-30 9 *'
-    - cron: '20 12 1-26 10 *'
+  # Scheduled automation paused while the site is under construction.
   workflow_dispatch:
 
 permissions:

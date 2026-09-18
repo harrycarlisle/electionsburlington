@@ -96,18 +96,17 @@
   function ensureBanner() {
     let banner = document.querySelector('.banner');
     const header = document.querySelector('.header, .site-header');
-    if (!isElectionPage()) {
-      banner?.remove();
-      root.style.setProperty('--news-banner-h', '0px');
-      return;
-    }
-    root.style.setProperty('--news-banner-h', matchMedia('(max-width:720px)').matches ? '32px' : '34px');
+    root.style.setProperty('--news-banner-h', '34px');
     if (!banner && header) {
       banner = document.createElement('div');
-      banner.className = 'banner';
       header.before(banner);
     }
-    if (banner) banner.innerHTML = '<div class="wrap"><strong>2026 election</strong><span class="banner-sep" aria-hidden="true"> · </span><span>Voting starts Oct. 14</span><span class="banner-sep" aria-hidden="true"> · </span><span>Election Day Oct. 26</span></div>';
+    if (banner) {
+      banner.className = 'banner construction-banner';
+      banner.setAttribute('role', 'status');
+      banner.setAttribute('aria-label', 'Site status');
+      banner.innerHTML = '<div class="wrap"><strong>Site under construction</strong></div>';
+    }
   }
 
   const BRAND_ICON = '/assets/brand/favicon-32x32.png?v=20260830logo1';
@@ -700,6 +699,8 @@
     ensureScript('/theme-boot.js?v=20260830logo1', 'theme-boot');
     ensureUtilityBar();
     ensureBanner();
+    setTimeout(ensureBanner, 400);
+    setTimeout(ensureBanner, 1200);
     addSeo();
     applyStoryPresentation();
     prepareHeader();

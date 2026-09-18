@@ -1,9 +1,7 @@
 name: Burlington breaking now
 
 on:
-  schedule:
-    # Breaking monitoring stays frequent, but code/content pushes no longer create extra runs.
-    - cron: '4,19,34,49 * * * *'
+  # Scheduled automation paused while the site is under construction.
   workflow_dispatch:
 
 permissions:

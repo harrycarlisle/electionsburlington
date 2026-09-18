@@ -8,6 +8,27 @@
   --news-banner-h:0px;
 }
 
+html body .construction-banner{
+  position:sticky!important;
+  top:0!important;
+  z-index:120!important;
+  display:flex!important;
+  align-items:center!important;
+  min-height:34px!important;
+  background:#f2c94c!important;
+  color:#152238!important;
+  border:0!important;
+  box-shadow:none!important
+}
+html body .construction-banner .wrap{
+  width:100%!important;
+  padding:8px 16px!important;
+  text-align:center!important;
+  font:800 11px/18px Inter,ui-sans-serif,Arial,sans-serif!important;
+  letter-spacing:.04em!important;
+  text-transform:uppercase!important
+}
+
 html.menu-is-open,
 html.menu-is-open body,
 body.menu-is-open{

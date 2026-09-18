@@ -1,8 +1,7 @@
 name: Burlington local radar
 
 on:
-  schedule:
-    - cron: '27,57 * * * *'
+  # Scheduled automation paused while the site is under construction.
   workflow_dispatch:
   push:
     paths:
@@ -10,7 +9,6 @@ on:
       - 'data/story-catalog.json'
       - 'data/beat-watchlist.json'
       - 'data/editorial-policy.json'
-      - '.github/workflows/local-radar.yml'
 
 permissions:
   contents: read

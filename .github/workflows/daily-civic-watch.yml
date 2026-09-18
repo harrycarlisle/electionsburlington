@@ -1,13 +1,10 @@
 name: Burlington news watch
 
 on:
-  schedule:
-    # Scan general civic/local sources twice an hour. Breaking sources run separately every 15 minutes.
-    - cron: '12,42 * * * *'
+  # Scheduled automation paused while the site is under construction.
   workflow_dispatch:
   push:
     paths:
-      - '.github/workflows/daily-civic-watch.yml'
       - 'data/beat-watchlist.json'
       - 'data/editorial-policy.json'
       - 'data/story-catalog.json'

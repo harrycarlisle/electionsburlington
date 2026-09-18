@@ -1,14 +1,12 @@
 name: Traffic flow
 
 on:
+  # Scheduled automation paused while the site is under construction.
   workflow_dispatch:
   push:
     paths:
       - 'scripts/build_here_traffic.py'
       - 'scripts/apply_traffic_policy.py'
-      - '.github/workflows/traffic-flow.yml'
-  schedule:
-    - cron: '*/10 * * * *'
 
 permissions:
   contents: write

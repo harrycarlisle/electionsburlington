@@ -1,14 +1,12 @@
 name: Local intelligence
 
 on:
-  schedule:
-    - cron: '7,37 * * * *'
+  # Scheduled automation paused while the site is under construction.
   workflow_dispatch:
   push:
     paths:
       - 'scripts/apply_traffic_policy.py'
       - 'scripts/build_traffic_surface.py'
-      - '.github/workflows/local-intelligence.yml'
 
 permissions:
   contents: write

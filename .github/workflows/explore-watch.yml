@@ -1,8 +1,7 @@
 name: Explore Burlington event watch
 
 on:
-  schedule:
-    - cron: '17 * * * *'
+  # Scheduled automation paused while the site is under construction.
   workflow_dispatch:
   push:
     paths:
@@ -11,7 +10,6 @@ on:
       - 'scripts/update_explore_watch.py'
       - 'scripts/prune_explore_events.py'
       - 'scripts/safe_bot_commit.py'
-      - '.github/workflows/explore-watch.yml'
 
 permissions:
   contents: write
