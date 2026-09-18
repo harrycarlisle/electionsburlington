@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-17T23:32:57+00:00",
+  "checkedAt": "2026-09-18T04:39:23+00:00",
   "publicationGate": "Candidates only. Verify the organizer, date, end time, exact location, access details and image rights before adding to the live Explore feed.",
   "regionPolicy": {
     "primary": [
@@ -93,7 +93,7 @@
       "url": "https://activeparents.ca/calendar/",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "ok": true,
-      "candidates": 41
+      "candidates": 40
     },
     {
       "name": "Pokémon GO live events",
@@ -2882,45 +2882,6 @@
       "candidateType": "structured-event"
     },
     {
-      "title": "Royal Duck Bounce Park",
-      "url": "https://activeparents.ca/calendar/royal-duck-bounce-park/2026-09-17/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-17T04:00:00+00:00",
-      "endsAt": "2026-09-18T03:59:59+00:00",
-      "location": "Burlington Centre, 777 Guelph Line, Burlington, Ontario",
-      "description": "<p>Jump in, bounce around, and let the fun begin! The Royal Duck is bringing an exciting inflatable bounce house park to Burlington Centre for a fun-filled experience the whole family can enjoy. Families can stop by and enjoy a variety of inflatable attractions designed for kids to jump, play, and have a blast.</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Wainfleet Fall Fair",
-      "url": "https://activeparents.ca/calendar/wainfleet-fall-fair/2026-09-17/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-17T04:00:00+00:00",
-      "endsAt": "2026-09-18T03:59:59+00:00",
-      "location": "Wainfleet Agricultural Society, 31943 Park St, Wainfleet, ON",
-      "description": "<p>Come for a weekend full of celebration with live entertainment, livestock exhibits, demolition derby, and so much more!</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
-      "title": "Free Trial Multi-Sport Class (1.5-6yrs)",
-      "url": "https://activeparents.ca/calendar/free-trial-multi-sport-class-1-5-6yrs/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "2026-09-17T20:45:00+00:00",
-      "endsAt": "2026-09-17T22:30:00+00:00",
-      "location": "St John’s Anglican Church Burlington, 2464 Dundas Street West, Burlington, ON",
-      "description": "<p>Join coach Dana for a free trial Fit For Fun multi-sport class! Register at: www.fitforfunprograms.com 4:45-5:30pm - 1.5-3yrs (parent participation required) 5:30-6:30pm - 3.5-6yrs (parent supervision required)</p>\\n",
-      "candidateType": "structured-event"
-    },
-    {
       "title": "Binbrook Fall Fair",
       "url": "https://activeparents.ca/calendar/binbrook-fall-fair/2026-09-18/",
       "source": "Active Parents regional calendar",
@@ -3103,6 +3064,19 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Farmcrawl Hamilton",
+      "url": "https://activeparents.ca/calendar/farmcrawl-hamilton-2/2026-09-19/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-19T14:00:00+00:00",
+      "endsAt": "2026-09-19T20:00:00+00:00",
+      "location": "Multiple Farms in Hamilton, Hamilton, ON",
+      "description": "<p>Farm Crawl is an opportunity to get an inside look at the operations of many of our farms in Hamilton and the surrounding area. It is a self-guided event where you drive from farm to farm in any order you like to learn about local agriculture. You choose how many farms you would like to […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Free Trial Multi-Sport Class (3.5-6yrs)",
       "url": "https://activeparents.ca/calendar/free-trial-multi-sport-class-3-5-6yrs/",
       "source": "Active Parents regional calendar",
@@ -3116,6 +3090,19 @@
       "candidateType": "structured-event"
     },
     {
+      "title": "Harvest Pioneer Day",
+      "url": "https://activeparents.ca/calendar/harvest-pioneer-day/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-19T14:00:00+00:00",
+      "endsAt": "2026-09-19T20:00:00+00:00",
+      "location": "Lincoln Museum and Cultural Centre, 3800 Main Street, Lincoln, Ontario",
+      "description": "<p>Join us for the 60th Annual Harvest Pioneer Day! Saturday, September 19 | Lincoln Museum & Cultural Centre Celebrate the start of fall with a day of music, food, artisans, and hands-on demonstrations that bring the past to life. As fall begins and the leaves start to turn, the museum grounds come alive with the […]</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
       "title": "Pokemon Trade and Play at Mastermind",
       "url": "https://activeparents.ca/calendar/pokemon-trade-and-play-at-mastermind/",
       "source": "Active Parents regional calendar",
@@ -3126,6 +3113,19 @@
       "endsAt": "2026-09-19T16:00:00+00:00",
       "location": "Mastermind Toys Stores, Burlington",
       "description": "<p>Bring your Pokémon cards, make some trades, and connect with fellow fans at a special morning of Pokémon fun. Date: Saturday, September 19 Time: 10 AM–12 PM Locations: All Mastermind Toys stores</p>\\n",
+      "candidateType": "structured-event"
+    },
+    {
+      "title": "Summer Saturdays at the Homestead",
+      "url": "https://activeparents.ca/calendar/summer-saturdays-at-the-homestead/2026-09-19/",
+      "source": "Active Parents regional calendar",
+      "scope": "Burlington, Oakville, Hamilton and nearby",
+      "priority": 2,
+      "discoveryOnly": true,
+      "startsAt": "2026-09-19T14:00:00+00:00",
+      "endsAt": "2026-09-19T20:00:00+00:00",
+      "location": "The Brown Homestead, 1317 Pelham Road, St Catharines, ON",
+      "description": "<p>Looking for something new to do in Niagara? Join us for Summer Saturdays at The Brown Homestead. Pop-by to explore our rural historic site, learn the stories held within the oldest home in St. Catharines, create heritage crafts, play lawn games, and enjoy hands-on activities designed for curious minds of all ages. Watch heritage demonstrations, […]</p>\\n",
       "candidateType": "structured-event"
     },
     {
@@ -3183,19 +3183,6 @@
     {
       "title": "Fall Fair at HPL",
       "url": "https://activeparents.ca/series/fall-fair-at-hpl-2/",
-      "source": "Active Parents regional calendar",
-      "scope": "Burlington, Oakville, Hamilton and nearby",
-      "priority": 2,
-      "discoveryOnly": true,
-      "startsAt": "",
-      "endsAt": "",
-      "location": "",
-      "description": "",
-      "candidateType": "link"
-    },
-    {
-      "title": "Farmcrawl Hamilton",
-      "url": "https://activeparents.ca/calendar/farmcrawl-hamilton-2/2026-09-19/",
       "source": "Active Parents regional calendar",
       "scope": "Burlington, Oakville, Hamilton and nearby",
       "priority": 2,
