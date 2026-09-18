@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-18T00:44:48Z",
+  "generatedAt": "2026-09-18T05:50:01Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 41,
-    "trafficIncidents": 41,
+    "activeSignals": 40,
+    "trafficIncidents": 40,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -144,22 +144,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "3b89280d0ff3db78"
-    },
-    {
-      "id": "511:308208",
-      "kind": "traffic",
-      "headline": "Continuous Construction on HWY 403 HAMILTON Eastbound  between Garden Ave and Garden Ave, Brantford. ALL LANES CLOSED.",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Eastbound",
-      "score": 90,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.167484,
-      "longitude": -80.21334,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "651d0304153fb34a"
     },
     {
       "id": "511:303108",
@@ -496,6 +480,22 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "37f8b0646b1083d6"
+    },
+    {
+      "id": "511:308513",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Fort Erie Bound  between BURLOAK DRIVE and WALKERS LINE, Burlington. 2 Right Lane(s).",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 53,
+      "neighbourhood": "Orchard",
+      "latitude": 43.395298,
+      "longitude": -79.7565,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "5314a1ac1a78a074"
     }
   ],
   "topSignal": {
