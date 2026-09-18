@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-17T19:13:37Z",
+  "generatedAt": "2026-09-17T22:24:23Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 43,
-    "trafficIncidents": 43,
+    "activeSignals": 41,
+    "trafficIncidents": 41,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -160,38 +160,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "651d0304153fb34a"
-    },
-    {
-      "id": "511:308552",
-      "kind": "traffic",
-      "headline": "Highway Maintenance on QEW Toronto bound ON-RAMP at WINSTON CHURCHILL BLVD, Oakville. All lanes closed.",
-      "location": "QEW",
-      "direction": "Toronto Bound",
-      "score": 90,
-      "neighbourhood": "Burlington area",
-      "latitude": 43.509681,
-      "longitude": -79.6638,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "4b06af08b7ed0524"
-    },
-    {
-      "id": "511:308623",
-      "kind": "traffic",
-      "headline": "Disabled Vehicle on QEW Fort Erie bound  at THIRD LINE, Oakville. Centre lane closed.",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 75,
-      "neighbourhood": "Orchard",
-      "latitude": 43.42396733,
-      "longitude": -79.72548106,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "accidentsAndIncidents",
-      "signature": "2e471eb9e5797439"
     },
     {
       "id": "511:303108",
@@ -496,6 +464,38 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "1286b0a6916b6324"
+    },
+    {
+      "id": "511:307662",
+      "kind": "traffic",
+      "headline": "Nightly Construction on EASTPORT DRIVE Southbound  between HWY 2\\NORTH SHORE BLVD and QEW, Burlington. 1 Alternating Lane(s).",
+      "location": "EASTPORT DRIVE",
+      "direction": "Southbound",
+      "score": 53,
+      "neighbourhood": "Downtown",
+      "latitude": 43.302002,
+      "longitude": -79.800095,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "fe634049f8c9e1e0"
+    },
+    {
+      "id": "511:308462",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Toronto bound  between CENTENNIAL PKWY, Hamilton and BURLINGTON SKYWAY, Burlington. 3 Alternating Lane(s).",
+      "location": "QEW",
+      "direction": "Toronto Bound",
+      "score": 53,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.24609,
+      "longitude": -79.75694,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "37f8b0646b1083d6"
     }
   ],
   "topSignal": {
