@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-18T05:50:01Z",
+  "generatedAt": "2026-09-18T11:05:32Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -10,8 +10,8 @@
     "burlingtonTransitVehicles": "error:HTTPError"
   },
   "summary": {
-    "activeSignals": 40,
-    "trafficIncidents": 40,
+    "activeSignals": 37,
+    "trafficIncidents": 37,
     "transitAlerts": 0,
     "transitTripUpdates": 0,
     "transitVehicles": 0
@@ -96,38 +96,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "98d1216c39b2b875"
-    },
-    {
-      "id": "511:307279",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 403 HAMILTON Eastbound  between WATERDOWN ROAD and KING ROAD, Burlington. OPP Assisted Full Closure for 15 minutes.",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Eastbound",
-      "score": 90,
-      "neighbourhood": "Aldershot",
-      "latitude": 43.3121,
-      "longitude": -79.85993,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "aacd56a5bf1cffa6"
-    },
-    {
-      "id": "511:307280",
-      "kind": "traffic",
-      "headline": "Nightly Construction on HWY 403 HAMILTON Westbound  between HWY 407 and KING ROAD, Burlington. OPP Assisted Full Closure for 15 minutes.",
-      "location": "HWY 403 HAMILTON",
-      "direction": "Westbound",
-      "score": 90,
-      "neighbourhood": "Aldershot",
-      "latitude": 43.33392,
-      "longitude": -79.83722,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "1a55366c0d8684e7"
     },
     {
       "id": "511:308178",
@@ -240,22 +208,6 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "767ddc4c2a7c582d"
-    },
-    {
-      "id": "511:305411",
-      "kind": "traffic",
-      "headline": "Nightly Construction on QEW Fort Erie Bound  between BRONTE ROAD, Oakville and ONTARIO STREET -BEAMSVILLE, Lincoln. 1 Alternating Lane(s).",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 53,
-      "neighbourhood": "Orchard",
-      "latitude": 43.409355,
-      "longitude": -79.74126,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "1286b0a6916b6324"
     },
     {
       "id": "511:305414",
@@ -496,6 +448,54 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "5314a1ac1a78a074"
+    },
+    {
+      "id": "511:305345",
+      "kind": "traffic",
+      "headline": "Daily Construction on HWY 5 Eastbound  between SOUTH DRIVE / W FLAMBORO TWP RD L25 and HWY 6 / CLAPPISON CORNER'S, Hamilton. 1 Right Lane(s).",
+      "location": "HWY 5",
+      "direction": "Eastbound",
+      "score": 43,
+      "neighbourhood": "Aldershot",
+      "latitude": 43.3103,
+      "longitude": -79.91989,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "92cb22a01faee66a"
+    },
+    {
+      "id": "511:305370",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 401 Westbound  between REGIONAL ROAD 25 and GUELPH LINE, Milton. 2 Alternating Lane(s).",
+      "location": "HWY 401",
+      "direction": "Westbound",
+      "score": 43,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.52803,
+      "longitude": -79.90527,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "81e9ba9b988064d2"
+    },
+    {
+      "id": "511:305372",
+      "kind": "traffic",
+      "headline": "Nightly Construction on HWY 401 Eastbound  between GUELPH LINE and REGIONAL ROAD 25, Milton. 2 Alternating Lane(s).",
+      "location": "HWY 401",
+      "direction": "Eastbound",
+      "score": 43,
+      "neighbourhood": "Burlington area",
+      "latitude": 43.49118,
+      "longitude": -79.987885,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "61abbaca9b4a3dc0"
     }
   ],
   "topSignal": {
@@ -741,22 +741,6 @@
         "signature": "61abbaca9b4a3dc0"
       },
       {
-        "id": "511:305411",
-        "kind": "traffic",
-        "headline": "Nightly Construction on QEW Fort Erie Bound  between BRONTE ROAD, Oakville and ONTARIO STREET -BEAMSVILLE, Lincoln. 1 Alternating Lane(s).",
-        "location": "QEW",
-        "direction": "Fort Erie Bound",
-        "score": 53,
-        "neighbourhood": "Orchard",
-        "latitude": 43.409355,
-        "longitude": -79.74126,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "1286b0a6916b6324"
-      },
-      {
         "id": "511:305414",
         "kind": "traffic",
         "headline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 2 Alternating Lane(s).",
@@ -915,6 +899,22 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "16b9cc76e1133969"
+      },
+      {
+        "id": "511:307274",
+        "kind": "traffic",
+        "headline": "Nightly Construction on HWY 401 Westbound  between HALTON ROAD 22/TREMAINE RD and GUELPH LINE, Milton. 2 Right Lane(s).",
+        "location": "HWY 401",
+        "direction": "Westbound",
+        "score": 43,
+        "neighbourhood": "Burlington area",
+        "latitude": 43.521416,
+        "longitude": -79.934616,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "8cf07a76a681d745"
       }
     ],
     "cameras": [

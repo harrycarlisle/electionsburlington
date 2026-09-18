@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-18T11:05:32Z",
+  "generatedAt": "2026-09-18T14:56:56Z",
   "method": "Official-source, rule-based local utility monitor. Signals are ranked; articles still require editorial review.",
   "sources": {
     "ontario511Events": "ok",
@@ -210,38 +210,6 @@
       "signature": "767ddc4c2a7c582d"
     },
     {
-      "id": "511:305414",
-      "kind": "traffic",
-      "headline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 2 Alternating Lane(s).",
-      "location": "QEW",
-      "direction": "Fort Erie Bound",
-      "score": 53,
-      "neighbourhood": "Downtown",
-      "latitude": 43.327545,
-      "longitude": -79.825485,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "0f4cdd6a3734644c"
-    },
-    {
-      "id": "511:305692",
-      "kind": "traffic",
-      "headline": "Nightly Moving Maintenance Closure on QEW Toronto bound  between BURLINGTON SKYWAY and BURLINGTON SKYWAY, Burlington. 2 Alternating Lane(s).",
-      "location": "QEW",
-      "direction": "Toronto Bound",
-      "score": 53,
-      "neighbourhood": "Downtown",
-      "latitude": 43.298355,
-      "longitude": -79.797104,
-      "source": "Ontario 511",
-      "sourceUrl": "https://511on.ca/",
-      "url": "skyway-traffic.html",
-      "rawType": "roadwork",
-      "signature": "e6ceb00d56390784"
-    },
-    {
       "id": "511:305749",
       "kind": "traffic",
       "headline": "Nightly Construction on QEW Fort Erie Bound  between BRONTE ROAD, Oakville and BURLOAK DRIVE, Burlington. 2 Right Lane(s).",
@@ -448,6 +416,38 @@
       "url": "skyway-traffic.html",
       "rawType": "roadwork",
       "signature": "5314a1ac1a78a074"
+    },
+    {
+      "id": "511:308852",
+      "kind": "traffic",
+      "headline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 2 Alternating Lane(s).",
+      "location": "QEW",
+      "direction": "Fort Erie Bound",
+      "score": 53,
+      "neighbourhood": "Downtown",
+      "latitude": 43.327545,
+      "longitude": -79.825485,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "0f4cdd6a3734644c"
+    },
+    {
+      "id": "511:308869",
+      "kind": "traffic",
+      "headline": "Nightly Moving Maintenance Closure on HWY 403 HAMILTON Eastbound  between WATERDOWN ROAD and KING ROAD, Burlington. 1 Left Lane(s).",
+      "location": "HWY 403 HAMILTON",
+      "direction": "Eastbound",
+      "score": 53,
+      "neighbourhood": "Aldershot",
+      "latitude": 43.3121,
+      "longitude": -79.85993,
+      "source": "Ontario 511",
+      "sourceUrl": "https://511on.ca/",
+      "url": "skyway-traffic.html",
+      "rawType": "roadwork",
+      "signature": "de7811f8ede34de9"
     },
     {
       "id": "511:305345",
@@ -741,38 +741,6 @@
         "signature": "61abbaca9b4a3dc0"
       },
       {
-        "id": "511:305414",
-        "kind": "traffic",
-        "headline": "Nightly Construction on QEW Fort Erie Bound  between FAIRVIEW STREET/PLAINS ROAD and BURLINGTON SKYWAY, Burlington. 2 Alternating Lane(s).",
-        "location": "QEW",
-        "direction": "Fort Erie Bound",
-        "score": 53,
-        "neighbourhood": "Downtown",
-        "latitude": 43.327545,
-        "longitude": -79.825485,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "0f4cdd6a3734644c"
-      },
-      {
-        "id": "511:305692",
-        "kind": "traffic",
-        "headline": "Nightly Moving Maintenance Closure on QEW Toronto bound  between BURLINGTON SKYWAY and BURLINGTON SKYWAY, Burlington. 2 Alternating Lane(s).",
-        "location": "QEW",
-        "direction": "Toronto Bound",
-        "score": 53,
-        "neighbourhood": "Downtown",
-        "latitude": 43.298355,
-        "longitude": -79.797104,
-        "source": "Ontario 511",
-        "sourceUrl": "https://511on.ca/",
-        "url": "skyway-traffic.html",
-        "rawType": "roadwork",
-        "signature": "e6ceb00d56390784"
-      },
-      {
         "id": "511:305749",
         "kind": "traffic",
         "headline": "Nightly Construction on QEW Fort Erie Bound  between BRONTE ROAD, Oakville and BURLOAK DRIVE, Burlington. 2 Right Lane(s).",
@@ -915,6 +883,38 @@
         "url": "skyway-traffic.html",
         "rawType": "roadwork",
         "signature": "8cf07a76a681d745"
+      },
+      {
+        "id": "511:307554",
+        "kind": "traffic",
+        "headline": "Nightly Construction on QEW Toronto bound  between CENTENNIAL PKWY, Hamilton and BURLINGTON SKYWAY, Burlington. 3 Alternating Lane(s).",
+        "location": "QEW",
+        "direction": "Toronto Bound",
+        "score": 53,
+        "neighbourhood": "Burlington area",
+        "latitude": 43.24609,
+        "longitude": -79.75694,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "37f8b0646b1083d6"
+      },
+      {
+        "id": "511:307556",
+        "kind": "traffic",
+        "headline": "Nightly Construction on QEW Fort Erie Bound  between BURLOAK DRIVE and WALKERS LINE, Burlington. 2 Right Lane(s).",
+        "location": "QEW",
+        "direction": "Fort Erie Bound",
+        "score": 53,
+        "neighbourhood": "Orchard",
+        "latitude": 43.395298,
+        "longitude": -79.7565,
+        "source": "Ontario 511",
+        "sourceUrl": "https://511on.ca/",
+        "url": "skyway-traffic.html",
+        "rawType": "roadwork",
+        "signature": "5314a1ac1a78a074"
       }
     ],
     "cameras": [
